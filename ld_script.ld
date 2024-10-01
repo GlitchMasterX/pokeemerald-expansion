@@ -366,6 +366,7 @@ SECTIONS {
         src/pokemon_sprite_visualizer.o(.text);
         src/expansion_intro.o(.text);
         src/new_shop.o(.text);
+        src/dns.o(.text);
     } > ROM =0
 
     script_data :
@@ -545,6 +546,7 @@ SECTIONS {
         src/tileset_anims.o(.rodata);
         src/palette.o(.rodata);
         src/sound.o(.rodata);
+        src/dns.o(.rodata);
         src/field_name_box.o(.rodata);
         src/ui_startmenu_full.o(.rodata);
         src/ui_main_menu.o(.rodata);
