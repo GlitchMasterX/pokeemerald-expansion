@@ -237,5 +237,10 @@ gScriptCmdTable::
 	.4byte ScrCmd_ballfollowingmon					@ 0xea
 	.4byte ScrCmd_namebox                           @ 0xeb
 	.4byte ScrCmd_hidenamebox                       @ 0xec
+	.4byte ScrCmd_toggleoutfit                      @ 0xed
+	.4byte ScrCmd_getoutfitstatus                   @ 0xee
+	.4byte ScrCmd_bufferoutfitstr                   @ 0xef
+	.4byte ScrCmd_pokemartoutfit                    @ 0xf0
+
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop
