@@ -1124,38 +1124,40 @@ signforest::
 # 477 "data/maps/LuxuraIsland/scripts.pory"
 	lock
 # 478 "data/maps/LuxuraIsland/scripts.pory"
-	msgbox signforest_Text_0, MSGBOX_SIGN
+	giveitem ITEM_OUTFIT_BOX, 1
 # 479 "data/maps/LuxuraIsland/scripts.pory"
+	msgbox signforest_Text_0, MSGBOX_SIGN
+# 480 "data/maps/LuxuraIsland/scripts.pory"
 	release
 	return
 
 
 signservantquarter::
-# 483 "data/maps/LuxuraIsland/scripts.pory"
-	lock
 # 484 "data/maps/LuxuraIsland/scripts.pory"
-	msgbox signservantquarter_Text_0, MSGBOX_SIGN
+	lock
 # 485 "data/maps/LuxuraIsland/scripts.pory"
+	msgbox signservantquarter_Text_0, MSGBOX_SIGN
+# 486 "data/maps/LuxuraIsland/scripts.pory"
 	release
 	return
 
 
 signluxuraharbor::
-# 489 "data/maps/LuxuraIsland/scripts.pory"
-	lock
 # 490 "data/maps/LuxuraIsland/scripts.pory"
-	msgbox signluxuraharbor_Text_0, MSGBOX_SIGN
+	lock
 # 491 "data/maps/LuxuraIsland/scripts.pory"
+	msgbox signluxuraharbor_Text_0, MSGBOX_SIGN
+# 492 "data/maps/LuxuraIsland/scripts.pory"
 	release
 	return
 
 
 signend::
-# 495 "data/maps/LuxuraIsland/scripts.pory"
-	lock
 # 496 "data/maps/LuxuraIsland/scripts.pory"
-	msgbox signend_Text_0
+	lock
 # 497 "data/maps/LuxuraIsland/scripts.pory"
+	msgbox signend_Text_0
+# 498 "data/maps/LuxuraIsland/scripts.pory"
 	release
 	return
 
@@ -1371,25 +1373,25 @@ signlmansion_Text_0:
 	.string "power, and a legacy of prestige.$"
 
 signforest_Text_0:
-# 478 "data/maps/LuxuraIsland/scripts.pory"
+# 479 "data/maps/LuxuraIsland/scripts.pory"
 	.string "Luxura Veilwood\p"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}A dense, ancient forest where secrets\n"
 	.string "are whispered among the trees and\l"
 	.string "shadows linger at every turn.$"
 
 signservantquarter_Text_0:
-# 484 "data/maps/LuxuraIsland/scripts.pory"
+# 485 "data/maps/LuxuraIsland/scripts.pory"
 	.string "Servant's Quarter$"
 
 signluxuraharbor_Text_0:
-# 490 "data/maps/LuxuraIsland/scripts.pory"
+# 491 "data/maps/LuxuraIsland/scripts.pory"
 	.string "Harbor Haven\p"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}The central gathering place for sailors\n"
 	.string "on Luxura Island, where voyages are\l"
 	.string "planned and tales are shared.$"
 
 signend_Text_0:
-# 496 "data/maps/LuxuraIsland/scripts.pory"
+# 497 "data/maps/LuxuraIsland/scripts.pory"
 	.string "End of Beta 1.$"
 
 gardener::

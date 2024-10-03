@@ -258,14 +258,6 @@ void ItemUseOutOfBattle_Bike(u8 taskId)
 
 static void ItemUseOnFieldCB_Bike(u8 taskId)
 {
-    if (ItemId_GetSecondaryId(gSpecialVar_ItemId) == MACH_BIKE)
-        GetOnOffBike(PLAYER_AVATAR_FLAG_BIKE);
-    else // ACRO_BIKE
-        GetOnOffBike(PLAYER_AVATAR_FLAG_BIKE);
-    
-    FollowMe_HandleBike();
-    gUnusedBikeCameraAheadPanback = FALSE;
-
     gSaveBlock2Ptr->playerBike = MACH_BIKE;
     if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_BIKE)
     {
@@ -282,6 +274,7 @@ static void ItemUseOnFieldCB_Bike(u8 taskId)
     }
     ScriptUnfreezeObjectEvents();
     UnlockPlayerFieldControls();
+    FollowMe_HandleBike();
     DestroyTask(taskId);
 }
 

@@ -43,7 +43,7 @@
 #include "constants/event_objects.h"
 
 #ifdef MUDSKIP_SHOP_UI
-// #include "outfit_menu.h" // uncomment this out if you have my outfit system
+#include "outfit_menu.h" // uncomment this out if you have my outfit system
 #include "new_shop.h"
 
 #define GFXTAG_CURSOR 0x1300
@@ -1655,7 +1655,7 @@ void NewShop_CreateDecorationShop2Menu(const u16 *itemsForSale)
 #ifdef MUDSKIP_OUTFIT_SYSTEM
 void NewShop_CreateOutfitShopMenu(const u16 *itemsForSale)
 {
-    CreateNewShopMenu(MART_TYPE_OUTFIT);
+    CreateShopMenu(MART_TYPE_OUTFIT);
     SetShopItemsForSale(itemsForSale);
     SetShopMenuCallback(ScriptContext_Enable);
 }

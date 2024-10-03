@@ -1935,6 +1935,8 @@
 	@ Closes the current message box.
 	.macro hidenamebox
 	.byte 0xec
+	.endm
+	
 	@! Unlocks a locked outfit
 	.macro toggleoutfit outfitId:req, type:req
 	.byte 0xed
