@@ -1,4 +1,3 @@
-CASTFORMGFXDIR := graphics/pokemon/castform
 TILESETGFXDIR := data/tilesets
 FONTGFXDIR := graphics/fonts
 INTERFACEGFXDIR := graphics/interface
@@ -23,44 +22,8 @@ STARTERGFXDIR := graphics/starter_choose
 NAMINGGFXDIR := graphics/naming_screen
 SPINDAGFXDIR := graphics/pokemon/spinda/spots
 
-types := normal fight flying poison ground rock bug ghost steel mystery fire water grass electric psychic ice dragon dark
+types := none normal fight flying poison ground rock bug ghost steel mystery fire water grass electric psychic ice dragon dark fairy stellar
 contest_types := cool beauty cute smart tough
-
-
-
-### Castform ###
-
-$(CASTFORMGFXDIR)/front.4bpp: $(CASTFORMGFXDIR)/normal/front.4bpp \
-                              $(CASTFORMGFXDIR)/sunny/front.4bpp \
-                              $(CASTFORMGFXDIR)/rainy/front.4bpp \
-                              $(CASTFORMGFXDIR)/snowy/front.4bpp
-	@cat $^ >$@
-
-$(CASTFORMGFXDIR)/back.4bpp: $(CASTFORMGFXDIR)/normal/back.4bpp \
-                             $(CASTFORMGFXDIR)/sunny/back.4bpp \
-                             $(CASTFORMGFXDIR)/rainy/back.4bpp \
-                             $(CASTFORMGFXDIR)/snowy/back.4bpp
-	@cat $^ >$@
-
-$(CASTFORMGFXDIR)/anim_front.4bpp: $(CASTFORMGFXDIR)/normal/anim_front.4bpp \
-                                   $(CASTFORMGFXDIR)/sunny/anim_front.4bpp \
-                                   $(CASTFORMGFXDIR)/rainy/anim_front.4bpp \
-                                   $(CASTFORMGFXDIR)/snowy/anim_front.4bpp
-	@cat $^ >$@
-
-$(CASTFORMGFXDIR)/normal.gbapal: $(CASTFORMGFXDIR)/normal/normal.gbapal \
-                                 $(CASTFORMGFXDIR)/sunny/normal.gbapal \
-                                 $(CASTFORMGFXDIR)/rainy/normal.gbapal \
-                                 $(CASTFORMGFXDIR)/snowy/normal.gbapal
-	@cat $^ >$@
-
-$(CASTFORMGFXDIR)/shiny.gbapal: $(CASTFORMGFXDIR)/normal/shiny.gbapal \
-                                $(CASTFORMGFXDIR)/sunny/shiny.gbapal \
-                                $(CASTFORMGFXDIR)/rainy/shiny.gbapal \
-                                $(CASTFORMGFXDIR)/snowy/shiny.gbapal
-	@cat $^ >$@
-
-
 
 ### Tilesets ###
 
@@ -273,6 +236,15 @@ $(FONTGFXDIR)/narrow.latfont: $(FONTGFXDIR)/latin_narrow.png
 	$(GFX) $< $@
 
 $(FONTGFXDIR)/small_narrow.latfont: $(FONTGFXDIR)/latin_small_narrow.png
+	$(GFX) $< $@
+
+$(FONTGFXDIR)/narrower.latfont: $(FONTGFXDIR)/latin_narrower.png
+	$(GFX) $< $@
+
+$(FONTGFXDIR)/small_narrower.latfont: $(FONTGFXDIR)/latin_small_narrower.png
+	$(GFX) $< $@
+
+$(FONTGFXDIR)/short_narrow.latfont: $(FONTGFXDIR)/latin_short_narrow.png
 	$(GFX) $< $@
 
 $(FONTGFXDIR)/small.hwjpnfont: $(FONTGFXDIR)/japanese_small.png
