@@ -2,14 +2,14 @@
   "layouts_table_label": "gMapLayouts",
   "layouts": [
     {
-      "id": "LAYOUT_PETALBURG_CITY",
-      "name": "PetalburgCity_Layout",
-      "width": 40,
-      "height": 60,
+      "id": "LAYOUT_ASTRALIS_ACADEMY",
+      "name": "AstralisAcademy_Layout",
+      "width": 44,
+      "height": 80,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_BattleArena",
-      "border_filepath": "data/layouts/PetalburgCity/border.bin",
-      "blockdata_filepath": "data/layouts/PetalburgCity/map.bin"
+      "border_filepath": "data/layouts/AstralisAcademy/border.bin",
+      "blockdata_filepath": "data/layouts/AstralisAcademy/map.bin"
     },
     {
       "id": "LAYOUT_SLATEPORT_CITY",
@@ -782,14 +782,14 @@
       "blockdata_filepath": "data/layouts/PacifidlogTown_House2/map.bin"
     },
     {
-      "id": "LAYOUT_PETALBURG_CITY_GYM",
-      "name": "PetalburgCity_Gym_Layout",
-      "width": 9,
-      "height": 112,
-      "primary_tileset": "gTileset_Building",
+      "id": "LAYOUT_ASTRALIS_ACADEMY_GYM",
+      "name": "AstralisAcademy_Gym_Layout",
+      "width": 40,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_PetalburgGym",
-      "border_filepath": "data/layouts/PetalburgCity_Gym/border.bin",
-      "blockdata_filepath": "data/layouts/PetalburgCity_Gym/map.bin"
+      "border_filepath": "data/layouts/AstralisAcademy_Gym/border.bin",
+      "blockdata_filepath": "data/layouts/AstralisAcademy_Gym/map.bin"
     },
     {
       "id": "LAYOUT_HOUSE_WITH_BED",

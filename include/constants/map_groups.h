@@ -6,7 +6,7 @@
 //
 
 // gMapGroup_TownsAndRoutes
-#define MAP_PETALBURG_CITY      (0 | (0 << 8))
+#define MAP_ASTRALIS_ACADEMY    (0 | (0 << 8))
 #define MAP_SLATEPORT_CITY      (1 | (0 << 8))
 #define MAP_MAUVILLE_CITY       (2 | (0 << 8))
 #define MAP_RUSTBORO_CITY       (3 | (0 << 8))
@@ -144,13 +144,13 @@
 #define MAP_PACIFIDLOG_TOWN_HOUSE5            (6 | (7 << 8))
 
 // gMapGroup_IndoorPetalburg
-#define MAP_PETALBURG_CITY_WALLYS_HOUSE      (0 | (8 << 8))
-#define MAP_PETALBURG_CITY_GYM               (1 | (8 << 8))
-#define MAP_PETALBURG_CITY_HOUSE1            (2 | (8 << 8))
-#define MAP_PETALBURG_CITY_HOUSE2            (3 | (8 << 8))
-#define MAP_PETALBURG_CITY_POKEMON_CENTER_1F (4 | (8 << 8))
-#define MAP_PETALBURG_CITY_POKEMON_CENTER_2F (5 | (8 << 8))
-#define MAP_PETALBURG_CITY_MART              (6 | (8 << 8))
+#define MAP_ASTRALIS_ACADEMY_WALLYS_HOUSE      (0 | (8 << 8))
+#define MAP_ASTRALIS_ACADEMY_GYM               (1 | (8 << 8))
+#define MAP_ASTRALIS_ACADEMY_HOUSE1            (2 | (8 << 8))
+#define MAP_ASTRALIS_ACADEMY_HOUSE2            (3 | (8 << 8))
+#define MAP_ASTRALIS_ACADEMY_POKEMON_CENTER_1F (4 | (8 << 8))
+#define MAP_ASTRALIS_ACADEMY_POKEMON_CENTER_2F (5 | (8 << 8))
+#define MAP_ASTRALIS_ACADEMY_MART              (6 | (8 << 8))
 
 // gMapGroup_IndoorSlateport
 #define MAP_SLATEPORT_CITY_STERNS_SHIPYARD_1F      (0 | (9 << 8))

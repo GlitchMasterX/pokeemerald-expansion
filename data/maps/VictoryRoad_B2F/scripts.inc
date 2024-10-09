@@ -115,7 +115,7 @@ VictoryRoad_B2F_Text_OwenPostBattle:
 # 58 "data/maps/VictoryRoad_B2F/scripts.pory"
 	.string "The rumors I heard, that tough little\n"
 # 59 "data/maps/VictoryRoad_B2F/scripts.pory"
-	.string "kid is from PETALBURG CITY.$"
+	.string "kid is from ASTRALIS ACADEMY.$"
 # 60 "data/maps/VictoryRoad_B2F/scripts.pory"
 
 # 61 "data/maps/VictoryRoad_B2F/scripts.pory"

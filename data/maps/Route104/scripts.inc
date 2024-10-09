@@ -2127,7 +2127,7 @@ Route104_Text_RouteSignPetalburg:
 # 1064 "data/maps/Route104/scripts.pory"
 	.string "ROUTE 1O4\n"
 # 1065 "data/maps/Route104/scripts.pory"
-	.string "{RIGHT_ARROW} PETALBURG CITY$"
+	.string "{RIGHT_ARROW} ASTRALIS ACADEMY$"
 # 1066 "data/maps/Route104/scripts.pory"
 
 # 1067 "data/maps/Route104/scripts.pory"

@@ -9027,8 +9027,8 @@
           }
         },
         {
-          "map": "MAP_PETALBURG_CITY",
-          "base_label": "gPetalburgCity",
+          "map": "MAP_ASTRALIS_ACADEMY",
+          "base_label": "gAstralisAcademy",
           "water_mons": {
             "encounter_rate": 1,
             "mons": [

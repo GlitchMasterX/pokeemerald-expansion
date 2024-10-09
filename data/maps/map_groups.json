@@ -36,7 +36,7 @@
     "gMapGroup_IndoorRoute124"
   ],
   "gMapGroup_TownsAndRoutes": [
-    "PetalburgCity",
+    "AstralisAcademy",
     "SlateportCity",
     "MauvilleCity",
     "RustboroCity",
@@ -174,13 +174,13 @@
     "PacifidlogTown_House5"
   ],
   "gMapGroup_IndoorPetalburg": [
-    "PetalburgCity_WallysHouse",
-    "PetalburgCity_Gym",
-    "PetalburgCity_House1",
-    "PetalburgCity_House2",
-    "PetalburgCity_PokemonCenter_1F",
-    "PetalburgCity_PokemonCenter_2F",
-    "PetalburgCity_Mart"
+    "AstralisAcademy_WallysHouse",
+    "AstralisAcademy_Gym",
+    "AstralisAcademy_House1",
+    "AstralisAcademy_House2",
+    "AstralisAcademy_PokemonCenter_1F",
+    "AstralisAcademy_PokemonCenter_2F",
+    "AstralisAcademy_Mart"
   ],
   "gMapGroup_IndoorSlateport": [
     "SlateportCity_SternsShipyard_1F",
