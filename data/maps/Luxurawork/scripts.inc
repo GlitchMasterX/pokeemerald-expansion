@@ -791,7 +791,7 @@ trage_Text_11:
 
 trage_Text_12:
 # 220 "data/maps/Luxurawork/scripts.pory"
-	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}(He stares at his father's lifeless\n"
+	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}(Xylar stares at his father's lifeless\n"
 	.string "body, blood soaking the ground. His\l"
 	.string "heart pounds in his chest, unable to\l"
 	.string "fully grasp the horror in front of him.)$"

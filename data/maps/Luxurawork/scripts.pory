@@ -217,7 +217,7 @@ script trage {
 	applymovement(8,players)
 	applymovement(5,players)
 	waitmovement(0)
-	msgbox(format("{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}(He stares at his father's lifeless body, blood soaking the ground. His heart pounds in his chest, unable to fully grasp the horror in front of him.)"),MSGBOX_AUTOCLOSE)
+	msgbox(format("{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}(Xylar stares at his father's lifeless body, blood soaking the ground. His heart pounds in his chest, unable to fully grasp the horror in front of him.)"),MSGBOX_AUTOCLOSE)
 	waitmessage
 	namebox(Xylar)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Dad?.......DAD!!!!"),MSGBOX_AUTOCLOSE)
