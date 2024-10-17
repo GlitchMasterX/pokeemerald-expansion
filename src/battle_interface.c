@@ -1079,6 +1079,19 @@ void UpdateHpTextInHealthbox(u32 healthboxSpriteId, u32 maxOrCurrent, s16 currHp
     }
 }
 
+/**
+ * @brief Updates HP text in healthbox for Doubles.
+ *
+ * @param[in] healthboxSpriteId The healthbox sprite ID.
+ * @param[in] maxOrCurrent Whether to display max HP or current HP.
+ * @param[in] currHp The current HP.
+ * @param[in] maxHp The max HP.
+ *
+ * This function updates the HP text in the healthbox for Doubles mode.
+ * If the battler is on the player side, it prints the current HP in the healthbox
+ * and clears the end of the healthbar gfx.
+ * If the battler is on the opponent side, it updates the opponent HP text in the healthbox.
+ */
 static void UpdateHpTextInHealthboxInDoubles(u32 healthboxSpriteId, u32 maxOrCurrent, s16 currHp, s16 maxHp)
 {
     u32 barSpriteId = gSprites[healthboxSpriteId].data[5];
@@ -1103,7 +1116,8 @@ static void UpdateHpTextInHealthboxInDoubles(u32 healthboxSpriteId, u32 maxOrCur
     }
 }
 
-// Prints mon's nature, catch and flee rate. Probably used to test pokeblock-related features.
+
+
 static void PrintSafariMonInfo(u8 healthboxSpriteId, struct Pokemon *mon)
 {
     u8 text[20];
