@@ -647,6 +647,19 @@ u32 WhichBattleCoords(u32 battlerId) // 0 - singles, 1 - doubles
         return IsDoubleBattle();
 }
 
+/**
+ * @brief Creates sprites for battler's healthbox, healthbar and status indicators.
+ *
+ * @param battlerId Battler ID for which the healthbox is created.
+ *
+ * @return Sprite ID of the healthbox sprite.
+ *
+ * @note This function is used to create the healthbox, healthbar and status indicators for all battlers.
+ *       It creates two sprites for the healthbox, one for the healthbar and one for each status indicator.
+ *       The healthbox sprites are given a special callback function that handles the rendering of the healthbox, healthbar and status indicators.
+ *       The healthbar sprite is given a special callback function that handles the rendering of the healthbar.
+ *       The indicator sprites are given a special callback function that handles the rendering of the status indicators.
+ */
 u8 CreateBattlerHealthboxSprites(u8 battlerId)
 {
     s16 data6 = 0;
@@ -3038,6 +3051,18 @@ static void SpriteCB_LastUsedBall(struct Sprite *sprite)
     }
 }
 
+/**
+ * @brief Hides or restores the last used ball menu.
+ *
+ * @details This function can hide or restore the last used ball menu,
+ * depending on the value of the caseId parameter. If caseId is 0, the
+ * function hides the menu. If caseId is 1, the function restores the
+ * menu. If B_LAST_USED_BALL is FALSE or if the sprite IDs for the last
+ * used ball menu are MAX_SPRITES, this function does nothing.
+ *
+ * @param caseId The value to determine whether to hide or restore the
+ * last used ball menu. 0 hides the menu, 1 restores the menu.
+ */
 static void TryHideOrRestoreLastUsedBall(u8 caseId)
 {
     if (B_LAST_USED_BALL == FALSE)
@@ -3066,6 +3091,13 @@ static void TryHideOrRestoreLastUsedBall(u8 caseId)
         ArrowsChangeColorLastBallCycle(0); //Default the arrows to be invisible
 }
 
+/**
+ * @brief Tries to hide the last used ball menu.
+ *
+ * @details This function tries to hide the last used ball menu. If
+ * B_LAST_USED_BALL is TRUE, it calls TryHideOrRestoreLastUsedBall with
+ * caseId 0 to hide the menu.
+ */
 void TryHideLastUsedBall(void)
 {
     if (B_LAST_USED_BALL == TRUE)
@@ -3158,11 +3190,14 @@ static void Task_BounceBall(u8 taskId)
 
 void SwapBallToDisplay(bool32 sameBall)
 {
-    u8 taskId;
-    taskId = CreateTask(Task_BounceBall, 10);
+    u8 taskId = CreateTask(Task_BounceBall, 10);
     gTasks[taskId].sSameBall = sameBall;
 }
 
+/**
+ * @brief Changes the color of the arrows for the last used ball menu if the ball can be cycled.
+ * @param showArrows If FALSE, the arrows are made invisible. If TRUE, the arrows are made gray.
+ */
 void ArrowsChangeColorLastBallCycle(bool32 showArrows)
 {
 #if B_LAST_USED_BALL == TRUE && B_LAST_USED_BALL_CYCLE == TRUE
@@ -3200,6 +3235,8 @@ void ArrowsChangeColorLastBallCycle(bool32 showArrows)
 #endif
 }
 
+// Loads the graphics for category icons by loading a compressed sprite sheet
+// and its corresponding sprite palette into memory.
 void CategoryIcons_LoadSpritesGfx(void)
 {
     LoadCompressedSpriteSheet(&gSpriteSheet_CategoryIcons);
