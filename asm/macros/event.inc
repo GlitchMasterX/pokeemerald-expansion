@@ -1886,11 +1886,21 @@
 	_dynmultichoice \left, \top, \ignoreBPress, \maxBeforeScroll, \shouldSort, \initialSelected, \callbacks, NULL
 	.endm
 
-	@ sets an NPC up to follow the player
-    .macro setfollower localId:req, flags:req, script
+	@ Sets an NPC up to follow the player.
+	@ If you want to specify a battle partner without specifying a custom script, you can set the script parameter to 0.
+    .macro setfollower localId:req, flags:req, script, battlePartner
+	checkfollower
+	goto_if_eq VAR_RESULT, TRUE, 1f
 	ballfollowingmon
 	.ifnb \script
-		loadword 0, \script
+		.if \script == 0
+			.set setScript, FALSE
+		.else
+			loadword 0, \script
+			.set setScript, TRUE
+		.endif
+	.else
+		.set setScript, FALSE
 	.endif
     .byte 0xe5
     .byte \localId
@@ -1899,26 +1909,38 @@
     .endm
     
     @ remove the following NPC (assumes there will only ever be one)
+	.byte setScript
+	.ifb \battlePartner
+		.set battlePartner, 0
+		.2byte battlePartner
+	.else
+		.2byte \battlePartner
+	.endif
+	updatefollowingmon
+	1:
+    .endm
+    
+    @ Remove the following NPC (assumes there will only ever be one).
     .macro destroyfollower
     .byte 0xe6
     .endm
     
-    @ makes the player and follower face one another
+    @ Makes the player and follower face one another.
     .macro facefollower
     .byte 0xe7
     .endm
     
-    @ checks if you have a follower. returns the result to VAR_RESULT
+    @ Checks if you have a follower. returns the result to VAR_RESULT.
     .macro checkfollower
     .byte 0xe8
     .endm
 
-	@ Updates Pokemon follower
+	@ Updates Pokemon follower.
 	.macro updatefollowingmon
     .byte 0xe9
     .endm
 
-	@ Returns Pokemon follower to ball
+	@ Returns Pokemon follower to ball.
 	.macro ballfollowingmon
 	.byte 0xea
 	delay 16
