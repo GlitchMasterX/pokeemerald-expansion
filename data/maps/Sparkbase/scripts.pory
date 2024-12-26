@@ -185,8 +185,7 @@ script Surgebattle {
     applymovement(13,f0)
     playse(SE_M_FLAME_WHEEL)
     waitse
-    setfollower(10,CAN_LEAVE_ROUTE)
-    removeobject(6)
+    setfollower(10,CAN_LEAVE_ROUTE,mirafollowerscript)    removeobject(6)
     applymovement(14,visible)
     waitmovement(0)
     applymovement(11,f1)

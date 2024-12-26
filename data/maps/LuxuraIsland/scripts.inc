@@ -763,7 +763,7 @@ stroll::
 # 303 "data/maps/LuxuraIsland/scripts.pory"
 	hidenamebox
 # 304 "data/maps/LuxuraIsland/scripts.pory"
-	setfollower 5, CAN_LEAVE_ROUTE
+	setfollower 5, CAN_LEAVE_ROUTE, mirafollowerscript
 # 305 "data/maps/LuxuraIsland/scripts.pory"
 	releaseall
 # 306 "data/maps/LuxuraIsland/scripts.pory"

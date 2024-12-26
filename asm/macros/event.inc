@@ -1905,10 +1905,6 @@
     .byte 0xe5
     .byte \localId
     .2byte \flags
-	updatefollowingmon
-    .endm
-    
-    @ remove the following NPC (assumes there will only ever be one)
 	.byte setScript
 	.ifb \battlePartner
 		.set battlePartner, 0
@@ -1945,6 +1941,7 @@
 	.byte 0xea
 	delay 16
 	.endm
+
 
 	@ Starts displaying a name box containing the specified text. If text is a pointer, then the string at 
 	@ that offset will be loaded and used. If text is script bank 0, then the value of script bank 0 will be treated as 

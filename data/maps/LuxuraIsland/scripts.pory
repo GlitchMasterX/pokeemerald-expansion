@@ -301,7 +301,7 @@ script stroll {
     namebox(Xylar)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Okay, Let's go."))
     hidenamebox
-    setfollower(5,CAN_LEAVE_ROUTE)
+    setfollower(5,CAN_LEAVE_ROUTE,mirafollowerscript)
     releaseall
     setvar(LUXURA_TRAGEDY,10)
     

@@ -259,189 +259,189 @@ Surgebattle::
 # 187 "data/maps/Sparkbase/scripts.pory"
 	waitse
 # 188 "data/maps/Sparkbase/scripts.pory"
-	setfollower 10, CAN_LEAVE_ROUTE
-# 189 "data/maps/Sparkbase/scripts.pory"
+	setfollower 10, CAN_LEAVE_ROUTE, mirafollowerscript
+# 188 "data/maps/Sparkbase/scripts.pory"
 	removeobject 6
-# 190 "data/maps/Sparkbase/scripts.pory"
+# 189 "data/maps/Sparkbase/scripts.pory"
 	applymovement 14, visible
+# 190 "data/maps/Sparkbase/scripts.pory"
+	waitmovement 0
 # 191 "data/maps/Sparkbase/scripts.pory"
-	waitmovement 0
-# 192 "data/maps/Sparkbase/scripts.pory"
 	applymovement 11, f1
-# 193 "data/maps/Sparkbase/scripts.pory"
+# 192 "data/maps/Sparkbase/scripts.pory"
 	applymovement 12, f2
-# 194 "data/maps/Sparkbase/scripts.pory"
+# 193 "data/maps/Sparkbase/scripts.pory"
 	applymovement 13, f3
+# 194 "data/maps/Sparkbase/scripts.pory"
+	waitmovement 0
 # 195 "data/maps/Sparkbase/scripts.pory"
-	waitmovement 0
-# 196 "data/maps/Sparkbase/scripts.pory"
 	removeobject 11
-# 197 "data/maps/Sparkbase/scripts.pory"
+# 196 "data/maps/Sparkbase/scripts.pory"
 	removeobject 12
-# 198 "data/maps/Sparkbase/scripts.pory"
+# 197 "data/maps/Sparkbase/scripts.pory"
 	removeobject 13
-# 199 "data/maps/Sparkbase/scripts.pory"
+# 198 "data/maps/Sparkbase/scripts.pory"
 	setflag FLAG_UNUSED_0x4B8
+# 199 "data/maps/Sparkbase/scripts.pory"
+	namebox Xylar
 # 200 "data/maps/Sparkbase/scripts.pory"
-	namebox Xylar
-# 201 "data/maps/Sparkbase/scripts.pory"
 	msgbox Surgebattle_Text_20, MSGBOX_AUTOCLOSE
+# 201 "data/maps/Sparkbase/scripts.pory"
+	hidenamebox
 # 202 "data/maps/Sparkbase/scripts.pory"
-	hidenamebox
-# 203 "data/maps/Sparkbase/scripts.pory"
 	waitmessage
-# 204 "data/maps/Sparkbase/scripts.pory"
+# 203 "data/maps/Sparkbase/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, startcrim
-# 205 "data/maps/Sparkbase/scripts.pory"
+# 204 "data/maps/Sparkbase/scripts.pory"
 	waitmovement 0
-# 206 "data/maps/Sparkbase/scripts.pory"
+# 205 "data/maps/Sparkbase/scripts.pory"
 	namebox Xylar
-# 207 "data/maps/Sparkbase/scripts.pory"
+# 206 "data/maps/Sparkbase/scripts.pory"
 	msgbox Surgebattle_Text_21, MSGBOX_AUTOCLOSE
-# 208 "data/maps/Sparkbase/scripts.pory"
+# 207 "data/maps/Sparkbase/scripts.pory"
 	hidenamebox
-# 209 "data/maps/Sparkbase/scripts.pory"
+# 208 "data/maps/Sparkbase/scripts.pory"
 	clearflag FLAG_AFTERTRAGEDY_MUSIC
-# 210 "data/maps/Sparkbase/scripts.pory"
+# 209 "data/maps/Sparkbase/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 211 "data/maps/Sparkbase/scripts.pory"
+# 210 "data/maps/Sparkbase/scripts.pory"
 	playbgm MUS_RG_TEACHY_TV_MENU, TRUE
-# 212 "data/maps/Sparkbase/scripts.pory"
+# 211 "data/maps/Sparkbase/scripts.pory"
 	msgbox Surgebattle_Text_22, MSGBOX_AUTOCLOSE
-# 213 "data/maps/Sparkbase/scripts.pory"
+# 212 "data/maps/Sparkbase/scripts.pory"
 	msgbox Surgebattle_Text_23
-# 214 "data/maps/Sparkbase/scripts.pory"
+# 213 "data/maps/Sparkbase/scripts.pory"
 	warp MAP_NEWHOUSE, 2, 24
-# 215 "data/maps/Sparkbase/scripts.pory"
+# 214 "data/maps/Sparkbase/scripts.pory"
 	destroyfollower
-# 216 "data/maps/Sparkbase/scripts.pory"
+# 215 "data/maps/Sparkbase/scripts.pory"
 	fadescreen FADE_FROM_BLACK
-# 217 "data/maps/Sparkbase/scripts.pory"
+# 216 "data/maps/Sparkbase/scripts.pory"
 	setvar LUXURA_TRAGEDY, 21
-# 218 "data/maps/Sparkbase/scripts.pory"
+# 217 "data/maps/Sparkbase/scripts.pory"
 	release
 	return
 
 
-# 224 "data/maps/Sparkbase/scripts.pory"
+# 223 "data/maps/Sparkbase/scripts.pory"
 startcrim:
-# 225 "data/maps/Sparkbase/scripts.pory"
+# 224 "data/maps/Sparkbase/scripts.pory"
 	walk_left
-# 226 "data/maps/Sparkbase/scripts.pory"
+# 225 "data/maps/Sparkbase/scripts.pory"
+	walk_up
+# 225 "data/maps/Sparkbase/scripts.pory"
+	walk_up
+# 225 "data/maps/Sparkbase/scripts.pory"
+	walk_up
+# 225 "data/maps/Sparkbase/scripts.pory"
+	walk_up
+# 225 "data/maps/Sparkbase/scripts.pory"
+	walk_up
+# 225 "data/maps/Sparkbase/scripts.pory"
 	walk_up
 # 226 "data/maps/Sparkbase/scripts.pory"
-	walk_up
-# 226 "data/maps/Sparkbase/scripts.pory"
-	walk_up
-# 226 "data/maps/Sparkbase/scripts.pory"
-	walk_up
-# 226 "data/maps/Sparkbase/scripts.pory"
-	walk_up
-# 226 "data/maps/Sparkbase/scripts.pory"
-	walk_up
-# 227 "data/maps/Sparkbase/scripts.pory"
 	face_right
 	step_end
 
-# 230 "data/maps/Sparkbase/scripts.pory"
+# 229 "data/maps/Sparkbase/scripts.pory"
 surd:
-# 231 "data/maps/Sparkbase/scripts.pory"
+# 230 "data/maps/Sparkbase/scripts.pory"
 	emote_exclamation_mark
-# 232 "data/maps/Sparkbase/scripts.pory"
+# 231 "data/maps/Sparkbase/scripts.pory"
 	face_down
 	step_end
 
-# 234 "data/maps/Sparkbase/scripts.pory"
+# 233 "data/maps/Sparkbase/scripts.pory"
 surde:
-# 235 "data/maps/Sparkbase/scripts.pory"
+# 234 "data/maps/Sparkbase/scripts.pory"
 	face_up
-# 236 "data/maps/Sparkbase/scripts.pory"
+# 235 "data/maps/Sparkbase/scripts.pory"
 	delay_16
-# 237 "data/maps/Sparkbase/scripts.pory"
+# 236 "data/maps/Sparkbase/scripts.pory"
 	face_down
 	step_end
 
 surgeb::
-# 240 "data/maps/Sparkbase/scripts.pory"
+# 239 "data/maps/Sparkbase/scripts.pory"
 	applymovement 11, invisible
-# 241 "data/maps/Sparkbase/scripts.pory"
+# 240 "data/maps/Sparkbase/scripts.pory"
 	applymovement 12, invisible
-# 242 "data/maps/Sparkbase/scripts.pory"
+# 241 "data/maps/Sparkbase/scripts.pory"
 	applymovement 13, invisible
-# 243 "data/maps/Sparkbase/scripts.pory"
+# 242 "data/maps/Sparkbase/scripts.pory"
 	applymovement 14, invisible
-# 244 "data/maps/Sparkbase/scripts.pory"
+# 243 "data/maps/Sparkbase/scripts.pory"
 	waitmovement 0
-# 245 "data/maps/Sparkbase/scripts.pory"
+# 244 "data/maps/Sparkbase/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, sbat
-# 246 "data/maps/Sparkbase/scripts.pory"
+# 245 "data/maps/Sparkbase/scripts.pory"
 	msgbox surgeb_Text_0, MSGBOX_AUTOCLOSE
-# 247 "data/maps/Sparkbase/scripts.pory"
+# 246 "data/maps/Sparkbase/scripts.pory"
 	goto Surgebattle
 	return
 
 
-# 249 "data/maps/Sparkbase/scripts.pory"
+# 248 "data/maps/Sparkbase/scripts.pory"
 sbat:
-# 250 "data/maps/Sparkbase/scripts.pory"
+# 249 "data/maps/Sparkbase/scripts.pory"
 	walk_up
 	step_end
 
 surgebw::
-# 253 "data/maps/Sparkbase/scripts.pory"
+# 252 "data/maps/Sparkbase/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, sbatw
-# 254 "data/maps/Sparkbase/scripts.pory"
+# 253 "data/maps/Sparkbase/scripts.pory"
 	msgbox surgeb_Text_0, MSGBOX_AUTOCLOSE
-# 255 "data/maps/Sparkbase/scripts.pory"
+# 254 "data/maps/Sparkbase/scripts.pory"
 	goto Surgebattle
 	return
 
 
-# 257 "data/maps/Sparkbase/scripts.pory"
+# 256 "data/maps/Sparkbase/scripts.pory"
 sbatw:
+# 257 "data/maps/Sparkbase/scripts.pory"
+	walk_left
 # 258 "data/maps/Sparkbase/scripts.pory"
-	walk_left
-# 259 "data/maps/Sparkbase/scripts.pory"
 	face_up
 	step_end
 
-# 262 "data/maps/Sparkbase/scripts.pory"
+# 261 "data/maps/Sparkbase/scripts.pory"
 f0:
-# 263 "data/maps/Sparkbase/scripts.pory"
+# 262 "data/maps/Sparkbase/scripts.pory"
 	walk_up
 	step_end
 
-# 265 "data/maps/Sparkbase/scripts.pory"
+# 264 "data/maps/Sparkbase/scripts.pory"
 fireball:
-# 266 "data/maps/Sparkbase/scripts.pory"
+# 265 "data/maps/Sparkbase/scripts.pory"
 	walk_right
-# 267 "data/maps/Sparkbase/scripts.pory"
+# 266 "data/maps/Sparkbase/scripts.pory"
+	walk_up
+# 266 "data/maps/Sparkbase/scripts.pory"
+	walk_up
+# 266 "data/maps/Sparkbase/scripts.pory"
 	walk_up
 # 267 "data/maps/Sparkbase/scripts.pory"
-	walk_up
-# 267 "data/maps/Sparkbase/scripts.pory"
-	walk_up
-# 268 "data/maps/Sparkbase/scripts.pory"
 	walk_left
-# 269 "data/maps/Sparkbase/scripts.pory"
+# 268 "data/maps/Sparkbase/scripts.pory"
 	face_up
 	step_end
 
-# 271 "data/maps/Sparkbase/scripts.pory"
+# 270 "data/maps/Sparkbase/scripts.pory"
 f1:
-# 272 "data/maps/Sparkbase/scripts.pory"
+# 271 "data/maps/Sparkbase/scripts.pory"
 	walk_left
 	step_end
 
-# 275 "data/maps/Sparkbase/scripts.pory"
+# 274 "data/maps/Sparkbase/scripts.pory"
 f2:
-# 276 "data/maps/Sparkbase/scripts.pory"
+# 275 "data/maps/Sparkbase/scripts.pory"
 	walk_right
 	step_end
 
-# 279 "data/maps/Sparkbase/scripts.pory"
+# 278 "data/maps/Sparkbase/scripts.pory"
 f3:
-# 280 "data/maps/Sparkbase/scripts.pory"
+# 279 "data/maps/Sparkbase/scripts.pory"
 	walk_up
 	step_end
 
@@ -601,7 +601,7 @@ Surgebattle_Text_19:
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Use FireBlast!$"
 
 Surgebattle_Text_20:
-# 201 "data/maps/Sparkbase/scripts.pory"
+# 200 "data/maps/Sparkbase/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Surge, you were just the start. This\n"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Crimson Requiem {COLOR BLUE}{SHADOW LIGHT_GRAY}I've begun will be a\l"
 	.string "symphony of retribution. Your death\l"
@@ -611,7 +611,7 @@ Surgebattle_Text_20:
 	.string "is only the beginning.$"
 
 Surgebattle_Text_21:
-# 207 "data/maps/Sparkbase/scripts.pory"
+# 206 "data/maps/Sparkbase/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}I'm sorry, Mother... I failed you. I failed\n"
 	.string "Father. But this… this isn't the end. I\l"
 	.string "swear, they'll pay with everything they\l"
@@ -630,7 +630,7 @@ Surgebattle_Text_21:
 	.string "Let's go Mom.$"
 
 Surgebattle_Text_22:
-# 212 "data/maps/Sparkbase/scripts.pory"
+# 211 "data/maps/Sparkbase/scripts.pory"
 	.string "Hey there, Trainer! This is where Beta 1\n"
 	.string "of our journey comes to an end. I hope\l"
 	.string "you've enjoyed the adventure so far.\l"
@@ -639,7 +639,7 @@ Surgebattle_Text_22:
 	.string "everything to us.$"
 
 Surgebattle_Text_23:
-# 213 "data/maps/Sparkbase/scripts.pory"
+# 212 "data/maps/Sparkbase/scripts.pory"
 	.string "If you liked what you've seen, please\n"
 	.string "consider sharing your thoughts and\l"
 	.string "spreading the word. Your feedback will\l"
@@ -648,7 +648,7 @@ Surgebattle_Text_23:
 	.string "playing!$"
 
 surgeb_Text_0:
-# 246 "data/maps/Sparkbase/scripts.pory"
+# 245 "data/maps/Sparkbase/scripts.pory"
 	.string "...$"
 
 Grunt2_Intro::
@@ -725,6 +725,6 @@ PostBattle_Grunt6::
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Our general will defeat you.$"
 
 surgelose::
-# 220 "data/maps/Sparkbase/scripts.pory"
+# 219 "data/maps/Sparkbase/scripts.pory"
 	.string "I was stronger than you, How could I\n"
 	.string "lose?$"
