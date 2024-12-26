@@ -160,3 +160,4 @@
 	.include "src/pokedex_plus_hgss.o"
 	.include "src/outfit_menu.o"
 	.include "src/sound_check_menu.o"
+	.include "src/map_preview_screen.o"

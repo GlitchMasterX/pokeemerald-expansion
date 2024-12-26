@@ -369,6 +369,7 @@ SECTIONS {
         src/dns.o(.text);
         src/outfit_menu.o(.text);
         src/sound_check_menu.o(.text);
+        src/map_preview_screen.o(.text);
     } > ROM =0
 
     script_data :
@@ -746,6 +747,7 @@ SECTIONS {
         src/new_shop.o(.rodata);
         src/outfit_menu.o(.rodata);
         src/sound_check_menu.o(.rodata);
+        src/map_preview_screen.o(.rodata);
     } > ROM =0
 
     song_data :
