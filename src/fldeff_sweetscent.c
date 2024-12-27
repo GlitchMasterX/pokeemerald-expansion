@@ -14,6 +14,7 @@
 #include "sound.h"
 #include "sprite.h"
 #include "task.h"
+#include "overworld.h"
 #include "wild_encounter.h"
 #include "constants/field_effects.h"
 #include "constants/rgb.h"
