@@ -12,16 +12,12 @@ This is _not_ a faithful port of Gen 6's Outfits System. So, if you want it to b
 
 ## Using pokeemerald-expansion
 
-## Using pokeemerald-expansion
-
 If you use pokeemerald-expansion in your hack, please add RHH (Rom Hacking Hideout) to your credits list. Optionally, you can list the version used, so it can help players know what features to expect.
 You can phrase it as the following:
 ```
 Based off RHH's pokeemerald-expansion 1.10.0 https://github.com/rh-hideout/pokeemerald-expansion/
 ```
 Note that this feature branch is still missing some of the features that's necessary, such as the ability to purchase outfits. So, stay tune for more until then!
-
-Please follow the instructions in `INSTALL.md` to get pokeemerald-expansion set up on your machine.
 
 Please follow the instructions in `INSTALL.md` to get pokeemerald-expansion set up on your machine.
 

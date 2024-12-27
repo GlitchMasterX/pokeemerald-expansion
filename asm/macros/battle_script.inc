@@ -1425,6 +1425,11 @@
 	callnative BS_TryRevertWeatherForm
 	.endm
 
+	.macro applysaltcure battler:req
+	callnative BS_ApplySaltCure
+	.byte \battler
+	.endm
+
 	.macro trysetoctolock battler:req, failInstr:req
 	callnative BS_TrySetOctolock
 	.byte \battler
@@ -1660,6 +1665,11 @@
 
 	.macro damagetoquartertargethp
 	callnative BS_DamageToQuarterTargetHP
+	.endm
+
+	.macro jumpifsleepclause jumpInstr:req
+	callnative BS_JumpIfSleepClause
+	.4byte \jumpInstr
 	.endm
 
 	.macro ficklebeamdamagecalculation
@@ -2208,6 +2218,11 @@
 	.macro jumpifpranksterblocked battler:req, jumpInstr:req
 	various \battler, VARIOUS_JUMP_IF_PRANKSTER_BLOCKED
 	.4byte \jumpInstr
+	.endm
+
+	.macro eeriespellppreduce failInstr:req
+	various BS_TARGET, VARIOUS_EERIE_SPELL_PP_REDUCE
+	.4byte \failInstr
 	.endm
 
 	.macro jumpifteamhealthy battler:req, jumpInstr:req

@@ -145,9 +145,7 @@ static void Sio32IDIntr(void)
                 }
             }
             else
-            {
                 gRfuSIO32Id.lastId = regSIODATA32;
-            }
         }
         else
         {

@@ -15,7 +15,6 @@
 #include "secret_base.h"
 #include "event_data.h"
 #include "event_scripts.h"
-#include "overworld.h"
 #include "event_object_movement.h"
 #include "metatile_behavior.h"
 #include "string_util.h"

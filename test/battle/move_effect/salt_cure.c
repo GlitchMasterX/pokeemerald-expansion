@@ -3,7 +3,7 @@
 
 ASSUMPTIONS
 {
-    ASSUME(MoveHasAdditionalEffect(MOVE_SALT_CURE, MOVE_EFFECT_SALT_CURE) == TRUE);
+    ASSUME(gMovesInfo[MOVE_SALT_CURE].effect == EFFECT_SALT_CURE);
 }
 
 SINGLE_BATTLE_TEST("Salt Cure inflicts 1/8 of the target's maximum HP as damage per turn")

@@ -7,7 +7,6 @@
 #include "script.h"
 #include "string_util.h"
 #include "task.h"
-#include "overworld.h"
 #include "constants/event_objects.h"
 #include "constants/field_effects.h"
 

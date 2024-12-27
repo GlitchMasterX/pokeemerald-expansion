@@ -156,10 +156,7 @@ bool32 Overworld_SendKeysToLinkIsRunning(void);
 bool32 IsSendingKeysOverCable(void);
 void ClearLinkPlayerObjectEvents(void);
 void CB2_ReturnToFullScreenStartMenu(void);
-u8 GetLastUsedWarpMapSectionId(void)
-{
-    return Overworld_GetMapHeaderByGroupAndId(gLastUsedWarp.mapGroup, gLastUsedWarp.mapNum)->regionMapSectionId;
-}
+
 // Item Description Headers
 enum ItemObtainFlags
 {
@@ -167,5 +164,6 @@ enum ItemObtainFlags
     FLAG_SET_ITEM_OBTAINED,
 };
 bool8 GetSetItemObtained(u16 item, enum ItemObtainFlags caseId);
+u8 GetLastUsedWarpMapSectionId(void);
 
 #endif // GUARD_OVERWORLD_H

@@ -1763,7 +1763,30 @@ static u8 TrySetupObjectEventSprite(const struct ObjectEventTemplate *objectEven
     return objectEventId;
 }
 
- u8 TrySpawnObjectEventTemplate(const struct ObjectEventTemplate *objectEventTemplate, u8 mapNum, u8 mapGroup, s16 cameraX, s16 cameraY)
+// Pack pokemon form info into a graphicsId, from a template's script
+static u16 PackGraphicsId(const struct ObjectEventTemplate *template)
+{
+    u16 graphicsId = template->graphicsId;
+    u32 form = 0;
+    // set form based on template's script,
+    // if first command is bufferspeciesname
+    if (graphicsId >= OBJ_EVENT_GFX_MON_BASE)
+    {
+        if (template->script && template->script[0] == 0x7d)
+        {
+            form = T1_READ_16(&template->script[2]);
+            form = (form >> 10) & 0x1F;
+        }
+        else if (template->trainerRange_berryTreeId)
+        {
+            form = template->trainerRange_berryTreeId & 0x1F;
+        }
+        graphicsId |= form << OBJ_EVENT_GFX_SPECIES_BITS;
+    }
+    return graphicsId;
+}
+
+u8 TrySpawnObjectEventTemplate(const struct ObjectEventTemplate *objectEventTemplate, u8 mapNum, u8 mapGroup, s16 cameraX, s16 cameraY)
 {
     u8 objectEventId;
     u16 graphicsId = objectEventTemplate->graphicsId;

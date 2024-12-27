@@ -547,7 +547,7 @@ SECTIONS {
         src/start_menu.o(.rodata);
         src/tileset_anims.o(.rodata);
         src/palette.o(.rodata);
-        src/sound.o(.rodata);      
+        src/sound.o(.rodata);
         src/field_name_box.o(.rodata);
         src/ui_startmenu_full.o(.rodata);
         src/ui_main_menu.o(.rodata);

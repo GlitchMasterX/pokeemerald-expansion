@@ -1035,8 +1035,8 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 3,
         .weight = 25,
         .description = COMPOUND_STRING(
-            "The pads of its paws are electricity-\n"
-            "discharging organs. Pawmi fires\n"
+            "The pads of its paws are\n"
+            "electricity-discharging organs. Pawmi fires\n"
             "electricity from its forepaws while\n"
             "standing unsteadily on its hind legs."),
         .pokemonScale = 356,
@@ -2619,7 +2619,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Maschiff,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 11,
+        .frontPicYOffset = 8,
         .frontAnimFrames = sAnims_Maschiff,
         //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_Maschiff,
@@ -4002,8 +4002,8 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 13,
         .weight = 602,
         .description = COMPOUND_STRING(
-            "This Pokémon changes its appearance\n"
-            "if it hears its allies calling for\n"
+            "This Pokémon changes its\n"
+            "appearance if it hears its allies calling for\n"
             "help. Palafin will never show\n"
             "anybody its moment of transformation."),
         .pokemonScale = 356,
@@ -4066,8 +4066,8 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .weight = 974,
         .description = COMPOUND_STRING(
             "This Pokémon's ancient genes have\n"
-            "awakened. It is now so extraordinarily\n"
-            "strong that it can easily lift a\n"
+            "awakened. It is now so\n"
+            "extraordinarily strong that it can easily lift a\n"
             "cruise ship with one fin."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
@@ -7086,13 +7086,13 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Sinistcha,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 3,
+        .frontPicYOffset = 10,
         .frontAnimFrames = sAnims_Sinistcha,
         //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .enemyMonElevation = 10,
         .backPic = gMonBackPic_Sinistcha,
         .backPicSize = MON_COORDS_SIZE(64, 64),
-        .backPicYOffset = 4,
+        .backPicYOffset = 13,
         //.backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_Sinistcha,
         .shinyPalette = gMonShinyPalette_Sinistcha,
@@ -7147,13 +7147,13 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Sinistcha,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 3,
+        .frontPicYOffset = 10,
         .frontAnimFrames = sAnims_Sinistcha,
         //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .enemyMonElevation = 10,
         .backPic = gMonBackPic_Sinistcha,
         .backPicSize = MON_COORDS_SIZE(64, 64),
-        .backPicYOffset = 4,
+        .backPicYOffset = 13,
         //.backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_Sinistcha,
         .shinyPalette = gMonShinyPalette_Sinistcha,
@@ -7341,12 +7341,12 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Fezandipiti,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 1,
+        .frontPicYOffset = 2,
         .frontAnimFrames = sAnims_Fezandipiti,
         //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_Fezandipiti,
         .backPicSize = MON_COORDS_SIZE(64, 64),
-        .backPicYOffset = 0,
+        .backPicYOffset = 4,
         //.backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_Fezandipiti,
         .shinyPalette = gMonShinyPalette_Fezandipiti,
@@ -7370,78 +7370,78 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
 #endif //P_FAMILY_FEZANDIPITI
 
 #if P_FAMILY_OGERPON
-#define OGERPON_SPECIES_INFO(Form1, Form2, type, ability, color, frontYOffset, backYOffset, iconpalette, isTeraform)   \
-    {                                                                                                                  \
-        .baseHP        = 80,                                                                                           \
-        .baseAttack    = 120,                                                                                          \
-        .baseDefense   = 84,                                                                                           \
-        .baseSpeed     = 110,                                                                                          \
-        .baseSpAttack  = 60,                                                                                           \
-        .baseSpDefense = 96,                                                                                           \
-        .types = MON_TYPES(TYPE_GRASS, type),                                                                          \
-        .forceTeraType = type,                                                                                         \
-        .catchRate = 5,                                                                                                \
-        .expYield = 275,                                                                                               \
-        .evYield_Attack = 3,                                                                                           \
-        .genderRatio = MON_FEMALE,                                                                                     \
-        .eggCycles = 10,                                                                                               \
-        .friendship = STANDARD_FRIENDSHIP,                                                                             \
-        .growthRate = GROWTH_SLOW,                                                                                     \
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),                                                     \
-        .abilities = { ability, ABILITY_NONE },                                                                        \
-        .bodyColor = color,                                                                                            \
-        .speciesName = _("Ogerpon"),                                                                                   \
-        .cryId = CRY_OGERPON,                                                                                          \
-        .natDexNum = NATIONAL_DEX_OGERPON,                                                                             \
-        .categoryName = _("Mask"),                                                                                     \
-        .height = 12,                                                                                                  \
-        .weight = 398,                                                                                                 \
-        .description = gOgerpon##Form1##MaskPokedexText,                                                               \
-        .pokemonScale = 356,                                                                                           \
-        .pokemonOffset = 17,                                                                                           \
-        .trainerScale = 256,                                                                                           \
-        .trainerOffset = 0,                                                                                            \
-        .frontPic = gMonFrontPic_Ogerpon##Form2,                                                                       \
-        .frontPicSize = MON_COORDS_SIZE(64, 64),                                                                       \
-        .frontPicYOffset = frontYOffset,                                                                               \
-        .frontAnimFrames = sAnims_Ogerpon,                                                                             \
-        /*.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,*/                                                                   \
-        .backPic = gMonBackPic_Ogerpon##Form2,                                                                         \
-        .backPicSize = MON_COORDS_SIZE(64, 64),                                                                        \
-        .backPicYOffset = backYOffset,                                                                                 \
-        /*.backAnimId = BACK_ANIM_NONE,*/                                                                              \
-        .palette = gMonPalette_Ogerpon##Form2,                                                                         \
-        .shinyPalette = gMonShinyPalette_Ogerpon##Form2,                                                               \
-        .iconSprite = gMonIcon_Ogerpon##Form1,                                                                         \
-        .iconPalIndex = iconpalette,                                                                                   \
-        SHADOW(7, 13, SHADOW_SIZE_L)                                                                                   \
-        FOOTPRINT(Ogerpon)                                                                                             \
-        OVERWORLD(                                                                                                     \
-            sPicTable_Ogerpon##Form2,                                                                                  \
-            SIZE_32x32,                                                                                                \
-            SHADOW_SIZE_M,                                                                                             \
-            TRACKS_FOOT,                                                                                               \
-            gOverworldPalette_Ogerpon##Form2,                                                                          \
-            gShinyOverworldPalette_Ogerpon##Form2                                                                      \
-        )                                                                                                              \
-        .levelUpLearnset = sOgerponLevelUpLearnset,                                                                    \
-        .teachableLearnset = sOgerponTeachableLearnset,                                                                \
-        .formSpeciesIdTable = sOgerponFormSpeciesIdTable,                                                              \
-        .formChangeTable = sOgerponFormChangeTable,                                                                    \
-        .isLegendary = TRUE,                                                                                           \
-        .isTeraForm = isTeraform,                                                                                      \
-        .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,                                                                  \
+#define OGERPON_SPECIES_INFO(Form1, Form2, type, ability, color, iconpalette, isTeraform)   \
+    {                                                                                       \
+        .baseHP        = 80,                                                                \
+        .baseAttack    = 120,                                                               \
+        .baseDefense   = 84,                                                                \
+        .baseSpeed     = 110,                                                               \
+        .baseSpAttack  = 60,                                                                \
+        .baseSpDefense = 96,                                                                \
+        .types = MON_TYPES(TYPE_GRASS, type),                                               \
+        .forceTeraType = type,                                                              \
+        .catchRate = 5,                                                                     \
+        .expYield = 275,                                                                    \
+        .evYield_Attack = 3,                                                                \
+        .genderRatio = MON_FEMALE,                                                          \
+        .eggCycles = 10,                                                                    \
+        .friendship = STANDARD_FRIENDSHIP,                                                  \
+        .growthRate = GROWTH_SLOW,                                                          \
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),                          \
+        .abilities = { ability, ABILITY_NONE },                                             \
+        .bodyColor = color,                                                                 \
+        .speciesName = _("Ogerpon"),                                                        \
+        .cryId = CRY_OGERPON,                                                               \
+        .natDexNum = NATIONAL_DEX_OGERPON,                                                  \
+        .categoryName = _("Mask"),                                                          \
+        .height = 12,                                                                       \
+        .weight = 398,                                                                      \
+        .description = gOgerpon##Form1##MaskPokedexText,                                    \
+        .pokemonScale = 356,                                                                \
+        .pokemonOffset = 17,                                                                \
+        .trainerScale = 256,                                                                \
+        .trainerOffset = 0,                                                                 \
+        .frontPic = gMonFrontPic_Ogerpon##Form2,                                            \
+        .frontPicSize = MON_COORDS_SIZE(64, 64),                                            \
+        .frontPicYOffset = 0,                                                               \
+        .frontAnimFrames = sAnims_Ogerpon,                                                  \
+        /*.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,*/                                        \
+        .backPic = gMonBackPic_Ogerpon##Form2,                                              \
+        .backPicSize = MON_COORDS_SIZE(64, 64),                                             \
+        .backPicYOffset = 0,                                                                \
+        /*.backAnimId = BACK_ANIM_NONE,*/                                                   \
+        .palette = gMonPalette_Ogerpon##Form2,                                              \
+        .shinyPalette = gMonShinyPalette_Ogerpon##Form2,                                    \
+        .iconSprite = gMonIcon_Ogerpon##Form1,                                              \
+        .iconPalIndex = iconpalette,                                                        \
+        SHADOW(7, 13, SHADOW_SIZE_L)                                                        \
+        FOOTPRINT(Ogerpon)                                                                  \
+        OVERWORLD(                                                                          \
+            sPicTable_Ogerpon##Form2,                                                       \
+            SIZE_32x32,                                                                     \
+            SHADOW_SIZE_M,                                                                  \
+            TRACKS_FOOT,                                                                    \
+            gOverworldPalette_Ogerpon##Form2,                                               \
+            gShinyOverworldPalette_Ogerpon##Form2                                           \
+        )                                                                                   \
+        .levelUpLearnset = sOgerponLevelUpLearnset,                                         \
+        .teachableLearnset = sOgerponTeachableLearnset,                                     \
+        .formSpeciesIdTable = sOgerponFormSpeciesIdTable,                                   \
+        .formChangeTable = sOgerponFormChangeTable,                                         \
+        .isLegendary = TRUE,                                                                \
+        .isTeraForm = isTeraform,                                                           \
+        .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,                                       \
     }
 
-    [SPECIES_OGERPON_TEAL]             = OGERPON_SPECIES_INFO(Teal,        Teal,            TYPE_GRASS, ABILITY_DEFIANT,                        BODY_COLOR_GREEN, 1, 7, 1, FALSE),
-    [SPECIES_OGERPON_WELLSPRING]       = OGERPON_SPECIES_INFO(Wellspring,  Wellspring,      TYPE_WATER, ABILITY_WATER_ABSORB,                   BODY_COLOR_BLUE,  1, 7, 0, FALSE),
-    [SPECIES_OGERPON_HEARTHFLAME]      = OGERPON_SPECIES_INFO(Hearthflame, Hearthflame,     TYPE_FIRE,  ABILITY_MOLD_BREAKER,                   BODY_COLOR_RED,   1, 7, 0, FALSE),
-    [SPECIES_OGERPON_CORNERSTONE]      = OGERPON_SPECIES_INFO(Cornerstone, Cornerstone,     TYPE_ROCK,  ABILITY_STURDY,                         BODY_COLOR_GRAY,  1, 7, 0, FALSE),
+    [SPECIES_OGERPON_TEAL]             = OGERPON_SPECIES_INFO(Teal,        Teal,            TYPE_GRASS, ABILITY_DEFIANT,                        BODY_COLOR_GREEN, 1, FALSE),
+    [SPECIES_OGERPON_WELLSPRING]       = OGERPON_SPECIES_INFO(Wellspring,  Wellspring,      TYPE_WATER, ABILITY_WATER_ABSORB,                   BODY_COLOR_BLUE,  0, FALSE),
+    [SPECIES_OGERPON_HEARTHFLAME]      = OGERPON_SPECIES_INFO(Hearthflame, Hearthflame,     TYPE_FIRE,  ABILITY_MOLD_BREAKER,                   BODY_COLOR_RED,   0, FALSE),
+    [SPECIES_OGERPON_CORNERSTONE]      = OGERPON_SPECIES_INFO(Cornerstone, Cornerstone,     TYPE_ROCK,  ABILITY_STURDY,                         BODY_COLOR_GRAY,  0, FALSE),
 #if P_TERA_FORMS
-    [SPECIES_OGERPON_TEAL_TERA]        = OGERPON_SPECIES_INFO(Teal,        TealTera,        TYPE_GRASS, ABILITY_EMBODY_ASPECT_TEAL_MASK,        BODY_COLOR_GREEN, 0, 0, 1, TRUE),
-    [SPECIES_OGERPON_WELLSPRING_TERA]  = OGERPON_SPECIES_INFO(Wellspring,  WellspringTera,  TYPE_WATER, ABILITY_EMBODY_ASPECT_WELLSPRING_MASK,  BODY_COLOR_BLUE,  0, 0, 0, TRUE),
-    [SPECIES_OGERPON_HEARTHFLAME_TERA] = OGERPON_SPECIES_INFO(Hearthflame, HearthflameTera, TYPE_FIRE,  ABILITY_EMBODY_ASPECT_HEARTHFLAME_MASK, BODY_COLOR_RED,   0, 0, 0, TRUE),
-    [SPECIES_OGERPON_CORNERSTONE_TERA] = OGERPON_SPECIES_INFO(Cornerstone, CornerstoneTera, TYPE_ROCK,  ABILITY_EMBODY_ASPECT_CORNERSTONE_MASK, BODY_COLOR_GRAY,  0, 0, 0, TRUE),
+    [SPECIES_OGERPON_TEAL_TERA]        = OGERPON_SPECIES_INFO(Teal,        TealTera,        TYPE_GRASS, ABILITY_EMBODY_ASPECT_TEAL_MASK,        BODY_COLOR_GREEN, 1, TRUE),
+    [SPECIES_OGERPON_WELLSPRING_TERA]  = OGERPON_SPECIES_INFO(Wellspring,  WellspringTera,  TYPE_WATER, ABILITY_EMBODY_ASPECT_WELLSPRING_MASK,  BODY_COLOR_BLUE,  0, TRUE),
+    [SPECIES_OGERPON_HEARTHFLAME_TERA] = OGERPON_SPECIES_INFO(Hearthflame, HearthflameTera, TYPE_FIRE,  ABILITY_EMBODY_ASPECT_HEARTHFLAME_MASK, BODY_COLOR_RED,   0, TRUE),
+    [SPECIES_OGERPON_CORNERSTONE_TERA] = OGERPON_SPECIES_INFO(Cornerstone, CornerstoneTera, TYPE_ROCK,  ABILITY_EMBODY_ASPECT_CORNERSTONE_MASK, BODY_COLOR_GRAY,  0, TRUE),
 #endif //P_TERA_FORMS
 
 #endif //P_FAMILY_OGERPON
