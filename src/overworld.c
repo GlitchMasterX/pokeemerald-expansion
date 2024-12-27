@@ -76,7 +76,6 @@
 #include "constants/songs.h"
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
-#include "dns.h"
 #include "ui_startmenu_full.h"
 
 
@@ -1554,7 +1553,7 @@ void CB1_Overworld(void)
 
 static void OverworldBasic(void)
 {
-    DnsApplyFilters();
+
     ScriptContext_RunScript();
     RunTasks();
     AnimateSprites();

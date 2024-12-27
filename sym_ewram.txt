@@ -156,7 +156,6 @@
     .include "src/ui_main_menu.o"
     .include "src/ui_startmenu_full.o"
     .include "src/field_name_box.o"
-    .include "src/dns.o"
 	.include "src/pokedex_plus_hgss.o"
 	.include "src/outfit_menu.o"
 	.include "src/sound_check_menu.o"
