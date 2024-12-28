@@ -805,6 +805,44 @@ scared::
 # 403 "data/maps/Hospital/scripts.pory"
 	.string "THUUDDD!!!$"
 
+test1::
+# 421 "data/maps/Hospital/scripts.pory"
+	lock
+# 422 "data/maps/Hospital/scripts.pory"
+	applymovement 23, move23
+# 423 "data/maps/Hospital/scripts.pory"
+	waitmovement 0
+# 424 "data/maps/Hospital/scripts.pory"
+	playse SE_PIN
+# 425 "data/maps/Hospital/scripts.pory"
+	msgbox test1_Text_0, MSGBOX_DEFAULT
+# 426 "data/maps/Hospital/scripts.pory"
+	applymovement 0xFF, move25
+# 427 "data/maps/Hospital/scripts.pory"
+	msgbox test1_Text_0
+# 428 "data/maps/Hospital/scripts.pory"
+	release
+	return
+
+
+# 430 "data/maps/Hospital/scripts.pory"
+move23:
+# 431 "data/maps/Hospital/scripts.pory"
+	face_down
+# 432 "data/maps/Hospital/scripts.pory"
+	emote_exclamation_mark
+	step_end
+
+# 434 "data/maps/Hospital/scripts.pory"
+move25:
+# 435 "data/maps/Hospital/scripts.pory"
+	walk_up
+	step_end
+
+test1_Text_0:
+# 425 "data/maps/Hospital/scripts.pory"
+	.string "Glad to see you$"
+
 name1::
 # 405 "data/maps/Hospital/scripts.pory"
 	.string "Nurse$"

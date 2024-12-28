@@ -324,18 +324,21 @@ movement strp{
 
 script LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD {
     if(var(LUXURA_TRAGEDY)<9){
+        special(SetRoofBirds)
         removeobject(5)
         setflag(FLAG_UNUSED_0x4EF)
         removeobject(6)
         setflag(FLAG_UNUSED_0x4A5)
     }
      elif(var(LUXURA_TRAGEDY)==9){
+        special(SetRoofBirds)
         addobject(5)
         clearflag(FLAG_UNUSED_0x4EF)
         removeobject(6)
         setflag(FLAG_UNUSED_0x4A5)
     }
     elif(var(LUXURA_TRAGEDY)==10){
+        special(SetRoofBirds)
         addobject(5)
         clearflag(FLAG_UNUSED_0x4EF)
         removeobject(6)
@@ -360,6 +363,7 @@ script LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD {
         setmetatile(6,28,0x001,1)
     }
     elif(var(LUXURA_TRAGEDY)>13){
+        special(SetRoofBirds)
         removeobject(5)
         setflag(FLAG_UNUSED_0x4EF)
         removeobject(2)
@@ -369,6 +373,7 @@ script LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD {
         setmetatile(6,28,0x001,1)   
 }
   elif(var(LUXURA_TRAGEDY)==19 && var(LUXURA_TRAGEDY)==20){
+        special(SetRoofBirds)
         removeobject(5)
         setflag(FLAG_UNUSED_0x4EF)
         removeobject(2)
@@ -378,6 +383,7 @@ script LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD {
         setmetatile(6,28,0x001,1)    
 }
   elif(var(LUXURA_TRAGEDY)>= 21){
+        special(SetRoofBirds)
         removeobject(5)
         setflag(FLAG_UNUSED_0x4EF)
         removeobject(2)

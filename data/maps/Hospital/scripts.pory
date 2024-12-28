@@ -416,3 +416,22 @@ text name3{
 text name4{
 	format("Mira")
 }
+
+script test1{
+	lock
+	applymovement(23,move23)
+	waitmovement(0)
+	playse(SE_PIN)
+	msgbox(format("Glad to see you"),MSGBOX_DEFAULT)
+	applymovement(0xFF,move25)
+	msgbox(format("Glad to see you"))
+	release
+}
+movement move23{
+	face_down
+	emote_exclamation_mark
+}
+movement move25{
+	walk_up
+	
+}
