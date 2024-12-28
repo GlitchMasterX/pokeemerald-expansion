@@ -1662,11 +1662,6 @@
 	callnative BS_DamageToQuarterTargetHP
 	.endm
 
-	.macro jumpifsleepclause jumpInstr:req
-	callnative BS_JumpIfSleepClause
-	.4byte \jumpInstr
-	.endm
-
 	.macro ficklebeamdamagecalculation
 	callnative BS_FickleBeamDamageCalculation
 	.endm
@@ -2004,10 +1999,9 @@
 	.4byte \jumpInstr
 	.endm
 
-	.macro trypsychoshift failInstr:req sleepClauseFailInstr:req
+	.macro trypsychoshift failInstr:req
 	various BS_ATTACKER, VARIOUS_PSYCHO_SHIFT
 	.4byte \failInstr
-	.4byte \sleepClauseFailInstr
 	.endm
 
 	.macro curestatus battler:req

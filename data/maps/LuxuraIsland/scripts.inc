@@ -763,7 +763,7 @@ stroll::
 # 303 "data/maps/LuxuraIsland/scripts.pory"
 	hidenamebox
 # 304 "data/maps/LuxuraIsland/scripts.pory"
-	setfollower 5, CAN_LEAVE_ROUTE, mirafollowerscript
+	setfollower 5, FOLLOWER_FLAG_CAN_LEAVE_ROUTE, mirafollowerscript
 # 305 "data/maps/LuxuraIsland/scripts.pory"
 	releaseall
 # 306 "data/maps/LuxuraIsland/scripts.pory"
@@ -781,7 +781,7 @@ str:
 
 mirafollowerscript::
 # 313 "data/maps/LuxuraIsland/scripts.pory"
-	lockall
+	lock
 # 314 "data/maps/LuxuraIsland/scripts.pory"
 	facefollower
 # 315 "data/maps/LuxuraIsland/scripts.pory"
@@ -791,7 +791,7 @@ mirafollowerscript::
 # 317 "data/maps/LuxuraIsland/scripts.pory"
 	hidenamebox
 # 318 "data/maps/LuxuraIsland/scripts.pory"
-	releaseall
+	release
 	return
 
 
@@ -971,7 +971,7 @@ strolll::
 # 392 "data/maps/LuxuraIsland/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, strp
 # 393 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, strp
+	applymovement 0xFD, strp
 # 394 "data/maps/LuxuraIsland/scripts.pory"
 	namebox name4
 # 395 "data/maps/LuxuraIsland/scripts.pory"
@@ -1035,7 +1035,7 @@ bloodsee::
 # 428 "data/maps/LuxuraIsland/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, exclam
 # 429 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, exclam
+	applymovement 0xFD, exclam
 # 430 "data/maps/LuxuraIsland/scripts.pory"
 	facefollower
 # 431 "data/maps/LuxuraIsland/scripts.pory"
@@ -1057,7 +1057,7 @@ blo::
 # 440 "data/maps/LuxuraIsland/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, io
 # 441 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, io
+	applymovement 0xFD, io
 # 442 "data/maps/LuxuraIsland/scripts.pory"
 	namebox name4
 # 443 "data/maps/LuxuraIsland/scripts.pory"
@@ -1090,7 +1090,7 @@ strollll::
 # 460 "data/maps/LuxuraIsland/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, strp
 # 461 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, strp
+	applymovement 0xFD, strp
 # 462 "data/maps/LuxuraIsland/scripts.pory"
 	namebox name4
 # 463 "data/maps/LuxuraIsland/scripts.pory"

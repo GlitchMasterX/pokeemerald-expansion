@@ -62,7 +62,13 @@ LilycoveCity_DepartmentStore_4F_Pokemart_AttackTMs:
 	.2byte ITEM_TM_BLIZZARD
 # 32 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
 	.2byte ITEM_TM_HYPER_BEAM
-	pokemartlistend
+# 33 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	.2byte ITEM_NONE
+# 34 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	release
+# 35 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	end
+# 36 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
 
 # 37 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
 LilycoveCity_DepartmentStore_4F_EventScript_ClerkRight::
@@ -96,7 +102,13 @@ LilycoveCity_DepartmentStore_4F_Pokemart_DefenseTMs:
 	.2byte ITEM_TM_REFLECT
 # 52 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
 	.2byte ITEM_TM_LIGHT_SCREEN
-	pokemartlistend
+# 53 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	.2byte ITEM_NONE
+# 54 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	release
+# 55 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	end
+# 56 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
 
 # 57 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
 LilycoveCity_DepartmentStore_4F_Text_AttackOrDefenseTM:

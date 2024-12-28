@@ -91,7 +91,7 @@ forest::
 # 46 "data/maps/LuxuraIsland1/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, exclam
 # 47 "data/maps/LuxuraIsland1/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, exclam
+	applymovement 0xFD, exclam
 # 48 "data/maps/LuxuraIsland1/scripts.pory"
 	namebox Xylar
 # 49 "data/maps/LuxuraIsland1/scripts.pory"
@@ -107,7 +107,7 @@ forest::
 # 54 "data/maps/LuxuraIsland1/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, notal
 # 55 "data/maps/LuxuraIsland1/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, notal
+	applymovement 0xFD, notal
 # 56 "data/maps/LuxuraIsland1/scripts.pory"
 	namebox Xylar
 # 57 "data/maps/LuxuraIsland1/scripts.pory"
@@ -334,7 +334,7 @@ miraded::
 # 164 "data/maps/LuxuraIsland1/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, boo
 # 165 "data/maps/LuxuraIsland1/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, boo
+	applymovement 0xFD, boo
 # 166 "data/maps/LuxuraIsland1/scripts.pory"
 	namebox Xylar
 # 167 "data/maps/LuxuraIsland1/scripts.pory"
@@ -350,7 +350,7 @@ miraded::
 # 172 "data/maps/LuxuraIsland1/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, exclam
 # 173 "data/maps/LuxuraIsland1/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, exclam
+	applymovement 0xFD, exclam
 # 174 "data/maps/LuxuraIsland1/scripts.pory"
 	waitmovement 0
 # 175 "data/maps/LuxuraIsland1/scripts.pory"
@@ -368,7 +368,7 @@ miraded::
 # 181 "data/maps/LuxuraIsland1/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, run
 # 182 "data/maps/LuxuraIsland1/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, run
+	applymovement 0xFD, run
 # 183 "data/maps/LuxuraIsland1/scripts.pory"
 	special SpawnCameraObject
 # 184 "data/maps/LuxuraIsland1/scripts.pory"
@@ -454,7 +454,7 @@ miraded::
 # 224 "data/maps/LuxuraIsland1/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, lok
 # 225 "data/maps/LuxuraIsland1/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, lok
+	applymovement 0xFD, lok
 # 226 "data/maps/LuxuraIsland1/scripts.pory"
 	waitmovement 0
 # 227 "data/maps/LuxuraIsland1/scripts.pory"
@@ -506,7 +506,7 @@ miraded::
 # 250 "data/maps/LuxuraIsland1/scripts.pory"
 	waitmovement 0
 # 251 "data/maps/LuxuraIsland1/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, lok
+	applymovement 0xFD, lok
 # 252 "data/maps/LuxuraIsland1/scripts.pory"
 	waitmovement 0
 # 253 "data/maps/LuxuraIsland1/scripts.pory"
@@ -680,7 +680,7 @@ Mira::
 # 306 "data/maps/LuxuraIsland1/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, ms
 # 307 "data/maps/LuxuraIsland1/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, ms
+	applymovement 0xFD, ms
 # 308 "data/maps/LuxuraIsland1/scripts.pory"
 	msgbox Mira_Text_0
 # 309 "data/maps/LuxuraIsland1/scripts.pory"
@@ -704,7 +704,7 @@ Mira2::
 # 320 "data/maps/LuxuraIsland1/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, ms1
 # 321 "data/maps/LuxuraIsland1/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, ms1
+	applymovement 0xFD, ms1
 # 322 "data/maps/LuxuraIsland1/scripts.pory"
 	msgbox Mira_Text_0
 # 323 "data/maps/LuxuraIsland1/scripts.pory"
@@ -730,7 +730,7 @@ Mira3::
 # 335 "data/maps/LuxuraIsland1/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, ms2
 # 336 "data/maps/LuxuraIsland1/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, ms2
+	applymovement 0xFD, ms2
 # 337 "data/maps/LuxuraIsland1/scripts.pory"
 	msgbox Mira_Text_0
 # 338 "data/maps/LuxuraIsland1/scripts.pory"
@@ -758,7 +758,7 @@ mira1::
 # 348 "data/maps/LuxuraIsland1/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, m1
 # 349 "data/maps/LuxuraIsland1/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, m1
+	applymovement 0xFD, m1
 # 350 "data/maps/LuxuraIsland1/scripts.pory"
 	msgbox Mira_Text_0
 # 351 "data/maps/LuxuraIsland1/scripts.pory"
@@ -784,7 +784,7 @@ mira2::
 # 361 "data/maps/LuxuraIsland1/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, m2
 # 362 "data/maps/LuxuraIsland1/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, m2
+	applymovement 0xFD, m2
 # 363 "data/maps/LuxuraIsland1/scripts.pory"
 	msgbox Mira_Text_0
 # 364 "data/maps/LuxuraIsland1/scripts.pory"

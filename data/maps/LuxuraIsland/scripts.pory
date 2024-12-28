@@ -301,7 +301,7 @@ script stroll {
     namebox(Xylar)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Okay, Let's go."))
     hidenamebox
-    setfollower(5,CAN_LEAVE_ROUTE,mirafollowerscript)
+    setfollower(5, FOLLOWER_FLAG_CAN_LEAVE_ROUTE, mirafollowerscript)
     releaseall
     setvar(LUXURA_TRAGEDY,10)
     
@@ -310,12 +310,12 @@ movement str{
     walk_up*2
 }
 script mirafollowerscript {
-    lockall
+    lock
     facefollower
     namebox(name4)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Let's go Master Xylar."))
     hidenamebox
-    releaseall
+    release
 }
 
 movement strp{
@@ -390,7 +390,7 @@ script LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD {
 script strolll{
     lockall
     applymovement(OBJ_EVENT_ID_PLAYER,strp)
-    applymovement(OBJ_EVENT_ID_FOLLOWER,strp)
+    applymovement(0xFD,strp)
     namebox(name4)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}That's not the way,Master Xylar."))
     hidenamebox
@@ -426,7 +426,7 @@ script blood{
 script bloodsee {
     lockall
     applymovement(OBJ_EVENT_ID_PLAYER,exclam)
-    applymovement(OBJ_EVENT_ID_FOLLOWER,exclam)
+    applymovement(0xFD,exclam)
     facefollower
     namebox(name4)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, Don't look at it. You're too young to see something like this... Please, just trust me and let's go back inside."))
@@ -438,7 +438,7 @@ script bloodsee {
 script blo {
     lockall
     applymovement(OBJ_EVENT_ID_PLAYER,io)
-    applymovement(OBJ_EVENT_ID_FOLLOWER,io)
+    applymovement(0xFD,io)
     namebox(name4)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, Don't look at it. You're too young to see something like this... Please, just trust me and let's go back inside."))
     hidenamebox
@@ -458,7 +458,7 @@ script musicchange {
 script strollll{
     lockall
     applymovement(OBJ_EVENT_ID_PLAYER,strp)
-    applymovement(OBJ_EVENT_ID_FOLLOWER,strp)
+    applymovement(0xFD,strp)
     namebox(name4)
     msgbox(format("I should go to mansion.\pI'm worried about Mom and Dad."))
     hidenamebox

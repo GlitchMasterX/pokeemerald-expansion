@@ -44,7 +44,7 @@ script forest {
 	playse(MUS_DUMMY)
 	setflag(FLAG_UNUSED_0x4AA)
 	applymovement(OBJ_EVENT_ID_PLAYER,exclam)
-	applymovement(OBJ_EVENT_ID_FOLLOWER,exclam)
+	applymovement(0xFD,exclam)
 	namebox(Xylar)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}What was that?"))
 	hidenamebox
@@ -52,7 +52,7 @@ script forest {
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, did you hear that? It sounded like a voice coming from the direction of the mansion.\pWe should go check it out!"))
 	hidenamebox
     applymovement(OBJ_EVENT_ID_PLAYER,notal)
-    applymovement(OBJ_EVENT_ID_FOLLOWER,notal)
+    applymovement(0xFD,notal)
 	namebox(Xylar)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Mom and Dad are in the Mansion."))
 	hidenamebox
@@ -162,7 +162,7 @@ script miraded {
 	applymovement(14,invisible)
 	waitmovement(0)
 	applymovement(OBJ_EVENT_ID_PLAYER,boo)
-	applymovement(OBJ_EVENT_ID_FOLLOWER,boo)
+	applymovement(0xFD,boo)
     namebox(Xylar)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Let's ask the officer and sailors for help.\pThey'll surely help us."))
 	hidenamebox
@@ -170,7 +170,7 @@ script miraded {
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Okay, Master Xylar."))
 	hidenamebox
 	applymovement(OBJ_EVENT_ID_PLAYER,exclam)
-	applymovement(OBJ_EVENT_ID_FOLLOWER,exclam)
+	applymovement(0xFD,exclam)
 	waitmovement(0)
 	namebox(Xylar)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}What happened here?"))
@@ -179,7 +179,7 @@ script miraded {
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}That's horrible.\pWhy would they resort to this?"))
 	hidenamebox
 	applymovement(OBJ_EVENT_ID_PLAYER,run)
-	applymovement(OBJ_EVENT_ID_FOLLOWER,run)
+	applymovement(0xFD,run)
 	special(SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_CAMERA,bo)
 	waitmovement(0)
@@ -222,7 +222,7 @@ script miraded {
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I'll join you soon.So, trust me and run."),MSGBOX_AUTOCLOSE)
 	hidenamebox
 	applymovement(OBJ_EVENT_ID_PLAYER,lok)
-	applymovement(OBJ_EVENT_ID_FOLLOWER,lok)
+	applymovement(0xFD,lok)
 	waitmovement(0)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Look at the hero,trying to protect the little boy.\pHow cute."),MSGBOX_AUTOCLOSE)
 	applymovement(12,heart)
@@ -248,7 +248,7 @@ script miraded {
 	hidenamebox
 	applymovement(OBJ_EVENT_ID_PLAYER,byee)
 	waitmovement(0)
-	applymovement(OBJ_EVENT_ID_FOLLOWER,lok)
+	applymovement(0xFD,lok)
 	waitmovement(0)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Aww, how touching, He's running away.\pToo bad you won't get to see him grow up"),MSGBOX_AUTOCLOSE)
 	namebox(name4)
@@ -304,7 +304,7 @@ movement boo{
 script Mira {
 	lockall
 	applymovement(OBJ_EVENT_ID_PLAYER,ms)
-	applymovement(OBJ_EVENT_ID_FOLLOWER,ms)
+	applymovement(0xFD,ms)
 	msgbox(format("I should hurry and ask for help."))
 	goto(miraded)
     releaseall
@@ -318,7 +318,7 @@ movement ms {
 script Mira2 {
 	lockall
 	applymovement(OBJ_EVENT_ID_PLAYER,ms1)
-	applymovement(OBJ_EVENT_ID_FOLLOWER,ms1)
+	applymovement(0xFD,ms1)
 	msgbox(format("I should hurry and ask for help."))
 	goto(miraded)
     releaseall
@@ -333,7 +333,7 @@ movement ms1 {
 script Mira3 {
 	lockall
 	applymovement(OBJ_EVENT_ID_PLAYER,ms2)
-	applymovement(OBJ_EVENT_ID_FOLLOWER,ms2)
+	applymovement(0xFD,ms2)
 	msgbox(format("I should hurry and ask for help."))
 	goto(miraded)
     releaseall
@@ -346,7 +346,7 @@ movement ms2 {
 script mira1 {
 	lockall
 	applymovement(OBJ_EVENT_ID_PLAYER,m1)
-	applymovement(OBJ_EVENT_ID_FOLLOWER,m1)
+	applymovement(0xFD,m1)
 	msgbox(format("I should hurry and ask for help."))
 	goto(miraded)
     releaseall
@@ -359,7 +359,7 @@ movement m1 {
 script mira2 {
 	lockall
 	applymovement(OBJ_EVENT_ID_PLAYER,m2)
-	applymovement(OBJ_EVENT_ID_FOLLOWER,m2)
+	applymovement(0xFD,m2)
 	msgbox(format("I should hurry and ask for help."))
 	goto(miraded)
     releaseall

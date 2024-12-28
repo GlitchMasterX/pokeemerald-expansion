@@ -1893,36 +1893,38 @@
 	_dynmultichoice \left, \top, \ignoreBPress, \maxBeforeScroll, \shouldSort, \initialSelected, \callbacks, NULL
 	.endm
 
-	@ Sets an NPC up to follow the player.
-	@ If you want to specify a battle partner without specifying a custom script, you can set the script parameter to 0.
-    .macro setfollower localId:req, flags:req, script, battlePartner
-	checkfollower
-	goto_if_eq VAR_RESULT, TRUE, 1f
-	ballfollowingmon
-	.ifnb \script
-		.if \script == 0
-			.set setScript, FALSE
-		.else
-			loadword 0, \script
-			.set setScript, TRUE
-		.endif
-	.else
-		.set setScript, FALSE
-	.endif
+@ Sets an NPC up to follow the player.
+@ If you want to specify a battle partner without specifying a custom script, you can set the script parameter to 0.
+.macro setfollower localId:req, flags:req, script, battlePartner
+    checkfollower
+    goto_if_eq VAR_RESULT, TRUE, 1f
+    ballfollowingmon
+
+    .ifnb \script
+        .if \script == 0
+            .set setScript, FALSE
+        .else
+            loadword 0, \script  @ Only valid if \script is not 0
+            .set setScript, TRUE
+        .endif
+    .else
+        .set setScript, FALSE
+    .endif
+
     .byte 0xe5
     .byte \localId
     .2byte \flags
-	.byte setScript
-	.ifb \battlePartner
-		.set battlePartner, 0
-		.2byte battlePartner
-	.else
-		.2byte \battlePartner
-	.endif
-	updatefollowingmon
-	1:
-    .endm
-    
+    .byte setScript
+    .ifb \battlePartner
+        .set battlePartner, 0
+        .2byte battlePartner
+    .else
+        .2byte \battlePartner
+    .endif
+    updatefollowingmon
+1:
+.endm
+
     @ Remove the following NPC (assumes there will only ever be one).
     .macro destroyfollower
     .byte 0xe6
