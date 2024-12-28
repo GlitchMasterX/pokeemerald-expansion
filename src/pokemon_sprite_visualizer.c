@@ -406,6 +406,13 @@ const u8 sShadowSizeLabels[][4] =
     [SHADOW_SIZE_L]                 = _(" L"),
     [SHADOW_SIZE_XL_BATTLE_ONLY]    = _(" XL"),
 };
+const u8 sShadowSizeLabels[][4] =
+{
+    [SHADOW_SIZE_S]                 = _(" S"),
+    [SHADOW_SIZE_M]                 = _(" M"),
+    [SHADOW_SIZE_L]                 = _(" L"),
+    [SHADOW_SIZE_XL_BATTLE_ONLY]    = _(" XL"),
+};
 //Function declarations
 static void PrintDigitChars(struct PokemonSpriteVisualizer *data);
 static void SetUpModifyArrows(struct PokemonSpriteVisualizer *data);
