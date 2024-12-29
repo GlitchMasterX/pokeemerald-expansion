@@ -825,11 +825,11 @@ LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD_13:
 # 365 "data/maps/LuxuraIsland/scripts.pory"
 	compare LUXURA_TRAGEDY, 13
 	goto_if_gt LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD_6
-# 374 "data/maps/LuxuraIsland/scripts.pory"
+# 375 "data/maps/LuxuraIsland/scripts.pory"
 	compare LUXURA_TRAGEDY, 19
 	goto_if_eq LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD_10
 LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD_9:
-# 383 "data/maps/LuxuraIsland/scripts.pory"
+# 385 "data/maps/LuxuraIsland/scripts.pory"
 	compare LUXURA_TRAGEDY, 21
 	goto_if_ge LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD_8
 	return
@@ -909,57 +909,63 @@ LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD_5:
 
 LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD_6:
 # 366 "data/maps/LuxuraIsland/scripts.pory"
-	removeobject 5
+	special SetRoofBirds
 # 367 "data/maps/LuxuraIsland/scripts.pory"
-	setflag FLAG_UNUSED_0x4EF
+	removeobject 5
 # 368 "data/maps/LuxuraIsland/scripts.pory"
-	removeobject 2
+	setflag FLAG_UNUSED_0x4EF
 # 369 "data/maps/LuxuraIsland/scripts.pory"
-	setflag FLAG_UNUSED_0x4A4
+	removeobject 2
 # 370 "data/maps/LuxuraIsland/scripts.pory"
-	addobject 6
+	setflag FLAG_UNUSED_0x4A4
 # 371 "data/maps/LuxuraIsland/scripts.pory"
-	clearflag FLAG_UNUSED_0x4A5
+	addobject 6
 # 372 "data/maps/LuxuraIsland/scripts.pory"
+	clearflag FLAG_UNUSED_0x4A5
+# 373 "data/maps/LuxuraIsland/scripts.pory"
 	setmetatile 6, 28, 0x001, 1
 	return
 
 LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD_7:
-# 375 "data/maps/LuxuraIsland/scripts.pory"
-	removeobject 5
 # 376 "data/maps/LuxuraIsland/scripts.pory"
-	setflag FLAG_UNUSED_0x4EF
+	special SetRoofBirds
 # 377 "data/maps/LuxuraIsland/scripts.pory"
-	removeobject 2
+	removeobject 5
 # 378 "data/maps/LuxuraIsland/scripts.pory"
-	setflag FLAG_UNUSED_0x4A4
+	setflag FLAG_UNUSED_0x4EF
 # 379 "data/maps/LuxuraIsland/scripts.pory"
-	addobject 6
+	removeobject 2
 # 380 "data/maps/LuxuraIsland/scripts.pory"
-	clearflag FLAG_UNUSED_0x4A5
+	setflag FLAG_UNUSED_0x4A4
 # 381 "data/maps/LuxuraIsland/scripts.pory"
+	addobject 6
+# 382 "data/maps/LuxuraIsland/scripts.pory"
+	clearflag FLAG_UNUSED_0x4A5
+# 383 "data/maps/LuxuraIsland/scripts.pory"
 	setmetatile 6, 28, 0x001, 1
 	return
 
 LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD_8:
-# 384 "data/maps/LuxuraIsland/scripts.pory"
-	removeobject 5
-# 385 "data/maps/LuxuraIsland/scripts.pory"
-	setflag FLAG_UNUSED_0x4EF
 # 386 "data/maps/LuxuraIsland/scripts.pory"
-	removeobject 2
+	special SetRoofBirds
 # 387 "data/maps/LuxuraIsland/scripts.pory"
-	setflag FLAG_UNUSED_0x4A4
+	removeobject 5
 # 388 "data/maps/LuxuraIsland/scripts.pory"
-	addobject 6
+	setflag FLAG_UNUSED_0x4EF
 # 389 "data/maps/LuxuraIsland/scripts.pory"
-	clearflag FLAG_UNUSED_0x4A5
+	removeobject 2
 # 390 "data/maps/LuxuraIsland/scripts.pory"
+	setflag FLAG_UNUSED_0x4A4
+# 391 "data/maps/LuxuraIsland/scripts.pory"
+	addobject 6
+# 392 "data/maps/LuxuraIsland/scripts.pory"
+	clearflag FLAG_UNUSED_0x4A5
+# 393 "data/maps/LuxuraIsland/scripts.pory"
 	setmetatile 6, 28, 0x001, 1
 	return
 
 LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD_10:
-# 374 "data/maps/LuxuraIsland/scripts.pory"
+# 375 "data/maps/LuxuraIsland/scripts.pory"
 	compare LUXURA_TRAGEDY, 20
 	goto_if_eq LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD_7
 	goto LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD_9
@@ -972,219 +978,219 @@ LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD_14:
 
 
 strolll::
-# 394 "data/maps/LuxuraIsland/scripts.pory"
-	lockall
-# 395 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, strp
-# 396 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement 0xFD, strp
 # 397 "data/maps/LuxuraIsland/scripts.pory"
-	namebox name4
+	lockall
 # 398 "data/maps/LuxuraIsland/scripts.pory"
-	msgbox strolll_Text_0
+	applymovement OBJ_EVENT_ID_PLAYER, strp
 # 399 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
+	applymovement 0xFD, strp
 # 400 "data/maps/LuxuraIsland/scripts.pory"
+	namebox name4
+# 401 "data/maps/LuxuraIsland/scripts.pory"
+	msgbox strolll_Text_0
+# 402 "data/maps/LuxuraIsland/scripts.pory"
+	hidenamebox
+# 403 "data/maps/LuxuraIsland/scripts.pory"
 	releaseall
 	return
 
 
 Sailor::
-# 403 "data/maps/LuxuraIsland/scripts.pory"
-	lockall
-# 404 "data/maps/LuxuraIsland/scripts.pory"
-	faceplayer
-# 405 "data/maps/LuxuraIsland/scripts.pory"
-	msgbox Sailor_Text_0
 # 406 "data/maps/LuxuraIsland/scripts.pory"
+	lockall
+# 407 "data/maps/LuxuraIsland/scripts.pory"
+	faceplayer
+# 408 "data/maps/LuxuraIsland/scripts.pory"
+	msgbox Sailor_Text_0
+# 409 "data/maps/LuxuraIsland/scripts.pory"
 	releaseall
 	return
 
 
 sailorr::
-# 410 "data/maps/LuxuraIsland/scripts.pory"
-	lockall
-# 411 "data/maps/LuxuraIsland/scripts.pory"
-	faceplayer
-# 412 "data/maps/LuxuraIsland/scripts.pory"
-	msgbox sailorr_Text_0
 # 413 "data/maps/LuxuraIsland/scripts.pory"
+	lockall
+# 414 "data/maps/LuxuraIsland/scripts.pory"
+	faceplayer
+# 415 "data/maps/LuxuraIsland/scripts.pory"
+	msgbox sailorr_Text_0
+# 416 "data/maps/LuxuraIsland/scripts.pory"
 	releaseall
 	return
 
 
 sail::
-# 417 "data/maps/LuxuraIsland/scripts.pory"
-	lockall
-# 418 "data/maps/LuxuraIsland/scripts.pory"
-	faceplayer
-# 419 "data/maps/LuxuraIsland/scripts.pory"
-	msgbox sail_Text_0
 # 420 "data/maps/LuxuraIsland/scripts.pory"
+	lockall
+# 421 "data/maps/LuxuraIsland/scripts.pory"
+	faceplayer
+# 422 "data/maps/LuxuraIsland/scripts.pory"
+	msgbox sail_Text_0
+# 423 "data/maps/LuxuraIsland/scripts.pory"
 	releaseall
 	return
 
 
 blood::
-# 423 "data/maps/LuxuraIsland/scripts.pory"
+# 426 "data/maps/LuxuraIsland/scripts.pory"
 	lockall
-# 424 "data/maps/LuxuraIsland/scripts.pory"
+# 427 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox blood_Text_0
-# 425 "data/maps/LuxuraIsland/scripts.pory"
+# 428 "data/maps/LuxuraIsland/scripts.pory"
 	releaseall
 	return
 
 
 bloodsee::
-# 430 "data/maps/LuxuraIsland/scripts.pory"
-	lockall
-# 431 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, exclam
-# 432 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement 0xFD, exclam
 # 433 "data/maps/LuxuraIsland/scripts.pory"
-	facefollower
+	lockall
 # 434 "data/maps/LuxuraIsland/scripts.pory"
-	namebox name4
+	applymovement OBJ_EVENT_ID_PLAYER, exclam
 # 435 "data/maps/LuxuraIsland/scripts.pory"
-	msgbox bloodsee_Text_0
+	applymovement 0xFD, exclam
 # 436 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
+	facefollower
 # 437 "data/maps/LuxuraIsland/scripts.pory"
-	releaseall
+	namebox name4
 # 438 "data/maps/LuxuraIsland/scripts.pory"
+	msgbox bloodsee_Text_0
+# 439 "data/maps/LuxuraIsland/scripts.pory"
+	hidenamebox
+# 440 "data/maps/LuxuraIsland/scripts.pory"
+	releaseall
+# 441 "data/maps/LuxuraIsland/scripts.pory"
 	setvar VAR_ROUTE103_STATE, 4
 	return
 
 
 blo::
-# 442 "data/maps/LuxuraIsland/scripts.pory"
-	lockall
-# 443 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, io
-# 444 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement 0xFD, io
 # 445 "data/maps/LuxuraIsland/scripts.pory"
-	namebox name4
+	lockall
 # 446 "data/maps/LuxuraIsland/scripts.pory"
-	msgbox bloodsee_Text_0
+	applymovement OBJ_EVENT_ID_PLAYER, io
 # 447 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
+	applymovement 0xFD, io
 # 448 "data/maps/LuxuraIsland/scripts.pory"
+	namebox name4
+# 449 "data/maps/LuxuraIsland/scripts.pory"
+	msgbox bloodsee_Text_0
+# 450 "data/maps/LuxuraIsland/scripts.pory"
+	hidenamebox
+# 451 "data/maps/LuxuraIsland/scripts.pory"
 	releaseall
 	return
 
 
 musicchange::
-# 453 "data/maps/LuxuraIsland/scripts.pory"
+# 456 "data/maps/LuxuraIsland/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x4AA, musicchange_1
 	return
 
 musicchange_1:
-# 454 "data/maps/LuxuraIsland/scripts.pory"
+# 457 "data/maps/LuxuraIsland/scripts.pory"
 	setweather WEATHER_RAIN_THUNDERSTORM
-# 455 "data/maps/LuxuraIsland/scripts.pory"
+# 458 "data/maps/LuxuraIsland/scripts.pory"
 	doweather
-# 456 "data/maps/LuxuraIsland/scripts.pory"
+# 459 "data/maps/LuxuraIsland/scripts.pory"
 	playbgm MUS_DUMMY, TRUE
 	return
 
 
 strollll::
-# 462 "data/maps/LuxuraIsland/scripts.pory"
-	lockall
-# 463 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, strp
-# 464 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement 0xFD, strp
 # 465 "data/maps/LuxuraIsland/scripts.pory"
-	namebox name4
+	lockall
 # 466 "data/maps/LuxuraIsland/scripts.pory"
-	msgbox strollll_Text_0
+	applymovement OBJ_EVENT_ID_PLAYER, strp
 # 467 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
+	applymovement 0xFD, strp
 # 468 "data/maps/LuxuraIsland/scripts.pory"
+	namebox name4
+# 469 "data/maps/LuxuraIsland/scripts.pory"
+	msgbox strollll_Text_0
+# 470 "data/maps/LuxuraIsland/scripts.pory"
+	hidenamebox
+# 471 "data/maps/LuxuraIsland/scripts.pory"
 	releaseall
 	return
 
 
 signluxura::
-# 471 "data/maps/LuxuraIsland/scripts.pory"
+# 474 "data/maps/LuxuraIsland/scripts.pory"
 	lock
-# 472 "data/maps/LuxuraIsland/scripts.pory"
+# 475 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox signluxura_Text_0, MSGBOX_SIGN
-# 473 "data/maps/LuxuraIsland/scripts.pory"
+# 476 "data/maps/LuxuraIsland/scripts.pory"
 	release
 	return
 
 
 signlmansion::
-# 476 "data/maps/LuxuraIsland/scripts.pory"
+# 479 "data/maps/LuxuraIsland/scripts.pory"
 	lock
-# 477 "data/maps/LuxuraIsland/scripts.pory"
+# 480 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox signlmansion_Text_0, MSGBOX_SIGN
-# 478 "data/maps/LuxuraIsland/scripts.pory"
+# 481 "data/maps/LuxuraIsland/scripts.pory"
 	release
 	return
 
 
 signforest::
-# 481 "data/maps/LuxuraIsland/scripts.pory"
+# 484 "data/maps/LuxuraIsland/scripts.pory"
 	lock
-# 482 "data/maps/LuxuraIsland/scripts.pory"
+# 485 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox signforest_Text_0, MSGBOX_SIGN
-# 483 "data/maps/LuxuraIsland/scripts.pory"
+# 486 "data/maps/LuxuraIsland/scripts.pory"
 	release
 	return
 
 
 signservantquarter::
-# 487 "data/maps/LuxuraIsland/scripts.pory"
+# 490 "data/maps/LuxuraIsland/scripts.pory"
 	lock
-# 488 "data/maps/LuxuraIsland/scripts.pory"
+# 491 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox signservantquarter_Text_0, MSGBOX_SIGN
-# 489 "data/maps/LuxuraIsland/scripts.pory"
+# 492 "data/maps/LuxuraIsland/scripts.pory"
 	release
 	return
 
 
 signluxuraharbor::
-# 493 "data/maps/LuxuraIsland/scripts.pory"
+# 496 "data/maps/LuxuraIsland/scripts.pory"
 	lock
-# 494 "data/maps/LuxuraIsland/scripts.pory"
+# 497 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox signluxuraharbor_Text_0, MSGBOX_SIGN
-# 495 "data/maps/LuxuraIsland/scripts.pory"
+# 498 "data/maps/LuxuraIsland/scripts.pory"
 	release
 	return
 
 
 signend::
-# 499 "data/maps/LuxuraIsland/scripts.pory"
+# 502 "data/maps/LuxuraIsland/scripts.pory"
 	lock
-# 500 "data/maps/LuxuraIsland/scripts.pory"
+# 503 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox signend_Text_0
-# 501 "data/maps/LuxuraIsland/scripts.pory"
+# 504 "data/maps/LuxuraIsland/scripts.pory"
 	release
 	return
 
 
 outfit::
-# 505 "data/maps/LuxuraIsland/scripts.pory"
+# 508 "data/maps/LuxuraIsland/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x49E, outfit_1
 	end
 
 outfit_1:
-# 506 "data/maps/LuxuraIsland/scripts.pory"
+# 509 "data/maps/LuxuraIsland/scripts.pory"
 	iswearingoutfit OUTFIT_USUAL_GREEN
-# 507 "data/maps/LuxuraIsland/scripts.pory"
+# 510 "data/maps/LuxuraIsland/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq outfit_4
-# 511 "data/maps/LuxuraIsland/scripts.pory"
+# 514 "data/maps/LuxuraIsland/scripts.pory"
 	clearflag FLAG_SYS_B_DASH
 	return
 
 outfit_4:
-# 508 "data/maps/LuxuraIsland/scripts.pory"
+# 511 "data/maps/LuxuraIsland/scripts.pory"
 	setflag FLAG_SYS_B_DASH
 	return
 
@@ -1327,11 +1333,11 @@ stroll_Text_1:
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Okay, Let's go.$"
 
 strolll_Text_0:
-# 398 "data/maps/LuxuraIsland/scripts.pory"
+# 401 "data/maps/LuxuraIsland/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}That's not the way,Master Xylar.$"
 
 Sailor_Text_0:
-# 405 "data/maps/LuxuraIsland/scripts.pory"
+# 408 "data/maps/LuxuraIsland/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Master Xylar, I have to tell you, your\n"
 	.string "father is one of the bravest men I've\l"
 	.string "ever known.\p"
@@ -1344,7 +1350,7 @@ Sailor_Text_0:
 	.string "serve him.$"
 
 sailorr_Text_0:
-# 412 "data/maps/LuxuraIsland/scripts.pory"
+# 415 "data/maps/LuxuraIsland/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Good day, young master Xylar!\p"
 	.string "The captain's busy preparing the ship\n"
 	.string "for your journey, even though the\l"
@@ -1355,7 +1361,7 @@ sailorr_Text_0:
 	.string "you're ready!$"
 
 sail_Text_0:
-# 419 "data/maps/LuxuraIsland/scripts.pory"
+# 422 "data/maps/LuxuraIsland/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Master Xylar, I'll never forget the day\n"
 	.string "your Father faced the Dark Force.\p"
 	.string "The skies turned dark, and portals\n"
@@ -1370,56 +1376,56 @@ sail_Text_0:
 	.string "that day.$"
 
 blood_Text_0:
-# 424 "data/maps/LuxuraIsland/scripts.pory"
+# 427 "data/maps/LuxuraIsland/scripts.pory"
 	.string "The blood splatters on the ground, its\n"
 	.string "vivid red stark against everything\l"
 	.string "else.$"
 
 bloodsee_Text_0:
-# 435 "data/maps/LuxuraIsland/scripts.pory"
+# 438 "data/maps/LuxuraIsland/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, Don't look at it. You're\n"
 	.string "too young to see something like this...\l"
 	.string "Please, just trust me and let's go back\l"
 	.string "inside.$"
 
 strollll_Text_0:
-# 466 "data/maps/LuxuraIsland/scripts.pory"
+# 469 "data/maps/LuxuraIsland/scripts.pory"
 	.string "I should go to mansion.\p"
 	.string "I'm worried about Mom and Dad.$"
 
 signluxura_Text_0:
-# 472 "data/maps/LuxuraIsland/scripts.pory"
+# 475 "data/maps/LuxuraIsland/scripts.pory"
 	.string "Luxura Island\p"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}A serene haven where beauty and\n"
 	.string "mystery intertwine beneath tranquil\l"
 	.string "skies.$"
 
 signlmansion_Text_0:
-# 477 "data/maps/LuxuraIsland/scripts.pory"
+# 480 "data/maps/LuxuraIsland/scripts.pory"
 	.string "Luxura Mansion\p"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}A magnificent estate, home to wealth,\n"
 	.string "power, and a legacy of prestige.$"
 
 signforest_Text_0:
-# 482 "data/maps/LuxuraIsland/scripts.pory"
+# 485 "data/maps/LuxuraIsland/scripts.pory"
 	.string "Luxura Veilwood\p"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}A dense, ancient forest where secrets\n"
 	.string "are whispered among the trees and\l"
 	.string "shadows linger at every turn.$"
 
 signservantquarter_Text_0:
-# 488 "data/maps/LuxuraIsland/scripts.pory"
+# 491 "data/maps/LuxuraIsland/scripts.pory"
 	.string "Servant's Quarter$"
 
 signluxuraharbor_Text_0:
-# 494 "data/maps/LuxuraIsland/scripts.pory"
+# 497 "data/maps/LuxuraIsland/scripts.pory"
 	.string "Harbor Haven\p"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}The central gathering place for sailors\n"
 	.string "on Luxura Island, where voyages are\l"
 	.string "planned and tales are shared.$"
 
 signend_Text_0:
-# 500 "data/maps/LuxuraIsland/scripts.pory"
+# 503 "data/maps/LuxuraIsland/scripts.pory"
 	.string "End of Beta 1.$"
 
 gardener::
