@@ -1176,7 +1176,7 @@ signend::
 
 outfit::
 # 508 "data/maps/LuxuraIsland/scripts.pory"
-	goto_if_set FLAG_UNUSED_0x49E, outfit_1
+	goto_if_set FLAG_UNUSED_0x4B0, outfit_1
 	end
 
 outfit_1:

@@ -556,3 +556,6 @@ gSpecials::
 	def_special Script_GetChosenMonDefensiveIVs
 	def_special UseBlankMessageToCancelPokemonPic
     def_special SetRoofBirds
+	def_special DrawMugshot
+	def_special ClearMugshot
+	def_special DrawMugshotAtPos
