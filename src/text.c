@@ -266,10 +266,16 @@ static const struct FontInfo sFontInfos[] =
         .bgColor = 1,
         .shadowColor = 3,
     },
-    [FONT_SHORT_NARROWER] = {
+     [FONT_SHORT_NARROWER] = {
         .fontFunction = FontFunc_ShortNarrower,
         .maxLetterWidth = 5,
-        
+        .maxLetterHeight = 14,
+        .letterSpacing = 0,
+        .lineSpacing = 0,
+        .fgColor = 2,
+        .bgColor = 1,
+        .shadowColor = 3,
+    },
     [FONT_BW_SUMMARY_SCREEN] = {
         .fontFunction = FontFunc_BW_Summary_Screen,
         .maxLetterWidth = 6,
