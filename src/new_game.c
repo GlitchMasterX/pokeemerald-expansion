@@ -219,6 +219,7 @@ void NewGameInitData(void)
     ResetOutfitData();
 
     memset(&gSaveBlock2Ptr->follower, 0, sizeof(gSaveBlock2Ptr->follower));
+    gSaveBlock3Ptr->followerIndex = OW_FOLLOWER_NOT_SET;
 }
 
 static void ResetMiniGamesRecords(void)
