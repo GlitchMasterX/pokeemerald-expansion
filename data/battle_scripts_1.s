@@ -2,6 +2,7 @@
 #include "config/battle.h"
 #include "constants/global.h"
 #include "constants/battle.h"
+#include "constants/battle_setup.h"
 #include "constants/pokemon.h"
 #include "constants/battle_arena.h"
 #include "constants/battle_script_commands.h"
@@ -5584,6 +5585,8 @@ BattleScript_LocalBattleLostPrintWhiteOut::
 	jumpifbattletype BATTLE_TYPE_TRAINER, BattleScript_LocalBattleLostEnd
 	printstring STRINGID_PLAYERWHITEOUT
 	waitmessage B_WAIT_TIME_LONG
+	jumpifhalfword CMP_EQUAL, gTrainerBattleMode, TRAINER_BATTLE_NO_WHITEOUT_CONTINUE_SCRIPT, BattleScript_LocalBattleLostPrintNoWhiteout
+	jumpifhalfword CMP_EQUAL, gTrainerBattleMode, TRAINER_BATTLE_NO_INTRO_NO_WHITEOUT, BattleScript_LocalBattleLostPrintNoWhiteout
 	getmoneyreward
 	printstring STRINGID_PLAYERWHITEOUT2
 	waitmessage B_WAIT_TIME_LONG
@@ -10068,3 +10071,8 @@ BattleScript_EffectSnow::
 	call BattleScript_CheckPrimalWeather
 	setfieldweather ENUM_WEATHER_SNOW
 	goto BattleScript_MoveWeatherChange
+
+BattleScript_LocalBattleLostPrintNoWhiteout::
+	printstring STRINGID_PLAYERWHITEOUT3
+	waitmessage B_WAIT_TIME_LONG
+	end2

@@ -91,6 +91,8 @@ u8 GetPartyIdFromBattlePartyId(u8 slot);
 void ShowPartyMenuToShowcaseMultiBattleParty(void);
 void ChooseMonForDaycare(void);
 bool8 CB2_FadeFromPartyMenu(void);
+bool8 PlayerHasMove(u16 move);
+u8 CanTeachMove(struct Pokemon *mon, u16 move);
 void ChooseContestMon(void);
 void ChoosePartyMon(void);
 void ChooseMonForMoveRelearner(void);
