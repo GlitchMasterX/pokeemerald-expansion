@@ -19,6 +19,7 @@
 #include "main.h"
 #include "malloc.h"
 #include "menu.h"
+#include "move.h"
 #include "menu_helpers.h"
 #include "money.h"
 #include "overworld.h"

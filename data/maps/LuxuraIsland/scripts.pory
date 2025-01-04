@@ -483,6 +483,7 @@ script signlmansion {
 script signforest {
     lock
     msgbox(format("Luxura Veilwood\p{COLOR BLUE}{SHADOW LIGHT_GRAY}A dense, ancient forest where secrets are whispered among the trees and shadows linger at every turn."),MSGBOX_SIGN)
+    setflag(FLAG_SYS_DEXNAV_GET)
     release
     
 }

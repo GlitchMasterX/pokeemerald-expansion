@@ -1,18 +1,17 @@
 #ifndef GUARD_CONFIG_DEXNAV_H
 #define GUARD_CONFIG_DEXNAV_H
 
-#define DEXNAV_ENABLED                FALSE  // Whether or not DexNav is enabled. If TRUE, flags/vars below must all be non-zero
-#define USE_DEXNAV_SEARCH_LEVELS      FALSE  /* WARNING: POSSIBLY EXCEEDS SAVEBLOCK SPACE! REQUIRES 1 BYTE PER SPECIES */
+#define DEXNAV_ENABLED                TRUE  // Whether or not DexNav is enabled. If TRUE, flags/vars below must all be non-zero
+#define USE_DEXNAV_SEARCH_LEVELS      TRUE  /* WARNING: POSSIBLY EXCEEDS SAVEBLOCK SPACE! REQUIRES 1 BYTE PER SPECIES */
 
 // Flag/var defines
-#define FLAG_SYS_DEXNAV_SEARCH          0 // Searching for mon
-#define FLAG_SYS_DEXNAV_GET             0 // DexNav shows in start menu
-#define FLAG_SYS_DETECTOR_MODE          0 // Allow player to find hidden mons
-#define VAR_DEXNAV_SPECIES              0 // Registered DexNav species
-#define VAR_DEXNAV_STEP_COUNTER         0 // Steps for finding hidden pokemon
+#define FLAG_SYS_DEXNAV_SEARCH          1 // Searching for mon
+#define FLAG_SYS_DETECTOR_MODE          1 // Allow player to find hidden mons
+#define VAR_DEXNAV_SPECIES              1 // Registered DexNav species
+#define VAR_DEXNAV_STEP_COUNTER         1 // Steps for finding hidden pokemon
 
 // Search parameters
-#define DEXNAV_TIMEOUT                  15  // 15 seconds is the time out. Max of 1092 seconds allowed
+#define DEXNAV_TIMEOUT                  30  // 15 seconds is the time out. Max of 1092 seconds allowed
 #define SNEAKING_PROXIMITY              4   // Tile amount
 #define CREEPING_PROXIMITY              2
 #define MAX_PROXIMITY                   20
@@ -27,7 +26,7 @@
 //// SEARCH PROBABILITIES
 // See https://bulbapedia.bulbagarden.net/wiki/DexNav#Benefits
 // Chance of encountering egg move at search levels
-#define SEARCHLEVEL0_MOVECHANCE         0
+#define SEARCHLEVEL0_MOVECHANCE         10
 #define SEARCHLEVEL5_MOVECHANCE         21
 #define SEARCHLEVEL10_MOVECHANCE        46
 #define SEARCHLEVEL25_MOVECHANCE        58
