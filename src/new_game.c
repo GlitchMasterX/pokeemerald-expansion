@@ -220,6 +220,7 @@ void NewGameInitData(void)
     ResetItemFlags();
     ResetOutfitData();
     memset(&gSaveBlock2Ptr->follower, 0, sizeof(gSaveBlock2Ptr->follower));
+    gSaveBlock3Ptr->followerIndex = OW_FOLLOWER_NOT_SET;
     ResetDexNav();
 }
 

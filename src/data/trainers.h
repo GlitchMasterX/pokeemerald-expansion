@@ -10,7 +10,7 @@
     {
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_1,
         .trainerPic = TRAINER_PIC_HIKER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .partySize = 0,
@@ -346,8 +346,8 @@
         .trainerName = _("GABRIELLE"),
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .trainerPic = TRAINER_PIC_POKEMON_BREEDER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -409,7 +409,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_AQUA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -431,7 +431,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("MARCEL"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -462,7 +462,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ALBERTO"),
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -492,7 +492,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ED"),
         .trainerClass = TRAINER_CLASS_COLLECTOR,
         .trainerPic = TRAINER_PIC_COLLECTOR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -522,8 +522,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .trainerPic = TRAINER_PIC_AQUA_GRUNT_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_AQUA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -545,7 +545,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DECLAN"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -567,7 +567,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_AQUA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -589,7 +589,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_AQUA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -619,7 +619,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_AQUA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -649,7 +649,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_AQUA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -687,7 +687,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_AQUA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -709,7 +709,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_AQUA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -739,7 +739,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -761,7 +761,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_AQUA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -783,7 +783,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_AQUA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -805,7 +805,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_AQUA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -835,8 +835,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .trainerPic = TRAINER_PIC_AQUA_GRUNT_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_AQUA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -858,8 +858,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .trainerPic = TRAINER_PIC_AQUA_GRUNT_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_AQUA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -881,8 +881,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .trainerPic = TRAINER_PIC_AQUA_GRUNT_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_AQUA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -904,7 +904,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("FREDRICK"),
         .trainerClass = TRAINER_CLASS_EXPERT,
         .trainerPic = TRAINER_PIC_EXPERT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -934,7 +934,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("MATT"),
         .trainerClass = TRAINER_CLASS_AQUA_ADMIN,
         .trainerPic = TRAINER_PIC_AQUA_ADMIN_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_AQUA,
         .items = { ITEM_SUPER_POTION },
         .doubleBattle = FALSE,
@@ -965,7 +965,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ZANDER"),
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -987,8 +987,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("SHELLY"),
         .trainerClass = TRAINER_CLASS_AQUA_ADMIN,
         .trainerPic = TRAINER_PIC_AQUA_ADMIN_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_AQUA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -1018,8 +1018,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("SHELLY"),
         .trainerClass = TRAINER_CLASS_AQUA_ADMIN,
         .trainerPic = TRAINER_PIC_AQUA_ADMIN_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_AQUA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -1049,7 +1049,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ARCHIE"),
         .trainerClass = TRAINER_CLASS_AQUA_LEADER,
         .trainerPic = TRAINER_PIC_AQUA_LEADER_ARCHIE,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_AQUA,
         .items = { ITEM_SUPER_POTION, ITEM_SUPER_POTION },
         .doubleBattle = FALSE,
@@ -1088,8 +1088,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("LEAH"),
         .trainerClass = TRAINER_CLASS_HEX_MANIAC,
         .trainerPic = TRAINER_PIC_HEX_MANIAC,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -1111,8 +1111,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("DAISY"),
         .trainerClass = TRAINER_CLASS_AROMA_LADY,
         .trainerPic = TRAINER_PIC_AROMA_LADY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -1142,8 +1142,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ROSE"),
         .trainerClass = TRAINER_CLASS_AROMA_LADY,
         .trainerPic = TRAINER_PIC_AROMA_LADY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -1181,7 +1181,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("FELIX"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -1219,8 +1219,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("VIOLET"),
         .trainerClass = TRAINER_CLASS_AROMA_LADY,
         .trainerPic = TRAINER_PIC_AROMA_LADY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -1250,8 +1250,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ROSE"),
         .trainerClass = TRAINER_CLASS_AROMA_LADY,
         .trainerPic = TRAINER_PIC_AROMA_LADY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -1281,8 +1281,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ROSE"),
         .trainerClass = TRAINER_CLASS_AROMA_LADY,
         .trainerPic = TRAINER_PIC_AROMA_LADY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -1320,8 +1320,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ROSE"),
         .trainerClass = TRAINER_CLASS_AROMA_LADY,
         .trainerPic = TRAINER_PIC_AROMA_LADY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -1359,8 +1359,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ROSE"),
         .trainerClass = TRAINER_CLASS_AROMA_LADY,
         .trainerPic = TRAINER_PIC_AROMA_LADY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -1398,7 +1398,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DUSTY"),
         .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -1426,7 +1426,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CHIP"),
         .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -1482,7 +1482,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("FOSTER"),
         .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -1524,7 +1524,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DUSTY"),
         .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -1552,7 +1552,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DUSTY"),
         .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -1580,7 +1580,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DUSTY"),
         .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -1608,7 +1608,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DUSTY"),
         .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -1636,7 +1636,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GABBY & TY"),
         .trainerClass = TRAINER_CLASS_INTERVIEWER,
         .trainerPic = TRAINER_PIC_INTERVIEWER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTERVIEWER,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -1666,7 +1666,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GABBY & TY"),
         .trainerClass = TRAINER_CLASS_INTERVIEWER,
         .trainerPic = TRAINER_PIC_INTERVIEWER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTERVIEWER,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -1696,7 +1696,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GABBY & TY"),
         .trainerClass = TRAINER_CLASS_INTERVIEWER,
         .trainerPic = TRAINER_PIC_INTERVIEWER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTERVIEWER,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -1726,7 +1726,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GABBY & TY"),
         .trainerClass = TRAINER_CLASS_INTERVIEWER,
         .trainerPic = TRAINER_PIC_INTERVIEWER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTERVIEWER,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -1756,7 +1756,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GABBY & TY"),
         .trainerClass = TRAINER_CLASS_INTERVIEWER,
         .trainerPic = TRAINER_PIC_INTERVIEWER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTERVIEWER,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -1786,7 +1786,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GABBY & TY"),
         .trainerClass = TRAINER_CLASS_INTERVIEWER,
         .trainerPic = TRAINER_PIC_INTERVIEWER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTERVIEWER,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -1828,8 +1828,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("LOLA"),
         .trainerClass = TRAINER_CLASS_TUBER_F,
         .trainerPic = TRAINER_PIC_TUBER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -1859,8 +1859,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("AUSTINA"),
         .trainerClass = TRAINER_CLASS_TUBER_F,
         .trainerPic = TRAINER_PIC_TUBER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -1882,8 +1882,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("GWEN"),
         .trainerClass = TRAINER_CLASS_TUBER_F,
         .trainerPic = TRAINER_PIC_TUBER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -1905,8 +1905,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("LOLA"),
         .trainerClass = TRAINER_CLASS_TUBER_F,
         .trainerPic = TRAINER_PIC_TUBER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -1936,8 +1936,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("LOLA"),
         .trainerClass = TRAINER_CLASS_TUBER_F,
         .trainerPic = TRAINER_PIC_TUBER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -1967,8 +1967,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("LOLA"),
         .trainerClass = TRAINER_CLASS_TUBER_F,
         .trainerPic = TRAINER_PIC_TUBER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -1998,8 +1998,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("LOLA"),
         .trainerClass = TRAINER_CLASS_TUBER_F,
         .trainerPic = TRAINER_PIC_TUBER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -2029,7 +2029,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("RICKY"),
         .trainerClass = TRAINER_CLASS_TUBER_M,
         .trainerPic = TRAINER_PIC_TUBER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -2057,7 +2057,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("SIMON"),
         .trainerClass = TRAINER_CLASS_TUBER_M,
         .trainerPic = TRAINER_PIC_TUBER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -2087,7 +2087,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CHARLIE"),
         .trainerClass = TRAINER_CLASS_TUBER_M,
         .trainerPic = TRAINER_PIC_TUBER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -2109,7 +2109,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("RICKY"),
         .trainerClass = TRAINER_CLASS_TUBER_M,
         .trainerPic = TRAINER_PIC_TUBER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -2137,7 +2137,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("RICKY"),
         .trainerClass = TRAINER_CLASS_TUBER_M,
         .trainerPic = TRAINER_PIC_TUBER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -2165,7 +2165,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("RICKY"),
         .trainerClass = TRAINER_CLASS_TUBER_M,
         .trainerPic = TRAINER_PIC_TUBER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -2193,7 +2193,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("RICKY"),
         .trainerClass = TRAINER_CLASS_TUBER_M,
         .trainerPic = TRAINER_PIC_TUBER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -2221,7 +2221,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("RANDALL"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -2249,7 +2249,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("PARKER"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -2277,7 +2277,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GEORGE"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -2306,7 +2306,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BERKE"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -2333,7 +2333,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRAXTON"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -2418,7 +2418,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("VINCENT"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -2457,7 +2457,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("LEROY"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -2488,7 +2488,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WILTON"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_SUPER_POTION },
         .doubleBattle = FALSE,
@@ -2527,7 +2527,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("EDGAR"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -2558,7 +2558,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ALBERT"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -2589,7 +2589,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("SAMUEL"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -2628,7 +2628,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("VITO"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -2675,7 +2675,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("OWEN"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -2714,7 +2714,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WILTON"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -2753,7 +2753,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WILTON"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -2792,7 +2792,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WILTON"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -2831,7 +2831,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WILTON"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -2870,7 +2870,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WARREN"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -2901,8 +2901,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MARY"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -2929,8 +2929,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ALEXIA"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -2958,8 +2958,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("JODY"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -2986,8 +2986,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("WENDY"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -3044,8 +3044,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("KEIRA"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -3076,8 +3076,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("BROOKE"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_SUPER_POTION },
         .doubleBattle = FALSE,
@@ -3116,8 +3116,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("JENNIFER"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -3140,8 +3140,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("HOPE"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -3164,8 +3164,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("SHANNON"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -3188,8 +3188,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MICHELLE"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -3228,8 +3228,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CAROLINE"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -3260,8 +3260,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("JULIE"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -3300,8 +3300,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("BROOKE"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -3340,8 +3340,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("BROOKE"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -3380,8 +3380,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("BROOKE"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -3420,8 +3420,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("BROOKE"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -3460,8 +3460,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("PATRICIA"),
         .trainerClass = TRAINER_CLASS_HEX_MANIAC,
         .trainerPic = TRAINER_PIC_HEX_MANIAC,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -3491,8 +3491,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("KINDRA"),
         .trainerClass = TRAINER_CLASS_HEX_MANIAC,
         .trainerPic = TRAINER_PIC_HEX_MANIAC,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -3522,8 +3522,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("TAMMY"),
         .trainerClass = TRAINER_CLASS_HEX_MANIAC,
         .trainerPic = TRAINER_PIC_HEX_MANIAC,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -3553,8 +3553,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("VALERIE"),
         .trainerClass = TRAINER_CLASS_HEX_MANIAC,
         .trainerPic = TRAINER_PIC_HEX_MANIAC,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -3576,8 +3576,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("TASHA"),
         .trainerClass = TRAINER_CLASS_HEX_MANIAC,
         .trainerPic = TRAINER_PIC_HEX_MANIAC,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -3599,8 +3599,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("VALERIE"),
         .trainerClass = TRAINER_CLASS_HEX_MANIAC,
         .trainerPic = TRAINER_PIC_HEX_MANIAC,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -3630,8 +3630,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("VALERIE"),
         .trainerClass = TRAINER_CLASS_HEX_MANIAC,
         .trainerPic = TRAINER_PIC_HEX_MANIAC,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -3661,8 +3661,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("VALERIE"),
         .trainerClass = TRAINER_CLASS_HEX_MANIAC,
         .trainerPic = TRAINER_PIC_HEX_MANIAC,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -3692,8 +3692,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("VALERIE"),
         .trainerClass = TRAINER_CLASS_HEX_MANIAC,
         .trainerPic = TRAINER_PIC_HEX_MANIAC,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -3731,8 +3731,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CINDY"),
         .trainerClass = TRAINER_CLASS_LADY,
         .trainerPic = TRAINER_PIC_LADY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -3756,8 +3756,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("DAPHNE"),
         .trainerClass = TRAINER_CLASS_LADY,
         .trainerPic = TRAINER_PIC_LADY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -3802,7 +3802,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -3840,8 +3840,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CINDY"),
         .trainerClass = TRAINER_CLASS_LADY,
         .trainerPic = TRAINER_PIC_LADY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -3869,8 +3869,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRIANNA"),
         .trainerClass = TRAINER_CLASS_LADY,
         .trainerPic = TRAINER_PIC_LADY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -3894,8 +3894,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("NAOMI"),
         .trainerClass = TRAINER_CLASS_LADY,
         .trainerPic = TRAINER_PIC_LADY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -3919,8 +3919,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CINDY"),
         .trainerClass = TRAINER_CLASS_LADY,
         .trainerPic = TRAINER_PIC_LADY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -3944,8 +3944,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CINDY"),
         .trainerClass = TRAINER_CLASS_LADY,
         .trainerPic = TRAINER_PIC_LADY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -3969,8 +3969,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CINDY"),
         .trainerClass = TRAINER_CLASS_LADY,
         .trainerPic = TRAINER_PIC_LADY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -3994,8 +3994,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CINDY"),
         .trainerClass = TRAINER_CLASS_LADY,
         .trainerPic = TRAINER_PIC_LADY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -4025,8 +4025,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MELISSA"),
         .trainerClass = TRAINER_CLASS_BEAUTY,
         .trainerPic = TRAINER_PIC_BEAUTY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -4048,8 +4048,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("SHEILA"),
         .trainerClass = TRAINER_CLASS_BEAUTY,
         .trainerPic = TRAINER_PIC_BEAUTY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -4071,8 +4071,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("SHIRLEY"),
         .trainerClass = TRAINER_CLASS_BEAUTY,
         .trainerPic = TRAINER_PIC_BEAUTY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -4094,8 +4094,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("JESSICA"),
         .trainerClass = TRAINER_CLASS_BEAUTY,
         .trainerPic = TRAINER_PIC_BEAUTY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -4137,8 +4137,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CONNIE"),
         .trainerClass = TRAINER_CLASS_BEAUTY,
         .trainerPic = TRAINER_PIC_BEAUTY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -4160,8 +4160,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRIDGET"),
         .trainerClass = TRAINER_CLASS_BEAUTY,
         .trainerPic = TRAINER_PIC_BEAUTY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -4183,8 +4183,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("OLIVIA"),
         .trainerClass = TRAINER_CLASS_BEAUTY,
         .trainerPic = TRAINER_PIC_BEAUTY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -4239,8 +4239,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("TIFFANY"),
         .trainerClass = TRAINER_CLASS_BEAUTY,
         .trainerPic = TRAINER_PIC_BEAUTY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -4270,8 +4270,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("JESSICA"),
         .trainerClass = TRAINER_CLASS_BEAUTY,
         .trainerPic = TRAINER_PIC_BEAUTY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -4313,8 +4313,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("JESSICA"),
         .trainerClass = TRAINER_CLASS_BEAUTY,
         .trainerPic = TRAINER_PIC_BEAUTY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -4356,8 +4356,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("JESSICA"),
         .trainerClass = TRAINER_CLASS_BEAUTY,
         .trainerPic = TRAINER_PIC_BEAUTY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -4399,8 +4399,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("JESSICA"),
         .trainerClass = TRAINER_CLASS_BEAUTY,
         .trainerPic = TRAINER_PIC_BEAUTY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -4442,7 +4442,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WINSTON"),
         .trainerClass = TRAINER_CLASS_RICH_BOY,
         .trainerPic = TRAINER_PIC_RICH_BOY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_RICH,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -4466,8 +4466,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MOLLIE"),
         .trainerClass = TRAINER_CLASS_EXPERT,
         .trainerPic = TRAINER_PIC_EXPERT_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -4497,7 +4497,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GARRET"),
         .trainerClass = TRAINER_CLASS_RICH_BOY,
         .trainerPic = TRAINER_PIC_RICH_BOY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_RICH,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -4521,7 +4521,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WINSTON"),
         .trainerClass = TRAINER_CLASS_RICH_BOY,
         .trainerPic = TRAINER_PIC_RICH_BOY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_RICH,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -4545,7 +4545,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WINSTON"),
         .trainerClass = TRAINER_CLASS_RICH_BOY,
         .trainerPic = TRAINER_PIC_RICH_BOY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_RICH,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -4569,7 +4569,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WINSTON"),
         .trainerClass = TRAINER_CLASS_RICH_BOY,
         .trainerPic = TRAINER_PIC_RICH_BOY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_RICH,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -4593,7 +4593,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WINSTON"),
         .trainerClass = TRAINER_CLASS_RICH_BOY,
         .trainerPic = TRAINER_PIC_RICH_BOY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_RICH,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -4623,7 +4623,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("STEVE"),
         .trainerClass = TRAINER_CLASS_POKEMANIAC,
         .trainerPic = TRAINER_PIC_POKEMANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -4645,8 +4645,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("THALIA"),
         .trainerClass = TRAINER_CLASS_BEAUTY,
         .trainerPic = TRAINER_PIC_BEAUTY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -4676,7 +4676,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("MARK"),
         .trainerClass = TRAINER_CLASS_POKEMANIAC,
         .trainerPic = TRAINER_PIC_POKEMANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -4698,8 +4698,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -4721,7 +4721,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("STEVE"),
         .trainerClass = TRAINER_CLASS_POKEMANIAC,
         .trainerPic = TRAINER_PIC_POKEMANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -4743,7 +4743,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("STEVE"),
         .trainerClass = TRAINER_CLASS_POKEMANIAC,
         .trainerPic = TRAINER_PIC_POKEMANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -4773,7 +4773,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("STEVE"),
         .trainerClass = TRAINER_CLASS_POKEMANIAC,
         .trainerPic = TRAINER_PIC_POKEMANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -4803,7 +4803,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("STEVE"),
         .trainerClass = TRAINER_CLASS_POKEMANIAC,
         .trainerPic = TRAINER_PIC_POKEMANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -4833,7 +4833,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("LUIS"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -4855,7 +4855,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DOMINIK"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -4877,7 +4877,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DOUGLAS"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -4907,7 +4907,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DARRIN"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -4945,7 +4945,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TONY"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -4967,7 +4967,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JEROME"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -4989,7 +4989,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("MATTHEW"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5011,7 +5011,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DAVID"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5041,7 +5041,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("SPENCER"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5071,7 +5071,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ROLAND"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5093,7 +5093,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("NOLEN"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5115,7 +5115,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("STAN"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5137,7 +5137,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BARRY"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5159,7 +5159,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DEAN"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5197,7 +5197,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("RODNEY"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5219,7 +5219,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("RICHARD"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5241,7 +5241,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("HERMAN"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5271,7 +5271,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("SANTIAGO"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5301,7 +5301,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GILBERT"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5323,7 +5323,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("FRANKLIN"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5345,7 +5345,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("KEVIN"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5367,7 +5367,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JACK"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5389,7 +5389,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DUDLEY"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5427,7 +5427,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CHAD"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5457,7 +5457,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TONY"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5479,7 +5479,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TONY"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5501,7 +5501,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TONY"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5531,7 +5531,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TONY"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5561,7 +5561,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TAKAO"),
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5583,7 +5583,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("HITOSHI"),
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5613,7 +5613,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("KIYO"),
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5635,7 +5635,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("KOICHI"),
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5665,7 +5665,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("NOB"),
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5687,7 +5687,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("NOB"),
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5709,7 +5709,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("NOB"),
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5739,7 +5739,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("NOB"),
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5777,7 +5777,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("NOB"),
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5824,7 +5824,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("YUJI"),
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5854,7 +5854,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DAISUKE"),
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5876,7 +5876,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ATSUSHI"),
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5898,7 +5898,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("KIRK"),
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .trainerPic = TRAINER_PIC_GUITARIST,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5939,8 +5939,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .trainerPic = TRAINER_PIC_AQUA_GRUNT_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_AQUA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5970,7 +5970,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_AQUA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -5992,7 +5992,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("SHAWN"),
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .trainerPic = TRAINER_PIC_GUITARIST,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6022,7 +6022,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("FERNANDO"),
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .trainerPic = TRAINER_PIC_GUITARIST,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6052,7 +6052,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DALTON"),
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .trainerPic = TRAINER_PIC_GUITARIST,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6082,7 +6082,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DALTON"),
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .trainerPic = TRAINER_PIC_GUITARIST,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6120,7 +6120,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DALTON"),
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .trainerPic = TRAINER_PIC_GUITARIST,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6158,7 +6158,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DALTON"),
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .trainerPic = TRAINER_PIC_GUITARIST,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6196,7 +6196,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DALTON"),
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .trainerPic = TRAINER_PIC_GUITARIST,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6234,7 +6234,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("COLE"),
         .trainerClass = TRAINER_CLASS_KINDLER,
         .trainerPic = TRAINER_PIC_KINDLER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6256,7 +6256,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JEFF"),
         .trainerClass = TRAINER_CLASS_KINDLER,
         .trainerPic = TRAINER_PIC_KINDLER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6286,7 +6286,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("AXLE"),
         .trainerClass = TRAINER_CLASS_KINDLER,
         .trainerPic = TRAINER_PIC_KINDLER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6308,7 +6308,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JACE"),
         .trainerClass = TRAINER_CLASS_KINDLER,
         .trainerPic = TRAINER_PIC_KINDLER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6330,7 +6330,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("KEEGAN"),
         .trainerClass = TRAINER_CLASS_KINDLER,
         .trainerPic = TRAINER_PIC_KINDLER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6352,7 +6352,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BERNIE"),
         .trainerClass = TRAINER_CLASS_KINDLER,
         .trainerPic = TRAINER_PIC_KINDLER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6382,7 +6382,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BERNIE"),
         .trainerClass = TRAINER_CLASS_KINDLER,
         .trainerPic = TRAINER_PIC_KINDLER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6412,7 +6412,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BERNIE"),
         .trainerClass = TRAINER_CLASS_KINDLER,
         .trainerPic = TRAINER_PIC_KINDLER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6442,7 +6442,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BERNIE"),
         .trainerClass = TRAINER_CLASS_KINDLER,
         .trainerPic = TRAINER_PIC_KINDLER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6472,7 +6472,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BERNIE"),
         .trainerClass = TRAINER_CLASS_KINDLER,
         .trainerPic = TRAINER_PIC_KINDLER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6502,7 +6502,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DREW"),
         .trainerClass = TRAINER_CLASS_CAMPER,
         .trainerPic = TRAINER_PIC_CAMPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6530,7 +6530,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BEAU"),
         .trainerClass = TRAINER_CLASS_CAMPER,
         .trainerPic = TRAINER_PIC_CAMPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6586,7 +6586,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("LARRY"),
         .trainerClass = TRAINER_CLASS_CAMPER,
         .trainerPic = TRAINER_PIC_CAMPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6608,7 +6608,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("SHANE"),
         .trainerClass = TRAINER_CLASS_CAMPER,
         .trainerPic = TRAINER_PIC_CAMPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6638,7 +6638,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JUSTIN"),
         .trainerClass = TRAINER_CLASS_CAMPER,
         .trainerPic = TRAINER_PIC_CAMPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6660,7 +6660,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ETHAN"),
         .trainerClass = TRAINER_CLASS_CAMPER,
         .trainerPic = TRAINER_PIC_CAMPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6690,8 +6690,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("AUTUMN"),
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6713,7 +6713,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TRAVIS"),
         .trainerClass = TRAINER_CLASS_CAMPER,
         .trainerPic = TRAINER_PIC_CAMPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6735,7 +6735,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ETHAN"),
         .trainerClass = TRAINER_CLASS_CAMPER,
         .trainerPic = TRAINER_PIC_CAMPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6765,7 +6765,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ETHAN"),
         .trainerClass = TRAINER_CLASS_CAMPER,
         .trainerPic = TRAINER_PIC_CAMPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6795,7 +6795,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ETHAN"),
         .trainerClass = TRAINER_CLASS_CAMPER,
         .trainerPic = TRAINER_PIC_CAMPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6833,7 +6833,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ETHAN"),
         .trainerClass = TRAINER_CLASS_CAMPER,
         .trainerPic = TRAINER_PIC_CAMPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6871,7 +6871,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRENT"),
         .trainerClass = TRAINER_CLASS_BUG_MANIAC,
         .trainerPic = TRAINER_PIC_BUG_MANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6893,7 +6893,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DONALD"),
         .trainerClass = TRAINER_CLASS_BUG_MANIAC,
         .trainerPic = TRAINER_PIC_BUG_MANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6931,7 +6931,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TAYLOR"),
         .trainerClass = TRAINER_CLASS_BUG_MANIAC,
         .trainerPic = TRAINER_PIC_BUG_MANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -6969,7 +6969,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JEFFREY"),
         .trainerClass = TRAINER_CLASS_BUG_MANIAC,
         .trainerPic = TRAINER_PIC_BUG_MANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7007,7 +7007,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DEREK"),
         .trainerClass = TRAINER_CLASS_BUG_MANIAC,
         .trainerPic = TRAINER_PIC_BUG_MANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7037,7 +7037,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JEFFREY"),
         .trainerClass = TRAINER_CLASS_BUG_MANIAC,
         .trainerPic = TRAINER_PIC_BUG_MANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7075,7 +7075,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JEFFREY"),
         .trainerClass = TRAINER_CLASS_BUG_MANIAC,
         .trainerPic = TRAINER_PIC_BUG_MANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7113,7 +7113,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JEFFREY"),
         .trainerClass = TRAINER_CLASS_BUG_MANIAC,
         .trainerPic = TRAINER_PIC_BUG_MANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7159,7 +7159,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JEFFREY"),
         .trainerClass = TRAINER_CLASS_BUG_MANIAC,
         .trainerPic = TRAINER_PIC_BUG_MANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7214,7 +7214,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("EDWARD"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7239,7 +7239,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("PRESTON"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7261,7 +7261,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("VIRGIL"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7283,7 +7283,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BLAKE"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7305,7 +7305,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WILLIAM"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7343,7 +7343,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JOSHUA"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7373,7 +7373,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CAMERON"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7395,7 +7395,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CAMERON"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7425,7 +7425,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CAMERON"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7455,7 +7455,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CAMERON"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7485,7 +7485,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CAMERON"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7515,8 +7515,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("JACLYN"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7541,8 +7541,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("HANNAH"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7564,8 +7564,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("SAMANTHA"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7587,8 +7587,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MAURA"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7610,8 +7610,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("KAYLA"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7649,8 +7649,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ALEXIS"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7680,8 +7680,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("JACKI"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7711,8 +7711,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("JACKI"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7742,8 +7742,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("JACKI"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7773,8 +7773,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("JACKI"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7804,8 +7804,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("JACKI"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7835,7 +7835,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WALTER"),
         .trainerClass = TRAINER_CLASS_GENTLEMAN,
         .trainerPic = TRAINER_PIC_GENTLEMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_RICH,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7857,7 +7857,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("MICAH"),
         .trainerClass = TRAINER_CLASS_GENTLEMAN,
         .trainerPic = TRAINER_PIC_GENTLEMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_RICH,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7887,7 +7887,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("THOMAS"),
         .trainerClass = TRAINER_CLASS_GENTLEMAN,
         .trainerPic = TRAINER_PIC_GENTLEMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_RICH,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7909,7 +7909,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WALTER"),
         .trainerClass = TRAINER_CLASS_GENTLEMAN,
         .trainerPic = TRAINER_PIC_GENTLEMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_RICH,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7931,7 +7931,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WALTER"),
         .trainerClass = TRAINER_CLASS_GENTLEMAN,
         .trainerPic = TRAINER_PIC_GENTLEMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_RICH,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -7973,7 +7973,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WALTER"),
         .trainerClass = TRAINER_CLASS_GENTLEMAN,
         .trainerPic = TRAINER_PIC_GENTLEMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_RICH,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -8014,7 +8014,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WALTER"),
         .trainerClass = TRAINER_CLASS_GENTLEMAN,
         .trainerPic = TRAINER_PIC_GENTLEMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_RICH,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -8070,11 +8070,12 @@ F_TRAINER_FEMALE |
         .trainerName = _("SIDNEY"),
         .trainerClass = TRAINER_CLASS_ELITE_FOUR,
         .trainerPic = TRAINER_PIC_ELITE_FOUR_SIDNEY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER | AI_FLAG_FORCE_SETUP_FIRST_TURN,
+        .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_PURPLE,
         .partySize = 5,
         .party = (const struct TrainerMon[])
@@ -8157,12 +8158,13 @@ F_TRAINER_FEMALE |
         .trainerName = _("PHOEBE"),
         .trainerClass = TRAINER_CLASS_ELITE_FOUR,
         .trainerPic = TRAINER_PIC_ELITE_FOUR_PHOEBE,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+        .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_GREEN,
         .partySize = 5,
         .party = (const struct TrainerMon[])
@@ -8245,12 +8247,13 @@ F_TRAINER_FEMALE |
         .trainerName = _("GLACIA"),
         .trainerClass = TRAINER_CLASS_ELITE_FOUR,
         .trainerPic = TRAINER_PIC_ELITE_FOUR_GLACIA,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+        .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_PINK,
         .partySize = 5,
         .party = (const struct TrainerMon[])
@@ -8333,11 +8336,12 @@ F_TRAINER_FEMALE |
         .trainerName = _("DRAKE"),
         .trainerClass = TRAINER_CLASS_ELITE_FOUR,
         .trainerPic = TRAINER_PIC_ELITE_FOUR_DRAKE,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+        .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_BLUE,
         .partySize = 5,
         .party = (const struct TrainerMon[])
@@ -8420,8 +8424,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ROXANNE"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_ROXANNE,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .items = { ITEM_POTION, ITEM_POTION },
         .doubleBattle = FALSE,
@@ -8479,7 +8483,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRAWLY"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_BRAWLY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .items = { ITEM_SUPER_POTION, ITEM_SUPER_POTION },
         .doubleBattle = FALSE,
@@ -8537,7 +8541,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WATTSON"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_WATTSON,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .items = { ITEM_SUPER_POTION, ITEM_SUPER_POTION },
         .doubleBattle = FALSE,
@@ -8609,8 +8613,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("FLANNERY"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_FLANNERY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .items = { ITEM_HYPER_POTION, ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -8682,7 +8686,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("NORMAN"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_NORMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .items = { ITEM_HYPER_POTION, ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -8754,8 +8758,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("WINONA"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_WINONA,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .items = { ITEM_HYPER_POTION, ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -8841,7 +8845,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TATE&LIZA"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_TATE_AND_LIZA,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .items = { ITEM_HYPER_POTION, ITEM_HYPER_POTION, ITEM_HYPER_POTION, ITEM_HYPER_POTION },
         .doubleBattle = TRUE,
@@ -8914,7 +8918,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JUAN"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_JUAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .items = { ITEM_HYPER_POTION, ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -9000,7 +9004,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JERRY"),
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .trainerPic = TRAINER_PIC_SCHOOL_KID_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -9022,7 +9026,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TED"),
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .trainerPic = TRAINER_PIC_SCHOOL_KID_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -9044,7 +9048,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("PAUL"),
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .trainerPic = TRAINER_PIC_SCHOOL_KID_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -9082,7 +9086,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JERRY"),
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .trainerPic = TRAINER_PIC_SCHOOL_KID_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -9112,7 +9116,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JERRY"),
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .trainerPic = TRAINER_PIC_SCHOOL_KID_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -9142,7 +9146,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JERRY"),
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .trainerPic = TRAINER_PIC_SCHOOL_KID_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -9172,7 +9176,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JERRY"),
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .trainerPic = TRAINER_PIC_SCHOOL_KID_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -9210,8 +9214,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("KAREN"),
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .trainerPic = TRAINER_PIC_SCHOOL_KID_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -9233,8 +9237,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("GEORGIA"),
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .trainerPic = TRAINER_PIC_SCHOOL_KID_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -9264,8 +9268,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("KAREN"),
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .trainerPic = TRAINER_PIC_SCHOOL_KID_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -9295,8 +9299,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("KAREN"),
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .trainerPic = TRAINER_PIC_SCHOOL_KID_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -9326,8 +9330,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("KAREN"),
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .trainerPic = TRAINER_PIC_SCHOOL_KID_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -9357,8 +9361,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("KAREN"),
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .trainerPic = TRAINER_PIC_SCHOOL_KID_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -9388,7 +9392,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("KATE & JOY"),
         .trainerClass = TRAINER_CLASS_SR_AND_JR,
         .trainerPic = TRAINER_PIC_SR_AND_JR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -9430,7 +9434,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ANNA & MEG"),
         .trainerClass = TRAINER_CLASS_SR_AND_JR,
         .trainerPic = TRAINER_PIC_SR_AND_JR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -9471,7 +9475,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ANNA & MEG"),
         .trainerClass = TRAINER_CLASS_SR_AND_JR,
         .trainerPic = TRAINER_PIC_SR_AND_JR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -9512,7 +9516,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ANNA & MEG"),
         .trainerClass = TRAINER_CLASS_SR_AND_JR,
         .trainerPic = TRAINER_PIC_SR_AND_JR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -9553,7 +9557,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ANNA & MEG"),
         .trainerClass = TRAINER_CLASS_SR_AND_JR,
         .trainerPic = TRAINER_PIC_SR_AND_JR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -9594,7 +9598,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ANNA & MEG"),
         .trainerClass = TRAINER_CLASS_SR_AND_JR,
         .trainerPic = TRAINER_PIC_SR_AND_JR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -9635,7 +9639,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("VICTOR"),
         .trainerClass = TRAINER_CLASS_WINSTRATE,
         .trainerPic = TRAINER_PIC_POKEFAN_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -9667,7 +9671,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("MIGUEL"),
         .trainerClass = TRAINER_CLASS_POKEFAN,
         .trainerPic = TRAINER_PIC_POKEFAN_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -9690,7 +9694,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("COLTON"),
         .trainerClass = TRAINER_CLASS_POKEFAN,
         .trainerPic = TRAINER_PIC_POKEFAN_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -9794,7 +9798,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("MIGUEL"),
         .trainerClass = TRAINER_CLASS_POKEFAN,
         .trainerPic = TRAINER_PIC_POKEFAN_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -9817,7 +9821,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("MIGUEL"),
         .trainerClass = TRAINER_CLASS_POKEFAN,
         .trainerPic = TRAINER_PIC_POKEFAN_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -9840,7 +9844,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("MIGUEL"),
         .trainerClass = TRAINER_CLASS_POKEFAN,
         .trainerPic = TRAINER_PIC_POKEFAN_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -9863,7 +9867,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("MIGUEL"),
         .trainerClass = TRAINER_CLASS_POKEFAN,
         .trainerPic = TRAINER_PIC_POKEFAN_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -9886,8 +9890,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("VICTORIA"),
         .trainerClass = TRAINER_CLASS_WINSTRATE,
         .trainerPic = TRAINER_PIC_POKEFAN_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT,
@@ -9910,8 +9914,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("VANESSA"),
         .trainerClass = TRAINER_CLASS_POKEFAN,
         .trainerPic = TRAINER_PIC_POKEFAN_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -9934,8 +9938,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("BETHANY"),
         .trainerClass = TRAINER_CLASS_POKEFAN,
         .trainerPic = TRAINER_PIC_POKEFAN_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -9976,8 +9980,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ISABEL"),
         .trainerClass = TRAINER_CLASS_POKEFAN,
         .trainerPic = TRAINER_PIC_POKEFAN_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -10009,8 +10013,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ISABEL"),
         .trainerClass = TRAINER_CLASS_POKEFAN,
         .trainerPic = TRAINER_PIC_POKEFAN_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -10042,8 +10046,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ISABEL"),
         .trainerClass = TRAINER_CLASS_POKEFAN,
         .trainerPic = TRAINER_PIC_POKEFAN_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -10075,8 +10079,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ISABEL"),
         .trainerClass = TRAINER_CLASS_POKEFAN,
         .trainerPic = TRAINER_PIC_POKEFAN_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -10108,8 +10112,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ISABEL"),
         .trainerClass = TRAINER_CLASS_POKEFAN,
         .trainerPic = TRAINER_PIC_POKEFAN_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -10141,7 +10145,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TIMOTHY"),
         .trainerClass = TRAINER_CLASS_EXPERT,
         .trainerPic = TRAINER_PIC_EXPERT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -10163,7 +10167,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TIMOTHY"),
         .trainerClass = TRAINER_CLASS_EXPERT,
         .trainerPic = TRAINER_PIC_EXPERT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -10191,7 +10195,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TIMOTHY"),
         .trainerClass = TRAINER_CLASS_EXPERT,
         .trainerPic = TRAINER_PIC_EXPERT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -10219,7 +10223,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TIMOTHY"),
         .trainerClass = TRAINER_CLASS_EXPERT,
         .trainerPic = TRAINER_PIC_EXPERT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -10247,7 +10251,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TIMOTHY"),
         .trainerClass = TRAINER_CLASS_EXPERT,
         .trainerPic = TRAINER_PIC_EXPERT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -10275,8 +10279,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("VICKY"),
         .trainerClass = TRAINER_CLASS_WINSTRATE,
         .trainerPic = TRAINER_PIC_EXPERT_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -10304,8 +10308,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("SHELBY"),
         .trainerClass = TRAINER_CLASS_EXPERT,
         .trainerPic = TRAINER_PIC_EXPERT_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -10335,8 +10339,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("SHELBY"),
         .trainerClass = TRAINER_CLASS_EXPERT,
         .trainerPic = TRAINER_PIC_EXPERT_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -10366,8 +10370,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("SHELBY"),
         .trainerClass = TRAINER_CLASS_EXPERT,
         .trainerPic = TRAINER_PIC_EXPERT_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -10397,8 +10401,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("SHELBY"),
         .trainerClass = TRAINER_CLASS_EXPERT,
         .trainerPic = TRAINER_PIC_EXPERT_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -10428,8 +10432,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("SHELBY"),
         .trainerClass = TRAINER_CLASS_EXPERT,
         .trainerPic = TRAINER_PIC_EXPERT_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -10459,7 +10463,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CALVIN"),
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -10481,7 +10485,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BILLY"),
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -10511,7 +10515,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JOSH"),
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -10536,7 +10540,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TOMMY"),
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -10566,7 +10570,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JOEY"),
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -10588,7 +10592,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BEN"),
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -10630,7 +10634,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("QUINCY"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -10673,8 +10677,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("KATELYNN"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -10717,7 +10721,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JAYLEN"),
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -10739,7 +10743,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DILLON"),
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -10761,7 +10765,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CALVIN"),
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -10783,7 +10787,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CALVIN"),
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -10813,7 +10817,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CALVIN"),
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -10851,7 +10855,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CALVIN"),
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -10889,7 +10893,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("EDDIE"),
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -10919,7 +10923,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ALLEN"),
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -10949,7 +10953,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TIMMY"),
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -10979,11 +10983,12 @@ F_TRAINER_FEMALE |
         .trainerName = _("WALLACE"),
         .trainerClass = TRAINER_CLASS_CHAMPION,
         .trainerPic = TRAINER_PIC_CHAMPION_WALLACE,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+        .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_YELLOW,
         .partySize = 6,
         .party = (const struct TrainerMon[])
@@ -11080,7 +11085,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ANDREW"),
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -11118,7 +11123,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("IVAN"),
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -11156,7 +11161,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CLAUDE"),
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -11194,7 +11199,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ELLIOT"),
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -11232,7 +11237,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("NED"),
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -11254,7 +11259,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DALE"),
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -11300,7 +11305,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("NOLAN"),
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -11322,7 +11327,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BARNY"),
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -11352,7 +11357,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WADE"),
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -11374,7 +11379,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CARTER"),
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -11404,7 +11409,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ELLIOT"),
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -11442,7 +11447,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ELLIOT"),
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -11488,7 +11493,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ELLIOT"),
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -11534,7 +11539,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ELLIOT"),
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT,
@@ -11580,7 +11585,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("RONALD"),
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -11642,7 +11647,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JACOB"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_CYCLING_TRIATHLETE_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -11680,7 +11685,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ANTHONY"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_CYCLING_TRIATHLETE_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -11710,7 +11715,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BENJAMIN"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_CYCLING_TRIATHLETE_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -11732,7 +11737,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BENJAMIN"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_CYCLING_TRIATHLETE_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -11754,7 +11759,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BENJAMIN"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_CYCLING_TRIATHLETE_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -11776,7 +11781,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BENJAMIN"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_CYCLING_TRIATHLETE_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -11798,7 +11803,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BENJAMIN"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_CYCLING_TRIATHLETE_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -11820,8 +11825,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ABIGAIL"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_CYCLING_TRIATHLETE_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -11843,8 +11848,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("JASMINE"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_CYCLING_TRIATHLETE_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -11882,8 +11887,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ABIGAIL"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_CYCLING_TRIATHLETE_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -11905,8 +11910,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ABIGAIL"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_CYCLING_TRIATHLETE_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -11928,8 +11933,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ABIGAIL"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_CYCLING_TRIATHLETE_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -11951,8 +11956,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ABIGAIL"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_CYCLING_TRIATHLETE_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -11974,7 +11979,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DYLAN"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_RUNNING_TRIATHLETE_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -11996,7 +12001,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DYLAN"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_RUNNING_TRIATHLETE_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12018,7 +12023,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DYLAN"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_RUNNING_TRIATHLETE_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12040,7 +12045,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DYLAN"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_RUNNING_TRIATHLETE_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12062,7 +12067,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DYLAN"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_RUNNING_TRIATHLETE_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12084,8 +12089,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MARIA"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_RUNNING_TRIATHLETE_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12107,8 +12112,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MARIA"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_RUNNING_TRIATHLETE_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12130,8 +12135,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MARIA"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_RUNNING_TRIATHLETE_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12153,8 +12158,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MARIA"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_RUNNING_TRIATHLETE_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12176,8 +12181,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MARIA"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_RUNNING_TRIATHLETE_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12199,7 +12204,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CAMDEN"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12229,7 +12234,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DEMETRIUS"),
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12259,7 +12264,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ISAIAH"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12281,7 +12286,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("PABLO"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12311,7 +12316,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CHASE"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12341,7 +12346,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ISAIAH"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12363,7 +12368,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ISAIAH"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12385,7 +12390,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ISAIAH"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12407,7 +12412,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ISAIAH"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12429,8 +12434,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ISOBEL"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12452,8 +12457,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("DONNY"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12483,8 +12488,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("TALIA"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12506,8 +12511,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("KATELYN"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12529,8 +12534,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ALLISON"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12560,8 +12565,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("KATELYN"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12583,8 +12588,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("KATELYN"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12606,8 +12611,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("KATELYN"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12629,8 +12634,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("KATELYN"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12652,7 +12657,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("NICOLAS"),
         .trainerClass = TRAINER_CLASS_DRAGON_TAMER,
         .trainerPic = TRAINER_PIC_DRAGON_TAMER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12682,7 +12687,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("NICOLAS"),
         .trainerClass = TRAINER_CLASS_DRAGON_TAMER,
         .trainerPic = TRAINER_PIC_DRAGON_TAMER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12712,7 +12717,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("NICOLAS"),
         .trainerClass = TRAINER_CLASS_DRAGON_TAMER,
         .trainerPic = TRAINER_PIC_DRAGON_TAMER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12742,7 +12747,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("NICOLAS"),
         .trainerClass = TRAINER_CLASS_DRAGON_TAMER,
         .trainerPic = TRAINER_PIC_DRAGON_TAMER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12780,7 +12785,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("NICOLAS"),
         .trainerClass = TRAINER_CLASS_DRAGON_TAMER,
         .trainerPic = TRAINER_PIC_DRAGON_TAMER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12819,7 +12824,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("AARON"),
         .trainerClass = TRAINER_CLASS_DRAGON_TAMER,
         .trainerPic = TRAINER_PIC_DRAGON_TAMER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12847,7 +12852,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("PERRY"),
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12869,7 +12874,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("HUGH"),
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12899,7 +12904,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("PHIL"),
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12921,7 +12926,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JARED"),
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12959,7 +12964,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("HUMBERTO"),
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -12981,7 +12986,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("PRESLEY"),
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -13011,7 +13016,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("EDWARDO"),
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -13041,7 +13046,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("COLIN"),
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -13071,7 +13076,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ROBERT"),
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -13093,7 +13098,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BENNY"),
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -13131,7 +13136,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CHESTER"),
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -13161,7 +13166,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ROBERT"),
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -13191,7 +13196,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ROBERT"),
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -13221,7 +13226,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ROBERT"),
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -13251,7 +13256,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ROBERT"),
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -13281,7 +13286,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ALEX"),
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -13311,7 +13316,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BECK"),
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -13333,7 +13338,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("YASU"),
         .trainerClass = TRAINER_CLASS_NINJA_BOY,
         .trainerPic = TRAINER_PIC_NINJA_BOY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT,
@@ -13355,7 +13360,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TAKASHI"),
         .trainerClass = TRAINER_CLASS_NINJA_BOY,
         .trainerPic = TRAINER_PIC_NINJA_BOY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT,
@@ -13385,8 +13390,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("DIANNE"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -13424,8 +13429,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("JANI"),
         .trainerClass = TRAINER_CLASS_TUBER_F,
         .trainerPic = TRAINER_PIC_TUBER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -13446,7 +13451,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("LAO"),
         .trainerClass = TRAINER_CLASS_NINJA_BOY,
         .trainerPic = TRAINER_PIC_NINJA_BOY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -13501,7 +13506,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("LUNG"),
         .trainerClass = TRAINER_CLASS_NINJA_BOY,
         .trainerPic = TRAINER_PIC_NINJA_BOY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -13530,7 +13535,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("LAO"),
         .trainerClass = TRAINER_CLASS_NINJA_BOY,
         .trainerPic = TRAINER_PIC_NINJA_BOY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -13596,7 +13601,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("LAO"),
         .trainerClass = TRAINER_CLASS_NINJA_BOY,
         .trainerPic = TRAINER_PIC_NINJA_BOY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -13662,7 +13667,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("LAO"),
         .trainerClass = TRAINER_CLASS_NINJA_BOY,
         .trainerPic = TRAINER_PIC_NINJA_BOY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -13726,7 +13731,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("LAO"),
         .trainerClass = TRAINER_CLASS_NINJA_BOY,
         .trainerPic = TRAINER_PIC_NINJA_BOY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -13793,8 +13798,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("JOCELYN"),
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .trainerPic = TRAINER_PIC_BATTLE_GIRL,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -13816,8 +13821,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("LAURA"),
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .trainerPic = TRAINER_PIC_BATTLE_GIRL,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -13839,8 +13844,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CYNDY"),
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .trainerPic = TRAINER_PIC_BATTLE_GIRL,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -13870,8 +13875,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CORA"),
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .trainerPic = TRAINER_PIC_BATTLE_GIRL,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -13893,8 +13898,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("PAULA"),
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .trainerPic = TRAINER_PIC_BATTLE_GIRL,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -13916,8 +13921,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CYNDY"),
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .trainerPic = TRAINER_PIC_BATTLE_GIRL,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -13947,8 +13952,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CYNDY"),
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .trainerPic = TRAINER_PIC_BATTLE_GIRL,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -13978,8 +13983,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CYNDY"),
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .trainerPic = TRAINER_PIC_BATTLE_GIRL,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14009,8 +14014,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CYNDY"),
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .trainerPic = TRAINER_PIC_BATTLE_GIRL,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14040,8 +14045,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MADELINE"),
         .trainerClass = TRAINER_CLASS_PARASOL_LADY,
         .trainerPic = TRAINER_PIC_PARASOL_LADY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14069,8 +14074,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CLARISSA"),
         .trainerClass = TRAINER_CLASS_PARASOL_LADY,
         .trainerPic = TRAINER_PIC_PARASOL_LADY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14100,8 +14105,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ANGELICA"),
         .trainerClass = TRAINER_CLASS_PARASOL_LADY,
         .trainerPic = TRAINER_PIC_PARASOL_LADY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14129,8 +14134,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MADELINE"),
         .trainerClass = TRAINER_CLASS_PARASOL_LADY,
         .trainerPic = TRAINER_PIC_PARASOL_LADY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14158,8 +14163,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MADELINE"),
         .trainerClass = TRAINER_CLASS_PARASOL_LADY,
         .trainerPic = TRAINER_PIC_PARASOL_LADY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14187,8 +14192,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MADELINE"),
         .trainerClass = TRAINER_CLASS_PARASOL_LADY,
         .trainerPic = TRAINER_PIC_PARASOL_LADY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14230,8 +14235,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MADELINE"),
         .trainerClass = TRAINER_CLASS_PARASOL_LADY,
         .trainerPic = TRAINER_PIC_PARASOL_LADY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14273,8 +14278,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("BEVERLY"),
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14304,8 +14309,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("IMANI"),
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14327,8 +14332,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("KYLA"),
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14350,8 +14355,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("DENISE"),
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14381,8 +14386,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("BETH"),
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14404,8 +14409,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("TARA"),
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14435,8 +14440,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MISSY"),
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14458,8 +14463,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ALICE"),
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14497,8 +14502,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("JENNY"),
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14520,8 +14525,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRACE"),
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14543,8 +14548,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("TANYA"),
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14566,8 +14571,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("SHARON"),
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14589,8 +14594,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("NIKKI"),
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14620,8 +14625,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRENDA"),
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14643,8 +14648,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("KATIE"),
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14674,8 +14679,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("SUSIE"),
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14697,8 +14702,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("KARA"),
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14720,8 +14725,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("DANA"),
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14743,8 +14748,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("SIENNA"),
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14774,8 +14779,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("DEBRA"),
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14797,8 +14802,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("LINDA"),
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14828,8 +14833,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("KAYLEE"),
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14859,8 +14864,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("LAUREL"),
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14890,8 +14895,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CARLEE"),
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14913,8 +14918,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("JENNY"),
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14936,8 +14941,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("JENNY"),
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14959,8 +14964,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("JENNY"),
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -14990,8 +14995,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("JENNY"),
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -15029,8 +15034,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("HEIDI"),
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -15072,8 +15077,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("BECKY"),
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -15115,8 +15120,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CAROL"),
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -15146,8 +15151,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("NANCY"),
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -15177,8 +15182,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MARTHA"),
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -15208,8 +15213,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("DIANA"),
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -15247,7 +15252,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CEDRIC"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -15275,8 +15280,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("IRENE"),
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -15306,8 +15311,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("DIANA"),
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -15345,8 +15350,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("DIANA"),
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -15384,8 +15389,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("DIANA"),
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -15423,8 +15428,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("DIANA"),
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -15462,7 +15467,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("AMY & LIV"),
         .trainerClass = TRAINER_CLASS_TWINS,
         .trainerPic = TRAINER_PIC_TWINS,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -15492,7 +15497,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("AMY & LIV"),
         .trainerClass = TRAINER_CLASS_TWINS,
         .trainerPic = TRAINER_PIC_TWINS,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -15522,7 +15527,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GINA & MIA"),
         .trainerClass = TRAINER_CLASS_TWINS,
         .trainerPic = TRAINER_PIC_TWINS,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -15552,7 +15557,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("MIU & YUKI"),
         .trainerClass = TRAINER_CLASS_TWINS,
         .trainerPic = TRAINER_PIC_TWINS,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -15582,7 +15587,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("AMY & LIV"),
         .trainerClass = TRAINER_CLASS_TWINS,
         .trainerPic = TRAINER_PIC_TWINS,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -15612,7 +15617,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GINA & MIA"),
         .trainerClass = TRAINER_CLASS_TWINS,
         .trainerPic = TRAINER_PIC_TWINS,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -15650,7 +15655,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("AMY & LIV"),
         .trainerClass = TRAINER_CLASS_TWINS,
         .trainerPic = TRAINER_PIC_TWINS,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -15680,7 +15685,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("AMY & LIV"),
         .trainerClass = TRAINER_CLASS_TWINS,
         .trainerPic = TRAINER_PIC_TWINS,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -15722,7 +15727,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("AMY & LIV"),
         .trainerClass = TRAINER_CLASS_TWINS,
         .trainerPic = TRAINER_PIC_TWINS,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -15764,7 +15769,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("HUEY"),
         .trainerClass = TRAINER_CLASS_SAILOR,
         .trainerPic = TRAINER_PIC_SAILOR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -15794,7 +15799,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("EDMOND"),
         .trainerClass = TRAINER_CLASS_SAILOR,
         .trainerPic = TRAINER_PIC_SAILOR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -15816,7 +15821,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ERNEST"),
         .trainerClass = TRAINER_CLASS_SAILOR,
         .trainerPic = TRAINER_PIC_SAILOR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -15846,7 +15851,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DWAYNE"),
         .trainerClass = TRAINER_CLASS_SAILOR,
         .trainerPic = TRAINER_PIC_SAILOR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -15884,7 +15889,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("PHILLIP"),
         .trainerClass = TRAINER_CLASS_SAILOR,
         .trainerPic = TRAINER_PIC_SAILOR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -15914,7 +15919,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("LEONARD"),
         .trainerClass = TRAINER_CLASS_SAILOR,
         .trainerPic = TRAINER_PIC_SAILOR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -15952,7 +15957,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DUNCAN"),
         .trainerClass = TRAINER_CLASS_SAILOR,
         .trainerPic = TRAINER_PIC_SAILOR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -15982,7 +15987,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ERNEST"),
         .trainerClass = TRAINER_CLASS_SAILOR,
         .trainerPic = TRAINER_PIC_SAILOR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -16020,7 +16025,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ERNEST"),
         .trainerClass = TRAINER_CLASS_SAILOR,
         .trainerPic = TRAINER_PIC_SAILOR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -16058,7 +16063,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ERNEST"),
         .trainerClass = TRAINER_CLASS_SAILOR,
         .trainerPic = TRAINER_PIC_SAILOR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -16096,7 +16101,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ERNEST"),
         .trainerClass = TRAINER_CLASS_SAILOR,
         .trainerPic = TRAINER_PIC_SAILOR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -16134,7 +16139,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ELI"),
         .trainerClass = TRAINER_CLASS_HIKER,
         .trainerPic = TRAINER_PIC_HIKER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -16156,8 +16161,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ANNIKA"),
         .trainerClass = TRAINER_CLASS_POKEFAN,
         .trainerPic = TRAINER_PIC_POKEFAN_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -16201,8 +16206,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("JAZMYN"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER_2,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -16225,7 +16230,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JONAS"),
         .trainerClass = TRAINER_CLASS_NINJA_BOY,
         .trainerPic = TRAINER_PIC_NINJA_BOY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -16253,8 +16258,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("KAYLEY"),
         .trainerClass = TRAINER_CLASS_PARASOL_LADY,
         .trainerPic = TRAINER_PIC_PARASOL_LADY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -16282,7 +16287,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("AURON"),
         .trainerClass = TRAINER_CLASS_EXPERT,
         .trainerPic = TRAINER_PIC_EXPERT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -16312,7 +16317,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("KELVIN"),
         .trainerClass = TRAINER_CLASS_SAILOR,
         .trainerPic = TRAINER_PIC_SAILOR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -16342,8 +16347,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MARLEY"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -16372,8 +16377,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("REYNA"),
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .trainerPic = TRAINER_PIC_BATTLE_GIRL,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -16403,7 +16408,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("HUDSON"),
         .trainerClass = TRAINER_CLASS_SAILOR,
         .trainerPic = TRAINER_PIC_SAILOR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -16425,7 +16430,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CONOR"),
         .trainerClass = TRAINER_CLASS_EXPERT,
         .trainerPic = TRAINER_PIC_EXPERT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -16455,7 +16460,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("EDWIN"),
         .trainerClass = TRAINER_CLASS_COLLECTOR,
         .trainerPic = TRAINER_PIC_COLLECTOR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -16485,7 +16490,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("HECTOR"),
         .trainerClass = TRAINER_CLASS_COLLECTOR,
         .trainerPic = TRAINER_PIC_COLLECTOR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -16515,7 +16520,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TABITHA"),
         .trainerClass = TRAINER_CLASS_MAGMA_ADMIN,
         .trainerPic = TRAINER_PIC_MAGMA_ADMIN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -16553,7 +16558,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("EDWIN"),
         .trainerClass = TRAINER_CLASS_COLLECTOR,
         .trainerPic = TRAINER_PIC_COLLECTOR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -16583,7 +16588,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("EDWIN"),
         .trainerClass = TRAINER_CLASS_COLLECTOR,
         .trainerPic = TRAINER_PIC_COLLECTOR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -16613,7 +16618,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("EDWIN"),
         .trainerClass = TRAINER_CLASS_COLLECTOR,
         .trainerPic = TRAINER_PIC_COLLECTOR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -16643,7 +16648,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("EDWIN"),
         .trainerClass = TRAINER_CLASS_COLLECTOR,
         .trainerPic = TRAINER_PIC_COLLECTOR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -16673,7 +16678,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WALLY"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_WALLY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -16758,7 +16763,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRENDAN"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_BRENDAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -16780,7 +16785,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRENDAN"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_BRENDAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -16818,7 +16823,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRENDAN"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_BRENDAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -16856,7 +16861,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRENDAN"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_BRENDAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_FORCE_SETUP_FIRST_TURN,
@@ -16878,7 +16883,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRENDAN"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_BRENDAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -16916,7 +16921,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRENDAN"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_BRENDAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -16954,7 +16959,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRENDAN"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_BRENDAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -16976,7 +16981,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRENDAN"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_BRENDAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -17014,7 +17019,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRENDAN"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_BRENDAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -17052,8 +17057,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MAY"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_MAY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -17075,8 +17080,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MAY"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_MAY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -17114,8 +17119,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MAY"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_MAY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -17153,8 +17158,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MAY"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_MAY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -17176,8 +17181,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MAY"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_MAY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -17215,8 +17220,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MAY"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_MAY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -17254,8 +17259,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MAY"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_MAY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -17277,8 +17282,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MAY"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_MAY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -17316,8 +17321,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MAY"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_MAY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -17355,7 +17360,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ISAAC"),
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .trainerPic = TRAINER_PIC_POKEMON_BREEDER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -17417,7 +17422,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DAVIS"),
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -17439,7 +17444,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("MITCHELL"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -17481,7 +17486,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ISAAC"),
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .trainerPic = TRAINER_PIC_POKEMON_BREEDER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -17543,7 +17548,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ISAAC"),
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .trainerPic = TRAINER_PIC_POKEMON_BREEDER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -17605,7 +17610,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ISAAC"),
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .trainerPic = TRAINER_PIC_POKEMON_BREEDER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -17667,7 +17672,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ISAAC"),
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .trainerPic = TRAINER_PIC_POKEMON_BREEDER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -17729,8 +17734,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("LYDIA"),
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .trainerPic = TRAINER_PIC_POKEMON_BREEDER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -17792,8 +17797,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("HALLE"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -17824,7 +17829,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GARRISON"),
         .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -17846,8 +17851,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("LYDIA"),
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .trainerPic = TRAINER_PIC_POKEMON_BREEDER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -17909,8 +17914,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("LYDIA"),
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .trainerPic = TRAINER_PIC_POKEMON_BREEDER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -17972,8 +17977,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("LYDIA"),
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .trainerPic = TRAINER_PIC_POKEMON_BREEDER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -18035,8 +18040,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("LYDIA"),
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .trainerPic = TRAINER_PIC_POKEMON_BREEDER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -18098,7 +18103,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JACKSON"),
         .trainerClass = TRAINER_CLASS_PKMN_RANGER,
         .trainerPic = TRAINER_PIC_POKEMON_RANGER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -18121,7 +18126,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("LORENZO"),
         .trainerClass = TRAINER_CLASS_PKMN_RANGER,
         .trainerPic = TRAINER_PIC_POKEMON_RANGER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -18160,7 +18165,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("SEBASTIAN"),
         .trainerClass = TRAINER_CLASS_PKMN_RANGER,
         .trainerPic = TRAINER_PIC_POKEMON_RANGER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -18183,7 +18188,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JACKSON"),
         .trainerClass = TRAINER_CLASS_PKMN_RANGER,
         .trainerPic = TRAINER_PIC_POKEMON_RANGER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -18206,7 +18211,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JACKSON"),
         .trainerClass = TRAINER_CLASS_PKMN_RANGER,
         .trainerPic = TRAINER_PIC_POKEMON_RANGER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -18229,7 +18234,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JACKSON"),
         .trainerClass = TRAINER_CLASS_PKMN_RANGER,
         .trainerPic = TRAINER_PIC_POKEMON_RANGER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -18252,7 +18257,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JACKSON"),
         .trainerClass = TRAINER_CLASS_PKMN_RANGER,
         .trainerPic = TRAINER_PIC_POKEMON_RANGER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -18283,8 +18288,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CATHERINE"),
         .trainerClass = TRAINER_CLASS_PKMN_RANGER,
         .trainerPic = TRAINER_PIC_POKEMON_RANGER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -18315,8 +18320,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("JENNA"),
         .trainerClass = TRAINER_CLASS_PKMN_RANGER,
         .trainerPic = TRAINER_PIC_POKEMON_RANGER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -18355,8 +18360,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("SOPHIA"),
         .trainerClass = TRAINER_CLASS_PKMN_RANGER,
         .trainerPic = TRAINER_PIC_POKEMON_RANGER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -18387,8 +18392,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CATHERINE"),
         .trainerClass = TRAINER_CLASS_PKMN_RANGER,
         .trainerPic = TRAINER_PIC_POKEMON_RANGER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -18419,8 +18424,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CATHERINE"),
         .trainerClass = TRAINER_CLASS_PKMN_RANGER,
         .trainerPic = TRAINER_PIC_POKEMON_RANGER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -18451,8 +18456,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CATHERINE"),
         .trainerClass = TRAINER_CLASS_PKMN_RANGER,
         .trainerPic = TRAINER_PIC_POKEMON_RANGER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -18483,8 +18488,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CATHERINE"),
         .trainerClass = TRAINER_CLASS_PKMN_RANGER,
         .trainerPic = TRAINER_PIC_POKEMON_RANGER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -18515,7 +18520,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JULIO"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_CYCLING_TRIATHLETE_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -18537,7 +18542,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_AQUA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -18567,8 +18572,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .trainerPic = TRAINER_PIC_AQUA_GRUNT_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_AQUA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -18598,8 +18603,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .trainerPic = TRAINER_PIC_AQUA_GRUNT_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_AQUA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -18629,7 +18634,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -18659,7 +18664,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("MARC"),
         .trainerClass = TRAINER_CLASS_HIKER,
         .trainerPic = TRAINER_PIC_HIKER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -18689,7 +18694,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRENDEN"),
         .trainerClass = TRAINER_CLASS_SAILOR,
         .trainerPic = TRAINER_PIC_SAILOR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -18711,8 +18716,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("LILITH"),
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .trainerPic = TRAINER_PIC_BATTLE_GIRL,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -18734,7 +18739,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CRISTIAN"),
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -18756,8 +18761,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("SYLVIA"),
         .trainerClass = TRAINER_CLASS_HEX_MANIAC,
         .trainerPic = TRAINER_PIC_HEX_MANIAC,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -18779,7 +18784,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("LEONARDO"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -18801,8 +18806,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ATHENA"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -18842,7 +18847,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("HARRISON"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -18864,7 +18869,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -18886,7 +18891,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CLARENCE"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -18908,8 +18913,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("TERRY"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -18931,7 +18936,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("NATE"),
         .trainerClass = TRAINER_CLASS_GENTLEMAN,
         .trainerPic = TRAINER_PIC_GENTLEMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_RICH,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -18953,8 +18958,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("KATHLEEN"),
         .trainerClass = TRAINER_CLASS_HEX_MANIAC,
         .trainerPic = TRAINER_PIC_HEX_MANIAC,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -18976,7 +18981,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CLIFFORD"),
         .trainerClass = TRAINER_CLASS_GENTLEMAN,
         .trainerPic = TRAINER_PIC_GENTLEMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_RICH,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -18998,7 +19003,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("NICHOLAS"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -19020,8 +19025,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -19051,7 +19056,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -19073,7 +19078,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -19095,7 +19100,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -19117,7 +19122,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -19139,8 +19144,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MACEY"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -19162,7 +19167,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRENDAN"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_BRENDAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -19192,7 +19197,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRENDAN"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_BRENDAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -19222,7 +19227,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("PAXTON"),
         .trainerClass = TRAINER_CLASS_EXPERT,
         .trainerPic = TRAINER_PIC_EXPERT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -19252,8 +19257,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ISABELLA"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -19275,8 +19280,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .trainerPic = TRAINER_PIC_AQUA_GRUNT_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_AQUA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -19306,7 +19311,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TABITHA"),
         .trainerClass = TRAINER_CLASS_MAGMA_ADMIN,
         .trainerPic = TRAINER_PIC_MAGMA_ADMIN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -19352,7 +19357,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JONATHAN"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -19383,7 +19388,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRENDAN"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_BRENDAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -19413,8 +19418,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MAY"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_MAY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_FORCE_SETUP_FIRST_TURN,
@@ -19444,7 +19449,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("MAXIE"),
         .trainerClass = TRAINER_CLASS_MAGMA_LEADER,
         .trainerPic = TRAINER_PIC_MAGMA_LEADER_MAXIE,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .items = { ITEM_SUPER_POTION, ITEM_SUPER_POTION },
         .doubleBattle = FALSE,
@@ -19483,7 +19488,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("MAXIE"),
         .trainerClass = TRAINER_CLASS_MAGMA_LEADER,
         .trainerPic = TRAINER_PIC_MAGMA_LEADER_MAXIE,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .items = { ITEM_SUPER_POTION, ITEM_SUPER_POTION },
         .doubleBattle = FALSE,
@@ -19522,8 +19527,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("TIANA"),
         .trainerClass = TRAINER_CLASS_LASS,
         .trainerPic = TRAINER_PIC_LASS,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -19553,8 +19558,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("HALEY"),
         .trainerClass = TRAINER_CLASS_LASS,
         .trainerPic = TRAINER_PIC_LASS,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -19584,8 +19589,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("JANICE"),
         .trainerClass = TRAINER_CLASS_LASS,
         .trainerPic = TRAINER_PIC_LASS,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -19607,8 +19612,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("VIVI"),
         .trainerClass = TRAINER_CLASS_WINSTRATE,
         .trainerPic = TRAINER_PIC_LASS,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -19646,8 +19651,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("HALEY"),
         .trainerClass = TRAINER_CLASS_LASS,
         .trainerPic = TRAINER_PIC_LASS,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -19677,8 +19682,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("HALEY"),
         .trainerClass = TRAINER_CLASS_LASS,
         .trainerPic = TRAINER_PIC_LASS,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -19708,8 +19713,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("HALEY"),
         .trainerClass = TRAINER_CLASS_LASS,
         .trainerPic = TRAINER_PIC_LASS,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -19739,8 +19744,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("HALEY"),
         .trainerClass = TRAINER_CLASS_LASS,
         .trainerPic = TRAINER_PIC_LASS,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -19778,8 +19783,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("SALLY"),
         .trainerClass = TRAINER_CLASS_LASS,
         .trainerPic = TRAINER_PIC_LASS,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -19801,8 +19806,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ROBIN"),
         .trainerClass = TRAINER_CLASS_LASS,
         .trainerPic = TRAINER_PIC_LASS,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -19840,8 +19845,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ANDREA"),
         .trainerClass = TRAINER_CLASS_LASS,
         .trainerPic = TRAINER_PIC_LASS,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -19863,8 +19868,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CRISSY"),
         .trainerClass = TRAINER_CLASS_LASS,
         .trainerPic = TRAINER_PIC_LASS,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -19894,7 +19899,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("RICK"),
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -19924,7 +19929,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("LYLE"),
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -19970,7 +19975,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JOSE"),
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20000,7 +20005,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DOUG"),
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20030,7 +20035,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GREG"),
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20060,7 +20065,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("KENT"),
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20082,7 +20087,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JAMES"),
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20112,7 +20117,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JAMES"),
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20134,7 +20139,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JAMES"),
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20164,7 +20169,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JAMES"),
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20202,7 +20207,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JAMES"),
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20248,7 +20253,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRICE"),
         .trainerClass = TRAINER_CLASS_HIKER,
         .trainerPic = TRAINER_PIC_HIKER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20278,7 +20283,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TRENT"),
         .trainerClass = TRAINER_CLASS_HIKER,
         .trainerPic = TRAINER_PIC_HIKER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20316,7 +20321,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("LENNY"),
         .trainerClass = TRAINER_CLASS_HIKER,
         .trainerPic = TRAINER_PIC_HIKER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20346,7 +20351,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("LUCAS"),
         .trainerClass = TRAINER_CLASS_HIKER,
         .trainerPic = TRAINER_PIC_HIKER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20376,7 +20381,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ALAN"),
         .trainerClass = TRAINER_CLASS_HIKER,
         .trainerPic = TRAINER_PIC_HIKER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20414,7 +20419,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CLARK"),
         .trainerClass = TRAINER_CLASS_HIKER,
         .trainerPic = TRAINER_PIC_HIKER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20436,7 +20441,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ERIC"),
         .trainerClass = TRAINER_CLASS_HIKER,
         .trainerPic = TRAINER_PIC_HIKER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20466,7 +20471,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("LUCAS"),
         .trainerClass = TRAINER_CLASS_HIKER,
         .trainerPic = TRAINER_PIC_HIKER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20492,7 +20497,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("MIKE"),
         .trainerClass = TRAINER_CLASS_HIKER,
         .trainerPic = TRAINER_PIC_HIKER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20530,7 +20535,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("MIKE"),
         .trainerClass = TRAINER_CLASS_HIKER,
         .trainerPic = TRAINER_PIC_HIKER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20568,7 +20573,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TRENT"),
         .trainerClass = TRAINER_CLASS_HIKER,
         .trainerPic = TRAINER_PIC_HIKER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20614,7 +20619,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TRENT"),
         .trainerClass = TRAINER_CLASS_HIKER,
         .trainerPic = TRAINER_PIC_HIKER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20660,7 +20665,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TRENT"),
         .trainerClass = TRAINER_CLASS_HIKER,
         .trainerPic = TRAINER_PIC_HIKER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20706,7 +20711,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TRENT"),
         .trainerClass = TRAINER_CLASS_HIKER,
         .trainerPic = TRAINER_PIC_HIKER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20752,7 +20757,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DEZ & LUKE"),
         .trainerClass = TRAINER_CLASS_YOUNG_COUPLE,
         .trainerPic = TRAINER_PIC_YOUNG_COUPLE,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20782,7 +20787,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("LEA & JED"),
         .trainerClass = TRAINER_CLASS_YOUNG_COUPLE,
         .trainerPic = TRAINER_PIC_YOUNG_COUPLE,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20812,7 +20817,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("KIRA & DAN"),
         .trainerClass = TRAINER_CLASS_YOUNG_COUPLE,
         .trainerPic = TRAINER_PIC_YOUNG_COUPLE,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20842,7 +20847,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("KIRA & DAN"),
         .trainerClass = TRAINER_CLASS_YOUNG_COUPLE,
         .trainerPic = TRAINER_PIC_YOUNG_COUPLE,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20872,7 +20877,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("KIRA & DAN"),
         .trainerClass = TRAINER_CLASS_YOUNG_COUPLE,
         .trainerPic = TRAINER_PIC_YOUNG_COUPLE,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20902,7 +20907,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("KIRA & DAN"),
         .trainerClass = TRAINER_CLASS_YOUNG_COUPLE,
         .trainerPic = TRAINER_PIC_YOUNG_COUPLE,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20932,7 +20937,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("KIRA & DAN"),
         .trainerClass = TRAINER_CLASS_YOUNG_COUPLE,
         .trainerPic = TRAINER_PIC_YOUNG_COUPLE,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20962,8 +20967,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("JOHANNA"),
         .trainerClass = TRAINER_CLASS_BEAUTY,
         .trainerPic = TRAINER_PIC_BEAUTY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -20985,7 +20990,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GERALD"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -21014,8 +21019,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("VIVIAN"),
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .trainerPic = TRAINER_PIC_BATTLE_GIRL,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -21057,8 +21062,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("DANIELLE"),
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .trainerPic = TRAINER_PIC_BATTLE_GIRL,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -21086,7 +21091,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("HIDEO"),
         .trainerClass = TRAINER_CLASS_NINJA_BOY,
         .trainerPic = TRAINER_PIC_NINJA_BOY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT,
@@ -21128,7 +21133,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("KEIGO"),
         .trainerClass = TRAINER_CLASS_NINJA_BOY,
         .trainerPic = TRAINER_PIC_NINJA_BOY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT,
@@ -21170,7 +21175,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("RILEY"),
         .trainerClass = TRAINER_CLASS_NINJA_BOY,
         .trainerPic = TRAINER_PIC_NINJA_BOY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT,
@@ -21212,7 +21217,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("FLINT"),
         .trainerClass = TRAINER_CLASS_CAMPER,
         .trainerPic = TRAINER_PIC_CAMPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -21242,8 +21247,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ASHLEY"),
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -21281,7 +21286,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WALLY"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_WALLY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -21303,7 +21308,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WALLY"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_WALLY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -21388,7 +21393,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WALLY"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_WALLY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -21473,7 +21478,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WALLY"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_WALLY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -21558,7 +21563,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WALLY"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_WALLY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -21643,7 +21648,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRENDAN"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_BRENDAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -21689,7 +21694,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRENDAN"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_BRENDAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -21735,7 +21740,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRENDAN"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_BRENDAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -21781,8 +21786,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MAY"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_MAY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -21828,8 +21833,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MAY"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_MAY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -21875,8 +21880,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MAY"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_MAY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -21922,7 +21927,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JONAH"),
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -21960,7 +21965,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("HENRY"),
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -21990,7 +21995,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ROGER"),
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -22028,8 +22033,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ALEXA"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -22060,7 +22065,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("RUBEN"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -22091,7 +22096,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("KOJI"),
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -22113,7 +22118,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WAYNE"),
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -22151,7 +22156,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("AIDAN"),
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -22181,7 +22186,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("REED"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -22211,8 +22216,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("TISHA"),
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -22234,7 +22239,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TORI & TIA"),
         .trainerClass = TRAINER_CLASS_TWINS,
         .trainerPic = TRAINER_PIC_TWINS,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -22264,7 +22269,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("KIM & IRIS"),
         .trainerClass = TRAINER_CLASS_SR_AND_JR,
         .trainerPic = TRAINER_PIC_SR_AND_JR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -22306,7 +22311,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TYRA & IVY"),
         .trainerClass = TRAINER_CLASS_SR_AND_JR,
         .trainerPic = TRAINER_PIC_SR_AND_JR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -22348,7 +22353,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("MEL & PAUL"),
         .trainerClass = TRAINER_CLASS_YOUNG_COUPLE,
         .trainerPic = TRAINER_PIC_YOUNG_COUPLE,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -22390,7 +22395,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JOHN & JAY"),
         .trainerClass = TRAINER_CLASS_OLD_COUPLE,
         .trainerPic = TRAINER_PIC_OLD_COUPLE,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -22432,7 +22437,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JOHN & JAY"),
         .trainerClass = TRAINER_CLASS_OLD_COUPLE,
         .trainerPic = TRAINER_PIC_OLD_COUPLE,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -22474,7 +22479,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JOHN & JAY"),
         .trainerClass = TRAINER_CLASS_OLD_COUPLE,
         .trainerPic = TRAINER_PIC_OLD_COUPLE,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -22516,7 +22521,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JOHN & JAY"),
         .trainerClass = TRAINER_CLASS_OLD_COUPLE,
         .trainerPic = TRAINER_PIC_OLD_COUPLE,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_FORCE_SETUP_FIRST_TURN,
@@ -22558,7 +22563,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JOHN & JAY"),
         .trainerClass = TRAINER_CLASS_OLD_COUPLE,
         .trainerPic = TRAINER_PIC_OLD_COUPLE,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -22600,7 +22605,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("RELI & IAN"),
         .trainerClass = TRAINER_CLASS_SIS_AND_BRO,
         .trainerPic = TRAINER_PIC_SIS_AND_BRO,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -22630,7 +22635,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("LILA & ROY"),
         .trainerClass = TRAINER_CLASS_SIS_AND_BRO,
         .trainerPic = TRAINER_PIC_SIS_AND_BRO,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -22660,7 +22665,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("LILA & ROY"),
         .trainerClass = TRAINER_CLASS_SIS_AND_BRO,
         .trainerPic = TRAINER_PIC_SIS_AND_BRO,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -22690,7 +22695,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("LILA & ROY"),
         .trainerClass = TRAINER_CLASS_SIS_AND_BRO,
         .trainerPic = TRAINER_PIC_SIS_AND_BRO,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -22720,7 +22725,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("LILA & ROY"),
         .trainerClass = TRAINER_CLASS_SIS_AND_BRO,
         .trainerPic = TRAINER_PIC_SIS_AND_BRO,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -22750,7 +22755,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("LILA & ROY"),
         .trainerClass = TRAINER_CLASS_SIS_AND_BRO,
         .trainerPic = TRAINER_PIC_SIS_AND_BRO,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -22780,7 +22785,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("LISA & RAY"),
         .trainerClass = TRAINER_CLASS_SIS_AND_BRO,
         .trainerPic = TRAINER_PIC_SIS_AND_BRO,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -22810,7 +22815,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CHRIS"),
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -22856,7 +22861,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DAWSON"),
         .trainerClass = TRAINER_CLASS_RICH_BOY,
         .trainerPic = TRAINER_PIC_RICH_BOY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_RICH,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -22887,8 +22892,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("SARAH"),
         .trainerClass = TRAINER_CLASS_LADY,
         .trainerPic = TRAINER_PIC_LADY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -22920,7 +22925,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DARIAN"),
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -22942,8 +22947,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("HAILEY"),
         .trainerClass = TRAINER_CLASS_TUBER_F,
         .trainerPic = TRAINER_PIC_TUBER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -22965,7 +22970,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CHANDLER"),
         .trainerClass = TRAINER_CLASS_TUBER_M,
         .trainerPic = TRAINER_PIC_TUBER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -22995,7 +23000,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("KALEB"),
         .trainerClass = TRAINER_CLASS_POKEFAN,
         .trainerPic = TRAINER_PIC_POKEFAN_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23027,7 +23032,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JOSEPH"),
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .trainerPic = TRAINER_PIC_GUITARIST,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23057,8 +23062,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ALYSSA"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_CYCLING_TRIATHLETE_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23080,7 +23085,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("MARCOS"),
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .trainerPic = TRAINER_PIC_GUITARIST,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23102,7 +23107,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("RHETT"),
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23124,7 +23129,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TYRON"),
         .trainerClass = TRAINER_CLASS_CAMPER,
         .trainerPic = TRAINER_PIC_CAMPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23146,8 +23151,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CELINA"),
         .trainerClass = TRAINER_CLASS_AROMA_LADY,
         .trainerPic = TRAINER_PIC_AROMA_LADY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23169,8 +23174,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("BIANCA"),
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23192,7 +23197,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("HAYDEN"),
         .trainerClass = TRAINER_CLASS_KINDLER,
         .trainerPic = TRAINER_PIC_KINDLER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23214,8 +23219,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("SOPHIE"),
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23245,7 +23250,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("COBY"),
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23275,7 +23280,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("LAWRENCE"),
         .trainerClass = TRAINER_CLASS_CAMPER,
         .trainerPic = TRAINER_PIC_CAMPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23305,7 +23310,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WYATT"),
         .trainerClass = TRAINER_CLASS_POKEMANIAC,
         .trainerPic = TRAINER_PIC_POKEMANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23335,8 +23340,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ANGELINA"),
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23366,7 +23371,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("KAI"),
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23388,8 +23393,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CHARLOTTE"),
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23411,7 +23416,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DEANDRE"),
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23449,7 +23454,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23471,7 +23476,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23493,7 +23498,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23515,7 +23520,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23545,7 +23550,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23575,7 +23580,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23597,7 +23602,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23619,7 +23624,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23641,7 +23646,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23663,7 +23668,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23685,7 +23690,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23707,7 +23712,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23729,7 +23734,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23751,8 +23756,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23774,8 +23779,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23797,8 +23802,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRUNT"),
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23820,7 +23825,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TABITHA"),
         .trainerClass = TRAINER_CLASS_MAGMA_ADMIN,
         .trainerPic = TRAINER_PIC_MAGMA_ADMIN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23866,8 +23871,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("DARCY"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -23898,7 +23903,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("MAXIE"),
         .trainerClass = TRAINER_CLASS_MAGMA_LEADER,
         .trainerPic = TRAINER_PIC_MAGMA_LEADER_MAXIE,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -23936,7 +23941,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("PETE"),
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23958,8 +23963,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ISABELLE"),
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -23981,7 +23986,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ANDRES"),
         .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -24011,7 +24016,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JOSUE"),
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -24041,7 +24046,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CAMRON"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -24063,7 +24068,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CORY"),
         .trainerClass = TRAINER_CLASS_SAILOR,
         .trainerPic = TRAINER_PIC_SAILOR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -24101,8 +24106,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CAROLINA"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -24141,7 +24146,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ELIJAH"),
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -24171,8 +24176,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CELIA"),
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -24202,7 +24207,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRYAN"),
         .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -24232,7 +24237,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRANDEN"),
         .trainerClass = TRAINER_CLASS_CAMPER,
         .trainerPic = TRAINER_PIC_CAMPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -24262,7 +24267,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRYANT"),
         .trainerClass = TRAINER_CLASS_KINDLER,
         .trainerPic = TRAINER_PIC_KINDLER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -24292,8 +24297,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("SHAYLA"),
         .trainerClass = TRAINER_CLASS_AROMA_LADY,
         .trainerPic = TRAINER_PIC_AROMA_LADY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -24323,8 +24328,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("KYRA"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_RUNNING_TRIATHLETE_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -24354,7 +24359,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JAIDEN"),
         .trainerClass = TRAINER_CLASS_NINJA_BOY,
         .trainerPic = TRAINER_PIC_NINJA_BOY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -24384,8 +24389,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ALIX"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -24415,8 +24420,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("HELENE"),
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .trainerPic = TRAINER_PIC_BATTLE_GIRL,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -24446,8 +24451,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MARLENE"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -24477,7 +24482,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DEVAN"),
         .trainerClass = TRAINER_CLASS_HIKER,
         .trainerPic = TRAINER_PIC_HIKER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -24507,7 +24512,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JOHNSON"),
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -24537,8 +24542,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MELINA"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_RUNNING_TRIATHLETE_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -24560,8 +24565,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRANDI"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -24583,8 +24588,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("AISHA"),
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .trainerPic = TRAINER_PIC_BATTLE_GIRL,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -24606,8 +24611,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MAKAYLA"),
         .trainerClass = TRAINER_CLASS_EXPERT,
         .trainerPic = TRAINER_PIC_EXPERT_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -24638,7 +24643,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("FABIAN"),
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .trainerPic = TRAINER_PIC_GUITARIST,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -24660,7 +24665,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DAYTON"),
         .trainerClass = TRAINER_CLASS_KINDLER,
         .trainerPic = TRAINER_PIC_KINDLER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -24690,8 +24695,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("RACHEL"),
         .trainerClass = TRAINER_CLASS_PARASOL_LADY,
         .trainerPic = TRAINER_PIC_PARASOL_LADY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -24713,7 +24718,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("LEONEL"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -24741,8 +24746,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CALLIE"),
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .trainerPic = TRAINER_PIC_BATTLE_GIRL,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -24772,7 +24777,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CALE"),
         .trainerClass = TRAINER_CLASS_BUG_MANIAC,
         .trainerPic = TRAINER_PIC_BUG_MANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -24802,7 +24807,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("MYLES"),
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .trainerPic = TRAINER_PIC_POKEMON_BREEDER_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -24864,8 +24869,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("PAT"),
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .trainerPic = TRAINER_PIC_POKEMON_BREEDER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -24927,8 +24932,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CRISTIN"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -24959,8 +24964,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MAY"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_MAY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -24990,8 +24995,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MAY"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_MAY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -25021,8 +25026,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ROXANNE"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_ROXANNE,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -25095,8 +25100,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ROXANNE"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_ROXANNE,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -25183,8 +25188,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ROXANNE"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_ROXANNE,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -25271,8 +25276,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ROXANNE"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_ROXANNE,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -25373,7 +25378,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRAWLY"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_BRAWLY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -25446,7 +25451,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRAWLY"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_BRAWLY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -25519,7 +25524,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRAWLY"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_BRAWLY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -25606,7 +25611,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRAWLY"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_BRAWLY,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -25707,7 +25712,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WATTSON"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_WATTSON,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -25780,7 +25785,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WATTSON"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_WATTSON,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -25867,7 +25872,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WATTSON"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_WATTSON,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -25954,7 +25959,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("WATTSON"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_WATTSON,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -26055,8 +26060,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("FLANNERY"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_FLANNERY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -26130,8 +26135,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("FLANNERY"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_FLANNERY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -26219,8 +26224,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("FLANNERY"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_FLANNERY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -26322,8 +26327,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("FLANNERY"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_FLANNERY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -26425,7 +26430,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("NORMAN"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_NORMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -26498,7 +26503,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("NORMAN"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_NORMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -26585,7 +26590,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("NORMAN"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_NORMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -26672,7 +26677,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("NORMAN"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_NORMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -26773,8 +26778,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("WINONA"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_WINONA,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -26861,8 +26866,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("WINONA"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_WINONA,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -26963,8 +26968,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("WINONA"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_WINONA,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -27065,8 +27070,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("WINONA"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_WINONA,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -27167,7 +27172,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TATE&LIZA"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_TATE_AND_LIZA,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -27255,7 +27260,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TATE&LIZA"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_TATE_AND_LIZA,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -27357,7 +27362,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TATE&LIZA"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_TATE_AND_LIZA,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -27459,7 +27464,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TATE&LIZA"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_TATE_AND_LIZA,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -27561,7 +27566,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JUAN"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_JUAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -27648,7 +27653,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JUAN"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_JUAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -27735,7 +27740,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JUAN"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_JUAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -27836,7 +27841,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("JUAN"),
         .trainerClass = TRAINER_CLASS_LEADER,
         .trainerPic = TRAINER_PIC_LEADER_JUAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = TRUE,
@@ -27937,7 +27942,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ANGELO"),
         .trainerClass = TRAINER_CLASS_BUG_MANIAC,
         .trainerPic = TRAINER_PIC_BUG_MANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -27977,7 +27982,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("DARIUS"),
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -27999,7 +28004,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("STEVEN"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_STEVEN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -28099,8 +28104,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("ANABEL"),
         .trainerClass = TRAINER_CLASS_SALON_MAIDEN,
         .trainerPic = TRAINER_PIC_SALON_MAIDEN_ANABEL,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -28122,7 +28127,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("TUCKER"),
         .trainerClass = TRAINER_CLASS_DOME_ACE,
         .trainerPic = TRAINER_PIC_DOME_ACE_TUCKER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -28144,7 +28149,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("SPENSER"),
         .trainerClass = TRAINER_CLASS_PALACE_MAVEN,
         .trainerPic = TRAINER_PIC_PALACE_MAVEN_SPENSER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -28166,8 +28171,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("GRETA"),
         .trainerClass = TRAINER_CLASS_ARENA_TYCOON,
         .trainerPic = TRAINER_PIC_ARENA_TYCOON_GRETA,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -28189,7 +28194,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("NOLAND"),
         .trainerClass = TRAINER_CLASS_FACTORY_HEAD,
         .trainerPic = TRAINER_PIC_FACTORY_HEAD_NOLAND,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -28211,8 +28216,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("LUCY"),
         .trainerClass = TRAINER_CLASS_PIKE_QUEEN,
         .trainerPic = TRAINER_PIC_PIKE_QUEEN_LUCY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -28234,7 +28239,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRANDON"),
         .trainerClass = TRAINER_CLASS_PYRAMID_KING,
         .trainerPic = TRAINER_PIC_PYRAMID_KING_BRANDON,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -28256,7 +28261,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ANDRES"),
         .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -28286,7 +28291,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ANDRES"),
         .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -28324,7 +28329,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ANDRES"),
         .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -28362,7 +28367,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ANDRES"),
         .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -28400,7 +28405,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CORY"),
         .trainerClass = TRAINER_CLASS_SAILOR,
         .trainerPic = TRAINER_PIC_SAILOR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -28438,7 +28443,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CORY"),
         .trainerClass = TRAINER_CLASS_SAILOR,
         .trainerPic = TRAINER_PIC_SAILOR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -28476,7 +28481,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CORY"),
         .trainerClass = TRAINER_CLASS_SAILOR,
         .trainerPic = TRAINER_PIC_SAILOR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -28514,7 +28519,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("CORY"),
         .trainerClass = TRAINER_CLASS_SAILOR,
         .trainerPic = TRAINER_PIC_SAILOR,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -28552,7 +28557,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("PABLO"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -28582,7 +28587,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("PABLO"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -28620,7 +28625,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("PABLO"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -28658,7 +28663,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("PABLO"),
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -28696,7 +28701,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("KOJI"),
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -28726,7 +28731,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("KOJI"),
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -28764,7 +28769,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("KOJI"),
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -28802,7 +28807,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("KOJI"),
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -28840,8 +28845,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CRISTIN"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -28872,8 +28877,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CRISTIN"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -28912,8 +28917,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CRISTIN"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -28952,8 +28957,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("CRISTIN"),
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
@@ -28992,7 +28997,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("FERNANDO"),
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .trainerPic = TRAINER_PIC_GUITARIST,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -29030,7 +29035,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("FERNANDO"),
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .trainerPic = TRAINER_PIC_GUITARIST,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -29068,7 +29073,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("FERNANDO"),
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .trainerPic = TRAINER_PIC_GUITARIST,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -29106,7 +29111,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("FERNANDO"),
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .trainerPic = TRAINER_PIC_GUITARIST,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -29144,7 +29149,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("SAWYER"),
         .trainerClass = TRAINER_CLASS_HIKER,
         .trainerPic = TRAINER_PIC_HIKER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -29174,7 +29179,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("SAWYER"),
         .trainerClass = TRAINER_CLASS_HIKER,
         .trainerPic = TRAINER_PIC_HIKER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -29212,7 +29217,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("SAWYER"),
         .trainerClass = TRAINER_CLASS_HIKER,
         .trainerPic = TRAINER_PIC_HIKER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -29250,7 +29255,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("SAWYER"),
         .trainerClass = TRAINER_CLASS_HIKER,
         .trainerPic = TRAINER_PIC_HIKER,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_HIKER,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
@@ -29288,8 +29293,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("GABRIELLE"),
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .trainerPic = TRAINER_PIC_POKEMON_BREEDER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -29351,8 +29356,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("GABRIELLE"),
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .trainerPic = TRAINER_PIC_POKEMON_BREEDER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -29414,8 +29419,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("GABRIELLE"),
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .trainerPic = TRAINER_PIC_POKEMON_BREEDER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -29477,8 +29482,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("GABRIELLE"),
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .trainerPic = TRAINER_PIC_POKEMON_BREEDER_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -29540,8 +29545,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("THALIA"),
         .trainerClass = TRAINER_CLASS_BEAUTY,
         .trainerPic = TRAINER_PIC_BEAUTY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -29571,8 +29576,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("THALIA"),
         .trainerClass = TRAINER_CLASS_BEAUTY,
         .trainerPic = TRAINER_PIC_BEAUTY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -29610,8 +29615,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("THALIA"),
         .trainerClass = TRAINER_CLASS_BEAUTY,
         .trainerPic = TRAINER_PIC_BEAUTY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -29649,8 +29654,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("THALIA"),
         .trainerClass = TRAINER_CLASS_BEAUTY,
         .trainerPic = TRAINER_PIC_BEAUTY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -29688,8 +29693,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MARIELA"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_F,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -29710,7 +29715,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("ALVARO"),
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .trainerPic = TRAINER_PIC_PSYCHIC_M,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -29739,7 +29744,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("EVERETT"),
         .trainerClass = TRAINER_CLASS_GENTLEMAN,
         .trainerPic = TRAINER_PIC_GENTLEMAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_RICH,
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -29760,7 +29765,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("RED"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_RED,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -29781,8 +29786,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("LEAF"),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .trainerPic = TRAINER_PIC_LEAF,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -29803,7 +29808,7 @@ F_TRAINER_FEMALE |
         .trainerName = _("BRENDAN"),
         .trainerClass = TRAINER_CLASS_RS_PROTAG,
         .trainerPic = TRAINER_PIC_RS_BRENDAN,
-        .encounterMusic_gender =
+        .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -29824,8 +29829,8 @@ F_TRAINER_FEMALE |
         .trainerName = _("MAY"),
         .trainerClass = TRAINER_CLASS_RS_PROTAG,
         .trainerPic = TRAINER_PIC_RS_MAY,
-        .encounterMusic_gender =
-F_TRAINER_FEMALE |
+        .encounterMusic_gender = 
+F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
         .partySize = 1,
