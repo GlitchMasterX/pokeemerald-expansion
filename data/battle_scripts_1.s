@@ -3899,20 +3899,6 @@ BattleScript_EffectHappyHour::
 	seteffectprimary MOVE_EFFECT_HAPPY_HOUR
 	goto BattleScript_MoveEnd
 
-BattleScript_EffectDoNothing::
-	attackcanceler
-	attackstring
-	ppreduce
-	jumpifmove MOVE_HOLD_HANDS, BattleScript_EffectHoldHands
-	attackanimation
-	waitanimation
-	jumpifmove MOVE_CELEBRATE, BattleScript_EffectCelebrate
-	jumpifmove MOVE_HAPPY_HOUR, BattleScript_EffectHappyHour
-	incrementgamestat GAME_STAT_USED_SPLASH
-	printstring STRINGID_BUTNOTHINGHAPPENED
-	waitmessage B_WAIT_TIME_LONG
-	goto BattleScript_MoveEnd
-
 BattleScript_EffectDisable::
 	attackcanceler
 	attackstring

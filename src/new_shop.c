@@ -17,6 +17,7 @@
 #include "item_menu.h"
 #include "list_menu.h"
 #include "main.h"
+#include "move.h"
 #include "malloc.h"
 #include "menu.h"
 #include "menu_helpers.h"

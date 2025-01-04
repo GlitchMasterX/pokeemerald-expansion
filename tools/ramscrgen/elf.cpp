@@ -147,9 +147,9 @@ static void FindTableOffsets()
                 FATAL_ERROR("error: mutiple .strtab sections found in \"%s\"\n", s_elfPath.c_str());
             Seek(s_sectionHeaderOffset + s_sectionHeaderEntrySize * i + 0x10);
             s_strtabOffset = ReadInt32();
-        } else if (name == "common_data ") {
+        } else if (name == "  ") {
             if (s_pseudoCommonSectionIndex) {
-                FATAL_ERROR("error: mutiple common_data sections found in \"%s\"\n", s_elfPath.c_str());
+                FATAL_ERROR("error: mutiple   sections found in \"%s\"\n", s_elfPath.c_str());
             }
             s_pseudoCommonSectionIndex = i;
         }
