@@ -1154,42 +1154,23 @@ EventScript_VsSeekerChargingDone::
 	.include "data/scripts/follower.inc"
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
-
 	.include "data/maps/LuxuraIsland/scripts.inc"
-
 	.include "data/maps/LuxuraIndoor/scripts.inc"
-
 	.include "data/maps/Luxuraliving/scripts.inc"
-
 	.include "data/maps/Luxuradining/scripts.inc"
-
 	.include "data/maps/luxurakitchen/scripts.inc"
-
 	.include "data/maps/Luxuralib/scripts.inc"
-
 	.include "data/maps/Luxurawork/scripts.inc"
-
-
 	.include "data/maps/Luxuraupstair/scripts.inc"
-
 	.include "data/maps/NewMap1/scripts.inc"
-
 	.include "data/maps/Parentroom/scripts.inc"
-
 	.include "data/maps/Playerroom/scripts.inc"
-
 	.include "data/maps/guest/scripts.inc"
-
 	.include "data/maps/LuxuraIsland1/scripts.inc"
-
 	.include "data/maps/Luxurawoods/scripts.inc"
-
 	.include "data/maps/Hospital/scripts.inc"
-
 	.include "data/maps/Servantquarter/scripts.inc"
-
 	.include "data/maps/Sparkbase/scripts.inc"
-
 	.include "data/maps/Newmap11/scripts.inc"
-
 	.include "data/maps/newhouse/scripts.inc"
+	.include "data/scripts/dexnav.inc"
