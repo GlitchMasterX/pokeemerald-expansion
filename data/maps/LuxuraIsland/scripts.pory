@@ -3,7 +3,6 @@ LuxuraIsland_MapScripts::
 map_script MAP_SCRIPT_ON_FRAME_TABLE, LuxuraIsland_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 map_script MAP_SCRIPT_ON_LOAD, LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD
 map_script MAP_SCRIPT_ON_TRANSITION, musicchange
-map_script MAP_SCRIPT_ON_RESUME, outfit
 	.byte 0
 LuxuraIsland_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 map_script_2 LUXURA_TRAGEDY, 9, stroll
@@ -483,7 +482,9 @@ script signlmansion {
 script signforest {
     lock
     msgbox(format("Luxura Veilwood\p{COLOR BLUE}{SHADOW LIGHT_GRAY}A dense, ancient forest where secrets are whispered among the trees and shadows linger at every turn."),MSGBOX_SIGN)
-    setflag(FLAG_SYS_DEXNAV_GET)
+    unlockoutfit(OUTFIT_SPARK)
+    giveitem(ITEM_OUTFIT_BOX,1)
+    giveitem(ITEM_MACH_BIKE,1)
     release
     
 }

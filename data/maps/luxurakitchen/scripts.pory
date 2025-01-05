@@ -1,7 +1,6 @@
 raw `
 luxurakitchen_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, luxurakitchen_MapScripts_MAP_SCRIPT_ON_LOAD
-    map_script MAP_SCRIPT_ON_RESUME, outfit
 	.byte 0
 `
 script luxurakitchen_MapScripts_MAP_SCRIPT_ON_LOAD {

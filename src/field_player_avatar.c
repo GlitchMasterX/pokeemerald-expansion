@@ -1004,9 +1004,13 @@ void PlayerWalkFaster(u8 direction)
 
 static void PlayerRun(u8 direction)
 {
+    if(gOutfits[gSaveBlock2Ptr->currOutfitId].hasRunAnims==FALSE){
+    PlayerSetAnimId(GetWalkFastMovementAction(direction), COPY_MOVE_WALK);
+    }
+    else{
     PlayerSetAnimId(GetPlayerRunMovementAction(direction), COPY_MOVE_WALK);
 }
-
+}
 void PlayerOnBikeCollide(u8 direction)
 {
     PlayCollisionSoundIfNotFacingWarp(direction);

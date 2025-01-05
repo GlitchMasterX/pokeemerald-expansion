@@ -2,7 +2,6 @@ mapscripts LuxuraIndoor_MapScripts{
 MAP_SCRIPT_ON_LOAD: tragedy
 MAP_SCRIPT_ON_FRAME_TABLE[
 	LUXURA_TRAGEDY,5:indoor]
-MAP_SCRIPT_ON_RESUME: outfit
 }
 script MaidZ{
 	if(!flag(FLAG_UNUSED_0x4A2)){

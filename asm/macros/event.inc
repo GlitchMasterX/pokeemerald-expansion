@@ -2618,7 +2618,7 @@
 	@ Show the current map's name popup.
 	.macro mappopup
 	callnative Script_MapPopUp
-	
+	.endm
 	.macro increasedifficulty
 	callnative Script_IncreaseDifficulty
 	.endm
