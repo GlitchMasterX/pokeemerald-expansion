@@ -484,7 +484,7 @@ script signforest {
     msgbox(format("Luxura Veilwood\p{COLOR BLUE}{SHADOW LIGHT_GRAY}A dense, ancient forest where secrets are whispered among the trees and shadows linger at every turn."),MSGBOX_SIGN)
     unlockoutfit(OUTFIT_SPARK)
     giveitem(ITEM_OUTFIT_BOX,1)
-    giveitem(ITEM_MACH_BIKE,1)
+    giveitem(ITEM_ACRO_BIKE,1)
     release
     
 }

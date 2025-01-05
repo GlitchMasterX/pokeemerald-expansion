@@ -1142,7 +1142,7 @@ signforest::
 # 486 "data/maps/LuxuraIsland/scripts.pory"
 	giveitem ITEM_OUTFIT_BOX, 1
 # 487 "data/maps/LuxuraIsland/scripts.pory"
-	giveitem ITEM_MACH_BIKE, 1
+	giveitem ITEM_ACRO_BIKE, 1
 # 488 "data/maps/LuxuraIsland/scripts.pory"
 	release
 	return
