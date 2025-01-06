@@ -15,7 +15,7 @@ MaidZ::
 # 7 "data/maps/LuxuraIndoor/scripts.pory"
 	goto_if_unset FLAG_UNUSED_0x4A2, MaidZ_1
 # 15 "data/maps/LuxuraIndoor/scripts.pory"
-	lockall
+	lock
 # 16 "data/maps/LuxuraIndoor/scripts.pory"
 	faceplayer
 # 17 "data/maps/LuxuraIndoor/scripts.pory"
@@ -55,12 +55,12 @@ MaidZ::
 # 34 "data/maps/LuxuraIndoor/scripts.pory"
 	clearflag FLAG_UNUSED_0x4A2
 # 35 "data/maps/LuxuraIndoor/scripts.pory"
-	releaseall
+	release
 	return
 
 MaidZ_1:
 # 8 "data/maps/LuxuraIndoor/scripts.pory"
-	lockall
+	lock
 # 9 "data/maps/LuxuraIndoor/scripts.pory"
 	faceplayer
 # 10 "data/maps/LuxuraIndoor/scripts.pory"
@@ -70,13 +70,13 @@ MaidZ_1:
 # 12 "data/maps/LuxuraIndoor/scripts.pory"
 	hidenamebox
 # 13 "data/maps/LuxuraIndoor/scripts.pory"
-	releaseall
+	release
 	return
 
 
 Maid::
 # 40 "data/maps/LuxuraIndoor/scripts.pory"
-	lockall
+	lock
 # 41 "data/maps/LuxuraIndoor/scripts.pory"
 	faceplayer
 # 42 "data/maps/LuxuraIndoor/scripts.pory"
@@ -86,13 +86,13 @@ Maid::
 # 44 "data/maps/LuxuraIndoor/scripts.pory"
 	hidenamebox
 # 45 "data/maps/LuxuraIndoor/scripts.pory"
-	releaseall
+	release
 	return
 
 
 MaidG::
 # 49 "data/maps/LuxuraIndoor/scripts.pory"
-	lockall
+	lock
 # 50 "data/maps/LuxuraIndoor/scripts.pory"
 	faceplayer
 # 51 "data/maps/LuxuraIndoor/scripts.pory"
@@ -102,13 +102,13 @@ MaidG::
 # 53 "data/maps/LuxuraIndoor/scripts.pory"
 	hidenamebox
 # 54 "data/maps/LuxuraIndoor/scripts.pory"
-	releaseall
+	release
 	return
 
 
 MaidD::
 # 58 "data/maps/LuxuraIndoor/scripts.pory"
-	lockall
+	lock
 # 59 "data/maps/LuxuraIndoor/scripts.pory"
 	faceplayer
 # 60 "data/maps/LuxuraIndoor/scripts.pory"
@@ -118,13 +118,13 @@ MaidD::
 # 62 "data/maps/LuxuraIndoor/scripts.pory"
 	hidenamebox
 # 63 "data/maps/LuxuraIndoor/scripts.pory"
-	releaseall
+	release
 	return
 
 
 MaidB::
 # 67 "data/maps/LuxuraIndoor/scripts.pory"
-	lockall
+	lock
 # 68 "data/maps/LuxuraIndoor/scripts.pory"
 	faceplayer
 # 69 "data/maps/LuxuraIndoor/scripts.pory"
@@ -134,13 +134,13 @@ MaidB::
 # 71 "data/maps/LuxuraIndoor/scripts.pory"
 	hidenamebox
 # 72 "data/maps/LuxuraIndoor/scripts.pory"
-	releaseall
+	release
 	return
 
 
 MaidM::
 # 76 "data/maps/LuxuraIndoor/scripts.pory"
-	lockall
+	lock
 # 77 "data/maps/LuxuraIndoor/scripts.pory"
 	faceplayer
 # 78 "data/maps/LuxuraIndoor/scripts.pory"
@@ -150,7 +150,7 @@ MaidM::
 # 80 "data/maps/LuxuraIndoor/scripts.pory"
 	hidenamebox
 # 81 "data/maps/LuxuraIndoor/scripts.pory"
-	releaseall
+	release
 	return
 
 
@@ -158,7 +158,7 @@ MaidE::
 # 85 "data/maps/LuxuraIndoor/scripts.pory"
 	goto_if_unset FLAG_UNUSED_0x49E, MaidE_1
 # 93 "data/maps/LuxuraIndoor/scripts.pory"
-	lockall
+	lock
 # 94 "data/maps/LuxuraIndoor/scripts.pory"
 	faceplayer
 # 95 "data/maps/LuxuraIndoor/scripts.pory"
@@ -186,7 +186,7 @@ MaidE::
 # 106 "data/maps/LuxuraIndoor/scripts.pory"
 	fadescreen FADE_FROM_BLACK
 # 107 "data/maps/LuxuraIndoor/scripts.pory"
-	releaseall
+	release
 # 108 "data/maps/LuxuraIndoor/scripts.pory"
 	setvar LUXURA_TRAGEDY, 7
 # 109 "data/maps/LuxuraIndoor/scripts.pory"
@@ -195,7 +195,7 @@ MaidE::
 
 MaidE_1:
 # 86 "data/maps/LuxuraIndoor/scripts.pory"
-	lockall
+	lock
 # 87 "data/maps/LuxuraIndoor/scripts.pory"
 	faceplayer
 # 88 "data/maps/LuxuraIndoor/scripts.pory"
@@ -205,13 +205,13 @@ MaidE_1:
 # 90 "data/maps/LuxuraIndoor/scripts.pory"
 	hidenamebox
 # 91 "data/maps/LuxuraIndoor/scripts.pory"
-	releaseall
+	release
 	return
 
 
 MaidC::
 # 114 "data/maps/LuxuraIndoor/scripts.pory"
-	lockall
+	lock
 # 115 "data/maps/LuxuraIndoor/scripts.pory"
 	faceplayer
 # 116 "data/maps/LuxuraIndoor/scripts.pory"
@@ -221,13 +221,13 @@ MaidC::
 # 118 "data/maps/LuxuraIndoor/scripts.pory"
 	hidenamebox
 # 119 "data/maps/LuxuraIndoor/scripts.pory"
-	releaseall
+	release
 	return
 
 
 Minccino::
 # 123 "data/maps/LuxuraIndoor/scripts.pory"
-	lockall
+	lock
 # 124 "data/maps/LuxuraIndoor/scripts.pory"
 	faceplayer
 # 125 "data/maps/LuxuraIndoor/scripts.pory"
@@ -241,7 +241,7 @@ Minccino::
 # 129 "data/maps/LuxuraIndoor/scripts.pory"
 	waitmoncry
 # 130 "data/maps/LuxuraIndoor/scripts.pory"
-	releaseall
+	release
 	return
 
 
@@ -249,7 +249,7 @@ Grumpig::
 # 134 "data/maps/LuxuraIndoor/scripts.pory"
 	goto_if_unset FLAG_UNUSED_0x493, Grumpig_1
 # 147 "data/maps/LuxuraIndoor/scripts.pory"
-	lockall
+	lock
 # 148 "data/maps/LuxuraIndoor/scripts.pory"
 	faceplayer
 # 149 "data/maps/LuxuraIndoor/scripts.pory"
@@ -265,12 +265,12 @@ Grumpig::
 # 154 "data/maps/LuxuraIndoor/scripts.pory"
 	waitmoncry
 # 155 "data/maps/LuxuraIndoor/scripts.pory"
-	releaseall
+	release
 	return
 
 Grumpig_1:
 # 135 "data/maps/LuxuraIndoor/scripts.pory"
-	lockall
+	lock
 # 136 "data/maps/LuxuraIndoor/scripts.pory"
 	faceplayer
 # 137 "data/maps/LuxuraIndoor/scripts.pory"
@@ -290,13 +290,13 @@ Grumpig_1:
 # 144 "data/maps/LuxuraIndoor/scripts.pory"
 	waitmoncry
 # 145 "data/maps/LuxuraIndoor/scripts.pory"
-	releaseall
+	release
 	return
 
 
 Blissey::
 # 159 "data/maps/LuxuraIndoor/scripts.pory"
-	lockall
+	lock
 # 160 "data/maps/LuxuraIndoor/scripts.pory"
 	faceplayer
 # 161 "data/maps/LuxuraIndoor/scripts.pory"
@@ -310,19 +310,19 @@ Blissey::
 # 165 "data/maps/LuxuraIndoor/scripts.pory"
 	waitmoncry
 # 166 "data/maps/LuxuraIndoor/scripts.pory"
-	releaseall
+	release
 	return
 
 
 strol::
 # 175 "data/maps/LuxuraIndoor/scripts.pory"
-	lockall
+	lock
 # 176 "data/maps/LuxuraIndoor/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, notp
 # 177 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox strol_Text_0
 # 178 "data/maps/LuxuraIndoor/scripts.pory"
-	releaseall
+	release
 	return
 
 
@@ -753,7 +753,7 @@ tragedy_8:
 
 caprun::
 # 386 "data/maps/LuxuraIndoor/scripts.pory"
-	lockall
+	lock
 # 387 "data/maps/LuxuraIndoor/scripts.pory"
 	facefollower
 # 388 "data/maps/LuxuraIndoor/scripts.pory"
@@ -787,7 +787,7 @@ caprun::
 # 402 "data/maps/LuxuraIndoor/scripts.pory"
 	hidenamebox
 # 403 "data/maps/LuxuraIndoor/scripts.pory"
-	releaseall
+	release
 # 404 "data/maps/LuxuraIndoor/scripts.pory"
 	setvar LUXURA_TRAGEDY, 13
 	return

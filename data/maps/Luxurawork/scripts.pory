@@ -75,7 +75,7 @@ if (var(LUXURA_TRAGEDY) < 5) {
 
 script dad {
 	if(!flag(FLAG_UNUSED_0x49D)){
-	lockall
+	lock
 	faceplayer
 	namebox(name3)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar, all set for the academy?"))
@@ -109,15 +109,15 @@ script dad {
 	namebox(name3)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Just be yourself, son. That's all they'll want to see."))
 	hidenamebox
-    releaseall
+    release
 	setflag(FLAG_UNUSED_0x49D)}
 	else{
-	lockall
+	lock
 	faceplayer
 	namebox(name3)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I have some work to do.\pGo ahead and join your mother."))
 	hidenamebox
-	releaseall
+	release
 	}
 }
 movement exclam {
@@ -125,7 +125,7 @@ movement exclam {
 }
 
 script trage {
-	lockall
+	lock
 	applymovement(10,players)
 	applymovement(9,players)
 	waitmovement(0)
@@ -234,7 +234,7 @@ script trage {
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Mira! Take Xylar and run.\pHurry!!"),MSGBOX_AUTOCLOSE)
 	hidenamebox
 	special(RemoveCameraObject)
-	releaseall
+	release
     warp(MAP_LUXURA_INDOOR,7,6)	
 	setvar(LUXURA_TRAGEDY,12)
 

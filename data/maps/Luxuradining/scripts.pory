@@ -8,7 +8,7 @@ Luxuradining_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 	.2byte 0
 `
 script Youwake {
-	lockall
+	lock
 	special(SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_CAMERA,camera2)
 	waitmovement(0)
@@ -63,9 +63,13 @@ script Youwake {
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Ok, now lets eat before the food gets cold."))
 	hidenamebox
 	namebox(name2)
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Sure\pMaids"))
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Sure\pMaids!"),MSGBOX_AUTOCLOSE)
     hidenamebox
 	fadescreen(FADE_TO_BLACK)
+	playse(SE_USE_ITEM)
+	waitse
+	playse(SE_M_BITE)
+	waitse
 	fadescreen(FADE_FROM_BLACK)
 	namebox(Xylar)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Where is Mira?\pI need to ask her something."))
@@ -76,7 +80,7 @@ script Youwake {
 	applymovement(OBJ_EVENT_ID_CAMERA,camera5)
 	waitmovement(0)
 	special(RemoveCameraObject)
-    releaseall
+    release
 	setvar(LUXURA_TRAGEDY, 4)
 }
 movement happy {
@@ -118,26 +122,26 @@ movement upset {
 	emote_upset
 }
 script Mom {
-	lockall
+	lock
 	faceplayer
 	namebox(name2)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}She's always successful in tricking you"))
 	hidenamebox
-	releaseall
+	release
 }
 script Dad{
-	lockall 
+	lock 
 	faceplayer
 	namebox(name3)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Guess you guys are really close.\pShe always knows how to trick you."))
     hidenamebox
-	releaseall
+	release
 }
 script waiting {
-	lockall 
+	lock 
 	applymovement(OBJ_EVENT_ID_PLAYER,camera4)
 	msgbox(format("I should hurry, I don't want to make Mom and Dad wait!"))
-	releaseall
+	release
 }
 
 script Luxuradining_MapScripts_MAP_SCRIPT_ON_LOAD {
@@ -168,14 +172,14 @@ script rest{
 }
 script nurse{
 	if((!flag(FLAG_UNUSED_0x479))&& (!flag(FLAG_UNUSED_0x4B7))){
-	lockall
+	lock
 	faceplayer
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Good day,Master Xylar."))
-	releaseall
+	release
 	
 }
 elif((flag(FLAG_UNUSED_0x479))&& (!flag(FLAG_UNUSED_0x4B7))){
-	lockall
+	lock
 	faceplayer
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}When they attacked the mansion... they didn't kill me. They kept me alive. Not out of mercy, but because they needed someone to heal their Pokémon. I... I didn't have a choice.\pI was just a tool to them, a way to keep their strength up. Every time I patched them up, I felt like I was betraying everyone in that house.\pBut seeing you alive... it's a small relief in all this darkness. I'm so glad you made it, Master Xylar.\pBut it's dangerous here ,you should hide."),MSGBOX_AUTOCLOSE)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I survived for a reason. I'll get my revenge, every last one of them will pay for what they've done.\pDon't worry about me. I know what I have to do."),MSGBOX_AUTOCLOSE)
@@ -184,11 +188,11 @@ elif((flag(FLAG_UNUSED_0x479))&& (!flag(FLAG_UNUSED_0x4B7))){
 	giveitem(ITEM_PARALYZE_HEAL,3)
     setflag(FLAG_UNUSED_0x4B7)
 	setvar(LUXURA_TRAGEDY,20)
-	releaseall
+	release
   
 }
 elif((flag(FLAG_UNUSED_0x479))&&(flag(FLAG_UNUSED_0x4B7))){
-	lockall
+	lock
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, Let me heal your pokemon."))
 	setvar(VAR_0x800B, 1)
 	call(EventScript_PkmnCenterNurse_TakeAndHealPkmn)
@@ -201,13 +205,13 @@ elif((flag(FLAG_UNUSED_0x479))&&(flag(FLAG_UNUSED_0x4B7))){
 script checknurse {
 	applymovement(OBJ_EVENT_ID_PLAYER,no)
 	msgbox(format("I should look for some healing supplies in the servant's quarter."))
-	releaseall
+	release
 	
 }
 script atkspark {
 	applymovement(OBJ_EVENT_ID_PLAYER,luspark)
 	msgbox(format("I should hurry, mom is in danger."))
-	releaseall
+	release
 	
 }
 movement luspark {

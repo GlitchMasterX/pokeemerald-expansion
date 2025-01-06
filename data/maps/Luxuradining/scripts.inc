@@ -17,7 +17,7 @@ Luxuradining_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 
 Youwake::
 # 11 "data/maps/Luxuradining/scripts.pory"
-	lockall
+	lock
 # 12 "data/maps/Luxuradining/scripts.pory"
 	special SpawnCameraObject
 # 13 "data/maps/Luxuradining/scripts.pory"
@@ -127,439 +127,447 @@ Youwake::
 # 65 "data/maps/Luxuradining/scripts.pory"
 	namebox name2
 # 66 "data/maps/Luxuradining/scripts.pory"
-	msgbox Youwake_Text_11
+	msgbox Youwake_Text_11, MSGBOX_AUTOCLOSE
 # 67 "data/maps/Luxuradining/scripts.pory"
 	hidenamebox
 # 68 "data/maps/Luxuradining/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 69 "data/maps/Luxuradining/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	playse SE_USE_ITEM
 # 70 "data/maps/Luxuradining/scripts.pory"
-	namebox Xylar
+	waitse
 # 71 "data/maps/Luxuradining/scripts.pory"
-	msgbox Youwake_Text_12
+	playse SE_M_BITE
 # 72 "data/maps/Luxuradining/scripts.pory"
-	hidenamebox
+	waitse
 # 73 "data/maps/Luxuradining/scripts.pory"
-	namebox name2
+	fadescreen FADE_FROM_BLACK
 # 74 "data/maps/Luxuradining/scripts.pory"
-	msgbox Youwake_Text_13
+	namebox Xylar
 # 75 "data/maps/Luxuradining/scripts.pory"
-	hidenamebox
+	msgbox Youwake_Text_12
 # 76 "data/maps/Luxuradining/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, camera5
+	hidenamebox
 # 77 "data/maps/Luxuradining/scripts.pory"
-	waitmovement 0
+	namebox name2
 # 78 "data/maps/Luxuradining/scripts.pory"
-	special RemoveCameraObject
+	msgbox Youwake_Text_13
 # 79 "data/maps/Luxuradining/scripts.pory"
-	releaseall
+	hidenamebox
 # 80 "data/maps/Luxuradining/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, camera5
+# 81 "data/maps/Luxuradining/scripts.pory"
+	waitmovement 0
+# 82 "data/maps/Luxuradining/scripts.pory"
+	special RemoveCameraObject
+# 83 "data/maps/Luxuradining/scripts.pory"
+	release
+# 84 "data/maps/Luxuradining/scripts.pory"
 	setvar LUXURA_TRAGEDY, 4
 	return
 
 
-# 82 "data/maps/Luxuradining/scripts.pory"
+# 86 "data/maps/Luxuradining/scripts.pory"
 happy:
-# 83 "data/maps/Luxuradining/scripts.pory"
+# 87 "data/maps/Luxuradining/scripts.pory"
 	emote_happy
 	step_end
 
-# 85 "data/maps/Luxuradining/scripts.pory"
+# 89 "data/maps/Luxuradining/scripts.pory"
 camera5:
-# 86 "data/maps/Luxuradining/scripts.pory"
+# 90 "data/maps/Luxuradining/scripts.pory"
 	walk_down
-# 86 "data/maps/Luxuradining/scripts.pory"
+# 90 "data/maps/Luxuradining/scripts.pory"
 	walk_down
 	step_end
 
-# 88 "data/maps/Luxuradining/scripts.pory"
+# 92 "data/maps/Luxuradining/scripts.pory"
 camera2:
-# 89 "data/maps/Luxuradining/scripts.pory"
+# 93 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 89 "data/maps/Luxuradining/scripts.pory"
+# 93 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 89 "data/maps/Luxuradining/scripts.pory"
+# 93 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 89 "data/maps/Luxuradining/scripts.pory"
+# 93 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 89 "data/maps/Luxuradining/scripts.pory"
+# 93 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 89 "data/maps/Luxuradining/scripts.pory"
+# 93 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 89 "data/maps/Luxuradining/scripts.pory"
+# 93 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 89 "data/maps/Luxuradining/scripts.pory"
+# 93 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 89 "data/maps/Luxuradining/scripts.pory"
+# 93 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 89 "data/maps/Luxuradining/scripts.pory"
+# 93 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 89 "data/maps/Luxuradining/scripts.pory"
+# 93 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 89 "data/maps/Luxuradining/scripts.pory"
+# 93 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 89 "data/maps/Luxuradining/scripts.pory"
+# 93 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 89 "data/maps/Luxuradining/scripts.pory"
+# 93 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 89 "data/maps/Luxuradining/scripts.pory"
+# 93 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 89 "data/maps/Luxuradining/scripts.pory"
+# 93 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 89 "data/maps/Luxuradining/scripts.pory"
+# 93 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 89 "data/maps/Luxuradining/scripts.pory"
+# 93 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 89 "data/maps/Luxuradining/scripts.pory"
+# 93 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 89 "data/maps/Luxuradining/scripts.pory"
+# 93 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 89 "data/maps/Luxuradining/scripts.pory"
+# 93 "data/maps/Luxuradining/scripts.pory"
 	walk_left
 	step_end
 
-# 91 "data/maps/Luxuradining/scripts.pory"
+# 95 "data/maps/Luxuradining/scripts.pory"
 camera4:
-# 92 "data/maps/Luxuradining/scripts.pory"
+# 96 "data/maps/Luxuradining/scripts.pory"
 	walk_up
-# 92 "data/maps/Luxuradining/scripts.pory"
+# 96 "data/maps/Luxuradining/scripts.pory"
 	walk_up
 	step_end
 
-# 94 "data/maps/Luxuradining/scripts.pory"
-camera3:
-# 95 "data/maps/Luxuradining/scripts.pory"
-	walk_right
-# 95 "data/maps/Luxuradining/scripts.pory"
-	walk_right
-# 95 "data/maps/Luxuradining/scripts.pory"
-	walk_right
-# 95 "data/maps/Luxuradining/scripts.pory"
-	walk_right
-# 95 "data/maps/Luxuradining/scripts.pory"
-	walk_right
-# 95 "data/maps/Luxuradining/scripts.pory"
-	walk_right
-# 95 "data/maps/Luxuradining/scripts.pory"
-	walk_right
-# 95 "data/maps/Luxuradining/scripts.pory"
-	walk_right
-# 95 "data/maps/Luxuradining/scripts.pory"
-	walk_right
-# 95 "data/maps/Luxuradining/scripts.pory"
-	walk_right
-# 95 "data/maps/Luxuradining/scripts.pory"
-	walk_right
-# 95 "data/maps/Luxuradining/scripts.pory"
-	walk_right
-# 95 "data/maps/Luxuradining/scripts.pory"
-	walk_right
-# 95 "data/maps/Luxuradining/scripts.pory"
-	walk_right
-# 95 "data/maps/Luxuradining/scripts.pory"
-	walk_right
-# 95 "data/maps/Luxuradining/scripts.pory"
-	walk_right
-# 95 "data/maps/Luxuradining/scripts.pory"
-	walk_right
-# 95 "data/maps/Luxuradining/scripts.pory"
-	walk_right
-# 95 "data/maps/Luxuradining/scripts.pory"
-	walk_right
-# 95 "data/maps/Luxuradining/scripts.pory"
-	walk_right
-# 95 "data/maps/Luxuradining/scripts.pory"
-	walk_right
-	step_end
-
-# 97 "data/maps/Luxuradining/scripts.pory"
-mom:
 # 98 "data/maps/Luxuradining/scripts.pory"
-	face_right
+camera3:
 # 99 "data/maps/Luxuradining/scripts.pory"
+	walk_right
+# 99 "data/maps/Luxuradining/scripts.pory"
+	walk_right
+# 99 "data/maps/Luxuradining/scripts.pory"
+	walk_right
+# 99 "data/maps/Luxuradining/scripts.pory"
+	walk_right
+# 99 "data/maps/Luxuradining/scripts.pory"
+	walk_right
+# 99 "data/maps/Luxuradining/scripts.pory"
+	walk_right
+# 99 "data/maps/Luxuradining/scripts.pory"
+	walk_right
+# 99 "data/maps/Luxuradining/scripts.pory"
+	walk_right
+# 99 "data/maps/Luxuradining/scripts.pory"
+	walk_right
+# 99 "data/maps/Luxuradining/scripts.pory"
+	walk_right
+# 99 "data/maps/Luxuradining/scripts.pory"
+	walk_right
+# 99 "data/maps/Luxuradining/scripts.pory"
+	walk_right
+# 99 "data/maps/Luxuradining/scripts.pory"
+	walk_right
+# 99 "data/maps/Luxuradining/scripts.pory"
+	walk_right
+# 99 "data/maps/Luxuradining/scripts.pory"
+	walk_right
+# 99 "data/maps/Luxuradining/scripts.pory"
+	walk_right
+# 99 "data/maps/Luxuradining/scripts.pory"
+	walk_right
+# 99 "data/maps/Luxuradining/scripts.pory"
+	walk_right
+# 99 "data/maps/Luxuradining/scripts.pory"
+	walk_right
+# 99 "data/maps/Luxuradining/scripts.pory"
+	walk_right
+# 99 "data/maps/Luxuradining/scripts.pory"
+	walk_right
+	step_end
+
+# 101 "data/maps/Luxuradining/scripts.pory"
+mom:
+# 102 "data/maps/Luxuradining/scripts.pory"
+	face_right
+# 103 "data/maps/Luxuradining/scripts.pory"
 	emote_heart
-# 100 "data/maps/Luxuradining/scripts.pory"
+# 104 "data/maps/Luxuradining/scripts.pory"
 	face_down
 	step_end
 
-# 102 "data/maps/Luxuradining/scripts.pory"
+# 106 "data/maps/Luxuradining/scripts.pory"
 dining:
-# 103 "data/maps/Luxuradining/scripts.pory"
+# 107 "data/maps/Luxuradining/scripts.pory"
 	walk_down
-# 103 "data/maps/Luxuradining/scripts.pory"
+# 107 "data/maps/Luxuradining/scripts.pory"
 	walk_down
-# 103 "data/maps/Luxuradining/scripts.pory"
+# 107 "data/maps/Luxuradining/scripts.pory"
 	walk_down
-# 104 "data/maps/Luxuradining/scripts.pory"
+# 108 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 104 "data/maps/Luxuradining/scripts.pory"
+# 108 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 104 "data/maps/Luxuradining/scripts.pory"
+# 108 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 104 "data/maps/Luxuradining/scripts.pory"
+# 108 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 104 "data/maps/Luxuradining/scripts.pory"
+# 108 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 104 "data/maps/Luxuradining/scripts.pory"
+# 108 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 104 "data/maps/Luxuradining/scripts.pory"
+# 108 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 104 "data/maps/Luxuradining/scripts.pory"
+# 108 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 104 "data/maps/Luxuradining/scripts.pory"
+# 108 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 104 "data/maps/Luxuradining/scripts.pory"
+# 108 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 104 "data/maps/Luxuradining/scripts.pory"
+# 108 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 104 "data/maps/Luxuradining/scripts.pory"
+# 108 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 104 "data/maps/Luxuradining/scripts.pory"
+# 108 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 104 "data/maps/Luxuradining/scripts.pory"
+# 108 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 104 "data/maps/Luxuradining/scripts.pory"
+# 108 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 104 "data/maps/Luxuradining/scripts.pory"
+# 108 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 104 "data/maps/Luxuradining/scripts.pory"
+# 108 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 104 "data/maps/Luxuradining/scripts.pory"
+# 108 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 104 "data/maps/Luxuradining/scripts.pory"
+# 108 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 104 "data/maps/Luxuradining/scripts.pory"
+# 108 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 104 "data/maps/Luxuradining/scripts.pory"
+# 108 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 104 "data/maps/Luxuradining/scripts.pory"
+# 108 "data/maps/Luxuradining/scripts.pory"
 	walk_left
-# 105 "data/maps/Luxuradining/scripts.pory"
+# 109 "data/maps/Luxuradining/scripts.pory"
 	face_up
 	step_end
 
-# 107 "data/maps/Luxuradining/scripts.pory"
-mlq:
-# 108 "data/maps/Luxuradining/scripts.pory"
-	emote_question_mark
-	step_end
-
-# 110 "data/maps/Luxuradining/scripts.pory"
-mlo:
 # 111 "data/maps/Luxuradining/scripts.pory"
-	emote_question_mark
+mlq:
 # 112 "data/maps/Luxuradining/scripts.pory"
-	face_down
+	emote_question_mark
 	step_end
 
 # 114 "data/maps/Luxuradining/scripts.pory"
-mol:
+mlo:
 # 115 "data/maps/Luxuradining/scripts.pory"
+	emote_question_mark
+# 116 "data/maps/Luxuradining/scripts.pory"
+	face_down
+	step_end
+
+# 118 "data/maps/Luxuradining/scripts.pory"
+mol:
+# 119 "data/maps/Luxuradining/scripts.pory"
 	face_right
 	step_end
 
-# 117 "data/maps/Luxuradining/scripts.pory"
+# 121 "data/maps/Luxuradining/scripts.pory"
 upset:
-# 118 "data/maps/Luxuradining/scripts.pory"
+# 122 "data/maps/Luxuradining/scripts.pory"
 	emote_upset
 	step_end
 
 Mom::
-# 121 "data/maps/Luxuradining/scripts.pory"
-	lockall
-# 122 "data/maps/Luxuradining/scripts.pory"
-	faceplayer
-# 123 "data/maps/Luxuradining/scripts.pory"
-	namebox name2
-# 124 "data/maps/Luxuradining/scripts.pory"
-	msgbox Mom_Text_0
 # 125 "data/maps/Luxuradining/scripts.pory"
-	hidenamebox
+	lock
 # 126 "data/maps/Luxuradining/scripts.pory"
-	releaseall
+	faceplayer
+# 127 "data/maps/Luxuradining/scripts.pory"
+	namebox name2
+# 128 "data/maps/Luxuradining/scripts.pory"
+	msgbox Mom_Text_0
+# 129 "data/maps/Luxuradining/scripts.pory"
+	hidenamebox
+# 130 "data/maps/Luxuradining/scripts.pory"
+	release
 	return
 
 
 Dad::
-# 129 "data/maps/Luxuradining/scripts.pory"
-	lockall
-# 130 "data/maps/Luxuradining/scripts.pory"
-	faceplayer
-# 131 "data/maps/Luxuradining/scripts.pory"
-	namebox name3
-# 132 "data/maps/Luxuradining/scripts.pory"
-	msgbox Dad_Text_0
 # 133 "data/maps/Luxuradining/scripts.pory"
-	hidenamebox
+	lock
 # 134 "data/maps/Luxuradining/scripts.pory"
-	releaseall
+	faceplayer
+# 135 "data/maps/Luxuradining/scripts.pory"
+	namebox name3
+# 136 "data/maps/Luxuradining/scripts.pory"
+	msgbox Dad_Text_0
+# 137 "data/maps/Luxuradining/scripts.pory"
+	hidenamebox
+# 138 "data/maps/Luxuradining/scripts.pory"
+	release
 	return
 
 
 waiting::
-# 137 "data/maps/Luxuradining/scripts.pory"
-	lockall
-# 138 "data/maps/Luxuradining/scripts.pory"
+# 141 "data/maps/Luxuradining/scripts.pory"
+	lock
+# 142 "data/maps/Luxuradining/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, camera4
-# 139 "data/maps/Luxuradining/scripts.pory"
+# 143 "data/maps/Luxuradining/scripts.pory"
 	msgbox waiting_Text_0
-# 140 "data/maps/Luxuradining/scripts.pory"
-	releaseall
+# 144 "data/maps/Luxuradining/scripts.pory"
+	release
 	return
 
 
 Luxuradining_MapScripts_MAP_SCRIPT_ON_LOAD::
-# 144 "data/maps/Luxuradining/scripts.pory"
+# 148 "data/maps/Luxuradining/scripts.pory"
 	compare LUXURA_TRAGEDY, 4
 	goto_if_gt Luxuradining_MapScripts_MAP_SCRIPT_ON_LOAD_1
 	return
 
 Luxuradining_MapScripts_MAP_SCRIPT_ON_LOAD_1:
-# 145 "data/maps/Luxuradining/scripts.pory"
+# 149 "data/maps/Luxuradining/scripts.pory"
 	removeobject 1
-# 146 "data/maps/Luxuradining/scripts.pory"
+# 150 "data/maps/Luxuradining/scripts.pory"
 	removeobject 2
-# 147 "data/maps/Luxuradining/scripts.pory"
+# 151 "data/maps/Luxuradining/scripts.pory"
 	setflag FLAG_UNUSED_0x498
-# 148 "data/maps/Luxuradining/scripts.pory"
+# 152 "data/maps/Luxuradining/scripts.pory"
 	setflag FLAG_UNUSED_0x499
 	return
 
 
 garden::
-# 154 "data/maps/Luxuradining/scripts.pory"
-	lock
-# 155 "data/maps/Luxuradining/scripts.pory"
-	faceplayer
-# 156 "data/maps/Luxuradining/scripts.pory"
-	namebox gardener
-# 157 "data/maps/Luxuradining/scripts.pory"
-	msgbox garden_Text_0
 # 158 "data/maps/Luxuradining/scripts.pory"
-	hidenamebox
+	lock
 # 159 "data/maps/Luxuradining/scripts.pory"
+	faceplayer
+# 160 "data/maps/Luxuradining/scripts.pory"
+	namebox gardener
+# 161 "data/maps/Luxuradining/scripts.pory"
+	msgbox garden_Text_0
+# 162 "data/maps/Luxuradining/scripts.pory"
+	hidenamebox
+# 163 "data/maps/Luxuradining/scripts.pory"
 	release
 	return
 
 
 rest::
-# 162 "data/maps/Luxuradining/scripts.pory"
-	lock
-# 163 "data/maps/Luxuradining/scripts.pory"
-	faceplayer
-# 164 "data/maps/Luxuradining/scripts.pory"
-	namebox rest_Text_0
-# 165 "data/maps/Luxuradining/scripts.pory"
-	msgbox rest_Text_1
 # 166 "data/maps/Luxuradining/scripts.pory"
-	hidenamebox
+	lock
 # 167 "data/maps/Luxuradining/scripts.pory"
+	faceplayer
+# 168 "data/maps/Luxuradining/scripts.pory"
+	namebox rest_Text_0
+# 169 "data/maps/Luxuradining/scripts.pory"
+	msgbox rest_Text_1
+# 170 "data/maps/Luxuradining/scripts.pory"
+	hidenamebox
+# 171 "data/maps/Luxuradining/scripts.pory"
 	release
 	return
 
 
 nurse::
-# 170 "data/maps/Luxuradining/scripts.pory"
+# 174 "data/maps/Luxuradining/scripts.pory"
 	goto_if_unset FLAG_UNUSED_0x479, nurse_10
 nurse_8:
-# 177 "data/maps/Luxuradining/scripts.pory"
+# 181 "data/maps/Luxuradining/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x479, nurse_7
 nurse_5:
-# 190 "data/maps/Luxuradining/scripts.pory"
+# 194 "data/maps/Luxuradining/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x479, nurse_4
 	return
 
 nurse_1:
-# 171 "data/maps/Luxuradining/scripts.pory"
-	lockall
-# 172 "data/maps/Luxuradining/scripts.pory"
+# 175 "data/maps/Luxuradining/scripts.pory"
+	lock
+# 176 "data/maps/Luxuradining/scripts.pory"
 	faceplayer
-# 173 "data/maps/Luxuradining/scripts.pory"
+# 177 "data/maps/Luxuradining/scripts.pory"
 	msgbox nurse_Text_0
-# 174 "data/maps/Luxuradining/scripts.pory"
-	releaseall
+# 178 "data/maps/Luxuradining/scripts.pory"
+	release
 	return
 
 nurse_2:
-# 178 "data/maps/Luxuradining/scripts.pory"
-	lockall
-# 179 "data/maps/Luxuradining/scripts.pory"
-	faceplayer
-# 180 "data/maps/Luxuradining/scripts.pory"
-	msgbox nurse_Text_1, MSGBOX_AUTOCLOSE
-# 181 "data/maps/Luxuradining/scripts.pory"
-	msgbox nurse_Text_2, MSGBOX_AUTOCLOSE
 # 182 "data/maps/Luxuradining/scripts.pory"
-	msgbox nurse_Text_3, MSGBOX_AUTOCLOSE
+	lock
 # 183 "data/maps/Luxuradining/scripts.pory"
-	giveitem ITEM_POTION, 2
+	faceplayer
 # 184 "data/maps/Luxuradining/scripts.pory"
-	giveitem ITEM_PARALYZE_HEAL, 3
+	msgbox nurse_Text_1, MSGBOX_AUTOCLOSE
 # 185 "data/maps/Luxuradining/scripts.pory"
-	setflag FLAG_UNUSED_0x4B7
+	msgbox nurse_Text_2, MSGBOX_AUTOCLOSE
 # 186 "data/maps/Luxuradining/scripts.pory"
-	setvar LUXURA_TRAGEDY, 20
+	msgbox nurse_Text_3, MSGBOX_AUTOCLOSE
 # 187 "data/maps/Luxuradining/scripts.pory"
-	releaseall
+	giveitem ITEM_POTION, 2
+# 188 "data/maps/Luxuradining/scripts.pory"
+	giveitem ITEM_PARALYZE_HEAL, 3
+# 189 "data/maps/Luxuradining/scripts.pory"
+	setflag FLAG_UNUSED_0x4B7
+# 190 "data/maps/Luxuradining/scripts.pory"
+	setvar LUXURA_TRAGEDY, 20
+# 191 "data/maps/Luxuradining/scripts.pory"
+	release
 	return
 
 nurse_3:
-# 191 "data/maps/Luxuradining/scripts.pory"
-	lockall
-# 192 "data/maps/Luxuradining/scripts.pory"
-	msgbox nurse_Text_4
-# 193 "data/maps/Luxuradining/scripts.pory"
-	setvar VAR_0x800B, 1
-# 194 "data/maps/Luxuradining/scripts.pory"
-	call EventScript_PkmnCenterNurse_TakeAndHealPkmn
 # 195 "data/maps/Luxuradining/scripts.pory"
-	waitmessage
+	lock
 # 196 "data/maps/Luxuradining/scripts.pory"
-	waitbuttonpress
+	msgbox nurse_Text_4
 # 197 "data/maps/Luxuradining/scripts.pory"
+	setvar VAR_0x800B, 1
+# 198 "data/maps/Luxuradining/scripts.pory"
+	call EventScript_PkmnCenterNurse_TakeAndHealPkmn
+# 199 "data/maps/Luxuradining/scripts.pory"
+	waitmessage
+# 200 "data/maps/Luxuradining/scripts.pory"
+	waitbuttonpress
+# 201 "data/maps/Luxuradining/scripts.pory"
 	release
 	end
 
 nurse_4:
-# 190 "data/maps/Luxuradining/scripts.pory"
+# 194 "data/maps/Luxuradining/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x4B7, nurse_3
 	return
 
 nurse_7:
-# 177 "data/maps/Luxuradining/scripts.pory"
+# 181 "data/maps/Luxuradining/scripts.pory"
 	goto_if_unset FLAG_UNUSED_0x4B7, nurse_2
 	goto nurse_5
 
 nurse_10:
-# 170 "data/maps/Luxuradining/scripts.pory"
+# 174 "data/maps/Luxuradining/scripts.pory"
 	goto_if_unset FLAG_UNUSED_0x4B7, nurse_1
 	goto nurse_8
 
 
 checknurse::
-# 202 "data/maps/Luxuradining/scripts.pory"
+# 206 "data/maps/Luxuradining/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, no
-# 203 "data/maps/Luxuradining/scripts.pory"
+# 207 "data/maps/Luxuradining/scripts.pory"
 	msgbox checknurse_Text_0
-# 204 "data/maps/Luxuradining/scripts.pory"
-	releaseall
+# 208 "data/maps/Luxuradining/scripts.pory"
+	release
 	return
 
 
 atkspark::
-# 208 "data/maps/Luxuradining/scripts.pory"
+# 212 "data/maps/Luxuradining/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, luspark
-# 209 "data/maps/Luxuradining/scripts.pory"
+# 213 "data/maps/Luxuradining/scripts.pory"
 	msgbox atkspark_Text_0
-# 210 "data/maps/Luxuradining/scripts.pory"
-	releaseall
+# 214 "data/maps/Luxuradining/scripts.pory"
+	release
 	return
 
 
-# 213 "data/maps/Luxuradining/scripts.pory"
+# 217 "data/maps/Luxuradining/scripts.pory"
 luspark:
-# 214 "data/maps/Luxuradining/scripts.pory"
+# 218 "data/maps/Luxuradining/scripts.pory"
 	walk_left
 	step_end
 
@@ -616,53 +624,53 @@ Youwake_Text_10:
 Youwake_Text_11:
 # 66 "data/maps/Luxuradining/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Sure\p"
-	.string "Maids$"
+	.string "Maids!$"
 
 Youwake_Text_12:
-# 71 "data/maps/Luxuradining/scripts.pory"
+# 75 "data/maps/Luxuradining/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Where is Mira?\p"
 	.string "I need to ask her something.$"
 
 Youwake_Text_13:
-# 74 "data/maps/Luxuradining/scripts.pory"
+# 78 "data/maps/Luxuradining/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}She's out helping the gardener.$"
 
 Mom_Text_0:
-# 124 "data/maps/Luxuradining/scripts.pory"
+# 128 "data/maps/Luxuradining/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}She's always successful in tricking you$"
 
 Dad_Text_0:
-# 132 "data/maps/Luxuradining/scripts.pory"
+# 136 "data/maps/Luxuradining/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Guess you guys are really close.\p"
 	.string "She always knows how to trick you.$"
 
 waiting_Text_0:
-# 139 "data/maps/Luxuradining/scripts.pory"
+# 143 "data/maps/Luxuradining/scripts.pory"
 	.string "I should hurry, I don't want to make Mom\n"
 	.string "and Dad wait!$"
 
 garden_Text_0:
-# 157 "data/maps/Luxuradining/scripts.pory"
+# 161 "data/maps/Luxuradining/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}This garden has never looked better,\n"
 	.string "thanks to Lady Mira.$"
 
 rest_Text_0:
-# 164 "data/maps/Luxuradining/scripts.pory"
+# 168 "data/maps/Luxuradining/scripts.pory"
 	.string "Maid$"
 
 rest_Text_1:
-# 165 "data/maps/Luxuradining/scripts.pory"
+# 169 "data/maps/Luxuradining/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Good day, Young Master! It's my rest\n"
 	.string "day so I'm taking it easy.\p"
 	.string "But if you need anything, just let me\n"
 	.string "know.$"
 
 nurse_Text_0:
-# 173 "data/maps/Luxuradining/scripts.pory"
+# 177 "data/maps/Luxuradining/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Good day,Master Xylar.$"
 
 nurse_Text_1:
-# 180 "data/maps/Luxuradining/scripts.pory"
+# 184 "data/maps/Luxuradining/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}When they attacked the mansion... they\n"
 	.string "didn't kill me. They kept me alive. Not\l"
 	.string "out of mercy, but because they needed\l"
@@ -679,7 +687,7 @@ nurse_Text_1:
 	.string "hide.$"
 
 nurse_Text_2:
-# 181 "data/maps/Luxuradining/scripts.pory"
+# 185 "data/maps/Luxuradining/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}I survived for a reason. I'll get my\n"
 	.string "revenge, every last one of them will pay\l"
 	.string "for what they've done.\p"
@@ -687,7 +695,7 @@ nurse_Text_2:
 	.string "to do.$"
 
 nurse_Text_3:
-# 182 "data/maps/Luxuradining/scripts.pory"
+# 186 "data/maps/Luxuradining/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}If your Pokémon need healing, don't\n"
 	.string "hesitate to come to me. No matter what\l"
 	.string "happens, I'll be here to help them\l"
@@ -695,14 +703,14 @@ nurse_Text_3:
 	.string "Here are some items that will help you.$"
 
 nurse_Text_4:
-# 192 "data/maps/Luxuradining/scripts.pory"
+# 196 "data/maps/Luxuradining/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, Let me heal your pokemon.$"
 
 checknurse_Text_0:
-# 203 "data/maps/Luxuradining/scripts.pory"
+# 207 "data/maps/Luxuradining/scripts.pory"
 	.string "I should look for some healing supplies\n"
 	.string "in the servant's quarter.$"
 
 atkspark_Text_0:
-# 209 "data/maps/Luxuradining/scripts.pory"
+# 213 "data/maps/Luxuradining/scripts.pory"
 	.string "I should hurry, mom is in danger.$"

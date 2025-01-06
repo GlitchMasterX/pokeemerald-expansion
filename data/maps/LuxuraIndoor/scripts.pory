@@ -5,14 +5,14 @@ MAP_SCRIPT_ON_FRAME_TABLE[
 }
 script MaidZ{
 	if(!flag(FLAG_UNUSED_0x4A2)){
-	lockall
+	lock
 	faceplayer
 	namebox ("Maid")
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} Young master, please let me know if you need anything."))
 	hidenamebox
-	releaseall}
+	release}
 	else{
-	lockall
+	lock
 	faceplayer
 	namebox ("Maid")
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} Young master, please let me know if you need anything."))
@@ -32,65 +32,65 @@ script MaidZ{
 	waitfanfare
 	setvar(LUXURA_TRAGEDY,8)
 	clearflag(FLAG_UNUSED_0x4A2)
-	releaseall
+	release
 	}
 }
 
 script Maid{
-	lockall
+	lock
 	faceplayer
 	namebox ("Maid")
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} Young master, please let me know if you need anything."))
 	hidenamebox
-	releaseall
+	release
 }
 
 script MaidG{
-	lockall
+	lock
 	faceplayer
 	namebox ("Maid")
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} Grumpig helps us by using its psychic powers to precisely measure and mix the ingredients, ensuring perfect results every time."))
 	hidenamebox
-	releaseall
+	release
 }
 
 script MaidD{
-	lockall
+	lock
 	faceplayer
 	namebox ("Maid")
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} I'm just finishing up the dishes and will have everything cleaned and put away shortly."))
 	hidenamebox
-	releaseall
+	release
 }
 
 script MaidB{
-	lockall
+	lock
 	faceplayer
 	namebox ("Maid")
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} Having Blissey in the kitchen ensures that every dish is prepared with care and has a touch of healing energy, making meals not only delicious but also comforting."))
 	hidenamebox
-	releaseall
+	release
 }
 
 script MaidM{
-	lockall
+	lock
 	faceplayer
 	namebox ("Maid")
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} With Minccino around, cleaning is a breeze, its Swift Swipes keep everything spotless and organized in no time."))
 	hidenamebox
-	releaseall
+	release
 }
 
 script MaidE{
 	if(!flag(FLAG_UNUSED_0x49E)){
-	lockall
+	lock
 	faceplayer
 	namebox ("Maid")
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} Lady Elysia is so considerate, she knows I love reading, so she's given me a break in the library to enjoy my book."))
 	hidenamebox
-	releaseall
+	release
 	}
-	else{lockall
+	else{lock
 	faceplayer
 	namebox ("Maid")
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} Lady Elysia is so considerate, she knows I love reading, so she's given me a break in the library to enjoy my book."))
@@ -104,35 +104,35 @@ script MaidE{
 	removeobject(2)
 	setflag(FLAG_UNUSED_0x49F)
 	fadescreen(FADE_FROM_BLACK)
-	releaseall
+	release
 	setvar (LUXURA_TRAGEDY,7)
 	setvar (VAR_ROUTE103_STATE,1)
 	}
 }
 
 script MaidC{
-	lockall
+	lock
 	faceplayer
 	namebox ("Maid")
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} I'm just dusting the shelves in the library to keep everything neat."))
 	hidenamebox
-	releaseall
+	release
 }
 
 script Minccino{
-	lockall
+	lock
 	faceplayer
 	namebox ("Minccino")
 	playmoncry(SPECIES_MINCCINO,CRY_MODE_NORMAL)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} Chii,chii! Min-min!"))
 	hidenamebox
 	waitmoncry
-	releaseall
+	release
 }
 
 script Grumpig{
 	if(!flag(FLAG_UNUSED_0x493)){
-	lockall
+	lock
 	faceplayer
 	applymovement(5,heart)
 	namebox ("Grumpig")
@@ -142,9 +142,9 @@ script Grumpig{
 	giveitem(ITEM_TWISTED_SPOON,1)
 	setflag(FLAG_UNUSED_0x493)
 	waitmoncry
-	releaseall}
+	release}
 	else
-	{lockall
+	{lock
 	faceplayer
 	applymovement(5,heart)
 	namebox ("Grumpig")
@@ -152,18 +152,18 @@ script Grumpig{
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} Pii, pii! Grrum, grrum!"))
 	hidenamebox
 	waitmoncry
-	releaseall}
+	release}
 }
 
 script Blissey{
-	lockall
+	lock
 	faceplayer
 	namebox ("Blissey")
 	playmoncry(SPECIES_BLISSEY,CRY_MODE_NORMAL)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} Hoo, hoo! Blii, bliiss!"))
 	hidenamebox
 	waitmoncry
-	releaseall
+	release
 }
 
 text felicia {
@@ -172,10 +172,10 @@ text felicia {
 }
 
 script strol{
-	lockall
+	lock
 	applymovement(OBJ_EVENT_ID_PLAYER,notp)
 	msgbox(format("It's time for my stroll with Mira.\pI should go tell her."))
-	releaseall
+	release
 }
 
 script tragedy{
@@ -383,7 +383,7 @@ script tragedy{
 }
 }
 script caprun {
-	lockall
+	lock
 	facefollower
 	namebox(name4)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Come on, Master Xylar we have to go quickly."))
@@ -400,7 +400,7 @@ script caprun {
 	namebox(name4)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Please, Master Xylar, for your parents....run!"))
 	hidenamebox
-	releaseall
+	release
 	setvar(LUXURA_TRAGEDY,13)
 }
 movement rop {

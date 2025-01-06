@@ -162,7 +162,7 @@ dad::
 # 77 "data/maps/Luxurawork/scripts.pory"
 	goto_if_unset FLAG_UNUSED_0x49D, dad_1
 # 115 "data/maps/Luxurawork/scripts.pory"
-	lockall
+	lock
 # 116 "data/maps/Luxurawork/scripts.pory"
 	faceplayer
 # 117 "data/maps/Luxurawork/scripts.pory"
@@ -172,12 +172,12 @@ dad::
 # 119 "data/maps/Luxurawork/scripts.pory"
 	hidenamebox
 # 120 "data/maps/Luxurawork/scripts.pory"
-	releaseall
+	release
 	return
 
 dad_1:
 # 78 "data/maps/Luxurawork/scripts.pory"
-	lockall
+	lock
 # 79 "data/maps/Luxurawork/scripts.pory"
 	faceplayer
 # 80 "data/maps/Luxurawork/scripts.pory"
@@ -245,7 +245,7 @@ dad_1:
 # 111 "data/maps/Luxurawork/scripts.pory"
 	hidenamebox
 # 112 "data/maps/Luxurawork/scripts.pory"
-	releaseall
+	release
 # 113 "data/maps/Luxurawork/scripts.pory"
 	setflag FLAG_UNUSED_0x49D
 	return
@@ -259,7 +259,7 @@ exclam:
 
 trage::
 # 128 "data/maps/Luxurawork/scripts.pory"
-	lockall
+	lock
 # 129 "data/maps/Luxurawork/scripts.pory"
 	applymovement 10, players
 # 130 "data/maps/Luxurawork/scripts.pory"
@@ -477,7 +477,7 @@ trage::
 # 236 "data/maps/Luxurawork/scripts.pory"
 	special RemoveCameraObject
 # 237 "data/maps/Luxurawork/scripts.pory"
-	releaseall
+	release
 # 238 "data/maps/Luxurawork/scripts.pory"
 	warp MAP_LUXURA_INDOOR, 7, 6
 # 239 "data/maps/Luxurawork/scripts.pory"

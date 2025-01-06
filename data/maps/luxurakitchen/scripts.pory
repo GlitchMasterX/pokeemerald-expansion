@@ -65,7 +65,7 @@ script luxurakitchen_MapScripts_MAP_SCRIPT_ON_LOAD {
 
 script momm {
 	if(!flag(FLAG_UNUSED_0x49D)){
-		lockall
+		lock
 		faceplayer
 		namebox(name2)
 		msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Xylar, your Father wanted to have a talk with you.\pHe's in his workroom busy as usual.\pYou should go see him."))
@@ -76,47 +76,47 @@ script momm {
 		namebox(name2)
 		msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Don't worry, I'm sure it's nothing serious."))
 		hidenamebox
-		releaseall
+		release
 	}
 	elif(flag(FLAG_UNUSED_0x49D)){
-		lockall
+		lock
 		faceplayer
 		namebox(name2)
 		msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Xylar, Can you call Felicia for me?\pShe must be in the Library."))
 		hidenamebox
-		releaseall
+		release
 		setflag(FLAG_UNUSED_0x49E)
 	}
 } 
 
 script mommafter{
-	lockall
+	lock
 	faceplayer
 	namebox(name2)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Thanks, dear."))
 	hidenamebox
-	releaseall
+	release
 }
 script feliciaafter{
-	lockall
+	lock
 	faceplayer
 	namebox(felicia)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I'd do anything for her."))
 	hidenamebox
-	releaseall
+	release
 }
 
 script mirakitchen {
 	if(!(flag(FLAG_UNUSED_0x49F)||(flag(FLAG_SYS_B_DASH)))){
-		lockall
+		lock
 		faceplayer
 		namebox(name4)
 	    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, I'm a little busy right now.\pWhy don't you find something else to do for a while."))
 	    hidenamebox
-        releaseall
+        release
 	}
 	elif((flag(FLAG_UNUSED_0x49F))||(!flag(FLAG_SYS_B_DASH)))
-	{	lockall
+	{	lock
 		faceplayer
 		namebox(Xylar)
 		msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Mira, It's time for our walk.\pReady to go."))
@@ -125,13 +125,13 @@ script mirakitchen {
 	    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Already?\pAlright,Master Xylar.Just give me a moment and we can head out."))
 	    hidenamebox
 		msgbox(format("I should go grab my shoes.\pThe maid upstairs should have it."))
-        releaseall
+        release
 		setflag(FLAG_UNUSED_0x4A2)
 	}
     
 }
 script mirastrol {
-	lockall
+	lock
 	faceplayer
 	namebox(name4)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, I'll be waiting for you outside."))
@@ -139,7 +139,7 @@ script mirastrol {
 	fadescreen(FADE_TO_BLACK)
 	removeobject(11)
 	fadescreen(FADE_FROM_BLACK)
-	releaseall
+	release
 	setflag(FLAG_UNUSED_0x4A3)
 	setvar(LUXURA_TRAGEDY,9)
 	setvar(VAR_ROUTE103_STATE,2)

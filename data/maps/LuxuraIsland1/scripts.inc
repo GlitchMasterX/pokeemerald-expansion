@@ -11,13 +11,13 @@ map_script MAP_SCRIPT_ON_LOAD,explosion
 
 luxuraisland::
 # 7 "data/maps/LuxuraIsland1/scripts.pory"
-	lockall
+	lock
 # 8 "data/maps/LuxuraIsland1/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, notal
 # 9 "data/maps/LuxuraIsland1/scripts.pory"
 	msgbox luxuraisland_Text_0
 # 10 "data/maps/LuxuraIsland1/scripts.pory"
-	releaseall
+	release
 	return
 
 
@@ -33,19 +33,19 @@ notal:
 
 officer::
 # 17 "data/maps/LuxuraIsland1/scripts.pory"
-	lockall
+	lock
 # 18 "data/maps/LuxuraIsland1/scripts.pory"
 	faceplayer
 # 19 "data/maps/LuxuraIsland1/scripts.pory"
 	msgbox officer_Text_0
 # 20 "data/maps/LuxuraIsland1/scripts.pory"
-	releaseall
+	release
 	return
 
 
 forest::
 # 24 "data/maps/LuxuraIsland1/scripts.pory"
-	lockall
+	lock
 # 25 "data/maps/LuxuraIsland1/scripts.pory"
 	applymovement 5, exclam
 # 26 "data/maps/LuxuraIsland1/scripts.pory"
@@ -113,7 +113,7 @@ forest::
 # 57 "data/maps/LuxuraIsland1/scripts.pory"
 	hidenamebox
 # 58 "data/maps/LuxuraIsland1/scripts.pory"
-	releaseall
+	release
 # 59 "data/maps/LuxuraIsland1/scripts.pory"
 	setflag FLAG_AFTERTRAGEDY_MUSIC
 # 60 "data/maps/LuxuraIsland1/scripts.pory"
@@ -125,13 +125,13 @@ forest::
 
 hurry::
 # 66 "data/maps/LuxuraIsland1/scripts.pory"
-	lockall
+	lock
 # 67 "data/maps/LuxuraIsland1/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, notal
 # 68 "data/maps/LuxuraIsland1/scripts.pory"
 	msgbox hurry_Text_0
 # 69 "data/maps/LuxuraIsland1/scripts.pory"
-	releaseall
+	release
 	return
 
 
@@ -324,7 +324,7 @@ explosion_6:
 
 miraded::
 # 160 "data/maps/LuxuraIsland1/scripts.pory"
-	lockall
+	lock
 # 161 "data/maps/LuxuraIsland1/scripts.pory"
 	applymovement 14, invisible
 # 162 "data/maps/LuxuraIsland1/scripts.pory"
@@ -556,7 +556,7 @@ miraded::
 # 275 "data/maps/LuxuraIsland1/scripts.pory"
 	msgbox miraded_Text_33, MSGBOX_AUTOCLOSE
 # 276 "data/maps/LuxuraIsland1/scripts.pory"
-	releaseall
+	release
 # 277 "data/maps/LuxuraIsland1/scripts.pory"
 	warp MAP_LUXURAWOODS, 3, 35
 # 278 "data/maps/LuxuraIsland1/scripts.pory"
@@ -674,7 +674,7 @@ boo:
 
 Mira::
 # 304 "data/maps/LuxuraIsland1/scripts.pory"
-	lockall
+	lock
 # 305 "data/maps/LuxuraIsland1/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, ms
 # 306 "data/maps/LuxuraIsland1/scripts.pory"
@@ -684,7 +684,7 @@ Mira::
 # 308 "data/maps/LuxuraIsland1/scripts.pory"
 	goto miraded
 # 309 "data/maps/LuxuraIsland1/scripts.pory"
-	releaseall
+	release
 	return
 
 
@@ -698,7 +698,7 @@ ms:
 
 Mira2::
 # 318 "data/maps/LuxuraIsland1/scripts.pory"
-	lockall
+	lock
 # 319 "data/maps/LuxuraIsland1/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, ms1
 # 320 "data/maps/LuxuraIsland1/scripts.pory"
@@ -708,7 +708,7 @@ Mira2::
 # 322 "data/maps/LuxuraIsland1/scripts.pory"
 	goto miraded
 # 323 "data/maps/LuxuraIsland1/scripts.pory"
-	releaseall
+	release
 	return
 
 
@@ -724,7 +724,7 @@ ms1:
 
 Mira3::
 # 333 "data/maps/LuxuraIsland1/scripts.pory"
-	lockall
+	lock
 # 334 "data/maps/LuxuraIsland1/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, ms2
 # 335 "data/maps/LuxuraIsland1/scripts.pory"
@@ -734,7 +734,7 @@ Mira3::
 # 337 "data/maps/LuxuraIsland1/scripts.pory"
 	goto miraded
 # 338 "data/maps/LuxuraIsland1/scripts.pory"
-	releaseall
+	release
 	return
 
 
@@ -752,7 +752,7 @@ ms2:
 
 mira1::
 # 346 "data/maps/LuxuraIsland1/scripts.pory"
-	lockall
+	lock
 # 347 "data/maps/LuxuraIsland1/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, m1
 # 348 "data/maps/LuxuraIsland1/scripts.pory"
@@ -762,7 +762,7 @@ mira1::
 # 350 "data/maps/LuxuraIsland1/scripts.pory"
 	goto miraded
 # 351 "data/maps/LuxuraIsland1/scripts.pory"
-	releaseall
+	release
 	return
 
 
@@ -778,7 +778,7 @@ m1:
 
 mira2::
 # 359 "data/maps/LuxuraIsland1/scripts.pory"
-	lockall
+	lock
 # 360 "data/maps/LuxuraIsland1/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, m2
 # 361 "data/maps/LuxuraIsland1/scripts.pory"
@@ -788,7 +788,7 @@ mira2::
 # 363 "data/maps/LuxuraIsland1/scripts.pory"
 	goto miraded
 # 364 "data/maps/LuxuraIsland1/scripts.pory"
-	releaseall
+	release
 	return
 
 

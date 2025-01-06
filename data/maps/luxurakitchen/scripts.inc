@@ -144,7 +144,7 @@ momm::
 
 momm_1:
 # 68 "data/maps/luxurakitchen/scripts.pory"
-	lockall
+	lock
 # 69 "data/maps/luxurakitchen/scripts.pory"
 	faceplayer
 # 70 "data/maps/luxurakitchen/scripts.pory"
@@ -166,12 +166,12 @@ momm_1:
 # 78 "data/maps/luxurakitchen/scripts.pory"
 	hidenamebox
 # 79 "data/maps/luxurakitchen/scripts.pory"
-	releaseall
+	release
 	return
 
 momm_2:
 # 82 "data/maps/luxurakitchen/scripts.pory"
-	lockall
+	lock
 # 83 "data/maps/luxurakitchen/scripts.pory"
 	faceplayer
 # 84 "data/maps/luxurakitchen/scripts.pory"
@@ -181,7 +181,7 @@ momm_2:
 # 86 "data/maps/luxurakitchen/scripts.pory"
 	hidenamebox
 # 87 "data/maps/luxurakitchen/scripts.pory"
-	releaseall
+	release
 # 88 "data/maps/luxurakitchen/scripts.pory"
 	setflag FLAG_UNUSED_0x49E
 	return
@@ -189,7 +189,7 @@ momm_2:
 
 mommafter::
 # 93 "data/maps/luxurakitchen/scripts.pory"
-	lockall
+	lock
 # 94 "data/maps/luxurakitchen/scripts.pory"
 	faceplayer
 # 95 "data/maps/luxurakitchen/scripts.pory"
@@ -199,13 +199,13 @@ mommafter::
 # 97 "data/maps/luxurakitchen/scripts.pory"
 	hidenamebox
 # 98 "data/maps/luxurakitchen/scripts.pory"
-	releaseall
+	release
 	return
 
 
 feliciaafter::
 # 101 "data/maps/luxurakitchen/scripts.pory"
-	lockall
+	lock
 # 102 "data/maps/luxurakitchen/scripts.pory"
 	faceplayer
 # 103 "data/maps/luxurakitchen/scripts.pory"
@@ -215,7 +215,7 @@ feliciaafter::
 # 105 "data/maps/luxurakitchen/scripts.pory"
 	hidenamebox
 # 106 "data/maps/luxurakitchen/scripts.pory"
-	releaseall
+	release
 	return
 
 
@@ -231,7 +231,7 @@ mirakitchen_4:
 
 mirakitchen_1:
 # 111 "data/maps/luxurakitchen/scripts.pory"
-	lockall
+	lock
 # 112 "data/maps/luxurakitchen/scripts.pory"
 	faceplayer
 # 113 "data/maps/luxurakitchen/scripts.pory"
@@ -241,12 +241,12 @@ mirakitchen_1:
 # 115 "data/maps/luxurakitchen/scripts.pory"
 	hidenamebox
 # 116 "data/maps/luxurakitchen/scripts.pory"
-	releaseall
+	release
 	return
 
 mirakitchen_2:
 # 119 "data/maps/luxurakitchen/scripts.pory"
-	lockall
+	lock
 # 120 "data/maps/luxurakitchen/scripts.pory"
 	faceplayer
 # 121 "data/maps/luxurakitchen/scripts.pory"
@@ -264,7 +264,7 @@ mirakitchen_2:
 # 127 "data/maps/luxurakitchen/scripts.pory"
 	msgbox mirakitchen_Text_3
 # 128 "data/maps/luxurakitchen/scripts.pory"
-	releaseall
+	release
 # 129 "data/maps/luxurakitchen/scripts.pory"
 	setflag FLAG_UNUSED_0x4A2
 	return
@@ -277,7 +277,7 @@ mirakitchen_6:
 
 mirastrol::
 # 134 "data/maps/luxurakitchen/scripts.pory"
-	lockall
+	lock
 # 135 "data/maps/luxurakitchen/scripts.pory"
 	faceplayer
 # 136 "data/maps/luxurakitchen/scripts.pory"
@@ -293,7 +293,7 @@ mirastrol::
 # 141 "data/maps/luxurakitchen/scripts.pory"
 	fadescreen FADE_FROM_BLACK
 # 142 "data/maps/luxurakitchen/scripts.pory"
-	releaseall
+	release
 # 143 "data/maps/luxurakitchen/scripts.pory"
 	setflag FLAG_UNUSED_0x4A3
 # 144 "data/maps/luxurakitchen/scripts.pory"

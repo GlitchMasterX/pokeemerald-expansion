@@ -4,24 +4,24 @@ map_script MAP_SCRIPT_ON_TRANSITION, musicchange
 map_script MAP_SCRIPT_ON_LOAD,explosion
 	.byte 0
 `script luxuraisland {
-	lockall
+	lock
 	applymovement(OBJ_EVENT_ID_PLAYER,notal)
 	msgbox(format("I'm not allowed to go there alone."))
-	releaseall
+	release
 	
 }
 movement notal {
 	walk_left*3
 }
 script officer {
-	lockall
+	lock
 	faceplayer
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Good day, Young Master."))
-	releaseall
+	release
 }
 
 script forest {
-    lockall
+    lock
     applymovement(5,exclam)
 	waitmovement(0)
 	applymovement(OBJ_EVENT_ID_PLAYER,run)
@@ -55,7 +55,7 @@ script forest {
 	namebox(Xylar)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Mom and Dad are in the Mansion."))
 	hidenamebox
-    releaseall
+    release
 	setflag(FLAG_AFTERTRAGEDY_MUSIC)
 	setvar(LUXURA_TRAGEDY, 11)
 	setvar(VAR_ROUTE103_STATE, 3)
@@ -63,10 +63,10 @@ script forest {
 }
 
 script hurry{
-	lockall
+	lock
 	applymovement(OBJ_EVENT_ID_PLAYER,notal)
 	msgbox(format("I should hurry."))
-	releaseall
+	release
 }
 script explosion{
 	 if(var(LUXURA_TRAGEDY)<13){
@@ -157,7 +157,7 @@ elif(var(LUXURA_TRAGEDY)==19){
 }
 
 script miraded {
-	lockall
+	lock
 	applymovement(14,invisible)
 	waitmovement(0)
 	applymovement(OBJ_EVENT_ID_PLAYER,boo)
@@ -273,7 +273,7 @@ script miraded {
 	applymovement(14,visible)
 	fadescreen(FADE_FROM_WHITE)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Ahh, look at that beautiful red... It's so vibrant, so alive!\pBlood always gets my heart racing. Don't you just love the smell?\pIt's like... the essence of life escaping. I can't get enough of it."),MSGBOX_AUTOCLOSE)
-    releaseall
+    release
 	warp(MAP_LUXURAWOODS,3,35)
 	setflag(FLAG_UNUSED_0x26B)
 	setvar(LUXURA_TRAGEDY,14)
@@ -301,12 +301,12 @@ movement boo{
 	walk_right*9
 }
 script Mira {
-	lockall
+	lock
 	applymovement(OBJ_EVENT_ID_PLAYER,ms)
 	applymovement(0xFD,ms)
 	msgbox(format("I should hurry and ask for help."))
 	goto(miraded)
-    releaseall
+    release
 }
 movement ms {
 	walk_down
@@ -315,12 +315,12 @@ movement ms {
 }
 
 script Mira2 {
-	lockall
+	lock
 	applymovement(OBJ_EVENT_ID_PLAYER,ms1)
 	applymovement(0xFD,ms1)
 	msgbox(format("I should hurry and ask for help."))
 	goto(miraded)
-    releaseall
+    release
 }
 
 movement ms1 {
@@ -330,12 +330,12 @@ movement ms1 {
 }
 
 script Mira3 {
-	lockall
+	lock
 	applymovement(OBJ_EVENT_ID_PLAYER,ms2)
 	applymovement(0xFD,ms2)
 	msgbox(format("I should hurry and ask for help."))
 	goto(miraded)
-    releaseall
+    release
 }
 
 movement ms2 {
@@ -343,12 +343,12 @@ movement ms2 {
 	face_right
 }
 script mira1 {
-	lockall
+	lock
 	applymovement(OBJ_EVENT_ID_PLAYER,m1)
 	applymovement(0xFD,m1)
 	msgbox(format("I should hurry and ask for help."))
 	goto(miraded)
-    releaseall
+    release
 }
 
 movement m1 {
@@ -356,12 +356,12 @@ movement m1 {
 	face_right
 }
 script mira2 {
-	lockall
+	lock
 	applymovement(OBJ_EVENT_ID_PLAYER,m2)
 	applymovement(0xFD,m2)
 	msgbox(format("I should hurry and ask for help."))
 	goto(miraded)
-    releaseall
+    release
 }
 
 movement m2 {
