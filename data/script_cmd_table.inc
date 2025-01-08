@@ -3,9 +3,9 @@
 @ 'RunScriptImmediatelyUntilEffect'.
 .macro cmd func:req, requests_effects=0
 	.if \requests_effects == 0
-	4byte \func
+	.4byte \func
 	.else
-	4byte \func + ROM_SIZE
+	.4byte \func + ROM_SIZE
 	.endif
 .endm
 
@@ -254,4 +254,4 @@ gScriptCmdTable::
 	cmd ScrCmd_pokemartoutfit , requests_effects=1                              @ 0xf0
 
 gScriptCmdTableEnd::
-	4byte ScrCmd_nop
+	.4byte ScrCmd_nop

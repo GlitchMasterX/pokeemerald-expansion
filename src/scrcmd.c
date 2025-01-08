@@ -3259,7 +3259,7 @@ bool8 ScrCmd_hidenamebox(struct ScriptContext *ctx) {
     if(IsNameboxDisplayed())
         ClearNamebox();
     return FALSE;
-
+}
 void Script_EndTrainerCanSeeIf(struct ScriptContext *ctx)
 {
     u8 condition = ScriptReadByte(ctx);
