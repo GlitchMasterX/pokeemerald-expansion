@@ -527,8 +527,8 @@ script strolllll {
     lock
     applymovement(OBJ_EVENT_ID_PLAYER,strrp)
     applymovement(0xFD,strrp)
-    namebox(name4)
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}That's not the way,Master Xylar."))
+    namebox(Xylar)
+    msgbox(format("I should go to mansion.\pI'm worried about Mom and Dad."))
     hidenamebox
     release
     

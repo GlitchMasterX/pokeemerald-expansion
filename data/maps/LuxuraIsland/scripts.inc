@@ -1213,9 +1213,9 @@ strolllll::
 # 529 "data/maps/LuxuraIsland/scripts.pory"
 	applymovement 0xFD, strrp
 # 530 "data/maps/LuxuraIsland/scripts.pory"
-	namebox name4
+	namebox Xylar
 # 531 "data/maps/LuxuraIsland/scripts.pory"
-	msgbox strolll_Text_0
+	msgbox strollll_Text_0
 # 532 "data/maps/LuxuraIsland/scripts.pory"
 	hidenamebox
 # 533 "data/maps/LuxuraIsland/scripts.pory"
