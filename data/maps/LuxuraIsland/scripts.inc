@@ -1205,6 +1205,30 @@ outfit_4:
 	return
 
 
+strolllll::
+# 527 "data/maps/LuxuraIsland/scripts.pory"
+	lock
+# 528 "data/maps/LuxuraIsland/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, strrp
+# 529 "data/maps/LuxuraIsland/scripts.pory"
+	applymovement 0xFD, strrp
+# 530 "data/maps/LuxuraIsland/scripts.pory"
+	namebox name4
+# 531 "data/maps/LuxuraIsland/scripts.pory"
+	msgbox strolll_Text_0
+# 532 "data/maps/LuxuraIsland/scripts.pory"
+	hidenamebox
+# 533 "data/maps/LuxuraIsland/scripts.pory"
+	release
+	return
+
+
+# 536 "data/maps/LuxuraIsland/scripts.pory"
+strrp:
+# 537 "data/maps/LuxuraIsland/scripts.pory"
+	walk_left
+	step_end
+
 ran_Text_0:
 # 22 "data/maps/LuxuraIsland/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Now that's perfect.$"

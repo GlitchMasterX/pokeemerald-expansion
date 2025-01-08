@@ -669,6 +669,15 @@
       "var": "LUXURA_TRAGEDY",
       "var_value": "13",
       "script": "strolll"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 2,
+      "elevation": 0,
+      "var": "LUXURA_TRAGEDY",
+      "var_value": "13",
+      "script": "strolllll"
     }
   ],
   "bg_events": [
