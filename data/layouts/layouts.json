@@ -784,7 +784,7 @@
     {
       "id": "LAYOUT_ASTRALIS_ACADEMY_GYM",
       "name": "AstralisAcademy_Gym_Layout",
-      "width": 68,
+      "width": 47,
       "height": 81,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_PetalburgGym",
@@ -4587,7 +4587,7 @@
       "width": 20,
       "height": 16,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mauville",
+      "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/Newmap11/border.bin",
       "blockdata_filepath": "data/layouts/Newmap11/map.bin"
     },

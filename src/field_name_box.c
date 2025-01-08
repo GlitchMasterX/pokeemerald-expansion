@@ -75,7 +75,7 @@ static const struct SpritePalette sSpritePalette_Namebox = {
 static const struct WindowTemplate sNamebox_WindowTemplate =
 {
     .bg = 0,
-    .tilemapLeft = 1, 
+    .tilemapLeft = 0, 
     .tilemapTop = 12,
     .width = 6, 
     .height = 2,                //required to be at least two

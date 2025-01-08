@@ -78,7 +78,7 @@ movement xylar1{
 	face_left
 }
 text Xylar{
-	format("Xylar")
+	format("{COLOR DARK_GRAY}Xylar")
 }
 
 movement camera1{

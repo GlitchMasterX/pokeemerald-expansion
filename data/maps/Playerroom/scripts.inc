@@ -329,4 +329,4 @@ metdad_Text_0:
 
 Xylar::
 # 80 "data/maps/Playerroom/scripts.pory"
-	.string "Xylar$"
+	.string "{COLOR DARK_GRAY}Xylar$"

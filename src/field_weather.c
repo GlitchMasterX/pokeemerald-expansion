@@ -17,6 +17,7 @@
 #include "sound.h"
 #include "sprite.h"
 #include "task.h"
+#include "field_name_box.h"
 #include "trig.h"
 #include "gpu_regs.h"
 #include "field_camera.h"
@@ -824,8 +825,14 @@ void UpdateSpritePaletteWithWeather(u8 spritePaletteIndex)
 }
 
 void ApplyWeatherColorMapToPal(u8 paletteIndex)
+
+{ if (paletteIndex == 15)
 {
+    return;
+}
+
     ApplyColorMap(paletteIndex, 1, gWeatherPtr->colorMapIndex);
+
 }
 
 static bool8 UNUSED IsFirstFrameOfWeatherFadeIn(void)
