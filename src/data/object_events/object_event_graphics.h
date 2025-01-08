@@ -475,6 +475,10 @@ const u32 gObjectEventPic_Surge[] = INCBIN_U32("graphics/object_events/pics/peop
 const u32 gObjectEventPic_Portal[] = INCBIN_U32("graphics/object_events/pics/people/portal.4bpp");
 const u32 gObjectEventPic_Fire[] = INCBIN_U32("graphics/object_events/pics/people/fire.4bpp");
 const u16 gObjectEventPal_Fire[] = INCBIN_U16("graphics/object_events/palettes/fire.gbapal");
+const u32 gObjectEventPic_Alistair[] = INCBIN_U32("graphics/object_events/pics/people/prof_alistair.4bpp");
+const u16 gObjectEventPal_AListair[] = INCBIN_U16("graphics/object_events/palettes/alistair.gbapal");
+const u32 gObjectEventPic_Xylar[] = INCBIN_U32("graphics/object_events/pics/people/xylar.4bpp");
+const u16 gObjectEventPal_Xylar[] = INCBIN_U16("graphics/object_events/palettes/xylar.gbapal");
 
 
 #if OW_FOLLOWERS_POKEBALLS

@@ -4929,3 +4929,9 @@ $(OBJEVENTGFXDIR)/people/portal.4bpp: %.4bpp: %.png
 
 $(OBJEVENTGFXDIR)/people/fire.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/prof_alistair.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/xylar.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4

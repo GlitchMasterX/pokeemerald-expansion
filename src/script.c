@@ -293,7 +293,7 @@ void RunScriptImmediately(const u8 *ptr)
     while (RunScriptCommand(&sImmediateScriptContext) == TRUE);
 }
 
-const u8 *MapHeaderGetScriptTable(u8 tag)
+ u8 *MapHeaderGetScriptTable(u8 tag)
 {
     const u8 *mapScripts = gMapHeader.mapScripts;
 
@@ -324,7 +324,7 @@ void MapHeaderRunScriptType(u8 tag)
     }
 }
 
-const u8 *MapHeaderCheckScriptTable(u8 tag)
+ u8 *MapHeaderCheckScriptTable(u8 tag)
 {
     const u8 *ptr = MapHeaderGetScriptTable(tag);
 
