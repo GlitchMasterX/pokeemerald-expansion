@@ -275,10 +275,10 @@ script miraded {
 	fadescreen(FADE_FROM_WHITE)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Ahh, look at that beautiful red... It's so vibrant, so alive!\pBlood always gets my heart racing. Don't you just love the smell?\pIt's like... the essence of life escaping. I can't get enough of it."),MSGBOX_AUTOCLOSE)
     releaseall
+	setvar(LUXURA_TRAGEDY,14)
+	setflag(FLAG_UNUSED_0x26B)
 	warp(MAP_LUXURAWOODS,3,35)
 	mappreview
-	setflag(FLAG_UNUSED_0x26B)
-	setvar(LUXURA_TRAGEDY,14)
 }
 movement lok{
 	face_up

@@ -1030,11 +1030,11 @@ mewtwotend_Text_3:
 
 nocave_Text_0:
 # 129 "data/maps/Luxurawoods/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}I should not go into the cave alone.$"
+	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}I should not go into the cave alone.$"
 
 mewtwotendq_Text_0:
 # 135 "data/maps/Luxurawoods/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}I'm worried.$"
+	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}I'm worried.$"
 
 miradr_Text_0:
 # 150 "data/maps/Luxurawoods/scripts.pory"

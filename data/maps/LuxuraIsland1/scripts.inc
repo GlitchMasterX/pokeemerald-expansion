@@ -560,13 +560,13 @@ miraded::
 # 277 "data/maps/LuxuraIsland1/scripts.pory"
 	releaseall
 # 278 "data/maps/LuxuraIsland1/scripts.pory"
-	warp MAP_LUXURAWOODS, 3, 35
-# 279 "data/maps/LuxuraIsland1/scripts.pory"
-	mappreview
-# 280 "data/maps/LuxuraIsland1/scripts.pory"
-	setflag FLAG_UNUSED_0x26B
-# 281 "data/maps/LuxuraIsland1/scripts.pory"
 	setvar LUXURA_TRAGEDY, 14
+# 279 "data/maps/LuxuraIsland1/scripts.pory"
+	setflag FLAG_UNUSED_0x26B
+# 280 "data/maps/LuxuraIsland1/scripts.pory"
+	warp MAP_LUXURAWOODS, 3, 35
+# 281 "data/maps/LuxuraIsland1/scripts.pory"
+	mappreview
 	return
 
 

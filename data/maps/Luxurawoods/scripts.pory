@@ -126,19 +126,19 @@ script mewtwotend {
 script nocave {
 	lock
 	applymovement(OBJ_EVENT_ID_PLAYER,nol)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_BLUE}I should not go into the cave alone."))
+	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I should not go into the cave alone."))
 	release
 }
 script mewtwotendq {
 	lockall
 	applymovement(OBJ_EVENT_ID_PLAYER,thuddd)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_BLUE}I'm worried."))
+	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I'm worried."))
 	goto(mewtwotend)
 }
 script mewtwotende {
 	lockall
 	applymovement(OBJ_EVENT_ID_PLAYER,mq)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_BLUE}I'm worried."))
+	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I'm worried."))
 	goto(mewtwotend)
 }
 movement mq {

@@ -262,7 +262,7 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
     },
     [MPS_LUXURA_VEILWOOD] = {
         .mapsec = MAPSEC_LUXURA_VEILWOOD,
-        .type = MPS_TYPE_BASIC,
+        .type = MPS_TYPE_FADE_IN,
         .flagId = MPS_FLAG_NULL,
         .image = IMG_LUXURA_VEILWOOD
     },
@@ -535,6 +535,10 @@ u16 MapPreview_CreateMapNameWindow(u8 mapsec)
     {
         windowId = AddWindow(&sMapNameWindowLarge);
         xctr = 177 - GetStringWidth(FONT_NORMAL, gStringVar4, 0);
+    }
+    else if (mapsec == MAPSEC_LUXURA_VEILWOOD)
+    {
+        return FALSE;
     }
     else
     {
