@@ -64,9 +64,6 @@ void Script_IncreaseDifficulty(void)
     if (currentDifficulty++ > DIFFICULTY_MAX)
         return;
 
-    Script_RequestEffects(SCREFF_V1);
-    Script_RequestWriteVar(B_VAR_DIFFICULTY);
-
     SetCurrentDifficultyLevel(currentDifficulty);
 }
 
@@ -82,24 +79,17 @@ void Script_DecreaseDifficulty(void)
     if (!currentDifficulty)
         return;
 
-    Script_RequestEffects(SCREFF_V1);
-    Script_RequestWriteVar(B_VAR_DIFFICULTY);
-
     SetCurrentDifficultyLevel(--currentDifficulty);
 }
 
 void Script_GetDifficulty(void)
 {
-    Script_RequestEffects(SCREFF_V1);
     gSpecialVar_Result = GetCurrentDifficultyLevel();
 }
 
 void Script_SetDifficulty(struct ScriptContext *ctx)
 {
     enum DifficultyLevel desiredDifficulty = ScriptReadByte(ctx);
-
-    Script_RequestEffects(SCREFF_V1);
-    Script_RequestWriteVar(B_VAR_DIFFICULTY);
 
     SetCurrentDifficultyLevel(desiredDifficulty);
 }

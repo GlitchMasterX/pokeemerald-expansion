@@ -2949,6 +2949,7 @@ bool32 HandleWishPerishSongOnTurnEnd(void)
 
                 gBattlerTarget = battler;
                 gBattlerAttacker = gWishFutureKnock.futureSightBattlerIndex[battler];
+                gSpecialStatuses[gBattlerTarget].shellBellDmg = IGNORE_SHELL_BELL;
                 gCurrentMove = gWishFutureKnock.futureSightMove[battler];
 
                 party = GetSideParty(GetBattlerSide(gBattlerAttacker));
@@ -5887,7 +5888,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
              && !IsBattlerAlive(gBattlerTarget)
              && IsBattlerAlive(gBattlerAttacker))
             {
-                gBattleStruct->moveDamage[gBattlerAttacker] = gBattleStruct->moveDamage[gBattlerTarget];
+                gBattleStruct->moveDamage[gBattlerAttacker] = gSpecialStatuses[gBattlerTarget].shellBellDmg;
                 BattleScriptPushCursor();
                 gBattlescriptCurrInstr = BattleScript_AftermathDmg;
                 effect++;
@@ -8179,21 +8180,19 @@ u32 ItemBattleEffects(enum ItemEffect caseID, u32 battler, bool32 moveTurn)
         switch (atkHoldEffect)
         {
         case HOLD_EFFECT_SHELL_BELL:
-            if (gBattleScripting.savedDmg > 0
-                && MoveResultHasEffect(battler)
+            if (gSpecialStatuses[gBattlerAttacker].damagedMons  // Need to have done damage
                 && gBattlerAttacker != gBattlerTarget
-                && !IsBattlerAtMaxHp(gBattlerAttacker)
+                && gBattleMons[gBattlerAttacker].hp != gBattleMons[gBattlerAttacker].maxHP
                 && IsBattlerAlive(gBattlerAttacker)
-                && gMovesInfo[gCurrentMove].effect != EFFECT_FUTURE_SIGHT
-                && gMovesInfo[gCurrentMove].effect != EFFECT_PAIN_SPLIT
                 && (B_HEAL_BLOCKING < GEN_5 || !(gStatuses3[battler] & STATUS3_HEAL_BLOCK)))
             {
                 gLastUsedItem = atkItem;
                 gPotentialItemEffectBattler = gBattlerAttacker;
                 gBattleScripting.battler = gBattlerAttacker;
-                gBattleStruct->moveDamage[gBattlerAttacker] = (gBattleScripting.savedDmg / atkHoldEffectParam) * -1;
+                gBattleStruct->moveDamage[gBattlerAttacker] = (gSpecialStatuses[gBattlerTarget].shellBellDmg / atkHoldEffectParam) * -1;
                 if (gBattleStruct->moveDamage[gBattlerAttacker] == 0)
                     gBattleStruct->moveDamage[gBattlerAttacker] = -1;
+                gSpecialStatuses[gBattlerTarget].shellBellDmg = 0;
                 BattleScriptPushCursor();
                 gBattlescriptCurrInstr = BattleScript_ItemHealHP_Ret;
                 effect = ITEM_HP_CHANGE;
@@ -8201,11 +8200,11 @@ u32 ItemBattleEffects(enum ItemEffect caseID, u32 battler, bool32 moveTurn)
             break;
         case HOLD_EFFECT_LIFE_ORB:
             if (IsBattlerAlive(gBattlerAttacker)
-                && (IsBattlerTurnDamaged(gBattlerTarget) || gBattleStruct->moveDamage[gBattlerTarget]) // Needs the second check in case of Substitute
                 && !(TestIfSheerForceAffected(gBattlerAttacker, gCurrentMove))
                 && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD
                 && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
-                && !gSpecialStatuses[gBattlerAttacker].preventLifeOrbDamage)
+                && !gSpecialStatuses[gBattlerAttacker].preventLifeOrbDamage
+                && gSpecialStatuses[gBattlerAttacker].damagedMons)
             {
                 gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 10;
                 if (gBattleStruct->moveDamage[gBattlerAttacker] == 0)
@@ -8213,7 +8212,7 @@ u32 ItemBattleEffects(enum ItemEffect caseID, u32 battler, bool32 moveTurn)
                 effect = ITEM_HP_CHANGE;
                 BattleScriptPushCursor();
                 gBattlescriptCurrInstr = BattleScript_ItemHurtRet;
-                gLastUsedItem = atkItem;
+                gLastUsedItem = gBattleMons[gBattlerAttacker].item;
             }
             break;
         case HOLD_EFFECT_THROAT_SPRAY:  // Does NOT need to be a damaging move

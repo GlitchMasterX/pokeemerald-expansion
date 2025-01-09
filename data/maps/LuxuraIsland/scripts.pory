@@ -30,6 +30,7 @@ script ran{
     namebox(Xylar)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Miiiirrrraaaa!!"),MSGBOX_AUTOCLOSE)
     hidenamebox
+    playbgm(MUS_HG_FOLLOW_ME_2,TRUE)
     applymovement(1,run)
     waitmovement(0)
     applymovement(OBJ_EVENT_ID_PLAYER,mir)
@@ -93,6 +94,7 @@ script ran{
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Hahahaha!\pYou wanted to help me, didn't you?\pNow we're both in this together!"))
     hidenamebox
     fadescreen(FADE_TO_BLACK)
+    fadedefaultbgm
     removeobject(3)
     removeobject(4)
     setflag(FLAG_UNUSED_0x495)
