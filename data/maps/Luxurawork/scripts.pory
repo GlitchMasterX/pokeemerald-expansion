@@ -75,7 +75,7 @@ if (var(LUXURA_TRAGEDY) < 5) {
 
 script dad {
 	if(!flag(FLAG_UNUSED_0x49D)){
-	lock
+	lockall
 	faceplayer
 	namebox(name3)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar, all set for the academy?"))
@@ -109,15 +109,15 @@ script dad {
 	namebox(name3)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Just be yourself, son. That's all they'll want to see."))
 	hidenamebox
-    release
+    releaseall
 	setflag(FLAG_UNUSED_0x49D)}
 	else{
-	lock
+	lockall
 	faceplayer
 	namebox(name3)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I have some work to do.\pGo ahead and join your mother."))
 	hidenamebox
-	release
+	releaseall
 	}
 }
 movement exclam {
@@ -125,9 +125,9 @@ movement exclam {
 }
 
 script trage {
-	lock
-	applymovement(10,players)
+	lockall
 	applymovement(9,players)
+	applymovement(8,players)
 	waitmovement(0)
 	special(SpawnCameraObject)
     applymovement(OBJ_EVENT_ID_CAMERA,mo)
@@ -139,26 +139,26 @@ script trage {
 	namebox(name3)
 	msgbox("{COLOR BLUE}{SHADOW LIGHT_GRAY}Hoopa!\pEnd this.",MSGBOX_AUTOCLOSE)
 	hidenamebox
-	applymovement(15,visible)
+	applymovement(14,visible)
 	waitmovement(0)
-	applymovement(11,invisible)
+	applymovement(10,invisible)
 	waitmovement(0)
-	applymovement(15,invisible)
+	applymovement(14,invisible)
 	waitmovement(0)
-	applymovement(11,finish)
-	applymovement(15,finish)
+	applymovement(10,finish)
+	applymovement(14,finish)
 	waitmovement(0)
-	applymovement(15,visible)
+	applymovement(14,visible)
 	waitmovement(0)
-	applymovement(11,visible)
+	applymovement(10,visible)
 	waitmovement(0)
-	applymovement(15,invisible)
-    applymovement(11,atk)
+	applymovement(14,invisible)
+    applymovement(10,atk)
 	applymovement(OBJ_EVENT_ID_CAMERA,moq)
-	applymovement(12,faint)
+	applymovement(11,faint)
 	waitmovement(0)
-	applymovement(13,visible)
-	applymovement(13,invisible)
+	applymovement(12,visible)
+	applymovement(12,invisible)
 	waitmovement(0)
 	applymovement(OBJ_EVENT_ID_CAMERA,notal)
 	waitmovement(0)
@@ -168,31 +168,31 @@ script trage {
 	namebox(name3)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Strong? Is that what you call this?\pYou're weak, Surge.Pathetically so.\pNow it's the end for you."),MSGBOX_AUTOCLOSE)
 	hidenamebox
-	applymovement(16,visible)
+	applymovement(15,capture)
 	waitmovement(0)
-	applymovement(11,run)
+	applymovement(10,run)
 	fadescreen(FADE_TO_BLACK)
 	namebox(unknown)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You spoke too soon,\nAurther."),MSGBOX_AUTOCLOSE)
 	hidenamebox
-	applymovement(17,visible)
-	applymovement(18,invisible)
+	applymovement(16,visible)
+	applymovement(17,invisible)
     fadescreen(FADE_FROM_BLACK)
-	applymovement(OBJ_EVENT_ID_CAMERA,ded)
-	applymovement(8,exclam)
+	applymovement(7,exclam)
 	namebox(name2)
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Honey!!!"),MSGBOX_AUTOCLOSE)
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Honey!!!"))
 	hidenamebox
 	waitmessage
-	applymovement(16,ded)
+	applymovement(15,dede)
 	namebox(unknown)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I told you, you can't defeat him.\pHe solely took down the Nexus Order.\pYou could even call him the strongest trainer to ever exist."),MSGBOX_AUTOCLOSE)
+	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I told you, you can't defeat him.\pHe solely took down the Nexus Order.\pYou could even call him the strongest trainer to ever exist."))
 	hidenamebox
 	namebox(surge)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Looks like even the strongest can fall if you kill them.\pRight Aurther?"),MSGBOX_AUTOCLOSE)
+	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Looks like even the strongest can fall if you kill them.\pRight Aurther?"))
 	hidenamebox
-	applymovement(11,revert)
-    applymovement(14,reverte)
+	applymovement(10,revert)
+    applymovement(13,reverte)
+	applymovement(OBJ_EVENT_ID_CAMERA,ded)
     waitmovement(0)
 	namebox(surge)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}So, his death would seal Hoopa's powers.\pNow it would be much easier to catch Hoopa, I guess."))
@@ -201,11 +201,11 @@ script trage {
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Hoopa, your powers... they're sealed! You're too weak, please, run!\pYou cannot let them capture you."),MSGBOX_AUTOCLOSE)
 	hidenamebox
 	waitmessage
-	applymovement(15,visible)
+	applymovement(14,visible)
 	waitmovement(0)
-	applymovement(14,invisible)
+	applymovement(13,invisible)
     waitmovement(0)
-	applymovement(15,invisible)
+	applymovement(14,invisible)
 	namebox(unknown)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}My work here is done.\pI'll go report everything to boss."),MSGBOX_AUTOCLOSE)
 	hidenamebox
@@ -215,7 +215,7 @@ script trage {
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}No... no, this can't be happening."))
     hidenamebox
 	waitmessage
-	applymovement(8,players)
+	applymovement(7,players)
 	applymovement(5,players)
 	waitmovement(0)
 	msgbox(format("{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}(Xylar stares at his father's lifeless body, blood soaking the ground. His heart pounds in his chest, unable to fully grasp the horror in front of him.)"),MSGBOX_AUTOCLOSE)
@@ -227,14 +227,14 @@ script trage {
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}What do we have here?\pGrunts! capture them.\pThey could be valuable test subjects."),MSGBOX_AUTOCLOSE)
 	hidenamebox
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Yes Sir!"),MSGBOX_AUTOCLOSE)
+	applymovement(8,capture)
 	applymovement(9,capture)
-	applymovement(10,capture)
 	waitmovement(0)
 	namebox(name2)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Mira! Take Xylar and run.\pHurry!!"),MSGBOX_AUTOCLOSE)
 	hidenamebox
 	special(RemoveCameraObject)
-	release
+	releaseall
     warp(MAP_LUXURA_INDOOR,7,6)	
 	setvar(LUXURA_TRAGEDY,12)
 
@@ -305,5 +305,12 @@ movement finish {
 }
 movement ded {
 	walk_down*3
+	
+}
+movement dede {
+	walk_left
+	walk_down*2
+	walk_right
+	walk_down
 	
 }

@@ -259,12 +259,10 @@ newheal::
 
 spark1::
 # 136 "data/maps/GraniteCave_1F/scripts.pory"
-	msgbox spark1_Text_0
+	trainerbattle_single SPARK_GRUNT_1, Grunt1_Intro, Grunt1_Outro
 # 137 "data/maps/GraniteCave_1F/scripts.pory"
-	totemboost_atk1 B_SIDE_OPPONENT
+	msgbox PostBattle_Grunt1, MSGBOX_AUTOCLOSE
 # 138 "data/maps/GraniteCave_1F/scripts.pory"
-	trainerbattle_no_intro_no_whiteout SPARK_GRUNT_1, Grunt1_Intro
-# 139 "data/maps/GraniteCave_1F/scripts.pory"
 	waitmessage
 	end
 
@@ -345,19 +343,15 @@ mewrt_Text_8:
 # 121 "data/maps/GraniteCave_1F/scripts.pory"
 	.string "Mewtwo decided to join you.$"
 
-spark1_Text_0:
-# 136 "data/maps/GraniteCave_1F/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Feel the strikes of Sparks power!$"
-
 Grunt1_Intro::
-# 144 "data/maps/GraniteCave_1F/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Feel the strikes of Sparks power!$"
+# 143 "data/maps/GraniteCave_1F/scripts.pory"
+	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Feel the strikes of Sparks power!!$"
 
 Grunt1_Outro::
-# 148 "data/maps/GraniteCave_1F/scripts.pory"
+# 147 "data/maps/GraniteCave_1F/scripts.pory"
 	.string "No way! How could you withstand our\n"
 	.string "lightning strikes?$"
 
 PostBattle_Grunt1::
-# 152 "data/maps/GraniteCave_1F/scripts.pory"
+# 151 "data/maps/GraniteCave_1F/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Our general will defeat you.$"

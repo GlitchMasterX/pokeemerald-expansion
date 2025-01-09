@@ -9,7 +9,7 @@ map_script_2 LUXURA_TRAGEDY, 9, stroll
 .2byte 0
 `
 script ran{
-    lockall
+    lock
     clearflag(FLAG_UNUSED_0x496)
     special(SpawnCameraObject)
     applymovement(OBJ_EVENT_ID_CAMERA,cam)
@@ -224,7 +224,7 @@ movement rmu {
     
 }
 script trig1 {
-    lockall
+    lock
     applymovement(OBJ_EVENT_ID_PLAYER,player)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Where is she?"))
     goto(ran)
@@ -247,7 +247,7 @@ script gone{
     setflag(FLAG_UNUSED_0x496)
 }
 script indoor {
-    lockall
+    lock
     applymovement(OBJ_EVENT_ID_PLAYER,innnn)
     applymovement(6,ii)
     waitmovement(0)
@@ -291,7 +291,7 @@ movement ioo {
 }
 
 script stroll {
-    lockall
+    lock
     applymovement(5,str)
     waitmovement(0)
     namebox(name4)
@@ -395,7 +395,7 @@ script LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD {
 }
 }
 script strolll{
-    lockall
+    lock
     applymovement(OBJ_EVENT_ID_PLAYER,strp)
     applymovement(0xFD,strp)
     namebox(name4)
@@ -404,34 +404,34 @@ script strolll{
     releaseall
 }
 script Sailor {
-    lockall
+    lock
     faceplayer
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Master Xylar, I have to tell you, your father is one of the bravest men I've ever known.\pThe way he stood up against the Dark Force to protect us all,I've never seen courage like that.\pWithout him, who knows what would have happened?\pHe's a true hero, and it's an honor to serve him."))
     releaseall
 }
 
 script sailorr {
-    lockall
+    lock
     faceplayer
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Good day, young master Xylar!\pThe captain's busy preparing the ship for your journey, even though the academy starts in a week.\pHe wants to make sure everything is perfect for when the time comes.\pWe'll be ready to set sail whenever you're ready!"))
     releaseall   
 }
 
 script sail {
-    lockall
+    lock
     faceplayer
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Master Xylar, I'll never forget the day your Father faced the Dark Force.\pThe skies turned dark, and portals opened everywhere, unleashing chaos.\pIt was the most terrifying thing I've ever seen.\pBut your father, he didn't even flinch.\pHe stood firm, right in the face of that monster, and fought with a bravery I've never witnessed before.\pWe all owe him our lives for what he did that day."))
     releaseall     
 }
 script blood{
-    lockall
+    lock
     msgbox(format("The blood splatters on the ground, its vivid red stark against everything else."))
     releaseall     
 
 }
 
 script bloodsee {
-    lockall
+    lock
     applymovement(OBJ_EVENT_ID_PLAYER,exclam)
     applymovement(0xFD,exclam)
     facefollower
@@ -443,7 +443,7 @@ script bloodsee {
     
 }
 script blo {
-    lockall
+    lock
     applymovement(OBJ_EVENT_ID_PLAYER,io)
     applymovement(0xFD,io)
     namebox(name4)
@@ -463,10 +463,10 @@ script musicchange {
 }
 
 script strollll{
-    lockall
+    lock
     applymovement(OBJ_EVENT_ID_PLAYER,strp)
     applymovement(0xFD,strp)
-    namebox(name4)
+    namebox(Xylar)
     msgbox(format("I should go to mansion.\pI'm worried about Mom and Dad."))
     hidenamebox
     releaseall
@@ -479,8 +479,6 @@ script signluxura {
 script signlmansion {
     lock
     msgbox(format("Luxura Mansion\p{COLOR BLUE}{SHADOW LIGHT_GRAY}A magnificent estate, home to wealth, power, and a legacy of prestige."),MSGBOX_SIGN)
-    giveitem(ITEM_MACH_BIKE,1)
-    giveitem(ITEM_ACRO_BIKE,1)
     release
 }
 script signforest {
@@ -526,7 +524,7 @@ script strolllll{
     lock
     applymovement(OBJ_EVENT_ID_PLAYER,strrp)
     applymovement(0xFD,strrp)
-    namebox(name4)
+    namebox(Xylar)
     msgbox(format("I should go to mansion.\pI'm worried about Mom and Dad."))
     hidenamebox
     release
@@ -534,4 +532,13 @@ script strolllll{
 
 movement strrp{
     walk_left
+}
+script stded{
+    lock
+    applymovement(OBJ_EVENT_ID_PLAYER,strrp)
+    applymovement(0xFD,strrp)
+    namebox(name4)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}That's not the way,Master Xylar."))
+    hidenamebox
+    release
 }

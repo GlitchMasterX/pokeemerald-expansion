@@ -31,6 +31,7 @@ enum MapPreviewScreenId
     MPS_SCUFIB_CHAMBER,
     MPS_RIXY_CHAMBER,
     MPS_VIAPOIS_CHAMBER,
+    MPS_LUXURA_VEILWOOD,
     MPS_COUNT
 };
 
@@ -57,6 +58,7 @@ enum PreviewImageId
     IMG_ICEFALL_CAVE,
     IMG_LOST_CAVE,
     IMG_ALTERING_CAVE,
+    IMG_LUXURA_VEILWOOD,
     IMG_COUNT
 };
 

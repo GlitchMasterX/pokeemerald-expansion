@@ -5,7 +5,7 @@ map_script MAP_SCRIPT_ON_LOAD,explosion
 map_script MAP_SCRIPT_ON_RESUME, outfit
 	.byte 0
 `script luxuraisland {
-	lockall
+	lock
 	applymovement(OBJ_EVENT_ID_PLAYER,notal)
 	msgbox(format("I'm not allowed to go there alone."))
 	releaseall
@@ -15,14 +15,14 @@ movement notal {
 	walk_left*3
 }
 script officer {
-	lockall
+	lock
 	faceplayer
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Good day, Young Master."))
 	releaseall
 }
 
 script forest {
-    lockall
+    lock
     applymovement(5,exclam)
 	waitmovement(0)
 	applymovement(OBJ_EVENT_ID_PLAYER,run)
@@ -64,7 +64,7 @@ script forest {
 }
 
 script hurry{
-	lockall
+	lock
 	applymovement(OBJ_EVENT_ID_PLAYER,notal)
 	msgbox(format("I should hurry."))
 	releaseall
@@ -158,7 +158,7 @@ elif(var(LUXURA_TRAGEDY)==19){
 }
 
 script miraded {
-	lockall
+	lock
 	applymovement(14,invisible)
 	waitmovement(0)
 	applymovement(OBJ_EVENT_ID_PLAYER,boo)
@@ -276,6 +276,7 @@ script miraded {
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Ahh, look at that beautiful red... It's so vibrant, so alive!\pBlood always gets my heart racing. Don't you just love the smell?\pIt's like... the essence of life escaping. I can't get enough of it."),MSGBOX_AUTOCLOSE)
     releaseall
 	warp(MAP_LUXURAWOODS,3,35)
+	mappreview
 	setflag(FLAG_UNUSED_0x26B)
 	setvar(LUXURA_TRAGEDY,14)
 }
@@ -302,7 +303,7 @@ movement boo{
 	walk_right*9
 }
 script Mira {
-	lockall
+	lock
 	applymovement(OBJ_EVENT_ID_PLAYER,ms)
 	applymovement(0xFD,ms)
 	msgbox(format("I should hurry and ask for help."))
@@ -316,7 +317,7 @@ movement ms {
 }
 
 script Mira2 {
-	lockall
+	lock
 	applymovement(OBJ_EVENT_ID_PLAYER,ms1)
 	applymovement(0xFD,ms1)
 	msgbox(format("I should hurry and ask for help."))
@@ -331,7 +332,7 @@ movement ms1 {
 }
 
 script Mira3 {
-	lockall
+	lock
 	applymovement(OBJ_EVENT_ID_PLAYER,ms2)
 	applymovement(0xFD,ms2)
 	msgbox(format("I should hurry and ask for help."))
@@ -344,7 +345,7 @@ movement ms2 {
 	face_right
 }
 script mira1 {
-	lockall
+	lock
 	applymovement(OBJ_EVENT_ID_PLAYER,m1)
 	applymovement(0xFD,m1)
 	msgbox(format("I should hurry and ask for help."))
@@ -357,7 +358,7 @@ movement m1 {
 	face_right
 }
 script mira2 {
-	lockall
+	lock
 	applymovement(OBJ_EVENT_ID_PLAYER,m2)
 	applymovement(0xFD,m2)
 	msgbox(format("I should hurry and ask for help."))

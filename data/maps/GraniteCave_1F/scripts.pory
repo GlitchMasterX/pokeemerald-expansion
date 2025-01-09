@@ -141,7 +141,7 @@ script spark1 {
 }
  
 text Grunt1_Intro{
-    format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Feel the strikes of Sparks power!")
+    format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Feel the strikes of Sparks power!!")
 }
  
 text Grunt1_Outro{

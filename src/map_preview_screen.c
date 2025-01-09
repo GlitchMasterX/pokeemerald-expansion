@@ -83,6 +83,9 @@ static const u8 sIcefallCaveMapPreviewTilemap[] = INCBIN_U8("graphics/map_previe
 static const u8 sAlteringCaveMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/altering_cave/tiles.gbapal");
 static const u8 sAlteringCaveMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/altering_cave/tiles.4bpp.lz");
 static const u8 sAlteringCaveMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/altering_cave/tilemap.bin.lz");
+static const u8 sLuxuraVeilwoodMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/luxura_veilwood/tiles.gbapal");
+static const u8 sLuxuraVeilwoodMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/luxura_veilwood/tiles.4bpp.lz");
+static const u8 sLuxuraVeilwoodMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/luxura_veilwood/tilemap.bin.lz");
 
 // If you set flagId to MPS_FLAG_NULL, it will not set a flag when visiting the map for the first time
 // and the duration will default to MPS_DURATION_NO_FLAG.
@@ -254,7 +257,13 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         .type = MPS_TYPE_CAVE,
         .flagId = FLAG_WORLD_MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER,
         .image = IMG_MONEAN_CHAMBER
-    }
+    },
+    [MPS_LUXURA_VEILWOOD] = {
+        .mapsec = MAPSEC_LUXURA_VEILWOOD,
+        .type = MPS_TYPE_BASIC,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_LUXURA_VEILWOOD
+    },
 };
 
 static const struct ImageData sMapPreviewImageData[IMG_COUNT] = {
@@ -362,7 +371,12 @@ static const struct ImageData sMapPreviewImageData[IMG_COUNT] = {
         .tilesptr = sAlteringCaveMapPreviewTiles,
         .tilemapptr = sAlteringCaveMapPreviewTilemap,
         .palptr = sAlteringCaveMapPreviewPalette
-    }
+    },
+    [IMG_LUXURA_VEILWOOD] = {
+        .tilesptr = sLuxuraVeilwoodMapPreviewTiles,
+        .tilemapptr = sLuxuraVeilwoodMapPreviewTilemap,
+        .palptr = sLuxuraVeilwoodMapPreviewPalette
+    },
 };
 
 static const struct WindowTemplate sMapNameWindow = {

@@ -283,6 +283,12 @@ const u32 gTrainerPalette_SparkLeader[] = INCBIN_U32("graphics/trainers/front_pi
 const u32 gTrainerFrontPic_Surge[] = INCBIN_U32("graphics/trainers/front_pics/surge.4bpp.lz");
 const u32 gTrainerPalette_Surge[] = INCBIN_U32("graphics/trainers/front_pics/surge.gbapal.lz");
 
+const u32 gTrainerFrontPic_Alistair[] = INCBIN_U32("graphics/trainers/front_pics/alistair.4bpp.lz");
+const u32 gTrainerPalette_Alistair[] = INCBIN_U32("graphics/trainers/front_pics/alistair.gbapal.lz");
+
+const u32 gTrainerFrontPic_Xylar[] = INCBIN_U32("graphics/trainers/front_pics/xylar.4bpp.lz");
+const u32 gTrainerPalette_Xylar[] = INCBIN_U32("graphics/trainers/front_pics/xylar.gbapal.lz");
+
 const u32 gTrainerFrontPic_Spy[] = INCBIN_U32("graphics/trainers/front_pics/spy.4bpp.lz");
 const u32 gTrainerPalette_Spy[] = INCBIN_U32("graphics/trainers/front_pics/spy.gbapal.lz");
 
@@ -425,6 +431,8 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_SPARK_GRUNT_F, gTrainerFrontPic_SparkGruntF, gTrainerPalette_SparkGruntF),
     TRAINER_SPRITE(TRAINER_PIC_SPY, gTrainerFrontPic_Spy, gTrainerPalette_Spy),
     TRAINER_SPRITE(TRAINER_PIC_SURGE, gTrainerFrontPic_Surge, gTrainerPalette_Surge),
+    TRAINER_SPRITE(TRAINER_PIC_ALISTAIR, gTrainerFrontPic_Alistair, gTrainerPalette_Alistair),
+    TRAINER_SPRITE(TRAINER_PIC_XYLAR, gTrainerFrontPic_Xylar, gTrainerPalette_Xylar),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =
