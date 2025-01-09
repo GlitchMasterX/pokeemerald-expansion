@@ -3,7 +3,6 @@ LuxuraIsland_MapScripts::
 map_script MAP_SCRIPT_ON_FRAME_TABLE, LuxuraIsland_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 map_script MAP_SCRIPT_ON_LOAD, LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD
 map_script MAP_SCRIPT_ON_TRANSITION, musicchange
-map_script MAP_SCRIPT_ON_RESUME, outfit
 	.byte 0
 LuxuraIsland_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 map_script_2 LUXURA_TRAGEDY, 9, stroll
@@ -521,4 +520,18 @@ script outfit {
     else{
         end
     }
+}
+
+script strolllll{
+    lock
+    applymovement(OBJ_EVENT_ID_PLAYER,strrp)
+    applymovement(0xFD,strrp)
+    namebox(name4)
+    msgbox(format("I should go to mansion.\pI'm worried about Mom and Dad."))
+    hidenamebox
+    release
+}
+
+movement strrp{
+    walk_left
 }
