@@ -26,6 +26,7 @@ Route110_MapScripts::
 Route110_OnResume:
 # 14 "data/maps/Route110/scripts.pory"
 	special UpdateCyclingRoadState
+# 15 "data/maps/Route110/scripts.pory"
 	end
 # 16 "data/maps/Route110/scripts.pory"
 

@@ -683,7 +683,7 @@ static void Task_EvolutionScene(u8 taskId)
     case EVOSTATE_INTRO_SOUND:
         if (EvoScene_IsMonAnimFinished(sEvoStructPtr->preEvoSpriteId))
         {
-            PlaySE(MUS_EVOLUTION_INTRO);
+            PlaySE(MUS_DP_EVOLUTION);
             gTasks[taskId].tState++;
         }
         break;
@@ -862,7 +862,7 @@ static void Task_EvolutionScene(u8 taskId)
         if (!IsTextPrinterActive(0) && !IsSEPlaying())
         {
             BufferMoveToLearnIntoBattleTextBuff2();
-            PlayFanfare(MUS_LEVEL_UP);
+            PlayFanfare(MUS_DP_LEVEL_UP);
             BattleStringExpandPlaceholdersToDisplayedString(gBattleStringsTable[STRINGID_PKMNLEARNEDMOVE]);
             BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MSG);
             gTasks[taskId].tLearnsFirstMove = 0x40; // re-used as a counter
@@ -1119,7 +1119,7 @@ static void Task_TradeEvolutionScene(u8 taskId)
         if (IsCryFinished())
         {
             m4aSongNumStop(MUS_EVOLUTION);
-            PlaySE(MUS_EVOLUTION_INTRO);
+            PlaySE(MUS_DP_EVOLUTION);
             gTasks[taskId].tState++;
         }
         break;

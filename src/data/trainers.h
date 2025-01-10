@@ -287,7 +287,7 @@
     {   .trainerName = _("SURGE"),
         .trainerClass = TRAINER_CLASS_SPARK_ADMIN,
         .trainerPic = TRAINER_PIC_SURGE,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SPARK,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_BASIC_TRAINER  | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_HP_AWARE | AI_FLAG_ACE_POKEMON | AI_FLAG_SMART_SWITCHING|AI_FLAG_WILL_SUICIDE,
         .partySize = 3,

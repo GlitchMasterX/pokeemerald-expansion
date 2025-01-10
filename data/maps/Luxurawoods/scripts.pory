@@ -208,7 +208,7 @@ script revive {
 	hidenamebox
     fadescreen(FADE_TO_BLACK)
 	removeitem(ITEM_REVIVAL_HERB,1)
-	playse(MUS_HEAL)
+	playse(MUS_DP_HEAL)
 	waitse
 	fadescreen(FADE_FROM_BLACK)
     namebox(Xylar)
@@ -236,7 +236,7 @@ script revive {
 	hidenamebox
 	fadescreen(FADE_TO_BLACK)
 	removeitem(ITEM_FRESH_WATER,1)
-	playse(MUS_HEAL)
+	playse(MUS_DP_HEAL)
 	waitse
 	fadescreen(FADE_FROM_BLACK)
 	namebox(Xylar)
@@ -282,7 +282,7 @@ elif((flag(FLAG_UNUSED_0x4B0)) && (flag(FLAG_UNUSED_0x4B1))&& (!flag(FLAG_UNUSED
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}He fainted.\pMaybe using telepathy strained him, since he hasn't fully recovered yet.\pI should also rest for a bit."),MSGBOX_AUTOCLOSE)
 	hidenamebox
 	fadescreen(FADE_TO_BLACK)
-	playse(MUS_HEAL)
+	playse(MUS_DP_HEAL)
 	msgbox(format("Zzzzzz....."),MSGBOX_AUTOCLOSE)
 	waitse
 	fadescreen(FADE_FROM_BLACK)

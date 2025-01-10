@@ -143,6 +143,8 @@ script trage {
 	waitmovement(0)
 	applymovement(10,invisible)
 	waitmovement(0)
+	playse(SE_WARP_IN)
+	waitse
 	applymovement(14,invisible)
 	waitmovement(0)
 	applymovement(10,finish)
@@ -150,13 +152,17 @@ script trage {
 	waitmovement(0)
 	applymovement(14,visible)
 	waitmovement(0)
+	playse(SE_WARP_OUT)
+	waitse
 	applymovement(10,visible)
 	waitmovement(0)
 	applymovement(14,invisible)
     applymovement(10,atk)
-	applymovement(OBJ_EVENT_ID_CAMERA,moq)
+	playse(SE_M_TAKE_DOWN)
+	applymovement(OBJ_EVENT_ID_CAMERA,moq)	
 	applymovement(11,faint)
 	waitmovement(0)
+	playmoncry(SPECIES_RAICHU,CRY_MODE_FAINT)
 	applymovement(12,visible)
 	applymovement(12,invisible)
 	waitmovement(0)
@@ -166,12 +172,15 @@ script trage {
 	msgbox("{COLOR BLUE}{SHADOW LIGHT_GRAY}You're strong. I'll give you that.",MSGBOX_AUTOCLOSE)
 	hidenamebox
 	namebox(name3)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Strong? Is that what you call this?\pYou're weak, Surge.Pathetically so.\pNow it's the end for you."),MSGBOX_AUTOCLOSE)
+	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Strong? Is that what you call this?\pYou're weak, Surge. Pathetically so.\pNow it's the end for you."),MSGBOX_AUTOCLOSE)
 	hidenamebox
 	applymovement(15,capture)
 	waitmovement(0)
+	playse(SE_M_BITE)
+	waitse
 	applymovement(10,run)
 	fadescreen(FADE_TO_BLACK)
+	playbgm(MUS_HG_ENCOUNTER_SAGE,TRUE)
 	namebox(unknown)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You spoke too soon,\nAurther."),MSGBOX_AUTOCLOSE)
 	hidenamebox
@@ -191,6 +200,7 @@ script trage {
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Looks like even the strongest can fall if you kill them.\pRight Aurther?"))
 	hidenamebox
 	applymovement(10,revert)
+	playmoncry(SPECIES_HOOPA,CRY_MODE_WEAK)
     applymovement(13,reverte)
 	applymovement(OBJ_EVENT_ID_CAMERA,ded)
     waitmovement(0)
@@ -203,12 +213,16 @@ script trage {
 	waitmessage
 	applymovement(14,visible)
 	waitmovement(0)
+	playse(SE_WARP_IN)
+	waitse
 	applymovement(13,invisible)
     waitmovement(0)
+	playse(SE_WARP_OUT)
 	applymovement(14,invisible)
 	namebox(unknown)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}My work here is done.\pI'll go report everything to boss."),MSGBOX_AUTOCLOSE)
 	hidenamebox
+    fadenewbgm(MUS_ABNORMAL_WEATHER)
 	applymovement(OBJ_EVENT_ID_CAMERA,back)
     waitmovement(0)
 	namebox(Xylar)

@@ -5485,10 +5485,12 @@ static void HandleEndTurn_BattleWon(void)
         case TRAINER_CLASS_MAGMA_ADMIN:
         case TRAINER_CLASS_MAGMA_LEADER:
         case TRAINER_CLASS_SPARK_SYNDICATE:
+            PlayBGM(MUS_VICTORY_AQUA_MAGMA);
+            break;
+        case TRAINER_CLASS_SHADOW_SLAYER:
         case TRAINER_CLASS_SPARK_ADMIN:
         case TRAINER_CLASS_SPARK_LEADER:
-        case TRAINER_CLASS_SHADOW_SLAYER:
-            PlayBGM(MUS_VICTORY_AQUA_MAGMA);
+            PlayBGM(MUS_DP_VICTORY_GALACTIC);
             break;
         case TRAINER_CLASS_LEADER:
             PlayBGM(MUS_VICTORY_GYM_LEADER);

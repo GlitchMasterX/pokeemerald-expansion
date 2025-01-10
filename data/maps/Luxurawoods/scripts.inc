@@ -526,7 +526,7 @@ revive_3:
 # 284 "data/maps/Luxurawoods/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 285 "data/maps/Luxurawoods/scripts.pory"
-	playse MUS_HEAL
+	playse MUS_DP_HEAL
 # 286 "data/maps/Luxurawoods/scripts.pory"
 	msgbox revive_Text_16, MSGBOX_AUTOCLOSE
 # 287 "data/maps/Luxurawoods/scripts.pory"
@@ -606,7 +606,7 @@ revive_26:
 # 210 "data/maps/Luxurawoods/scripts.pory"
 	removeitem ITEM_REVIVAL_HERB, 1
 # 211 "data/maps/Luxurawoods/scripts.pory"
-	playse MUS_HEAL
+	playse MUS_DP_HEAL
 # 212 "data/maps/Luxurawoods/scripts.pory"
 	waitse
 # 213 "data/maps/Luxurawoods/scripts.pory"
@@ -641,7 +641,7 @@ revive_30:
 # 238 "data/maps/Luxurawoods/scripts.pory"
 	removeitem ITEM_FRESH_WATER, 1
 # 239 "data/maps/Luxurawoods/scripts.pory"
-	playse MUS_HEAL
+	playse MUS_DP_HEAL
 # 240 "data/maps/Luxurawoods/scripts.pory"
 	waitse
 # 241 "data/maps/Luxurawoods/scripts.pory"
