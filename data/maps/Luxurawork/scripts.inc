@@ -787,7 +787,7 @@ trage_Text_2:
 trage_Text_3:
 # 175 "data/maps/Luxurawork/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Strong? Is that what you call this?\p"
-	.string "You're weak, Surge.Pathetically so.\p"
+	.string "You're weak, Surge. Pathetically so.\p"
 	.string "Now it's the end for you.$"
 
 trage_Text_4:
