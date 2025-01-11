@@ -740,8 +740,8 @@ dad_Text_4:
 dad_Text_5:
 # 98 "data/maps/Luxurawork/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Oh, Xylar, I almost forgot\p"
-	.string "Guests from the academy are coming in\n"
-	.string "two days.$"
+	.string "Guests from the academy are coming in a\n"
+	.string "few days.$"
 
 dad_Text_6:
 # 101 "data/maps/Luxurawork/scripts.pory"

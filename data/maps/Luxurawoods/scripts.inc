@@ -701,301 +701,313 @@ gruntsded::
 # 320 "data/maps/Luxurawoods/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, in
 # 321 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_1, MSGBOX_AUTOCLOSE
+	playbgm MUS_RG_ROCKET_HIDEOUT, TRUE
 # 322 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_2, MSGBOX_AUTOCLOSE
+	msgbox gruntsded_Text_1, MSGBOX_AUTOCLOSE
 # 323 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_3, MSGBOX_AUTOCLOSE
+	msgbox gruntsded_Text_2, MSGBOX_AUTOCLOSE
 # 324 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_4, MSGBOX_AUTOCLOSE
+	msgbox gruntsded_Text_3, MSGBOX_AUTOCLOSE
 # 325 "data/maps/Luxurawoods/scripts.pory"
-	namebox Xylar
+	msgbox gruntsded_Text_4, MSGBOX_AUTOCLOSE
 # 326 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_5, MSGBOX_AUTOCLOSE
+	namebox Xylar
 # 327 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
+	msgbox gruntsded_Text_5, MSGBOX_AUTOCLOSE
 # 328 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_6, MSGBOX_AUTOCLOSE
+	hidenamebox
 # 329 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_7, MSGBOX_AUTOCLOSE
+	msgbox gruntsded_Text_6, MSGBOX_AUTOCLOSE
 # 330 "data/maps/Luxurawoods/scripts.pory"
-	namebox Xylar
+	msgbox gruntsded_Text_7, MSGBOX_AUTOCLOSE
 # 331 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_8, MSGBOX_AUTOCLOSE
+	namebox Xylar
 # 332 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
+	msgbox gruntsded_Text_8, MSGBOX_AUTOCLOSE
 # 333 "data/maps/Luxurawoods/scripts.pory"
-	applymovement 10, dds
+	hidenamebox
 # 334 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_9, MSGBOX_AUTOCLOSE
+	applymovement 10, dds
 # 335 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_10, MSGBOX_AUTOCLOSE
+	msgbox gruntsded_Text_9, MSGBOX_AUTOCLOSE
 # 336 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_11, MSGBOX_AUTOCLOSE
+	msgbox gruntsded_Text_10, MSGBOX_AUTOCLOSE
 # 337 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_12, MSGBOX_AUTOCLOSE
+	msgbox gruntsded_Text_11, MSGBOX_AUTOCLOSE
 # 338 "data/maps/Luxurawoods/scripts.pory"
-	namebox Xylar
+	msgbox gruntsded_Text_12, MSGBOX_AUTOCLOSE
 # 339 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_13, MSGBOX_AUTOCLOSE
+	namebox Xylar
 # 340 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
+	msgbox gruntsded_Text_13, MSGBOX_AUTOCLOSE
 # 341 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_14, MSGBOX_AUTOCLOSE
+	hidenamebox
 # 342 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_15, MSGBOX_AUTOCLOSE
+	msgbox gruntsded_Text_14, MSGBOX_AUTOCLOSE
 # 343 "data/maps/Luxurawoods/scripts.pory"
-	namebox Xylar
+	msgbox gruntsded_Text_15, MSGBOX_AUTOCLOSE
 # 344 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_16, MSGBOX_AUTOCLOSE
+	namebox Xylar
 # 345 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
+	msgbox gruntsded_Text_16, MSGBOX_AUTOCLOSE
 # 346 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_17, MSGBOX_AUTOCLOSE
+	hidenamebox
 # 347 "data/maps/Luxurawoods/scripts.pory"
-	applymovement 6, visible
+	msgbox gruntsded_Text_17, MSGBOX_AUTOCLOSE
 # 348 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_18, MSGBOX_AUTOCLOSE
+	applymovement 6, visible
 # 349 "data/maps/Luxurawoods/scripts.pory"
-	playmoncry SPECIES_ELECTRODE, CRY_MODE_ENCOUNTER
+	msgbox gruntsded_Text_18, MSGBOX_AUTOCLOSE
 # 350 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_19
+	playmoncry SPECIES_ELECTRODE, CRY_MODE_ENCOUNTER
 # 351 "data/maps/Luxurawoods/scripts.pory"
-	waitmoncry
-# 352 "data/maps/Luxurawoods/scripts.pory"
-	namebox Xylar
-# 353 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_20, MSGBOX_AUTOCLOSE
-# 354 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
-# 355 "data/maps/Luxurawoods/scripts.pory"
-	applymovement 4, exclam
-# 356 "data/maps/Luxurawoods/scripts.pory"
-	applymovement 5, exclam
-# 357 "data/maps/Luxurawoods/scripts.pory"
-	waitmovement 0
-# 358 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_21, MSGBOX_AUTOCLOSE
-# 359 "data/maps/Luxurawoods/scripts.pory"
-	waitmessage
-# 360 "data/maps/Luxurawoods/scripts.pory"
-	namebox Xylar
-# 361 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_22, MSGBOX_AUTOCLOSE
-# 362 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
-# 363 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_23, MSGBOX_AUTOCLOSE
-# 364 "data/maps/Luxurawoods/scripts.pory"
-	namebox unknown
-# 365 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_24, MSGBOX_AUTOCLOSE
-# 366 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
-# 367 "data/maps/Luxurawoods/scripts.pory"
-	fadescreen FADE_TO_BLACK
-# 368 "data/maps/Luxurawoods/scripts.pory"
-	applymovement 10, visible
-# 369 "data/maps/Luxurawoods/scripts.pory"
-	fadescreen FADE_FROM_BLACK
-# 370 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_25, MSGBOX_AUTOCLOSE
-# 371 "data/maps/Luxurawoods/scripts.pory"
-	playmoncry SPECIES_ELECTRODE, CRY_MODE_WEAK
-# 372 "data/maps/Luxurawoods/scripts.pory"
 	msgbox gruntsded_Text_19
-# 373 "data/maps/Luxurawoods/scripts.pory"
+# 352 "data/maps/Luxurawoods/scripts.pory"
 	waitmoncry
-# 374 "data/maps/Luxurawoods/scripts.pory"
-	playse SE_M_COSMIC_POWER
-# 375 "data/maps/Luxurawoods/scripts.pory"
-	waitse
-# 376 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_26
-# 377 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_27, MSGBOX_AUTOCLOSE
-# 378 "data/maps/Luxurawoods/scripts.pory"
-	namebox mewtwo
-# 379 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_28, MSGBOX_AUTOCLOSE
-# 380 "data/maps/Luxurawoods/scripts.pory"
+# 353 "data/maps/Luxurawoods/scripts.pory"
+	namebox Xylar
+# 354 "data/maps/Luxurawoods/scripts.pory"
+	msgbox gruntsded_Text_20, MSGBOX_AUTOCLOSE
+# 355 "data/maps/Luxurawoods/scripts.pory"
 	hidenamebox
-# 381 "data/maps/Luxurawoods/scripts.pory"
-	applymovement 6, ee
-# 382 "data/maps/Luxurawoods/scripts.pory"
+# 356 "data/maps/Luxurawoods/scripts.pory"
 	applymovement 4, exclam
-# 383 "data/maps/Luxurawoods/scripts.pory"
+# 357 "data/maps/Luxurawoods/scripts.pory"
 	applymovement 5, exclam
-# 384 "data/maps/Luxurawoods/scripts.pory"
+# 358 "data/maps/Luxurawoods/scripts.pory"
 	waitmovement 0
-# 385 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_29, MSGBOX_AUTOCLOSE
-# 386 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_30, MSGBOX_AUTOCLOSE
-# 387 "data/maps/Luxurawoods/scripts.pory"
+# 359 "data/maps/Luxurawoods/scripts.pory"
+	playbgm MUS_DUMMY, FALSE
+# 360 "data/maps/Luxurawoods/scripts.pory"
+	msgbox gruntsded_Text_21, MSGBOX_AUTOCLOSE
+# 361 "data/maps/Luxurawoods/scripts.pory"
 	waitmessage
-# 388 "data/maps/Luxurawoods/scripts.pory"
-	namebox mewtwo
-# 389 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_31, MSGBOX_AUTOCLOSE
-# 390 "data/maps/Luxurawoods/scripts.pory"
+# 362 "data/maps/Luxurawoods/scripts.pory"
+	namebox Xylar
+# 363 "data/maps/Luxurawoods/scripts.pory"
+	msgbox gruntsded_Text_22, MSGBOX_AUTOCLOSE
+# 364 "data/maps/Luxurawoods/scripts.pory"
 	hidenamebox
-# 391 "data/maps/Luxurawoods/scripts.pory"
+# 365 "data/maps/Luxurawoods/scripts.pory"
+	msgbox gruntsded_Text_23, MSGBOX_AUTOCLOSE
+# 366 "data/maps/Luxurawoods/scripts.pory"
+	namebox unknown
+# 367 "data/maps/Luxurawoods/scripts.pory"
+	msgbox gruntsded_Text_24, MSGBOX_AUTOCLOSE
+# 368 "data/maps/Luxurawoods/scripts.pory"
+	hidenamebox
+# 369 "data/maps/Luxurawoods/scripts.pory"
+	playbgm MUS_PL_GIRATINA_APPEARS_1, TRUE
+# 370 "data/maps/Luxurawoods/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 392 "data/maps/Luxurawoods/scripts.pory"
-	playse SE_M_EXPLOSION
-# 393 "data/maps/Luxurawoods/scripts.pory"
+# 371 "data/maps/Luxurawoods/scripts.pory"
+	waitbuttonpress
+# 372 "data/maps/Luxurawoods/scripts.pory"
+	applymovement 10, visible
+# 373 "data/maps/Luxurawoods/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 374 "data/maps/Luxurawoods/scripts.pory"
+	msgbox gruntsded_Text_25, MSGBOX_AUTOCLOSE
+# 375 "data/maps/Luxurawoods/scripts.pory"
+	playmoncry SPECIES_ELECTRODE, CRY_MODE_WEAK
+# 376 "data/maps/Luxurawoods/scripts.pory"
+	msgbox gruntsded_Text_19
+# 377 "data/maps/Luxurawoods/scripts.pory"
+	waitmoncry
+# 378 "data/maps/Luxurawoods/scripts.pory"
+	playse SE_M_COSMIC_POWER
+# 379 "data/maps/Luxurawoods/scripts.pory"
 	waitse
-# 394 "data/maps/Luxurawoods/scripts.pory"
-	removeobject 4
-# 395 "data/maps/Luxurawoods/scripts.pory"
-	removeobject 5
-# 396 "data/maps/Luxurawoods/scripts.pory"
-	removeobject 6
-# 397 "data/maps/Luxurawoods/scripts.pory"
-	applymovement 7, visible
-# 398 "data/maps/Luxurawoods/scripts.pory"
-	applymovement 8, visible
-# 399 "data/maps/Luxurawoods/scripts.pory"
-	applymovement 9, visible
-# 400 "data/maps/Luxurawoods/scripts.pory"
-	fadescreen FADE_FROM_BLACK
-# 401 "data/maps/Luxurawoods/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, strp
-# 402 "data/maps/Luxurawoods/scripts.pory"
-	special RemoveCameraObject
-# 403 "data/maps/Luxurawoods/scripts.pory"
-	applymovement 10, sss
-# 404 "data/maps/Luxurawoods/scripts.pory"
+# 380 "data/maps/Luxurawoods/scripts.pory"
+	msgbox gruntsded_Text_26
+# 381 "data/maps/Luxurawoods/scripts.pory"
+	msgbox gruntsded_Text_27, MSGBOX_AUTOCLOSE
+# 382 "data/maps/Luxurawoods/scripts.pory"
 	namebox mewtwo
-# 405 "data/maps/Luxurawoods/scripts.pory"
-	msgbox gruntsded_Text_32, MSGBOX_AUTOCLOSE
-# 406 "data/maps/Luxurawoods/scripts.pory"
+# 383 "data/maps/Luxurawoods/scripts.pory"
+	msgbox gruntsded_Text_28, MSGBOX_AUTOCLOSE
+# 384 "data/maps/Luxurawoods/scripts.pory"
 	hidenamebox
-# 407 "data/maps/Luxurawoods/scripts.pory"
+# 385 "data/maps/Luxurawoods/scripts.pory"
+	applymovement 6, ee
+# 386 "data/maps/Luxurawoods/scripts.pory"
+	applymovement 4, exclam
+# 387 "data/maps/Luxurawoods/scripts.pory"
+	applymovement 5, exclam
+# 388 "data/maps/Luxurawoods/scripts.pory"
+	waitmovement 0
+# 389 "data/maps/Luxurawoods/scripts.pory"
+	msgbox gruntsded_Text_29, MSGBOX_AUTOCLOSE
+# 390 "data/maps/Luxurawoods/scripts.pory"
+	msgbox gruntsded_Text_30, MSGBOX_AUTOCLOSE
+# 391 "data/maps/Luxurawoods/scripts.pory"
+	waitmessage
+# 392 "data/maps/Luxurawoods/scripts.pory"
+	namebox mewtwo
+# 393 "data/maps/Luxurawoods/scripts.pory"
+	msgbox gruntsded_Text_31, MSGBOX_AUTOCLOSE
+# 394 "data/maps/Luxurawoods/scripts.pory"
+	hidenamebox
+# 395 "data/maps/Luxurawoods/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 408 "data/maps/Luxurawoods/scripts.pory"
-	removeobject 10
-# 409 "data/maps/Luxurawoods/scripts.pory"
-	setflag FLAG_UNUSED_0x4B2
-# 410 "data/maps/Luxurawoods/scripts.pory"
-	special RemoveCameraObject
-# 411 "data/maps/Luxurawoods/scripts.pory"
-	warp MAP_GRANITE_CAVE_1F, 12, 9
-# 412 "data/maps/Luxurawoods/scripts.pory"
+# 396 "data/maps/Luxurawoods/scripts.pory"
+	playse SE_M_EXPLOSION
+# 397 "data/maps/Luxurawoods/scripts.pory"
+	waitse
+# 398 "data/maps/Luxurawoods/scripts.pory"
+	removeobject 4
+# 399 "data/maps/Luxurawoods/scripts.pory"
+	removeobject 5
+# 400 "data/maps/Luxurawoods/scripts.pory"
+	removeobject 6
+# 401 "data/maps/Luxurawoods/scripts.pory"
+	applymovement 7, visible
+# 402 "data/maps/Luxurawoods/scripts.pory"
+	applymovement 8, visible
+# 403 "data/maps/Luxurawoods/scripts.pory"
+	applymovement 9, visible
+# 404 "data/maps/Luxurawoods/scripts.pory"
 	fadescreen FADE_FROM_BLACK
+# 405 "data/maps/Luxurawoods/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, strp
+# 406 "data/maps/Luxurawoods/scripts.pory"
+	special RemoveCameraObject
+# 407 "data/maps/Luxurawoods/scripts.pory"
+	applymovement 10, sss
+# 408 "data/maps/Luxurawoods/scripts.pory"
+	applymovement 0xFF, exclam
+# 409 "data/maps/Luxurawoods/scripts.pory"
+	waitmovement 0
+# 410 "data/maps/Luxurawoods/scripts.pory"
+	namebox mewtwo
+# 411 "data/maps/Luxurawoods/scripts.pory"
+	msgbox gruntsded_Text_32, MSGBOX_AUTOCLOSE
+# 412 "data/maps/Luxurawoods/scripts.pory"
+	hidenamebox
 # 413 "data/maps/Luxurawoods/scripts.pory"
-	releaseall
+	fadescreen FADE_TO_BLACK
 # 414 "data/maps/Luxurawoods/scripts.pory"
+	removeobject 10
+# 415 "data/maps/Luxurawoods/scripts.pory"
+	setflag FLAG_UNUSED_0x4B2
+# 416 "data/maps/Luxurawoods/scripts.pory"
+	special RemoveCameraObject
+# 417 "data/maps/Luxurawoods/scripts.pory"
+	warp MAP_GRANITE_CAVE_1F, 12, 9
+# 418 "data/maps/Luxurawoods/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 419 "data/maps/Luxurawoods/scripts.pory"
+	releaseall
+# 420 "data/maps/Luxurawoods/scripts.pory"
 	setvar LUXURA_TRAGEDY, 18
 	return
 
 
-# 418 "data/maps/Luxurawoods/scripts.pory"
+# 424 "data/maps/Luxurawoods/scripts.pory"
 sss:
-# 419 "data/maps/Luxurawoods/scripts.pory"
+# 425 "data/maps/Luxurawoods/scripts.pory"
 	face_down
 	step_end
 
-# 422 "data/maps/Luxurawoods/scripts.pory"
+# 428 "data/maps/Luxurawoods/scripts.pory"
 dds:
-# 423 "data/maps/Luxurawoods/scripts.pory"
+# 429 "data/maps/Luxurawoods/scripts.pory"
 	walk_down
-# 423 "data/maps/Luxurawoods/scripts.pory"
+# 429 "data/maps/Luxurawoods/scripts.pory"
 	walk_down
-# 423 "data/maps/Luxurawoods/scripts.pory"
+# 429 "data/maps/Luxurawoods/scripts.pory"
 	walk_down
-# 423 "data/maps/Luxurawoods/scripts.pory"
+# 429 "data/maps/Luxurawoods/scripts.pory"
 	walk_down
-# 424 "data/maps/Luxurawoods/scripts.pory"
+# 430 "data/maps/Luxurawoods/scripts.pory"
 	walk_left
-# 424 "data/maps/Luxurawoods/scripts.pory"
+# 430 "data/maps/Luxurawoods/scripts.pory"
 	walk_left
-# 425 "data/maps/Luxurawoods/scripts.pory"
+# 431 "data/maps/Luxurawoods/scripts.pory"
 	face_up
 	step_end
 
-# 427 "data/maps/Luxurawoods/scripts.pory"
+# 433 "data/maps/Luxurawoods/scripts.pory"
 ss:
-# 428 "data/maps/Luxurawoods/scripts.pory"
-	walk_up
-# 428 "data/maps/Luxurawoods/scripts.pory"
-	walk_up
-# 428 "data/maps/Luxurawoods/scripts.pory"
-	walk_up
-# 428 "data/maps/Luxurawoods/scripts.pory"
-	walk_up
-# 428 "data/maps/Luxurawoods/scripts.pory"
-	walk_up
-	step_end
-
-# 430 "data/maps/Luxurawoods/scripts.pory"
-dd:
-# 431 "data/maps/Luxurawoods/scripts.pory"
-	walk_up
-	step_end
-
 # 434 "data/maps/Luxurawoods/scripts.pory"
+	walk_up
+# 434 "data/maps/Luxurawoods/scripts.pory"
+	walk_up
+# 434 "data/maps/Luxurawoods/scripts.pory"
+	walk_up
+# 434 "data/maps/Luxurawoods/scripts.pory"
+	walk_up
+# 434 "data/maps/Luxurawoods/scripts.pory"
+	walk_up
+	step_end
+
+# 436 "data/maps/Luxurawoods/scripts.pory"
+dd:
+# 437 "data/maps/Luxurawoods/scripts.pory"
+	walk_up
+	step_end
+
+# 440 "data/maps/Luxurawoods/scripts.pory"
 ee:
-# 435 "data/maps/Luxurawoods/scripts.pory"
+# 441 "data/maps/Luxurawoods/scripts.pory"
 	face_up
 	step_end
 
 gruntded::
-# 439 "data/maps/Luxurawoods/scripts.pory"
+# 445 "data/maps/Luxurawoods/scripts.pory"
 	lockall
-# 440 "data/maps/Luxurawoods/scripts.pory"
+# 446 "data/maps/Luxurawoods/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, rr
-# 441 "data/maps/Luxurawoods/scripts.pory"
+# 447 "data/maps/Luxurawoods/scripts.pory"
 	msgbox gruntded_Text_0, MSGBOX_AUTOCLOSE
-# 442 "data/maps/Luxurawoods/scripts.pory"
+# 448 "data/maps/Luxurawoods/scripts.pory"
 	goto gruntsded
 	return
 
 
-# 444 "data/maps/Luxurawoods/scripts.pory"
+# 450 "data/maps/Luxurawoods/scripts.pory"
 rr:
-# 445 "data/maps/Luxurawoods/scripts.pory"
+# 451 "data/maps/Luxurawoods/scripts.pory"
 	walk_left
-# 446 "data/maps/Luxurawoods/scripts.pory"
+# 452 "data/maps/Luxurawoods/scripts.pory"
 	face_up
 	step_end
 
-# 449 "data/maps/Luxurawoods/scripts.pory"
+# 455 "data/maps/Luxurawoods/scripts.pory"
 cm:
-# 450 "data/maps/Luxurawoods/scripts.pory"
+# 456 "data/maps/Luxurawoods/scripts.pory"
 	walk_right
-# 451 "data/maps/Luxurawoods/scripts.pory"
+# 457 "data/maps/Luxurawoods/scripts.pory"
 	face_up
 	step_end
 
 grut::
-# 454 "data/maps/Luxurawoods/scripts.pory"
+# 460 "data/maps/Luxurawoods/scripts.pory"
 	lockall
-# 455 "data/maps/Luxurawoods/scripts.pory"
+# 461 "data/maps/Luxurawoods/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, cm
-# 456 "data/maps/Luxurawoods/scripts.pory"
+# 462 "data/maps/Luxurawoods/scripts.pory"
 	msgbox gruntded_Text_0, MSGBOX_AUTOCLOSE
-# 457 "data/maps/Luxurawoods/scripts.pory"
+# 463 "data/maps/Luxurawoods/scripts.pory"
 	goto gruntsded
 	return
 
 
 nio::
-# 461 "data/maps/Luxurawoods/scripts.pory"
+# 467 "data/maps/Luxurawoods/scripts.pory"
 	lockall
-# 462 "data/maps/Luxurawoods/scripts.pory"
+# 468 "data/maps/Luxurawoods/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, csm
-# 463 "data/maps/Luxurawoods/scripts.pory"
+# 469 "data/maps/Luxurawoods/scripts.pory"
 	msgbox nio_Text_0, MSGBOX_AUTOCLOSE
-# 464 "data/maps/Luxurawoods/scripts.pory"
+# 470 "data/maps/Luxurawoods/scripts.pory"
 	releaseall
 	return
 
 
-# 467 "data/maps/Luxurawoods/scripts.pory"
+# 473 "data/maps/Luxurawoods/scripts.pory"
 csm:
-# 468 "data/maps/Luxurawoods/scripts.pory"
+# 474 "data/maps/Luxurawoods/scripts.pory"
 	walk_down
 	step_end
 
@@ -1160,38 +1172,38 @@ gruntsded_Text_0:
 	.string "I hope she is okay.$"
 
 gruntsded_Text_1:
-# 321 "data/maps/Luxurawoods/scripts.pory"
+# 322 "data/maps/Luxurawoods/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Look who we have here...$"
 
 gruntsded_Text_2:
-# 322 "data/maps/Luxurawoods/scripts.pory"
+# 323 "data/maps/Luxurawoods/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}The little runaway.\p"
 	.string "And all alone this time...$"
 
 gruntsded_Text_3:
-# 323 "data/maps/Luxurawoods/scripts.pory"
+# 324 "data/maps/Luxurawoods/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Poor little rich boy... you think you can\n"
 	.string "run? Think you can hide? No, no, no...\l"
 	.string "your fate is written, carved in the same\l"
 	.string "blood as your family's.$"
 
 gruntsded_Text_4:
-# 324 "data/maps/Luxurawoods/scripts.pory"
+# 325 "data/maps/Luxurawoods/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Look at him... so lost, so angry.\p"
 	.string "We can almost taste it, can't we?$"
 
 gruntsded_Text_5:
-# 326 "data/maps/Luxurawoods/scripts.pory"
+# 327 "data/maps/Luxurawoods/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Where is Mira? What did you do to her?$"
 
 gruntsded_Text_6:
-# 328 "data/maps/Luxurawoods/scripts.pory"
+# 329 "data/maps/Luxurawoods/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Mira... such a sweet girl.\p"
 	.string "Brave.\p"
 	.string "Too brave for her own good.$"
 
 gruntsded_Text_7:
-# 329 "data/maps/Luxurawoods/scripts.pory"
+# 330 "data/maps/Luxurawoods/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}She fought so hard.\p"
 	.string "But do you know what broke her? It\n"
 	.string "wasn't the pain\p"
@@ -1203,11 +1215,11 @@ gruntsded_Text_7:
 	.string "Disappear.$"
 
 gruntsded_Text_8:
-# 331 "data/maps/Luxurawoods/scripts.pory"
+# 332 "data/maps/Luxurawoods/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Stop... stop lying!$"
 
 gruntsded_Text_9:
-# 334 "data/maps/Luxurawoods/scripts.pory"
+# 335 "data/maps/Luxurawoods/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Lie? Why would we lie? It was beautiful.\p"
 	.string "The way her eyes widened when she\n"
 	.string "realized... you weren't coming.\p"
@@ -1215,19 +1227,19 @@ gruntsded_Text_9:
 	.string "couldn't save anyone!$"
 
 gruntsded_Text_10:
-# 335 "data/maps/Luxurawoods/scripts.pory"
+# 336 "data/maps/Luxurawoods/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}You think this all started today? Oh,\n"
 	.string "no... it's always been you, Xylar. Your\l"
 	.string "weakness... your failure. They're dead\l"
 	.string "because of you.$"
 
 gruntsded_Text_11:
-# 336 "data/maps/Luxurawoods/scripts.pory"
+# 337 "data/maps/Luxurawoods/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Your father... your mother... Mira... They\n"
 	.string "all died... waiting for you.$"
 
 gruntsded_Text_12:
-# 337 "data/maps/Luxurawoods/scripts.pory"
+# 338 "data/maps/Luxurawoods/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}You couldn't save her. You couldn't save\n"
 	.string "any of them.\p"
 	.string "And now you're alone... Just like you\n"
@@ -1236,11 +1248,11 @@ gruntsded_Text_12:
 	.string "you scream.$"
 
 gruntsded_Text_13:
-# 339 "data/maps/Luxurawoods/scripts.pory"
+# 340 "data/maps/Luxurawoods/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}I'll kill you! I'll fucking kill you all!$"
 
 gruntsded_Text_14:
-# 341 "data/maps/Luxurawoods/scripts.pory"
+# 342 "data/maps/Luxurawoods/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Kill us?\p"
 	.string "You?\p"
 	.string "You can't even save yourself! You're\n"
@@ -1250,18 +1262,18 @@ gruntsded_Text_14:
 	.string "you in the dark.$"
 
 gruntsded_Text_15:
-# 342 "data/maps/Luxurawoods/scripts.pory"
+# 343 "data/maps/Luxurawoods/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Yes, join them! Let the guilt consume\n"
 	.string "you. Soon... you'll hear their voices too,\l"
 	.string "whispering your name. Waiting for you to\l"
 	.string "fall... just like them.$"
 
 gruntsded_Text_16:
-# 344 "data/maps/Luxurawoods/scripts.pory"
+# 345 "data/maps/Luxurawoods/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}I SAID SHUT UP!$"
 
 gruntsded_Text_17:
-# 346 "data/maps/Luxurawoods/scripts.pory"
+# 347 "data/maps/Luxurawoods/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}They died because of you. And now...\n"
 	.string "you'll join them.\p"
 	.string "Let's see how strong you really are\n"
@@ -1269,24 +1281,24 @@ gruntsded_Text_17:
 	.string "Electrode!$"
 
 gruntsded_Text_18:
-# 348 "data/maps/Luxurawoods/scripts.pory"
+# 349 "data/maps/Luxurawoods/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Let's end this...\p"
 	.string "Electrode, EXPLODE!$"
 
 gruntsded_Text_19:
-# 350 "data/maps/Luxurawoods/scripts.pory"
+# 351 "data/maps/Luxurawoods/scripts.pory"
 	.string "Bzzz$"
 
 gruntsded_Text_20:
-# 353 "data/maps/Luxurawoods/scripts.pory"
+# 354 "data/maps/Luxurawoods/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}HAHAHAHAHAHAHA!$"
 
 gruntsded_Text_21:
-# 358 "data/maps/Luxurawoods/scripts.pory"
+# 360 "data/maps/Luxurawoods/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}What... what the hell is wrong with you?$"
 
 gruntsded_Text_22:
-# 361 "data/maps/Luxurawoods/scripts.pory"
+# 363 "data/maps/Luxurawoods/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}You think I couldn't save her? You\n"
 	.string "think it's over? It's never over!\p"
 	.string "I'LL TEAR THIS WORLD APART! RIP EVERY\n"
@@ -1297,55 +1309,55 @@ gruntsded_Text_22:
 	.string "YOU HEAR ME?!$"
 
 gruntsded_Text_23:
-# 363 "data/maps/Luxurawoods/scripts.pory"
+# 365 "data/maps/Luxurawoods/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}He's... he's broken.$"
 
 gruntsded_Text_24:
-# 365 "data/maps/Luxurawoods/scripts.pory"
+# 367 "data/maps/Luxurawoods/scripts.pory"
 	.string "{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}This ends now!$"
 
 gruntsded_Text_25:
-# 370 "data/maps/Luxurawoods/scripts.pory"
+# 374 "data/maps/Luxurawoods/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}What the...\p"
 	.string "Electrode finish both of them.\p"
 	.string "Use Explosion!$"
 
 gruntsded_Text_26:
-# 376 "data/maps/Luxurawoods/scripts.pory"
+# 380 "data/maps/Luxurawoods/scripts.pory"
 	.string "Electrode, frozen mid-charge, begins to\n"
 	.string "tremble under Mewtwo's control.$"
 
 gruntsded_Text_27:
-# 377 "data/maps/Luxurawoods/scripts.pory"
+# 381 "data/maps/Luxurawoods/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Do something you stupid ball.$"
 
 gruntsded_Text_28:
-# 379 "data/maps/Luxurawoods/scripts.pory"
+# 383 "data/maps/Luxurawoods/scripts.pory"
 	.string "{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}You know what to do.$"
 
 gruntsded_Text_29:
-# 385 "data/maps/Luxurawoods/scripts.pory"
+# 389 "data/maps/Luxurawoods/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}W-What?! No! What's happening?!$"
 
 gruntsded_Text_30:
-# 386 "data/maps/Luxurawoods/scripts.pory"
+# 390 "data/maps/Luxurawoods/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Stop it, you stupid ball! Listen to us!$"
 
 gruntsded_Text_31:
-# 389 "data/maps/Luxurawoods/scripts.pory"
+# 393 "data/maps/Luxurawoods/scripts.pory"
 	.string "{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Now...\p"
 	.string "Explode.$"
 
 gruntsded_Text_32:
-# 405 "data/maps/Luxurawoods/scripts.pory"
+# 411 "data/maps/Luxurawoods/scripts.pory"
 	.string "{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Let's go, Human.$"
 
 gruntded_Text_0:
-# 441 "data/maps/Luxurawoods/scripts.pory"
+# 447 "data/maps/Luxurawoods/scripts.pory"
 	.string "I'm glad he's fine.$"
 
 nio_Text_0:
-# 463 "data/maps/Luxurawoods/scripts.pory"
+# 469 "data/maps/Luxurawoods/scripts.pory"
 	.string "That's not where herbs grow.$"
 
 mewtwo::

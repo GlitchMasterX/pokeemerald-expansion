@@ -348,7 +348,7 @@ mirakitchen_Text_1:
 mirakitchen_Text_2:
 # 125 "data/maps/luxurakitchen/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Already?\p"
-	.string "Alright,Master Xylar.Just give me a\n"
+	.string "Alright, Master Xylar.Just give me a\n"
 	.string "moment and we can head out.$"
 
 mirakitchen_Text_3:

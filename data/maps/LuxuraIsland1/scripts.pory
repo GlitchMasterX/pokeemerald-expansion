@@ -183,6 +183,7 @@ script miraded {
 	special(SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_CAMERA,bo)
 	waitmovement(0)
+	playbgm(MUS_RG_ROCKET_HIDEOUT,TRUE)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}The Shadow Slayers sure work fast."),MSGBOX_AUTOCLOSE)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Yeah, they killed everyone on the island in an instant."),MSGBOX_AUTOCLOSE)
 	waitmessage
@@ -192,6 +193,7 @@ script miraded {
 	applymovement(11,backes)
 	applymovement(12,backes)
 	applymovement(OBJ_EVENT_ID_CAMERA,backes)
+	waitmovement(0)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}We really are lucky today."),MSGBOX_AUTOCLOSE)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Yeah.\pWe were ordered to capture you two but you two came running to us on your own."),MSGBOX_AUTOCLOSE)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Now , Let's head back peacefully since I'm in a good mood today."),MSGBOX_AUTOCLOSE)
@@ -219,13 +221,13 @@ script miraded {
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}No, I'm not gonna leave you behind."))
 	hidenamebox
 	namebox(name4)
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I'll join you soon.So, trust me and run."),MSGBOX_AUTOCLOSE)
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I'll join you soon. So, trust me and run."),MSGBOX_AUTOCLOSE)
 	hidenamebox
 	applymovement(OBJ_EVENT_ID_PLAYER,lok)
 	applymovement(0xFD,lok)
 	waitmovement(0)
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Look at the hero,trying to protect the little boy.\pHow cute."),MSGBOX_AUTOCLOSE)
 	applymovement(12,heart)
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Look at the hero,trying to protect the little boy.\pHow cute."),MSGBOX_AUTOCLOSE)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}But it's not gonna work since we are gonna kill her and take the child."),MSGBOX_AUTOCLOSE)
 	applymovement(12,talk)
 	applymovement(11,tak)
@@ -244,7 +246,7 @@ script miraded {
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Mira, why are you talking like this?"))
 	hidenamebox
 	namebox(name4)
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Go hurry!"),MSGBOX_AUTOCLOSE)
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}XYLAR!"),MSGBOX_AUTOCLOSE)
 	hidenamebox
 	applymovement(OBJ_EVENT_ID_PLAYER,byee)
 	waitmovement(0)
@@ -254,12 +256,13 @@ script miraded {
 	namebox(name4)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}And too bad for you since you won't be able to capture him."),MSGBOX_AUTOCLOSE)
 	hidenamebox
+	applymovement(12,exclam)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}What?\pYou dare mock me.\pKill her this instant. "))
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Say goodbye, lady.This is the end of the road for you."),MSGBOX_AUTOCLOSE)
+	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Say goodbye, lady. This is the end of the road for you."),MSGBOX_AUTOCLOSE)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Electrode!"))
     applymovement(13,visible)
 	waitmovement(0)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Use EXPLOSION"))
+	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Use EXPLOSION!"))
 	waitmessage
 	applymovement(13,back)
 	playmoncry(SPECIES_ELECTRODE,CRY_MODE_ENCOUNTER)
@@ -273,12 +276,12 @@ script miraded {
 	applymovement(13,invisible)
 	applymovement(14,visible)
 	fadescreen(FADE_FROM_WHITE)
+	fadenewbgm(MUS_DUMMY)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Ahh, look at that beautiful red... It's so vibrant, so alive!\pBlood always gets my heart racing. Don't you just love the smell?\pIt's like... the essence of life escaping. I can't get enough of it."),MSGBOX_AUTOCLOSE)
     releaseall
 	setvar(LUXURA_TRAGEDY,14)
 	setflag(FLAG_UNUSED_0x26B)
 	warp(MAP_LUXURAWOODS,3,35)
-	mappreview
 }
 movement lok{
 	face_up

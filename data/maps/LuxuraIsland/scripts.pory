@@ -258,7 +258,7 @@ script indoor {
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, You should take a bath and get changed before Lady Elysia sees you like this."))
     hidenamebox
     namebox(Xylar)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Yeah.I'll do that."))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Yeah. xI'll do that."))
     hidenamebox
     fadescreen(FADE_TO_BLACK)
     warp(MAP_PLAYERROOM,2,5)

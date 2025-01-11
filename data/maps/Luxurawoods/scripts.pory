@@ -318,6 +318,7 @@ script gruntsded {
 	applymovement(OBJ_EVENT_ID_PLAYER,exclam)
 	waitmovement(0)
 	applymovement(OBJ_EVENT_ID_CAMERA,in)
+	playbgm(MUS_RG_ROCKET_HIDEOUT,TRUE)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Look who we have here..."),MSGBOX_AUTOCLOSE)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}The little runaway.\pAnd all alone this time..."),MSGBOX_AUTOCLOSE)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Poor little rich boy... you think you can run? Think you can hide? No, no, no... your fate is written, carved in the same blood as your family's."),MSGBOX_AUTOCLOSE)
@@ -355,6 +356,7 @@ script gruntsded {
 	applymovement(4,exclam)
 	applymovement(5,exclam)
 	waitmovement(0)
+	playbgm(MUS_DUMMY,FALSE)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}What... what the hell is wrong with you?"),MSGBOX_AUTOCLOSE)
 	waitmessage
     namebox(Xylar)
@@ -364,7 +366,9 @@ script gruntsded {
     namebox(unknown)
 	msgbox(format("{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}This ends now!"),MSGBOX_AUTOCLOSE)
 	hidenamebox
+	playbgm(MUS_PL_GIRATINA_APPEARS_1,TRUE)
 	fadescreen(FADE_TO_BLACK)
+	waitbuttonpress
 	applymovement(10,visible)
 	fadescreen(FADE_FROM_BLACK)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}What the...\pElectrode finish both of them.\pUse Explosion!"),MSGBOX_AUTOCLOSE)
@@ -401,6 +405,8 @@ script gruntsded {
 	applymovement(OBJ_EVENT_ID_CAMERA,strp)
 	special(RemoveCameraObject)
 	applymovement(10,sss)
+	applymovement(0xFF,exclam)
+	waitmovement(0)
 	namebox(mewtwo)
 	msgbox(format("{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Let's go, Human."),MSGBOX_AUTOCLOSE)
 	hidenamebox

@@ -536,10 +536,6 @@ u16 MapPreview_CreateMapNameWindow(u8 mapsec)
         windowId = AddWindow(&sMapNameWindowLarge);
         xctr = 177 - GetStringWidth(FONT_NORMAL, gStringVar4, 0);
     }
-    else if (mapsec == MAPSEC_LUXURA_VEILWOOD)
-    {
-        return FALSE;
-    }
     else
     {
         xctr = 104 - GetStringWidth(FONT_NORMAL, gStringVar4, 0);

@@ -96,6 +96,7 @@ script Surgebattle {
     ballfollowingmon
     setflag(FLAG_UNUSED_0x267)
     special(SpawnCameraObject)
+    playbgm(MUS_DP_GALACTIC_HQ_BASEMENT,TRUE)
     applymovement(OBJ_EVENT_ID_CAMERA,camera4)
     waitmovement(0)
     applymovement(6,surd)
@@ -110,7 +111,7 @@ script Surgebattle {
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Where is my Mom?"),MSGBOX_AUTOCLOSE)
     hidenamebox
     namebox(surge)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Mom?\pOh.. you mean her..."),MSGBOX_AUTOCLOSE)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Mom?\pOh.. you mean that thing..."),MSGBOX_AUTOCLOSE)
     hidenamebox
     waitmessage
     applymovement(6,surde)
@@ -134,22 +135,22 @@ script Surgebattle {
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Kid, you don't get it, do you? Your father, Aurther, saved the world once. He fought to stop Nexus Order from controlling Hoopa. But you know what they say, right?\pWhen a hero is too strong... he's always killed by the very people he saved."),MSGBOX_AUTOCLOSE)
     hidenamebox
     namebox(Xylar)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}What are you talking about?! My father was a hero... What does any of this have to do with you?!"),MSGBOX_AUTOCLOSE)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}But why would you kill him?\pHe was a hero, he saved you guys ...he saved the world."),MSGBOX_AUTOCLOSE)
     hidenamebox
     namebox(surge)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You still don't know, huh? Your father... Aurther, was once the leader of Origin. It wasn't always like this, though. Origin wasn't a group of 18 organizations back then. Under Aurther's command, they were heroes, with a clean public image, saving the world. But things changed after he retired... after he was forced to retire."),MSGBOX_AUTOCLOSE)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You still don't get it.\pWhy, you ask?\pBecause no matter what, he would never understand.\pHe led an organization that no one could defeat, but his ambitions didn't match the power of the organization.\pHe clung to those narrow ideals of justice and equality, fighting crime like some glorified cop!\pDo you really believe that?\pWe're not cops, we're the strongest.\pPeople fear going against us.\pHe wasn't qualified to be our leader.\pBut then HE joined. He had the ambition and the vision to lead us.\pHe was destined to be our leader."),MSGBOX_AUTOCLOSE)
     hidenamebox
     namebox(Xylar)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Origin?"),MSGBOX_AUTOCLOSE)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Your leader? So you killed my father because he wasn't qualified? Because he believed in justice and equality?!\pAnd now you follow someone who thinks ambition is all that matters?\pYou're insane."),MSGBOX_AUTOCLOSE)
     hidenamebox
     namebox(surge)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Yeah, Origin. A group of 18 organizations, each one specializing in a type. Sure, when Aurther was in charge, Origin were heroes but things have changed now. Origin's only cause  is to gain power and change this world into something more perfect. Something your father would've never been able to do."),MSGBOX_AUTOCLOSE)
-    hidenamebox
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}He made Aurther step down from leadership as soon as he realized Aurther wasn't the one.\pYou see...\nEverything has always been according to his plan.\pBut your father tried to stop him and that's why he's dead.\pAll he wants is to reshape this world into something far more perfect: a world with no ruler, where everyone is equal, where no one starves, and where wealth and status don't exist.\pThat, he believes, We believe is true justice."),MSGBOX_AUTOCLOSE)
+  hidenamebox
     namebox(Xylar)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't give a damn about this Origin or whatever twisted mess you've created. Let me make one thing crystal clear: \pNo matter who you are or how many of you there are, I'll destroy every single one of you. If there are 18 organizations, I'll wipe every last one off the map.\pAnd if, by some sick twist of fate, you manage to create your so-called PERFECT WORLD....\pI'LL BURN THAT {COLOR RED}{SHADOW LIGHT_GRAY}PERFECT WORLD {COLOR BLUE}{SHADOW LIGHT_GRAY}OF YOURS."),MSGBOX_AUTOCLOSE)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't give a damn about your leader or whatever twisted mess you've created.\nLet me make one thing crystal clear:\pNo matter who you are I'll destroy every single one of you. If there are hundreds of you I'll wipe every last one off the map.\pAnd if, by some sick twist of fate, you manage to create your so-called PERFECT WORLD....\pI'LL BURN THAT {COLOR RED}{SHADOW LIGHT_GRAY}PERFECT WORLD {COLOR BLUE}{SHADOW LIGHT_GRAY}OF YOURS."),MSGBOX_AUTOCLOSE)
     hidenamebox
     namebox(surge)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You've got guts, kid. But don't fool yourself..nothing you do will ever be enough to break us. We're more than just a few organizations; we're a force that's reshaping the world. And if you think you can stand in our way, you're in for a world of hurt."),MSGBOX_AUTOCLOSE)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You've got guts, kid. But don't fool yourself..nothing you do will ever be enough to break us. We're more than just an organization, we're a force that's reshaping the world. And if you think you can stand in our way, you're in for a world of hurt."),MSGBOX_AUTOCLOSE)
     hidenamebox
     namebox(Xylar)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You can keep your delusions of grandeur. I've lost everything that mattered to me because of your kind. Every threat you make just fuels my rage.\pIf you think you're unstoppable, then good. I want you to understand the full depth of what you've created...\pstarting with you. I'll make sure you feel every bit of my pain and anger. It's time to settle this once and for all."),MSGBOX_AUTOCLOSE)

@@ -95,7 +95,7 @@ script dad {
     waitmessage
 	applymovement(4,exclam)
 	namebox(name3)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Oh, Xylar, I almost forgot\pGuests from the academy are coming in two days."))
+	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Oh, Xylar, I almost forgot\pGuests from the academy are coming in a few days."))
 	hidenamebox
 	namebox(Xylar)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Guests?\pFrom the academy, You didn't tell me about this."))

@@ -122,7 +122,7 @@ script mirakitchen {
 		msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Mira, It's time for our walk.\pReady to go."))
 		hidenamebox
 		namebox(name4)
-	    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Already?\pAlright,Master Xylar.Just give me a moment and we can head out."))
+	    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Already?\pAlright, Master Xylar.Just give me a moment and we can head out."))
 	    hidenamebox
 		msgbox(format("I should go grab my shoes.\pThe maid upstairs should have it."))
         release
