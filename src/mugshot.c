@@ -76,11 +76,11 @@ static const u16 sMugshotPal_Red[] = INCBIN_U16("graphics/mugshots/red.gbapal");
 static const u32 sMugshotImg_Misty[] = INCBIN_U32("graphics/mugshots/misty.4bpp.lz");
 static const u16 sMugshotPal_Misty[] = INCBIN_U16("graphics/mugshots/misty.gbapal");
 
-static const u32 sMugshotImg_Agatha[] = INCBIN_U32("graphics/mugshots/agatha.4bpp.lz");
-static const u16 sMugshotPal_Agatha[] = INCBIN_U16("graphics/mugshots/agatha.gbapal");
+static const u32 sMugshotImg_Family[] = INCBIN_U32("graphics/mugshots/family.4bpp.lz");
+static const u16 sMugshotPal_Family[] = INCBIN_U16("graphics/mugshots/family.gbapal");
 
-static const u32 sMugshotImg_Lance[] = INCBIN_U32("graphics/mugshots/lance.4bpp.lz");
-static const u16 sMugshotPal_Lance[] = INCBIN_U16("graphics/mugshots/lance.gbapal");
+static const u32 sMugshotImg_FamilyRequiem[] = INCBIN_U32("graphics/mugshots/family_requiem.4bpp.lz");
+static const u16 sMugshotPal_FamilyRequiem[] = INCBIN_U16("graphics/mugshots/family.gbapal");
 
 static const u32 sMugshotImg_Blue[] = INCBIN_U32("graphics/mugshots/blue.4bpp.lz");
 static const u16 sMugshotPal_Blue[] = INCBIN_U16("graphics/mugshots/blue.gbapal");
@@ -154,9 +154,9 @@ static const struct Mugshot sMugshots[] = {
 [MUGSHOT_JASMINE] = {.x = 20, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Jasmine, .palette =  sMugshotPal_Jasmine},
 [MUGSHOT_RED] = {.x = 20, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Red, .palette =  sMugshotPal_Red},
 [MUGSHOT_MISTY] = {.x = 20, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Misty, .palette =  sMugshotPal_Misty},
-[MUGSHOT_AGATHA] = {.x = 20, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Agatha, .palette =  sMugshotPal_Agatha},
+[MUGSHOT_FAMILY] = {.x = 0, .y = 0, .width = 240, .height = 160, .image = sMugshotImg_Family, .palette =  sMugshotPal_Family},
 [MUGSHOT_BLUE] = {.x = 20, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Blue, .palette =  sMugshotPal_Blue},
-[MUGSHOT_LANCE] = {.x = 20, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Lance, .palette =  sMugshotPal_Lance},
+[MUGSHOT_FAMILY_REQUIEM] = {.x = 0, .y = 0, .width = 240, .height = 160, .image = sMugshotImg_FamilyRequiem, .palette =  sMugshotPal_FamilyRequiem},
 [MUGSHOT_BROCK] = {.x = 20, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Brock, .palette =  sMugshotPal_Brock},
 [MUGSHOT_KAREN] = {.x = 20, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Karen, .palette =  sMugshotPal_Karen},
 [MUGSHOT_JANINE] = {.x = 20, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Janine, .palette =  sMugshotPal_Janine},
