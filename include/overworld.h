@@ -56,6 +56,7 @@ extern u8 gLocalLinkPlayerId;
 extern u8 gFieldLinkPlayerCount;
 extern bool8 gExitStairsMovementDisabled;
 extern bool8 gSkipShowMonAnim;
+extern u8 gGlobalFieldTintMode;
 
 extern const struct UCoords32 gDirectionToVectors[];
 
@@ -160,7 +161,8 @@ bool32 Overworld_SendKeysToLinkIsRunning(void);
 bool32 IsSendingKeysOverCable(void);
 void ClearLinkPlayerObjectEvents(void);
 void CB2_ReturnToFullScreenStartMenu(void);
-
+void InitMapView(void);
+void RemoveTintFromObjectEvents(void);
 // Item Description Headers
 enum ItemObtainFlags
 {

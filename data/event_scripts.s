@@ -45,6 +45,7 @@
 #include "constants/moves.h"
 #include "constants/party_menu.h"
 #include "constants/pokedex.h"
+#include "constants/rgb.h"
 #include "constants/pokemon.h"
 #include "constants/roulette.h"
 #include "constants/script_menu.h"
@@ -879,6 +880,22 @@ Common_EventScript_PlayerHandedOverTheItem::
 	.include "data/text/mart_clerk.inc"
 	.include "data/text/obtain_item.inc"
 
+Script_SetGrayscaleTint::
+	setptr GLOBAL_FIELD_TINT_GRAYSCALE, gGlobalFieldTintMode
+	callnative InitMapView
+	return
+
+Script_SetSepiaTint::
+	setptr GLOBAL_FIELD_TINT_SEPIA, gGlobalFieldTintMode
+	callnative InitMapView
+	return
+
+Script_RemoveTint::
+	setptr GLOBAL_FIELD_TINT_NONE, gGlobalFieldTintMode
+	callnative RemoveTintFromObjectEvents
+	callnative InitMapView
+	return
+
 @ The below and surf.inc could be split into some text/notices.inc
 gText_PokemartSign::
 	.string "“Selected items for your convenience!”\n"
@@ -1175,3 +1192,4 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Newmap11/scripts.inc"
 	.include "data/maps/newhouse/scripts.inc"
 	.include "data/scripts/dexnav.inc"
+

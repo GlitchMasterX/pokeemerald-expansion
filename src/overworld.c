@@ -12,6 +12,7 @@
 #include "event_data.h"
 #include "event_object_movement.h"
 #include "event_scripts.h"
+#include "constants/rgb.h"
 #include "field_camera.h"
 #include "field_control_avatar.h"
 #include "field_effect.h"
@@ -564,13 +565,23 @@ void SetObjEventTemplateMovementType(u8 localId, u8 movementType)
     }
 }
 
-static void InitMapView(void)
+void InitMapView(void)
 {
+    s32 paletteIndex;
+
     ResetFieldCamera();
+    for (paletteIndex = 0; paletteIndex < 15; paletteIndex++)
+        ApplyGlobalFieldPaletteTint(paletteIndex);
     CopyMapTilesetsToVram(gMapHeader.mapLayout);
     LoadMapTilesetPalettes(gMapHeader.mapLayout);
     DrawWholeMapView();
     InitTilesetAnimations();
+}
+
+void RemoveTintFromObjectEvents(void)
+{
+    if (gGlobalFieldTintMode == GLOBAL_FIELD_TINT_NONE)
+        RemoveTintFromObjectEventPalettes();
 }
 
 const struct MapLayout *GetMapLayout(u16 mapLayoutId)

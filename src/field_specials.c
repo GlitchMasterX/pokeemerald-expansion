@@ -3274,7 +3274,7 @@ static void ChangeDeoxysRockLevel(u8 rockLevel)
 {
     u8 paletteNum = IndexOfSpritePaletteTag(OBJ_EVENT_PAL_TAG_BIRTH_ISLAND_STONE);
     LoadPalette(&sDeoxysRockPalettes[rockLevel], OBJ_PLTT_ID(paletteNum), PLTT_SIZEOF(4));
-
+    ApplyGlobalFieldPaletteTint(10);
     if (rockLevel == 0)
         PlaySE(SE_M_CONFUSE_RAY); // Failure sound
     else

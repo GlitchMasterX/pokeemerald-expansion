@@ -17,6 +17,7 @@
 #include "constants/rgb.h"
 #include "constants/metatile_behaviors.h"
 #include "wild_encounter.h"
+#include "event_object_movement.h"
 
 struct ConnectionFlags
 {
@@ -30,8 +31,8 @@ EWRAM_DATA u16 ALIGNED(4) sBackupMapData[MAX_MAP_DATA_SIZE] = {0};
 EWRAM_DATA struct MapHeader gMapHeader = {0};
 EWRAM_DATA struct Camera gCamera = {0};
 EWRAM_DATA static struct ConnectionFlags sMapConnectionFlags = {0};
-EWRAM_DATA static u32 UNUSED sFiller = 0; // without this, the next file won't align properly
-
+//EWRAM_DATA static u32 UNUSED sFiller = 0; // without this, the next file won't align properly
+EWRAM_DATA u8 gGlobalFieldTintMode = GLOBAL_FIELD_TINT_NONE;
 struct BackupMapLayout gBackupMapLayout;
 
 static const struct ConnectionFlags sDummyConnectionFlags = {0};
@@ -870,7 +871,20 @@ static void CopyTilesetToVramUsingHeap(struct Tileset const *tileset, u16 numTil
 // Below two are dummied functions from FRLG, used to tint the overworld palettes for the Quest Log
 static void ApplyGlobalTintToPaletteEntries(u16 offset, u16 size)
 {
-
+switch (gGlobalFieldTintMode)
+    {
+        case GLOBAL_FIELD_TINT_NONE:
+            return;
+        case GLOBAL_FIELD_TINT_GRAYSCALE:
+            TintPalette_GrayScale(gPlttBufferUnfaded + offset, size);
+            break;
+        case GLOBAL_FIELD_TINT_SEPIA:
+            TintPalette_SepiaTone(gPlttBufferUnfaded + offset, size);
+            break;
+        default:
+            return;
+    }
+    CpuCopy16(gPlttBufferUnfaded + offset, gPlttBufferFaded + offset, size * sizeof(u16));
 }
 
 static void UNUSED ApplyGlobalTintToPaletteSlot(u8 slot, u8 count)

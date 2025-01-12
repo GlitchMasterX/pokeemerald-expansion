@@ -3176,6 +3176,7 @@ void PatchObjectPalette(u16 paletteTag, u8 paletteSlot)
     u8 paletteIndex = FindObjectEventPaletteIndexByTag(paletteTag);
 
     LoadPalette(sObjectEventSpritePalettes[paletteIndex].data, OBJ_PLTT_ID(paletteSlot), PLTT_SIZE_4BPP);
+    ApplyGlobalFieldPaletteTint(paletteSlot);
 }
 
 void PatchObjectPaletteRange(const u16 *paletteTags, u8 minSlot, u8 maxSlot)
@@ -3186,6 +3187,11 @@ void PatchObjectPaletteRange(const u16 *paletteTags, u8 minSlot, u8 maxSlot)
         paletteTags++;
         minSlot++;
     }
+}
+
+void RemoveTintFromObjectEventPalettes()
+{
+    PatchObjectPaletteRange(sObjectPaletteTagSets[sCurrentReflectionType], 0, 5);
 }
 
 static u8 FindObjectEventPaletteIndexByTag(u16 tag)
