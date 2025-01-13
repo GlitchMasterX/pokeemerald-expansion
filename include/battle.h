@@ -883,6 +883,10 @@ static inline bool32 IsBattleMoveRecoil(u32 move)
 
 #define _IS_BATTLER_ANY_TYPE_HELPER(type) (types[0] == type) || (types[1] == type) || (types[2] == type) ||
 
+#define BATTLER_MAX_HP(battlerId)(gBattleMons[battlerId].hp == gBattleMons[battlerId].maxHP)
+#define TARGET_TURN_DAMAGED ((gSpecialStatuses[gBattlerTarget].physicalDmg != 0 || gSpecialStatuses[gBattlerTarget].specialDmg != 0) || (gBattleStruct->enduredDamage & (1u << gBattlerTarget)))
+#define BATTLER_TURN_DAMAGED(battlerId) ((gSpecialStatuses[battlerId].physicalDmg != 0 || gSpecialStatuses[battlerId].specialDmg != 0) || (gBattleStruct->enduredDamage & (1u << battler)))
+
 #define IS_BATTLER_ANY_TYPE(battlerId, ...) _IS_BATTLER_ANY_TYPE(battlerId, FALSE, __VA_ARGS__)
 #define IS_BATTLER_OF_TYPE IS_BATTLER_ANY_TYPE
 #define IS_BATTLER_ANY_BASE_TYPE(battlerId, ...) _IS_BATTLER_ANY_TYPE(battlerId, TRUE, __VA_ARGS__)
