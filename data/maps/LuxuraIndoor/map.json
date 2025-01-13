@@ -130,6 +130,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "blood",
       "flag": "FLAG_UNUSED_0x4A6"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ALISTAIR",
+      "x": 15,
+      "y": 33,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_ALISTAIR_ARRIVE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ALAKAZAM)",
+      "x": 15,
+      "y": 34,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_ALISTAIR_ARRIVE"
     }
   ],
   "warp_events": [

@@ -1,13 +1,24 @@
 raw`
 LuxuraIsland_MapScripts::
 map_script MAP_SCRIPT_ON_FRAME_TABLE, LuxuraIsland_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
-map_script MAP_SCRIPT_ON_LOAD, LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD
+map_script MAP_SCRIPT_ON_LOAD, LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD  
 map_script MAP_SCRIPT_ON_TRANSITION, musicchange
+map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, LuxuraIsland_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
 	.byte 0
 LuxuraIsland_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 map_script_2 LUXURA_TRAGEDY, 9, stroll
+map_script_2 LUXURA_TRAGEDY, 21, alistairarrive
 .2byte 0
+LuxuraIsland_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
+map_script_2 LUXURA_TRAGEDY, 21, playerinvisible1 
+.2byte 0
+
 `
+script playerinvisible1 {
+        hideobjectat(0xFF,MAP_LUXURA_ISLAND)
+		addobject(13,MAP_LUXURA_ISLAND)
+		addobject(14,MAP_LUXURA_ISLAND)
+}
 script ran{
     lock
     clearflag(FLAG_UNUSED_0x496)
@@ -324,26 +335,33 @@ movement strp{
 }
 
 script LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD {
+    special(SetRoofBirds)
     if(var(LUXURA_TRAGEDY)<9){
-        special(SetRoofBirds)
         removeobject(5)
         setflag(FLAG_UNUSED_0x4EF)
         removeobject(6)
         setflag(FLAG_UNUSED_0x4A5)
+        removeobject(13)
+        removeobject(14)
+        setflag(FLAG_ALISTAIR_ARRIVE)
     }
      elif(var(LUXURA_TRAGEDY)==9){
-        special(SetRoofBirds)
         addobject(5)
         clearflag(FLAG_UNUSED_0x4EF)
         removeobject(6)
         setflag(FLAG_UNUSED_0x4A5)
+        removeobject(13)
+        removeobject(14)
+        setflag(FLAG_ALISTAIR_ARRIVE)
     }
     elif(var(LUXURA_TRAGEDY)==10){
-        special(SetRoofBirds)
         addobject(5)
         clearflag(FLAG_UNUSED_0x4EF)
         removeobject(6)
         setflag(FLAG_UNUSED_0x4A5)
+        removeobject(13)
+        removeobject(14)
+        setflag(FLAG_ALISTAIR_ARRIVE)
     }
     elif(var(LUXURA_TRAGEDY)==11){
         addobject(5)
@@ -353,6 +371,9 @@ script LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD {
         addobject(6)
         clearflag(FLAG_UNUSED_0x4A5)
         setmetatile(6,28,0x001,1)
+        removeobject(13)
+        removeobject(14)
+        setflag(FLAG_ALISTAIR_ARRIVE)
     }
     elif(var(LUXURA_TRAGEDY)>11 && var(LUXURA_TRAGEDY)<14){
         addobject(5)
@@ -362,9 +383,11 @@ script LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD {
         addobject(6)
         clearflag(FLAG_UNUSED_0x4A5)
         setmetatile(6,28,0x001,1)
+        removeobject(13)
+        removeobject(14)
+        setflag(FLAG_ALISTAIR_ARRIVE)
     }
-    elif(var(LUXURA_TRAGEDY)>13){
-        special(SetRoofBirds)
+    elif(var(LUXURA_TRAGEDY)>13 && var(LUXURA_TRAGEDY)<19){
         removeobject(5)
         setflag(FLAG_UNUSED_0x4EF)
         removeobject(2)
@@ -372,9 +395,11 @@ script LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD {
         addobject(6)
         clearflag(FLAG_UNUSED_0x4A5)
         setmetatile(6,28,0x001,1)   
+        removeobject(13)
+        removeobject(14)
+        setflag(FLAG_ALISTAIR_ARRIVE)
 }
   elif(var(LUXURA_TRAGEDY)==19 && var(LUXURA_TRAGEDY)==20){
-        special(SetRoofBirds)
         removeobject(5)
         setflag(FLAG_UNUSED_0x4EF)
         removeobject(2)
@@ -383,16 +408,32 @@ script LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD {
         clearflag(FLAG_UNUSED_0x4A5)
         setmetatile(6,28,0x001,1)    
 }
-  elif(var(LUXURA_TRAGEDY)>= 21){
-        special(SetRoofBirds)
+  elif(var(LUXURA_TRAGEDY) == 21){
         removeobject(5)
         setflag(FLAG_UNUSED_0x4EF)
         removeobject(2)
         setflag(FLAG_UNUSED_0x4A4)
         addobject(6)
         clearflag(FLAG_UNUSED_0x4A5)
-        setmetatile(6,28,0x001,1)    
+        setmetatile(6,28,0x001,1)
+        addobject(13)
+        addobject(14)
+        clearflag(FLAG_ALISTAIR_ARRIVE)
+
 }
+ elif(var(LUXURA_TRAGEDY)>21){
+        removeobject(5)
+        setflag(FLAG_UNUSED_0x4EF)
+        removeobject(2)
+        setflag(FLAG_UNUSED_0x4A4)
+        addobject(6)
+        clearflag(FLAG_UNUSED_0x4A5)
+        setmetatile(6,28,0x001,1)
+        removeobject(13)
+        removeobject(14)
+        setflag(FLAG_ALISTAIR_ARRIVE)
+
+ }
 }
 script strolll{
     lock
@@ -541,4 +582,46 @@ script stded{
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}That's not the way,Master Xylar."))
     hidenamebox
     release
+}
+
+script alistairarrive {
+    lock
+    special(SpawnCameraObject)
+    applymovement(0x7F,cameramovementalistair)
+    waitmovement(0)
+    namebox(unknown)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Aurther's family mansion.\nHe always spoke so highly of this place. It's been years since I've visited."),MSGBOX_AUTOCLOSE)
+    hidenamebox
+    waitmessage
+    applymovement(13,alistairarrive1)
+    applymovement(14,alistairarrive1)
+    waitmovement(0)
+    playbgm(MUS_PL_TITLE,FALSE)
+    namebox(unknown)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Wait....Something's not right."),MSGBOX_AUTOCLOSE)
+    hidenamebox
+    applymovement(13,exclam)
+    applymovement(0x7F,alistairarrive1)
+    waitmovement(0)
+    applymovement(13,alistairarrive2)
+    applymovement(14,alistairarrive2)
+    namebox(unknown)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Blood?.....\nNo....What happened here?"),MSGBOX_AUTOCLOSE)
+    hidenamebox
+    fadescreen(FADE_TO_BLACK)
+    msgbox(format("He rushed inside, looking around the ruined mansion."),MSGBOX_AUTOCLOSE)
+    release
+    setvar(LUXURA_TRAGEDY,22)
+    warpsilent(MAP_LUXURA_INDOOR,14,33)
+
+}
+movement alistairarrive2 {
+    walk_left*6
+}
+movement cameramovementalistair {
+    walk_down*20
+    walk_right*6
+}
+movement alistairarrive1 {
+    walk_left*10
 }

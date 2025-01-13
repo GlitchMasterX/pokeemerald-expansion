@@ -25,7 +25,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
       "script": "spark2",
-      "flag": "0"
+      "flag": "FLAG_UNUSED_0x4B8"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
@@ -51,7 +51,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "spark4",
-      "flag": "0"
+      "flag": "FLAG_UNUSED_0x4B8"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
@@ -77,7 +77,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
       "script": "spark3",
-      "flag": "0"
+      "flag": "FLAG_UNUSED_0x4B8"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SURGE",
@@ -103,7 +103,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_UNUSED_0x4B8"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPARK_F",
@@ -116,7 +116,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
       "script": "spark5",
-      "flag": "0"
+      "flag": "FLAG_UNUSED_0x4B8"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPARK_M",
@@ -129,7 +129,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "spark6",
-      "flag": "0"
+      "flag": "FLAG_UNUSED_0x4B8"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MEWTWO)",
@@ -142,7 +142,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_UNUSED_0x4B8"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FIRE",

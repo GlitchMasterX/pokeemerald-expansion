@@ -1256,7 +1256,7 @@
 #define FLAG_UNUSED_0x4B6                                           0x4B6 // Unused Flag grunts appear
 #define FLAG_UNUSED_0x4B7                                           0x4B7 // Unused Flag nurse healing luxura
 #define FLAG_UNUSED_0x4B8                                           0x4B8 // Unused Flag surgeded 
-#define FLAG_UNUSED_0x4B9                                           0x4B9 // Unused Flag
+#define FLAG_ALISTAIR_ARRIVE                                           0x4B9 // Unused Flag
 #define FLAG_UNUSED_0x4BA                                           0x4BA // Unused Flag
 #define FLAG_UNUSED_0x4BB                                           0x4BB // Unused Flag
 #define FLAG_UNUSED_0x4BC                                           0x4BC // Unused Flag

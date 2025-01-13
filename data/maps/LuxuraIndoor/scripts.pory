@@ -1,7 +1,66 @@
 mapscripts LuxuraIndoor_MapScripts{
 MAP_SCRIPT_ON_LOAD: tragedy
 MAP_SCRIPT_ON_FRAME_TABLE[
-	LUXURA_TRAGEDY,5:indoor]
+	LUXURA_TRAGEDY,5:indoor
+	LUXURA_TRAGEDY,22:alistairarrive3
+	LUXURA_TRAGEDY,23:alistairarrive4]
+MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
+	LUXURA_TRAGEDY,22:playerinvisible
+	LUXURA_TRAGEDY,23:playerinvisible
+]
+}
+script alistairarrive3 {
+	lock
+	namebox(unknown)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Aurther.....Elysia....where are you?"),MSGBOX_AUTOCLOSE)
+    hidenamebox
+	applymovement(10,exclam)
+	namebox(unknown)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}What's that?"))
+    hidenamebox
+	setvar(VAR_0x8000,6)
+	special(DrawMugshot)
+	waitbuttonpress
+	special(ClearMugshot)
+	namebox(unknown)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Aurther.......Xylar...."))
+    hidenamebox
+	waitmessage
+	applymovement(11,traces)
+	waitmovement(0)
+	applymovement(10,traces1)
+	waitmovement(0)
+    msgbox(format("(Telepathy)\p{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}This place is filled with grief and violence.\pThere are faint traces of memories lingering here.\pShall I show you?"))
+	namebox(unknown)
+    msgbox(format("(Nods)"),MSGBOX_AUTOCLOSE)
+    hidenamebox
+	waitmessage
+	fadescreenspeed(FADE_TO_WHITE,4)
+	fadescreenspeed(FADE_FROM_WHITE,4)
+	fadescreenspeed(FADE_TO_WHITE,4)
+	fadescreenspeed(FADE_FROM_WHITE,4)
+	fadescreen(FADE_TO_BLACK)
+	warpsilent(MAP_LUXURAWORK,10,27)
+}
+movement traces1 {
+	face_down
+}
+movement traces {
+	face_left
+	delay_16
+	face_down
+	delay_16
+	face_right
+	delay_16
+    face_up
+	delay_16
+	emote_exclamation_mark
+}
+script playerinvisible {
+		hideobjectat(0xFF,MAP_LUXURA_INDOOR)
+		addobject(10,MAP_LUXURA_INDOOR)
+		addobject(11,MAP_LUXURA_INDOOR)
+
 }
 script MaidZ{
 	if(!flag(FLAG_UNUSED_0x4A2)){
@@ -184,18 +243,27 @@ script tragedy{
 		removeobject(8)
 		removeobject(9)
 		setflag(FLAG_UNUSED_0x4A6)
+		removeobject(10)
+		removeobject(11)
+		setflag(FLAG_ALISTAIR_ARRIVE)
     }
      elif(var(LUXURA_TRAGEDY)==9){
 		removeobject(7)
 		removeobject(8)
 		removeobject(9)
 		setflag(FLAG_UNUSED_0x4A6)
+		removeobject(10)
+		removeobject(11)
+		setflag(FLAG_ALISTAIR_ARRIVE)
     }
     elif(var(LUXURA_TRAGEDY)==10){
 		removeobject(7)
 		removeobject(8)
 		removeobject(9)
 		setflag(FLAG_UNUSED_0x4A6)
+		removeobject(10)
+		removeobject(11)
+		setflag(FLAG_ALISTAIR_ARRIVE)
     }
     elif(var(LUXURA_TRAGEDY)==11){
 	    addobject(7)
@@ -253,6 +321,9 @@ script tragedy{
 		setmetatile(13,10,0x2B1,1)
 		setmetatile(12,11,0x2B8,1)
 		setmetatile(13,11,0x2B9,1)
+		removeobject(10)
+		removeobject(11)
+		setflag(FLAG_ALISTAIR_ARRIVE)
     }
     elif(var(LUXURA_TRAGEDY)>11 && var(LUXURA_TRAGEDY)<19){
 		addobject(7)
@@ -311,9 +382,12 @@ script tragedy{
 		setmetatile(13,10,0x2B1,1)
 		setmetatile(12,11,0x2B8,1)
 		setmetatile(13,11,0x2B9,1)
+		removeobject(10)
+		removeobject(11)
+		setflag(FLAG_ALISTAIR_ARRIVE)
     }
 
-	elif(var(LUXURA_TRAGEDY)>19){
+	elif(var(LUXURA_TRAGEDY)<21){
         addobject(7)
 		addobject(8)
 		addobject(9)
@@ -325,6 +399,219 @@ script tragedy{
         setflag(FLAG_UNUSED_0x4A7)
 		setflag(FLAG_UNUSED_0x4A8)
 		clearflag(FLAG_UNUSED_0x4A6)
+	    setmetatile(7,5,0x2CF,1)
+		setmetatile(6,26,0x2A0,1)
+		setmetatile(7,26,0x2A1,1)
+		setmetatile(6,27,0x2A8,1)
+		setmetatile(7,27,0x2A9,1)
+		setmetatile(18,20,0x2A0,1)
+		setmetatile(19,20,0x2A1,1)
+		setmetatile(18,21,0x2A8,1)
+		setmetatile(19,21,0x2A9,1)
+		setmetatile(22,30,0x2B0,1)
+		setmetatile(23,30,0x2B1,1)
+		setmetatile(22,31,0x2B8,1)
+		setmetatile(23,31,0x2B9,1)
+		setmetatile(10,38,0x2B0,1)
+		setmetatile(11,38,0x2B1,1)
+		setmetatile(10,39,0x2B8,1)
+		setmetatile(11,39,0x2B9,1)
+		setmetatile(26,6,0x2B0,1)
+		setmetatile(27,6,0x2B1,1)
+		setmetatile(26,7,0x2B8,1)
+		setmetatile(27,7,0x2B9,1)
+		setmetatile(0,6,0x2A0,1)
+		setmetatile(1,6,0x2A1,1)
+		setmetatile(0,7,0x2A8,1)
+		setmetatile(1,7,0x2A9,1)
+		setmetatile(4,15,0x1E1,1)
+		setmetatile(5,15,0x1E2,1)
+		setmetatile(4,16,0x1E9,1)
+		setmetatile(5,16,0x1EA,1)
+		setmetatile(14,6,0x2A0,1)
+		setmetatile(15,6,0x2A1,1)
+		setmetatile(14,7,0x2A8,1)
+		setmetatile(15,7,0x2A9,1)
+		setmetatile(22,6,0x2A0,1)
+		setmetatile(23,6,0x2A1,1)
+		setmetatile(22,7,0x2A8,1)
+		setmetatile(23,7,0x2A9,1)
+		setmetatile(9,3,0x1E1,1)
+		setmetatile(10,3,0x1E2,1)
+		setmetatile(9,4,0x1E9,1)
+		setmetatile(10,4,0x1EA,1)
+		setmetatile(12,10,0x2B0,1)
+		setmetatile(13,10,0x2B1,1)
+		setmetatile(12,11,0x2B8,1)
+		setmetatile(13,11,0x2B9,1)
+		setmetatile(6,6,0x2B0,1)
+		setmetatile(7,6,0x2B1,1)
+		setmetatile(6,7,0x2B8,1)
+		setmetatile(7,7,0x2B9,1)
+		setmetatile(0,36,0x0E0,1)
+		setmetatile(1,36,0x0E1,1)
+		setmetatile(0,37,0x0E8,1)
+		setmetatile(1,37,0x0E9,1)
+		setmetatile(2,36,0x340,0)
+		setmetatile(2,37,0x348,0)
+}
+	elif(var(LUXURA_TRAGEDY)==21){
+        addobject(7)
+		addobject(8)
+		addobject(9)
+		removeobject(1)
+		removeobject(2)
+        removeobject(3)
+		removeobject(4)
+		removeobject(5)
+        setflag(FLAG_UNUSED_0x4A7)
+		setflag(FLAG_UNUSED_0x4A8)
+		clearflag(FLAG_UNUSED_0x4A6)
+		addobject(10)
+		addobject(11)
+		clearflag(FLAG_ALISTAIR_ARRIVE)
+	    setmetatile(7,5,0x2CF,1)
+		setmetatile(6,26,0x2A0,1)
+		setmetatile(7,26,0x2A1,1)
+		setmetatile(6,27,0x2A8,1)
+		setmetatile(7,27,0x2A9,1)
+		setmetatile(18,20,0x2A0,1)
+		setmetatile(19,20,0x2A1,1)
+		setmetatile(18,21,0x2A8,1)
+		setmetatile(19,21,0x2A9,1)
+		setmetatile(22,30,0x2B0,1)
+		setmetatile(23,30,0x2B1,1)
+		setmetatile(22,31,0x2B8,1)
+		setmetatile(23,31,0x2B9,1)
+		setmetatile(10,38,0x2B0,1)
+		setmetatile(11,38,0x2B1,1)
+		setmetatile(10,39,0x2B8,1)
+		setmetatile(11,39,0x2B9,1)
+		setmetatile(26,6,0x2B0,1)
+		setmetatile(27,6,0x2B1,1)
+		setmetatile(26,7,0x2B8,1)
+		setmetatile(27,7,0x2B9,1)
+		setmetatile(0,6,0x2A0,1)
+		setmetatile(1,6,0x2A1,1)
+		setmetatile(0,7,0x2A8,1)
+		setmetatile(1,7,0x2A9,1)
+		setmetatile(4,15,0x1E1,1)
+		setmetatile(5,15,0x1E2,1)
+		setmetatile(4,16,0x1E9,1)
+		setmetatile(5,16,0x1EA,1)
+		setmetatile(14,6,0x2A0,1)
+		setmetatile(15,6,0x2A1,1)
+		setmetatile(14,7,0x2A8,1)
+		setmetatile(15,7,0x2A9,1)
+		setmetatile(22,6,0x2A0,1)
+		setmetatile(23,6,0x2A1,1)
+		setmetatile(22,7,0x2A8,1)
+		setmetatile(23,7,0x2A9,1)
+		setmetatile(9,3,0x1E1,1)
+		setmetatile(10,3,0x1E2,1)
+		setmetatile(9,4,0x1E9,1)
+		setmetatile(10,4,0x1EA,1)
+		setmetatile(12,10,0x2B0,1)
+		setmetatile(13,10,0x2B1,1)
+		setmetatile(12,11,0x2B8,1)
+		setmetatile(13,11,0x2B9,1)
+		setmetatile(6,6,0x2B0,1)
+		setmetatile(7,6,0x2B1,1)
+		setmetatile(6,7,0x2B8,1)
+		setmetatile(7,7,0x2B9,1)
+		setmetatile(0,36,0x0E0,1)
+		setmetatile(1,36,0x0E1,1)
+		setmetatile(0,37,0x0E8,1)
+		setmetatile(1,37,0x0E9,1)
+		setmetatile(2,36,0x340,0)
+		setmetatile(2,37,0x348,0)
+}
+	elif(var(LUXURA_TRAGEDY)==23){
+        addobject(7)
+		addobject(8)
+		addobject(9)
+		removeobject(1)
+		removeobject(2)
+        removeobject(3)
+		removeobject(4)
+		removeobject(5)
+        setflag(FLAG_UNUSED_0x4A7)
+		setflag(FLAG_UNUSED_0x4A8)
+		clearflag(FLAG_UNUSED_0x4A6)
+		addobject(10)
+		addobject(11)
+		clearflag(FLAG_ALISTAIR_ARRIVE)
+	    setmetatile(7,5,0x2CF,1)
+		setmetatile(6,26,0x2A0,1)
+		setmetatile(7,26,0x2A1,1)
+		setmetatile(6,27,0x2A8,1)
+		setmetatile(7,27,0x2A9,1)
+		setmetatile(18,20,0x2A0,1)
+		setmetatile(19,20,0x2A1,1)
+		setmetatile(18,21,0x2A8,1)
+		setmetatile(19,21,0x2A9,1)
+		setmetatile(22,30,0x2B0,1)
+		setmetatile(23,30,0x2B1,1)
+		setmetatile(22,31,0x2B8,1)
+		setmetatile(23,31,0x2B9,1)
+		setmetatile(10,38,0x2B0,1)
+		setmetatile(11,38,0x2B1,1)
+		setmetatile(10,39,0x2B8,1)
+		setmetatile(11,39,0x2B9,1)
+		setmetatile(26,6,0x2B0,1)
+		setmetatile(27,6,0x2B1,1)
+		setmetatile(26,7,0x2B8,1)
+		setmetatile(27,7,0x2B9,1)
+		setmetatile(0,6,0x2A0,1)
+		setmetatile(1,6,0x2A1,1)
+		setmetatile(0,7,0x2A8,1)
+		setmetatile(1,7,0x2A9,1)
+		setmetatile(4,15,0x1E1,1)
+		setmetatile(5,15,0x1E2,1)
+		setmetatile(4,16,0x1E9,1)
+		setmetatile(5,16,0x1EA,1)
+		setmetatile(14,6,0x2A0,1)
+		setmetatile(15,6,0x2A1,1)
+		setmetatile(14,7,0x2A8,1)
+		setmetatile(15,7,0x2A9,1)
+		setmetatile(22,6,0x2A0,1)
+		setmetatile(23,6,0x2A1,1)
+		setmetatile(22,7,0x2A8,1)
+		setmetatile(23,7,0x2A9,1)
+		setmetatile(9,3,0x1E1,1)
+		setmetatile(10,3,0x1E2,1)
+		setmetatile(9,4,0x1E9,1)
+		setmetatile(10,4,0x1EA,1)
+		setmetatile(12,10,0x2B0,1)
+		setmetatile(13,10,0x2B1,1)
+		setmetatile(12,11,0x2B8,1)
+		setmetatile(13,11,0x2B9,1)
+		setmetatile(6,6,0x2B0,1)
+		setmetatile(7,6,0x2B1,1)
+		setmetatile(6,7,0x2B8,1)
+		setmetatile(7,7,0x2B9,1)
+		setmetatile(0,36,0x0E0,1)
+		setmetatile(1,36,0x0E1,1)
+		setmetatile(0,37,0x0E8,1)
+		setmetatile(1,37,0x0E9,1)
+		setmetatile(2,36,0x340,0)
+		setmetatile(2,37,0x348,0)
+}
+elif(var(LUXURA_TRAGEDY)>23){
+        addobject(7)
+		addobject(8)
+		addobject(9)
+		removeobject(1)
+		removeobject(2)
+        removeobject(3)
+		removeobject(4)
+		removeobject(5)
+        setflag(FLAG_UNUSED_0x4A7)
+		setflag(FLAG_UNUSED_0x4A8)
+		clearflag(FLAG_UNUSED_0x4A6)
+		removeobject(10)
+		removeobject(11)
+		setflag(FLAG_ALISTAIR_ARRIVE)
 	    setmetatile(7,5,0x2CF,1)
 		setmetatile(6,26,0x2A0,1)
 		setmetatile(7,26,0x2A1,1)
@@ -411,4 +698,59 @@ movement rop {
 movement rope {
 	walk_down
 	
+}
+script alistairarrive4 {
+	lock
+	special(HealPlayerParty)
+	namebox(unknown)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}No...This wasn't supposed to happen.\pAurther, Elysia.......How could this......!\p"),MSGBOX_AUTOCLOSE)
+    hidenamebox
+    waitmessage
+	applymovement(11,exclam)
+	applymovement(10,traces1)
+	msgbox(format("{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}The boy......he escaped. His emotions are vivid, almost overwhelming.\pRage, sorrow, despair.\nI can sense where he went."),MSGBOX_AUTOCLOSE)
+	applymovement(10,exclam)
+	namebox(unknown)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar survived?\pThat's all that matters now.\nIf he is out there I'll find him no matter what happens!\pLet's go!"),MSGBOX_AUTOCLOSE)
+    hidenamebox
+	applymovement(0xFF,alistairgone3)
+	applymovement(10,alistairgone)
+    applymovement(11,alistairgone1)
+	waitmovement(0)
+	removeobject(10)
+	removeobject(11)
+	setflag(FLAG_ALISTAIR_ARRIVE)
+	playbgm(MUS_PL_TITLE,FALSE)
+	special(SpawnCameraObject)
+	applymovement(0x7F,alistairgone2)
+	waitmovement(0)
+	setvar(VAR_0x8000,6)
+	special(DrawMugshot)
+	waitbuttonpress
+	setvar(VAR_0x8000,7)
+	special(DrawMugshot)
+    waitbuttonpress
+	special(ClearMugshot)
+	setvar(LUXURA_TRAGEDY,24)
+	clearflag(FLAG_AFTERTRAGEDY_MUSIC)
+	warpsilent(MAP_NEWHOUSE,2,24)
+}
+movement alistairgone3 {
+	walk_down*8
+	
+}
+movement alistairgone {
+	walk_left
+	walk_down*8
+	set_invisible
+}
+movement alistairgone1 {
+	walk_up
+	walk_left
+	walk_down*8
+	set_invisible
+}
+movement alistairgone2 {
+	walk_up*35
+	walk_down*24
 }

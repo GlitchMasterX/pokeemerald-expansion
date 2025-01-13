@@ -1,8 +1,22 @@
 mapscripts Sparkbase_MapScripts {
-    MAP_SCRIPT_ON_FRAME_TABLE[
+    MAP_SCRIPT_ON_LOAD:Ruins
 
-    ]
-
+}
+script Ruins {
+    if(var(LUXURA_TRAGEDY)>21){
+    removeobject(1)
+    removeobject(3)
+    removeobject(5)
+    removeobject(6)
+    removeobject(7)
+    removeobject(8)
+    removeobject(9)
+    removeobject(10)
+    removeobject(11)
+    removeobject(12)
+    removeobject(13)
+    setflag(FLAG_UNUSED_0x4B8)
+}
 }
 script spark2 {
     trainerbattle_single(SPARK_GRUNT_2, Grunt2_Intro, Grunt2_Outro)
@@ -196,8 +210,7 @@ script Surgebattle {
     waitmovement(0)
     removeobject(11)
     removeobject(12)
-    removeobject(13)
-    setflag(FLAG_UNUSED_0x4B8)    
+    removeobject(13)   
     namebox(Xylar)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Surge, you were just the start. This {COLOR RED}{SHADOW LIGHT_GRAY}Crimson Requiem {COLOR BLUE}{SHADOW LIGHT_GRAY}I've begun will be a symphony of retribution. Your death marks the first note in a melody of vengeance that will echo until everyone who wronged me has met their end. This is only the beginning."),MSGBOX_AUTOCLOSE)
     hidenamebox
@@ -207,13 +220,10 @@ script Surgebattle {
     namebox(Xylar)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I'm sorry, Mother... I failed you. I failed Father. But this… this isn't the end. I swear, they'll pay with everything they have. They stole you from me, and now… they'll face my wrath.\pThey think they can reshape this world, make it perfect by taking everything I hold dear. But I'll show them what true destruction is. I'll bring them the blood and ruin they deserve.\pThis is just the beginning... the {COLOR RED}{SHADOW LIGHT_GRAY}Crimson Requiem{COLOR BLUE}{SHADOW LIGHT_GRAY} will echo through their perfect world until it all crumbles into dust. They'll wish they'd never taken you away. I'll end them all... one by one.\pLet's go Mom."),MSGBOX_AUTOCLOSE)
     hidenamebox
-    clearflag(FLAG_AFTERTRAGEDY_MUSIC)
     fadescreen(FADE_TO_BLACK)
-    playbgm(MUS_RG_TEACHY_TV_MENU,TRUE)
-    msgbox(format("Hey there, Trainer! This is where Beta 1 of our journey comes to an end. I hope you've enjoyed the adventure so far. We're working hard to bring you the next chapter, and your support means everything to us."),MSGBOX_AUTOCLOSE)
-    msgbox(format("If you liked what you've seen, please consider sharing your thoughts and spreading the word. Your feedback will help make this game even better. Until next time...stay strong, and thanks for playing!"))
-    warp(MAP_NEWHOUSE,2,24)
+    msgbox(format("A few days later........"),MSGBOX_AUTOCLOSE)
     destroyfollower
+    warpsilent(MAP_LUXURA_ISLAND,11,10)
     fadescreen(FADE_FROM_BLACK)   
     setvar(LUXURA_TRAGEDY,21)
     release

@@ -2,12 +2,75 @@ raw `
 Luxurawork_MapScripts::
 map_script MAP_SCRIPT_ON_LOAD, Luxurawork_MapScripts_MAP_SCRIPT_ON_LOAD
 map_script MAP_SCRIPT_ON_FRAME_TABLE, Luxurawork_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
-
+map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE,  Luxurawork_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
 	.byte 0
 Luxurawork_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 map_script_2 LUXURA_TRAGEDY, 11, trage
+map_script_2 LUXURA_TRAGEDY, 22, trageflash
+.2byte 0
+Luxurawork_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
+map_script_2 LUXURA_TRAGEDY, 22, flash
 .2byte 0
 `
+script trageflash {
+	lockall
+	applymovement(9,players)
+	applymovement(8,players)
+	waitmovement(0)
+	special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA,mo)
+	waitmovement(0)
+	applymovement(14,visible)
+	waitmovement(0)
+	applymovement(10,invisible)
+	waitmovement(0)
+	playse(SE_WARP_IN)
+	waitse
+	applymovement(14,invisible)
+	waitmovement(0)
+	applymovement(10,finish)
+	applymovement(14,finish)
+	waitmovement(0)
+	applymovement(14,visible)
+	waitmovement(0)
+	playse(SE_WARP_OUT)
+	waitse
+	applymovement(10,visible)
+	waitmovement(0)
+	applymovement(14,invisible)
+    applymovement(10,atk)
+	playse(SE_M_TAKE_DOWN)
+	applymovement(OBJ_EVENT_ID_CAMERA,moq)	
+	applymovement(11,faint)
+	waitmovement(0)
+	playmoncry(SPECIES_RAICHU,CRY_MODE_FAINT)
+	applymovement(12,visible)
+	applymovement(12,invisible)
+	waitmovement(0)
+	applymovement(OBJ_EVENT_ID_CAMERA,notal)
+	waitmovement(0)
+	applymovement(15,capture)
+	waitmovement(0)
+	playse(SE_M_BITE)
+	waitse
+	applymovement(10,run)
+	playbgm(MUS_HG_ENCOUNTER_SAGE,TRUE)
+	applymovement(16,visible)
+	applymovement(17,invisible)
+    fadescreen(FADE_FROM_BLACK)
+	fadescreenspeed(FADE_TO_WHITE,4)
+	fadescreenspeed(FADE_FROM_WHITE,4)
+	fadescreenspeed(FADE_TO_WHITE,4)
+	fadescreenspeed(FADE_FROM_WHITE,4)
+	fadescreen(FADE_TO_BLACK)
+	call(Script_RemoveTint)
+	setvar(LUXURA_TRAGEDY,23)
+	warpsilent(MAP_LUXURA_INDOOR,14,33)
+	
+}
+script flash {
+	call(Script_SetGrayscaleTint)
+}
 script Luxurawork_MapScripts_MAP_SCRIPT_ON_LOAD {
 if (var(LUXURA_TRAGEDY) < 5) {
     removeobject(4)
