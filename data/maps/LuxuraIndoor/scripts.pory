@@ -720,6 +720,7 @@ script alistairarrive4 {
 	removeobject(10)
 	removeobject(11)
 	setflag(FLAG_ALISTAIR_ARRIVE)
+	createvobject(OBJ_EVENT_GFX_SPY,12,15,8,4,DIR_SOUTH)
 	playbgm(MUS_PL_TITLE,FALSE)
 	special(SpawnCameraObject)
 	applymovement(0x7F,alistairgone2)
