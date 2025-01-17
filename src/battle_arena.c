@@ -370,7 +370,7 @@ void BattleArena_AddMindPoints(u8 battler)
     {
         gBattleStruct->arenaMindPoints[battler]--;
     }
-    else if (!IsBattleMoveStatus(gCurrentMove)
+    else if (!IS_MOVE_STATUS(gCurrentMove)
           && effect != EFFECT_COUNTER
           && effect != EFFECT_MIRROR_COAT
           && effect != EFFECT_METAL_BURST

@@ -309,7 +309,7 @@ void HandleAction_UseMove(void)
     moveType = GetBattleMoveType(gCurrentMove);
 
     // check Z-Move used
-    if (GetActiveGimmick(gBattlerAttacker) == GIMMICK_Z_MOVE && !IsBattleMoveStatus(gCurrentMove) && !IsZMove(gCurrentMove))
+    if (GetActiveGimmick(gBattlerAttacker) == GIMMICK_Z_MOVE && !IS_MOVE_STATUS(gCurrentMove) && !IsZMove(gCurrentMove))
     {
         gBattleStruct->categoryOverride = GetMoveCategory(gCurrentMove);
         gCurrentMove = gChosenMove = GetUsableZMove(gBattlerAttacker, gCurrentMove);
@@ -1272,7 +1272,7 @@ u32 TrySetCantSelectMoveBattleScript(u32 battler)
         }
     }
 
-    if (GetActiveGimmick(gBattlerAttacker) != GIMMICK_Z_MOVE && gDisableStructs[battler].tauntTimer != 0 && IsBattleMoveStatus(move))
+    if (GetActiveGimmick(gBattlerAttacker) != GIMMICK_Z_MOVE && gDisableStructs[battler].tauntTimer != 0 && IS_MOVE_STATUS(move))
     {
         if ((GetActiveGimmick(gBattlerAttacker) == GIMMICK_DYNAMAX))
             gCurrentMove = MOVE_MAX_GUARD;
@@ -1412,7 +1412,7 @@ u32 TrySetCantSelectMoveBattleScript(u32 battler)
             limitations++;
         }
     }
-    else if (holdEffect == HOLD_EFFECT_ASSAULT_VEST && IsBattleMoveStatus(move) && moveEffect != EFFECT_ME_FIRST)
+    else if (holdEffect == HOLD_EFFECT_ASSAULT_VEST && IS_MOVE_STATUS(move) && moveEffect != EFFECT_ME_FIRST)
     {
         if ((GetActiveGimmick(gBattlerAttacker) == GIMMICK_DYNAMAX))
             gCurrentMove = MOVE_MAX_GUARD;
@@ -1506,7 +1506,7 @@ u8 CheckMoveLimitations(u32 battler, u8 unusableMoves, u16 check)
         else if (check & MOVE_LIMITATION_TORMENTED && move == gLastMoves[battler] && gBattleMons[battler].status2 & STATUS2_TORMENT)
             unusableMoves |= 1u << i;
         // Taunt
-        else if (check & MOVE_LIMITATION_TAUNT && gDisableStructs[battler].tauntTimer && IsBattleMoveStatus(move))
+        else if (check & MOVE_LIMITATION_TAUNT && gDisableStructs[battler].tauntTimer && IS_MOVE_STATUS(move))
             unusableMoves |= 1u << i;
         // Imprison
         else if (check & MOVE_LIMITATION_IMPRISON && GetImprisonedMovesCount(battler, move))
@@ -1518,7 +1518,7 @@ u8 CheckMoveLimitations(u32 battler, u8 unusableMoves, u16 check)
         else if (check & MOVE_LIMITATION_CHOICE_ITEM && HOLD_EFFECT_CHOICE(holdEffect) && *choicedMove != MOVE_NONE && *choicedMove != MOVE_UNAVAILABLE && *choicedMove != move)
             unusableMoves |= 1u << i;
         // Assault Vest
-        else if (check & MOVE_LIMITATION_ASSAULT_VEST && holdEffect == HOLD_EFFECT_ASSAULT_VEST && IsBattleMoveStatus(move) && moveEffect != EFFECT_ME_FIRST)
+        else if (check & MOVE_LIMITATION_ASSAULT_VEST && holdEffect == HOLD_EFFECT_ASSAULT_VEST && IS_MOVE_STATUS(move) && moveEffect != EFFECT_ME_FIRST)
             unusableMoves |= 1u << i;
         // Gravity
         else if (check & MOVE_LIMITATION_GRAVITY && IsGravityPreventingMove(move))
@@ -3408,7 +3408,7 @@ static void CancellerThroatChop(u32 *effect)
 
 static void CancellerTaunted(u32 *effect)
 {
-    if (GetActiveGimmick(gBattlerAttacker) != GIMMICK_Z_MOVE && gDisableStructs[gBattlerAttacker].tauntTimer && IsBattleMoveStatus(gCurrentMove))
+    if (GetActiveGimmick(gBattlerAttacker) != GIMMICK_Z_MOVE && gDisableStructs[gBattlerAttacker].tauntTimer && IS_MOVE_STATUS(gCurrentMove))
     {
         gProtectStructs[gBattlerAttacker].usedTauntedMove = TRUE;
         CancelMultiTurnMoves(gBattlerAttacker);
@@ -4253,7 +4253,7 @@ u32 CanAbilityBlockMove(u32 battlerAtk, u32 battlerDef, u32 move, u32 abilityDef
         }
         break;
     case ABILITY_GOOD_AS_GOLD:
-        if (IsBattleMoveStatus(move))
+        if (IS_MOVE_STATUS(move))
         {
             u32 moveTarget = GetBattlerMoveTargetType(battlerAtk, move);
             if (!(moveTarget & MOVE_TARGET_OPPONENTS_FIELD) && !(moveTarget & MOVE_TARGET_ALL_BATTLERS))
@@ -5500,7 +5500,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             default:
                 if (GetChosenMovePriority(gBattlerAttacker) > 0
                  && BlocksPrankster(move, gBattlerAttacker, gBattlerTarget, TRUE)
-                 && !(IsBattleMoveStatus(move) && (gLastUsedAbility == ABILITY_MAGIC_BOUNCE || gProtectStructs[gBattlerTarget].bounceMove)))
+                 && !(IS_MOVE_STATUS(move) && (gLastUsedAbility == ABILITY_MAGIC_BOUNCE || gProtectStructs[gBattlerTarget].bounceMove)))
                 {
                     if (!IsDoubleBattle()
                     || !(GetBattlerMoveTargetType(gBattlerAttacker, move) & (MOVE_TARGET_BOTH | MOVE_TARGET_FOES_AND_ALLY)))
@@ -5811,7 +5811,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
         case ABILITY_COLOR_CHANGE:
             if (MoveResultHasEffect(battler)
              && move != MOVE_STRUGGLE
-             && !IsBattleMoveStatus(move)
+             && !IS_MOVE_STATUS(move)
              && IsBattlerTurnDamaged(gBattlerTarget)
              && !IS_BATTLER_OF_TYPE(battler, moveType)
              && moveType != TYPE_STELLAR
@@ -6657,7 +6657,7 @@ bool32 IsMoldBreakerTypeAbility(u32 battler, u32 ability)
         return FALSE;
 
     return (ability == ABILITY_MOLD_BREAKER || ability == ABILITY_TERAVOLT || ability == ABILITY_TURBOBLAZE
-        || (ability == ABILITY_MYCELIUM_MIGHT && IsBattleMoveStatus(gCurrentMove)));
+        || (ability == ABILITY_MYCELIUM_MIGHT && IS_MOVE_STATUS(gCurrentMove)));
 }
 
 static inline bool32 CanBreakThroughAbility(u32 battlerAtk, u32 battlerDef, u32 ability)
@@ -8808,7 +8808,7 @@ bool32 IsBattlerProtected(u32 battlerAtk, u32 battlerDef, u32 move)
           && IsMoveMakingContact(move, gBattlerAttacker)
           && GetBattlerAbility(gBattlerAttacker) == ABILITY_UNSEEN_FIST)
         isProtected = FALSE;
-    else if (gSideStatuses[GetBattlerSide(battlerDef)] & SIDE_STATUS_CRAFTY_SHIELD && IsBattleMoveStatus(move) && GetMoveEffect(move) != EFFECT_COACHING)
+    else if (gSideStatuses[GetBattlerSide(battlerDef)] & SIDE_STATUS_CRAFTY_SHIELD && IS_MOVE_STATUS(move) && GetMoveEffect(move) != EFFECT_COACHING)
         isProtected = TRUE;
     else if (MoveIgnoresProtect(move))
         isProtected = FALSE;
@@ -8821,11 +8821,11 @@ bool32 IsBattlerProtected(u32 battlerAtk, u32 battlerDef, u32 move)
         isProtected = TRUE;
     else if (gProtectStructs[battlerDef].burningBulwarked)
         isProtected = TRUE;
-    else if ((gProtectStructs[battlerDef].obstructed || gProtectStructs[battlerDef].silkTrapped) && !IsBattleMoveStatus(move))
+    else if ((gProtectStructs[battlerDef].obstructed || gProtectStructs[battlerDef].silkTrapped) && !IS_MOVE_STATUS(move))
         isProtected = TRUE;
     else if (gProtectStructs[battlerDef].spikyShielded)
         isProtected = TRUE;
-    else if (gProtectStructs[battlerDef].kingsShielded && !IsBattleMoveStatus(move))
+    else if (gProtectStructs[battlerDef].kingsShielded && !IS_MOVE_STATUS(move))
         isProtected = TRUE;
     else if (gProtectStructs[battlerDef].maxGuarded)
         isProtected = TRUE;
@@ -8833,7 +8833,7 @@ bool32 IsBattlerProtected(u32 battlerAtk, u32 battlerDef, u32 move)
              && GetChosenMovePriority(gBattlerAttacker) > 0)
         isProtected = TRUE;
     else if (gSideStatuses[GetBattlerSide(battlerDef)] & SIDE_STATUS_MAT_BLOCK
-             && !IsBattleMoveStatus(move))
+             && !IS_MOVE_STATUS(move))
         isProtected = TRUE;
     else
         isProtected = FALSE;
@@ -11404,7 +11404,7 @@ u8 GetBattleMoveCategory(u32 moveId)
     if (B_PHYSICAL_SPECIAL_SPLIT >= GEN_4)
         return GetMoveCategory(moveId);
 
-    if (IsBattleMoveStatus(moveId))
+    if (IS_MOVE_STATUS(moveId))
         return DAMAGE_CATEGORY_STATUS;
     return gTypesInfo[GetBattleMoveType(moveId)].damageCategory;
 }

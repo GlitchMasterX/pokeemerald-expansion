@@ -861,7 +861,7 @@ static inline bool32 IsBattleMoveSpecial(u32 move)
     return GetBattleMoveCategory(move) == DAMAGE_CATEGORY_SPECIAL;
 }
 
-static inline bool32 IsBattleMoveStatus(u32 move)
+static inline bool32 IS_MOVE_STATUS(u32 move)
 {
     return GetMoveCategory(move) == DAMAGE_CATEGORY_STATUS;
 }
