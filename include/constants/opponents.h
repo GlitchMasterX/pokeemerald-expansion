@@ -12,7 +12,7 @@
 #define SPARK_GRUNT_5       6
 #define SPARK_GRUNT_6       7
 #define SPARK_ADMIN_SURGE       8
-#define TRAINER_GABRIELLE_1                   9
+#define ACADEMY_HEAD                   9
 #define TRAINER_GRUNT_PETALBURG_WOODS        10
 #define TRAINER_MARCEL                       11
 #define TRAINER_ALBERTO                      12

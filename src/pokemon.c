@@ -5785,6 +5785,8 @@ u16 GetBattleBGM(void)
             return MUS_VS_AQUA_MAGMA;
         case TRAINER_CLASS_SPARK_ADMIN:
             return MUS_DP_VS_GALACTIC_COMMANDER;
+        case TRAINER_CLASS_ACADEMY_HEAD:
+            return MUS_PL_VS_FRONTIER_BRAIN;
         case TRAINER_CLASS_LEADER:
             return MUS_VS_GYM_LEADER;
         case TRAINER_CLASS_CHAMPION:

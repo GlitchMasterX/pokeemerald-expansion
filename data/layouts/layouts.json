@@ -784,8 +784,8 @@
     {
       "id": "LAYOUT_ASTRALIS_ACADEMY_GYM",
       "name": "AstralisAcademy_Gym_Layout",
-      "width": 47,
-      "height": 81,
+      "width": 46,
+      "height": 60,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_PetalburgGym",
       "border_filepath": "data/layouts/AstralisAcademy_Gym/border.bin",

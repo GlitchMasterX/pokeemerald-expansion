@@ -117,7 +117,7 @@
 #define LUXURA_TRAGEDY                                   0x4061 // Unused Var start
 #define VAR_ROUTE103_STATE                               0x4062 // Unused Var luxura work
 #define VAR_ROUTE104_STATE                               0x4063
-#define VAR_ROUTE105_STATE                               0x4064 // Unused Var
+#define ACADEMY_START                                    0x4064 // Unused Var
 #define VAR_ROUTE106_STATE                               0x4065 // Unused Var
 #define VAR_ROUTE107_STATE                               0x4066 // Unused Var
 #define VAR_ROUTE108_STATE                               0x4067 // Unused Var

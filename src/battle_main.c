@@ -379,6 +379,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_SPARK_ADMIN] = { _("SPARK ADMIN"),20 },
     [TRAINER_CLASS_SPARK_LEADER] = { _("SPARK LEADER"),50 },
     [TRAINER_CLASS_SHADOW_SLAYER] = { _("SHADOW"), 20 },
+    [TRAINER_CLASS_ACADEMY_HEAD] = { _("ACADEMY HEAD"),100 },
 
 };
 
@@ -5476,6 +5477,8 @@ static void HandleEndTurn_BattleWon(void)
 
         switch (GetTrainerClassFromId(gTrainerBattleOpponent_A))
         {
+        case TRAINER_CLASS_ACADEMY_HEAD:
+            PlayBGM(MUS_PL_VICTORY_FRONTIER_BRAIN);
         case TRAINER_CLASS_ELITE_FOUR:
         case TRAINER_CLASS_CHAMPION:
             PlayBGM(MUS_VICTORY_LEAGUE);

@@ -363,7 +363,8 @@
 #define TRAINER_CLASS_SPARK_ADMIN    0x43
 #define TRAINER_CLASS_SPARK_LEADER   0x44
 #define TRAINER_CLASS_SHADOW_SLAYER  0x45
-#define TRAINER_CLASS_COUNT          0x46
+#define TRAINER_CLASS_ACADEMY_HEAD  0x46
+#define TRAINER_CLASS_COUNT          0x47
 
 #define TRAINER_ENCOUNTER_MUSIC_MALE         0 // standard male encounter music
 #define TRAINER_ENCOUNTER_MUSIC_FEMALE       1 // standard female encounter music

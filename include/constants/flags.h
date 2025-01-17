@@ -1257,8 +1257,8 @@
 #define FLAG_UNUSED_0x4B7                                           0x4B7 // Unused Flag nurse healing luxura
 #define FLAG_UNUSED_0x4B8                                           0x4B8 // Unused Flag surgeded 
 #define FLAG_ALISTAIR_ARRIVE                                           0x4B9 // Unused Flag
-#define FLAG_UNUSED_0x4BA                                           0x4BA // Unused Flag
-#define FLAG_UNUSED_0x4BB                                           0x4BB // Unused Flag
+#define FLAG_ACADEMY_START                                           0x4BA // Unused Flag
+#define FLAG_TALK_GRAVE                                           0x4BB // Unused Flag
 #define FLAG_UNUSED_0x4BC                                           0x4BC // Unused Flag
 #define FLAG_UNUSED_0x4BD                                           0x4BD // Unused Flag
 #define FLAG_UNUSED_0x4BE                                           0x4BE // Unused Flag
