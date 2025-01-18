@@ -584,10 +584,10 @@
     {
       "id": "LAYOUT_HOUSE1",
       "name": "House1_Layout",
-      "width": 80,
-      "height": 80,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_PetalburgGym",
+      "width": 27,
+      "height": 40,
+      "primary_tileset": "gTileset_Academy",
+      "secondary_tileset": "gTileset_PokemonCenter",
       "border_filepath": "data/layouts/House1/border.bin",
       "blockdata_filepath": "data/layouts/House1/map.bin"
     },
@@ -794,9 +794,9 @@
     {
       "id": "LAYOUT_HOUSE_WITH_BED",
       "name": "HouseWithBed_Layout",
-      "width": 10,
-      "height": 8,
-      "primary_tileset": "gTileset_Building",
+      "width": 26,
+      "height": 34,
+      "primary_tileset": "gTileset_Academy",
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/HouseWithBed/border.bin",
       "blockdata_filepath": "data/layouts/HouseWithBed/map.bin"
@@ -4600,6 +4600,16 @@
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/newhouse/border.bin",
       "blockdata_filepath": "data/layouts/newhouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_ACADEMY_LIB",
+      "name": "Academy_Lib_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_building2",
+      "secondary_tileset": "gTileset_Academy_lib",
+      "border_filepath": "data/layouts/Academy_Lib/border.bin",
+      "blockdata_filepath": "data/layouts/Academy_Lib/map.bin"
     }
   ]
 }

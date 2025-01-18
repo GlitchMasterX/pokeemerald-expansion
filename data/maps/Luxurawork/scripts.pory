@@ -2,14 +2,10 @@ raw `
 Luxurawork_MapScripts::
 map_script MAP_SCRIPT_ON_LOAD, Luxurawork_MapScripts_MAP_SCRIPT_ON_LOAD
 map_script MAP_SCRIPT_ON_FRAME_TABLE, Luxurawork_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
-map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE,  Luxurawork_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
 	.byte 0
 Luxurawork_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 map_script_2 LUXURA_TRAGEDY, 11, trage
 map_script_2 LUXURA_TRAGEDY, 22, trageflash
-.2byte 0
-Luxurawork_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
-map_script_2 LUXURA_TRAGEDY, 22, flash
 .2byte 0
 `
 script trageflash {
@@ -72,13 +68,9 @@ script trageflash {
 	fadescreenspeed(FADE_TO_WHITE,4)
 	fadescreenspeed(FADE_FROM_WHITE,4)
 	fadescreen(FADE_TO_BLACK)
-	call(Script_RemoveTint)
 	setvar(LUXURA_TRAGEDY,23)
 	warpsilent(MAP_LUXURA_INDOOR,14,33)
 	
-}
-script flash {
-	call(Script_SetGrayscaleTint)
 }
 script Luxurawork_MapScripts_MAP_SCRIPT_ON_LOAD {
 if (var(LUXURA_TRAGEDY) < 5) {

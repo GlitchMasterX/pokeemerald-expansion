@@ -1193,3 +1193,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/newhouse/scripts.inc"
 	.include "data/scripts/dexnav.inc"
 
+
+	.include "data/maps/Academy_Lib/scripts.inc"

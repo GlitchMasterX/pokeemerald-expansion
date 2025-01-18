@@ -180,7 +180,8 @@
     "AstralisAcademy_House2",
     "AstralisAcademy_PokemonCenter_1F",
     "AstralisAcademy_PokemonCenter_2F",
-    "AstralisAcademy_Mart"
+    "AstralisAcademy_Mart",
+    "Academy_Lib"
   ],
   "gMapGroup_IndoorSlateport": [
     "SlateportCity_SternsShipyard_1F",

@@ -1787,3 +1787,41 @@ const u16 gTilesetPalettes_cave1[][16] =
 };
 
 const u32 gTilesetTiles_cave1[] = INCBIN_U32("data/tilesets/secondary/cave_1/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_Academy[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/academy/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/academy/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/academy/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/academy/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/academy/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/academy/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/academy/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/academy/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/academy/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/academy/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/academy/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/academy/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/academy/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_Academy[] = INCBIN_U32("data/tilesets/primary/academy/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_Academy_lib[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/academy_lib/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/academy_lib/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/academy_lib/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/academy_lib/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/academy_lib/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/academy_lib/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/academy_lib/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/academy_lib/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/academy_lib/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/academy_lib/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/academy_lib/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/academy_lib/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/academy_lib/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_Academy_lib[] = INCBIN_U32("data/tilesets/secondary/academy_lib/tiles.4bpp.lz");
