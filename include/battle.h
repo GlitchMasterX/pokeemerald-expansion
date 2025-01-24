@@ -820,26 +820,8 @@ struct BattleStruct
     u8 redCardActivates:1;
     u8 padding1:7;
     u8 usedEjectItem;
-    u8 monCausingSleepClause[NUM_BATTLE_SIDES]; // Stores which pokemon on a given side is causing Sleep Clause to be active as the mon's index in the party
-    u8 sleepClauseEffectExempt:4; // Stores whether effect should be exempt from triggering Sleep Clause (Effect Spore)
-    u8 usedMicleBerry:4;
-    u8 pursuitTarget:4; // Each battler as a bit.
-    u8 pursuitSwitchByMove:1;
-    u8 pursuitStoredSwitch; // Stored id for the Pursuit target's switch
-    s32 battlerExpReward;
-
-    // Simultaneous hp reduction for spread moves
-    s32 moveDamage[MAX_BATTLERS_COUNT];
-    s32 critChance[MAX_BATTLERS_COUNT];
-    u16 moveResultFlags[MAX_BATTLERS_COUNT];
-    u8 missStringId[MAX_BATTLERS_COUNT];
-    u8 noResultString[MAX_BATTLERS_COUNT];
-    u8 doneDoublesSpreadHit:1;
-    u8 calculatedDamageDone:1;
-    u8 calculatedSpreadMoveAccuracy:1;
-    u8 printedStrongWindsWeakenedAttack:1;
-    u8 numSpreadTargets:2;
-    u8 padding2:2;
+    u8 usedMicleBerry;
+    u8 trainerSlideSpriteIds[MAX_BATTLERS_COUNT];
 };
 
 // The palaceFlags member of struct BattleStruct contains 1 flag per move to indicate which moves the AI should consider,

@@ -22,9 +22,9 @@ AI_SINGLE_BATTLE_TEST("AI prefers to set up a powerful Status over fainting a ta
 AI_SINGLE_BATTLE_TEST("AI will try to do damage on target instead of setting up hazards if target has a way to remove them")
 {
     GIVEN {
-        ASSUME(MoveHasAdditionalEffectSelf(MOVE_RAPID_SPIN, MOVE_EFFECT_RAPID_SPIN) == TRUE);
-        ASSUME(GetMoveEffect(MOVE_STEALTH_ROCK) == EFFECT_STEALTH_ROCK);
-        ASSUME(GetMovePower(MOVE_TACKLE) > 0);
+        ASSUME(gMovesInfo[MOVE_RAPID_SPIN].effect == EFFECT_RAPID_SPIN);
+        ASSUME(gMovesInfo[MOVE_STEALTH_ROCK].effect == EFFECT_STEALTH_ROCK);
+        ASSUME(gMovesInfo[MOVE_TACKLE].power > 0);
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_POWERFUL_STATUS | AI_FLAG_OMNISCIENT);
         PLAYER(SPECIES_WOBBUFFET) { HP(1); Moves(MOVE_RAPID_SPIN, MOVE_DEFOG, MOVE_CELEBRATE); }
         PLAYER(SPECIES_WYNAUT);
