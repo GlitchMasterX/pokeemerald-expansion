@@ -219,7 +219,10 @@ void ProcessImmediateTimeEvents(void)
 
                 #define paletteIndex period
                 for (paletteIndex = 0; paletteIndex < NUM_PALS_TOTAL; paletteIndex++)
+                    {
                     ApplyWeatherColorMapToPal(paletteIndex);
+                   UpdateSpritePaletteWithWeather(paletteIndex);
+               }
                 #undef paletteIndex
             }
         }
@@ -257,17 +260,17 @@ void ProcessImmediateTimeEvents(void)
 
 void LoadCompressedPalette_HandleDayNight(const u32 *src, u16 offset, u16 size, bool32 isDayNight)
 {
-    LZ77UnCompWram(src, gPaletteDecompressionBuffer);
+    LZ77UnCompWram(src, gDecompressionBuffer);
     if (isDayNight)
     {
-        CpuCopy16(gPaletteDecompressionBuffer, &sPlttBufferPreDN[offset], size);
+        CpuCopy16(gDecompressionBuffer, &sPlttBufferPreDN[offset], size);
         TintPaletteForDayNight(offset, size);
         CpuCopy16(&gPlttBufferUnfaded[offset], &gPlttBufferFaded[offset], size);
     }
     else
-    {
-        CpuCopy16(gPaletteDecompressionBuffer, &gPlttBufferUnfaded[offset], size);
-        CpuCopy16(gPaletteDecompressionBuffer, &gPlttBufferFaded[offset], size);
+    {   CpuFill16(RGB_BLACK, &sPlttBufferPreDN[offset], size);
+        CpuCopy16(gDecompressionBuffer, &gPlttBufferUnfaded[offset], size);
+        CpuCopy16(gDecompressionBuffer, &gPlttBufferFaded[offset], size);
     }
 }
 
@@ -281,6 +284,7 @@ void LoadPalette_HandleDayNight(const void *src, u16 offset, u16 size, bool32 is
     }
     else
     {
+        CpuFill16(RGB_BLACK, &sPlttBufferPreDN[offset], size);
         CpuCopy16(src, &gPlttBufferUnfaded[offset], size);
         CpuCopy16(src, &gPlttBufferFaded[offset], size);
     }

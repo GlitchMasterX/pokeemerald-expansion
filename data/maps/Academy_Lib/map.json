@@ -2,7 +2,7 @@
   "id": "MAP_ACADEMY_LIB",
   "name": "Academy_Lib",
   "layout": "LAYOUT_ACADEMY_LIB",
-  "music": "MUS_DUMMY",
+  "music": "MUS_DP_AMITY_SQUARE",
   "region_map_section": "MAPSEC_ASTRALIS_ACADEMY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -12,13 +12,19 @@
   "allow_running": true,
   "show_map_name": false,
   "floor_number": 0,
-  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "battle_scene": "MAP_BATTLE_SCENE_MAGMA",
   "connections": 0,
   "object_events": [
 
   ],
   "warp_events": [
-
+    {
+      "x": 20,
+      "y": 32,
+      "elevation": 0,
+      "dest_map": "MAP_ASTRALIS_ACADEMY_POKEMON_CENTER_1F",
+      "dest_warp_id": "16"
+    }
   ],
   "coord_events": [
 

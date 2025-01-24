@@ -716,6 +716,7 @@ const struct Tileset gTileset_BattleArena =
     .metatiles = gMetatiles_BattleArena,
     .metatileAttributes = gMetatileAttributes_BattleArena,
     .callback = NULL,
+    .paletteOverrides = gTilesetPalOverrides_Academy,
 };
 
 const struct Tileset gTileset_BattlePyramid =
@@ -848,6 +849,7 @@ const struct Tileset gTileset_luxuraisland =
     .metatiles = gMetatiles_luxuraisland,
     .metatileAttributes = gMetatileAttributes_luxuraisland,
     .callback = NULL,
+    .paletteOverrides = gTilesetPalOverrides_Luxura,
 };
 
 const struct Tileset gTileset_Luxuraindoor =

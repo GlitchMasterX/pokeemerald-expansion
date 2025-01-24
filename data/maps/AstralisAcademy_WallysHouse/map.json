@@ -18,7 +18,62 @@
 
   ],
   "warp_events": [
-
+    {
+      "x": 31,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_ASTRALIS_ACADEMY_POKEMON_CENTER_1F",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 31,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_ASTRALIS_ACADEMY_POKEMON_CENTER_1F",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 18,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_ASTRALIS_ACADEMY_POKEMON_CENTER_1F",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 18,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_ASTRALIS_ACADEMY_POKEMON_CENTER_1F",
+      "dest_warp_id": "7"
+    },
+    {
+      "x": 18,
+      "y": 33,
+      "elevation": 0,
+      "dest_map": "MAP_ASTRALIS_ACADEMY_POKEMON_CENTER_1F",
+      "dest_warp_id": "8"
+    },
+    {
+      "x": 18,
+      "y": 34,
+      "elevation": 0,
+      "dest_map": "MAP_ASTRALIS_ACADEMY_POKEMON_CENTER_1F",
+      "dest_warp_id": "9"
+    },
+    {
+      "x": 31,
+      "y": 33,
+      "elevation": 0,
+      "dest_map": "MAP_ASTRALIS_ACADEMY_POKEMON_CENTER_1F",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 31,
+      "y": 34,
+      "elevation": 0,
+      "dest_map": "MAP_ASTRALIS_ACADEMY_POKEMON_CENTER_1F",
+      "dest_warp_id": "11"
+    }
   ],
   "coord_events": [
 

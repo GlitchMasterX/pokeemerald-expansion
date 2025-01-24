@@ -1,8 +1,8 @@
 {
-  "id": "MAP_ASTRALIS_ACADEMY_MART",
-  "name": "AstralisAcademy_Mart",
-  "layout": "LAYOUT_MART",
-  "music": "MUS_B_PYRAMID",
+  "id": "MAP_NEW_MAP2",
+  "name": "NewMap2",
+  "layout": "LAYOUT_NEW_MAP2",
+  "music": "MUS_B_PYRAMID_TOP",
   "region_map_section": "MAPSEC_ASTRALIS_ACADEMY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -20,31 +20,45 @@
   "warp_events": [
     {
       "x": 4,
-      "y": 15,
+      "y": 8,
       "elevation": 0,
-      "dest_map": "MAP_NEW_MAP2",
+      "dest_map": "MAP_ASTRALIS_ACADEMY_MART",
       "dest_warp_id": "0"
     },
     {
       "x": 4,
-      "y": 14,
+      "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_NEW_MAP2",
+      "dest_map": "MAP_ASTRALIS_ACADEMY_MART",
       "dest_warp_id": "1"
     },
     {
-      "x": 25,
-      "y": 15,
+      "x": 15,
+      "y": 8,
       "elevation": 0,
-      "dest_map": "MAP_NEW_MAP2",
+      "dest_map": "MAP_ASTRALIS_ACADEMY_MART",
       "dest_warp_id": "2"
     },
     {
-      "x": 25,
-      "y": 14,
+      "x": 15,
+      "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_NEW_MAP2",
+      "dest_map": "MAP_ASTRALIS_ACADEMY_MART",
       "dest_warp_id": "3"
+    },
+    {
+      "x": 10,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_ASTRALIS_ACADEMY_HOUSE1",
+      "dest_warp_id": "8"
+    },
+    {
+      "x": 9,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_ASTRALIS_ACADEMY_HOUSE1",
+      "dest_warp_id": "8"
     }
   ],
   "coord_events": [

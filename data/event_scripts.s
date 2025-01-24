@@ -1196,3 +1196,5 @@ EventScript_VsSeekerChargingDone::
 
 
 	.include "data/maps/Academy_Lib/scripts.inc"
+
+	.include "data/maps/NewMap2/scripts.inc"

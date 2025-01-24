@@ -2,7 +2,7 @@
   "id": "MAP_ASTRALIS_ACADEMY_POKEMON_CENTER_2F",
   "name": "AstralisAcademy_PokemonCenter_2F",
   "layout": "LAYOUT_POKEMON_CENTER_2F",
-  "music": "MUS_POKE_CENTER",
+  "music": "MUS_DP_POKE_CENTER_DAY",
   "region_map_section": "MAPSEC_ASTRALIS_ACADEMY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -18,7 +18,20 @@
 
   ],
   "warp_events": [
-
+    {
+      "x": 6,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_ASTRALIS_ACADEMY_POKEMON_CENTER_1F",
+      "dest_warp_id": "17"
+    },
+    {
+      "x": 7,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_ASTRALIS_ACADEMY_POKEMON_CENTER_1F",
+      "dest_warp_id": "17"
+    }
   ],
   "coord_events": [
 
