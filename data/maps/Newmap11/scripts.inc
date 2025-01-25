@@ -281,57 +281,57 @@ traces2:
 # 145 "data/maps/Newmap11/scripts.pory"
 	delay_16
 # 146 "data/maps/Newmap11/scripts.pory"
-	delay_16
-# 147 "data/maps/Newmap11/scripts.pory"
 	emote_upset
 	step_end
 
-# 149 "data/maps/Newmap11/scripts.pory"
+# 148 "data/maps/Newmap11/scripts.pory"
 alisbattle1:
-# 150 "data/maps/Newmap11/scripts.pory"
+# 149 "data/maps/Newmap11/scripts.pory"
 	walk_down
-# 151 "data/maps/Newmap11/scripts.pory"
+# 150 "data/maps/Newmap11/scripts.pory"
 	face_up
 	step_end
 
-# 153 "data/maps/Newmap11/scripts.pory"
+# 152 "data/maps/Newmap11/scripts.pory"
 alisbattle2:
-# 154 "data/maps/Newmap11/scripts.pory"
+# 153 "data/maps/Newmap11/scripts.pory"
 	walk_up
 	step_end
 
-# 159 "data/maps/Newmap11/scripts.pory"
+# 158 "data/maps/Newmap11/scripts.pory"
 alisbattle:
-# 160 "data/maps/Newmap11/scripts.pory"
+# 159 "data/maps/Newmap11/scripts.pory"
 	walk_down
-# 161 "data/maps/Newmap11/scripts.pory"
+# 160 "data/maps/Newmap11/scripts.pory"
 	walk_left
-# 162 "data/maps/Newmap11/scripts.pory"
+# 161 "data/maps/Newmap11/scripts.pory"
 	face_down
 	step_end
 
-# 164 "data/maps/Newmap11/scripts.pory"
+# 163 "data/maps/Newmap11/scripts.pory"
 alistairarrive5:
-# 165 "data/maps/Newmap11/scripts.pory"
+# 164 "data/maps/Newmap11/scripts.pory"
+	walk_right
+# 164 "data/maps/Newmap11/scripts.pory"
+	walk_right
+# 164 "data/maps/Newmap11/scripts.pory"
+	walk_right
+# 164 "data/maps/Newmap11/scripts.pory"
 	walk_right
 # 165 "data/maps/Newmap11/scripts.pory"
-	walk_right
+	walk_up
 # 165 "data/maps/Newmap11/scripts.pory"
-	walk_right
+	walk_up
 # 165 "data/maps/Newmap11/scripts.pory"
-	walk_right
-# 166 "data/maps/Newmap11/scripts.pory"
 	walk_up
 # 166 "data/maps/Newmap11/scripts.pory"
-	walk_up
-# 166 "data/maps/Newmap11/scripts.pory"
-	walk_up
+	delay_16
 # 167 "data/maps/Newmap11/scripts.pory"
 	delay_16
 # 168 "data/maps/Newmap11/scripts.pory"
-	delay_16
-# 169 "data/maps/Newmap11/scripts.pory"
 	face_right
+# 169 "data/maps/Newmap11/scripts.pory"
+	delay_16
 # 170 "data/maps/Newmap11/scripts.pory"
 	delay_16
 # 171 "data/maps/Newmap11/scripts.pory"
@@ -339,39 +339,39 @@ alistairarrive5:
 # 172 "data/maps/Newmap11/scripts.pory"
 	delay_16
 # 173 "data/maps/Newmap11/scripts.pory"
-	delay_16
-# 174 "data/maps/Newmap11/scripts.pory"
 	walk_up
-# 174 "data/maps/Newmap11/scripts.pory"
+# 173 "data/maps/Newmap11/scripts.pory"
 	walk_up
-# 174 "data/maps/Newmap11/scripts.pory"
+# 173 "data/maps/Newmap11/scripts.pory"
 	walk_up
-# 174 "data/maps/Newmap11/scripts.pory"
+# 173 "data/maps/Newmap11/scripts.pory"
 	walk_up
 	step_end
 
-# 176 "data/maps/Newmap11/scripts.pory"
+# 175 "data/maps/Newmap11/scripts.pory"
 mewtwobeside:
-# 177 "data/maps/Newmap11/scripts.pory"
+# 176 "data/maps/Newmap11/scripts.pory"
 	delay_16
-# 178 "data/maps/Newmap11/scripts.pory"
+# 177 "data/maps/Newmap11/scripts.pory"
+	walk_right
+# 177 "data/maps/Newmap11/scripts.pory"
+	walk_right
+# 177 "data/maps/Newmap11/scripts.pory"
+	walk_right
+# 177 "data/maps/Newmap11/scripts.pory"
 	walk_right
 # 178 "data/maps/Newmap11/scripts.pory"
-	walk_right
+	walk_up
 # 178 "data/maps/Newmap11/scripts.pory"
-	walk_right
-# 178 "data/maps/Newmap11/scripts.pory"
-	walk_right
-# 179 "data/maps/Newmap11/scripts.pory"
 	walk_up
 # 179 "data/maps/Newmap11/scripts.pory"
-	walk_up
+	delay_16
 # 180 "data/maps/Newmap11/scripts.pory"
 	delay_16
 # 181 "data/maps/Newmap11/scripts.pory"
-	delay_16
-# 182 "data/maps/Newmap11/scripts.pory"
 	face_right
+# 182 "data/maps/Newmap11/scripts.pory"
+	delay_16
 # 183 "data/maps/Newmap11/scripts.pory"
 	delay_16
 # 184 "data/maps/Newmap11/scripts.pory"
@@ -379,188 +379,186 @@ mewtwobeside:
 # 185 "data/maps/Newmap11/scripts.pory"
 	delay_16
 # 186 "data/maps/Newmap11/scripts.pory"
-	delay_16
-# 187 "data/maps/Newmap11/scripts.pory"
+	walk_up
+# 186 "data/maps/Newmap11/scripts.pory"
+	walk_up
+# 186 "data/maps/Newmap11/scripts.pory"
 	walk_up
 # 187 "data/maps/Newmap11/scripts.pory"
-	walk_up
-# 187 "data/maps/Newmap11/scripts.pory"
+	walk_right
+# 188 "data/maps/Newmap11/scripts.pory"
 	walk_up
 # 188 "data/maps/Newmap11/scripts.pory"
-	walk_right
-# 189 "data/maps/Newmap11/scripts.pory"
-	walk_up
-# 189 "data/maps/Newmap11/scripts.pory"
 	walk_up
 	step_end
 
-# 191 "data/maps/Newmap11/scripts.pory"
+# 190 "data/maps/Newmap11/scripts.pory"
 alistai:
-# 192 "data/maps/Newmap11/scripts.pory"
+# 191 "data/maps/Newmap11/scripts.pory"
 	walk_up
-# 192 "data/maps/Newmap11/scripts.pory"
+# 191 "data/maps/Newmap11/scripts.pory"
 	walk_up
-# 192 "data/maps/Newmap11/scripts.pory"
+# 191 "data/maps/Newmap11/scripts.pory"
 	walk_up
-# 192 "data/maps/Newmap11/scripts.pory"
+# 191 "data/maps/Newmap11/scripts.pory"
 	walk_up
 	step_end
 
-# 194 "data/maps/Newmap11/scripts.pory"
+# 193 "data/maps/Newmap11/scripts.pory"
 alistairdailogue1:
-# 195 "data/maps/Newmap11/scripts.pory"
+# 194 "data/maps/Newmap11/scripts.pory"
 	emote_exclamation_mark
-# 196 "data/maps/Newmap11/scripts.pory"
+# 195 "data/maps/Newmap11/scripts.pory"
 	face_down
 	step_end
 
 mewtwogone1::
-# 200 "data/maps/Newmap11/scripts.pory"
+# 199 "data/maps/Newmap11/scripts.pory"
 	lock
-# 201 "data/maps/Newmap11/scripts.pory"
+# 200 "data/maps/Newmap11/scripts.pory"
 	playbgm MUS_B_ARENA, FALSE
-# 202 "data/maps/Newmap11/scripts.pory"
+# 201 "data/maps/Newmap11/scripts.pory"
 	faceplayer
+# 202 "data/maps/Newmap11/scripts.pory"
+	namebox mewtwo
 # 203 "data/maps/Newmap11/scripts.pory"
-	namebox mewtwo
-# 204 "data/maps/Newmap11/scripts.pory"
 	msgbox mewtwogone1_Text_0, MSGBOX_AUTOCLOSE
+# 204 "data/maps/Newmap11/scripts.pory"
+	hidenamebox
 # 205 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
+	namebox Xylar
 # 206 "data/maps/Newmap11/scripts.pory"
-	namebox Xylar
-# 207 "data/maps/Newmap11/scripts.pory"
 	msgbox mewtwogone1_Text_1, MSGBOX_AUTOCLOSE
+# 207 "data/maps/Newmap11/scripts.pory"
+	hidenamebox
 # 208 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
+	namebox mewtwo
 # 209 "data/maps/Newmap11/scripts.pory"
-	namebox mewtwo
-# 210 "data/maps/Newmap11/scripts.pory"
 	msgbox mewtwogone1_Text_2, MSGBOX_AUTOCLOSE
+# 210 "data/maps/Newmap11/scripts.pory"
+	hidenamebox
 # 211 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
+	namebox Xylar
 # 212 "data/maps/Newmap11/scripts.pory"
-	namebox Xylar
-# 213 "data/maps/Newmap11/scripts.pory"
 	msgbox mewtwogone1_Text_3, MSGBOX_AUTOCLOSE
+# 213 "data/maps/Newmap11/scripts.pory"
+	hidenamebox
 # 214 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
+	namebox mewtwo
 # 215 "data/maps/Newmap11/scripts.pory"
-	namebox mewtwo
-# 216 "data/maps/Newmap11/scripts.pory"
 	msgbox mewtwogone1_Text_4, MSGBOX_AUTOCLOSE
+# 216 "data/maps/Newmap11/scripts.pory"
+	hidenamebox
 # 217 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
+	namebox Xylar
 # 218 "data/maps/Newmap11/scripts.pory"
-	namebox Xylar
-# 219 "data/maps/Newmap11/scripts.pory"
 	msgbox mewtwogone1_Text_5, MSGBOX_AUTOCLOSE
+# 219 "data/maps/Newmap11/scripts.pory"
+	hidenamebox
 # 220 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
+	namebox mewtwo
 # 221 "data/maps/Newmap11/scripts.pory"
-	namebox mewtwo
-# 222 "data/maps/Newmap11/scripts.pory"
 	msgbox mewtwogone1_Text_6, MSGBOX_AUTOCLOSE
+# 222 "data/maps/Newmap11/scripts.pory"
+	hidenamebox
 # 223 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
+	namebox Xylar
 # 224 "data/maps/Newmap11/scripts.pory"
-	namebox Xylar
-# 225 "data/maps/Newmap11/scripts.pory"
 	msgbox mewtwogone1_Text_7, MSGBOX_AUTOCLOSE
+# 225 "data/maps/Newmap11/scripts.pory"
+	hidenamebox
 # 226 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
+	namebox mewtwo
 # 227 "data/maps/Newmap11/scripts.pory"
-	namebox mewtwo
-# 228 "data/maps/Newmap11/scripts.pory"
 	msgbox mewtwogone1_Text_8, MSGBOX_AUTOCLOSE
+# 228 "data/maps/Newmap11/scripts.pory"
+	hidenamebox
 # 229 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
-# 230 "data/maps/Newmap11/scripts.pory"
 	applymovement 0xFF, question
+# 230 "data/maps/Newmap11/scripts.pory"
+	namebox Xylar
 # 231 "data/maps/Newmap11/scripts.pory"
-	namebox Xylar
-# 232 "data/maps/Newmap11/scripts.pory"
 	msgbox mewtwogone1_Text_9, MSGBOX_AUTOCLOSE
+# 232 "data/maps/Newmap11/scripts.pory"
+	hidenamebox
 # 233 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
+	namebox mewtwo
 # 234 "data/maps/Newmap11/scripts.pory"
-	namebox mewtwo
-# 235 "data/maps/Newmap11/scripts.pory"
 	msgbox mewtwogone1_Text_10, MSGBOX_AUTOCLOSE
+# 235 "data/maps/Newmap11/scripts.pory"
+	hidenamebox
 # 236 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
+	namebox Xylar
 # 237 "data/maps/Newmap11/scripts.pory"
-	namebox Xylar
-# 238 "data/maps/Newmap11/scripts.pory"
 	msgbox mewtwogone1_Text_11, MSGBOX_AUTOCLOSE
+# 238 "data/maps/Newmap11/scripts.pory"
+	hidenamebox
 # 239 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
-# 240 "data/maps/Newmap11/scripts.pory"
 	namebox mewtwo
-# 241 "data/maps/Newmap11/scripts.pory"
+# 240 "data/maps/Newmap11/scripts.pory"
 	msgbox mewtwogone1_Text_12, MSGBOX_AUTOCLOSE
+# 241 "data/maps/Newmap11/scripts.pory"
+	hidenamebox
 # 242 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
-# 243 "data/maps/Newmap11/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 244 "data/maps/Newmap11/scripts.pory"
+# 243 "data/maps/Newmap11/scripts.pory"
 	playse SE_M_TELEPORT
-# 245 "data/maps/Newmap11/scripts.pory"
+# 244 "data/maps/Newmap11/scripts.pory"
 	removeobject 3
-# 246 "data/maps/Newmap11/scripts.pory"
+# 245 "data/maps/Newmap11/scripts.pory"
 	setvar ACADEMY_START, 2
-# 247 "data/maps/Newmap11/scripts.pory"
+# 246 "data/maps/Newmap11/scripts.pory"
 	fadedefaultbgm
-# 248 "data/maps/Newmap11/scripts.pory"
+# 247 "data/maps/Newmap11/scripts.pory"
 	fadescreen FADE_FROM_BLACK
-# 249 "data/maps/Newmap11/scripts.pory"
+# 248 "data/maps/Newmap11/scripts.pory"
 	applymovement 0xFF, pay
-# 250 "data/maps/Newmap11/scripts.pory"
+# 249 "data/maps/Newmap11/scripts.pory"
 	namebox Xylar
-# 251 "data/maps/Newmap11/scripts.pory"
+# 250 "data/maps/Newmap11/scripts.pory"
 	msgbox mewtwogone1_Text_13, MSGBOX_AUTOCLOSE
-# 252 "data/maps/Newmap11/scripts.pory"
+# 251 "data/maps/Newmap11/scripts.pory"
 	hidenamebox
-# 253 "data/maps/Newmap11/scripts.pory"
+# 252 "data/maps/Newmap11/scripts.pory"
 	setflag FLAG_TALK_GRAVE
-# 254 "data/maps/Newmap11/scripts.pory"
+# 253 "data/maps/Newmap11/scripts.pory"
 	release
 	return
 
 
-# 256 "data/maps/Newmap11/scripts.pory"
+# 255 "data/maps/Newmap11/scripts.pory"
 pay:
-# 257 "data/maps/Newmap11/scripts.pory"
+# 256 "data/maps/Newmap11/scripts.pory"
 	walk_up
 	step_end
 
-# 259 "data/maps/Newmap11/scripts.pory"
+# 258 "data/maps/Newmap11/scripts.pory"
 question:
-# 260 "data/maps/Newmap11/scripts.pory"
+# 259 "data/maps/Newmap11/scripts.pory"
 	emote_question_mark
 	step_end
 
 grave::
-# 263 "data/maps/Newmap11/scripts.pory"
+# 262 "data/maps/Newmap11/scripts.pory"
 	goto_if_set FLAG_TALK_GRAVE, grave_1
-# 273 "data/maps/Newmap11/scripts.pory"
+# 272 "data/maps/Newmap11/scripts.pory"
 	goto EventScript_M_Grave
 	return
 
 grave_1:
-# 264 "data/maps/Newmap11/scripts.pory"
+# 263 "data/maps/Newmap11/scripts.pory"
 	lock
-# 265 "data/maps/Newmap11/scripts.pory"
+# 264 "data/maps/Newmap11/scripts.pory"
 	namebox Xylar
-# 266 "data/maps/Newmap11/scripts.pory"
+# 265 "data/maps/Newmap11/scripts.pory"
 	msgbox grave_Text_0, MSGBOX_AUTOCLOSE
-# 267 "data/maps/Newmap11/scripts.pory"
+# 266 "data/maps/Newmap11/scripts.pory"
 	hidenamebox
-# 268 "data/maps/Newmap11/scripts.pory"
+# 267 "data/maps/Newmap11/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 269 "data/maps/Newmap11/scripts.pory"
+# 268 "data/maps/Newmap11/scripts.pory"
 	clearflag FLAG_TALK_GRAVE
-# 270 "data/maps/Newmap11/scripts.pory"
+# 269 "data/maps/Newmap11/scripts.pory"
 	warpsilent MAP_ASTRALIS_ACADEMY, 22, 27
 	return
 
@@ -726,19 +724,19 @@ Alistairarrive_Text_25:
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Damn it!$"
 
 mewtwogone1_Text_0:
-# 204 "data/maps/Newmap11/scripts.pory"
+# 203 "data/maps/Newmap11/scripts.pory"
 	.string "{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}You feel it, don't you?\p"
 	.string "The sting of failure....the bitterness\n"
 	.string "of knowing you're not strong enough.$"
 
 mewtwogone1_Text_1:
-# 207 "data/maps/Newmap11/scripts.pory"
+# 206 "data/maps/Newmap11/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't need you reminding me of it.\p"
 	.string "I know what happened.\p"
 	.string "I wasn't ready.....but I will be.$"
 
 mewtwogone1_Text_2:
-# 210 "data/maps/Newmap11/scripts.pory"
+# 209 "data/maps/Newmap11/scripts.pory"
 	.string "{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}You were not ready because you never\n"
 	.string "had to be.\p"
 	.string "Not until now.\p"
@@ -747,14 +745,14 @@ mewtwogone1_Text_2:
 	.string "have to go.$"
 
 mewtwogone1_Text_3:
-# 213 "data/maps/Newmap11/scripts.pory"
+# 212 "data/maps/Newmap11/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't care how far it is.\p"
 	.string "I'll go to the ends of this world if it\n"
 	.string "means I can destroy them.\p"
 	.string "All of them.$"
 
 mewtwogone1_Text_4:
-# 216 "data/maps/Newmap11/scripts.pory"
+# 215 "data/maps/Newmap11/scripts.pory"
 	.string "{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Good, Hold onto this hatred, it's the\n"
 	.string "only thing that will keep you moving.\p"
 	.string "But don't mistake your rage for power.\p"
@@ -765,26 +763,26 @@ mewtwogone1_Text_4:
 	.string "You have neither.$"
 
 mewtwogone1_Text_5:
-# 219 "data/maps/Newmap11/scripts.pory"
+# 218 "data/maps/Newmap11/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't need this control. I'll burn\n"
 	.string "everything in my way if I have to!$"
 
 mewtwogone1_Text_6:
-# 222 "data/maps/Newmap11/scripts.pory"
+# 221 "data/maps/Newmap11/scripts.pory"
 	.string "{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}And that's why you'll fail again.\p"
 	.string "Blind rage can only take you so far.\p"
 	.string "You need to sharpen your hatred into a\n"
 	.string "weapon, not let it consume you.$"
 
 mewtwogone1_Text_7:
-# 225 "data/maps/Newmap11/scripts.pory"
+# 224 "data/maps/Newmap11/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Fine.\p"
 	.string "But what about you?\p"
 	.string "What are you going to do while I'll be\n"
 	.string "wasting my time at some academy?$"
 
 mewtwogone1_Text_8:
-# 228 "data/maps/Newmap11/scripts.pory"
+# 227 "data/maps/Newmap11/scripts.pory"
 	.string "{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}I'll find my own path.\p"
 	.string "This place.....the academy...it won't make\n"
 	.string "me stronger.\p"
@@ -793,11 +791,11 @@ mewtwogone1_Text_8:
 	.string "what we started together.$"
 
 mewtwogone1_Text_9:
-# 232 "data/maps/Newmap11/scripts.pory"
+# 231 "data/maps/Newmap11/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}You're...going to leave me?$"
 
 mewtwogone1_Text_10:
-# 235 "data/maps/Newmap11/scripts.pory"
+# 234 "data/maps/Newmap11/scripts.pory"
 	.string "{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Not leaving. Preparing.\n"
 	.string "The next time we face them, it won't end\l"
 	.string "like this.\p"
@@ -808,23 +806,23 @@ mewtwogone1_Text_10:
 	.string "started this.$"
 
 mewtwogone1_Text_11:
-# 238 "data/maps/Newmap11/scripts.pory"
+# 237 "data/maps/Newmap11/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}..........\p"
 	.string "I won't.\p"
 	.string "I'll destroy them Mewtwo.\p"
 	.string "All of them.$"
 
 mewtwogone1_Text_12:
-# 241 "data/maps/Newmap11/scripts.pory"
+# 240 "data/maps/Newmap11/scripts.pory"
 	.string "{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Good. Keep that fire burning, when we\n"
 	.string "meet again I expect nothing less.$"
 
 mewtwogone1_Text_13:
-# 251 "data/maps/Newmap11/scripts.pory"
+# 250 "data/maps/Newmap11/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}I should talk to mom before leaving.$"
 
 grave_Text_0:
-# 266 "data/maps/Newmap11/scripts.pory"
+# 265 "data/maps/Newmap11/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Mom, I'll be leaving for the academy\n"
 	.string "now.....\p"
 	.string "They think it's a place to learn and\n"
@@ -841,5 +839,5 @@ alistair::
 	.string "Alistair$"
 
 alislose::
-# 156 "data/maps/Newmap11/scripts.pory"
+# 155 "data/maps/Newmap11/scripts.pory"
 	.string "Wow! You've become stronger$"

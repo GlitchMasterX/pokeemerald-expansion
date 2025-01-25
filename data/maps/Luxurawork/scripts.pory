@@ -240,18 +240,16 @@ script trage {
 	playse(SE_M_BITE)
 	waitse
 	applymovement(10,run)
-	fadescreen(FADE_TO_BLACK)
 	playbgm(MUS_HG_ENCOUNTER_SAGE,TRUE)
-	namebox(unknown)
+	fadescreen(FADE_TO_BLACK)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You spoke too soon,\nAurther."),MSGBOX_AUTOCLOSE)
-	hidenamebox
 	applymovement(16,visible)
 	applymovement(17,invisible)
     fadescreen(FADE_FROM_BLACK)
-	applymovement(7,exclam)
 	namebox(name2)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Honey!!!"))
 	hidenamebox
+	applymovement(7,exclam)
 	waitmessage
 	applymovement(15,dede)
 	namebox(unknown)

@@ -487,347 +487,343 @@ trage::
 # 242 "data/maps/Luxurawork/scripts.pory"
 	applymovement 10, run
 # 243 "data/maps/Luxurawork/scripts.pory"
-	fadescreen FADE_TO_BLACK
-# 244 "data/maps/Luxurawork/scripts.pory"
 	playbgm MUS_HG_ENCOUNTER_SAGE, TRUE
+# 244 "data/maps/Luxurawork/scripts.pory"
+	fadescreen FADE_TO_BLACK
 # 245 "data/maps/Luxurawork/scripts.pory"
-	namebox unknown
-# 246 "data/maps/Luxurawork/scripts.pory"
 	msgbox trageflash_Text_4, MSGBOX_AUTOCLOSE
-# 247 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
-# 248 "data/maps/Luxurawork/scripts.pory"
+# 246 "data/maps/Luxurawork/scripts.pory"
 	applymovement 16, visible
-# 249 "data/maps/Luxurawork/scripts.pory"
+# 247 "data/maps/Luxurawork/scripts.pory"
 	applymovement 17, invisible
-# 250 "data/maps/Luxurawork/scripts.pory"
+# 248 "data/maps/Luxurawork/scripts.pory"
 	fadescreen FADE_FROM_BLACK
-# 251 "data/maps/Luxurawork/scripts.pory"
-	applymovement 7, exclam
-# 252 "data/maps/Luxurawork/scripts.pory"
+# 249 "data/maps/Luxurawork/scripts.pory"
 	namebox name2
-# 253 "data/maps/Luxurawork/scripts.pory"
+# 250 "data/maps/Luxurawork/scripts.pory"
 	msgbox trage_Text_0
+# 251 "data/maps/Luxurawork/scripts.pory"
+	hidenamebox
+# 252 "data/maps/Luxurawork/scripts.pory"
+	applymovement 7, exclam
+# 253 "data/maps/Luxurawork/scripts.pory"
+	waitmessage
 # 254 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
-# 255 "data/maps/Luxurawork/scripts.pory"
-	waitmessage
-# 256 "data/maps/Luxurawork/scripts.pory"
 	applymovement 15, dede
-# 257 "data/maps/Luxurawork/scripts.pory"
+# 255 "data/maps/Luxurawork/scripts.pory"
 	namebox unknown
-# 258 "data/maps/Luxurawork/scripts.pory"
+# 256 "data/maps/Luxurawork/scripts.pory"
 	msgbox trage_Text_1
+# 257 "data/maps/Luxurawork/scripts.pory"
+	hidenamebox
+# 258 "data/maps/Luxurawork/scripts.pory"
+	namebox surge
 # 259 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
-# 260 "data/maps/Luxurawork/scripts.pory"
-	namebox surge
-# 261 "data/maps/Luxurawork/scripts.pory"
 	msgbox trage_Text_2
-# 262 "data/maps/Luxurawork/scripts.pory"
+# 260 "data/maps/Luxurawork/scripts.pory"
 	hidenamebox
-# 263 "data/maps/Luxurawork/scripts.pory"
+# 261 "data/maps/Luxurawork/scripts.pory"
 	applymovement 10, revert
-# 264 "data/maps/Luxurawork/scripts.pory"
+# 262 "data/maps/Luxurawork/scripts.pory"
 	playmoncry SPECIES_HOOPA, CRY_MODE_WEAK
-# 265 "data/maps/Luxurawork/scripts.pory"
+# 263 "data/maps/Luxurawork/scripts.pory"
 	applymovement 13, reverte
-# 266 "data/maps/Luxurawork/scripts.pory"
+# 264 "data/maps/Luxurawork/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, ded
+# 265 "data/maps/Luxurawork/scripts.pory"
+	waitmovement 0
+# 266 "data/maps/Luxurawork/scripts.pory"
+	namebox surge
 # 267 "data/maps/Luxurawork/scripts.pory"
-	waitmovement 0
-# 268 "data/maps/Luxurawork/scripts.pory"
-	namebox surge
-# 269 "data/maps/Luxurawork/scripts.pory"
 	msgbox trage_Text_3
+# 268 "data/maps/Luxurawork/scripts.pory"
+	hidenamebox
+# 269 "data/maps/Luxurawork/scripts.pory"
+	namebox name2
 # 270 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
-# 271 "data/maps/Luxurawork/scripts.pory"
-	namebox name2
-# 272 "data/maps/Luxurawork/scripts.pory"
 	msgbox trage_Text_4, MSGBOX_AUTOCLOSE
+# 271 "data/maps/Luxurawork/scripts.pory"
+	hidenamebox
+# 272 "data/maps/Luxurawork/scripts.pory"
+	waitmessage
 # 273 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
-# 274 "data/maps/Luxurawork/scripts.pory"
-	waitmessage
-# 275 "data/maps/Luxurawork/scripts.pory"
 	applymovement 14, visible
-# 276 "data/maps/Luxurawork/scripts.pory"
+# 274 "data/maps/Luxurawork/scripts.pory"
 	waitmovement 0
-# 277 "data/maps/Luxurawork/scripts.pory"
+# 275 "data/maps/Luxurawork/scripts.pory"
 	playse SE_WARP_IN
-# 278 "data/maps/Luxurawork/scripts.pory"
+# 276 "data/maps/Luxurawork/scripts.pory"
 	waitse
-# 279 "data/maps/Luxurawork/scripts.pory"
+# 277 "data/maps/Luxurawork/scripts.pory"
 	applymovement 13, invisible
-# 280 "data/maps/Luxurawork/scripts.pory"
+# 278 "data/maps/Luxurawork/scripts.pory"
 	waitmovement 0
-# 281 "data/maps/Luxurawork/scripts.pory"
+# 279 "data/maps/Luxurawork/scripts.pory"
 	playse SE_WARP_OUT
-# 282 "data/maps/Luxurawork/scripts.pory"
+# 280 "data/maps/Luxurawork/scripts.pory"
 	applymovement 14, invisible
-# 283 "data/maps/Luxurawork/scripts.pory"
+# 281 "data/maps/Luxurawork/scripts.pory"
 	namebox unknown
-# 284 "data/maps/Luxurawork/scripts.pory"
+# 282 "data/maps/Luxurawork/scripts.pory"
 	msgbox trage_Text_5, MSGBOX_AUTOCLOSE
-# 285 "data/maps/Luxurawork/scripts.pory"
+# 283 "data/maps/Luxurawork/scripts.pory"
 	hidenamebox
-# 286 "data/maps/Luxurawork/scripts.pory"
+# 284 "data/maps/Luxurawork/scripts.pory"
 	fadenewbgm MUS_ABNORMAL_WEATHER
-# 287 "data/maps/Luxurawork/scripts.pory"
+# 285 "data/maps/Luxurawork/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, back
+# 286 "data/maps/Luxurawork/scripts.pory"
+	waitmovement 0
+# 287 "data/maps/Luxurawork/scripts.pory"
+	namebox Xylar
 # 288 "data/maps/Luxurawork/scripts.pory"
-	waitmovement 0
-# 289 "data/maps/Luxurawork/scripts.pory"
-	namebox Xylar
-# 290 "data/maps/Luxurawork/scripts.pory"
 	msgbox trage_Text_6
+# 289 "data/maps/Luxurawork/scripts.pory"
+	hidenamebox
+# 290 "data/maps/Luxurawork/scripts.pory"
+	waitmessage
 # 291 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
-# 292 "data/maps/Luxurawork/scripts.pory"
-	waitmessage
-# 293 "data/maps/Luxurawork/scripts.pory"
 	applymovement 7, players
-# 294 "data/maps/Luxurawork/scripts.pory"
+# 292 "data/maps/Luxurawork/scripts.pory"
 	applymovement 5, players
-# 295 "data/maps/Luxurawork/scripts.pory"
+# 293 "data/maps/Luxurawork/scripts.pory"
 	waitmovement 0
-# 296 "data/maps/Luxurawork/scripts.pory"
+# 294 "data/maps/Luxurawork/scripts.pory"
 	msgbox trage_Text_7, MSGBOX_AUTOCLOSE
-# 297 "data/maps/Luxurawork/scripts.pory"
+# 295 "data/maps/Luxurawork/scripts.pory"
 	waitmessage
-# 298 "data/maps/Luxurawork/scripts.pory"
+# 296 "data/maps/Luxurawork/scripts.pory"
 	namebox Xylar
-# 299 "data/maps/Luxurawork/scripts.pory"
+# 297 "data/maps/Luxurawork/scripts.pory"
 	msgbox trage_Text_8, MSGBOX_AUTOCLOSE
-# 300 "data/maps/Luxurawork/scripts.pory"
+# 298 "data/maps/Luxurawork/scripts.pory"
 	hidenamebox
-# 301 "data/maps/Luxurawork/scripts.pory"
+# 299 "data/maps/Luxurawork/scripts.pory"
 	namebox surge
-# 302 "data/maps/Luxurawork/scripts.pory"
+# 300 "data/maps/Luxurawork/scripts.pory"
 	msgbox trage_Text_9, MSGBOX_AUTOCLOSE
-# 303 "data/maps/Luxurawork/scripts.pory"
+# 301 "data/maps/Luxurawork/scripts.pory"
 	hidenamebox
-# 304 "data/maps/Luxurawork/scripts.pory"
+# 302 "data/maps/Luxurawork/scripts.pory"
 	msgbox trage_Text_10, MSGBOX_AUTOCLOSE
-# 305 "data/maps/Luxurawork/scripts.pory"
+# 303 "data/maps/Luxurawork/scripts.pory"
 	applymovement 8, capture
-# 306 "data/maps/Luxurawork/scripts.pory"
+# 304 "data/maps/Luxurawork/scripts.pory"
 	applymovement 9, capture
-# 307 "data/maps/Luxurawork/scripts.pory"
+# 305 "data/maps/Luxurawork/scripts.pory"
 	waitmovement 0
-# 308 "data/maps/Luxurawork/scripts.pory"
+# 306 "data/maps/Luxurawork/scripts.pory"
 	namebox name2
-# 309 "data/maps/Luxurawork/scripts.pory"
+# 307 "data/maps/Luxurawork/scripts.pory"
 	msgbox trage_Text_11, MSGBOX_AUTOCLOSE
-# 310 "data/maps/Luxurawork/scripts.pory"
+# 308 "data/maps/Luxurawork/scripts.pory"
 	hidenamebox
-# 311 "data/maps/Luxurawork/scripts.pory"
+# 309 "data/maps/Luxurawork/scripts.pory"
 	special RemoveCameraObject
-# 312 "data/maps/Luxurawork/scripts.pory"
+# 310 "data/maps/Luxurawork/scripts.pory"
 	releaseall
-# 313 "data/maps/Luxurawork/scripts.pory"
+# 311 "data/maps/Luxurawork/scripts.pory"
 	warp MAP_LUXURA_INDOOR, 7, 6
-# 314 "data/maps/Luxurawork/scripts.pory"
+# 312 "data/maps/Luxurawork/scripts.pory"
 	setvar LUXURA_TRAGEDY, 12
 	return
 
 
-# 317 "data/maps/Luxurawork/scripts.pory"
+# 315 "data/maps/Luxurawork/scripts.pory"
 capture:
-# 318 "data/maps/Luxurawork/scripts.pory"
+# 316 "data/maps/Luxurawork/scripts.pory"
 	walk_down
-# 318 "data/maps/Luxurawork/scripts.pory"
+# 316 "data/maps/Luxurawork/scripts.pory"
 	walk_down
 	step_end
 
-# 328 "data/maps/Luxurawork/scripts.pory"
+# 326 "data/maps/Luxurawork/scripts.pory"
 back:
-# 329 "data/maps/Luxurawork/scripts.pory"
+# 327 "data/maps/Luxurawork/scripts.pory"
 	walk_down
-# 329 "data/maps/Luxurawork/scripts.pory"
+# 327 "data/maps/Luxurawork/scripts.pory"
 	walk_down
-# 329 "data/maps/Luxurawork/scripts.pory"
+# 327 "data/maps/Luxurawork/scripts.pory"
 	walk_down
-# 329 "data/maps/Luxurawork/scripts.pory"
+# 327 "data/maps/Luxurawork/scripts.pory"
 	walk_down
 	step_end
 
-# 331 "data/maps/Luxurawork/scripts.pory"
+# 329 "data/maps/Luxurawork/scripts.pory"
 reverte:
+# 330 "data/maps/Luxurawork/scripts.pory"
+	delay_16
+# 331 "data/maps/Luxurawork/scripts.pory"
+	set_visible
 # 332 "data/maps/Luxurawork/scripts.pory"
-	delay_16
+	face_up
 # 333 "data/maps/Luxurawork/scripts.pory"
-	set_visible
+	face_left
 # 334 "data/maps/Luxurawork/scripts.pory"
-	face_up
+	face_down
 # 335 "data/maps/Luxurawork/scripts.pory"
-	face_left
+	face_right
 # 336 "data/maps/Luxurawork/scripts.pory"
-	face_down
-# 337 "data/maps/Luxurawork/scripts.pory"
-	face_right
-# 338 "data/maps/Luxurawork/scripts.pory"
 	face_up
 	step_end
 
-# 342 "data/maps/Luxurawork/scripts.pory"
+# 340 "data/maps/Luxurawork/scripts.pory"
 revert:
-# 343 "data/maps/Luxurawork/scripts.pory"
+# 341 "data/maps/Luxurawork/scripts.pory"
 	face_left
+# 342 "data/maps/Luxurawork/scripts.pory"
+	face_down
+# 343 "data/maps/Luxurawork/scripts.pory"
+	face_right
 # 344 "data/maps/Luxurawork/scripts.pory"
-	face_down
-# 345 "data/maps/Luxurawork/scripts.pory"
-	face_right
-# 346 "data/maps/Luxurawork/scripts.pory"
 	face_up
+# 345 "data/maps/Luxurawork/scripts.pory"
+	set_invisible
+	step_end
+
 # 347 "data/maps/Luxurawork/scripts.pory"
-	set_invisible
-	step_end
-
-# 349 "data/maps/Luxurawork/scripts.pory"
 moq:
-# 350 "data/maps/Luxurawork/scripts.pory"
+# 348 "data/maps/Luxurawork/scripts.pory"
 	walk_fast_right
-# 350 "data/maps/Luxurawork/scripts.pory"
+# 348 "data/maps/Luxurawork/scripts.pory"
 	walk_fast_right
-# 350 "data/maps/Luxurawork/scripts.pory"
+# 348 "data/maps/Luxurawork/scripts.pory"
 	walk_fast_right
 	step_end
 
-# 352 "data/maps/Luxurawork/scripts.pory"
+# 350 "data/maps/Luxurawork/scripts.pory"
 faint:
-# 353 "data/maps/Luxurawork/scripts.pory"
+# 351 "data/maps/Luxurawork/scripts.pory"
 	delay_16
-# 354 "data/maps/Luxurawork/scripts.pory"
+# 352 "data/maps/Luxurawork/scripts.pory"
 	slide_right
-# 354 "data/maps/Luxurawork/scripts.pory"
+# 352 "data/maps/Luxurawork/scripts.pory"
 	slide_right
-# 354 "data/maps/Luxurawork/scripts.pory"
+# 352 "data/maps/Luxurawork/scripts.pory"
 	slide_right
-# 354 "data/maps/Luxurawork/scripts.pory"
+# 352 "data/maps/Luxurawork/scripts.pory"
 	slide_right
-# 354 "data/maps/Luxurawork/scripts.pory"
+# 352 "data/maps/Luxurawork/scripts.pory"
 	slide_right
-# 354 "data/maps/Luxurawork/scripts.pory"
+# 352 "data/maps/Luxurawork/scripts.pory"
 	slide_right
-# 354 "data/maps/Luxurawork/scripts.pory"
+# 352 "data/maps/Luxurawork/scripts.pory"
 	slide_right
-# 354 "data/maps/Luxurawork/scripts.pory"
+# 352 "data/maps/Luxurawork/scripts.pory"
 	slide_right
-# 354 "data/maps/Luxurawork/scripts.pory"
+# 352 "data/maps/Luxurawork/scripts.pory"
 	slide_right
-# 354 "data/maps/Luxurawork/scripts.pory"
+# 352 "data/maps/Luxurawork/scripts.pory"
 	slide_right
-# 355 "data/maps/Luxurawork/scripts.pory"
+# 353 "data/maps/Luxurawork/scripts.pory"
 	set_invisible
 	step_end
 
-# 357 "data/maps/Luxurawork/scripts.pory"
+# 355 "data/maps/Luxurawork/scripts.pory"
 players:
-# 358 "data/maps/Luxurawork/scripts.pory"
+# 356 "data/maps/Luxurawork/scripts.pory"
 	emote_exclamation_mark
-# 359 "data/maps/Luxurawork/scripts.pory"
+# 357 "data/maps/Luxurawork/scripts.pory"
 	face_down
 	step_end
 
-# 361 "data/maps/Luxurawork/scripts.pory"
+# 359 "data/maps/Luxurawork/scripts.pory"
 atk:
+# 360 "data/maps/Luxurawork/scripts.pory"
+	face_right
+# 361 "data/maps/Luxurawork/scripts.pory"
+	set_visible
 # 362 "data/maps/Luxurawork/scripts.pory"
-	face_right
+	slide_right
+# 362 "data/maps/Luxurawork/scripts.pory"
+	slide_right
+# 362 "data/maps/Luxurawork/scripts.pory"
+	slide_right
 # 363 "data/maps/Luxurawork/scripts.pory"
-	set_visible
-# 364 "data/maps/Luxurawork/scripts.pory"
-	slide_right
-# 364 "data/maps/Luxurawork/scripts.pory"
-	slide_right
-# 364 "data/maps/Luxurawork/scripts.pory"
-	slide_right
-# 365 "data/maps/Luxurawork/scripts.pory"
 	slide_left
-# 365 "data/maps/Luxurawork/scripts.pory"
+# 363 "data/maps/Luxurawork/scripts.pory"
 	slide_left
-# 365 "data/maps/Luxurawork/scripts.pory"
+# 363 "data/maps/Luxurawork/scripts.pory"
 	slide_left
-# 366 "data/maps/Luxurawork/scripts.pory"
+# 364 "data/maps/Luxurawork/scripts.pory"
 	face_right
 	step_end
 
-# 368 "data/maps/Luxurawork/scripts.pory"
+# 366 "data/maps/Luxurawork/scripts.pory"
 visible:
-# 369 "data/maps/Luxurawork/scripts.pory"
+# 367 "data/maps/Luxurawork/scripts.pory"
 	set_visible
 	step_end
 
-# 371 "data/maps/Luxurawork/scripts.pory"
+# 369 "data/maps/Luxurawork/scripts.pory"
 invisible:
-# 372 "data/maps/Luxurawork/scripts.pory"
+# 370 "data/maps/Luxurawork/scripts.pory"
 	set_invisible
 	step_end
 
-# 374 "data/maps/Luxurawork/scripts.pory"
+# 372 "data/maps/Luxurawork/scripts.pory"
 mo:
-# 375 "data/maps/Luxurawork/scripts.pory"
+# 373 "data/maps/Luxurawork/scripts.pory"
 	walk_up
-# 375 "data/maps/Luxurawork/scripts.pory"
+# 373 "data/maps/Luxurawork/scripts.pory"
 	walk_up
-# 375 "data/maps/Luxurawork/scripts.pory"
+# 373 "data/maps/Luxurawork/scripts.pory"
 	walk_up
-# 375 "data/maps/Luxurawork/scripts.pory"
+# 373 "data/maps/Luxurawork/scripts.pory"
 	walk_up
-# 375 "data/maps/Luxurawork/scripts.pory"
+# 373 "data/maps/Luxurawork/scripts.pory"
 	walk_up
-# 375 "data/maps/Luxurawork/scripts.pory"
+# 373 "data/maps/Luxurawork/scripts.pory"
 	walk_up
-# 375 "data/maps/Luxurawork/scripts.pory"
+# 373 "data/maps/Luxurawork/scripts.pory"
 	walk_up
-# 375 "data/maps/Luxurawork/scripts.pory"
+# 373 "data/maps/Luxurawork/scripts.pory"
 	walk_up
-# 375 "data/maps/Luxurawork/scripts.pory"
+# 373 "data/maps/Luxurawork/scripts.pory"
 	walk_up
-# 375 "data/maps/Luxurawork/scripts.pory"
+# 373 "data/maps/Luxurawork/scripts.pory"
 	walk_up
-# 375 "data/maps/Luxurawork/scripts.pory"
+# 373 "data/maps/Luxurawork/scripts.pory"
 	walk_up
 	step_end
 
-# 377 "data/maps/Luxurawork/scripts.pory"
+# 375 "data/maps/Luxurawork/scripts.pory"
 finish:
-# 378 "data/maps/Luxurawork/scripts.pory"
+# 376 "data/maps/Luxurawork/scripts.pory"
 	walk_left
-# 378 "data/maps/Luxurawork/scripts.pory"
+# 376 "data/maps/Luxurawork/scripts.pory"
 	walk_left
-# 378 "data/maps/Luxurawork/scripts.pory"
+# 376 "data/maps/Luxurawork/scripts.pory"
 	walk_left
-# 379 "data/maps/Luxurawork/scripts.pory"
+# 377 "data/maps/Luxurawork/scripts.pory"
 	walk_down
-# 379 "data/maps/Luxurawork/scripts.pory"
+# 377 "data/maps/Luxurawork/scripts.pory"
 	walk_down
-# 379 "data/maps/Luxurawork/scripts.pory"
+# 377 "data/maps/Luxurawork/scripts.pory"
 	walk_down
 	step_end
 
-# 381 "data/maps/Luxurawork/scripts.pory"
+# 379 "data/maps/Luxurawork/scripts.pory"
 ded:
-# 382 "data/maps/Luxurawork/scripts.pory"
+# 380 "data/maps/Luxurawork/scripts.pory"
 	walk_down
-# 382 "data/maps/Luxurawork/scripts.pory"
+# 380 "data/maps/Luxurawork/scripts.pory"
 	walk_down
-# 382 "data/maps/Luxurawork/scripts.pory"
+# 380 "data/maps/Luxurawork/scripts.pory"
 	walk_down
 	step_end
 
-# 385 "data/maps/Luxurawork/scripts.pory"
+# 383 "data/maps/Luxurawork/scripts.pory"
 dede:
-# 386 "data/maps/Luxurawork/scripts.pory"
+# 384 "data/maps/Luxurawork/scripts.pory"
 	walk_left
-# 387 "data/maps/Luxurawork/scripts.pory"
+# 385 "data/maps/Luxurawork/scripts.pory"
 	walk_down
-# 387 "data/maps/Luxurawork/scripts.pory"
+# 385 "data/maps/Luxurawork/scripts.pory"
 	walk_down
-# 388 "data/maps/Luxurawork/scripts.pory"
+# 386 "data/maps/Luxurawork/scripts.pory"
 	walk_right
-# 389 "data/maps/Luxurawork/scripts.pory"
+# 387 "data/maps/Luxurawork/scripts.pory"
 	walk_down
 	step_end
 
@@ -916,73 +912,73 @@ dad_Text_10:
 	.string "Go ahead and join your mother.$"
 
 trage_Text_0:
-# 253 "data/maps/Luxurawork/scripts.pory"
+# 250 "data/maps/Luxurawork/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Honey!!!$"
 
 trage_Text_1:
-# 258 "data/maps/Luxurawork/scripts.pory"
+# 256 "data/maps/Luxurawork/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}I told you, you can't defeat him.\p"
 	.string "He solely took down the Nexus Order.\p"
 	.string "You could even call him the strongest\n"
 	.string "trainer to ever exist.$"
 
 trage_Text_2:
-# 261 "data/maps/Luxurawork/scripts.pory"
+# 259 "data/maps/Luxurawork/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Looks like even the strongest can fall\n"
 	.string "if you kill them.\p"
 	.string "Right Aurther?$"
 
 trage_Text_3:
-# 269 "data/maps/Luxurawork/scripts.pory"
+# 267 "data/maps/Luxurawork/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}So, his death would seal Hoopa's powers.\p"
 	.string "Now it would be much easier to catch\n"
 	.string "Hoopa, I guess.$"
 
 trage_Text_4:
-# 272 "data/maps/Luxurawork/scripts.pory"
+# 270 "data/maps/Luxurawork/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Hoopa, your powers... they're sealed!\n"
 	.string "You're too weak, please, run!\p"
 	.string "You cannot let them capture you.$"
 
 trage_Text_5:
-# 284 "data/maps/Luxurawork/scripts.pory"
+# 282 "data/maps/Luxurawork/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}My work here is done.\p"
 	.string "I'll go report everything to boss.$"
 
 trage_Text_6:
-# 290 "data/maps/Luxurawork/scripts.pory"
+# 288 "data/maps/Luxurawork/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}No... no, this can't be happening.$"
 
 trage_Text_7:
-# 296 "data/maps/Luxurawork/scripts.pory"
+# 294 "data/maps/Luxurawork/scripts.pory"
 	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}(Xylar stares at his father's lifeless\n"
 	.string "body, blood soaking the ground. His\l"
 	.string "heart pounds in his chest, unable to\l"
 	.string "fully grasp the horror in front of him.)$"
 
 trage_Text_8:
-# 299 "data/maps/Luxurawork/scripts.pory"
+# 297 "data/maps/Luxurawork/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Dad?.......DAD!!!!$"
 
 trage_Text_9:
-# 302 "data/maps/Luxurawork/scripts.pory"
+# 300 "data/maps/Luxurawork/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}What do we have here?\p"
 	.string "Grunts! capture them.\p"
 	.string "They could be valuable test subjects.$"
 
 trage_Text_10:
-# 304 "data/maps/Luxurawork/scripts.pory"
+# 302 "data/maps/Luxurawork/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Yes Sir!$"
 
 trage_Text_11:
-# 309 "data/maps/Luxurawork/scripts.pory"
+# 307 "data/maps/Luxurawork/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Mira! Take Xylar and run.\p"
 	.string "Hurry!!$"
 
 surge::
-# 321 "data/maps/Luxurawork/scripts.pory"
+# 319 "data/maps/Luxurawork/scripts.pory"
 	.string "Surge$"
 
 unknown::
-# 324 "data/maps/Luxurawork/scripts.pory"
+# 322 "data/maps/Luxurawork/scripts.pory"
 	.string "???$"

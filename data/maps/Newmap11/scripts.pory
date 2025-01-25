@@ -142,9 +142,6 @@ text alistair{
 }
 movement traces2 {
     face_up
-    delay_16
-    delay_16
-    emote_upset
 }
 movement alisbattle1 {
     walk_down

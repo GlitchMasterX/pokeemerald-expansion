@@ -1607,7 +1607,7 @@ indoor_Text_0:
 
 indoor_Text_1:
 # 272 "data/maps/LuxuraIsland/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Yeah. xI'll do that.$"
+	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Yeah. I'll do that.$"
 
 stroll_Text_0:
 # 309 "data/maps/LuxuraIsland/scripts.pory"
