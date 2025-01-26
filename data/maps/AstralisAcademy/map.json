@@ -18,6 +18,11 @@
       "map": "MAP_ASTRALIS_ACADEMY_GYM",
       "offset": -31,
       "direction": "right"
+    },
+    {
+      "map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
+      "offset": -8,
+      "direction": "down"
     }
   ],
   "object_events": [
