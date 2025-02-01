@@ -60,5 +60,6 @@ script Head1 {
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Strength isn't always obvious at first glance.\pGive it time.\nTorchic may surprise you."))
     hidenamebox
     setvar(ACADEMY_START,5)
+    clearflag(FLAG_PAUSE_TIME)
     warp(MAP_ASTRALIS_ACADEMY_HOUSE2,12,1)   
 }
