@@ -1199,3 +1199,11 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Academy_Lib/scripts.inc"
 
 	.include "data/maps/NewMap2/scripts.inc"
+
+	.include "data/maps/DormIndoor/scripts.inc"
+
+	.include "data/maps/Dormindoor1/scripts.inc"
+
+	.include "data/maps/headoffice/scripts.inc"
+
+	.include "data/maps/Harborac/scripts.inc"

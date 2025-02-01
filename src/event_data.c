@@ -1,6 +1,7 @@
 #include "global.h"
 #include "event_data.h"
 #include "pokedex.h"
+#include "rtc.h"
 
 #define SPECIAL_FLAGS_SIZE  (NUM_SPECIAL_FLAGS / 8)  // 8 flags per byte
 #define TEMP_FLAGS_SIZE     (NUM_TEMP_FLAGS / 8)
@@ -234,7 +235,7 @@ u8 FlagClear(u16 id)
         *ptr &= ~(1 << (id & 7));
     return 0;
 }
-
+// Function to determine the season based on the current month
 bool8 FlagGet(u16 id)
 {
     u8 *ptr = GetFlagPointer(id);
@@ -249,7 +250,24 @@ bool8 FlagGet(u16 id)
 }
 
 //Define this properly in include/constants/vars.h in an unused var spot
-#define VAR_CURRENT_SEASON VAR_UNUSED_0x404E
 u8 getCurrentSeason(void){
+    return VarGet(VAR_CURRENT_SEASON);
+}
+
+u8 GetSeasonFromMonth(void)
+{
+    u8 month = GetMonthFromDays(gLocalTime.days); 
+    if (month == 12 || month == 1 || month == 2) {
+        VarSet(VAR_CURRENT_SEASON, 3);  // Winter: December, January, February  // Winter
+    }
+    else if (month >= 3 && month <= 5) {
+        VarSet(VAR_CURRENT_SEASON, 0);  // Spring: March, April, Ma
+    }
+    else if (month >= 6 && month <= 8) {
+        VarSet(VAR_CURRENT_SEASON, 1);  // Summer: June, July, August
+    }
+    else {
+        VarSet(VAR_CURRENT_SEASON, 2);  // Autumn/Fall: September, October, November
+    }
     return VarGet(VAR_CURRENT_SEASON);
 }

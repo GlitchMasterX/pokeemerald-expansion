@@ -65,7 +65,7 @@
 #define OBJ_EVENT_GFX_BERRY_TREE_EARLY_STAGES     61
 #define OBJ_EVENT_GFX_BERRY_TREE_LATE_STAGES      62
 #define OBJ_EVENT_GFX_BRENDAN_ACRO_BIKE           63
-#define OBJ_EVENT_GFX_PROF_BIRCH                  64
+#define OBJ_EVENT_GFX_PROF_ELIAS                  64
 #define OBJ_EVENT_GFX_MAN_4                       65
 #define OBJ_EVENT_GFX_MAN_5                       66
 #define OBJ_EVENT_GFX_REPORTER_M                  67
@@ -294,13 +294,14 @@
 #define OBJ_EVENT_GFX_SURGE                      290
 #define OBJ_EVENT_GFX_PORTAL                     291
 #define OBJ_EVENT_GFX_FIRE                       292
-#define OBJ_EVENT_GFX_ALISTAIR                       293
+#define OBJ_EVENT_GFX_ALISTAIR                   293
 #define OBJ_EVENT_GFX_XYLAR                       294
-
+#define OBJ_EVENT_GFX_FIONA                       295
+#define OBJ_EVENT_GFX_VOSS                       296
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        295
+#define NUM_OBJ_EVENT_GFX                        297
 
 
 // These are dynamic object gfx ids.
@@ -510,7 +511,8 @@
 #define OBJ_EVENT_PAL_TAG_FIRE                    0x1192
 #define OBJ_EVENT_PAL_TAG_ALISTAIR                    0x1193
 #define OBJ_EVENT_PAL_TAG_XYLAR                    0x1194
-
+#define OBJ_EVENT_PAL_TAG_FIONA                    0x1195
+#define OBJ_EVENT_PAL_TAG_VOSS                    0x1196
 #endif //OW_FOLLOWERS_POKEBALLS
 // Used as a placeholder follower graphic
 #define OBJ_EVENT_PAL_TAG_SUBSTITUTE              0x7611

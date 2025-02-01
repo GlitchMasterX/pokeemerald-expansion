@@ -301,6 +301,8 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Portal;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Fire;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Alistair;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Xylar;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Fiona;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Voss;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -367,7 +369,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_BERRY_TREE_EARLY_STAGES] =  &gObjectEventGraphicsInfo_BerryTreeEarlyStages,
     [OBJ_EVENT_GFX_BERRY_TREE_LATE_STAGES] =   &gObjectEventGraphicsInfo_BerryTreeLateStages,
     [OBJ_EVENT_GFX_BRENDAN_ACRO_BIKE] =        &gObjectEventGraphicsInfo_BrendanAcroBike,
-    [OBJ_EVENT_GFX_PROF_BIRCH] =               &gObjectEventGraphicsInfo_ProfBirch,
+    [OBJ_EVENT_GFX_PROF_ELIAS] =               &gObjectEventGraphicsInfo_ProfBirch,
     [OBJ_EVENT_GFX_MAN_4] =                    &gObjectEventGraphicsInfo_Man4,
     [OBJ_EVENT_GFX_MAN_5] =                    &gObjectEventGraphicsInfo_Man5,
     [OBJ_EVENT_GFX_REPORTER_M] =               &gObjectEventGraphicsInfo_ReporterM,
@@ -598,6 +600,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_FIRE] =                      &gObjectEventGraphicsInfo_Fire,
     [OBJ_EVENT_GFX_ALISTAIR] =                      &gObjectEventGraphicsInfo_Alistair,
     [OBJ_EVENT_GFX_XYLAR] =                      &gObjectEventGraphicsInfo_Xylar,
+    [OBJ_EVENT_GFX_FIONA] =                      &gObjectEventGraphicsInfo_Fiona,
+    [OBJ_EVENT_GFX_VOSS] =                      &gObjectEventGraphicsInfo_Voss,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

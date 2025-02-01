@@ -264,7 +264,7 @@ script grave {
     hidenamebox
     fadescreen(FADE_TO_BLACK)
     clearflag(FLAG_TALK_GRAVE)
-    warpsilent(MAP_ASTRALIS_ACADEMY,22,27)
+    warpsilent(MAP_HARBORAC,2,27)
     }
     else{
         goto(EventScript_M_Grave)

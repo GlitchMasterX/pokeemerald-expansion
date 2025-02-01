@@ -115,8 +115,10 @@
 #define TRAINER_PIC_SPY                   97
 #define TRAINER_PIC_SURGE                 98
 #define TRAINER_PIC_ALISTAIR              99
-#define TRAINER_PIC_XYLAR                 100
-#define TRAINER_PIC_COUNT                 101
+#define TRAINER_PIC_FIONA                 100
+#define TRAINER_PIC_VOSS                  101
+#define TRAINER_PIC_XYLAR                 102
+#define TRAINER_PIC_COUNT                 103
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0

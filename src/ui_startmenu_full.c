@@ -5,6 +5,7 @@
 #include "data.h"
 #include "decompress.h"
 #include "event_data.h"
+#include "fake_rtc.h"
 #include "field_weather.h"
 #include "gpu_regs.h"
 #include "graphics.h"
@@ -1218,10 +1219,33 @@ static void PrintSaveConfirmToWindow()
     CopyWindowToVram(WINDOW_BOTTOM_BAR, COPYWIN_FULL);
 }
 
-
-//
-//  Print Time, Location, Day of Week and Time Indicator
-//
+static const u8 gText_January[] = _("Jan.");
+static const u8 gText_February[] = _("Feb.");
+static const u8 gText_March[] = _("Mar.");
+static const u8 gText_April[] = _("Apr.");
+static const u8 gText_May[] = _("May.");
+static const u8 gText_June[] = _("Jun.");
+static const u8 gText_July[] = _("Jul.");
+static const u8 gText_August[] = _("Aug.");
+static const u8 gText_September[] = _("Sep.");
+static const u8 gText_October[] = _("Oct.");
+static const u8 gText_November[] = _("Nov.");
+static const u8 gText_December[] = _("Dec.");
+static const u8 *const sMonthStrings[] =
+{
+    gText_January,
+    gText_February,
+    gText_March,
+    gText_April,
+    gText_May,
+    gText_June,
+    gText_July,
+    gText_August,
+    gText_September,
+    gText_October,
+    gText_November,
+    gText_December,
+};
 static const u8 sText_Sunday[] = _("Sun.");
 static const u8 sText_Monday[] = _("Mon.");
 static const u8 sText_Tuesday[] = _("Tues.");
@@ -1239,23 +1263,45 @@ static const u8 * const sDayOfWeekStrings[7] =
     sText_Friday,
     sText_Saturday,
 };
-
+void IncrementMonth(void)
+{
+    // If the month is not manually set (or is set to 0), automatically increment it
+    u8 currentMonth = VarGet(VAR_CURRENT_MONTH);
+    
+    if (currentMonth == 0)  // If the month is unset (0), set it to the current calculated month
+    {
+        currentMonth = GetMonthFromDays(gLocalTime.days);  // For example, based on days
+        VarSet(VAR_CURRENT_MONTH, currentMonth);
+    }
+    else  // If the month is already set, increment it
+    {
+        currentMonth++;
+        if (currentMonth > 12)  // Reset to January if it exceeds December
+        {
+            currentMonth = 1;
+        }
+        VarSet(VAR_CURRENT_MONTH, currentMonth);
+    }
+}
 static const u8 sText_AM[] = _("AM");
 static const u8 sText_PM[] = _("PM");
 
-static void PrintMapNameAndTime(void) //this code is ripped froom different parts of pokeemerald and is a mess because of that, but it all works
+static void PrintMapNameAndTime(void)
 {
     u8 mapDisplayHeader[24];
     u8 *withoutPrefixPtr;
     u8 x;
-    const u8 *str, *suffix = NULL;
+    const u8 *str;
     u8 sTimeTextColors[] = {TEXT_COLOR_TRANSPARENT, 2, 3};
 
     u16 hours;
     u16 minutes;
-    u16 dayOfWeek;
-    s32 width;
-    u32 y, totalWidth;
+    u8 dayOfWeek;
+    u8 month;
+    u16 currentDay;
+    u16 lastSavedDay;
+    s32 width = 0;  // Initialize width to avoid uninitialized usage
+    u32 y = 1, totalWidth;
 
     FillWindowPixelBuffer(WINDOW_TOP_BAR, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
 
@@ -1270,72 +1316,47 @@ static void PrintMapNameAndTime(void) //this code is ripped froom different part
     RtcCalcLocalTime();
 
     hours = gLocalTime.hours;
-
-#if (FLAG_CLOCK_MODE != 0)
-    if (FlagGet(FLAG_CLOCK_MODE)) // true: 12-hours, false: 24-hours
-    {
-        if (gLocalTime.hours < 12)
-        {
-            hours = (gLocalTime.hours == 0) ? 12 : gLocalTime.hours;
-            suffix = sText_AM;
-        }
-        else if (gLocalTime.hours == 12)
-        {
-            hours = 12;
-            if (suffix == sText_AM)
-                suffix = sText_PM;
-        }
-        else
-        {
-            hours = gLocalTime.hours - 12;
-            suffix = sText_PM;
-        }
-    }
-#endif
-
     minutes = gLocalTime.minutes;
-    dayOfWeek = gLocalTime.days % 7;
-    if (hours > 999)
-        hours = 999;
-    if (minutes > 59)
-        minutes = 59;
-    width = GetStringWidth(FONT_NORMAL, gText_Colon2, 0);
-    x = 64;
-    y = 1;
+    month = GetMonthFromDays(gLocalTime.days); // Compute the month using total days
+    currentDay = gLocalTime.days;  // Get the total number of days since the game started
+    lastSavedDay = VarGet(VAR_LAST_SAVED_DAY); // Get the last recorded day
 
-    if(dayOfWeek == 2) // adjust x position if dayofweek Thurs/Tues because the words are longer
-        x += 8;
-    if(dayOfWeek == 4)
-        x += 12;
+    // Retrieve the stored weekday
+    dayOfWeek = VarGet(VAR_CURRENT_DAY_OF_WEEK);
 
-    totalWidth = width + 30;
-    x -= totalWidth;
+    // If the in-game day has increased, update the weekday
+    if (currentDay != lastSavedDay)
+    {
+        dayOfWeek = (dayOfWeek + (currentDay - lastSavedDay)) % 7; // Progress normally
+        VarSet(VAR_CURRENT_DAY_OF_WEEK, dayOfWeek); // Save new weekday
+        VarSet(VAR_LAST_SAVED_DAY, currentDay);     // Update last saved day
+    }
 
+    // Print the day of the week
     str = sDayOfWeekStrings[dayOfWeek];
+    AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, 5, y, sTimeTextColors, TEXT_SKIP_DRAW, str);
 
-    AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, 10, y, sTimeTextColors, TEXT_SKIP_DRAW, str); //print dayof week
+    // Print the month
+    const u8 *monthStr = sMonthStrings[month - 1]; // Assuming you have an array of month names in `sMonthStrings`
+    AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, 70, y, sTimeTextColors, TEXT_SKIP_DRAW, monthStr);
+
+    // Print the time
+    x = 35; // Set the initial x position for the time
     ConvertIntToDecimalStringN(gStringVar4, hours, STR_CONV_MODE_RIGHT_ALIGN, 3);
-    AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, x, y, sTimeTextColors, TEXT_SKIP_DRAW, gStringVar4); //these three print the time, you can put the colon to only print half the time to flash it if you want
-    x += 18;
-    AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, x, y, sTimeTextColors, TEXT_SKIP_DRAW, gText_Colon2);
-    x += width;
-    ConvertIntToDecimalStringN(gStringVar4, minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
     AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, x, y, sTimeTextColors, TEXT_SKIP_DRAW, gStringVar4);
 
-#if (FLAG_CLOCK_MODE != 0)
-    if (suffix != NULL)
-    {
-        width = GetStringWidth(FONT_NORMAL, gStringVar4, 0) + 3; // CHAR_SPACE is 3 pixels wide
-        x += width;
-        StringExpandPlaceholders(gStringVar4, suffix);
-        AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, x, y, sTimeTextColors, TEXT_SKIP_DRAW, gStringVar4);
-    }
-#endif
+    width = GetStringWidth(FONT_NORMAL, gText_Colon2, 0); // Fix: Calculate the width of the colon
+
+    x += 18; // Move for the colon space
+    AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, x, y, sTimeTextColors, TEXT_SKIP_DRAW, gText_Colon2);  // Print the colon
+
+    x += width; // Move for the minutes
+    ConvertIntToDecimalStringN(gStringVar4, minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
+    AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, x, y, sTimeTextColors, TEXT_SKIP_DRAW, gStringVar4);
 
     PutWindowTilemap(WINDOW_TOP_BAR);
     CopyWindowToVram(WINDOW_TOP_BAR, COPYWIN_FULL);
 }
-
 
 //
 //  Exit Start Menu Functions 

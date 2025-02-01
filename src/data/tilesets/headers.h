@@ -23,9 +23,6 @@ const struct Tileset gTileset_Petalburg =
     .metatileAttributes = gMetatileAttributes_Petalburg,
     .callback = InitTilesetAnim_Petalburg,
     .paletteOverrides = gTilesetPalOverrides_Petalburg,
-    .palettes_summer = NULL,
-    .palettes_autumn = NULL,
-    .palettes_winter = NULL,
 };
 
 const struct Tileset gTileset_Rustboro =
@@ -639,6 +636,7 @@ const struct Tileset gTileset_PetalburgGym =
     .metatiles = gMetatiles_PetalburgGym,
     .metatileAttributes = gMetatileAttributes_PetalburgGym,
     .callback = NULL,
+    .paletteOverrides = gTilesetPalOverrides_Dorm,
     .palettes_summer = NULL,
     .palettes_autumn = NULL,
     .palettes_winter = NULL,

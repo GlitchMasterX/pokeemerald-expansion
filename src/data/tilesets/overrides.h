@@ -3,6 +3,7 @@ static const u16 sTilesetPalOverride_General05[] = INCBIN_U16("data/tilesets/pri
 static const u16 sTilesetPalOverride_Petalburg06_08[] = INCBIN_U16("data/tilesets/secondary/petalburg/override_palettes/06_08.gbapal");
 static const u16 gTilesetPalOverride_Academy14[] = INCBIN_U16("data/tilesets/secondary/battle_arena/override_palettes/14.gbapal");
 static const u16 gTilesetPalOverride_Luxura[] = INCBIN_U16("data/tilesets/secondary/luxuraisland/override_palettes/08.gbapal");
+static const u16 gTilesetPalOverride_Dorm[] = INCBIN_U16("data/tilesets/secondary/petalburg_gym/override_palettes/08.gbapal");
 #define OVERRIDES_END { .slot = 0xFF, }
 
 const struct PaletteOverride gTilesetPalOverrides_General[] =
@@ -61,6 +62,22 @@ const struct PaletteOverride gTilesetPalOverrides_Luxura[] =
         .startHour = HOUR_NIGHT,
         .endHour = HOUR_MORNING,
         .palette = gTilesetPalOverride_Luxura,
+    },
+    OVERRIDES_END
+};
+const struct PaletteOverride gTilesetPalOverrides_Dorm[] =
+{
+    {
+        .slot = 8,
+        .startHour = HOUR_NIGHT,
+        .endHour = HOUR_MORNING,
+        .palette = gTilesetPalOverride_Dorm,
+    },
+    {
+        .slot = 7,
+        .startHour = HOUR_NIGHT,
+        .endHour = HOUR_MORNING,
+        .palette = gTilesetPalOverride_Dorm,
     },
     OVERRIDES_END
 };

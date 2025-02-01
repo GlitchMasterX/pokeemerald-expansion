@@ -555,7 +555,7 @@ grave_1:
 # 266 "data/maps/Newmap11/scripts.pory"
 	clearflag FLAG_TALK_GRAVE
 # 267 "data/maps/Newmap11/scripts.pory"
-	warpsilent MAP_ASTRALIS_ACADEMY, 22, 27
+	warpsilent MAP_HARBORAC, 2, 27
 	return
 
 

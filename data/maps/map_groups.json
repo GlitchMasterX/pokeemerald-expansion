@@ -182,7 +182,11 @@
     "AstralisAcademy_PokemonCenter_2F",
     "AstralisAcademy_Mart",
     "Academy_Lib",
-    "NewMap2"
+    "NewMap2",
+    "DormIndoor",
+    "Dormindoor1",
+    "headoffice",
+    "Harborac"
   ],
   "gMapGroup_IndoorSlateport": [
     "SlateportCity_SternsShipyard_1F",

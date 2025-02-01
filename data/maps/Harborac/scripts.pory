@@ -1,0 +1,194 @@
+mapscripts Harborac_MapScripts {
+      MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
+	ACADEMY_START,2:ONHARBOR
+]
+MAP_SCRIPT_ON_FRAME_TABLE[
+	ACADEMY_START,2:ONHARBOR1
+]
+}
+script ONHARBOR1 {
+    playbgm(MUS_HG_KIMONO_GIRL_DANCE,FALSE)
+    lock
+    namebox(oldman)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}There you go, young man.\pI never understood why you chose to travel with this old man when there were better means of transport available.\pYou could've reached your destination on time, but I won't question your intentions.\pYou must've had your reasons."))
+    hidenamebox
+    namebox(Xylar)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}................."))
+    hidenamebox
+    namebox(oldman)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Well here it is,\pThe Astralis Academey, the place where normal trainers become legends."))
+    hidenamebox
+    namebox(Xylar)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}............."))
+    hidenamebox
+    namebox(oldman)
+    msgbox(format("(His eyes...They aren't normal.)"))
+    hidenamebox
+    waitmessage
+    fadescreen(FADE_TO_BLACK)
+    playse(SE_RG_SS_ANNE_HORN)
+    removeobject(4)
+    removeobject(11)
+    setflag(FLAG_OLDMAN_GONE)
+    fadescreen(FADE_FROM_BLACK)
+    applymovement(0xFF,MOVE2)
+    namebox(Xylar)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Legend?.... Become one?...\pI'm gonna destroy them all."))
+    hidenamebox
+    fadedefaultbgm
+    setvar(ACADEMY_START,3)
+    release
+}
+text oldman{
+    format("Oldman")
+}
+script ONHARBOR {
+    applymovement(0xFF,MOVE1)
+    
+}
+movement MOVE1 {
+    face_left
+}
+movement MOVE2 {
+    walk_right
+}
+
+script Fionamet {
+    lock
+    special(SpawnCameraObject)
+    playbgm(MUS_DUMMY,FALSE)
+    applymovement(0x7F, MOVE6)
+    applymovement(12,MOVE4)
+    applymovement(OBJ_EVENT_ID_PLAYER,MOVE3)
+    waitmovement(0)
+    namebox(unknown)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}My apologies...."))
+    hidenamebox
+    applymovement(13,MOVE5)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Are you alright, my lady?"))
+    waitmovement(0)
+    applymovement(13,mov1)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}How rude of him, he didn't even stop to apologize."))
+    waitmessage
+    applymovement(13,MOVE1)
+    namebox(unknown)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}........."))
+    hidenamebox
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}What happened?"))
+    waitmessage
+    applymovement(12,mov1)
+    namebox(unknown)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}...........\pNothing.\pLet's go."))
+    hidenamebox
+    fadescreen(FADE_TO_BLACK)
+    removeobject(12)
+    removeobject(13)
+    setflag(FLAG_FIONAMET)
+    warpsilent(MAP_ASTRALIS_ACADEMY,1,21)
+    setvar(ACADEMY_START,4)
+}
+
+movement mov1 {
+    face_right
+}
+movement MOVE6 {
+    walk_right*2
+}
+movement MOVE3 {
+    walk_right*12
+}
+movement MOVE4 {
+    walk_left*4
+    jump_2_up
+    face_down
+    face_right
+}
+movement MOVE5 {
+    walk_fast_left*5
+}
+script Fionamet1 {
+    applymovement(OBJ_EVENT_ID_PLAYER,mov3)
+    waitmovement(0)
+    goto(Fionamet)
+}
+script Fionamet2 {
+    applymovement(OBJ_EVENT_ID_PLAYER,mov4)
+    waitmovement(0)
+    goto(Fionamet)
+}
+movement mov4 {
+    walk_up
+    face_right
+}
+movement mov3 {
+    walk_down
+    face_right    
+}
+script sailorac{
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Be sure to enjoy your time at the academy, young one."))
+    release
+}
+script nerd {
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}They say this academy was built with the ideals of a great man....Lord Aurther.\pMost call him a hero, others a mystery.\pBut nobody really knows what happened to him in the end.\pShow interest?"),MSGBOX_YESNO)
+    if(var(VAR_RESULT)==1){
+        msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Huh? You're interested?\pWell all I know is that headmaster Caelum was his closest friend.\pMaybe he knows more....but good luck getting him to talk about it."))
+    }
+    else{
+        msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Strange, isn't it?\pA man once admired by the entire world just....disappears.\pPeople barely talk about him anymore, it's like history itself forgot him"))
+    }
+    release
+}
+script girlbencac{
+    lock
+    faceplayer
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}The breeze here feels different....gentle, yet carrying whispers of something long forgotten.\pIt's peaceful."))
+    release
+}
+script girlar{
+    lock
+    faceplayer
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}They say Arceus shaped the world...But I wonder if it still cares about what happens to us."))
+    release
+}
+script tennisgirl{
+    lock
+    faceplayer
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I signed up thinking there would be tennis tournaments, turns out the only thing they teach here is pokemon battles.\pJust my luck."))
+    release
+}
+script boyten{
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I....I think I like her.\pBut every time I try to talk to her my body freezes, what if I mess up?"))
+    release
+}
+script beltac{
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Age doesn't matter if you have the will to become the greatest of all time."))
+    release
+}
+script machopac{
+    lock
+    faceplayer
+    playmoncry(SPECIES_MACHOP,CRY_MODE_ROAR_1)
+    msgbox(format("Mach....Mach"))
+    release
+}
+
+script aceac{
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I will become the very best like no one ever was."))
+    release
+}
+script scinerd{
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Hmm...If a Pokemon's base stats correlate with EV training efficiency, then theoratically a properly optimized held item could......\pOh! A new variable! What if nature modifiers...No that would require more feild testing...\pUgh, I need more data."))
+    release
+}
