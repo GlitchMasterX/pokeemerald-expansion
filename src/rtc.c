@@ -122,6 +122,12 @@ u16 RtcGetErrorStatus(void)
 
 void RtcGetInfo(struct SiiRtcInfo *rtc)
 {
+    if (FlagGet(FLAG_PAUSE_TIME))// Prevent updating the RTC when paused
+    {
+        *rtc = sRtc;  // Return the last stored time instead of updating
+        return;
+    }
+
     if (OW_USE_FAKE_RTC)
         FakeRtc_GetRawInfo(rtc);
     else if (sErrorStatus & RTC_ERR_FLAG_MASK)
@@ -129,6 +135,7 @@ void RtcGetInfo(struct SiiRtcInfo *rtc)
     else
         RtcGetRawInfo(rtc);
 }
+
 
 void RtcGetDateTime(struct SiiRtcInfo *rtc)
 {
@@ -297,9 +304,13 @@ void RtcCalcTimeDifference(struct SiiRtcInfo *rtc, struct Time *result, struct T
 
 void RtcCalcLocalTime(void)
 {
+    if (FlagGet(FLAG_PAUSE_TIME))
+        return;
+
     RtcGetInfo(&sRtc);
     RtcCalcTimeDifference(&sRtc, &gLocalTime, &gSaveBlock2Ptr->localTimeOffset);
 }
+
 
 bool8 IsBetweenHours(s32 hours, s32 begin, s32 end)
 {

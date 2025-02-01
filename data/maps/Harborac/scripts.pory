@@ -16,7 +16,7 @@ script ONHARBOR1 {
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}................."))
     hidenamebox
     namebox(oldman)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Well here it is,\pThe Astralis Academey, the place where normal trainers become legends."))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Well here it is,\pThe Astralis Academy, the place where normal trainers become legends."))
     hidenamebox
     namebox(Xylar)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}............."))
@@ -52,7 +52,15 @@ movement MOVE1 {
 movement MOVE2 {
     walk_right
 }
-
+script Fionamet3{
+    applymovement(OBJ_EVENT_ID_PLAYER,mov5)
+    waitmovement(0)
+    goto(Fionamet)
+}
+movement mov5 {
+    walk_down*2
+    
+}
 script Fionamet {
     lock
     special(SpawnCameraObject)
@@ -99,6 +107,7 @@ movement MOVE3 {
 }
 movement MOVE4 {
     walk_left*4
+    emote_exclamation_mark
     jump_2_up
     face_down
     face_right
@@ -191,4 +200,37 @@ script scinerd{
     faceplayer
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Hmm...If a Pokemon's base stats correlate with EV training efficiency, then theoratically a properly optimized held item could......\pOh! A new variable! What if nature modifiers...No that would require more feild testing...\pUgh, I need more data."))
     release
+}
+
+script elias{
+    lock
+    faceplayer
+    applymovement(1,exclam)
+    namebox(unknown)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You're late Xylar.\pMy name is David Elias.\pI'm a professor and the headmaster made it clear that i was to ensure your arrival.\pCome with me, the headmaster is waiting for you."))
+    hidenamebox
+    namebox(Xylar)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't need an escort.\pJust tell me where I have to go."))
+    hidenamebox
+    namebox(eliasn)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You'll soon find that attitude won't get you far here.\pRespect is earned, young man.\nNow follow me."))
+    hidenamebox
+    applymovement(1,goin)
+    playse(SE_WARP_IN)
+    waitse
+    namebox(Xylar)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}............."))
+    hidenamebox
+    applymovement(0xFF,goin)
+    waitmovement(0)
+    removeobject(1)
+    setflag(FLAG_ELIASMET)
+    warp(MAP_HEADOFFICE,7,12)
+}
+movement goin {
+    walk_up
+    set_invisible
+}
+text eliasn{
+    format("Elias")
 }

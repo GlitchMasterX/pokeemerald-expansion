@@ -1,1 +1,64 @@
-mapscripts headoffice_MapScripts {}
+mapscripts headoffice_MapScripts {
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
+	ACADEMY_START,4:HEADMET
+]
+MAP_SCRIPT_ON_RESUME:HEADMET1
+MAP_SCRIPT_ON_FRAME_TABLE[
+	ACADEMY_START,4:Head
+]
+}
+script HEADMET1 {
+if(var(ACADEMY_START)== 4){
+    applymovement(0xFF,traces2)
+    createvobject(OBJ_EVENT_GFX_PROF_ELIAS,2,8,13,3,DIR_NORTH)
+}
+
+}
+script HEADMET {
+    applymovement(0xFF,traces2)
+    createvobject(OBJ_EVENT_GFX_PROF_ELIAS,2,8,13,3,DIR_NORTH)
+}
+
+script Head {
+    lock
+    applymovement(1,exclam)
+    namebox(alistair)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar, I trust your journey here was uneventful.\pI understand this is all new for you, but it's time to start fresh."))
+    hidenamebox
+    namebox(Xylar)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}..........."))
+    hidenamebox
+    namebox(alistair)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}We have a tradition of giving every first year a starter pokemon of their choice on the first day.\pBut since you arrived late there's only one left.\pHere you go."))
+    hidenamebox
+    playmoncry(SPECIES_TORCHIC,CRY_MODE_ENCOUNTER)
+    showmonpic(SPECIES_TORCHIC,10,3)
+    waitmoncry
+    givemon(SPECIES_TORCHIC,5,ITEM_EXP_SHARE,ITEM_POKE_BALL,NATURE_ADAMANT,1,0,0,0,0,0,0,0,15,31,20,31,21,10)
+    bufferspeciesname(STR_VAR_1,SPECIES_TORCHIC)
+    playse(MUS_DP_OBTAIN_ITEM)
+    msgbox(format("Xylar recieved {STR_VAR_1}."))
+    hidemonpic
+    msgbox(gText_NicknameThisPokemon,MSGBOX_YESNO)
+    if(var(VAR_RESULT)==FALSE){
+        goto(Head1)
+    }
+    else{
+        call(Common_EventScript_GetGiftMonPartySlot)
+        call(Common_EventScript_NameReceivedPartyMon)
+        goto(Head1)
+    }
+}
+
+script Head1 {
+    lock
+    applymovement(0xFF,exclam)
+    namebox(Xylar)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}This is it? I thought I was supposed to grow stronger, not babysit a chicken."))
+    hidenamebox
+    namebox(alistair)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Strength isn't always obvious at first glance.\pGive it time.\nTorchic may surprise you."))
+    hidenamebox
+    setvar(ACADEMY_START,5)
+    warp(MAP_ASTRALIS_ACADEMY_HOUSE2,12,1)   
+}

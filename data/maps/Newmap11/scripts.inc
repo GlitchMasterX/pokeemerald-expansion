@@ -537,7 +537,7 @@ question:
 grave::
 # 260 "data/maps/Newmap11/scripts.pory"
 	goto_if_set FLAG_TALK_GRAVE, grave_1
-# 270 "data/maps/Newmap11/scripts.pory"
+# 272 "data/maps/Newmap11/scripts.pory"
 	goto EventScript_M_Grave
 	return
 
@@ -553,8 +553,12 @@ grave_1:
 # 265 "data/maps/Newmap11/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 266 "data/maps/Newmap11/scripts.pory"
-	clearflag FLAG_TALK_GRAVE
+	initclock 10, 10
 # 267 "data/maps/Newmap11/scripts.pory"
+	setflag FLAG_PAUSE_TIME
+# 268 "data/maps/Newmap11/scripts.pory"
+	clearflag FLAG_TALK_GRAVE
+# 269 "data/maps/Newmap11/scripts.pory"
 	warpsilent MAP_HARBORAC, 2, 27
 	return
 

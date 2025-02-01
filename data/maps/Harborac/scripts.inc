@@ -100,316 +100,394 @@ MOVE2:
 	walk_right
 	step_end
 
-Fionamet::
+Fionamet3::
+# 56 "data/maps/Harborac/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, mov5
 # 57 "data/maps/Harborac/scripts.pory"
-	lock
+	waitmovement 0
 # 58 "data/maps/Harborac/scripts.pory"
-	special SpawnCameraObject
-# 59 "data/maps/Harborac/scripts.pory"
-	playbgm MUS_DUMMY, FALSE
+	goto Fionamet
+	return
+
+
 # 60 "data/maps/Harborac/scripts.pory"
-	applymovement 0x7F, MOVE6
+mov5:
 # 61 "data/maps/Harborac/scripts.pory"
-	applymovement 12, MOVE4
-# 62 "data/maps/Harborac/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, MOVE3
-# 63 "data/maps/Harborac/scripts.pory"
-	waitmovement 0
-# 64 "data/maps/Harborac/scripts.pory"
-	namebox unknown
+	walk_down
+# 61 "data/maps/Harborac/scripts.pory"
+	walk_down
+	step_end
+
+Fionamet::
 # 65 "data/maps/Harborac/scripts.pory"
-	msgbox Fionamet_Text_0
+	lock
 # 66 "data/maps/Harborac/scripts.pory"
-	hidenamebox
+	special SpawnCameraObject
 # 67 "data/maps/Harborac/scripts.pory"
-	applymovement 13, MOVE5
+	playbgm MUS_DUMMY, FALSE
 # 68 "data/maps/Harborac/scripts.pory"
-	msgbox Fionamet_Text_1
+	applymovement 0x7F, MOVE6
 # 69 "data/maps/Harborac/scripts.pory"
-	waitmovement 0
+	applymovement 12, MOVE4
 # 70 "data/maps/Harborac/scripts.pory"
-	applymovement 13, mov1
+	applymovement OBJ_EVENT_ID_PLAYER, MOVE3
 # 71 "data/maps/Harborac/scripts.pory"
-	msgbox Fionamet_Text_2
+	waitmovement 0
 # 72 "data/maps/Harborac/scripts.pory"
-	waitmessage
+	namebox unknown
 # 73 "data/maps/Harborac/scripts.pory"
-	applymovement 13, MOVE1
+	msgbox Fionamet_Text_0
 # 74 "data/maps/Harborac/scripts.pory"
-	namebox unknown
+	hidenamebox
 # 75 "data/maps/Harborac/scripts.pory"
-	msgbox Fionamet_Text_3
+	applymovement 13, MOVE5
 # 76 "data/maps/Harborac/scripts.pory"
-	hidenamebox
+	msgbox Fionamet_Text_1
 # 77 "data/maps/Harborac/scripts.pory"
-	msgbox Fionamet_Text_4
+	waitmovement 0
 # 78 "data/maps/Harborac/scripts.pory"
-	waitmessage
+	applymovement 13, mov1
 # 79 "data/maps/Harborac/scripts.pory"
-	applymovement 12, mov1
+	msgbox Fionamet_Text_2
 # 80 "data/maps/Harborac/scripts.pory"
-	namebox unknown
+	waitmessage
 # 81 "data/maps/Harborac/scripts.pory"
-	msgbox Fionamet_Text_5
+	applymovement 13, MOVE1
 # 82 "data/maps/Harborac/scripts.pory"
-	hidenamebox
+	namebox unknown
 # 83 "data/maps/Harborac/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	msgbox Fionamet_Text_3
 # 84 "data/maps/Harborac/scripts.pory"
-	removeobject 12
+	hidenamebox
 # 85 "data/maps/Harborac/scripts.pory"
-	removeobject 13
+	msgbox Fionamet_Text_4
 # 86 "data/maps/Harborac/scripts.pory"
-	setflag FLAG_FIONAMET
+	waitmessage
 # 87 "data/maps/Harborac/scripts.pory"
-	warpsilent MAP_ASTRALIS_ACADEMY, 1, 21
+	applymovement 12, mov1
 # 88 "data/maps/Harborac/scripts.pory"
+	namebox unknown
+# 89 "data/maps/Harborac/scripts.pory"
+	msgbox Fionamet_Text_5
+# 90 "data/maps/Harborac/scripts.pory"
+	hidenamebox
+# 91 "data/maps/Harborac/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 92 "data/maps/Harborac/scripts.pory"
+	removeobject 12
+# 93 "data/maps/Harborac/scripts.pory"
+	removeobject 13
+# 94 "data/maps/Harborac/scripts.pory"
+	setflag FLAG_FIONAMET
+# 95 "data/maps/Harborac/scripts.pory"
+	warpsilent MAP_ASTRALIS_ACADEMY, 1, 21
+# 96 "data/maps/Harborac/scripts.pory"
 	setvar ACADEMY_START, 4
 	return
 
 
-# 91 "data/maps/Harborac/scripts.pory"
+# 99 "data/maps/Harborac/scripts.pory"
 mov1:
-# 92 "data/maps/Harborac/scripts.pory"
-	face_right
-	step_end
-
-# 94 "data/maps/Harborac/scripts.pory"
-MOVE6:
-# 95 "data/maps/Harborac/scripts.pory"
-	walk_right
-# 95 "data/maps/Harborac/scripts.pory"
-	walk_right
-	step_end
-
-# 97 "data/maps/Harborac/scripts.pory"
-MOVE3:
-# 98 "data/maps/Harborac/scripts.pory"
-	walk_right
-# 98 "data/maps/Harborac/scripts.pory"
-	walk_right
-# 98 "data/maps/Harborac/scripts.pory"
-	walk_right
-# 98 "data/maps/Harborac/scripts.pory"
-	walk_right
-# 98 "data/maps/Harborac/scripts.pory"
-	walk_right
-# 98 "data/maps/Harborac/scripts.pory"
-	walk_right
-# 98 "data/maps/Harborac/scripts.pory"
-	walk_right
-# 98 "data/maps/Harborac/scripts.pory"
-	walk_right
-# 98 "data/maps/Harborac/scripts.pory"
-	walk_right
-# 98 "data/maps/Harborac/scripts.pory"
-	walk_right
-# 98 "data/maps/Harborac/scripts.pory"
-	walk_right
-# 98 "data/maps/Harborac/scripts.pory"
-	walk_right
-	step_end
-
 # 100 "data/maps/Harborac/scripts.pory"
-MOVE4:
-# 101 "data/maps/Harborac/scripts.pory"
-	walk_left
-# 101 "data/maps/Harborac/scripts.pory"
-	walk_left
-# 101 "data/maps/Harborac/scripts.pory"
-	walk_left
-# 101 "data/maps/Harborac/scripts.pory"
-	walk_left
-# 102 "data/maps/Harborac/scripts.pory"
-	jump_2_up
-# 103 "data/maps/Harborac/scripts.pory"
-	face_down
-# 104 "data/maps/Harborac/scripts.pory"
 	face_right
 	step_end
 
+# 102 "data/maps/Harborac/scripts.pory"
+MOVE6:
+# 103 "data/maps/Harborac/scripts.pory"
+	walk_right
+# 103 "data/maps/Harborac/scripts.pory"
+	walk_right
+	step_end
+
+# 105 "data/maps/Harborac/scripts.pory"
+MOVE3:
 # 106 "data/maps/Harborac/scripts.pory"
+	walk_right
+# 106 "data/maps/Harborac/scripts.pory"
+	walk_right
+# 106 "data/maps/Harborac/scripts.pory"
+	walk_right
+# 106 "data/maps/Harborac/scripts.pory"
+	walk_right
+# 106 "data/maps/Harborac/scripts.pory"
+	walk_right
+# 106 "data/maps/Harborac/scripts.pory"
+	walk_right
+# 106 "data/maps/Harborac/scripts.pory"
+	walk_right
+# 106 "data/maps/Harborac/scripts.pory"
+	walk_right
+# 106 "data/maps/Harborac/scripts.pory"
+	walk_right
+# 106 "data/maps/Harborac/scripts.pory"
+	walk_right
+# 106 "data/maps/Harborac/scripts.pory"
+	walk_right
+# 106 "data/maps/Harborac/scripts.pory"
+	walk_right
+	step_end
+
+# 108 "data/maps/Harborac/scripts.pory"
+MOVE4:
+# 109 "data/maps/Harborac/scripts.pory"
+	walk_left
+# 109 "data/maps/Harborac/scripts.pory"
+	walk_left
+# 109 "data/maps/Harborac/scripts.pory"
+	walk_left
+# 109 "data/maps/Harborac/scripts.pory"
+	walk_left
+# 110 "data/maps/Harborac/scripts.pory"
+	emote_exclamation_mark
+# 111 "data/maps/Harborac/scripts.pory"
+	jump_2_up
+# 112 "data/maps/Harborac/scripts.pory"
+	face_down
+# 113 "data/maps/Harborac/scripts.pory"
+	face_right
+	step_end
+
+# 115 "data/maps/Harborac/scripts.pory"
 MOVE5:
-# 107 "data/maps/Harborac/scripts.pory"
+# 116 "data/maps/Harborac/scripts.pory"
 	walk_fast_left
-# 107 "data/maps/Harborac/scripts.pory"
+# 116 "data/maps/Harborac/scripts.pory"
 	walk_fast_left
-# 107 "data/maps/Harborac/scripts.pory"
+# 116 "data/maps/Harborac/scripts.pory"
 	walk_fast_left
-# 107 "data/maps/Harborac/scripts.pory"
+# 116 "data/maps/Harborac/scripts.pory"
 	walk_fast_left
-# 107 "data/maps/Harborac/scripts.pory"
+# 116 "data/maps/Harborac/scripts.pory"
 	walk_fast_left
 	step_end
 
 Fionamet1::
-# 110 "data/maps/Harborac/scripts.pory"
+# 119 "data/maps/Harborac/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, mov3
-# 111 "data/maps/Harborac/scripts.pory"
+# 120 "data/maps/Harborac/scripts.pory"
 	waitmovement 0
-# 112 "data/maps/Harborac/scripts.pory"
+# 121 "data/maps/Harborac/scripts.pory"
 	goto Fionamet
 	return
 
 
 Fionamet2::
-# 115 "data/maps/Harborac/scripts.pory"
+# 124 "data/maps/Harborac/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, mov4
-# 116 "data/maps/Harborac/scripts.pory"
+# 125 "data/maps/Harborac/scripts.pory"
 	waitmovement 0
-# 117 "data/maps/Harborac/scripts.pory"
+# 126 "data/maps/Harborac/scripts.pory"
 	goto Fionamet
 	return
 
 
-# 119 "data/maps/Harborac/scripts.pory"
+# 128 "data/maps/Harborac/scripts.pory"
 mov4:
-# 120 "data/maps/Harborac/scripts.pory"
+# 129 "data/maps/Harborac/scripts.pory"
 	walk_up
-# 121 "data/maps/Harborac/scripts.pory"
+# 130 "data/maps/Harborac/scripts.pory"
 	face_right
 	step_end
 
-# 123 "data/maps/Harborac/scripts.pory"
+# 132 "data/maps/Harborac/scripts.pory"
 mov3:
-# 124 "data/maps/Harborac/scripts.pory"
+# 133 "data/maps/Harborac/scripts.pory"
 	walk_down
-# 125 "data/maps/Harborac/scripts.pory"
+# 134 "data/maps/Harborac/scripts.pory"
 	face_right
 	step_end
 
 sailorac::
-# 128 "data/maps/Harborac/scripts.pory"
+# 137 "data/maps/Harborac/scripts.pory"
 	lock
-# 129 "data/maps/Harborac/scripts.pory"
+# 138 "data/maps/Harborac/scripts.pory"
 	faceplayer
-# 130 "data/maps/Harborac/scripts.pory"
+# 139 "data/maps/Harborac/scripts.pory"
 	msgbox sailorac_Text_0
-# 131 "data/maps/Harborac/scripts.pory"
+# 140 "data/maps/Harborac/scripts.pory"
 	release
 	return
 
 
 nerd::
-# 134 "data/maps/Harborac/scripts.pory"
+# 143 "data/maps/Harborac/scripts.pory"
 	lock
-# 135 "data/maps/Harborac/scripts.pory"
+# 144 "data/maps/Harborac/scripts.pory"
 	faceplayer
-# 136 "data/maps/Harborac/scripts.pory"
+# 145 "data/maps/Harborac/scripts.pory"
 	msgbox nerd_Text_0, MSGBOX_YESNO
-# 137 "data/maps/Harborac/scripts.pory"
+# 146 "data/maps/Harborac/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq nerd_2
-# 141 "data/maps/Harborac/scripts.pory"
+# 150 "data/maps/Harborac/scripts.pory"
 	msgbox nerd_Text_2
 nerd_1:
-# 143 "data/maps/Harborac/scripts.pory"
+# 152 "data/maps/Harborac/scripts.pory"
 	release
 	return
 
 nerd_2:
-# 138 "data/maps/Harborac/scripts.pory"
+# 147 "data/maps/Harborac/scripts.pory"
 	msgbox nerd_Text_1
 	goto nerd_1
 
 
 girlbencac::
-# 146 "data/maps/Harborac/scripts.pory"
+# 155 "data/maps/Harborac/scripts.pory"
 	lock
-# 147 "data/maps/Harborac/scripts.pory"
+# 156 "data/maps/Harborac/scripts.pory"
 	faceplayer
-# 148 "data/maps/Harborac/scripts.pory"
+# 157 "data/maps/Harborac/scripts.pory"
 	msgbox girlbencac_Text_0
-# 149 "data/maps/Harborac/scripts.pory"
+# 158 "data/maps/Harborac/scripts.pory"
 	release
 	return
 
 
 girlar::
-# 152 "data/maps/Harborac/scripts.pory"
+# 161 "data/maps/Harborac/scripts.pory"
 	lock
-# 153 "data/maps/Harborac/scripts.pory"
+# 162 "data/maps/Harborac/scripts.pory"
 	faceplayer
-# 154 "data/maps/Harborac/scripts.pory"
+# 163 "data/maps/Harborac/scripts.pory"
 	msgbox girlar_Text_0
-# 155 "data/maps/Harborac/scripts.pory"
+# 164 "data/maps/Harborac/scripts.pory"
 	release
 	return
 
 
 tennisgirl::
-# 158 "data/maps/Harborac/scripts.pory"
+# 167 "data/maps/Harborac/scripts.pory"
 	lock
-# 159 "data/maps/Harborac/scripts.pory"
+# 168 "data/maps/Harborac/scripts.pory"
 	faceplayer
-# 160 "data/maps/Harborac/scripts.pory"
+# 169 "data/maps/Harborac/scripts.pory"
 	msgbox tennisgirl_Text_0
-# 161 "data/maps/Harborac/scripts.pory"
+# 170 "data/maps/Harborac/scripts.pory"
 	release
 	return
 
 
 boyten::
-# 164 "data/maps/Harborac/scripts.pory"
+# 173 "data/maps/Harborac/scripts.pory"
 	lock
-# 165 "data/maps/Harborac/scripts.pory"
+# 174 "data/maps/Harborac/scripts.pory"
 	faceplayer
-# 166 "data/maps/Harborac/scripts.pory"
+# 175 "data/maps/Harborac/scripts.pory"
 	msgbox boyten_Text_0
-# 167 "data/maps/Harborac/scripts.pory"
+# 176 "data/maps/Harborac/scripts.pory"
 	release
 	return
 
 
 beltac::
-# 170 "data/maps/Harborac/scripts.pory"
+# 179 "data/maps/Harborac/scripts.pory"
 	lock
-# 171 "data/maps/Harborac/scripts.pory"
+# 180 "data/maps/Harborac/scripts.pory"
 	faceplayer
-# 172 "data/maps/Harborac/scripts.pory"
+# 181 "data/maps/Harborac/scripts.pory"
 	msgbox beltac_Text_0
-# 173 "data/maps/Harborac/scripts.pory"
+# 182 "data/maps/Harborac/scripts.pory"
 	release
 	return
 
 
 machopac::
-# 176 "data/maps/Harborac/scripts.pory"
+# 185 "data/maps/Harborac/scripts.pory"
 	lock
-# 177 "data/maps/Harborac/scripts.pory"
+# 186 "data/maps/Harborac/scripts.pory"
 	faceplayer
-# 178 "data/maps/Harborac/scripts.pory"
+# 187 "data/maps/Harborac/scripts.pory"
 	playmoncry SPECIES_MACHOP, CRY_MODE_ROAR_1
-# 179 "data/maps/Harborac/scripts.pory"
+# 188 "data/maps/Harborac/scripts.pory"
 	msgbox machopac_Text_0
-# 180 "data/maps/Harborac/scripts.pory"
+# 189 "data/maps/Harborac/scripts.pory"
 	release
 	return
 
 
 aceac::
-# 184 "data/maps/Harborac/scripts.pory"
+# 193 "data/maps/Harborac/scripts.pory"
 	lock
-# 185 "data/maps/Harborac/scripts.pory"
+# 194 "data/maps/Harborac/scripts.pory"
 	faceplayer
-# 186 "data/maps/Harborac/scripts.pory"
+# 195 "data/maps/Harborac/scripts.pory"
 	msgbox aceac_Text_0
-# 187 "data/maps/Harborac/scripts.pory"
+# 196 "data/maps/Harborac/scripts.pory"
 	release
 	return
 
 
 scinerd::
-# 190 "data/maps/Harborac/scripts.pory"
+# 199 "data/maps/Harborac/scripts.pory"
 	lock
-# 191 "data/maps/Harborac/scripts.pory"
+# 200 "data/maps/Harborac/scripts.pory"
 	faceplayer
-# 192 "data/maps/Harborac/scripts.pory"
+# 201 "data/maps/Harborac/scripts.pory"
 	msgbox scinerd_Text_0
-# 193 "data/maps/Harborac/scripts.pory"
+# 202 "data/maps/Harborac/scripts.pory"
 	release
 	return
 
+
+elias::
+# 206 "data/maps/Harborac/scripts.pory"
+	lock
+# 207 "data/maps/Harborac/scripts.pory"
+	faceplayer
+# 208 "data/maps/Harborac/scripts.pory"
+	applymovement 1, exclam
+# 209 "data/maps/Harborac/scripts.pory"
+	namebox unknown
+# 210 "data/maps/Harborac/scripts.pory"
+	msgbox elias_Text_0
+# 211 "data/maps/Harborac/scripts.pory"
+	hidenamebox
+# 212 "data/maps/Harborac/scripts.pory"
+	namebox Xylar
+# 213 "data/maps/Harborac/scripts.pory"
+	msgbox elias_Text_1
+# 214 "data/maps/Harborac/scripts.pory"
+	hidenamebox
+# 215 "data/maps/Harborac/scripts.pory"
+	namebox eliasn
+# 216 "data/maps/Harborac/scripts.pory"
+	msgbox elias_Text_2
+# 217 "data/maps/Harborac/scripts.pory"
+	hidenamebox
+# 218 "data/maps/Harborac/scripts.pory"
+	applymovement 1, goin
+# 219 "data/maps/Harborac/scripts.pory"
+	playse SE_WARP_IN
+# 220 "data/maps/Harborac/scripts.pory"
+	waitse
+# 221 "data/maps/Harborac/scripts.pory"
+	namebox Xylar
+# 222 "data/maps/Harborac/scripts.pory"
+	msgbox ONHARBOR1_Text_3
+# 223 "data/maps/Harborac/scripts.pory"
+	hidenamebox
+# 224 "data/maps/Harborac/scripts.pory"
+	applymovement 0xFF, goin
+# 225 "data/maps/Harborac/scripts.pory"
+	waitmovement 0
+# 226 "data/maps/Harborac/scripts.pory"
+	removeobject 1
+# 227 "data/maps/Harborac/scripts.pory"
+	setflag FLAG_ELIASMET
+# 228 "data/maps/Harborac/scripts.pory"
+	warp MAP_HEADOFFICE, 7, 12
+	return
+
+
+# 230 "data/maps/Harborac/scripts.pory"
+goin:
+# 231 "data/maps/Harborac/scripts.pory"
+	walk_up
+# 232 "data/maps/Harborac/scripts.pory"
+	set_invisible
+	step_end
 
 ONHARBOR1_Text_0:
 # 13 "data/maps/Harborac/scripts.pory"
@@ -429,7 +507,7 @@ ONHARBOR1_Text_1:
 ONHARBOR1_Text_2:
 # 19 "data/maps/Harborac/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Well here it is,\p"
-	.string "The Astralis Academey, the place where\n"
+	.string "The Astralis Academy, the place where\n"
 	.string "normal trainers become legends.$"
 
 ONHARBOR1_Text_3:
@@ -446,39 +524,39 @@ ONHARBOR1_Text_5:
 	.string "I'm gonna destroy them all.$"
 
 Fionamet_Text_0:
-# 65 "data/maps/Harborac/scripts.pory"
+# 73 "data/maps/Harborac/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}My apologies....$"
 
 Fionamet_Text_1:
-# 68 "data/maps/Harborac/scripts.pory"
+# 76 "data/maps/Harborac/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Are you alright, my lady?$"
 
 Fionamet_Text_2:
-# 71 "data/maps/Harborac/scripts.pory"
+# 79 "data/maps/Harborac/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}How rude of him, he didn't even stop to\n"
 	.string "apologize.$"
 
 Fionamet_Text_3:
-# 75 "data/maps/Harborac/scripts.pory"
+# 83 "data/maps/Harborac/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}.........$"
 
 Fionamet_Text_4:
-# 77 "data/maps/Harborac/scripts.pory"
+# 85 "data/maps/Harborac/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}What happened?$"
 
 Fionamet_Text_5:
-# 81 "data/maps/Harborac/scripts.pory"
+# 89 "data/maps/Harborac/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}...........\p"
 	.string "Nothing.\p"
 	.string "Let's go.$"
 
 sailorac_Text_0:
-# 130 "data/maps/Harborac/scripts.pory"
+# 139 "data/maps/Harborac/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Be sure to enjoy your time at the\n"
 	.string "academy, young one.$"
 
 nerd_Text_0:
-# 136 "data/maps/Harborac/scripts.pory"
+# 145 "data/maps/Harborac/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}They say this academy was built with\n"
 	.string "the ideals of a great man....Lord\l"
 	.string "Aurther.\p"
@@ -488,7 +566,7 @@ nerd_Text_0:
 	.string "Show interest?$"
 
 nerd_Text_1:
-# 138 "data/maps/Harborac/scripts.pory"
+# 147 "data/maps/Harborac/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Huh? You're interested?\p"
 	.string "Well all I know is that headmaster\n"
 	.string "Caelum was his closest friend.\p"
@@ -496,7 +574,7 @@ nerd_Text_1:
 	.string "getting him to talk about it.$"
 
 nerd_Text_2:
-# 141 "data/maps/Harborac/scripts.pory"
+# 150 "data/maps/Harborac/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Strange, isn't it?\p"
 	.string "A man once admired by the entire world\n"
 	.string "just....disappears.\p"
@@ -504,20 +582,20 @@ nerd_Text_2:
 	.string "it's like history itself forgot him$"
 
 girlbencac_Text_0:
-# 148 "data/maps/Harborac/scripts.pory"
+# 157 "data/maps/Harborac/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}The breeze here feels\n"
 	.string "different....gentle, yet carrying\l"
 	.string "whispers of something long forgotten.\p"
 	.string "It's peaceful.$"
 
 girlar_Text_0:
-# 154 "data/maps/Harborac/scripts.pory"
+# 163 "data/maps/Harborac/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}They say Arceus shaped the world...But\n"
 	.string "I wonder if it still cares about what\l"
 	.string "happens to us.$"
 
 tennisgirl_Text_0:
-# 160 "data/maps/Harborac/scripts.pory"
+# 169 "data/maps/Harborac/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}I signed up thinking there would be\n"
 	.string "tennis tournaments, turns out the only\l"
 	.string "thing they teach here is pokemon\l"
@@ -525,27 +603,27 @@ tennisgirl_Text_0:
 	.string "Just my luck.$"
 
 boyten_Text_0:
-# 166 "data/maps/Harborac/scripts.pory"
+# 175 "data/maps/Harborac/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}I....I think I like her.\p"
 	.string "But every time I try to talk to her my\n"
 	.string "body freezes, what if I mess up?$"
 
 beltac_Text_0:
-# 172 "data/maps/Harborac/scripts.pory"
+# 181 "data/maps/Harborac/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Age doesn't matter if you have the will\n"
 	.string "to become the greatest of all time.$"
 
 machopac_Text_0:
-# 179 "data/maps/Harborac/scripts.pory"
+# 188 "data/maps/Harborac/scripts.pory"
 	.string "Mach....Mach$"
 
 aceac_Text_0:
-# 186 "data/maps/Harborac/scripts.pory"
+# 195 "data/maps/Harborac/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}I will become the very best like no one\n"
 	.string "ever was.$"
 
 scinerd_Text_0:
-# 192 "data/maps/Harborac/scripts.pory"
+# 201 "data/maps/Harborac/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Hmm...If a Pokemon's base stats\n"
 	.string "correlate with EV training efficiency,\l"
 	.string "then theoratically a properly optimized\l"
@@ -555,6 +633,32 @@ scinerd_Text_0:
 	.string "feild testing...\p"
 	.string "Ugh, I need more data.$"
 
+elias_Text_0:
+# 210 "data/maps/Harborac/scripts.pory"
+	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}You're late Xylar.\p"
+	.string "My name is David Elias.\p"
+	.string "I'm a professor and the headmaster\n"
+	.string "made it clear that i was to ensure your\l"
+	.string "arrival.\p"
+	.string "Come with me, the headmaster is waiting\n"
+	.string "for you.$"
+
+elias_Text_1:
+# 213 "data/maps/Harborac/scripts.pory"
+	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't need an escort.\p"
+	.string "Just tell me where I have to go.$"
+
+elias_Text_2:
+# 216 "data/maps/Harborac/scripts.pory"
+	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}You'll soon find that attitude won't get\n"
+	.string "you far here.\p"
+	.string "Respect is earned, young man.\n"
+	.string "Now follow me.$"
+
 oldman::
 # 42 "data/maps/Harborac/scripts.pory"
 	.string "Oldman$"
+
+eliasn::
+# 234 "data/maps/Harborac/scripts.pory"
+	.string "Elias$"

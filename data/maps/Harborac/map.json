@@ -234,6 +234,15 @@
       "var": "ACADEMY_START",
       "var_value": "3",
       "script": "Fionamet2"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 19,
+      "elevation": 0,
+      "var": "ACADEMY_START",
+      "var_value": "3",
+      "script": "Fionamet3"
     }
   ],
   "bg_events": [
