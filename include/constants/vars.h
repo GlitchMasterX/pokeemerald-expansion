@@ -109,7 +109,7 @@
 #define VAR_CURRENT_DAY_OF_WEEK                          0x4059 // Unused Var
 #define VAR_RUSTBORO_CITY_STATE                          0x405A
 #define VAR_LAST_SAVED_DAY                           0x405B // Unused Var
-#define VAR_LILYCOVE_CITY_STATE                          0x405C // Unused Var
+#define VAR_CURRENT_TIME_OF_DAY                          0x405C // Unused Var
 #define VAR_MOSSDEEP_CITY_STATE                          0x405D
 #define VAR_SOOTOPOLIS_CITY_STATE                        0x405E
 #define VAR_EVER_GRANDE_CITY_STATE                       0x405F // Unused Var

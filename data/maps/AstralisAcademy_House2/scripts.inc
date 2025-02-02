@@ -1,6 +1,18 @@
-# 1 "data/maps/AstralisAcademy_House2/scripts.pory"
-
-# 2 "data/maps/AstralisAcademy_House2/scripts.pory"
 AstralisAcademy_House2_MapScripts::
-# 3 "data/maps/AstralisAcademy_House2/scripts.pory"
+# 2 "data/maps/AstralisAcademy_House2/scripts.pory"
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, AstralisAcademy_House2_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
 	.byte 0
+
+AstralisAcademy_House2_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
+# 3 "data/maps/AstralisAcademy_House2/scripts.pory"
+	map_script_2 ACADEMY_START, 5, Serenamet
+	.2byte 0
+
+
+Serenamet::
+# 8 "data/maps/AstralisAcademy_House2/scripts.pory"
+	addobject 1, MAP_ASTRALIS_ACADEMY_HOUSE2
+# 9 "data/maps/AstralisAcademy_House2/scripts.pory"
+	setobjectxy 1, 12, 10
+	return
+

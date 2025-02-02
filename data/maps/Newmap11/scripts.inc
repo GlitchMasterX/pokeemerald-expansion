@@ -537,7 +537,7 @@ question:
 grave::
 # 260 "data/maps/Newmap11/scripts.pory"
 	goto_if_set FLAG_TALK_GRAVE, grave_1
-# 272 "data/maps/Newmap11/scripts.pory"
+# 273 "data/maps/Newmap11/scripts.pory"
 	goto EventScript_M_Grave
 	return
 
@@ -559,6 +559,8 @@ grave_1:
 # 268 "data/maps/Newmap11/scripts.pory"
 	clearflag FLAG_TALK_GRAVE
 # 269 "data/maps/Newmap11/scripts.pory"
+	setvar VAR_CURRENT_MONTH, 3
+# 270 "data/maps/Newmap11/scripts.pory"
 	warpsilent MAP_HARBORAC, 2, 27
 	return
 

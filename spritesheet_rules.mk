@@ -4941,3 +4941,9 @@ $(OBJEVENTGFXDIR)/people/fiona.4bpp: %.4bpp: %.png
 
 $(OBJEVENTGFXDIR)/people/voss.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/kael.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/orson.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4

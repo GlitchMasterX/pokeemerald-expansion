@@ -207,7 +207,96 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 45,
+      "elevation": 0,
+      "var": "ACADEMY_START",
+      "var_value": "6",
+      "script": "serenaextend1"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 45,
+      "elevation": 0,
+      "var": "ACADEMY_START",
+      "var_value": "6",
+      "script": "serenaextend"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 45,
+      "elevation": 0,
+      "var": "ACADEMY_START",
+      "var_value": "6",
+      "script": "serenaextend2"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 45,
+      "elevation": 0,
+      "var": "ACADEMY_START",
+      "var_value": "6",
+      "script": "serenaextend"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 21,
+      "elevation": 0,
+      "var": "ACADEMY_START",
+      "var_value": "4",
+      "script": "notnowdorm"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 22,
+      "elevation": 0,
+      "var": "ACADEMY_START",
+      "var_value": "4",
+      "script": "notnowdorm"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 21,
+      "elevation": 0,
+      "var": "ACADEMY_START",
+      "var_value": "6",
+      "script": "notnowdorm"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 22,
+      "elevation": 0,
+      "var": "ACADEMY_START",
+      "var_value": "6",
+      "script": "notnowdorm"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 22,
+      "elevation": 0,
+      "var": "ACADEMY_START",
+      "var_value": "7",
+      "script": "notnowdorm"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 21,
+      "elevation": 0,
+      "var": "ACADEMY_START",
+      "var_value": "7",
+      "script": "notnowdorm"
+    }
   ],
   "bg_events": [
 

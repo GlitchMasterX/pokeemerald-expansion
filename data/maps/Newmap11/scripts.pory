@@ -266,6 +266,7 @@ script grave {
     initclock(10,10)
     setflag(FLAG_PAUSE_TIME)
     clearflag(FLAG_TALK_GRAVE)
+    setvar(VAR_CURRENT_MONTH,3)
     warpsilent(MAP_HARBORAC,2,27)
     }
     else{

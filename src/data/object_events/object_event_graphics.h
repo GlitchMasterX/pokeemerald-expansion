@@ -482,6 +482,8 @@ const u16 gObjectEventPal_Xylar[] = INCBIN_U16("graphics/object_events/palettes/
 const u32 gObjectEventPic_Fiona[] = INCBIN_U32("graphics/object_events/pics/people/fiona.4bpp");
 const u16 gObjectEventPal_Fiona[] = INCBIN_U16("graphics/object_events/palettes/fiona.gbapal");
 const u32 gObjectEventPic_Voss[] = INCBIN_U32("graphics/object_events/pics/people/voss.4bpp");
+const u32 gObjectEventPic_Kael[] = INCBIN_U32("graphics/object_events/pics/people/kael.4bpp");
+const u32 gObjectEventPic_Orson[] = INCBIN_U32("graphics/object_events/pics/people/orson.4bpp");
 const u16 gObjectEventPal_Voss[] = INCBIN_U16("graphics/object_events/palettes/voss.gbapal");
 #if OW_FOLLOWERS_POKEBALLS
 const u32 gObjectEventPic_MasterBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_master.4bpp");

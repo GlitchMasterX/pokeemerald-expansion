@@ -33,6 +33,7 @@ void FakeRtc_TickTimeForward(void)
         return;
 
     FakeRtc_AdvanceTimeBy(0, 0, FakeRtc_GetSecondsRatio());
+    VarSet(VAR_CURRENT_TIME_OF_DAY, GetTimeOfDay());
 }
 
 void FakeRtc_AdvanceTimeBy(u32 hours, u32 minutes, u32 seconds)
@@ -63,6 +64,7 @@ void FakeRtc_AdvanceTimeBy(u32 hours, u32 minutes, u32 seconds)
     time->seconds = seconds;
     time->minutes = minutes;
     time->hours = hours;
+    VarSet(VAR_CURRENT_TIME_OF_DAY, GetTimeOfDay());
 }
 
 void FakeRtc_ManuallySetTime(u32 hour, u32 minute, u32 second)
@@ -77,6 +79,7 @@ void FakeRtc_ManuallySetTime(u32 hour, u32 minute, u32 second)
 
     CalcTimeDifference(&diff, &gLocalTime, &target);
     FakeRtc_AdvanceTimeBy(diff.hours, diff.minutes, diff.seconds);
+    VarSet(VAR_CURRENT_TIME_OF_DAY, GetTimeOfDay());
 }
 
 u32 FakeRtc_GetSecondsRatio(void)

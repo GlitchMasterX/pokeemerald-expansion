@@ -34,7 +34,7 @@ script Head {
     playmoncry(SPECIES_TORCHIC,CRY_MODE_ENCOUNTER)
     showmonpic(SPECIES_TORCHIC,10,3)
     waitmoncry
-    givemon(SPECIES_TORCHIC,5,ITEM_EXP_SHARE,ITEM_POKE_BALL,NATURE_ADAMANT,1,0,0,0,0,0,0,0,15,31,20,31,21,10)
+    givemon(SPECIES_TORCHIC,5,ITEM_EXP_SHARE,ITEM_POKE_BALL,NATURE_ADAMANT,2,0,0,0,0,0,0,0,15,31,20,31,21,10)
     bufferspeciesname(STR_VAR_1,SPECIES_TORCHIC)
     playse(MUS_DP_OBTAIN_ITEM)
     msgbox(format("Xylar recieved {STR_VAR_1}."))
@@ -59,7 +59,159 @@ script Head1 {
     namebox(alistair)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Strength isn't always obvious at first glance.\pGive it time.\nTorchic may surprise you."))
     hidenamebox
-    setvar(ACADEMY_START,5)
+    initclock(10,30)
     clearflag(FLAG_PAUSE_TIME)
+    setvar(ACADEMY_START,5)
     warp(MAP_ASTRALIS_ACADEMY_HOUSE2,12,1)   
+}
+
+script serenamet {
+    lockall
+    playbgm(MUS_HG_LYRA,FALSE)
+    applymovement(1,serenametmov1)
+    waitmovement(0)
+    namebox(serena)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}There you are!\pI'm Serena, your assigned mentor.\pLucky you, right?"))
+    hidenamebox
+    applymovement(1,serenametmov2)
+    applymovement(0xFF,serenametmov3)
+    waitmovement(0)
+    namebox(Xylar)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't need a mentor."))
+    hidenamebox
+    namebox(serena)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Well, that's too bad.\pRules are rules.\pYou're stuck with me, like it or not."))
+    hidenamebox
+    waitmessage
+    applymovement(0xFF,traces2)
+    namebox(Xylar)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}If you're expecting me to follow your lead then do yourself a favor.\pFind someone else."))
+    hidenamebox
+    waitmessage
+    applymovement(1,serenametmov4)
+    waitmovement(0)
+    applymovement(0xFF,mov1)
+    namebox(serena)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}You've got quite the attitude.\pLook, I don't care if you think you don't need help.\pI'm here to make sure you don't blow something up."))
+    hidenamebox
+    namebox(Xylar)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Do what you like.\pJust don't get in my way."))
+    hidenamebox
+    namebox(serena)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Deal.\pYou might be all broody, but I bet you'll come around eventually.\pI'm pretty good at breaking through tough shells."))
+    hidenamebox
+    namebox(Xylar)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Don't count on it."))
+    hidenamebox
+    namebox(serena)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Now that you have accepted my help, let me show you around."))
+    hidenamebox
+    applymovement(0xFF,exclam)
+    namebox(Xylar)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Huh?\pI never di.."),MSGBOX_AUTOCLOSE)
+    hidenamebox
+    namebox(serena)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Let's gooo!"))
+    hidenamebox
+    applymovement(0xFF,upset)
+    namebox(Xylar)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Ugh!"),MSGBOX_AUTOCLOSE)
+    hidenamebox
+    playse(MUS_DP_LETS_GO_TOGETHER)
+    msgbox(format("Serena decided to join you!"))
+    waitse
+    setflag(FLAG_PAUSE_TIME)
+    setfollower(1,CAN_LEAVE_ROUTE,serenafollow)
+    fadedefaultbgm
+    setvar(ACADEMY_START,6)
+    releaseall
+}
+script serenafollow {
+    lock
+    facefollower
+    applymovement(0xFD,happy)
+    namebox(serena)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Let's gooo!"))
+    hidenamebox
+    release
+}
+movement serenametmov1 {
+    walk_fast_up*7
+}
+movement serenametmov2 {
+    walk_right
+    emote_exclamation_mark
+    face_down
+}
+movement serenametmov3 {
+    walk_down*4
+}
+movement serenametmov4 {
+    walk_down*3
+    face_left
+}
+text serena {
+    format("Serena")   
+}
+script serenaextend {
+    lock
+    applymovement(0xFD,serenametmov5)
+    applymovement(0xFF,serenametmov6)
+    waitmovement(0)
+    special(SpawnCameraObject)
+    applymovement(0x7F,backes)
+    namebox(serena)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}This is where real fun happens.\pYou'll get plenty of chances to show your skills here.\pOR.....\pDo you think you're too good for practice?"),MSGBOX_AUTOCLOSE)
+    hidenamebox
+    namebox(Xylar)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Results are all that matter and I don't care how I get them."),MSGBOX_AUTOCLOSE)
+    hidenamebox
+    namebox(serena)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Results come from experience, you know.\pLet me guess, you think you can handle everything on your own."),MSGBOX_AUTOCLOSE)
+    hidenamebox
+    namebox(Xylar)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}..................."))
+    hidenamebox
+    namebox(serena)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Look, I get it.\pYou've got your walls up but you'll see doing it alone doesn't always work.\pMaybe Torchic will teach you that."),MSGBOX_AUTOCLOSE)
+    hidenamebox
+    namebox(Xylar)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}..................."))
+    hidenamebox
+    applymovement(0x7F,serenametmov7)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    namebox(serena)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}You should head to the reception to pick up your dorm room keys.\pI'll be going now."),MSGBOX_AUTOCLOSE)
+    hidenamebox
+    applymovement(0xFD,serenametmov7)
+    waitmovement(0)
+    destroyfollower
+    setvar(ACADEMY_START,7)
+    release
+
+}
+script serenaextend1{
+    applymovement(0xFF,MOVE2)
+    applymovement(0xFD,MOVE2)
+    waitmovement(0)
+    goto(serenaextend)
+}
+script serenaextend2{
+    applymovement(0xFF,strrp)
+    applymovement(0xFD,strrp)
+    waitmovement(0)
+    goto(serenaextend)
+}
+movement serenametmov7 {
+    walk_up*7
+    
+}
+movement serenametmov5 {
+    walk_left
+    walk_down*5
+}
+movement serenametmov6 {
+    delay_16
+    walk_down*4
 }

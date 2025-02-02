@@ -234,3 +234,71 @@ movement goin {
 text eliasn{
     format("Elias")
 }
+script notnowdorm {
+    applymovement(0xFF,mov5)
+    waitmovement(0)
+    msgbox(format("Not now."))
+    release
+}
+
+script AcademyNpc {
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}This is the start of my Academy life.\pI can't wait to challange some upperclassmen."))
+    release   
+}
+
+script AcademyNpc1 {
+    lock
+    faceplayer
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Ugh, I hate battling.\pI'd rather be in the library learning about Pokemon history."))
+    release   
+}
+
+script AcademyNpc2 {
+    lock
+    faceplayer
+    namebox(eliasn)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}The Academy values discipline.\pYou may have talent but true strength comes from patience and understanding."))
+    hidenamebox
+    release   
+}
+
+script AcademyNpc3 {
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I train every day!\pSomeday, I'll become the strongest in this academy."))
+    release   
+}
+
+script AcademyNpc4 {
+    lock
+    faceplayer
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I'm.....not really good at battling.\pMaybe I should just study instead..."))
+    release   
+}
+
+script AcademyNpc5 {
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Art is expression!\pPokemon battling is also an art, you know!"))
+    release   
+}
+
+script AcademyNpc6 {
+    lock
+    faceplayer
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I love sketching Pokemon!\pMaybe I'll draw yours someday..."))
+    release   
+}
+script AcademyNpc7 {
+    lock
+    faceplayer
+    namebox(orson)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Science is the backbone of Pokemon research.\pEven trainers should understand the fundamentals."))
+    hidenamebox
+    release   
+}
+text orson{
+    format("Orson")
+}

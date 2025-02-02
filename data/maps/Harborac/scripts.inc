@@ -489,6 +489,122 @@ goin:
 	set_invisible
 	step_end
 
+notnowdorm::
+# 238 "data/maps/Harborac/scripts.pory"
+	applymovement 0xFF, mov5
+# 239 "data/maps/Harborac/scripts.pory"
+	waitmovement 0
+# 240 "data/maps/Harborac/scripts.pory"
+	msgbox notnowdorm_Text_0
+# 241 "data/maps/Harborac/scripts.pory"
+	release
+	return
+
+
+AcademyNpc::
+# 245 "data/maps/Harborac/scripts.pory"
+	lock
+# 246 "data/maps/Harborac/scripts.pory"
+	faceplayer
+# 247 "data/maps/Harborac/scripts.pory"
+	msgbox AcademyNpc_Text_0
+# 248 "data/maps/Harborac/scripts.pory"
+	release
+	return
+
+
+AcademyNpc1::
+# 252 "data/maps/Harborac/scripts.pory"
+	lock
+# 253 "data/maps/Harborac/scripts.pory"
+	faceplayer
+# 254 "data/maps/Harborac/scripts.pory"
+	msgbox AcademyNpc1_Text_0
+# 255 "data/maps/Harborac/scripts.pory"
+	release
+	return
+
+
+AcademyNpc2::
+# 259 "data/maps/Harborac/scripts.pory"
+	lock
+# 260 "data/maps/Harborac/scripts.pory"
+	faceplayer
+# 261 "data/maps/Harborac/scripts.pory"
+	namebox eliasn
+# 262 "data/maps/Harborac/scripts.pory"
+	msgbox AcademyNpc2_Text_0
+# 263 "data/maps/Harborac/scripts.pory"
+	hidenamebox
+# 264 "data/maps/Harborac/scripts.pory"
+	release
+	return
+
+
+AcademyNpc3::
+# 268 "data/maps/Harborac/scripts.pory"
+	lock
+# 269 "data/maps/Harborac/scripts.pory"
+	faceplayer
+# 270 "data/maps/Harborac/scripts.pory"
+	msgbox AcademyNpc3_Text_0
+# 271 "data/maps/Harborac/scripts.pory"
+	release
+	return
+
+
+AcademyNpc4::
+# 275 "data/maps/Harborac/scripts.pory"
+	lock
+# 276 "data/maps/Harborac/scripts.pory"
+	faceplayer
+# 277 "data/maps/Harborac/scripts.pory"
+	msgbox AcademyNpc4_Text_0
+# 278 "data/maps/Harborac/scripts.pory"
+	release
+	return
+
+
+AcademyNpc5::
+# 282 "data/maps/Harborac/scripts.pory"
+	lock
+# 283 "data/maps/Harborac/scripts.pory"
+	faceplayer
+# 284 "data/maps/Harborac/scripts.pory"
+	msgbox AcademyNpc5_Text_0
+# 285 "data/maps/Harborac/scripts.pory"
+	release
+	return
+
+
+AcademyNpc6::
+# 289 "data/maps/Harborac/scripts.pory"
+	lock
+# 290 "data/maps/Harborac/scripts.pory"
+	faceplayer
+# 291 "data/maps/Harborac/scripts.pory"
+	msgbox AcademyNpc6_Text_0
+# 292 "data/maps/Harborac/scripts.pory"
+	release
+	return
+
+
+AcademyNpc7::
+# 295 "data/maps/Harborac/scripts.pory"
+	lock
+# 296 "data/maps/Harborac/scripts.pory"
+	faceplayer
+# 297 "data/maps/Harborac/scripts.pory"
+	namebox orson
+# 298 "data/maps/Harborac/scripts.pory"
+	msgbox AcademyNpc7_Text_0
+# 299 "data/maps/Harborac/scripts.pory"
+	hidenamebox
+# 300 "data/maps/Harborac/scripts.pory"
+	release
+	return
+
+
 ONHARBOR1_Text_0:
 # 13 "data/maps/Harborac/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}There you go, young man.\p"
@@ -655,6 +771,57 @@ elias_Text_2:
 	.string "Respect is earned, young man.\n"
 	.string "Now follow me.$"
 
+notnowdorm_Text_0:
+# 240 "data/maps/Harborac/scripts.pory"
+	.string "Not now.$"
+
+AcademyNpc_Text_0:
+# 247 "data/maps/Harborac/scripts.pory"
+	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}This is the start of my Academy life.\p"
+	.string "I can't wait to challange some\n"
+	.string "upperclassmen.$"
+
+AcademyNpc1_Text_0:
+# 254 "data/maps/Harborac/scripts.pory"
+	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Ugh, I hate battling.\p"
+	.string "I'd rather be in the library learning\n"
+	.string "about Pokemon history.$"
+
+AcademyNpc2_Text_0:
+# 262 "data/maps/Harborac/scripts.pory"
+	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}The Academy values discipline.\p"
+	.string "You may have talent but true strength\n"
+	.string "comes from patience and understanding.$"
+
+AcademyNpc3_Text_0:
+# 270 "data/maps/Harborac/scripts.pory"
+	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}I train every day!\p"
+	.string "Someday, I'll become the strongest in\n"
+	.string "this academy.$"
+
+AcademyNpc4_Text_0:
+# 277 "data/maps/Harborac/scripts.pory"
+	.string "{COLOR RED}{SHADOW LIGHT_GRAY}I'm.....not really good at battling.\p"
+	.string "Maybe I should just study instead...$"
+
+AcademyNpc5_Text_0:
+# 284 "data/maps/Harborac/scripts.pory"
+	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Art is expression!\p"
+	.string "Pokemon battling is also an art, you\n"
+	.string "know!$"
+
+AcademyNpc6_Text_0:
+# 291 "data/maps/Harborac/scripts.pory"
+	.string "{COLOR RED}{SHADOW LIGHT_GRAY}I love sketching Pokemon!\p"
+	.string "Maybe I'll draw yours someday...$"
+
+AcademyNpc7_Text_0:
+# 298 "data/maps/Harborac/scripts.pory"
+	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Science is the backbone of Pokemon\n"
+	.string "research.\p"
+	.string "Even trainers should understand the\n"
+	.string "fundamentals.$"
+
 oldman::
 # 42 "data/maps/Harborac/scripts.pory"
 	.string "Oldman$"
@@ -662,3 +829,7 @@ oldman::
 eliasn::
 # 234 "data/maps/Harborac/scripts.pory"
 	.string "Elias$"
+
+orson::
+# 302 "data/maps/Harborac/scripts.pory"
+	.string "Orson$"
