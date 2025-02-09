@@ -21,7 +21,7 @@
     },
     {
       "map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
-      "offset": -8,
+      "offset": -18,
       "direction": "down"
     },
     {
@@ -55,7 +55,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "nerd",
-      "flag": "0"
+      "flag": "FLAG_DAY_NPC"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
@@ -68,7 +68,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "girlbencac",
-      "flag": "0"
+      "flag": "FLAG_DAY_NPC"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_1",
@@ -81,7 +81,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "girlar",
-      "flag": "0"
+      "flag": "FLAG_DAY_NPC"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ACE_M",
@@ -94,7 +94,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "aceac",
-      "flag": "0"
+      "flag": "FLAG_DAY_NPC"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
@@ -107,7 +107,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "beltac",
-      "flag": "0"
+      "flag": "FLAG_DAY_NPC"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MACHOP)",
@@ -120,7 +120,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "machopac",
-      "flag": "0"
+      "flag": "FLAG_DAY_NPC"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TENNIS",
@@ -133,10 +133,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "tennisgirl",
-      "flag": "0"
+      "flag": "FLAG_DAY_NPC"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_TEEN_M",
+      "graphics_id": "OBJ_EVENT_GFX_STRIKER",
       "x": 23,
       "y": 48,
       "elevation": 0,
@@ -146,7 +146,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "boyten",
-      "flag": "0"
+      "flag": "FLAG_DAY_NPC"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_NERD",
@@ -159,7 +159,124 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "scinerd",
-      "flag": "0"
+      "flag": "FLAG_DAY_NPC"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ACTOR_M",
+      "x": 18,
+      "y": 56,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AcademyNpc19",
+      "flag": "FLAG_NIGHT_NPC"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ACTOR_F",
+      "x": 28,
+      "y": 40,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AcademyNpc20",
+      "flag": "FLAG_NIGHT_NPC"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
+      "x": 13,
+      "y": 36,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AcademyNpc21",
+      "flag": "FLAG_NIGHT_NPC"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MURKROW)",
+      "x": 7,
+      "y": 35,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AcademyNpc24",
+      "flag": "FLAG_ACDAEMY_MURKROW"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MURKROW)",
+      "x": 9,
+      "y": 34,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AcademyNpc23",
+      "flag": "FLAG_ACDAEMY_MURKROW"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MURKROW)",
+      "x": 9,
+      "y": 37,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AcademyNpc22",
+      "flag": "FLAG_ACDAEMY_MURKROW"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_AROMA",
+      "x": 34,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AcademyNpc25",
+      "flag": "FLAG_NIGHT_NPC"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_OFFICER",
+      "x": 20,
+      "y": 17,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AcademyNpc26",
+      "flag": "FLAG_NIGHT_NPC"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SELENE",
+      "x": 29,
+      "y": 28,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AcademyNpc27",
+      "flag": "FLAG_NIGHT_NPC"
     }
   ],
   "warp_events": [

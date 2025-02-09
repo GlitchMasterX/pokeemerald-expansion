@@ -534,8 +534,8 @@
     {
       "id": "LAYOUT_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
       "name": "LittlerootTown_BrendansHouse_1F_Layout",
-      "width": 60,
-      "height": 30,
+      "width": 80,
+      "height": 40,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_BattleArena",
       "border_filepath": "data/layouts/LittlerootTown_BrendansHouse_1F/border.bin",
@@ -544,10 +544,10 @@
     {
       "id": "LAYOUT_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
       "name": "LittlerootTown_BrendansHouse_2F_Layout",
-      "width": 9,
-      "height": 8,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "width": 16,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
       "border_filepath": "data/layouts/LittlerootTown_BrendansHouse_2F/border.bin",
       "blockdata_filepath": "data/layouts/LittlerootTown_BrendansHouse_2F/map.bin"
     },
@@ -4606,7 +4606,7 @@
       "name": "Academy_Lib_Layout",
       "width": 40,
       "height": 34,
-      "primary_tileset": "gTileset_building2",
+      "primary_tileset": "gTileset_Academy",
       "secondary_tileset": "gTileset_Academy_lib",
       "border_filepath": "data/layouts/Academy_Lib/border.bin",
       "blockdata_filepath": "data/layouts/Academy_Lib/map.bin"
@@ -4657,7 +4657,7 @@
       "width": 60,
       "height": 40,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_BattleArena",
+      "secondary_tileset": "gTileset_Slateport",
       "border_filepath": "data/layouts/Harborac/border.bin",
       "blockdata_filepath": "data/layouts/Harborac/map.bin"
     }

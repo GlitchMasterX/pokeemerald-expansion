@@ -6,6 +6,7 @@ MAP_SCRIPT_ON_RESUME:HEADMET1
 MAP_SCRIPT_ON_FRAME_TABLE[
 	ACADEMY_START,4:Head
 ]
+MAP_SCRIPT_ON_LOAD:DAYNIGHT_NPC
 }
 script HEADMET1 {
 if(var(ACADEMY_START)== 4){
@@ -15,6 +16,8 @@ if(var(ACADEMY_START)== 4){
 
 }
 script HEADMET {
+    addobject(1)
+    setobjectxy(1,7,9)
     applymovement(0xFF,traces2)
     createvobject(OBJ_EVENT_GFX_PROF_ELIAS,2,8,13,3,DIR_NORTH)
 }
@@ -48,6 +51,17 @@ script Head {
         call(Common_EventScript_NameReceivedPartyMon)
         goto(Head1)
     }
+}
+
+script girlsdorm {
+    lock
+    applymovement(1,exclam)
+    applymovement(0xFF,traces2)
+    waitmovement(0)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}This way leads to the girl's dorm.\pBoys are not allowed there."))
+    applymovement(0xFF,strrp)
+    waitmovement(0)
+    release
 }
 
 script Head1 {
@@ -176,7 +190,7 @@ script serenaextend {
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Look, I get it.\pYou've got your walls up but you'll see doing it alone doesn't always work.\pMaybe Torchic will teach you that."),MSGBOX_AUTOCLOSE)
     hidenamebox
     namebox(Xylar)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}..................."))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}..................."),MSGBOX_AUTOCLOSE)
     hidenamebox
     applymovement(0x7F,serenametmov7)
     waitmovement(0)
@@ -187,6 +201,7 @@ script serenaextend {
     applymovement(0xFD,serenametmov7)
     waitmovement(0)
     destroyfollower
+    setflag(FLAG_SERENAMET)
     setvar(ACADEMY_START,7)
     release
 

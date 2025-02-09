@@ -729,16 +729,16 @@
 #define FLAG_UNUSED_0x2AE  0x2AE // Unused Flag
 #define FLAG_UNUSED_0x2AF  0x2AF // Unused Flag
 #define FLAG_UNUSED_0x2B0  0x2B0 // Unused Flag
-#define FLAG_UNUSED_0x2B1  0x2B1 // Unused Flag
-#define FLAG_UNUSED_0x2B2  0x2B2 // Unused Flag
-#define FLAG_UNUSED_0x2B3  0x2B3 // Unused Flag
-#define FLAG_UNUSED_0x2B4  0x2B4 // Unused Flag
-#define FLAG_UNUSED_0x2B5  0x2B5 // Unused Flag
-#define FLAG_UNUSED_0x2B6  0x2B6 // Unused Flag
-#define FLAG_UNUSED_0x2B7  0x2B7 // Unused Flag
-#define FLAG_UNUSED_0x2B8  0x2B8 // Unused Flag
-#define FLAG_UNUSED_0x2B9  0x2B9 // Unused Flag
-#define FLAG_UNUSED_0x2BA  0x2BA // Unused Flag
+#define FLAG_FIONA_NIGHT  0x2B1 // Unused Flag
+#define FLAG_FIONA_NIGHT_1  0x2B2 // Unused Flag
+#define FLAG_FIONA_NIGHT_2  0x2B3 // Unused Flag
+#define FLAG_LIB_OFFICER  0x2B4 // Unused Flag
+#define FLAG_NORMAL_OUTFOREST  0x2B5 // Unused Flag
+#define FLAG_AFTER_OUTBURST 0x2B6 // Unused Flag
+#define FLAG_ACDAEMY_MURKROW  0x2B7 // Unused Flag
+#define FLAG_NIGHT_NPC  0x2B8 // Unused Flag
+#define FLAG_DAY_NPC  0x2B9 // Unused Flag
+#define FLAG_FIONA  0x2BA // Unused Flag
 #define FLAG_SERENAMET  0x2BB // Unused Flag
 
 // Event Flags

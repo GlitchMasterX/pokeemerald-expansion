@@ -303,24 +303,27 @@ void RtcCalcLocalTime(void)
 
 bool8 IsBetweenHours(s32 hours, s32 begin, s32 end)
 {
-    if (end < begin)
-        return hours >= begin || hours < end;
-    else
-        return hours >= begin && hours < end;
+    if (end < begin) // Handles cases like NIGHT (20-3)
+        return (hours >= begin || hours < end) ? TRUE : FALSE;
+    else             // Normal cases (e.g., Morning 4-10)
+        return (hours >= begin && hours < end) ? TRUE : FALSE;
 }
 
 
 u8 GetTimeOfDay(void)
 {
-    RtcCalcLocalTime();
+    RtcCalcLocalTime(); // Get the latest time
+
     if (IsBetweenHours(gLocalTime.hours, MORNING_HOUR_BEGIN, MORNING_HOUR_END))
         return TIME_MORNING;
     else if (IsBetweenHours(gLocalTime.hours, EVENING_HOUR_BEGIN, EVENING_HOUR_END))
         return TIME_EVENING;
     else if (IsBetweenHours(gLocalTime.hours, NIGHT_HOUR_BEGIN, NIGHT_HOUR_END))
         return TIME_NIGHT;
-    return TIME_DAY;
+    
+    return TIME_DAY; // Default to daytime if no other conditions match
 }
+
 
 void RtcInitLocalTimeOffset(s32 hour, s32 minute)
 {

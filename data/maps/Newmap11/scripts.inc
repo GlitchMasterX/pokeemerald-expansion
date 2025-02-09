@@ -555,7 +555,7 @@ grave_1:
 # 266 "data/maps/Newmap11/scripts.pory"
 	initclock 10, 10
 # 267 "data/maps/Newmap11/scripts.pory"
-	setflag FLAG_PAUSE_TIME
+	pausefakertc
 # 268 "data/maps/Newmap11/scripts.pory"
 	clearflag FLAG_TALK_GRAVE
 # 269 "data/maps/Newmap11/scripts.pory"

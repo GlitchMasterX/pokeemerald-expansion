@@ -1,5 +1,4 @@
-raw `
-AstralisAcademy_MapScripts::
-	.byte 0
-
-`
+mapscripts AstralisAcademy_MapScripts {
+	MAP_SCRIPT_ON_LOAD:DAYNIGHT_NPC
+	
+}

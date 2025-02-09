@@ -4,7 +4,7 @@ raw `
 .set LOCALID_RIVAL, 7
 
 LittlerootTown_BrendansHouse_1F_MapScripts::
-	map_script MAP_SCRIPT_ON_LOAD, LittlerootTown_BrendansHouse_1F_OnLoad
+	map_script MAP_SCRIPT_ON_LOAD, Fiona
 	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_BrendansHouse_1F_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, LittlerootTown_BrendansHouse_1F_OnFrame
 	.byte 0
@@ -440,3 +440,11 @@ PlayersHouse_1F_Text_StillUnknownPokemon:
 	.string "MOM: Well, isn't that something!\n"
 	.string "There are still unknown POKéMON.$"
 `
+script Fiona{
+	if(var(VAR_CURRENT_TIME_OF_DAY)< 3){
+		setflag(FLAG_FIONA)
+	}
+	else{
+		clearflag(FLAG_FIONA)
+	}
+}

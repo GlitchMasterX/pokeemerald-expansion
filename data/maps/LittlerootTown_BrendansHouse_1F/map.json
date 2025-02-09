@@ -16,12 +16,42 @@
   "connections": [
     {
       "map": "MAP_ASTRALIS_ACADEMY",
-      "offset": 8,
+      "offset": 18,
       "direction": "up"
+    },
+    {
+      "map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
+      "offset": 2,
+      "direction": "left"
     }
   ],
   "object_events": [
-
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FIONA",
+      "x": 40,
+      "y": 19,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Fionanight",
+      "flag": "FLAG_FIONA"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_NORMAL_M",
+      "x": 76,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AcademyNpc28",
+      "flag": "FLAG_NORMAL_OUTFOREST"
+    }
   ],
   "warp_events": [
 

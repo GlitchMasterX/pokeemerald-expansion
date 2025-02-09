@@ -264,7 +264,7 @@ script grave {
     hidenamebox
     fadescreen(FADE_TO_BLACK)
     initclock(10,10)
-    setflag(FLAG_PAUSE_TIME)
+    pausefakertc
     clearflag(FLAG_TALK_GRAVE)
     setvar(VAR_CURRENT_MONTH,3)
     warpsilent(MAP_HARBORAC,2,27)

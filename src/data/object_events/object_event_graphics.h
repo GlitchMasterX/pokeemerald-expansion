@@ -352,7 +352,7 @@ const u32 gObjectEventPic_Tucker[] = INCBIN_U32("graphics/object_events/pics/peo
 const u32 gObjectEventPic_Spenser[] = INCBIN_U32("graphics/object_events/pics/people/frontier_brains/spenser.4bpp");
 const u32 gObjectEventPic_Greta[] = INCBIN_U32("graphics/object_events/pics/people/frontier_brains/greta.4bpp");
 const u32 gObjectEventPic_Noland[] = INCBIN_U32("graphics/object_events/pics/people/frontier_brains/noland.4bpp");
-const u32 gObjectEventPic_Lucy[] = INCBIN_U32("graphics/object_events/pics/people/frontier_brains/lucy.4bpp");
+const u32 gObjectEventPic_Lucy[] = INCBIN_U32("graphics/object_events/pics/people/frontier_brains/selene.4bpp");
 const u32 gObjectEventPic_Brandon[] = INCBIN_U32("graphics/object_events/pics/people/frontier_brains/brandon.4bpp");
 const u32 gObjectEventPic_PokeBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_poke.4bpp");
 
@@ -484,6 +484,7 @@ const u16 gObjectEventPal_Fiona[] = INCBIN_U16("graphics/object_events/palettes/
 const u32 gObjectEventPic_Voss[] = INCBIN_U32("graphics/object_events/pics/people/voss.4bpp");
 const u32 gObjectEventPic_Kael[] = INCBIN_U32("graphics/object_events/pics/people/kael.4bpp");
 const u32 gObjectEventPic_Orson[] = INCBIN_U32("graphics/object_events/pics/people/orson.4bpp");
+const u32 gObjectEventPic_Evelyn[] = INCBIN_U32("graphics/object_events/pics/people/evelyn.4bpp");
 const u16 gObjectEventPal_Voss[] = INCBIN_U16("graphics/object_events/palettes/voss.gbapal");
 #if OW_FOLLOWERS_POKEBALLS
 const u32 gObjectEventPic_MasterBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_master.4bpp");

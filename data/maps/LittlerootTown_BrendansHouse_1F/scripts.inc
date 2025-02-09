@@ -11,7 +11,7 @@
 # 6 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 LittlerootTown_BrendansHouse_1F_MapScripts::
 # 7 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	map_script MAP_SCRIPT_ON_LOAD, LittlerootTown_BrendansHouse_1F_OnLoad
+	map_script MAP_SCRIPT_ON_LOAD, Fiona
 # 8 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_BrendansHouse_1F_OnTransition
 # 9 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
@@ -880,3 +880,17 @@ PlayersHouse_1F_Text_StillUnknownPokemon:
 	.string "MOM: Well, isn't that something!\n"
 # 441 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	.string "There are still unknown POKéMON.$"
+
+Fiona::
+# 444 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	compare VAR_CURRENT_TIME_OF_DAY, 3
+	goto_if_lt Fiona_1
+# 448 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	clearflag FLAG_FIONA
+	return
+
+Fiona_1:
+# 445 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	setflag FLAG_FIONA
+	return
+

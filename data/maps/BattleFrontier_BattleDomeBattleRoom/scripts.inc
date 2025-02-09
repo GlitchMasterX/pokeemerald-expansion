@@ -1017,7 +1017,7 @@ BattleFrontier_BattleDomeBattleRoom_EventScript_AddRound2Audience::
 # 509 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
 	createvobject OBJ_EVENT_GFX_SCIENTIST_1, 11, 13, 0
 # 510 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
-	createvobject OBJ_EVENT_GFX_MAN_5, 13, 15, 0
+	createvobject OBJ_EVENT_GFX_NORMAL_M, 13, 15, 0
 # 511 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
 	createvobject OBJ_EVENT_GFX_BEAUTY, 19, 7, 1
 # 512 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
@@ -1049,7 +1049,7 @@ BattleFrontier_BattleDomeBattleRoom_EventScript_AddSemifinalAudience::
 # 525 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
 	createvobject OBJ_EVENT_GFX_SCIENTIST_1, 11, 13, 0
 # 526 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
-	createvobject OBJ_EVENT_GFX_MAN_5, 13, 15, 0
+	createvobject OBJ_EVENT_GFX_NORMAL_M, 13, 15, 0
 # 527 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
 	createvobject OBJ_EVENT_GFX_GENTLEMAN, 15, 2, 1
 # 528 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
@@ -1089,7 +1089,7 @@ BattleFrontier_BattleDomeBattleRoom_EventScript_AddFinalAudience::
 # 545 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
 	createvobject OBJ_EVENT_GFX_BEAUTY, 2, 15, 0
 # 546 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
-	createvobject OBJ_EVENT_GFX_MAN_5, 3, 5, 0
+	createvobject OBJ_EVENT_GFX_NORMAL_M, 3, 5, 0
 # 547 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
 	createvobject OBJ_EVENT_GFX_EXPERT_F, 4, 6, 0
 # 548 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
@@ -1109,7 +1109,7 @@ BattleFrontier_BattleDomeBattleRoom_EventScript_AddFinalAudience::
 # 555 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
 	createvobject OBJ_EVENT_GFX_BEAUTY, 12, 14, 0
 # 556 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
-	createvobject OBJ_EVENT_GFX_MAN_5, 13, 15, 2
+	createvobject OBJ_EVENT_GFX_NORMAL_M, 13, 15, 2
 # 557 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
 	createvobject OBJ_EVENT_GFX_HIKER, 14, 12, 2
 # 558 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"

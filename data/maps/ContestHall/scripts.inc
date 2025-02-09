@@ -629,7 +629,7 @@ ContestHall_EventScript_CreateSuperContestAudience::
 # 315 "data/maps/ContestHall/scripts.pory"
 	createvobject OBJ_EVENT_GFX_BEAUTY, 0, 2, 3, 3, DIR_EAST
 # 316 "data/maps/ContestHall/scripts.pory"
-	createvobject OBJ_EVENT_GFX_MAN_5, 1, 2, 4, 3, DIR_EAST
+	createvobject OBJ_EVENT_GFX_NORMAL_M, 1, 2, 4, 3, DIR_EAST
 # 317 "data/maps/ContestHall/scripts.pory"
 	createvobject OBJ_EVENT_GFX_HIKER, 2, 2, 7, 3, DIR_EAST
 # 318 "data/maps/ContestHall/scripts.pory"
@@ -655,7 +655,7 @@ ContestHall_EventScript_CreateHyperContestAudience::
 # 328 "data/maps/ContestHall/scripts.pory"
 	createvobject OBJ_EVENT_GFX_BEAUTY, 0, 2, 3, 3, DIR_EAST
 # 329 "data/maps/ContestHall/scripts.pory"
-	createvobject OBJ_EVENT_GFX_MAN_5, 1, 2, 4, 3, DIR_EAST
+	createvobject OBJ_EVENT_GFX_NORMAL_M, 1, 2, 4, 3, DIR_EAST
 # 330 "data/maps/ContestHall/scripts.pory"
 	createvobject OBJ_EVENT_GFX_HIKER, 2, 2, 7, 3, DIR_EAST
 # 331 "data/maps/ContestHall/scripts.pory"
@@ -699,7 +699,7 @@ ContestHall_EventScript_CreateMasterContestAudience::
 # 350 "data/maps/ContestHall/scripts.pory"
 	createvobject OBJ_EVENT_GFX_BEAUTY, 0, 2, 3, 3, DIR_EAST
 # 351 "data/maps/ContestHall/scripts.pory"
-	createvobject OBJ_EVENT_GFX_MAN_5, 1, 2, 4, 3, DIR_EAST
+	createvobject OBJ_EVENT_GFX_NORMAL_M, 1, 2, 4, 3, DIR_EAST
 # 352 "data/maps/ContestHall/scripts.pory"
 	createvobject OBJ_EVENT_GFX_HIKER, 2, 2, 7, 3, DIR_EAST
 # 353 "data/maps/ContestHall/scripts.pory"
@@ -759,7 +759,7 @@ ContestHall_EventScript_CreateWirelessContestAudience::
 # 380 "data/maps/ContestHall/scripts.pory"
 	createvobject OBJ_EVENT_GFX_BEAUTY, 0, 2, 3, 3, DIR_EAST
 # 381 "data/maps/ContestHall/scripts.pory"
-	createvobject OBJ_EVENT_GFX_MAN_5, 1, 2, 4, 3, DIR_EAST
+	createvobject OBJ_EVENT_GFX_NORMAL_M, 1, 2, 4, 3, DIR_EAST
 # 382 "data/maps/ContestHall/scripts.pory"
 	createvobject OBJ_EVENT_GFX_HIKER, 2, 2, 7, 3, DIR_EAST
 # 383 "data/maps/ContestHall/scripts.pory"

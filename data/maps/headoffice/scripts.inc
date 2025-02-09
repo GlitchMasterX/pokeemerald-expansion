@@ -1,6 +1,8 @@
 headoffice_MapScripts::
 # 5 "data/maps/headoffice/scripts.pory"
 	map_script MAP_SCRIPT_ON_RESUME, HEADMET1
+# 9 "data/maps/headoffice/scripts.pory"
+	map_script MAP_SCRIPT_ON_LOAD, DAYNIGHT_NPC
 # 2 "data/maps/headoffice/scripts.pory"
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, headoffice_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
 # 6 "data/maps/headoffice/scripts.pory"
@@ -19,464 +21,490 @@ headoffice_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 
 
 HEADMET1::
-# 11 "data/maps/headoffice/scripts.pory"
+# 12 "data/maps/headoffice/scripts.pory"
 	compare ACADEMY_START, 4
 	goto_if_eq HEADMET1_1
 	return
 
 HEADMET1_1:
-# 12 "data/maps/headoffice/scripts.pory"
-	applymovement 0xFF, traces2
 # 13 "data/maps/headoffice/scripts.pory"
+	applymovement 0xFF, traces2
+# 14 "data/maps/headoffice/scripts.pory"
 	createvobject OBJ_EVENT_GFX_PROF_ELIAS, 2, 8, 13, 3, DIR_NORTH
 	return
 
 
 HEADMET::
-# 18 "data/maps/headoffice/scripts.pory"
-	applymovement 0xFF, traces2
 # 19 "data/maps/headoffice/scripts.pory"
+	addobject 1
+# 20 "data/maps/headoffice/scripts.pory"
+	setobjectxy 1, 7, 9
+# 21 "data/maps/headoffice/scripts.pory"
+	applymovement 0xFF, traces2
+# 22 "data/maps/headoffice/scripts.pory"
 	createvobject OBJ_EVENT_GFX_PROF_ELIAS, 2, 8, 13, 3, DIR_NORTH
 	return
 
 
 Head::
-# 23 "data/maps/headoffice/scripts.pory"
-	lock
-# 24 "data/maps/headoffice/scripts.pory"
-	applymovement 1, exclam
-# 25 "data/maps/headoffice/scripts.pory"
-	namebox alistair
 # 26 "data/maps/headoffice/scripts.pory"
-	msgbox Head_Text_0
+	lock
 # 27 "data/maps/headoffice/scripts.pory"
-	hidenamebox
+	applymovement 1, exclam
 # 28 "data/maps/headoffice/scripts.pory"
-	namebox Xylar
+	namebox alistair
 # 29 "data/maps/headoffice/scripts.pory"
-	msgbox Head_Text_1
+	msgbox Head_Text_0
 # 30 "data/maps/headoffice/scripts.pory"
 	hidenamebox
 # 31 "data/maps/headoffice/scripts.pory"
-	namebox alistair
+	namebox Xylar
 # 32 "data/maps/headoffice/scripts.pory"
-	msgbox Head_Text_2
+	msgbox Head_Text_1
 # 33 "data/maps/headoffice/scripts.pory"
 	hidenamebox
 # 34 "data/maps/headoffice/scripts.pory"
-	playmoncry SPECIES_TORCHIC, CRY_MODE_ENCOUNTER
+	namebox alistair
 # 35 "data/maps/headoffice/scripts.pory"
-	showmonpic SPECIES_TORCHIC, 10, 3
+	msgbox Head_Text_2
 # 36 "data/maps/headoffice/scripts.pory"
-	waitmoncry
+	hidenamebox
 # 37 "data/maps/headoffice/scripts.pory"
-	givemon SPECIES_TORCHIC, 5, ITEM_EXP_SHARE, ITEM_POKE_BALL, NATURE_ADAMANT, 2, 0, 0, 0, 0, 0, 0, 0, 15, 31, 20, 31, 21, 10
+	playmoncry SPECIES_TORCHIC, CRY_MODE_ENCOUNTER
 # 38 "data/maps/headoffice/scripts.pory"
-	bufferspeciesname STR_VAR_1, SPECIES_TORCHIC
+	showmonpic SPECIES_TORCHIC, 10, 3
 # 39 "data/maps/headoffice/scripts.pory"
-	playse MUS_DP_OBTAIN_ITEM
+	waitmoncry
 # 40 "data/maps/headoffice/scripts.pory"
-	msgbox Head_Text_3
+	givemon SPECIES_TORCHIC, 5, ITEM_EXP_SHARE, ITEM_POKE_BALL, NATURE_ADAMANT, 2, 0, 0, 0, 0, 0, 0, 0, 15, 31, 20, 31, 21, 10
 # 41 "data/maps/headoffice/scripts.pory"
-	hidemonpic
+	bufferspeciesname STR_VAR_1, SPECIES_TORCHIC
 # 42 "data/maps/headoffice/scripts.pory"
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	playse MUS_DP_OBTAIN_ITEM
 # 43 "data/maps/headoffice/scripts.pory"
+	msgbox Head_Text_3
+# 44 "data/maps/headoffice/scripts.pory"
+	hidemonpic
+# 45 "data/maps/headoffice/scripts.pory"
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+# 46 "data/maps/headoffice/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Head_1
-# 47 "data/maps/headoffice/scripts.pory"
+# 50 "data/maps/headoffice/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
-# 48 "data/maps/headoffice/scripts.pory"
+# 51 "data/maps/headoffice/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
-# 49 "data/maps/headoffice/scripts.pory"
+# 52 "data/maps/headoffice/scripts.pory"
 	goto Head1
 	return
 
 Head_1:
-# 44 "data/maps/headoffice/scripts.pory"
+# 47 "data/maps/headoffice/scripts.pory"
 	goto Head1
 	return
 
 
-Head1::
-# 54 "data/maps/headoffice/scripts.pory"
-	lock
-# 55 "data/maps/headoffice/scripts.pory"
-	applymovement 0xFF, exclam
-# 56 "data/maps/headoffice/scripts.pory"
-	namebox Xylar
+girlsdorm::
 # 57 "data/maps/headoffice/scripts.pory"
-	msgbox Head1_Text_0
+	lock
 # 58 "data/maps/headoffice/scripts.pory"
-	hidenamebox
+	applymovement 1, exclam
 # 59 "data/maps/headoffice/scripts.pory"
-	namebox alistair
+	applymovement 0xFF, traces2
 # 60 "data/maps/headoffice/scripts.pory"
-	msgbox Head1_Text_1
+	waitmovement 0
 # 61 "data/maps/headoffice/scripts.pory"
-	hidenamebox
+	msgbox girlsdorm_Text_0
 # 62 "data/maps/headoffice/scripts.pory"
-	initclock 10, 30
+	applymovement 0xFF, strrp
 # 63 "data/maps/headoffice/scripts.pory"
-	clearflag FLAG_PAUSE_TIME
+	waitmovement 0
 # 64 "data/maps/headoffice/scripts.pory"
+	release
+	return
+
+
+Head1::
+# 68 "data/maps/headoffice/scripts.pory"
+	lock
+# 69 "data/maps/headoffice/scripts.pory"
+	applymovement 0xFF, exclam
+# 70 "data/maps/headoffice/scripts.pory"
+	namebox Xylar
+# 71 "data/maps/headoffice/scripts.pory"
+	msgbox Head1_Text_0
+# 72 "data/maps/headoffice/scripts.pory"
+	hidenamebox
+# 73 "data/maps/headoffice/scripts.pory"
+	namebox alistair
+# 74 "data/maps/headoffice/scripts.pory"
+	msgbox Head1_Text_1
+# 75 "data/maps/headoffice/scripts.pory"
+	hidenamebox
+# 76 "data/maps/headoffice/scripts.pory"
+	initclock 10, 30
+# 77 "data/maps/headoffice/scripts.pory"
+	clearflag FLAG_PAUSE_TIME
+# 78 "data/maps/headoffice/scripts.pory"
 	setvar ACADEMY_START, 5
-# 65 "data/maps/headoffice/scripts.pory"
+# 79 "data/maps/headoffice/scripts.pory"
 	warp MAP_ASTRALIS_ACADEMY_HOUSE2, 12, 1
 	return
 
 
 serenamet::
-# 69 "data/maps/headoffice/scripts.pory"
-	lockall
-# 70 "data/maps/headoffice/scripts.pory"
-	playbgm MUS_HG_LYRA, FALSE
-# 71 "data/maps/headoffice/scripts.pory"
-	applymovement 1, serenametmov1
-# 72 "data/maps/headoffice/scripts.pory"
-	waitmovement 0
-# 73 "data/maps/headoffice/scripts.pory"
-	namebox serena
-# 74 "data/maps/headoffice/scripts.pory"
-	msgbox serenamet_Text_0
-# 75 "data/maps/headoffice/scripts.pory"
-	hidenamebox
-# 76 "data/maps/headoffice/scripts.pory"
-	applymovement 1, serenametmov2
-# 77 "data/maps/headoffice/scripts.pory"
-	applymovement 0xFF, serenametmov3
-# 78 "data/maps/headoffice/scripts.pory"
-	waitmovement 0
-# 79 "data/maps/headoffice/scripts.pory"
-	namebox Xylar
-# 80 "data/maps/headoffice/scripts.pory"
-	msgbox serenamet_Text_1
-# 81 "data/maps/headoffice/scripts.pory"
-	hidenamebox
-# 82 "data/maps/headoffice/scripts.pory"
-	namebox serena
 # 83 "data/maps/headoffice/scripts.pory"
-	msgbox serenamet_Text_2
+	lockall
 # 84 "data/maps/headoffice/scripts.pory"
-	hidenamebox
+	playbgm MUS_HG_LYRA, FALSE
 # 85 "data/maps/headoffice/scripts.pory"
-	waitmessage
+	applymovement 1, serenametmov1
 # 86 "data/maps/headoffice/scripts.pory"
-	applymovement 0xFF, traces2
+	waitmovement 0
 # 87 "data/maps/headoffice/scripts.pory"
-	namebox Xylar
+	namebox serena
 # 88 "data/maps/headoffice/scripts.pory"
-	msgbox serenamet_Text_3
+	msgbox serenamet_Text_0
 # 89 "data/maps/headoffice/scripts.pory"
 	hidenamebox
 # 90 "data/maps/headoffice/scripts.pory"
-	waitmessage
+	applymovement 1, serenametmov2
 # 91 "data/maps/headoffice/scripts.pory"
-	applymovement 1, serenametmov4
+	applymovement 0xFF, serenametmov3
 # 92 "data/maps/headoffice/scripts.pory"
 	waitmovement 0
 # 93 "data/maps/headoffice/scripts.pory"
-	applymovement 0xFF, mov1
+	namebox Xylar
 # 94 "data/maps/headoffice/scripts.pory"
-	namebox serena
+	msgbox serenamet_Text_1
 # 95 "data/maps/headoffice/scripts.pory"
-	msgbox serenamet_Text_4
+	hidenamebox
 # 96 "data/maps/headoffice/scripts.pory"
-	hidenamebox
+	namebox serena
 # 97 "data/maps/headoffice/scripts.pory"
-	namebox Xylar
+	msgbox serenamet_Text_2
 # 98 "data/maps/headoffice/scripts.pory"
-	msgbox serenamet_Text_5
+	hidenamebox
 # 99 "data/maps/headoffice/scripts.pory"
-	hidenamebox
+	waitmessage
 # 100 "data/maps/headoffice/scripts.pory"
-	namebox serena
+	applymovement 0xFF, traces2
 # 101 "data/maps/headoffice/scripts.pory"
-	msgbox serenamet_Text_6
+	namebox Xylar
 # 102 "data/maps/headoffice/scripts.pory"
-	hidenamebox
+	msgbox serenamet_Text_3
 # 103 "data/maps/headoffice/scripts.pory"
-	namebox Xylar
+	hidenamebox
 # 104 "data/maps/headoffice/scripts.pory"
-	msgbox serenamet_Text_7
+	waitmessage
 # 105 "data/maps/headoffice/scripts.pory"
-	hidenamebox
+	applymovement 1, serenametmov4
 # 106 "data/maps/headoffice/scripts.pory"
-	namebox serena
+	waitmovement 0
 # 107 "data/maps/headoffice/scripts.pory"
-	msgbox serenamet_Text_8
+	applymovement 0xFF, mov1
 # 108 "data/maps/headoffice/scripts.pory"
-	hidenamebox
-# 109 "data/maps/headoffice/scripts.pory"
-	applymovement 0xFF, exclam
-# 110 "data/maps/headoffice/scripts.pory"
-	namebox Xylar
-# 111 "data/maps/headoffice/scripts.pory"
-	msgbox serenamet_Text_9, MSGBOX_AUTOCLOSE
-# 112 "data/maps/headoffice/scripts.pory"
-	hidenamebox
-# 113 "data/maps/headoffice/scripts.pory"
 	namebox serena
-# 114 "data/maps/headoffice/scripts.pory"
-	msgbox serenamet_Text_10
-# 115 "data/maps/headoffice/scripts.pory"
+# 109 "data/maps/headoffice/scripts.pory"
+	msgbox serenamet_Text_4
+# 110 "data/maps/headoffice/scripts.pory"
 	hidenamebox
+# 111 "data/maps/headoffice/scripts.pory"
+	namebox Xylar
+# 112 "data/maps/headoffice/scripts.pory"
+	msgbox serenamet_Text_5
+# 113 "data/maps/headoffice/scripts.pory"
+	hidenamebox
+# 114 "data/maps/headoffice/scripts.pory"
+	namebox serena
+# 115 "data/maps/headoffice/scripts.pory"
+	msgbox serenamet_Text_6
 # 116 "data/maps/headoffice/scripts.pory"
-	applymovement 0xFF, upset
+	hidenamebox
 # 117 "data/maps/headoffice/scripts.pory"
 	namebox Xylar
 # 118 "data/maps/headoffice/scripts.pory"
-	msgbox serenamet_Text_11, MSGBOX_AUTOCLOSE
+	msgbox serenamet_Text_7
 # 119 "data/maps/headoffice/scripts.pory"
 	hidenamebox
 # 120 "data/maps/headoffice/scripts.pory"
-	playse MUS_DP_LETS_GO_TOGETHER
+	namebox serena
 # 121 "data/maps/headoffice/scripts.pory"
-	msgbox serenamet_Text_12
+	msgbox serenamet_Text_8
 # 122 "data/maps/headoffice/scripts.pory"
-	waitse
+	hidenamebox
 # 123 "data/maps/headoffice/scripts.pory"
-	setflag FLAG_PAUSE_TIME
+	applymovement 0xFF, exclam
 # 124 "data/maps/headoffice/scripts.pory"
-	setfollower 1, CAN_LEAVE_ROUTE, serenafollow
+	namebox Xylar
 # 125 "data/maps/headoffice/scripts.pory"
-	fadedefaultbgm
+	msgbox serenamet_Text_9, MSGBOX_AUTOCLOSE
 # 126 "data/maps/headoffice/scripts.pory"
-	setvar ACADEMY_START, 6
+	hidenamebox
 # 127 "data/maps/headoffice/scripts.pory"
+	namebox serena
+# 128 "data/maps/headoffice/scripts.pory"
+	msgbox serenamet_Text_10
+# 129 "data/maps/headoffice/scripts.pory"
+	hidenamebox
+# 130 "data/maps/headoffice/scripts.pory"
+	applymovement 0xFF, upset
+# 131 "data/maps/headoffice/scripts.pory"
+	namebox Xylar
+# 132 "data/maps/headoffice/scripts.pory"
+	msgbox serenamet_Text_11, MSGBOX_AUTOCLOSE
+# 133 "data/maps/headoffice/scripts.pory"
+	hidenamebox
+# 134 "data/maps/headoffice/scripts.pory"
+	playse MUS_DP_LETS_GO_TOGETHER
+# 135 "data/maps/headoffice/scripts.pory"
+	msgbox serenamet_Text_12
+# 136 "data/maps/headoffice/scripts.pory"
+	waitse
+# 137 "data/maps/headoffice/scripts.pory"
+	setflag FLAG_PAUSE_TIME
+# 138 "data/maps/headoffice/scripts.pory"
+	setfollower 1, CAN_LEAVE_ROUTE, serenafollow
+# 139 "data/maps/headoffice/scripts.pory"
+	fadedefaultbgm
+# 140 "data/maps/headoffice/scripts.pory"
+	setvar ACADEMY_START, 6
+# 141 "data/maps/headoffice/scripts.pory"
 	releaseall
 	return
 
 
 serenafollow::
-# 130 "data/maps/headoffice/scripts.pory"
+# 144 "data/maps/headoffice/scripts.pory"
 	lock
-# 131 "data/maps/headoffice/scripts.pory"
+# 145 "data/maps/headoffice/scripts.pory"
 	facefollower
-# 132 "data/maps/headoffice/scripts.pory"
+# 146 "data/maps/headoffice/scripts.pory"
 	applymovement 0xFD, happy
-# 133 "data/maps/headoffice/scripts.pory"
+# 147 "data/maps/headoffice/scripts.pory"
 	namebox serena
-# 134 "data/maps/headoffice/scripts.pory"
+# 148 "data/maps/headoffice/scripts.pory"
 	msgbox serenamet_Text_10
-# 135 "data/maps/headoffice/scripts.pory"
+# 149 "data/maps/headoffice/scripts.pory"
 	hidenamebox
-# 136 "data/maps/headoffice/scripts.pory"
+# 150 "data/maps/headoffice/scripts.pory"
 	release
 	return
 
 
-# 138 "data/maps/headoffice/scripts.pory"
+# 152 "data/maps/headoffice/scripts.pory"
 serenametmov1:
-# 139 "data/maps/headoffice/scripts.pory"
+# 153 "data/maps/headoffice/scripts.pory"
 	walk_fast_up
-# 139 "data/maps/headoffice/scripts.pory"
+# 153 "data/maps/headoffice/scripts.pory"
 	walk_fast_up
-# 139 "data/maps/headoffice/scripts.pory"
+# 153 "data/maps/headoffice/scripts.pory"
 	walk_fast_up
-# 139 "data/maps/headoffice/scripts.pory"
+# 153 "data/maps/headoffice/scripts.pory"
 	walk_fast_up
-# 139 "data/maps/headoffice/scripts.pory"
+# 153 "data/maps/headoffice/scripts.pory"
 	walk_fast_up
-# 139 "data/maps/headoffice/scripts.pory"
+# 153 "data/maps/headoffice/scripts.pory"
 	walk_fast_up
-# 139 "data/maps/headoffice/scripts.pory"
+# 153 "data/maps/headoffice/scripts.pory"
 	walk_fast_up
 	step_end
 
-# 141 "data/maps/headoffice/scripts.pory"
+# 155 "data/maps/headoffice/scripts.pory"
 serenametmov2:
-# 142 "data/maps/headoffice/scripts.pory"
+# 156 "data/maps/headoffice/scripts.pory"
 	walk_right
-# 143 "data/maps/headoffice/scripts.pory"
+# 157 "data/maps/headoffice/scripts.pory"
 	emote_exclamation_mark
-# 144 "data/maps/headoffice/scripts.pory"
+# 158 "data/maps/headoffice/scripts.pory"
 	face_down
 	step_end
 
-# 146 "data/maps/headoffice/scripts.pory"
+# 160 "data/maps/headoffice/scripts.pory"
 serenametmov3:
-# 147 "data/maps/headoffice/scripts.pory"
+# 161 "data/maps/headoffice/scripts.pory"
 	walk_down
-# 147 "data/maps/headoffice/scripts.pory"
+# 161 "data/maps/headoffice/scripts.pory"
 	walk_down
-# 147 "data/maps/headoffice/scripts.pory"
+# 161 "data/maps/headoffice/scripts.pory"
 	walk_down
-# 147 "data/maps/headoffice/scripts.pory"
+# 161 "data/maps/headoffice/scripts.pory"
 	walk_down
 	step_end
 
-# 149 "data/maps/headoffice/scripts.pory"
+# 163 "data/maps/headoffice/scripts.pory"
 serenametmov4:
-# 150 "data/maps/headoffice/scripts.pory"
+# 164 "data/maps/headoffice/scripts.pory"
 	walk_down
-# 150 "data/maps/headoffice/scripts.pory"
+# 164 "data/maps/headoffice/scripts.pory"
 	walk_down
-# 150 "data/maps/headoffice/scripts.pory"
+# 164 "data/maps/headoffice/scripts.pory"
 	walk_down
-# 151 "data/maps/headoffice/scripts.pory"
+# 165 "data/maps/headoffice/scripts.pory"
 	face_left
 	step_end
 
 serenaextend::
-# 157 "data/maps/headoffice/scripts.pory"
-	lock
-# 158 "data/maps/headoffice/scripts.pory"
-	applymovement 0xFD, serenametmov5
-# 159 "data/maps/headoffice/scripts.pory"
-	applymovement 0xFF, serenametmov6
-# 160 "data/maps/headoffice/scripts.pory"
-	waitmovement 0
-# 161 "data/maps/headoffice/scripts.pory"
-	special SpawnCameraObject
-# 162 "data/maps/headoffice/scripts.pory"
-	applymovement 0x7F, backes
-# 163 "data/maps/headoffice/scripts.pory"
-	namebox serena
-# 164 "data/maps/headoffice/scripts.pory"
-	msgbox serenaextend_Text_0, MSGBOX_AUTOCLOSE
-# 165 "data/maps/headoffice/scripts.pory"
-	hidenamebox
-# 166 "data/maps/headoffice/scripts.pory"
-	namebox Xylar
-# 167 "data/maps/headoffice/scripts.pory"
-	msgbox serenaextend_Text_1, MSGBOX_AUTOCLOSE
-# 168 "data/maps/headoffice/scripts.pory"
-	hidenamebox
-# 169 "data/maps/headoffice/scripts.pory"
-	namebox serena
-# 170 "data/maps/headoffice/scripts.pory"
-	msgbox serenaextend_Text_2, MSGBOX_AUTOCLOSE
 # 171 "data/maps/headoffice/scripts.pory"
-	hidenamebox
+	lock
 # 172 "data/maps/headoffice/scripts.pory"
-	namebox Xylar
+	applymovement 0xFD, serenametmov5
 # 173 "data/maps/headoffice/scripts.pory"
-	msgbox serenaextend_Text_3
+	applymovement 0xFF, serenametmov6
 # 174 "data/maps/headoffice/scripts.pory"
-	hidenamebox
+	waitmovement 0
 # 175 "data/maps/headoffice/scripts.pory"
-	namebox serena
+	special SpawnCameraObject
 # 176 "data/maps/headoffice/scripts.pory"
-	msgbox serenaextend_Text_4, MSGBOX_AUTOCLOSE
+	applymovement 0x7F, backes
 # 177 "data/maps/headoffice/scripts.pory"
-	hidenamebox
-# 178 "data/maps/headoffice/scripts.pory"
-	namebox Xylar
-# 179 "data/maps/headoffice/scripts.pory"
-	msgbox serenaextend_Text_3
-# 180 "data/maps/headoffice/scripts.pory"
-	hidenamebox
-# 181 "data/maps/headoffice/scripts.pory"
-	applymovement 0x7F, serenametmov7
-# 182 "data/maps/headoffice/scripts.pory"
-	waitmovement 0
-# 183 "data/maps/headoffice/scripts.pory"
-	special RemoveCameraObject
-# 184 "data/maps/headoffice/scripts.pory"
 	namebox serena
-# 185 "data/maps/headoffice/scripts.pory"
-	msgbox serenaextend_Text_5, MSGBOX_AUTOCLOSE
-# 186 "data/maps/headoffice/scripts.pory"
+# 178 "data/maps/headoffice/scripts.pory"
+	msgbox serenaextend_Text_0, MSGBOX_AUTOCLOSE
+# 179 "data/maps/headoffice/scripts.pory"
 	hidenamebox
+# 180 "data/maps/headoffice/scripts.pory"
+	namebox Xylar
+# 181 "data/maps/headoffice/scripts.pory"
+	msgbox serenaextend_Text_1, MSGBOX_AUTOCLOSE
+# 182 "data/maps/headoffice/scripts.pory"
+	hidenamebox
+# 183 "data/maps/headoffice/scripts.pory"
+	namebox serena
+# 184 "data/maps/headoffice/scripts.pory"
+	msgbox serenaextend_Text_2, MSGBOX_AUTOCLOSE
+# 185 "data/maps/headoffice/scripts.pory"
+	hidenamebox
+# 186 "data/maps/headoffice/scripts.pory"
+	namebox Xylar
 # 187 "data/maps/headoffice/scripts.pory"
-	applymovement 0xFD, serenametmov7
+	msgbox serenaextend_Text_3
 # 188 "data/maps/headoffice/scripts.pory"
-	waitmovement 0
+	hidenamebox
 # 189 "data/maps/headoffice/scripts.pory"
-	destroyfollower
+	namebox serena
 # 190 "data/maps/headoffice/scripts.pory"
-	setvar ACADEMY_START, 7
+	msgbox serenaextend_Text_4, MSGBOX_AUTOCLOSE
 # 191 "data/maps/headoffice/scripts.pory"
+	hidenamebox
+# 192 "data/maps/headoffice/scripts.pory"
+	namebox Xylar
+# 193 "data/maps/headoffice/scripts.pory"
+	msgbox serenaextend_Text_3, MSGBOX_AUTOCLOSE
+# 194 "data/maps/headoffice/scripts.pory"
+	hidenamebox
+# 195 "data/maps/headoffice/scripts.pory"
+	applymovement 0x7F, serenametmov7
+# 196 "data/maps/headoffice/scripts.pory"
+	waitmovement 0
+# 197 "data/maps/headoffice/scripts.pory"
+	special RemoveCameraObject
+# 198 "data/maps/headoffice/scripts.pory"
+	namebox serena
+# 199 "data/maps/headoffice/scripts.pory"
+	msgbox serenaextend_Text_5, MSGBOX_AUTOCLOSE
+# 200 "data/maps/headoffice/scripts.pory"
+	hidenamebox
+# 201 "data/maps/headoffice/scripts.pory"
+	applymovement 0xFD, serenametmov7
+# 202 "data/maps/headoffice/scripts.pory"
+	waitmovement 0
+# 203 "data/maps/headoffice/scripts.pory"
+	destroyfollower
+# 204 "data/maps/headoffice/scripts.pory"
+	setflag FLAG_SERENAMET
+# 205 "data/maps/headoffice/scripts.pory"
+	setvar ACADEMY_START, 7
+# 206 "data/maps/headoffice/scripts.pory"
 	release
 	return
 
 
 serenaextend1::
-# 195 "data/maps/headoffice/scripts.pory"
+# 210 "data/maps/headoffice/scripts.pory"
 	applymovement 0xFF, MOVE2
-# 196 "data/maps/headoffice/scripts.pory"
+# 211 "data/maps/headoffice/scripts.pory"
 	applymovement 0xFD, MOVE2
-# 197 "data/maps/headoffice/scripts.pory"
+# 212 "data/maps/headoffice/scripts.pory"
 	waitmovement 0
-# 198 "data/maps/headoffice/scripts.pory"
+# 213 "data/maps/headoffice/scripts.pory"
 	goto serenaextend
 	return
 
 
 serenaextend2::
-# 201 "data/maps/headoffice/scripts.pory"
+# 216 "data/maps/headoffice/scripts.pory"
 	applymovement 0xFF, strrp
-# 202 "data/maps/headoffice/scripts.pory"
+# 217 "data/maps/headoffice/scripts.pory"
 	applymovement 0xFD, strrp
-# 203 "data/maps/headoffice/scripts.pory"
+# 218 "data/maps/headoffice/scripts.pory"
 	waitmovement 0
-# 204 "data/maps/headoffice/scripts.pory"
+# 219 "data/maps/headoffice/scripts.pory"
 	goto serenaextend
 	return
 
 
-# 206 "data/maps/headoffice/scripts.pory"
+# 221 "data/maps/headoffice/scripts.pory"
 serenametmov7:
-# 207 "data/maps/headoffice/scripts.pory"
+# 222 "data/maps/headoffice/scripts.pory"
 	walk_up
-# 207 "data/maps/headoffice/scripts.pory"
+# 222 "data/maps/headoffice/scripts.pory"
 	walk_up
-# 207 "data/maps/headoffice/scripts.pory"
+# 222 "data/maps/headoffice/scripts.pory"
 	walk_up
-# 207 "data/maps/headoffice/scripts.pory"
+# 222 "data/maps/headoffice/scripts.pory"
 	walk_up
-# 207 "data/maps/headoffice/scripts.pory"
+# 222 "data/maps/headoffice/scripts.pory"
 	walk_up
-# 207 "data/maps/headoffice/scripts.pory"
+# 222 "data/maps/headoffice/scripts.pory"
 	walk_up
-# 207 "data/maps/headoffice/scripts.pory"
+# 222 "data/maps/headoffice/scripts.pory"
 	walk_up
 	step_end
 
-# 210 "data/maps/headoffice/scripts.pory"
+# 225 "data/maps/headoffice/scripts.pory"
 serenametmov5:
-# 211 "data/maps/headoffice/scripts.pory"
+# 226 "data/maps/headoffice/scripts.pory"
 	walk_left
-# 212 "data/maps/headoffice/scripts.pory"
+# 227 "data/maps/headoffice/scripts.pory"
 	walk_down
-# 212 "data/maps/headoffice/scripts.pory"
+# 227 "data/maps/headoffice/scripts.pory"
 	walk_down
-# 212 "data/maps/headoffice/scripts.pory"
+# 227 "data/maps/headoffice/scripts.pory"
 	walk_down
-# 212 "data/maps/headoffice/scripts.pory"
+# 227 "data/maps/headoffice/scripts.pory"
 	walk_down
-# 212 "data/maps/headoffice/scripts.pory"
+# 227 "data/maps/headoffice/scripts.pory"
 	walk_down
 	step_end
 
-# 214 "data/maps/headoffice/scripts.pory"
+# 229 "data/maps/headoffice/scripts.pory"
 serenametmov6:
-# 215 "data/maps/headoffice/scripts.pory"
+# 230 "data/maps/headoffice/scripts.pory"
 	delay_16
-# 216 "data/maps/headoffice/scripts.pory"
+# 231 "data/maps/headoffice/scripts.pory"
 	walk_down
-# 216 "data/maps/headoffice/scripts.pory"
+# 231 "data/maps/headoffice/scripts.pory"
 	walk_down
-# 216 "data/maps/headoffice/scripts.pory"
+# 231 "data/maps/headoffice/scripts.pory"
 	walk_down
-# 216 "data/maps/headoffice/scripts.pory"
+# 231 "data/maps/headoffice/scripts.pory"
 	walk_down
 	step_end
 
 Head_Text_0:
-# 26 "data/maps/headoffice/scripts.pory"
+# 29 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar, I trust your journey here was\n"
 	.string "uneventful.\p"
 	.string "I understand this is all new for you,\n"
 	.string "but it's time to start fresh.$"
 
 Head_Text_1:
-# 29 "data/maps/headoffice/scripts.pory"
+# 32 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}...........$"
 
 Head_Text_2:
-# 32 "data/maps/headoffice/scripts.pory"
+# 35 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}We have a tradition of giving every\n"
 	.string "first year a starter pokemon of their\l"
 	.string "choice on the first day.\p"
@@ -485,45 +513,50 @@ Head_Text_2:
 	.string "Here you go.$"
 
 Head_Text_3:
-# 40 "data/maps/headoffice/scripts.pory"
+# 43 "data/maps/headoffice/scripts.pory"
 	.string "Xylar recieved {STR_VAR_1}.$"
 
+girlsdorm_Text_0:
+# 61 "data/maps/headoffice/scripts.pory"
+	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}This way leads to the girl's dorm.\p"
+	.string "Boys are not allowed there.$"
+
 Head1_Text_0:
-# 57 "data/maps/headoffice/scripts.pory"
+# 71 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}This is it? I thought I was supposed to\n"
 	.string "grow stronger, not babysit a chicken.$"
 
 Head1_Text_1:
-# 60 "data/maps/headoffice/scripts.pory"
+# 74 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Strength isn't always obvious at first\n"
 	.string "glance.\p"
 	.string "Give it time.\n"
 	.string "Torchic may surprise you.$"
 
 serenamet_Text_0:
-# 74 "data/maps/headoffice/scripts.pory"
+# 88 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}There you are!\p"
 	.string "I'm Serena, your assigned mentor.\p"
 	.string "Lucky you, right?$"
 
 serenamet_Text_1:
-# 80 "data/maps/headoffice/scripts.pory"
+# 94 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't need a mentor.$"
 
 serenamet_Text_2:
-# 83 "data/maps/headoffice/scripts.pory"
+# 97 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Well, that's too bad.\p"
 	.string "Rules are rules.\p"
 	.string "You're stuck with me, like it or not.$"
 
 serenamet_Text_3:
-# 88 "data/maps/headoffice/scripts.pory"
+# 102 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}If you're expecting me to follow your\n"
 	.string "lead then do yourself a favor.\p"
 	.string "Find someone else.$"
 
 serenamet_Text_4:
-# 95 "data/maps/headoffice/scripts.pory"
+# 109 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}You've got quite the attitude.\p"
 	.string "Look, I don't care if you think you don't\n"
 	.string "need help.\p"
@@ -531,12 +564,12 @@ serenamet_Text_4:
 	.string "something up.$"
 
 serenamet_Text_5:
-# 98 "data/maps/headoffice/scripts.pory"
+# 112 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Do what you like.\p"
 	.string "Just don't get in my way.$"
 
 serenamet_Text_6:
-# 101 "data/maps/headoffice/scripts.pory"
+# 115 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Deal.\p"
 	.string "You might be all broody, but I bet you'll\n"
 	.string "come around eventually.\p"
@@ -544,33 +577,33 @@ serenamet_Text_6:
 	.string "tough shells.$"
 
 serenamet_Text_7:
-# 104 "data/maps/headoffice/scripts.pory"
+# 118 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Don't count on it.$"
 
 serenamet_Text_8:
-# 107 "data/maps/headoffice/scripts.pory"
+# 121 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Now that you have accepted my help, let\n"
 	.string "me show you around.$"
 
 serenamet_Text_9:
-# 111 "data/maps/headoffice/scripts.pory"
+# 125 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Huh?\p"
 	.string "I never di..$"
 
 serenamet_Text_10:
-# 114 "data/maps/headoffice/scripts.pory"
+# 128 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Let's gooo!$"
 
 serenamet_Text_11:
-# 118 "data/maps/headoffice/scripts.pory"
+# 132 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Ugh!$"
 
 serenamet_Text_12:
-# 121 "data/maps/headoffice/scripts.pory"
+# 135 "data/maps/headoffice/scripts.pory"
 	.string "Serena decided to join you!$"
 
 serenaextend_Text_0:
-# 164 "data/maps/headoffice/scripts.pory"
+# 178 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}This is where real fun happens.\p"
 	.string "You'll get plenty of chances to show\n"
 	.string "your skills here.\p"
@@ -579,33 +612,33 @@ serenaextend_Text_0:
 	.string "practice?$"
 
 serenaextend_Text_1:
-# 167 "data/maps/headoffice/scripts.pory"
+# 181 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Results are all that matter and I don't\n"
 	.string "care how I get them.$"
 
 serenaextend_Text_2:
-# 170 "data/maps/headoffice/scripts.pory"
+# 184 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Results come from experience, you know.\p"
 	.string "Let me guess, you think you can handle\n"
 	.string "everything on your own.$"
 
 serenaextend_Text_3:
-# 173 "data/maps/headoffice/scripts.pory"
+# 187 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}...................$"
 
 serenaextend_Text_4:
-# 176 "data/maps/headoffice/scripts.pory"
+# 190 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Look, I get it.\p"
 	.string "You've got your walls up but you'll see\n"
 	.string "doing it alone doesn't always work.\p"
 	.string "Maybe Torchic will teach you that.$"
 
 serenaextend_Text_5:
-# 185 "data/maps/headoffice/scripts.pory"
+# 199 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}You should head to the reception to\n"
 	.string "pick up your dorm room keys.\p"
 	.string "I'll be going now.$"
 
 serena::
-# 153 "data/maps/headoffice/scripts.pory"
+# 167 "data/maps/headoffice/scripts.pory"
 	.string "Serena$"

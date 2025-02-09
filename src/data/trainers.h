@@ -28177,7 +28177,7 @@ F_TRAINER_FEMALE |
     {
         .trainerName = _("LUCY"),
         .trainerClass = TRAINER_CLASS_PIKE_QUEEN,
-        .trainerPic = TRAINER_PIC_PIKE_QUEEN_LUCY,
+        .trainerPic = TRAINER_PIC_SELENE,
         .encounterMusic_gender =
 F_TRAINER_FEMALE |
             TRAINER_ENCOUNTER_MUSIC_MALE,

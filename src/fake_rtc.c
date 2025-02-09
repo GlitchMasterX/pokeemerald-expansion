@@ -33,8 +33,11 @@ void FakeRtc_TickTimeForward(void)
         return;
 
     FakeRtc_AdvanceTimeBy(0, 0, FakeRtc_GetSecondsRatio());
+
+    // Update time of day dynamically
     VarSet(VAR_CURRENT_TIME_OF_DAY, GetTimeOfDay());
 }
+
 
 void FakeRtc_AdvanceTimeBy(u32 hours, u32 minutes, u32 seconds)
 {
@@ -94,14 +97,19 @@ STATIC_ASSERT((OW_FLAG_PAUSE_TIME == 0 || OW_USE_FAKE_RTC == TRUE), FakeRtcMustB
 void Script_PauseFakeRtc(void)
 {
     FlagSet(OW_FLAG_PAUSE_TIME);
+    VarSet(VAR_CURRENT_TIME_OF_DAY, GetTimeOfDay());
 }
 
 void Script_ResumeFakeRtc(void)
-{
+{ 
     FlagClear(OW_FLAG_PAUSE_TIME);
+    VarSet(VAR_CURRENT_TIME_OF_DAY, GetTimeOfDay());
+
 }
 
 void Script_ToggleFakeRtc(void)
 {
     FlagToggle(OW_FLAG_PAUSE_TIME);
+    VarSet(VAR_CURRENT_TIME_OF_DAY, GetTimeOfDay());
+
 }

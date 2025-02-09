@@ -1,1 +1,74 @@
-mapscripts Dormindoor1_MapScripts {}
+mapscripts Dormindoor1_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE[
+	ACADEMY_START,8:Kaelmet
+]
+MAP_SCRIPT_ON_LOAD:DAYNIGHT_NPC
+}
+script DAYNIGHT_NPC {
+    if(var(VAR_CURRENT_TIME_OF_DAY)<2){
+    setflag(FLAG_NIGHT_NPC)
+    setflag(FLAG_ACDAEMY_MURKROW)
+    clearflag(FLAG_DAY_NPC)
+    setflag(FLAG_NORMAL_OUTFOREST)
+    }
+    else{
+    setflag(FLAG_DAY_NPC)
+    clearflag(FLAG_NIGHT_NPC)
+    clearflag(FLAG_ACDAEMY_MURKROW)
+    clearflag(FLAG_NORMAL_OUTFOREST)
+    }
+    }
+script Kaelmet {
+    lock
+    special(SpawnCameraObject)
+    applymovement(0x7F,serenametmov7)
+    applymovement(0xFF,dorm)
+    waitmovement(0)
+    applymovement(1,MOVE1)
+    playbgm(MUS_DUMMY,FALSE)
+    namebox(unknown)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Took you long enough."))
+    hidenamebox
+    waitmessage
+    applymovement(0xFF,mov1)
+    namebox(Xylar)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Who are you?"))
+    hidenamebox
+    namebox(kael)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Kael Duskbane.\pYour roommate.\pUnless you plan on sleeping outside."))
+    hidenamebox
+    applymovement(1,happy)
+    waitmovement(0)
+    applymovement(0xFF,MOVE1)
+    namebox(Xylar)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I'd prefer that."))
+    hidenamebox
+    namebox(kael)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Suit yourself.\pJust don't drag in dirt if you come crawling back."))
+    hidenamebox
+    namebox(Xylar)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}........"),MSGBOX_AUTOCLOSE)
+    hidenamebox
+    namebox(kael)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}So, what's your deal?\pYou don't talk much, and you look like you'd rather punch someone in the face than have a conversation."))
+    hidenamebox
+    namebox(Xylar)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}None of your business."))
+    hidenamebox
+    namebox(kael)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Fair enough.\pJust don't expect me to pretend we're friends."),MSGBOX_AUTOCLOSE)
+    hidenamebox
+    setvar(ACADEMY_START,9)
+    special(RemoveCameraObject)
+    release
+    fadedefaultbgm
+}
+text kael {
+    format("Kael")
+}
+
+movement dorm {
+    walk_up*7
+    walk_left*5
+    
+}
