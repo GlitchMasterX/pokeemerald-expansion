@@ -133,6 +133,8 @@ static const u8 sDoorAnimTiles_TrainerHillRoofElevator[] = INCBIN_U8("graphics/d
 static const u16 sDoorNullPalette49[16] = {};
 static const u8 sDoorAnimTiles_Petalburg[] = INCBIN_U8("graphics/door_anims/petalburg.4bpp");
 static const u16 sDoorNullPalette50[16] = {};
+static const u8 sDoorAnimTiles_Forest[] = INCBIN_U8("graphics/door_anims/forest.4bpp");
+static const u16 sDoorNullPalette51[16] = {};
 
 static const struct DoorAnimFrame sDoorOpenAnimFrames[] =
 {
@@ -193,7 +195,7 @@ static const u8 sDoorAnimPalettes_Mauville[] = {7, 7, 7, 7, 7, 7, 7, 7};
 static const u8 sDoorAnimPalettes_Verdanturf[] = {6, 6, 5, 5, 5, 5, 5, 5};
 static const u8 sDoorAnimPalettes_LilycoveWooden[] = {5, 5, 5, 5, 5, 5, 5, 5};
 static const u8 sDoorAnimPalettes_Contest[] = {1, 1, 1, 1, 1, 1, 1, 1};
-static const u8 sDoorAnimPalettes_PetalburgGym[] = {6, 6, 6, 6, 6, 6, 6, 6};
+static const u8 sDoorAnimPalettes_PetalburgGym[] = {8, 8, 8, 8, 8, 8, 8, 8};
 static const u8 sDoorAnimPalettes_CyclingRoad[] = {7, 7, 7, 7, 7, 7, 7, 7};
 static const u8 sDoorAnimPalettes_LilycoveDeptStore[] = {5, 5, 5, 5, 5, 5, 5, 5};
 static const u8 sDoorAnimPalettes_SafariZone[] = {9, 9, 9, 9, 9, 9, 9, 9};
@@ -222,10 +224,12 @@ static const u8 sDoorAnimPalettes_BattleDomePreBattleRoom[] = {9, 9, 7, 7, 7, 7,
 static const u8 sDoorAnimPalettes_BattleTentInterior[] = {9, 9, 9, 9, 9, 9, 9, 9};
 static const u8 sDoorAnimPalettes_TrainerHillLobbyElevator[] = {7, 7, 7, 7, 7, 7, 7, 7};
 static const u8 sDoorAnimPalettes_TrainerHillRoofElevator[] = {9, 9, 7, 7, 7, 7, 7, 7};
+static const u8 sDoorAnimPalettes_Forest[] = {9, 9, 9, 9, 9, 9, 9, 9};
 
 static const struct DoorGraphics sDoorAnimGraphicsTable[] =
 {
     {METATILE_General_Door,                                 DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_General, sDoorAnimPalettes_General},
+    {METATILE_Forest_Door,                                 DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Forest, sDoorAnimPalettes_Forest},
     {METATILE_General_Door_PokeCenter,                      DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_PokeCenter, sDoorAnimPalettes_PokeCenter},
     {METATILE_General_Door_Gym,                             DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_Gym, sDoorAnimPalettes_Gym},
     {METATILE_General_Door_PokeMart,                        DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_PokeMart, sDoorAnimPalettes_PokeMart},

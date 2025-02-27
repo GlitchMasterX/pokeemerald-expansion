@@ -1207,3 +1207,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/headoffice/scripts.inc"
 
 	.include "data/maps/Harborac/scripts.inc"
+
+	.include "data/maps/LunarGrove/scripts.inc"

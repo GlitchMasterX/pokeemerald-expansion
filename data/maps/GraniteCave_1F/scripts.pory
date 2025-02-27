@@ -46,7 +46,7 @@ GraniteCave_1F_Text_ExplainFlash:
 
 `
 script herb {
-     lockall
+    lockall
     namebox(Xylar)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}These cuts... they're deep.\pI don't know how to fix this!"),MSGBOX_AUTOCLOSE)
 	hidenamebox
@@ -63,6 +63,7 @@ script herb {
 	hidenamebox
 	releaseall
 	setvar(LUXURA_TRAGEDY,16)
+	setvar(VAR_CURRENT_MONTH,2)
 }
 
 script Mewtworecover {

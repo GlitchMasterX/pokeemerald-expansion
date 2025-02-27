@@ -12,6 +12,7 @@
 #include "item.h"
 #include "item_menu.h"
 #include "item_menu_icons.h"
+#include "field_message_box.h"
 #include "list_menu.h"
 #include "item_icon.h"
 #include "item_use.h"
@@ -1203,10 +1204,26 @@ static void StartMenuFull_InitWindows(void)
 //
 //  Confirm Save Dialogue Printer
 //
+static const u8 sText_CantSaveNow[] = _("You can't save right now!");
 static const u8 sText_ConfirmSave[] = _("Confirm Save and Return to Overworld?");
 static const u8 sA_ButtonGfx[]         = INCBIN_U8("graphics/ui_startmenu_full/a_button.4bpp");
 static void PrintSaveConfirmToWindow()
 {
+    if (FlagGet(FLAG_TEMPORARY_PARTY_CHANGE)) // Check if in event
+    {
+        const u8 *str = sText_CantSaveNow;
+        u8 sConfirmTextColors[] = {TEXT_COLOR_TRANSPARENT, 2, 3};
+        u8 x = 35;
+        u8 y = 0;
+
+        FillWindowPixelBuffer(WINDOW_BOTTOM_BAR, PIXEL_FILL(5)); // Clear window before printing
+        AddTextPrinterParameterized4(WINDOW_BOTTOM_BAR, 1, x, y, 0, 0, sConfirmTextColors, 0xFF, str);
+        PutWindowTilemap(WINDOW_BOTTOM_BAR);
+        CopyWindowToVram(WINDOW_BOTTOM_BAR, COPYWIN_FULL);
+        
+        return; // Prevent the save window from appearing
+    }
+else{    
     const u8 *str = sText_ConfirmSave;
     u8 sConfirmTextColors[] = {TEXT_COLOR_TRANSPARENT, 2, 3};
     u8 x = 24;
@@ -1218,6 +1235,9 @@ static void PrintSaveConfirmToWindow()
     PutWindowTilemap(WINDOW_BOTTOM_BAR);
     CopyWindowToVram(WINDOW_BOTTOM_BAR, COPYWIN_FULL);
 }
+}
+
+
 
 static const u8 gText_January[] = _("Jan.");
 static const u8 gText_February[] = _("Feb.");
@@ -1454,7 +1474,13 @@ void Task_ReturnToFieldOnSave(u8 taskId)
 # define sFrameToSecondTimer data[6]
 void Task_HandleSaveConfirmation(u8 taskId)
 {
-    if(JOY_NEW(A_BUTTON)) //confirm and leave
+    if (FlagGet(FLAG_TEMPORARY_PARTY_CHANGE)) // Prevent saving if temporary party is active
+    {
+        gTasks[taskId].func = Task_StartMenuFullMain; // Return to the Start menu
+        return;
+    }
+
+    if (JOY_NEW(A_BUTTON)) // Confirm and leave
     {
         PlaySE(SE_SELECT);
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
@@ -1462,7 +1488,8 @@ void Task_HandleSaveConfirmation(u8 taskId)
         gFieldCallback = SaveStartCallback_FullStartMenu;
         return;
     }
-    if(JOY_NEW(B_BUTTON)) // back to normal Menu Control
+
+    if (JOY_NEW(B_BUTTON)) // Back to normal menu control
     {
         PlaySE(SE_SELECT);
         FillWindowPixelBuffer(WINDOW_BOTTOM_BAR, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
@@ -1471,13 +1498,15 @@ void Task_HandleSaveConfirmation(u8 taskId)
         gTasks[taskId].func = Task_StartMenuFullMain;
         return;
     }
-    if(gTasks[taskId].sFrameToSecondTimer >= 60) // every 60 frames update the time
+
+    if (gTasks[taskId].sFrameToSecondTimer >= 60) // Every 60 frames update the time
     {
         PrintMapNameAndTime();
         gTasks[taskId].sFrameToSecondTimer = 0;
     }
     gTasks[taskId].sFrameToSecondTimer++;
 }
+
 
 
 
@@ -1568,13 +1597,11 @@ static void Task_StartMenuFullMain(u8 taskId)
                 break;
         }
     }
-
-    if(JOY_NEW(START_BUTTON)) // If start button pressed go to Save Confirmation Control Task
+    if (JOY_NEW(START_BUTTON))
     {
         PrintSaveConfirmToWindow();
         gTasks[taskId].func = Task_HandleSaveConfirmation;
     }
-
 #if (FLAG_CLOCK_MODE != 0)
     if (JOY_NEW(SELECT_BUTTON)) // switch between clock modes
     {

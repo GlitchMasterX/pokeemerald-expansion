@@ -256,7 +256,7 @@ gScriptCmdTable::
 	script_cmd_table_entry SCR_OP_GETOUTFITSTATUS               ScrCmd_getoutfitstatus                   @ 0xee
 	script_cmd_table_entry SCR_OP_BUFFEROUTFITSTR               ScrCmd_bufferoutfitstr                   @ 0xef
 	script_cmd_table_entry SCR_OP_POKEMARTOUTFIT                ScrCmd_pokemartoutfit                    @ 0xf0
-
+    script_cmd_table_entry SCR_OP_FORCEEQUIP                ScrCmd_forceequipoutfit                    @ 0xf1
 	.if ALLOCATE_SCRIPT_CMD_TABLE
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop

@@ -874,15 +874,16 @@ static const struct SpriteTemplate sTrainerBackSpriteTemplates[] =
         .affineAnims = gAffineAnims_BattleSpritePlayerSide,
         .callback = SpriteCB_BattleSpriteStartSlideLeft,
     },
-    [TRAINER_BACK_PIC_STEVEN] = {
+    [TRAINER_BACK_PIC_SILAS] = {
         .tileTag = TAG_NONE,
         .paletteTag = 0,
         .oam = &gOamData_BattleSpritePlayerSide,
         .anims = NULL,
-        .images = gTrainerBackPicTable_Steven,
+        .images = gTrainerBackPicTable_Silas,
         .affineAnims = gAffineAnims_BattleSpritePlayerSide,
         .callback = SpriteCB_BattleSpriteStartSlideLeft,
     },
+    
 };
 
 #define NUM_SECRET_BASE_CLASSES 5

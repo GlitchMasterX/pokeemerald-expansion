@@ -9,6 +9,8 @@ Luxuradining_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 `
 script Youwake {
 	lock
+	initclock(10,00)
+	pausefakertc
 	special(SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_CAMERA,camera2)
 	waitmovement(0)

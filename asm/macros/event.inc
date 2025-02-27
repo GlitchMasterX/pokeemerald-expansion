@@ -2014,6 +2014,12 @@
 	.byte 0xf0
 	.4byte \products
 	.endm
+    
+	@! Force equips an outfit (skipping any unlock or toggle logic)
+    .macro forceequipoutfit outfitId:req
+    .byte 0xf1              @ Script command byte for a custom command
+    .2byte \outfitId        @ Outfit ID to force equip
+    .endm
 
 @ Supplementary
 

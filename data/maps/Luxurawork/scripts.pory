@@ -10,6 +10,7 @@ map_script_2 LUXURA_TRAGEDY, 22, trageflash
 `
 script trageflash {
 	lockall
+	addobject(15)
 	applymovement(9,players)
 	applymovement(8,players)
 	waitmovement(0)
@@ -55,13 +56,14 @@ script trageflash {
 	playse(SE_M_BITE)
 	waitse
 	applymovement(10,run)
-	fadescreen(FADE_TO_BLACK)
 	playbgm(MUS_HG_ENCOUNTER_SAGE,TRUE)
+	fadescreen(FADE_TO_BLACK)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You spoke too soon,\nAurther."),MSGBOX_AUTOCLOSE)
 	applymovement(16,visible)
 	applymovement(17,invisible)
     fadescreen(FADE_FROM_BLACK)
 	applymovement(7,exclam)
+	waitmovement(0)
     fadescreen(FADE_FROM_BLACK)
 	fadescreenspeed(FADE_TO_WHITE,4)
 	fadescreenspeed(FADE_FROM_WHITE,4)
@@ -250,8 +252,10 @@ script trage {
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Honey!!!"))
 	hidenamebox
 	applymovement(7,exclam)
+	waitmovement(0)
 	waitmessage
 	applymovement(15,dede)
+	waitmovement(0)
 	namebox(unknown)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I told you, you can't defeat him.\pHe solely took down the Nexus Order.\pYou could even call him the strongest trainer to ever exist."))
 	hidenamebox

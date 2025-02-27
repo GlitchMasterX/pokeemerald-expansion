@@ -24,7 +24,7 @@
 
 // Replace the 0 with a flag in order to use that flag to toggle whether the follower partner will join you for wild battles.
 // If you want this to always be active without using a flag, replace 0 with ALWAYS.
-#define F_FLAG_PARTNER_WILD_BATTLES         0
+#define F_FLAG_PARTNER_WILD_BATTLES         ALWAYS
 
 // If set to TRUE, two wild Pokemon will show up to the partner battle instead of just one.
 #define FOLLOWER_WILD_BATTLE_VS_2           TRUE

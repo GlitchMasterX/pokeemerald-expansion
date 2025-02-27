@@ -259,6 +259,7 @@ script gone{
 }
 script indoor {
     lock
+    resumefakertc
     applymovement(OBJ_EVENT_ID_PLAYER,innnn)
     applymovement(6,ii)
     waitmovement(0)

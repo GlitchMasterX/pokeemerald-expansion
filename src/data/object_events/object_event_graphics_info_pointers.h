@@ -542,7 +542,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_LEAF] =                     &gObjectEventGraphicsInfo_Leaf,
     [OBJ_EVENT_GFX_DEOXYS] =                   &gObjectEventGraphicsInfo_Deoxys,
     [OBJ_EVENT_GFX_DEOXYS_TRIANGLE] =          &gObjectEventGraphicsInfo_BirthIslandStone,
-    [OBJ_EVENT_GFX_BRANDON] =                  &gObjectEventGraphicsInfo_Brandon,
+    [OBJ_EVENT_GFX_SILAS] =                  &gObjectEventGraphicsInfo_Brandon,
     [OBJ_EVENT_GFX_LINK_RS_BRENDAN] =          &gObjectEventGraphicsInfo_RubySapphireBrendan,
     [OBJ_EVENT_GFX_LINK_RS_MAY] =              &gObjectEventGraphicsInfo_RubySapphireMay,
     [OBJ_EVENT_GFX_LUGIA] =                    &gObjectEventGraphicsInfo_Lugia,

@@ -561,7 +561,7 @@ grave_1:
 # 269 "data/maps/Newmap11/scripts.pory"
 	setvar VAR_CURRENT_MONTH, 3
 # 270 "data/maps/Newmap11/scripts.pory"
-	warpsilent MAP_HARBORAC, 2, 27
+	warpsilent MAP_HARBORAC, 22, 27
 	return
 
 

@@ -102,8 +102,8 @@
 #define TRAINER_PIC_PALACE_MAVEN_SPENSER  84
 #define TRAINER_PIC_ARENA_TYCOON_GRETA    85
 #define TRAINER_PIC_FACTORY_HEAD_NOLAND   86
-#define TRAINER_PIC_SELENE       87
-#define TRAINER_PIC_PYRAMID_KING_BRANDON  88
+#define TRAINER_PIC_SELENE                87
+#define TRAINER_PIC_SILAS  88
 #define TRAINER_PIC_RED                   89
 #define TRAINER_PIC_LEAF                  90
 #define TRAINER_PIC_RS_BRENDAN            91
@@ -130,7 +130,7 @@
 #define TRAINER_BACK_PIC_RUBY_SAPPHIRE_BRENDAN  4
 #define TRAINER_BACK_PIC_RUBY_SAPPHIRE_MAY      5
 #define TRAINER_BACK_PIC_WALLY                  6
-#define TRAINER_BACK_PIC_STEVEN                 7
+#define TRAINER_BACK_PIC_SILAS                 7
 
 #define FACILITY_CLASS_HIKER                 0x0
 #define FACILITY_CLASS_AQUA_GRUNT_M          0x1

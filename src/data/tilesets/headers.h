@@ -403,7 +403,7 @@ const struct Tileset gTileset_PokemonDayCare =
     .palettes_winter = NULL,
 };
 
-const struct Tileset gTileset_Facility =
+const struct Tileset gTileset_Woods =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
@@ -855,7 +855,7 @@ const struct Tileset gTileset_BattlePalace =
     .palettes_winter = NULL,
 };
 
-const struct Tileset gTileset_BattleDome =
+const struct Tileset gTileset_AcademyIndoor =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
@@ -869,7 +869,7 @@ const struct Tileset gTileset_BattleDome =
     .palettes_winter = NULL,
 };
 
-const struct Tileset gTileset_BattleFactory =
+const struct Tileset gTileset_BattleRoom =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
@@ -897,7 +897,7 @@ const struct Tileset gTileset_BattlePike =
     .palettes_winter = NULL,
 };
 
-const struct Tileset gTileset_BattleArena =
+const struct Tileset gTileset_AcademyOutdoor =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
@@ -1127,17 +1127,6 @@ const struct Tileset gTileset_Forest =
     .palettes = gTilesetPalettes_Forest,
     .metatiles = gMetatiles_Forest,
     .metatileAttributes = gMetatileAttributes_Forest,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_cave1 =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_cave1,
-    .palettes = gTilesetPalettes_cave1,
-    .metatiles = gMetatiles_cave1,
-    .metatileAttributes = gMetatileAttributes_cave1,
     .callback = NULL,
 };
 

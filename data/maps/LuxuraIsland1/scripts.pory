@@ -176,7 +176,7 @@ script miraded {
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}What happened here?"))
 	hidenamebox
 	namebox(name4)
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}That's horrible.\pWhy would they resort to this?"))
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}That's horrible.\pWhy would they resort to this?"),MSGBOX_AUTOCLOSE)
 	hidenamebox
 	applymovement(OBJ_EVENT_ID_PLAYER,run)
 	applymovement(0xFD,run)

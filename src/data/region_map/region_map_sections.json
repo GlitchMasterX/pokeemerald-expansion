@@ -33,8 +33,8 @@
       "height": 1
     },
     {
-      "map_section": "MAPSEC_FALLARBOR_TOWN",
-      "name": "FALLARBOR TOWN",
+      "map_section": "MAPSEC_MT_CINDER",
+      "name": "MT.CINDER",
       "x": 3,
       "y": 0,
       "width": 1,
@@ -129,8 +129,8 @@
       "height": 2
     },
     {
-      "map_section": "MAPSEC_ROUTE_101",
-      "name": "ROUTE 101",
+      "map_section": "MAPSEC_LUNAR_GROVE",
+      "name": "LUNAR GROVE",
       "x": 4,
       "y": 10,
       "width": 1,

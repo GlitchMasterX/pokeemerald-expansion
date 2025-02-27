@@ -362,7 +362,7 @@ miraded::
 # 178 "data/maps/LuxuraIsland1/scripts.pory"
 	namebox name4
 # 179 "data/maps/LuxuraIsland1/scripts.pory"
-	msgbox miraded_Text_3
+	msgbox miraded_Text_3, MSGBOX_AUTOCLOSE
 # 180 "data/maps/LuxuraIsland1/scripts.pory"
 	hidenamebox
 # 181 "data/maps/LuxuraIsland1/scripts.pory"

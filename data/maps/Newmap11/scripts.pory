@@ -267,7 +267,7 @@ script grave {
     pausefakertc
     clearflag(FLAG_TALK_GRAVE)
     setvar(VAR_CURRENT_MONTH,3)
-    warpsilent(MAP_HARBORAC,2,27)
+    warpsilent(MAP_HARBORAC,22,27)
     }
     else{
         goto(EventScript_M_Grave)

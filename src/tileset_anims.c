@@ -61,18 +61,22 @@ static void BlendAnimPalette_BattleDome_FloorLights(u16);
 static void BlendAnimPalette_BattleDome_FloorLightsNoBlend(u16);
 static void QueueAnimTiles_Lavaridge_Steam(u8);
 static void QueueAnimTiles_Lavaridge_Lava(u16);
+static void QueueAnimTiles_Lavaridge_Smoke(u16);
 static void QueueAnimTiles_EverGrande_Flowers(u16, u8);
 static void QueueAnimTiles_Pacifidlog_LogBridges(u8);
 static void QueueAnimTiles_Pacifidlog_WaterCurrents(u8);
 static void QueueAnimTiles_Sootopolis_StormyWater(u16);
 static void QueueAnimTiles_Underwater_Seaweed(u8);
 static void QueueAnimTiles_Cave_Lava(u16);
+static void QueueAnimTiles_Cave_Smoke(u16);
 static void QueueAnimTiles_BattleFrontierOutsideWest_Flag(u16);
 static void QueueAnimTiles_BattleFrontierOutsideEast_Flag(u16);
 static void QueueAnimTiles_MauvilleGym_ElectricGates(u16);
 static void QueueAnimTiles_SootopolisGym_Waterfalls(u16);
 static void QueueAnimTiles_EliteFour_GroundLights(u16);
 static void QueueAnimTiles_EliteFour_WallLights(u16);
+static void QueueAnimTiles_Lava(u16);
+static void QueueAnimTiles_Lava1(u16);
 
 const u16 gTilesetAnims_General_Flower_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/1.4bpp");
 const u16 gTilesetAnims_General_Flower_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/0.4bpp");
@@ -333,13 +337,57 @@ const u16 gTilesetAnims_Lavaridge_Cave_Lava_Frame4[] = INCBIN_U16("data/tilesets
 const u16 gTilesetAnims_Lavaridge_Cave_Lava_Frame5[] = INCBIN_U16("data/tilesets/secondary/cave/anim/lava/5.4bpp");
 const u16 gTilesetAnims_Lavaridge_Cave_Lava_Frame6[] = INCBIN_U16("data/tilesets/secondary/cave/anim/lava/6.4bpp");
 const u16 gTilesetAnims_Lavaridge_Cave_Lava_Frame7[] = INCBIN_U16("data/tilesets/secondary/cave/anim/lava/7.4bpp");
+const u16 gTilesetAnims_Lavaridge_Cave_Lava_Frame8[] = INCBIN_U16("data/tilesets/secondary/cave/anim/lava/8.4bpp");
+const u16 gTilesetAnims_Lavaridge_Cave_Lava_Frame9[] = INCBIN_U16("data/tilesets/secondary/cave/anim/lava/9.4bpp");
+const u16 gTilesetAnims_Lavaridge_Cave_Lava_Frame10[] = INCBIN_U16("data/tilesets/secondary/cave/anim/lava/10.4bpp");
+const u16 gTilesetAnims_Lavaridge_Cave_Lava_Frame11[] = INCBIN_U16("data/tilesets/secondary/cave/anim/lava/11.4bpp");
+const u16 gTilesetAnims_Lavaridge_Cave_Lava_Frame12[] = INCBIN_U16("data/tilesets/secondary/cave/anim/lava/12.4bpp");
+const u16 gTilesetAnims_Lavaridge_Cave_Lava_Frame13[] = INCBIN_U16("data/tilesets/secondary/cave/anim/lava/13.4bpp");
+const u16 gTilesetAnims_Lavaridge_Cave_Lava_Frame14[] = INCBIN_U16("data/tilesets/secondary/cave/anim/lava/14.4bpp");
+const u16 gTilesetAnims_Lavaridge_Cave_Lava_Frame15[] = INCBIN_U16("data/tilesets/secondary/cave/anim/lava/15.4bpp");
 const u16 tileset_anims_space_3[16] = {};
+
+const u16 gTilesetAnims_Lavaridge_Cave_Lava_Frame16[] = INCBIN_U16("data/tilesets/secondary/cave/anim/lava/16.4bpp");
+const u16 gTilesetAnims_Lavaridge_Cave_Lava_Frame17[] = INCBIN_U16("data/tilesets/secondary/cave/anim/lava/17.4bpp");
+const u16 gTilesetAnims_Lavaridge_Cave_Lava_Frame18[] = INCBIN_U16("data/tilesets/secondary/cave/anim/lava/18.4bpp");
+const u16 gTilesetAnims_Lavaridge_Cave_Lava_Frame19[] = INCBIN_U16("data/tilesets/secondary/cave/anim/lava/19.4bpp");
+const u16 gTilesetAnims_Lavaridge_Cave_Lava_Frame20[] = INCBIN_U16("data/tilesets/secondary/cave/anim/lava/20.4bpp");
+const u16 gTilesetAnims_Lavaridge_Cave_Lava_Frame21[] = INCBIN_U16("data/tilesets/secondary/cave/anim/lava/21.4bpp");
+
+const u16 *const gTilesetAnims_Lavaridge_Cave_Lava1[] = {
+    gTilesetAnims_Lavaridge_Cave_Lava_Frame16,
+    gTilesetAnims_Lavaridge_Cave_Lava_Frame17,
+    gTilesetAnims_Lavaridge_Cave_Lava_Frame20,
+};
+
+const u16 *const gTilesetAnims_Lavaridge_Cave_Lava2[] = {
+    gTilesetAnims_Lavaridge_Cave_Lava_Frame18,
+    gTilesetAnims_Lavaridge_Cave_Lava_Frame19,
+    gTilesetAnims_Lavaridge_Cave_Lava_Frame21,
+};
 
 const u16 *const gTilesetAnims_Lavaridge_Cave_Lava[] = {
     gTilesetAnims_Lavaridge_Cave_Lava_Frame0,
     gTilesetAnims_Lavaridge_Cave_Lava_Frame1,
     gTilesetAnims_Lavaridge_Cave_Lava_Frame2,
     gTilesetAnims_Lavaridge_Cave_Lava_Frame3
+};
+const u16 *const gTilesetAnims_Lavaridge_Cave_Smoke[] = {
+    gTilesetAnims_Lavaridge_Cave_Lava_Frame4,
+    gTilesetAnims_Lavaridge_Cave_Lava_Frame5,
+    gTilesetAnims_Lavaridge_Cave_Lava_Frame6,
+    gTilesetAnims_Lavaridge_Cave_Lava_Frame7
+};
+
+const u16 *const gTilesetAnims_Lavaridge_Smoke[] = {
+    gTilesetAnims_Lavaridge_Cave_Lava_Frame8,
+    gTilesetAnims_Lavaridge_Cave_Lava_Frame9,
+    gTilesetAnims_Lavaridge_Cave_Lava_Frame10,
+    gTilesetAnims_Lavaridge_Cave_Lava_Frame11,
+    gTilesetAnims_Lavaridge_Cave_Lava_Frame12,
+    gTilesetAnims_Lavaridge_Cave_Lava_Frame13,
+    gTilesetAnims_Lavaridge_Cave_Lava_Frame14,
+    gTilesetAnims_Lavaridge_Cave_Lava_Frame15
 };
 
 const u16 gTilesetAnims_EverGrande_Flowers_Frame0[] = INCBIN_U16("data/tilesets/secondary/ever_grande/anim/flowers/0.4bpp");
@@ -944,6 +992,16 @@ static void TilesetAnim_Cave(u16 timer)
 {
     if (timer % 16 == 1)
         QueueAnimTiles_Cave_Lava(timer / 16);
+        if (timer % 16 == 2)
+    QueueAnimTiles_Lavaridge_Smoke(timer / 16);
+    if (timer % 16 == 3)
+    QueueAnimTiles_Cave_Smoke(timer / 16);
+    if (timer % 16 == 4)
+    QueueAnimTiles_Lava(timer / 16);
+    if (timer % 16 == 5)
+    QueueAnimTiles_Lava1(timer / 16);
+        
+        
 }
 
 static void TilesetAnim_BattleFrontierOutsideWest(u16 timer)
@@ -1028,6 +1086,24 @@ static void QueueAnimTiles_Lavaridge_Lava(u16 timer)
     AppendTilesetAnimToBuffer(gTilesetAnims_Lavaridge_Cave_Lava[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 160)), 4 * TILE_SIZE_4BPP);
 }
 
+static void QueueAnimTiles_Lavaridge_Smoke(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Lavaridge_Cave_Smoke);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Lavaridge_Cave_Smoke[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 100)), 8 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_Lava(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Lavaridge_Cave_Lava1);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Lavaridge_Cave_Lava1[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 326)), 2 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_Lava1(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Lavaridge_Cave_Lava2);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Lavaridge_Cave_Lava2[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 343)), 2 * TILE_SIZE_4BPP);
+}
+
 static void QueueAnimTiles_EverGrande_Flowers(u16 timer_div, u8 timer_mod)
 {
     timer_div -= timer_mod;
@@ -1040,6 +1116,12 @@ static void QueueAnimTiles_Cave_Lava(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_Lavaridge_Cave_Lava);
     AppendTilesetAnimToBuffer(gTilesetAnims_Lavaridge_Cave_Lava[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 416)), 4 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_Cave_Smoke(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Lavaridge_Smoke);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Lavaridge_Smoke[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 308)), 4 * TILE_SIZE_4BPP);
 }
 
 static void QueueAnimTiles_Dewford_Flag(u16 timer)

@@ -1028,3 +1028,11 @@ u32 GetOutfitPrice(u16 id)
 {
     return gOutfits[id].prices[gSaveBlock2Ptr->playerGender];
 }
+
+void ForceEquipOutfit(u16 id)
+{
+    if (id >= OUTFIT_COUNT) // Ensure ID is within valid range
+        return;
+    
+    gSaveBlock2Ptr->currOutfitId = id;
+}

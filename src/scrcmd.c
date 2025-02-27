@@ -2512,6 +2512,21 @@ bool8 ScrCmd_toggleoutfit(struct ScriptContext *ctx)
     return TRUE;
 }
 
+bool8 ScrCmd_forceequipoutfit(struct ScriptContext *ctx)
+{
+    u16 outfitId = VarGet(ScriptReadHalfword(ctx));
+
+    // Validate outfitId to ensure it's within a valid range
+    if (outfitId >= OUTFIT_COUNT)
+        return FALSE;
+
+    // Force equip the outfit
+    ForceEquipOutfit(outfitId);
+
+    return TRUE;
+}
+
+
 bool8 ScrCmd_getoutfitstatus(struct ScriptContext *ctx)
 {
     u16 outfitId = VarGet(ScriptReadHalfword(ctx));

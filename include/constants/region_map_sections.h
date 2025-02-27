@@ -5,7 +5,7 @@
 #define MAPSEC_LUXURA_MANSION                  0x01
 #define MAPSEC_SPARK                 0x02
 #define MAPSEC_LUXURA_VEILWOOD               0x03
-#define MAPSEC_FALLARBOR_TOWN               0x04
+#define MAPSEC_MT_CINDER               0x04
 #define MAPSEC_VERDANTURF_TOWN              0x05
 #define MAPSEC_PACIFIDLOG_TOWN              0x06
 #define MAPSEC_ASTRALIS_ACADEMY               0x07
@@ -17,7 +17,7 @@
 #define MAPSEC_MOSSDEEP_CITY                0x0D
 #define MAPSEC_SOOTOPOLIS_CITY              0x0E
 #define MAPSEC_EVER_GRANDE_CITY             0x0F
-#define MAPSEC_ROUTE_101                    0x10
+#define MAPSEC_LUNAR_GROVE                    0x10
 #define MAPSEC_ROUTE_102                    0x11
 #define MAPSEC_ROUTE_103                    0x12
 #define MAPSEC_ROUTE_104                    0x13

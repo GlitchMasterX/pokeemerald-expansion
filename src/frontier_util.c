@@ -225,7 +225,7 @@ const struct FrontierBrain gFrontierBrainInfo[NUM_FRONTIER_FACILITIES] =
     [FRONTIER_FACILITY_PYRAMID] =
     {
         .trainerId = TRAINER_BRANDON,
-        .objEventGfx = OBJ_EVENT_GFX_BRANDON,
+        .objEventGfx = OBJ_EVENT_GFX_SILAS,
         .isFemale = FALSE,
         .lostTexts = {
             COMPOUND_STRING(

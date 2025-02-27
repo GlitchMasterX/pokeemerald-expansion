@@ -243,16 +243,22 @@ script notnowdorm {
 }
 
 script AcademyNpc {
-if(!flag(FLAG_AFTER_OUTBURST)){
+if (!flag(FLAG_AFTER_OUTBURST)){
     lock
     faceplayer
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}This is the start of my Academy life.\pI can't wait to challange some upperclassmen."))
-    release   
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You look tough! Battle me sometime!"))
+    release
+}
+elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I thought Xylar was just a quiet, strong guy… but after that? Damn. He's terrifying."))
+    release
 }
 else{
     lock
     faceplayer
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}What the hell, man?\pThat was'nt a battle, That was a beatdown."))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I still wanna battle him, though. Maybe that rage is what makes him strong."))
     release
 }
 }
@@ -264,30 +270,45 @@ if(!flag(FLAG_AFTER_OUTBURST)){
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Ugh, I hate battling.\pI'd rather be in the library learning about Pokemon history."))
     release   
 }
+elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
+    lock
+    faceplayer
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}See? This is why I hate battling. People get too caught up in their emotions."))
+    release
+}
 else{
     lock
     faceplayer
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}That was terrifying.\pThat wasn't just anger, that was something else."))
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I actually feel bad for him. Something's clearly wrong, but no one's helping."))
     release
 }
 }
 script AcademyNpc2 {
-if(!flag(FLAG_AFTER_OUTBURST)){
+if (!flag(FLAG_AFTER_OUTBURST)){
     lock
     faceplayer
     namebox(eliasn)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}The Academy values discipline.\pYou may have talent but true strength comes from patience and understanding."))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Focus on control, not just power."))
     hidenamebox
-    release   
+    release
+}
+elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
+    lock
+    faceplayer
+    namebox(eliasn)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You lost control, Xylar. That is unacceptable. You may have skill, but if you cannot control yourself, you will not last here."))
+    hidenamebox
+    release
 }
 else{
     lock
     faceplayer
     namebox(eliasn)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar, this is unacceptable.\pIf you can't control yourself you have no place in a structured environment like this."))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Power means nothing without restraint. Learn that before it's too late."))
     hidenamebox
     release
 }
+
 }
 script AcademyNpc3 {
 if(!flag(FLAG_AFTER_OUTBURST)){
@@ -296,27 +317,40 @@ if(!flag(FLAG_AFTER_OUTBURST)){
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I train every day!\pSomeday, I'll become the strongest in this academy."))
     release   
 }
+elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Man, I respected Xylar… but now I don't know. That wasn't just battle rage."))
+    release
+}
 else{
     lock
     faceplayer
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Dude, that was messed up...\pI love a good fight but that wasn't even a fight."))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}If he ever loses it in a match… will he stop?"))
     release
 }
 }
 
 script AcademyNpc4 {
-if(!flag(FLAG_AFTER_OUTBURST)){
+if (!flag(FLAG_AFTER_OUTBURST)){
     lock
     faceplayer
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I'm.....not really good at battling.\pMaybe I should just study instead..."))
-    release   
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}U-um... hello..."))
+    release
+}
+elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
+    lock
+    faceplayer
+    msgbox(format("(Flinches when Xylar approaches)\p{COLOR RED}{SHADOW LIGHT_GRAY}…I-I shouldn't talk to you."))
+    release
 }
 else{
     lock
     faceplayer
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I don't wanna be anywhere near Xylar."))
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I know people say you're dangerous now, but… I think you're just hurt."))
     release
 }
+
 }
 
 script AcademyNpc5 {
@@ -328,14 +362,23 @@ script AcademyNpc5 {
     hidenamebox
     release   
 }
+elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
+    lock
+    faceplayer
+    namebox(maribel)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Such raw emotion! Such unfiltered intensity!\p…And yet, Xylar, this is not the place for a destructive masterpiece."))
+    hidenamebox
+    release
+}
 else{
     lock
     faceplayer
     namebox(maribel)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}That was raw.\pUnfiltered.\pThe kind of passion that both creates and destroys."))
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Art and battle both require control.\pI hope you learn that before your canvas turns to ruin."))
     hidenamebox
     release
 }
+
 }
 text maribel{
     format("Dorne")
@@ -347,12 +390,19 @@ script AcademyNpc6 {
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I love sketching Pokemon!\pMaybe I'll draw yours someday..."))
     release   
 }
+elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
+    lock
+    faceplayer
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I wanted to draw Xylar's Torchic before.\pNow, I'm not so sure I even want to be near him."))
+    release
+}
 else{
     lock
     faceplayer
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I thought battles were supposed to be beautiful.\pThat wasn't."))
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Maybe I'll still draw him.\pNot as a trainer… but as a storm."))
     release
 }
+
 }
 script AcademyNpc7 {
     if(!flag(FLAG_AFTER_OUTBURST)){
@@ -363,31 +413,47 @@ script AcademyNpc7 {
     hidenamebox
     release   
 }
+elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
+    lock
+    faceplayer
+    namebox(orson)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Uncontrolled power is a failure in understanding.\pYou acted on instinct, but instinct without logic leads to destruction."))
+    hidenamebox
+    release
+}
 else{
     lock
     faceplayer
     namebox(orson)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Psychological  triggers...\pI've seen it in Pokemon before\pBut in humans?\pFascinating yet terrifying."))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Were you even thinking? Or was it something deeper than that?"))
     hidenamebox
     release
 }
+
 }
 text orson{
     format("Orson")
 }
 script AcademyNpc8 {
-    if(!flag(FLAG_AFTER_OUTBURST)){
+if (!flag(FLAG_AFTER_OUTBURST)){
     lock
     faceplayer
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I want to discover new Pokemon abilities one day!"))
-    release   
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Studying type advantages wins battles!"))
+    release
+}
+elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
+    lock
+    faceplayer
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I don't get it.\pXylar's strategy was so calculated in battle, but outside of it… he was reckless."))
+    release
 }
 else{
     lock
     faceplayer
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}There was no hesitation...\plike it wasn't even you in control."))
-    release   
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Maybe his battles aren't about winning.\pMaybe they're about surviving."))
+    release
 }
+
 }
 
 script AcademyNpc9 {
@@ -431,18 +497,25 @@ text evelyn {
 }
 
 script AcademyNpc11 {
-    if(!flag(FLAG_AFTER_OUTBURST)){
+if (!flag(FLAG_AFTER_OUTBURST)){
     lock
     faceplayer
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Shh...I'm reading."))
-    release   
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Shhh! Library rules!"))
+    release
+}
+elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't understand fighters… but that wasn't normal, was it?"))
+    release
 }
 else{
     lock
     faceplayer
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Some books talk about rage like that.\pIt never ends well."))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I'd rather read about battles than witness them.\pEspecially ones like that."))
     release
 }
+
 }
 script AcademyNpc12 {
     if(!flag(FLAG_AFTER_OUTBURST)){
@@ -451,11 +524,17 @@ script AcademyNpc12 {
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Have you ever heard of the legend of the Jewel of Life?"))
     release   
 }
-else{
+elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
     lock
     faceplayer
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}There's a story about a warrior who lost control and became a monster.....\pDo you believe in fate, Xylar?"))
     release}
+else{
+    lock
+    faceplayer
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I wonder… what are you really fighting against, Xylar?"))
+    release
+}
 }
 script AcademyNpc13 {
     lock
@@ -484,28 +563,42 @@ elif(flag(FLAG_SERENAMET)&& !flag(FLAG_AFTER_OUTBURST))
     clearflag(FLAG_SERENAMET)
     setvar(ACADEMY_START,8)
 }
-else{
+elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))&&(!flag(FLAG_SERENAMET))){
      lock
     faceplayer
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}.....Xylar, what happened there?\pYou looked completely different...."))
     release
 }
+else{
+    lock
+    faceplayer
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I've worked here for years… I can tell when someone's fighting more than just an opponent."))
+    release
+}
 }
 
 script AcademyNpc15 {
-    if(!flag(FLAG_AFTER_OUTBURST)){
+if (!flag(FLAG_AFTER_OUTBURST)){
     lock
     faceplayer
     namebox(alistair)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Strength isn't about battle.\pIt's about what you do with it."))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Strive for excellence in all you do."))
     hidenamebox
-    release   
+    release
+}
+elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
+    lock
+    faceplayer
+    namebox(alistair)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar… I see potential in you, but potential without control is dangerous.\pYou need to understand that."))
+    hidenamebox
+    release
 }
 else{
     lock
     faceplayer
     namebox(alistair)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I expected struggle, but this?\pThis was a glimpse into something far worse."))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You fight like a man with nothing to lose.\pThat still concerns me."))
     hidenamebox
     release
 }
@@ -542,33 +635,47 @@ script AcademyNpc18 {
 }
 
 script AcademyNpc19 {
-    if(!flag(FLAG_AFTER_OUTBURST)){
+ if (!flag(FLAG_AFTER_OUTBURST)){
     lock
     faceplayer
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Heh. You're the quiet type, huh?\pCareful.\pSilence makes people uneasy."))
-    release   
+    release
+}
+elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Oh? So you do have a breaking point.\pAbout time."))
+    release
 }
 else{
     lock
     faceplayer
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Oh? So you do have a breaking point."))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You're stronger now.\pNot in skill.\pIn… presence.\pPeople notice when you walk into a room."))
     release
 }
+
 }
 
 script AcademyNpc20{
-    if(!flag(FLAG_AFTER_OUTBURST)){
+if (!flag(FLAG_AFTER_OUTBURST)){
     lock
     faceplayer
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Your fate is shrouded in shadow...\pbut one thing is clear.\pYou donot belong to light."))
-    release   
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Your fate is shrouded in shadow… but one thing is clear.\pYou do not belong to the light."))
+    release
+}
+elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
+    lock
+    faceplayer
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}The darkness inside you stirs. It was only a matter of time."))
+    release
 }
 else{
     lock
     faceplayer
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}The darkness inside you stirs.\pIt was only a matter of time."))
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}You seek control, but the storm within you does not wish to be tamed."))
     release
 }
+
 }
 
 script AcademyNpc21 {
@@ -578,12 +685,19 @@ script AcademyNpc21 {
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}The murkrows like you.\pThat's rare.\pThey usually avoid those who carry heavy burdens."))
     release   
 }
-else{
+elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
     lock
     faceplayer
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}The Murkrow scattered that night.\pThey fear rage more than darkness."))
     release
 }
+else{
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}They came back.\pNot because they trust you, but because they recognize what you are now."))
+    release
+}
+
 }   
 
 script AcademyNpc22 {
@@ -615,51 +729,72 @@ script AcademyNpc24 {
     release   
 }
 script AcademyNpc25{
-    if(!flag(FLAG_AFTER_OUTBURST)){
+if (!flag(FLAG_AFTER_OUTBURST)){
     lock
     faceplayer
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Even those lost in the dark can find their way back to the light."))
-    release   
+    release
+}
+elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
+    lock
+    faceplayer
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Your soul trembles.\pYou do not fear others, you fear yourself."))
+    release
 }
 else{
     lock
     faceplayer
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Your soul trembles.\pYou donot fear others,\pYou fear yourself."))
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}The path ahead is long.\pBut you have not strayed as far as you think."))
     release
 }
+
 }
 
 script AcademyNpc26{
-    if(!flag(FLAG_AFTER_OUTBURST)){
+if (!flag(FLAG_AFTER_OUTBURST)){
     lock
     faceplayer
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Curfew's there for a reason, kid.\pNo telling what's lurking out here at night."))
-    release   
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Curfew's in place for a reason, kid.\pNo telling what's lurking out here at night."))
+    release
+}
+elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}...You think you're untouchable? Losing control like that will put a target on your back."))
+    release
 }
 else{
     lock
     faceplayer
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Losing control like that would only put a target on your back."))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You're still young.\pGot time to fix what's broken… if you want to."))
     release
 }
 }
 
 script AcademyNpc27{
-    if(!flag(FLAG_AFTER_OUTBURST)){
+if (!flag(FLAG_AFTER_OUTBURST)){
     lock
     faceplayer
     namebox(unknown)
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}You don't belong here, Xylar.\pBut you already knew that."))
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}You don't belong here, Xylar.\pBut you already knew that, didn't you?"))
     hidenamebox
-    release   
+    release
+}
+elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
+    lock
+    faceplayer
+    namebox(unknown)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}That rage… it suits you. Maybe more than you realize."))
+    hidenamebox
+    release
 }
 else{
     lock
     faceplayer
     namebox(unknown)
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}That rage.....it suits you.\pMaybe more than you realize."))
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}One day, you'll have to stop pretending you can be normal.\pWe both know it's not in your nature."))
     hidenamebox
-    release  
+    release
 }
 }
 
@@ -670,12 +805,19 @@ script AcademyNpc28{
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}....."))
     release   
 }
-else{
+elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
     lock
     faceplayer
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}......"))
     release
 }
+else{
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You're different now.\pMore… dangerous."))
+    release
+}
+
 }
 
 script AcademyNpc29{
@@ -686,75 +828,202 @@ script AcademyNpc29{
 }
 
 script AcademyNpc30{
-    if(!flag(FLAG_AFTER_OUTBURST)){
+if (!flag(FLAG_AFTER_OUTBURST)){
     lock
     faceplayer
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I have files on every student.\pSome are more interesting than others."))
-    release   
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I have files on every student.\pSome are more… interesting than others."))
+    release
 }
-else{
+elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
     lock
     faceplayer
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}So many complaints filed about you in one night.\pImpressive, really."))
-    release  
-}
-}
-script AcademyNpc31{
-    if(!flag(FLAG_AFTER_OUTBURST)){
-    lock
-    faceplayer
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}They say the academy has produced both heroes and villains.\pWhat do you think you'll be?"))
-    release   
+    release
 }
 else{
     lock
     faceplayer
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}The moment back there...\pthat's what I call a turning point.\pYou can't go back now."))
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Your file is still growing.\pThe question is what kind of story will it tell?"))
     release
 }
+
+}
+script AcademyNpc31{
+if (!flag(FLAG_AFTER_OUTBURST)){
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}They say the academy has produced both heroes and villains.\pWhich do you think you'll be?"))
+    release
+}
+elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}That moment back there… that's what I call a turning point.\pYou can't go back now."))
+    release
+}
+else{
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Every great tragedy starts somewhere.\pI wonder where yours began."))
+    release
+}
+
 }
 
 script AcademyNpc32{
-    if(!flag(FLAG_AFTER_OUTBURST)){
+if (!flag(FLAG_AFTER_OUTBURST)){
     lock
     faceplayer
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You new kids don't know how much this academy has seen."))
-    release   
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Heh.\pYou new kids don't know how much this academy has seen."))
+    release
+}
+elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}A mess like that ain't easy to clean up.\pAnd I don't mean just the floors."))
+    release
 }
 else{
     lock
     faceplayer
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}A mess like that isn't easy to clean.\pAnd I don't mean just the floors."))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Trouble follows certain kinds of people.\pI'd say it follows you like a shadow."))
     release
 }
+
 }
 
 script AcademyNpc33{
-    if(!flag(FLAG_AFTER_OUTBURST)){
+if (!flag(FLAG_AFTER_OUTBURST)){
     lock
     faceplayer
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}The wind whispers secrets.....\pand they speak your name."))
-    release   
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}The winds whisper secrets… and they speak your name."))
+    release
+}
+elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
+    lock
+    faceplayer
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}The storm inside you has begun.\pAnd storms rarely leave anything standing."))
+    release
 }
 else{
     lock
     faceplayer
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}The storm inside you has just begun.\pAnd storms rarely leave anything standing."))
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}You are not the first to carry such darkness.\pBut you might be the last."))
+    release
+}
+
+}
+
+script AcademyNpc34{
+if (!flag(FLAG_AFTER_OUTBURST)){
+    lock
+    faceplayer
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I wonder… what drives certain Pokémon to evolve under extreme stress?"))
+    release
+}
+elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
+    lock
+    faceplayer
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}That kind of aggression… even some Pokémon only reach that state when pushed too far."))
+    release
+}
+else{
+    lock
+    faceplayer
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Survival instincts.\pThat's what I see in you.\pYou don't fight to win, you fight because you have to."))
     release
 }
 }
 
-script AcademyNpc34{
-    if(!flag(FLAG_AFTER_OUTBURST)){
+script AcademyNpc35{
+if (!flag(FLAG_AFTER_OUTBURST)){
     lock
     faceplayer
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I wonder.......what drives certain pokemon to evolove under extreme stress?"))
-    release   
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You don't talk much.\pThat's fine.\pWords are just another way to lie."))
+    release
+}
+elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Took you long enough to snap.\pThought it would happen sooner, honestly."))
+    release
 }
 else{
     lock
     faceplayer
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}The kind of aggression you have....\peven some pokemon only reach that state when pushed too far."))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}They're watching you now.\pNot just the teachers.\pEveryone."))
     release
 }
+}
+
+script AcademyNpc36{
+if (!flag(FLAG_AFTER_OUTBURST)){
+    lock
+    faceplayer
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}The academy grounds are beautiful in the spring.\pIt almost feels like a fresh start."))
+    release
+}
+elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
+    lock
+    faceplayer
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}H-Hey… um, I should get going."))
+    release
+}
+else{
+    lock
+    faceplayer
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}It's been… a weird few days, huh?"))
+    release
+}
+}
+
+script AcademyNpc37{
+if (!flag(FLAG_AFTER_OUTBURST)){
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Hey, did you hear?\pSome of the seniors are already forming battle teams."))
+    release
+}
+elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}That guy… there's something seriously wrong with him."))
+    release
+}
+else{
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Guess everyone has their moments… doesn't mean I'd wanna battle him."))
+    release
+}
+}
+
+script AcademyNpc38{
+if (!flag(FLAG_AFTER_OUTBURST)){
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I'm just here to get stronger.\pEverything else is a distraction."))
+    release
+}
+elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Tch… whatever. Just don't cross him."))
+    release
+}
+else{
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}He fights like a damn beast… I can respect that."))
+    release
+}
+}
+
+script Doorlock{
+    lock
+    faceplayer
+    msgbox(format("The door is locked."))
+    applymovement(0xFF,moves(face_down))
+    waitmovement(0)
+    release
 }

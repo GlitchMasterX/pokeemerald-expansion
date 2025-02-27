@@ -1,6 +1,6 @@
 raw `
 .set LOCALID_ATTENDANT, 1
-.set LOCALID_BRANDON, 2
+.set LOCALID_SILAS, 2
 
 BattleFrontier_BattlePyramidTop_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, BattleFrontier_BattlePyramidTop_OnResume
@@ -22,7 +22,7 @@ BattleFrontier_BattlePyramidTop_EventScript_SetUpObjects::
 	setvar VAR_TEMP_1, 1
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	goto_if_ne VAR_TEMP_C, 0, BattleFrontier_BattlePyramidTop_EventScript_EndSetUpObjects
-	setobjectxyperm LOCALID_BRANDON, 0, 0
+	setobjectxyperm LOCALID_SILAS, 0, 0
 BattleFrontier_BattlePyramidTop_EventScript_EndSetUpObjects::
 	end
 
@@ -117,14 +117,14 @@ BattleFrontier_BattlePyramidTop_EventScript_BattleBrandon::
 	msgbox BattleFrontier_BattlePyramidTop_Text_ExplorationsAreGrandestAdventure, MSGBOX_DEFAULT
 	closemessage
 	frontier_set FRONTIER_DATA_HEARD_BRAIN_SPEECH
-	applymovement LOCALID_BRANDON, BattleFrontier_BattlePyramidTop_Movement_BrandonApproachPlayer
+	applymovement LOCALID_SILAS, BattleFrontier_BattlePyramidTop_Movement_BrandonApproachPlayer
 	waitmovement 0
 	msgbox BattleFrontier_BattlePyramidTop_Text_ImPyramidKingBrandon, MSGBOX_DEFAULT
 	goto BattleFrontier_BattlePyramidTop_EventScript_BattleBrandonSilver
 	end
 
 BattleFrontier_BattlePyramidTop_EventScript_BrandonHeardSilverSpeech::
-	applymovement LOCALID_BRANDON, BattleFrontier_BattlePyramidTop_Movement_BrandonApproachPlayer
+	applymovement LOCALID_SILAS, BattleFrontier_BattlePyramidTop_Movement_BrandonApproachPlayer
 	waitmovement 0
 BattleFrontier_BattlePyramidTop_EventScript_BattleBrandonSilver::
 	msgbox BattleFrontier_BattlePyramidTop_Text_BringCourageToOurBattle, MSGBOX_DEFAULT
@@ -154,14 +154,14 @@ BattleFrontier_BattlePyramidTop_EventScript_BrandonIntroGold::
 	msgbox BattleFrontier_BattlePyramidTop_Text_BrandonYouveReturned, MSGBOX_DEFAULT
 	closemessage
 	frontier_set FRONTIER_DATA_HEARD_BRAIN_SPEECH
-	applymovement LOCALID_BRANDON, BattleFrontier_BattlePyramidTop_Movement_BrandonApproachPlayer
+	applymovement LOCALID_SILAS, BattleFrontier_BattlePyramidTop_Movement_BrandonApproachPlayer
 	waitmovement 0
 	msgbox BattleFrontier_BattlePyramidTop_Text_MyCourageIsOffMeter, MSGBOX_DEFAULT
 	goto BattleFrontier_BattlePyramidTop_EventScript_BattleBrandonGold
 	end
 
 BattleFrontier_BattlePyramidTop_EventScript_BrandonHeardGoldSpeech::
-	applymovement LOCALID_BRANDON, BattleFrontier_BattlePyramidTop_Movement_BrandonApproachPlayer
+	applymovement LOCALID_SILAS, BattleFrontier_BattlePyramidTop_Movement_BrandonApproachPlayer
 	waitmovement 0
 BattleFrontier_BattlePyramidTop_EventScript_BattleBrandonGold::
 	msgbox BattleFrontier_BattlePyramidTop_Text_EverythingYouHave, MSGBOX_DEFAULT

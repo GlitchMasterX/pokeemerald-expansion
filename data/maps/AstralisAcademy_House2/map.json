@@ -26,7 +26,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "AcademyNpc9",
-      "flag": "0"
+      "flag": "FLAG_DAY_NPC"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_1",
@@ -39,7 +39,20 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "AcademyNpc1",
-      "flag": "0"
+      "flag": "FLAG_DAY_NPC"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
+      "x": 16,
+      "y": 16,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AcademyNpc35",
+      "flag": "FLAG_NIGHT_NPC"
     }
   ],
   "warp_events": [

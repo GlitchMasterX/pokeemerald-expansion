@@ -4541,7 +4541,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lucy = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brandon = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_3,
+    .paletteTag = OBJ_EVENT_PAL_TAG_FATHER,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,

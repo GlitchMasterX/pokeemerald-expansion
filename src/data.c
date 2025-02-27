@@ -56,6 +56,11 @@ const union AnimCmd sAnim_GeneralFrame0[] =
 
 const union AnimCmd sAnim_GeneralFrame3[] =
 {
+    ANIMCMD_FRAME(3,0),
+    ANIMCMD_END,
+};
+const union AnimCmd sAnim_GeneralFrame4[] =
+{
     ANIMCMD_FRAME(4,3),
     ANIMCMD_END,
 };

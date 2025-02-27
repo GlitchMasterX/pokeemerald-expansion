@@ -11,17 +11,13 @@
   "allow_escaping": false,
   "allow_running": true,
   "show_map_name": true,
+  "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
       "map": "MAP_ROUTE103",
       "offset": 0,
       "direction": "up"
-    },
-    {
-      "map": "MAP_ROUTE101",
-      "offset": 0,
-      "direction": "down"
     },
     {
       "map": "MAP_ROUTE102",

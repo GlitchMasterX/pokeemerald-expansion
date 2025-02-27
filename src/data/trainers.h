@@ -28200,7 +28200,7 @@ F_TRAINER_FEMALE |
     {
         .trainerName = _("BRANDON"),
         .trainerClass = TRAINER_CLASS_PYRAMID_KING,
-        .trainerPic = TRAINER_PIC_PYRAMID_KING_BRANDON,
+        .trainerPic = TRAINER_PIC_SILAS,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,

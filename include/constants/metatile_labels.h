@@ -1,14 +1,6 @@
 #ifndef GUARD_METATILE_LABELS_H
 #define GUARD_METATILE_LABELS_H
 
-// gTileset_BattleArena
-#define METATILE_BattleArena_Door  0x21B
-
-// gTileset_BattleDome
-#define METATILE_BattleDome_Door_Corridor       0x25E
-#define METATILE_BattleDome_Door_Lobby          0x209
-#define METATILE_BattleDome_Door_PreBattleRoom  0x20A
-
 // gTileset_BattleFrontier
 #define METATILE_BattleFrontier_CorridorOpenDoor_Bottom  0x20F
 #define METATILE_BattleFrontier_CorridorOpenDoor_Top     0x207
@@ -151,21 +143,6 @@
 
 // gTileset_EverGrande
 #define METATILE_EverGrande_Door_PokemonLeague  0x21D
-
-// gTileset_Facility
-#define METATILE_Facility_DataPad                       0x3E4
-#define METATILE_Facility_NewMauvilleDoor_Closed_Tile0  0x314
-#define METATILE_Facility_NewMauvilleDoor_Closed_Tile1  0x315
-#define METATILE_Facility_NewMauvilleDoor_Closed_Tile2  0x316
-#define METATILE_Facility_NewMauvilleDoor_Closed_Tile3  0x31C
-#define METATILE_Facility_NewMauvilleDoor_Closed_Tile4  0x31D
-#define METATILE_Facility_NewMauvilleDoor_Closed_Tile5  0x31E
-#define METATILE_Facility_NewMauvilleDoor_Open_Tile0    0x2C3
-#define METATILE_Facility_NewMauvilleDoor_Open_Tile1    0x2C4
-#define METATILE_Facility_NewMauvilleDoor_Open_Tile2    0x2C5
-#define METATILE_Facility_NewMauvilleDoor_Open_Tile3    0x2CB
-#define METATILE_Facility_NewMauvilleDoor_Open_Tile4    0x2CC
-#define METATILE_Facility_NewMauvilleDoor_Open_Tile5    0x2CD
 
 // gTileset_Fallarbor
 #define METATILE_Fallarbor_AshField                  0x218
@@ -390,7 +367,7 @@
 #define METATILE_Petalburg_Door_Oldale      0x299
 
 // gTileset_PetalburgGym
-#define METATILE_PetalburgGym_Door                0x224
+#define METATILE_PetalburgGym_Door                0x29C
 #define METATILE_PetalburgGym_RoomEntrance_Left   0x210
 #define METATILE_PetalburgGym_RoomEntrance_Right  0x211
 #define METATILE_PetalburgGym_SlidingDoor_Frame0  0x218
@@ -775,14 +752,33 @@
 #define METATILE_Underwater_FloorShadow  0x228
 #define METATILE_Underwater_RockWall     0x21E
 
+#define METATILE_Forest_Door  0x3A4
+
 // Other
-#define METATILE_Dewford_Door                  0x225
-#define METATILE_Dewford_Door_BattleTower      0x25D
-#define METATILE_RSMossdeepGym_RedArrow_Down   0x205
-#define METATILE_RSMossdeepGym_RedArrow_Left   0x20C
-#define METATILE_RSMossdeepGym_RedArrow_Right  0x204
-#define METATILE_RSMossdeepGym_RedArrow_Up     0x20D
-#define METATILE_RSMossdeepGym_Switch_Down     0x239
-#define METATILE_RSMossdeepGym_Switch_Up       0x238
+#define METATILE_BattleArena_Door                       0x21B
+#define METATILE_BattleDome_Door_Corridor               0x25E
+#define METATILE_BattleDome_Door_Lobby                  0x209
+#define METATILE_BattleDome_Door_PreBattleRoom          0x20A
+#define METATILE_Dewford_Door                           0x225
+#define METATILE_Dewford_Door_BattleTower               0x25D
+#define METATILE_Facility_DataPad                       0x3E4
+#define METATILE_Facility_NewMauvilleDoor_Closed_Tile0  0x314
+#define METATILE_Facility_NewMauvilleDoor_Closed_Tile1  0x315
+#define METATILE_Facility_NewMauvilleDoor_Closed_Tile2  0x316
+#define METATILE_Facility_NewMauvilleDoor_Closed_Tile3  0x31C
+#define METATILE_Facility_NewMauvilleDoor_Closed_Tile4  0x31D
+#define METATILE_Facility_NewMauvilleDoor_Closed_Tile5  0x31E
+#define METATILE_Facility_NewMauvilleDoor_Open_Tile0    0x2C3
+#define METATILE_Facility_NewMauvilleDoor_Open_Tile1    0x2C4
+#define METATILE_Facility_NewMauvilleDoor_Open_Tile2    0x2C5
+#define METATILE_Facility_NewMauvilleDoor_Open_Tile3    0x2CB
+#define METATILE_Facility_NewMauvilleDoor_Open_Tile4    0x2CC
+#define METATILE_Facility_NewMauvilleDoor_Open_Tile5    0x2CD
+#define METATILE_RSMossdeepGym_RedArrow_Down            0x205
+#define METATILE_RSMossdeepGym_RedArrow_Left            0x20C
+#define METATILE_RSMossdeepGym_RedArrow_Right           0x204
+#define METATILE_RSMossdeepGym_RedArrow_Up              0x20D
+#define METATILE_RSMossdeepGym_Switch_Down              0x239
+#define METATILE_RSMossdeepGym_Switch_Up                0x238
 
 #endif // GUARD_METATILE_LABELS_H

@@ -3,7 +3,7 @@
 # 2 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"
 .set LOCALID_ATTENDANT, 1
 # 3 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"
-.set LOCALID_BRANDON, 2
+.set LOCALID_SILAS, 2
 # 4 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"
 
 # 5 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"
@@ -47,7 +47,7 @@ BattleFrontier_BattlePyramidTop_EventScript_SetUpObjects::
 # 24 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"
 	goto_if_ne VAR_TEMP_C, 0, BattleFrontier_BattlePyramidTop_EventScript_EndSetUpObjects
 # 25 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"
-	setobjectxyperm LOCALID_BRANDON, 0, 0
+	setobjectxyperm LOCALID_SILAS, 0, 0
 # 26 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"
 BattleFrontier_BattlePyramidTop_EventScript_EndSetUpObjects::
 # 27 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"
@@ -237,7 +237,7 @@ BattleFrontier_BattlePyramidTop_EventScript_BattleBrandon::
 # 119 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"
 	frontier_set FRONTIER_DATA_HEARD_BRAIN_SPEECH
 # 120 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"
-	applymovement LOCALID_BRANDON, BattleFrontier_BattlePyramidTop_Movement_BrandonApproachPlayer
+	applymovement LOCALID_SILAS, BattleFrontier_BattlePyramidTop_Movement_BrandonApproachPlayer
 # 121 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"
 	waitmovement 0
 # 122 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"
@@ -251,7 +251,7 @@ BattleFrontier_BattlePyramidTop_EventScript_BattleBrandon::
 # 126 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"
 BattleFrontier_BattlePyramidTop_EventScript_BrandonHeardSilverSpeech::
 # 127 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"
-	applymovement LOCALID_BRANDON, BattleFrontier_BattlePyramidTop_Movement_BrandonApproachPlayer
+	applymovement LOCALID_SILAS, BattleFrontier_BattlePyramidTop_Movement_BrandonApproachPlayer
 # 128 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"
 	waitmovement 0
 # 129 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"
@@ -311,7 +311,7 @@ BattleFrontier_BattlePyramidTop_EventScript_BrandonIntroGold::
 # 156 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"
 	frontier_set FRONTIER_DATA_HEARD_BRAIN_SPEECH
 # 157 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"
-	applymovement LOCALID_BRANDON, BattleFrontier_BattlePyramidTop_Movement_BrandonApproachPlayer
+	applymovement LOCALID_SILAS, BattleFrontier_BattlePyramidTop_Movement_BrandonApproachPlayer
 # 158 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"
 	waitmovement 0
 # 159 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"
@@ -325,7 +325,7 @@ BattleFrontier_BattlePyramidTop_EventScript_BrandonIntroGold::
 # 163 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"
 BattleFrontier_BattlePyramidTop_EventScript_BrandonHeardGoldSpeech::
 # 164 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"
-	applymovement LOCALID_BRANDON, BattleFrontier_BattlePyramidTop_Movement_BrandonApproachPlayer
+	applymovement LOCALID_SILAS, BattleFrontier_BattlePyramidTop_Movement_BrandonApproachPlayer
 # 165 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"
 	waitmovement 0
 # 166 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"
