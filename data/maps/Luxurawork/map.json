@@ -42,7 +42,7 @@
       "flag": "FLAG_UNUSED_0x4A7"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MINCCINO)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(MINCCINO)",
       "x": 2,
       "y": 14,
       "elevation": 0,
@@ -133,7 +133,7 @@
       "flag": "FLAG_UNUSED_0x4A6"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(HOOPA_UNBOUND)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(HOOPA_UNBOUND)",
       "x": 10,
       "y": 15,
       "elevation": 0,
@@ -146,7 +146,7 @@
       "flag": "FLAG_UNUSED_0x4A6"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(RAICHU)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(RAICHU)",
       "x": 10,
       "y": 18,
       "elevation": 0,
@@ -172,7 +172,7 @@
       "flag": "FLAG_UNUSED_0x4A6"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(HOOPA)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(HOOPA)",
       "x": 7,
       "y": 18,
       "elevation": 0,

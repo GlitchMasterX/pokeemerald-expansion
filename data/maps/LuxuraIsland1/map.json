@@ -178,7 +178,7 @@
       "flag": "FLAG_UNUSED_0x4AE"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ELECTRODE)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(ELECTRODE)",
       "x": 34,
       "y": 19,
       "elevation": 0,

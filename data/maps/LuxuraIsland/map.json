@@ -100,7 +100,7 @@
       "flag": "FLAG_UNUSED_0x4A5"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PIDGEY)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(PIDGEY)",
       "x": 33,
       "y": 15,
       "elevation": 4,
@@ -113,7 +113,7 @@
       "flag": "FLAG_TEMP_2"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(STARLY)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(STARLY)",
       "x": 32,
       "y": 14,
       "elevation": 4,
@@ -126,7 +126,7 @@
       "flag": "FLAG_TEMP_5"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TAILLOW)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(TAILLOW)",
       "x": 34,
       "y": 14,
       "elevation": 4,
@@ -139,7 +139,7 @@
       "flag": "FLAG_TEMP_4"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SPEAROW)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(SPEAROW)",
       "x": 34,
       "y": 15,
       "elevation": 4,
@@ -152,7 +152,7 @@
       "flag": "FLAG_TEMP_3"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TAILLOW)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(TAILLOW)",
       "x": 12,
       "y": 4,
       "elevation": 4,
@@ -165,7 +165,7 @@
       "flag": "FLAG_TEMP_2"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PIDGEY)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(PIDGEY)",
       "x": 5,
       "y": 21,
       "elevation": 4,
@@ -191,7 +191,7 @@
       "flag": "FLAG_ALISTAIR_ARRIVE"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ALAKAZAM)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(ALAKAZAM)",
       "x": 24,
       "y": 29,
       "elevation": 0,

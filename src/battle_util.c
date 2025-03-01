@@ -97,43 +97,6 @@ static const u8 sPkblToEscapeFactor[][3] = {
 static const u8 sGoNearCounterToCatchFactor[] = {4, 3, 2, 1};
 static const u8 sGoNearCounterToEscapeFactor[] = {4, 4, 4, 4};
 
-enum
-{
-    ENDTURN_ORDER,
-    ENDTURN_REFLECT,
-    ENDTURN_LIGHT_SCREEN,
-    ENDTURN_AURORA_VEIL,
-    ENDTURN_MIST,
-    ENDTURN_LUCKY_CHANT,
-    ENDTURN_SAFEGUARD,
-    ENDTURN_TAILWIND,
-    ENDTURN_WISH,
-    ENDTURN_RAIN,
-    ENDTURN_SANDSTORM,
-    ENDTURN_SUN,
-    ENDTURN_HAIL,
-    ENDTURN_SNOW,
-    ENDTURN_FOG,
-    ENDTURN_DAMAGE_NON_TYPES,
-    ENDTURN_GRAVITY,
-    ENDTURN_WATER_SPORT,
-    ENDTURN_MUD_SPORT,
-    ENDTURN_TRICK_ROOM,
-    ENDTURN_WONDER_ROOM,
-    ENDTURN_MAGIC_ROOM,
-    ENDTURN_ELECTRIC_TERRAIN,
-    ENDTURN_MISTY_TERRAIN,
-    ENDTURN_GRASSY_TERRAIN,
-    ENDTURN_PSYCHIC_TERRAIN,
-    ENDTURN_ION_DELUGE,
-    ENDTURN_FAIRY_LOCK,
-    ENDTURN_STATUS_HEAL,
-    ENDTURN_RAINBOW,
-    ENDTURN_SEA_OF_FIRE,
-    ENDTURN_SWAMP,
-    ENDTURN_FIELD_COUNT,
-};
-
 struct BattleWeatherInfo
 {
     u16 flag;
@@ -3211,7 +3174,7 @@ static void CancellerAsleep(u32 *effect)
                     BattleScriptPushCursor();
                     gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WOKE_UP_UPROAR;
                     gBattlescriptCurrInstr = BattleScript_MoveUsedWokeUp;
-                    effect = 2;
+                    *effect = 2;
                 }
                 else
                 {
@@ -3231,7 +3194,7 @@ static void CancellerAsleep(u32 *effect)
                         {
                             gBattlescriptCurrInstr = BattleScript_MoveUsedIsAsleep;
                             gHitMarker |= HITMARKER_UNABLE_TO_USE_MOVE;
-                            effect = 2;
+                            *effect = 2;
                         }
                     }
                     else
@@ -3240,11 +3203,10 @@ static void CancellerAsleep(u32 *effect)
                         BattleScriptPushCursor();
                         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WOKE_UP;
                         gBattlescriptCurrInstr = BattleScript_MoveUsedWokeUp;
-                        effect = 2;
+                        *effect = 2;
                     }
                 }
             }
-            gBattleStruct->atkCancellerTracker++;
         }
 static void CancellerFrozen(u32 *effect)
 {
@@ -3262,9 +3224,8 @@ static void CancellerFrozen(u32 *effect)
             gBattlescriptCurrInstr = BattleScript_MoveUsedUnfroze;
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_DEFROSTED;
         }
-        effect = 2;
+        *effect = 2;
     }
-    gBattleStruct->atkCancellerTracker++;
 }
 
 static void CancellerObedience(u32 *effect)
@@ -3309,12 +3270,12 @@ static void CancellerObedience(u32 *effect)
             gCalledMove = gBattleMons[gBattlerAttacker].moves[gCurrMovePos];
             SetAtkCancellerForCalledMove();
             gBattlescriptCurrInstr = BattleScript_IgnoresAndUsesRandomMove;
-            gBattlerTarget = GetMoveTarget(gCalledMove, NO_TARGET_OVERRIDE);
+            gBattlerTarget = GetBattleMoveTarget(gCalledMove, NO_TARGET_OVERRIDE);
             gHitMarker |= HITMARKER_DISOBEDIENT_MOVE;
             gHitMarker |= HITMARKER_OBEYS;
             break;
         }
-        effect = 1;
+        *effect = 1;
     }
     else
     {
@@ -3333,7 +3294,7 @@ static void CancellerTruant(u32 *effect)
                 gBattlerAbility = gBattlerAttacker;
                 gBattlescriptCurrInstr = BattleScript_TruantLoafingAround;
                 gBattleStruct->moveResultFlags[gBattlerTarget] |= MOVE_RESULT_MISSED;
-                effect = 1;
+                *effect = 1;
             }
             gBattleStruct->atkCancellerTracker++;
 }

@@ -29,7 +29,7 @@
       "flag": "FLAG_ACADEMY_START"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ALAKAZAM)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(ALAKAZAM)",
       "x": 11,
       "y": 8,
       "elevation": 0,

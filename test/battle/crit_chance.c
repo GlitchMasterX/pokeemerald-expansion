@@ -1,6 +1,6 @@
 #include "global.h"
 #include "test/battle.h"
-
+#include "generational_changes.h"
 SINGLE_BATTLE_TEST("Critical hits without modifiers occur at different rates by generation")
 {
     u32 genConfig, passes, trials;

@@ -23,10 +23,10 @@ TEST("Move names fit on Pokemon Summary Screen")
     u32 move = MOVE_NONE;
     for (i = 1; i < MOVES_COUNT; i++)
     {
-        PARAMETRIZE_LABEL("%S", GetMoveName(i)) { move = i; }
+        PARAMETRIZE_LABEL("%S", gMovesInfo[i].name) { move = i; }
     }
-    //DebugPrintf("Move %d: %S", GetStringWidth(fontId, GetMoveName(move), 0), GetMoveName(move));
-    EXPECT_LE(GetStringWidth(fontId, GetMoveName(move), 0), widthPx);
+    //DebugPrintf("Move %d: %S", GetStringWidth(fontId, gMovesInfo[move].name, 0), gMovesInfo[move].name);
+    EXPECT_LE(GetStringWidth(fontId, gMovesInfo[move].name, 0), widthPx);
 }
 
 TEST("Move names fit on Battle Screen")
@@ -36,9 +36,9 @@ TEST("Move names fit on Battle Screen")
     u32 move = MOVE_NONE;
     for (i = 1; i < MOVES_COUNT; i++)
     {
-        PARAMETRIZE_LABEL("%S", GetMoveName(i)) { move = i; }
+        PARAMETRIZE_LABEL("%S", gMovesInfo[i].name) { move = i; }
     }
-    EXPECT_LE(GetStringWidth(fontId, GetMoveName(move), 0), widthPx);
+    EXPECT_LE(GetStringWidth(fontId, gMovesInfo[move].name, 0), widthPx);
 }
 
 TEST("Move names fit on Contest Screen")
@@ -48,7 +48,7 @@ TEST("Move names fit on Contest Screen")
     u32 move = MOVE_NONE;
     for (i = 1; i < MOVES_COUNT; i++)
     {
-        PARAMETRIZE_LABEL("%S", GetMoveName(i)) { move = i; }
+        PARAMETRIZE_LABEL("%S", gMovesInfo[i].name) { move = i; }
     }
     // All moves explicitly listed here are too big to fit.
     switch (move)
@@ -56,10 +56,10 @@ TEST("Move names fit on Contest Screen")
     case MOVE_STOMPING_TANTRUM:
     case MOVE_NATURES_MADNESS:
     case MOVE_DOUBLE_IRON_BASH:
-        EXPECT_GT(GetStringWidth(fontId, GetMoveName(move), 0), widthPx);
+        EXPECT_GT(GetStringWidth(fontId, gMovesInfo[move].name, 0), widthPx);
         break;
     default:
-        EXPECT_LE(GetStringWidth(fontId, GetMoveName(move), 0), widthPx);
+        EXPECT_LE(GetStringWidth(fontId, gMovesInfo[move].name, 0), widthPx);
         break;
     }
 }
@@ -71,9 +71,9 @@ TEST("Move names fit on TMs & HMs Bag Screen")
     u32 move = MOVE_NONE;
     for (i = 1; i < MOVES_COUNT; i++)
     {
-        PARAMETRIZE_LABEL("%S", GetMoveName(i)) { move = i; }
+        PARAMETRIZE_LABEL("%S", gMovesInfo[i].name) { move = i; }
     }
-    EXPECT_LE(GetStringWidth(fontId, GetMoveName(move), 0), widthPx);
+    EXPECT_LE(GetStringWidth(fontId, gMovesInfo[move].name, 0), widthPx);
 }
 
 TEST("Move names fit on Move Relearner Screen")
@@ -83,9 +83,9 @@ TEST("Move names fit on Move Relearner Screen")
     u32 move = MOVE_NONE;
     for (i = 1; i < MOVES_COUNT; i++)
     {
-        PARAMETRIZE_LABEL("%S", GetMoveName(i)) { move = i; }
+        PARAMETRIZE_LABEL("%S", gMovesInfo[i].name) { move = i; }
     }
-    EXPECT_LE(GetStringWidth(fontId, GetMoveName(move), 0), widthPx);
+    EXPECT_LE(GetStringWidth(fontId, gMovesInfo[move].name, 0), widthPx);
 }
 
 TEST("Move descriptions fit on Pokemon Summary Screen")
@@ -95,9 +95,9 @@ TEST("Move descriptions fit on Pokemon Summary Screen")
     u32 move = MOVE_NONE;
     for (i = 1; i < MOVES_COUNT; i++)
     {
-        PARAMETRIZE_LABEL("%S", GetMoveDescription(i)) { move = i; }
+        PARAMETRIZE_LABEL("%S", gMovesInfo[i].description) { move = i; }
     }
-    EXPECT_LE(GetStringWidth(fontId, GetMoveDescription(move), 0), widthPx);
+    EXPECT_LE(GetStringWidth(fontId, gMovesInfo[move].description, 0), widthPx);
 }
 
 TEST("Item names fit on Bag Screen (list)")
@@ -218,6 +218,18 @@ TEST("Item names fit on Shop Screen")
         PARAMETRIZE_LABEL("%S", gItemsInfo[i].name) { item = i; }
     }
     EXPECT_LE(GetStringWidth(fontId, gItemsInfo[item].name, 0), widthPx);
+}
+
+TEST("Item descriptions fit on Bag and Shop Screen")
+{
+    u32 i;
+    const u32 fontId = FONT_NORMAL, widthPx = 102;
+    u32 item = ITEM_NONE;
+    for (i = 1; i < ITEMS_COUNT; i++)
+    {
+        PARAMETRIZE_LABEL("%S", gItemsInfo[i].description) { item = i; }
+    }
+    EXPECT_LE(GetStringWidth(fontId, gItemsInfo[item].description, 0), widthPx);
 }
 
 TEST("Species names fit on Battle Screen HP box")
@@ -468,6 +480,21 @@ TEST("Species names fit on Battle Screen HP box for vanilla mons with the defaul
         EXPECT_LE(GetStringWidth(fontId, gSpeciesInfo[species].speciesName, 0), widthPx);
 }
 
+TEST("Species dex entries fit on Pokedex Screen")
+{
+    u32 i;
+    const u32 fontId = FONT_NORMAL, widthPx = 224;
+    u32 species = SPECIES_NONE;
+    for (i = 1; i < NUM_SPECIES; i++)
+    {
+        if (IsSpeciesEnabled(i))
+        {
+            PARAMETRIZE_LABEL("%S", gSpeciesInfo[i].description) { species = i; }
+        }
+    }
+    EXPECT_LE(GetStringWidth(fontId, gSpeciesInfo[species].description, 0), widthPx);
+}
+
 TEST("Ability names fit on Pokemon Summary Screen")
 {
     u32 i;
@@ -490,6 +517,18 @@ TEST("Ability names fit on Ability Pop-Up")
         PARAMETRIZE_LABEL("%S", gAbilitiesInfo[i].name) { ability = i; }
     }
     EXPECT_LE(GetStringWidth(fontId, gAbilitiesInfo[ability].name, 0), widthPx);
+}
+
+TEST("Ability descriptions fit on Pokemon Summary Screen")
+{
+    u32 i;
+    const u32 fontId = FONT_NORMAL, widthPx = 146;
+    u32 ability = ABILITY_NONE;
+    for (i = 1; i < ABILITIES_COUNT; i++)
+    {
+        PARAMETRIZE_LABEL("%S", gAbilitiesInfo[i].description) { ability = i; }
+    }
+    EXPECT_LE(GetStringWidth(fontId, gAbilitiesInfo[ability].description, 0), widthPx);
 }
 
 TEST("Type names fit on Battle Screen")

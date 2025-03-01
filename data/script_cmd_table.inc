@@ -249,14 +249,14 @@ gScriptCmdTable::
     script_cmd_table_entry SCR_OP_FACEFOLLOWER                  ScrCmd_facefollower						@ 0xe7
     script_cmd_table_entry SCR_OP_CHECKFOLLOWER                 ScrCmd_checkfollower						@ 0xe8
 	script_cmd_table_entry SCR_OP_UPDATEFOLLOWINGMON            ScrCmd_updatefollowingmon				@ 0xe9
-	script_cmd_table_entry SCR_OP_BALLFOLLOWINGMON              ScrCmd_ballfollowingmon					@ 0xea
-	script_cmd_table_entry SCR_OP_NAMEBOX                       ScrCmd_namebox                           @ 0xeb
-	script_cmd_table_entry SCR_OP_HIDENAMEBOX                   ScrCmd_hidenamebox                       @ 0xec
-	script_cmd_table_entry SCR_OP_TOGGLEOUTFIT                  ScrCmd_toggleoutfit                      @ 0xed
-	script_cmd_table_entry SCR_OP_GETOUTFITSTATUS               ScrCmd_getoutfitstatus                   @ 0xee
-	script_cmd_table_entry SCR_OP_BUFFEROUTFITSTR               ScrCmd_bufferoutfitstr                   @ 0xef
-	script_cmd_table_entry SCR_OP_POKEMARTOUTFIT                ScrCmd_pokemartoutfit                    @ 0xf0
-    script_cmd_table_entry SCR_OP_FORCEEQUIP                ScrCmd_forceequipoutfit                    @ 0xf1
+	script_cmd_table_entry SCR_OP_NAMEBOX                       ScrCmd_namebox                           @ 0xea
+	script_cmd_table_entry SCR_OP_HIDENAMEBOX                   ScrCmd_hidenamebox                       @ 0xeb
+	script_cmd_table_entry SCR_OP_TOGGLEOUTFIT                  ScrCmd_toggleoutfit                      @ 0xec
+	script_cmd_table_entry SCR_OP_GETOUTFITSTATUS               ScrCmd_getoutfitstatus                   @ 0xed
+	script_cmd_table_entry SCR_OP_BUFFEROUTFITSTR               ScrCmd_bufferoutfitstr                   @ 0xee
+	script_cmd_table_entry SCR_OP_POKEMARTOUTFIT                ScrCmd_pokemartoutfit                    @ 0xef
+    script_cmd_table_entry SCR_OP_FORCEEQUIP                ScrCmd_forceequipoutfit                    @ 0xf0
+		script_cmd_table_entry SCR_OP_BALLFOLLOWINGMON              ScrCmd_ballfollowingmon					@ 0xf1
 	.if ALLOCATE_SCRIPT_CMD_TABLE
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop

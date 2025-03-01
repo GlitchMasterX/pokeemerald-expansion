@@ -1939,7 +1939,7 @@
     .else
         .2byte \battlePartner
     .endif
-    updatefollowingmon
+	updatefollowingmon
 1:
 .endm
 
@@ -1963,29 +1963,22 @@
     .byte 0xe9
     .endm
 
-	@ Returns Pokemon follower to ball.
-	.macro ballfollowingmon
-	.byte 0xea
-	delay 16
-	.endm
-
-
 	@ Starts displaying a name box containing the specified text. If text is a pointer, then the string at 
 	@ that offset will be loaded and used. If text is script bank 0, then the value of script bank 0 will be treated as 
 	@ a pointer to the text. (You can use loadpointer to place a string pointer in a script bank.)
 	.macro namebox name:req
-	.byte 0xeb
+	.byte 0xea
 	.4byte \name
 	.endm
     
 	@ Closes the current message box.
 	.macro hidenamebox
-	.byte 0xec
+	.byte 0xeb
 	.endm
 	
 	@! Unlocks a locked outfit
 	.macro toggleoutfit outfitId:req, type:req
-	.byte 0xed
+	.byte 0xec
 	.2byte \outfitId
 	.byte \type
 	.endm
@@ -1994,7 +1987,7 @@
 	@! OUTFIT_CHECK_FLAG is for checking if it's either unlocked/locked
 	@! OUTFIT_CHECK_USED is for checking if it's currently used
 	.macro getoutfitstatus outfitId:req, data:req
-	.byte 0xee
+	.byte 0xed
 	.2byte \outfitId
 	.byte \data
 	.endm
@@ -2002,7 +1995,7 @@
 	@! Buffers either the name or the description strings of an outfit
 	@! to a str var
 	.macro bufferoutfitstr stringVarId:req, outfitId:req, type:req
-	.byte 0xef
+	.byte 0xee
 	stringvar \stringVarId
 	.2byte \outfitId
 	.byte \type
@@ -2011,16 +2004,21 @@
 	@ Opens the Pokemart system, offering the specified outfit products for sale.
 	@ Products should be a list of .2byte item values preceded by an .align 2
 	.macro pokemartoutfit products:req
-	.byte 0xf0
+	.byte 0xef
 	.4byte \products
 	.endm
     
 	@! Force equips an outfit (skipping any unlock or toggle logic)
     .macro forceequipoutfit outfitId:req
-    .byte 0xf1              @ Script command byte for a custom command
+    .byte 0xf0              @ Script command byte for a custom command
     .2byte \outfitId        @ Outfit ID to force equip
     .endm
 
+    @ Returns Pokemon follower to ball.
+	.macro ballfollowingmon
+	.byte 0xf1
+	delay 16
+	.endm
 @ Supplementary
 
 	.macro goto_if_unset flag:req, dest:req
@@ -2642,6 +2640,8 @@
 	.macro setdifficulty difficulty:req
 	callnative Script_SetDifficulty
 	.byte \difficulty
+	.endm
+
 	@ Hides any follower Pokémon if present, putting them into their Poké Ball; by default waits for their movement to finish.
 	.macro hidefollower wait=1
 	callnative ScrFunc_hidefollower

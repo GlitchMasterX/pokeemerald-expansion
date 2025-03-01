@@ -81,7 +81,7 @@
       "flag": "FLAG_UNUSED_0x4B2"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ELECTRODE)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(ELECTRODE)",
       "x": 41,
       "y": 3,
       "elevation": 0,
@@ -133,7 +133,7 @@
       "flag": "FLAG_UNUSED_0x4B3"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MEWTWO)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(MEWTWO)",
       "x": 43,
       "y": 3,
       "elevation": 0,

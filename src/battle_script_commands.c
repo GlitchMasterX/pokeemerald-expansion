@@ -38,6 +38,7 @@
 #include "battle_setup.h"
 #include "overworld.h"
 #include "wild_encounter.h"
+#include "generational_changes.h"
 #include "rtc.h"
 #include "party_menu.h"
 #include "battle_arena.h"
@@ -8474,7 +8475,7 @@ static void Cmd_jumptocalledmove(void)
 
     ResetValuesForCalledMove();
 
-    gBattlescriptCurrInstr = GET_MOVE_BATTLESCRIPT(gCurrentMove);
+    gBattlescriptCurrInstr = GetMoveBattleScript(gCurrentMove);
 }
 
 static void Cmd_statusanimation(void)
@@ -11523,9 +11524,9 @@ static void SetMoveForMirrorMove(u32 move)
         gCurrentMove = move;
     }
 
-    gBattlerTarget = GetMoveTarget(gCurrentMove, NO_TARGET_OVERRIDE);
+    gBattlerTarget = GetBattleMoveTarget(gCurrentMove, NO_TARGET_OVERRIDE);
     ResetValuesForCalledMove();
-    gBattlescriptCurrInstr = GET_MOVE_BATTLESCRIPT(gCurrentMove);
+    gBattlescriptCurrInstr = GetMoveBattleScript(gCurrentMove);
 }
 
 static void Cmd_trymirrormove(void)
@@ -13081,8 +13082,8 @@ static void Cmd_metronome(void)
 
     gCurrentMove = RandomUniformExcept(RNG_METRONOME, 1, moveCount - 1, InvalidMetronomeMove);
     PrepareStringBattle(STRINGID_WAGGLINGAFINGER, gBattlerAttacker);
-    gBattlescriptCurrInstr = GET_MOVE_BATTLESCRIPT(gCurrentMove);
-    gBattlerTarget = GetMoveTarget(gCurrentMove, NO_TARGET_OVERRIDE);
+    gBattlescriptCurrInstr = GetMoveBattleScript(gCurrentMove);
+    gBattlerTarget = GetBattleMoveTarget(gCurrentMove, NO_TARGET_OVERRIDE);
     ResetValuesForCalledMove();
 }
 

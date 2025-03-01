@@ -2661,11 +2661,12 @@ bool8 Scrcmd_getobjectfacingdirection(struct ScriptContext *ctx)
 #include "follow_me.h"
 bool8 ScrCmd_setfollower(struct ScriptContext *ctx)
 {
+    
     u8 localId = ScriptReadByte(ctx);
     u16 flags = ScriptReadHalfword(ctx);
     u8 setScript = ScriptReadByte(ctx);
     u16 battlePartner = ScriptReadHalfword(ctx);
-
+     
     gSaveBlock2Ptr->follower.battlePartner = battlePartner;
     SetUpFollowerSprite(localId, flags, setScript);
     return FALSE;
@@ -2701,28 +2702,6 @@ bool8 ScrCmd_updatefollowingmon(struct ScriptContext *ctx)
     return FALSE;
 }
 
-bool8 ScrCmd_ballfollowingmon(struct ScriptContext *ctx)
-{
-    u16 species;
-    bool8 shiny;
-    u8 form;
-
-    if (OW_POKEMON_OBJECT_EVENTS == FALSE
-     || OW_FOLLOWERS_ENABLED == FALSE
-     || !GetFollowerInfo(&species, &form, &shiny)
-     || SpeciesToGraphicsInfo(species, form) == NULL
-     || (gMapHeader.mapType == MAP_TYPE_INDOOR && SpeciesToGraphicsInfo(species, form)->oam->size > ST_OAM_SIZE_2)
-     || FlagGet(FLAG_TEMP_HIDE_FOLLOWER)
-     || gSaveBlock2Ptr->follower.inProgress
-     || !FlagGet(FLAG_SYS_POKEMON_GET))
-    {
-        return FALSE;
-    }
-    else {
-        ReturnFollowingMonToBall();
-    }
-    return FALSE;
-}
 
 bool8 ScrCmd_namebox(struct ScriptContext *ctx) {
     const u8 *name = (const u8 *)ScriptReadWord(ctx);
@@ -2737,7 +2716,7 @@ bool8 ScrCmd_hidenamebox(struct ScriptContext *ctx) {
     if(IsNameboxDisplayed())
         ClearNamebox();
     return FALSE;
-
+}
 bool8 ScrFunc_hidefollower(struct ScriptContext *ctx)
 {
     bool16 wait = VarGet(ScriptReadHalfword(ctx));
@@ -2758,4 +2737,27 @@ bool8 ScrFunc_hidefollower(struct ScriptContext *ctx)
 
     // execute next script command with no delay
     return TRUE;
+}
+
+bool8 ScrCmd_ballfollowingmon(struct ScriptContext *ctx)
+{
+    u32 species;
+    bool32 shiny;
+    u8 form;
+    bool32 female;
+    if (OW_POKEMON_OBJECT_EVENTS == FALSE
+     || OW_FOLLOWERS_ENABLED == FALSE
+     || !GetFollowerInfo(&species, &shiny, &female)
+     ||  SpeciesToGraphicsInfo(species, shiny, female) == NULL
+     || (gMapHeader.mapType == MAP_TYPE_INDOOR && SpeciesToGraphicsInfo(species, shiny, female)->oam->size > ST_OAM_SIZE_2)
+     || FlagGet(FLAG_TEMP_HIDE_FOLLOWER)
+     || gSaveBlock2Ptr->follower.inProgress
+     || !FlagGet(FLAG_SYS_POKEMON_GET))
+    {
+        return FALSE;
+    }
+    else {
+        ReturnFollowingMonToBall();
+    }
+    return FALSE;
 }
