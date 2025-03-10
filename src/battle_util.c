@@ -19,6 +19,7 @@
 #include "random.h"
 #include "text.h"
 #include "safari_zone.h"
+#include "trainer_slide.h"
 #include "sound.h"
 #include "sprite.h"
 #include "string_util.h"
@@ -1115,11 +1116,8 @@ void PrepareStringBattle(u16 stringId, u32 battler)
         SET_STATCHANGER(STAT_SPEED, 1, FALSE);
     }
 
-    // Signal for the trainer slide-in system.
-    if ((stringId == STRINGID_ITDOESNTAFFECT || stringId == STRINGID_PKMNWASNTAFFECTED || stringId == STRINGID_PKMNUNAFFECTED)
-     && GetBattlerSide(gBattlerTarget) == B_SIDE_OPPONENT
-     && gBattleStruct->trainerSlidePlayerMonUnaffectedMsgState != 2)
-        gBattleStruct->trainerSlidePlayerMonUnaffectedMsgState = 1;
+    if ((stringId == STRINGID_ITDOESNTAFFECT || stringId == STRINGID_PKMNWASNTAFFECTED || stringId == STRINGID_PKMNUNAFFECTED))
+        TryInitalizeTrainerSlideEnemyMonUnaffected(gBattlerTarget);
 
     BtlController_EmitPrintString(battler, BUFFER_A, stringId);
     MarkBattlerForControllerExec(battler);
@@ -10750,9 +10748,8 @@ static inline uq4_12_t CalcTypeEffectivenessMultiplierInternal(u32 move, u32 mov
         }
     }
 
-    // Signal for the trainer slide-in system.
-    if (GetBattlerSide(battlerDef) != B_SIDE_PLAYER && modifier && gBattleStruct->trainerSlideFirstSTABMoveMsgState != 2)
-        gBattleStruct->trainerSlideFirstSTABMoveMsgState = 1;
+    if (recordAbilities)
+        TryInitalizeFirstSTABMoveTrainerSlide(battlerDef, battlerAtk, moveType);
 
     return modifier;
 }

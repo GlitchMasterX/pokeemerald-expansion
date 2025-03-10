@@ -160,6 +160,9 @@
 #define METATILE_Fallarbor_RedCaveEntrance_Top       0x347
 #define METATILE_Fallarbor_RedRockWall               0x269
 
+// gTileset_Forest
+#define METATILE_Forest_Door  0x3A4
+
 // gTileset_Fortree
 #define METATILE_Fortree_BridgeOverGrass_Lowered           0x24F
 #define METATILE_Fortree_BridgeOverGrass_Raised            0x24E
@@ -751,8 +754,6 @@
 // gTileset_Underwater
 #define METATILE_Underwater_FloorShadow  0x228
 #define METATILE_Underwater_RockWall     0x21E
-
-#define METATILE_Forest_Door  0x3A4
 
 // Other
 #define METATILE_BattleArena_Door                       0x21B
