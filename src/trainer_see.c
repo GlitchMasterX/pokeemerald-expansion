@@ -156,7 +156,7 @@ static const struct SpriteFrameImage sSpriteImageTable_HappyIcon[] =
 {
     {
         .data = sEmotion_HappyGfx,
-        .size = 0x80
+        .size = sizeof(sEmotion_HappyGfx)
     }
 };
 
@@ -164,7 +164,7 @@ static const struct SpriteFrameImage sSpriteImageTable_UpsetIcon[] =
 {
     {
         .data = sEmotion_UpsetGfx,
-        .size = 0x80
+        .size = sizeof(sEmotion_UpsetGfx)
     }
 };
 
@@ -342,7 +342,7 @@ static const union AnimCmd *const sSpriteAnimTable_Emotes[] =
 static const struct SpriteTemplate sSpriteTemplate_ExclamationQuestionMark =
 {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_FARMER,
+    .paletteTag = OBJ_EVENT_PAL_TAG_BRENDAN,
     .oam = &sOamData_Icons,
     .anims = sSpriteAnimTable_Icons,
     .images = sSpriteImageTable_ExclamationQuestionMark,
@@ -353,7 +353,7 @@ static const struct SpriteTemplate sSpriteTemplate_ExclamationQuestionMark =
 static const struct SpriteTemplate sSpriteTemplate_HeartIcon =
 {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_FARMER,
+    .paletteTag = OBJ_EVENT_PAL_TAG_BRENDAN,
     .oam = &sOamData_Icons,
     .anims = sSpriteAnimTable_Icons,
     .images = sSpriteImageTable_HeartIcon,
@@ -374,7 +374,7 @@ static const struct SpriteTemplate sSpriteTemplate_Emote =
 static const struct SpriteTemplate sSpriteTemplate_HappyIcon =
 {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_EMOTES,
+    .paletteTag = OBJ_EVENT_PAL_TAG_BRENDAN,
     .oam = &sOamData_Icons,
     .anims = sSpriteAnimTable_Icons,
     .images = sSpriteImageTable_HappyIcon,
@@ -385,7 +385,7 @@ static const struct SpriteTemplate sSpriteTemplate_HappyIcon =
 static const struct SpriteTemplate sSpriteTemplate_UpsetIcon =
 {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_EMOTES,
+    .paletteTag = OBJ_EVENT_PAL_TAG_BRENDAN,
     .oam = &sOamData_Icons,
     .anims = sSpriteAnimTable_Icons,
     .images = sSpriteImageTable_UpsetIcon,

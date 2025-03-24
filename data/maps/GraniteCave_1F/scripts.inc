@@ -93,33 +93,25 @@ herb::
 # 49 "data/maps/GraniteCave_1F/scripts.pory"
 	lockall
 # 50 "data/maps/GraniteCave_1F/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 51 "data/maps/GraniteCave_1F/scripts.pory"
 	msgbox herb_Text_0, MSGBOX_AUTOCLOSE
-# 52 "data/maps/GraniteCave_1F/scripts.pory"
-	hidenamebox
 # 53 "data/maps/GraniteCave_1F/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, exclam
 # 54 "data/maps/GraniteCave_1F/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 55 "data/maps/GraniteCave_1F/scripts.pory"
 	msgbox herb_Text_1, MSGBOX_AUTOCLOSE
-# 56 "data/maps/GraniteCave_1F/scripts.pory"
-	hidenamebox
 # 57 "data/maps/GraniteCave_1F/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 58 "data/maps/GraniteCave_1F/scripts.pory"
 	msgbox herb_Text_2, MSGBOX_AUTOCLOSE
-# 59 "data/maps/GraniteCave_1F/scripts.pory"
-	hidenamebox
 # 60 "data/maps/GraniteCave_1F/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, str
 # 61 "data/maps/GraniteCave_1F/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 62 "data/maps/GraniteCave_1F/scripts.pory"
 	msgbox herb_Text_3, MSGBOX_AUTOCLOSE
-# 63 "data/maps/GraniteCave_1F/scripts.pory"
-	hidenamebox
 # 64 "data/maps/GraniteCave_1F/scripts.pory"
 	releaseall
 # 65 "data/maps/GraniteCave_1F/scripts.pory"
@@ -183,53 +175,37 @@ mewrt::
 # 93 "data/maps/GraniteCave_1F/scripts.pory"
 	waitmovement 0
 # 94 "data/maps/GraniteCave_1F/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 95 "data/maps/GraniteCave_1F/scripts.pory"
 	msgbox mewrt_Text_0, MSGBOX_AUTOCLOSE
-# 96 "data/maps/GraniteCave_1F/scripts.pory"
-	hidenamebox
 # 97 "data/maps/GraniteCave_1F/scripts.pory"
-	namebox mewtwo
+	speakername mewtwo
 # 98 "data/maps/GraniteCave_1F/scripts.pory"
 	msgbox mewrt_Text_1, MSGBOX_AUTOCLOSE
-# 99 "data/maps/GraniteCave_1F/scripts.pory"
-	hidenamebox
 # 100 "data/maps/GraniteCave_1F/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 101 "data/maps/GraniteCave_1F/scripts.pory"
 	msgbox mewrt_Text_2, MSGBOX_AUTOCLOSE
-# 102 "data/maps/GraniteCave_1F/scripts.pory"
-	hidenamebox
 # 103 "data/maps/GraniteCave_1F/scripts.pory"
-	namebox mewtwo
+	speakername mewtwo
 # 104 "data/maps/GraniteCave_1F/scripts.pory"
 	msgbox mewrt_Text_3, MSGBOX_AUTOCLOSE
-# 105 "data/maps/GraniteCave_1F/scripts.pory"
-	hidenamebox
 # 106 "data/maps/GraniteCave_1F/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 107 "data/maps/GraniteCave_1F/scripts.pory"
 	msgbox mewrt_Text_4, MSGBOX_AUTOCLOSE
-# 108 "data/maps/GraniteCave_1F/scripts.pory"
-	hidenamebox
 # 109 "data/maps/GraniteCave_1F/scripts.pory"
-	namebox mewtwo
+	speakername mewtwo
 # 110 "data/maps/GraniteCave_1F/scripts.pory"
 	msgbox mewrt_Text_5, MSGBOX_AUTOCLOSE
-# 111 "data/maps/GraniteCave_1F/scripts.pory"
-	hidenamebox
 # 112 "data/maps/GraniteCave_1F/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 113 "data/maps/GraniteCave_1F/scripts.pory"
 	msgbox mewrt_Text_6, MSGBOX_AUTOCLOSE
-# 114 "data/maps/GraniteCave_1F/scripts.pory"
-	hidenamebox
 # 115 "data/maps/GraniteCave_1F/scripts.pory"
-	namebox mewtwo
+	speakername mewtwo
 # 116 "data/maps/GraniteCave_1F/scripts.pory"
 	msgbox mewrt_Text_7, MSGBOX_AUTOCLOSE
-# 117 "data/maps/GraniteCave_1F/scripts.pory"
-	hidenamebox
 # 118 "data/maps/GraniteCave_1F/scripts.pory"
 	removeobject 3
 # 119 "data/maps/GraniteCave_1F/scripts.pory"

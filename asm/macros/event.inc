@@ -1881,7 +1881,7 @@
 	
 	@ Sets the text of the name box in the next-shown message box.
 	.macro speakername text:req
-	.byte 0xe3
+	.byte 0xea
 	.4byte \text
 	.endm
 
@@ -1968,14 +1968,6 @@
 	.macro updatefollowingmon
     .byte 0xe9
     .endm
-
-	@ Starts displaying a name box containing the specified text. If text is a pointer, then the string at 
-	@ that offset will be loaded and used. If text is script bank 0, then the value of script bank 0 will be treated as 
-	@ a pointer to the text. (You can use loadpointer to place a string pointer in a script bank.)
-	.macro namebox name:req
-	.byte 0xea
-	.4byte \name
-	.endm
     
 	@ Closes the current message box.
 	.macro hidenamebox

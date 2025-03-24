@@ -148,23 +148,17 @@ momm_1:
 # 69 "data/maps/luxurakitchen/scripts.pory"
 	faceplayer
 # 70 "data/maps/luxurakitchen/scripts.pory"
-	namebox name2
+	speakername name2
 # 71 "data/maps/luxurakitchen/scripts.pory"
 	msgbox momm_Text_0
-# 72 "data/maps/luxurakitchen/scripts.pory"
-	hidenamebox
 # 73 "data/maps/luxurakitchen/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 74 "data/maps/luxurakitchen/scripts.pory"
 	msgbox momm_Text_1
-# 75 "data/maps/luxurakitchen/scripts.pory"
-	hidenamebox
 # 76 "data/maps/luxurakitchen/scripts.pory"
-	namebox name2
+	speakername name2
 # 77 "data/maps/luxurakitchen/scripts.pory"
 	msgbox momm_Text_2
-# 78 "data/maps/luxurakitchen/scripts.pory"
-	hidenamebox
 # 79 "data/maps/luxurakitchen/scripts.pory"
 	release
 	return
@@ -175,11 +169,9 @@ momm_2:
 # 83 "data/maps/luxurakitchen/scripts.pory"
 	faceplayer
 # 84 "data/maps/luxurakitchen/scripts.pory"
-	namebox name2
+	speakername name2
 # 85 "data/maps/luxurakitchen/scripts.pory"
 	msgbox momm_Text_3
-# 86 "data/maps/luxurakitchen/scripts.pory"
-	hidenamebox
 # 87 "data/maps/luxurakitchen/scripts.pory"
 	release
 # 88 "data/maps/luxurakitchen/scripts.pory"
@@ -193,11 +185,9 @@ mommafter::
 # 94 "data/maps/luxurakitchen/scripts.pory"
 	faceplayer
 # 95 "data/maps/luxurakitchen/scripts.pory"
-	namebox name2
+	speakername name2
 # 96 "data/maps/luxurakitchen/scripts.pory"
 	msgbox mommafter_Text_0
-# 97 "data/maps/luxurakitchen/scripts.pory"
-	hidenamebox
 # 98 "data/maps/luxurakitchen/scripts.pory"
 	release
 	return
@@ -209,11 +199,9 @@ feliciaafter::
 # 102 "data/maps/luxurakitchen/scripts.pory"
 	faceplayer
 # 103 "data/maps/luxurakitchen/scripts.pory"
-	namebox felicia
+	speakername felicia
 # 104 "data/maps/luxurakitchen/scripts.pory"
 	msgbox feliciaafter_Text_0
-# 105 "data/maps/luxurakitchen/scripts.pory"
-	hidenamebox
 # 106 "data/maps/luxurakitchen/scripts.pory"
 	release
 	return
@@ -235,11 +223,9 @@ mirakitchen_1:
 # 112 "data/maps/luxurakitchen/scripts.pory"
 	faceplayer
 # 113 "data/maps/luxurakitchen/scripts.pory"
-	namebox name4
+	speakername name4
 # 114 "data/maps/luxurakitchen/scripts.pory"
 	msgbox mirakitchen_Text_0
-# 115 "data/maps/luxurakitchen/scripts.pory"
-	hidenamebox
 # 116 "data/maps/luxurakitchen/scripts.pory"
 	release
 	return
@@ -250,17 +236,13 @@ mirakitchen_2:
 # 120 "data/maps/luxurakitchen/scripts.pory"
 	faceplayer
 # 121 "data/maps/luxurakitchen/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 122 "data/maps/luxurakitchen/scripts.pory"
 	msgbox mirakitchen_Text_1
-# 123 "data/maps/luxurakitchen/scripts.pory"
-	hidenamebox
 # 124 "data/maps/luxurakitchen/scripts.pory"
-	namebox name4
+	speakername name4
 # 125 "data/maps/luxurakitchen/scripts.pory"
 	msgbox mirakitchen_Text_2
-# 126 "data/maps/luxurakitchen/scripts.pory"
-	hidenamebox
 # 127 "data/maps/luxurakitchen/scripts.pory"
 	msgbox mirakitchen_Text_3
 # 128 "data/maps/luxurakitchen/scripts.pory"
@@ -281,11 +263,9 @@ mirastrol::
 # 135 "data/maps/luxurakitchen/scripts.pory"
 	faceplayer
 # 136 "data/maps/luxurakitchen/scripts.pory"
-	namebox name4
+	speakername name4
 # 137 "data/maps/luxurakitchen/scripts.pory"
 	msgbox mirastrol_Text_0
-# 138 "data/maps/luxurakitchen/scripts.pory"
-	hidenamebox
 # 139 "data/maps/luxurakitchen/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 140 "data/maps/luxurakitchen/scripts.pory"

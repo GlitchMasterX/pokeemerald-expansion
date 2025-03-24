@@ -196,11 +196,9 @@ mewtwotend::
 # 96 "data/maps/Luxurawoods/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, str
 # 97 "data/maps/Luxurawoods/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 98 "data/maps/Luxurawoods/scripts.pory"
 	msgbox mewtwotend_Text_0
-# 99 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
 # 100 "data/maps/Luxurawoods/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, exclam
 # 101 "data/maps/Luxurawoods/scripts.pory"
@@ -210,11 +208,9 @@ mewtwotend::
 # 103 "data/maps/Luxurawoods/scripts.pory"
 	waitmovement 0
 # 104 "data/maps/Luxurawoods/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 105 "data/maps/Luxurawoods/scripts.pory"
 	msgbox mewtwotend_Text_1, MSGBOX_AUTOCLOSE
-# 106 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
 # 107 "data/maps/Luxurawoods/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, mw
 # 108 "data/maps/Luxurawoods/scripts.pory"
@@ -226,21 +222,17 @@ mewtwotend::
 # 111 "data/maps/Luxurawoods/scripts.pory"
 	waitmoncry
 # 112 "data/maps/Luxurawoods/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 113 "data/maps/Luxurawoods/scripts.pory"
 	msgbox mewtwotend_Text_2, MSGBOX_AUTOCLOSE
-# 114 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
 # 115 "data/maps/Luxurawoods/scripts.pory"
 	waitmessage
 # 116 "data/maps/Luxurawoods/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 117 "data/maps/Luxurawoods/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 118 "data/maps/Luxurawoods/scripts.pory"
 	msgbox mewtwotend_Text_3, MSGBOX_AUTOCLOSE
-# 119 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
 # 120 "data/maps/Luxurawoods/scripts.pory"
 	waitmessage
 # 121 "data/maps/Luxurawoods/scripts.pory"
@@ -410,11 +402,9 @@ revivalherb::
 # 190 "data/maps/Luxurawoods/scripts.pory"
 	lockall
 # 191 "data/maps/Luxurawoods/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 192 "data/maps/Luxurawoods/scripts.pory"
 	msgbox revivalherb_Text_0, MSGBOX_AUTOCLOSE
-# 193 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
 # 194 "data/maps/Luxurawoods/scripts.pory"
 	finditem ITEM_REVIVAL_HERB, 1
 # 195 "data/maps/Luxurawoods/scripts.pory"
@@ -449,11 +439,9 @@ revive_1:
 	compare VAR_RESULT, TRUE
 	goto_if_eq revive_26
 # 224 "data/maps/Luxurawoods/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 225 "data/maps/Luxurawoods/scripts.pory"
 	msgbox revive_Text_3, MSGBOX_AUTOCLOSE
-# 226 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
 revive_25:
 # 228 "data/maps/Luxurawoods/scripts.pory"
 	releaseall
@@ -470,11 +458,9 @@ revive_2:
 # 255 "data/maps/Luxurawoods/scripts.pory"
 	lockall
 # 256 "data/maps/Luxurawoods/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 257 "data/maps/Luxurawoods/scripts.pory"
 	msgbox revive_Text_9, MSGBOX_AUTOCLOSE
-# 258 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
 revive_29:
 # 260 "data/maps/Luxurawoods/scripts.pory"
 	releaseall
@@ -484,23 +470,17 @@ revive_3:
 # 263 "data/maps/Luxurawoods/scripts.pory"
 	lockall
 # 264 "data/maps/Luxurawoods/scripts.pory"
-	namebox mewtwo
+	speakername mewtwo
 # 265 "data/maps/Luxurawoods/scripts.pory"
 	msgbox revive_Text_10, MSGBOX_AUTOCLOSE
-# 266 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
 # 267 "data/maps/Luxurawoods/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 268 "data/maps/Luxurawoods/scripts.pory"
 	msgbox revive_Text_11, MSGBOX_AUTOCLOSE
-# 269 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
 # 270 "data/maps/Luxurawoods/scripts.pory"
-	namebox mewtwo
+	speakername mewtwo
 # 271 "data/maps/Luxurawoods/scripts.pory"
 	msgbox revive_Text_12, MSGBOX_AUTOCLOSE
-# 272 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
 # 273 "data/maps/Luxurawoods/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 274 "data/maps/Luxurawoods/scripts.pory"
@@ -512,17 +492,13 @@ revive_3:
 # 277 "data/maps/Luxurawoods/scripts.pory"
 	fadescreen FADE_FROM_BLACK
 # 278 "data/maps/Luxurawoods/scripts.pory"
-	namebox mewtwo
+	speakername mewtwo
 # 279 "data/maps/Luxurawoods/scripts.pory"
 	msgbox revive_Text_14, MSGBOX_AUTOCLOSE
-# 280 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
 # 281 "data/maps/Luxurawoods/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 282 "data/maps/Luxurawoods/scripts.pory"
 	msgbox revive_Text_15, MSGBOX_AUTOCLOSE
-# 283 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
 # 284 "data/maps/Luxurawoods/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 285 "data/maps/Luxurawoods/scripts.pory"
@@ -545,11 +521,9 @@ revive_4:
 # 295 "data/maps/Luxurawoods/scripts.pory"
 	lockall
 # 296 "data/maps/Luxurawoods/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 297 "data/maps/Luxurawoods/scripts.pory"
 	msgbox revive_Text_17, MSGBOX_AUTOCLOSE
-# 298 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
 # 299 "data/maps/Luxurawoods/scripts.pory"
 	releaseall
 	return
@@ -596,11 +570,9 @@ revive_22:
 
 revive_26:
 # 206 "data/maps/Luxurawoods/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 207 "data/maps/Luxurawoods/scripts.pory"
 	msgbox revive_Text_0, MSGBOX_AUTOCLOSE
-# 208 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
 # 209 "data/maps/Luxurawoods/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 210 "data/maps/Luxurawoods/scripts.pory"
@@ -612,30 +584,24 @@ revive_26:
 # 213 "data/maps/Luxurawoods/scripts.pory"
 	fadescreen FADE_FROM_BLACK
 # 214 "data/maps/Luxurawoods/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 215 "data/maps/Luxurawoods/scripts.pory"
 	msgbox revive_Text_1, MSGBOX_AUTOCLOSE
-# 216 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
 # 217 "data/maps/Luxurawoods/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, str
 # 218 "data/maps/Luxurawoods/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 219 "data/maps/Luxurawoods/scripts.pory"
 	msgbox revive_Text_2, MSGBOX_AUTOCLOSE
-# 220 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
 # 221 "data/maps/Luxurawoods/scripts.pory"
 	setflag FLAG_UNUSED_0x4B0
 	goto revive_25
 
 revive_30:
 # 234 "data/maps/Luxurawoods/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 235 "data/maps/Luxurawoods/scripts.pory"
 	msgbox revive_Text_4, MSGBOX_AUTOCLOSE
-# 236 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
 # 237 "data/maps/Luxurawoods/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 238 "data/maps/Luxurawoods/scripts.pory"
@@ -647,11 +613,9 @@ revive_30:
 # 241 "data/maps/Luxurawoods/scripts.pory"
 	fadescreen FADE_FROM_BLACK
 # 242 "data/maps/Luxurawoods/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 243 "data/maps/Luxurawoods/scripts.pory"
 	msgbox revive_Text_5, MSGBOX_AUTOCLOSE
-# 244 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
 # 245 "data/maps/Luxurawoods/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 246 "data/maps/Luxurawoods/scripts.pory"
@@ -661,11 +625,9 @@ revive_30:
 # 248 "data/maps/Luxurawoods/scripts.pory"
 	fadescreen FADE_FROM_BLACK
 # 249 "data/maps/Luxurawoods/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 250 "data/maps/Luxurawoods/scripts.pory"
 	msgbox revive_Text_8, MSGBOX_AUTOCLOSE
-# 251 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
 # 252 "data/maps/Luxurawoods/scripts.pory"
 	setflag FLAG_UNUSED_0x4B1
 	goto revive_29
@@ -687,11 +649,9 @@ gruntsded::
 # 313 "data/maps/Luxurawoods/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, dd
 # 314 "data/maps/Luxurawoods/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 315 "data/maps/Luxurawoods/scripts.pory"
 	msgbox gruntsded_Text_0, MSGBOX_AUTOCLOSE
-# 316 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
 # 317 "data/maps/Luxurawoods/scripts.pory"
 	special SpawnCameraObject
 # 318 "data/maps/Luxurawoods/scripts.pory"
@@ -711,21 +671,17 @@ gruntsded::
 # 325 "data/maps/Luxurawoods/scripts.pory"
 	msgbox gruntsded_Text_4, MSGBOX_AUTOCLOSE
 # 326 "data/maps/Luxurawoods/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 327 "data/maps/Luxurawoods/scripts.pory"
 	msgbox gruntsded_Text_5, MSGBOX_AUTOCLOSE
-# 328 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
 # 329 "data/maps/Luxurawoods/scripts.pory"
 	msgbox gruntsded_Text_6, MSGBOX_AUTOCLOSE
 # 330 "data/maps/Luxurawoods/scripts.pory"
 	msgbox gruntsded_Text_7, MSGBOX_AUTOCLOSE
 # 331 "data/maps/Luxurawoods/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 332 "data/maps/Luxurawoods/scripts.pory"
 	msgbox gruntsded_Text_8, MSGBOX_AUTOCLOSE
-# 333 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
 # 334 "data/maps/Luxurawoods/scripts.pory"
 	applymovement 10, dds
 # 335 "data/maps/Luxurawoods/scripts.pory"
@@ -737,21 +693,17 @@ gruntsded::
 # 338 "data/maps/Luxurawoods/scripts.pory"
 	msgbox gruntsded_Text_12, MSGBOX_AUTOCLOSE
 # 339 "data/maps/Luxurawoods/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 340 "data/maps/Luxurawoods/scripts.pory"
 	msgbox gruntsded_Text_13, MSGBOX_AUTOCLOSE
-# 341 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
 # 342 "data/maps/Luxurawoods/scripts.pory"
 	msgbox gruntsded_Text_14, MSGBOX_AUTOCLOSE
 # 343 "data/maps/Luxurawoods/scripts.pory"
 	msgbox gruntsded_Text_15, MSGBOX_AUTOCLOSE
 # 344 "data/maps/Luxurawoods/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 345 "data/maps/Luxurawoods/scripts.pory"
 	msgbox gruntsded_Text_16, MSGBOX_AUTOCLOSE
-# 346 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
 # 347 "data/maps/Luxurawoods/scripts.pory"
 	msgbox gruntsded_Text_17, MSGBOX_AUTOCLOSE
 # 348 "data/maps/Luxurawoods/scripts.pory"
@@ -765,11 +717,9 @@ gruntsded::
 # 352 "data/maps/Luxurawoods/scripts.pory"
 	waitmoncry
 # 353 "data/maps/Luxurawoods/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 354 "data/maps/Luxurawoods/scripts.pory"
 	msgbox gruntsded_Text_20, MSGBOX_AUTOCLOSE
-# 355 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
 # 356 "data/maps/Luxurawoods/scripts.pory"
 	applymovement 4, exclam
 # 357 "data/maps/Luxurawoods/scripts.pory"
@@ -783,19 +733,15 @@ gruntsded::
 # 361 "data/maps/Luxurawoods/scripts.pory"
 	waitmessage
 # 362 "data/maps/Luxurawoods/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 363 "data/maps/Luxurawoods/scripts.pory"
 	msgbox gruntsded_Text_22, MSGBOX_AUTOCLOSE
-# 364 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
 # 365 "data/maps/Luxurawoods/scripts.pory"
 	msgbox gruntsded_Text_23, MSGBOX_AUTOCLOSE
 # 366 "data/maps/Luxurawoods/scripts.pory"
-	namebox unknown
+	speakername unknown
 # 367 "data/maps/Luxurawoods/scripts.pory"
 	msgbox gruntsded_Text_24, MSGBOX_AUTOCLOSE
-# 368 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
 # 369 "data/maps/Luxurawoods/scripts.pory"
 	playbgm MUS_PL_GIRATINA_APPEARS_1, TRUE
 # 370 "data/maps/Luxurawoods/scripts.pory"
@@ -823,11 +769,9 @@ gruntsded::
 # 381 "data/maps/Luxurawoods/scripts.pory"
 	msgbox gruntsded_Text_27, MSGBOX_AUTOCLOSE
 # 382 "data/maps/Luxurawoods/scripts.pory"
-	namebox mewtwo
+	speakername mewtwo
 # 383 "data/maps/Luxurawoods/scripts.pory"
 	msgbox gruntsded_Text_28, MSGBOX_AUTOCLOSE
-# 384 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
 # 385 "data/maps/Luxurawoods/scripts.pory"
 	applymovement 6, ee
 # 386 "data/maps/Luxurawoods/scripts.pory"
@@ -843,11 +787,9 @@ gruntsded::
 # 391 "data/maps/Luxurawoods/scripts.pory"
 	waitmessage
 # 392 "data/maps/Luxurawoods/scripts.pory"
-	namebox mewtwo
+	speakername mewtwo
 # 393 "data/maps/Luxurawoods/scripts.pory"
 	msgbox gruntsded_Text_31, MSGBOX_AUTOCLOSE
-# 394 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
 # 395 "data/maps/Luxurawoods/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 396 "data/maps/Luxurawoods/scripts.pory"
@@ -879,11 +821,9 @@ gruntsded::
 # 409 "data/maps/Luxurawoods/scripts.pory"
 	waitmovement 0
 # 410 "data/maps/Luxurawoods/scripts.pory"
-	namebox mewtwo
+	speakername mewtwo
 # 411 "data/maps/Luxurawoods/scripts.pory"
 	msgbox gruntsded_Text_32, MSGBOX_AUTOCLOSE
-# 412 "data/maps/Luxurawoods/scripts.pory"
-	hidenamebox
 # 413 "data/maps/Luxurawoods/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 414 "data/maps/Luxurawoods/scripts.pory"

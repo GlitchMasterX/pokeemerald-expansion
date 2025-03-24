@@ -50,11 +50,9 @@ Alistairarrive::
 # 27 "data/maps/Newmap11/scripts.pory"
 	waitmovement 0
 # 28 "data/maps/Newmap11/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 29 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_0
-# 30 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 31 "data/maps/Newmap11/scripts.pory"
 	waitmessage
 # 32 "data/maps/Newmap11/scripts.pory"
@@ -74,127 +72,89 @@ Alistairarrive::
 # 39 "data/maps/Newmap11/scripts.pory"
 	playbgm MUS_HG_LIGHTHOUSE, TRUE
 # 40 "data/maps/Newmap11/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 41 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_1, MSGBOX_AUTOCLOSE
-# 42 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 43 "data/maps/Newmap11/scripts.pory"
-	namebox unknown
+	speakername unknown
 # 44 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_2, MSGBOX_AUTOCLOSE
-# 45 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 46 "data/maps/Newmap11/scripts.pory"
 	applymovement 0xFF, traces1
 # 47 "data/maps/Newmap11/scripts.pory"
 	waitmovement 0
 # 48 "data/maps/Newmap11/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 49 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_3, MSGBOX_AUTOCLOSE
-# 50 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 51 "data/maps/Newmap11/scripts.pory"
-	namebox alistair
+	speakername alistair
 # 52 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_4, MSGBOX_AUTOCLOSE
-# 53 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 54 "data/maps/Newmap11/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 55 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_5, MSGBOX_AUTOCLOSE
-# 56 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 57 "data/maps/Newmap11/scripts.pory"
-	namebox alistair
+	speakername alistair
 # 58 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_6, MSGBOX_AUTOCLOSE
-# 59 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 60 "data/maps/Newmap11/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 61 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_7, MSGBOX_AUTOCLOSE
-# 62 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 63 "data/maps/Newmap11/scripts.pory"
-	namebox alistair
+	speakername alistair
 # 64 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_8, MSGBOX_AUTOCLOSE
-# 65 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 66 "data/maps/Newmap11/scripts.pory"
 	waitmessage
 # 67 "data/maps/Newmap11/scripts.pory"
 	applymovement 0xFF, exclam
 # 68 "data/maps/Newmap11/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 69 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_9, MSGBOX_AUTOCLOSE
-# 70 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 71 "data/maps/Newmap11/scripts.pory"
-	namebox alistair
+	speakername alistair
 # 72 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_10, MSGBOX_AUTOCLOSE
-# 73 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 74 "data/maps/Newmap11/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 75 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_11, MSGBOX_AUTOCLOSE
-# 76 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 77 "data/maps/Newmap11/scripts.pory"
-	namebox alistair
+	speakername alistair
 # 78 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_12, MSGBOX_AUTOCLOSE
-# 79 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 80 "data/maps/Newmap11/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 81 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_13, MSGBOX_AUTOCLOSE
-# 82 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 83 "data/maps/Newmap11/scripts.pory"
-	namebox alistair
+	speakername alistair
 # 84 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_14, MSGBOX_AUTOCLOSE
-# 85 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 86 "data/maps/Newmap11/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 87 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_15, MSGBOX_AUTOCLOSE
-# 88 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 89 "data/maps/Newmap11/scripts.pory"
-	namebox alistair
+	speakername alistair
 # 90 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_16, MSGBOX_AUTOCLOSE
-# 91 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 92 "data/maps/Newmap11/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 93 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_17, MSGBOX_AUTOCLOSE
-# 94 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 95 "data/maps/Newmap11/scripts.pory"
-	namebox alistair
+	speakername alistair
 # 96 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_18, MSGBOX_AUTOCLOSE
-# 97 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 98 "data/maps/Newmap11/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 99 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_19, MSGBOX_AUTOCLOSE
-# 100 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 101 "data/maps/Newmap11/scripts.pory"
 	applymovement 3, alisbattle
 # 102 "data/maps/Newmap11/scripts.pory"
@@ -204,11 +164,9 @@ Alistairarrive::
 # 104 "data/maps/Newmap11/scripts.pory"
 	applymovement 2, alisbattle2
 # 105 "data/maps/Newmap11/scripts.pory"
-	namebox alistair
+	speakername alistair
 # 106 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_20, MSGBOX_AUTOCLOSE
-# 107 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 108 "data/maps/Newmap11/scripts.pory"
 	settotemboost B_SIDE_OPPONENT, 0, 0, 2, 2, 0, 0, 0
 # 109 "data/maps/Newmap11/scripts.pory"
@@ -220,29 +178,21 @@ Alistairarrive::
 # 112 "data/maps/Newmap11/scripts.pory"
 	applymovement 0xFF, exclam
 # 113 "data/maps/Newmap11/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 114 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_21, MSGBOX_AUTOCLOSE
-# 115 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 116 "data/maps/Newmap11/scripts.pory"
-	namebox alistair
+	speakername alistair
 # 117 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_22, MSGBOX_AUTOCLOSE
-# 118 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 119 "data/maps/Newmap11/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 120 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_23, MSGBOX_AUTOCLOSE
-# 121 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 122 "data/maps/Newmap11/scripts.pory"
-	namebox alistair
+	speakername alistair
 # 123 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_24, MSGBOX_AUTOCLOSE
-# 124 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 125 "data/maps/Newmap11/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 126 "data/maps/Newmap11/scripts.pory"
@@ -256,11 +206,9 @@ Alistairarrive::
 # 130 "data/maps/Newmap11/scripts.pory"
 	applymovement 0xFF, traces2
 # 131 "data/maps/Newmap11/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 132 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_25, MSGBOX_AUTOCLOSE
-# 133 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 134 "data/maps/Newmap11/scripts.pory"
 	special HealPlayerParty
 # 135 "data/maps/Newmap11/scripts.pory"
@@ -416,85 +364,59 @@ mewtwogone1::
 # 199 "data/maps/Newmap11/scripts.pory"
 	faceplayer
 # 200 "data/maps/Newmap11/scripts.pory"
-	namebox mewtwo
+	speakername mewtwo
 # 201 "data/maps/Newmap11/scripts.pory"
 	msgbox mewtwogone1_Text_0, MSGBOX_AUTOCLOSE
-# 202 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 203 "data/maps/Newmap11/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 204 "data/maps/Newmap11/scripts.pory"
 	msgbox mewtwogone1_Text_1, MSGBOX_AUTOCLOSE
-# 205 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 206 "data/maps/Newmap11/scripts.pory"
-	namebox mewtwo
+	speakername mewtwo
 # 207 "data/maps/Newmap11/scripts.pory"
 	msgbox mewtwogone1_Text_2, MSGBOX_AUTOCLOSE
-# 208 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 209 "data/maps/Newmap11/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 210 "data/maps/Newmap11/scripts.pory"
 	msgbox mewtwogone1_Text_3, MSGBOX_AUTOCLOSE
-# 211 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 212 "data/maps/Newmap11/scripts.pory"
-	namebox mewtwo
+	speakername mewtwo
 # 213 "data/maps/Newmap11/scripts.pory"
 	msgbox mewtwogone1_Text_4, MSGBOX_AUTOCLOSE
-# 214 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 215 "data/maps/Newmap11/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 216 "data/maps/Newmap11/scripts.pory"
 	msgbox mewtwogone1_Text_5, MSGBOX_AUTOCLOSE
-# 217 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 218 "data/maps/Newmap11/scripts.pory"
-	namebox mewtwo
+	speakername mewtwo
 # 219 "data/maps/Newmap11/scripts.pory"
 	msgbox mewtwogone1_Text_6, MSGBOX_AUTOCLOSE
-# 220 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 221 "data/maps/Newmap11/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 222 "data/maps/Newmap11/scripts.pory"
 	msgbox mewtwogone1_Text_7, MSGBOX_AUTOCLOSE
-# 223 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 224 "data/maps/Newmap11/scripts.pory"
-	namebox mewtwo
+	speakername mewtwo
 # 225 "data/maps/Newmap11/scripts.pory"
 	msgbox mewtwogone1_Text_8, MSGBOX_AUTOCLOSE
-# 226 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 227 "data/maps/Newmap11/scripts.pory"
 	applymovement 0xFF, question
 # 228 "data/maps/Newmap11/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 229 "data/maps/Newmap11/scripts.pory"
 	msgbox mewtwogone1_Text_9, MSGBOX_AUTOCLOSE
-# 230 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 231 "data/maps/Newmap11/scripts.pory"
-	namebox mewtwo
+	speakername mewtwo
 # 232 "data/maps/Newmap11/scripts.pory"
 	msgbox mewtwogone1_Text_10, MSGBOX_AUTOCLOSE
-# 233 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 234 "data/maps/Newmap11/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 235 "data/maps/Newmap11/scripts.pory"
 	msgbox mewtwogone1_Text_11, MSGBOX_AUTOCLOSE
-# 236 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 237 "data/maps/Newmap11/scripts.pory"
-	namebox mewtwo
+	speakername mewtwo
 # 238 "data/maps/Newmap11/scripts.pory"
 	msgbox mewtwogone1_Text_12, MSGBOX_AUTOCLOSE
-# 239 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 240 "data/maps/Newmap11/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 241 "data/maps/Newmap11/scripts.pory"
@@ -510,11 +432,9 @@ mewtwogone1::
 # 246 "data/maps/Newmap11/scripts.pory"
 	applymovement 0xFF, pay
 # 247 "data/maps/Newmap11/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 248 "data/maps/Newmap11/scripts.pory"
 	msgbox mewtwogone1_Text_13, MSGBOX_AUTOCLOSE
-# 249 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 250 "data/maps/Newmap11/scripts.pory"
 	setflag FLAG_TALK_GRAVE
 # 251 "data/maps/Newmap11/scripts.pory"
@@ -545,11 +465,9 @@ grave_1:
 # 261 "data/maps/Newmap11/scripts.pory"
 	lock
 # 262 "data/maps/Newmap11/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 263 "data/maps/Newmap11/scripts.pory"
 	msgbox grave_Text_0, MSGBOX_AUTOCLOSE
-# 264 "data/maps/Newmap11/scripts.pory"
-	hidenamebox
 # 265 "data/maps/Newmap11/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 266 "data/maps/Newmap11/scripts.pory"

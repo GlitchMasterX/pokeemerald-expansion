@@ -10,21 +10,21 @@ MAP_SCRIPT_ON_LOAD:DAYNIGHT_NPC
 script ONHARBOR1 {
     playbgm(MUS_HG_KIMONO_GIRL_DANCE,FALSE)
     lock
-    namebox(oldman)
+    speakername(oldman)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}There you go, young man.\pI never understood why you chose to travel with this old man when there were better means of transport available.\pYou could've reached your destination on time, but I won't question your intentions.\pYou must've had your reasons."))
-    hidenamebox
-    namebox(Xylar)
+     
+    speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}................."))
-    hidenamebox
-    namebox(oldman)
+     
+    speakername(oldman)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Well here it is,\pThe Astralis Academy, the place where normal trainers become legends."))
-    hidenamebox
-    namebox(Xylar)
+     
+    speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}............."))
-    hidenamebox
-    namebox(oldman)
+     
+    speakername(oldman)
     msgbox(format("(His eyes...They aren't normal.)"),MSGBOX_AUTOCLOSE)
-    hidenamebox
+     
     waitmessage
     fadescreen(FADE_TO_BLACK)
     playse(SE_RG_SS_ANNE_HORN)
@@ -33,9 +33,9 @@ script ONHARBOR1 {
     setflag(FLAG_OLDMAN_GONE)
     fadescreen(FADE_FROM_BLACK)
     applymovement(0xFF,MOVE2)
-    namebox(Xylar)
+    speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Legend?.... Become one?...\pI'm gonna destroy them all."))
-    hidenamebox
+     
     fadedefaultbgm
     setvar(ACADEMY_START,3)
     release
@@ -70,9 +70,9 @@ script Fionamet {
     applymovement(12,MOVE4)
     applymovement(OBJ_EVENT_ID_PLAYER,MOVE3)
     waitmovement(0)
-    namebox(unknown)
+    speakername(unknown)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}My apologies...."))
-    hidenamebox
+     
     applymovement(13,MOVE5)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Are you alright, my lady?"))
     waitmovement(0)
@@ -80,15 +80,15 @@ script Fionamet {
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}How rude of him, he didn't even stop to apologize."))
     waitmessage
     applymovement(13,MOVE1)
-    namebox(unknown)
+    speakername(unknown)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}........."))
-    hidenamebox
+     
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}What happened?"))
     waitmessage
     applymovement(12,mov1)
-    namebox(unknown)
+    speakername(unknown)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}...........\pNothing.\pLet's go."),MSGBOX_AUTOCLOSE)
-    hidenamebox
+     
     fadescreen(FADE_TO_BLACK)
     removeobject(12)
     removeobject(13)
@@ -207,21 +207,21 @@ script elias{
     lock
     faceplayer
     applymovement(1,exclam)
-    namebox(unknown)
+    speakername(unknown)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You're late Xylar.\pMy name is David Elias.\pI'm a professor and the headmaster made it clear that i was to ensure your arrival.\pCome with me, the headmaster is waiting for you."))
-    hidenamebox
-    namebox(Xylar)
+     
+    speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't need an escort.\pJust tell me where I have to go."))
-    hidenamebox
-    namebox(eliasn)
+     
+    speakername(eliasn)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You'll soon find that attitude won't get you far here.\pRespect is earned, young man.\nNow follow me."))
-    hidenamebox
+     
     applymovement(1,goin)
     playse(SE_WARP_IN)
     waitse
-    namebox(Xylar)
+    speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}............."))
-    hidenamebox
+     
     applymovement(0xFF,goin)
     waitmovement(0)
     removeobject(1)
@@ -233,7 +233,7 @@ movement goin {
     set_invisible
 }
 text eliasn{
-    format("Elias")
+    format("Prof.Elias")
 }
 script notnowdorm {
     applymovement(0xFF,mov5)
@@ -287,25 +287,25 @@ script AcademyNpc2 {
 if (!flag(FLAG_AFTER_OUTBURST)){
     lock
     faceplayer
-    namebox(eliasn)
+    speakername(eliasn)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Focus on control, not just power."))
-    hidenamebox
+     
     release
 }
 elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
     lock
     faceplayer
-    namebox(eliasn)
+    speakername(eliasn)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You lost control, Xylar. That is unacceptable. You may have skill, but if you cannot control yourself, you will not last here."))
-    hidenamebox
+     
     release
 }
 else{
     lock
     faceplayer
-    namebox(eliasn)
+    speakername(eliasn)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Power means nothing without restraint. Learn that before it's too late."))
-    hidenamebox
+     
     release
 }
 
@@ -357,31 +357,31 @@ script AcademyNpc5 {
     if(!flag(FLAG_AFTER_OUTBURST)){
     lock
     faceplayer
-    namebox(maribel)
+    speakername(maribel)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Art is expression!\pPokemon battling is also an art, you know!"))
-    hidenamebox
+     
     release   
 }
 elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
     lock
     faceplayer
-    namebox(maribel)
+    speakername(maribel)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Such raw emotion! Such unfiltered intensity!\p…And yet, Xylar, this is not the place for a destructive masterpiece."))
-    hidenamebox
+     
     release
 }
 else{
     lock
     faceplayer
-    namebox(maribel)
+    speakername(maribel)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Art and battle both require control.\pI hope you learn that before your canvas turns to ruin."))
-    hidenamebox
+     
     release
 }
 
 }
 text maribel{
-    format("Dorne")
+    format("Prof.Dorne")
 }
 script AcademyNpc6 {
     if(!flag(FLAG_AFTER_OUTBURST)){
@@ -408,31 +408,31 @@ script AcademyNpc7 {
     if(!flag(FLAG_AFTER_OUTBURST)){
     lock
     faceplayer
-    namebox(orson)
+    speakername(orson)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Science is the backbone of Pokemon research.\pEven trainers should understand the fundamentals."))
-    hidenamebox
+     
     release   
 }
 elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
     lock
     faceplayer
-    namebox(orson)
+    speakername(orson)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Uncontrolled power is a failure in understanding.\pYou acted on instinct, but instinct without logic leads to destruction."))
-    hidenamebox
+     
     release
 }
 else{
     lock
     faceplayer
-    namebox(orson)
+    speakername(orson)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Were you even thinking? Or was it something deeper than that?"))
-    hidenamebox
+     
     release
 }
 
 }
 text orson{
-    format("Orson")
+    format("Prof.Orson")
 }
 script AcademyNpc8 {
 if (!flag(FLAG_AFTER_OUTBURST)){
@@ -460,17 +460,17 @@ script AcademyNpc9 {
     if(!flag(FLAG_AFTER_OUTBURST)){
     lock
     faceplayer
-    namebox(serena)
+    speakername(serena)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Everyone here has potential.\pIt's up to them to decide how they use it. "))
-    hidenamebox
+     
     release   
 }
 else{
     lock
     faceplayer
-    namebox(serena)
+    speakername(serena)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Xylar....\pI don't know what to say.\pThat wasn't just anger.\pThat was something else."))
-    hidenamebox
+     
     release
 }
 }
@@ -478,22 +478,22 @@ script AcademyNpc10 {
     if(!flag(FLAG_AFTER_OUTBURST)){
     lock
     faceplayer
-    namebox(evelyn)
+    speakername(evelyn)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Battling is more than strength and speed.\pIt's about understanding your opponent and yourself."))///////////
-    hidenamebox
+     
     release   
 }
 else{
     lock
     faceplayer
-    namebox(evelyn)
+    speakername(evelyn)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I've studied battle psychology for years...\pBut what I saw wasn't strategy.\pIt was pure instinct.\pAnd that's dangerous"))
-    hidenamebox
+     
     release
 }
 }
 text evelyn {
-    format("Evelyn")
+    format("Prof.Evelyn")
 }
 
 script AcademyNpc11 {
@@ -581,25 +581,25 @@ script AcademyNpc15 {
 if (!flag(FLAG_AFTER_OUTBURST)){
     lock
     faceplayer
-    namebox(alistair)
+    speakername(alistair)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Strive for excellence in all you do."))
-    hidenamebox
+     
     release
 }
 elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
     lock
     faceplayer
-    namebox(alistair)
+    speakername(alistair)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar… I see potential in you, but potential without control is dangerous.\pYou need to understand that."))
-    hidenamebox
+     
     release
 }
 else{
     lock
     faceplayer
-    namebox(alistair)
+    speakername(alistair)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You fight like a man with nothing to lose.\pThat still concerns me."))
-    hidenamebox
+     
     release
 }
 }
@@ -775,25 +775,25 @@ script AcademyNpc27{
 if (!flag(FLAG_AFTER_OUTBURST)){
     lock
     faceplayer
-    namebox(unknown)
+    speakername(unknown)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}You don't belong here, Xylar.\pBut you already knew that, didn't you?"))
-    hidenamebox
+     
     release
 }
 elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
     lock
     faceplayer
-    namebox(unknown)
+    speakername(unknown)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}That rage… it suits you. Maybe more than you realize."))
-    hidenamebox
+     
     release
 }
 else{
     lock
     faceplayer
-    namebox(unknown)
+    speakername(unknown)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}One day, you'll have to stop pretending you can be normal.\pWe both know it's not in your nature."))
-    hidenamebox
+     
     release
 }
 }

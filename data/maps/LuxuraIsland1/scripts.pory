@@ -45,17 +45,17 @@ script forest {
 	setflag(FLAG_UNUSED_0x4AA)
 	applymovement(OBJ_EVENT_ID_PLAYER,exclam)
 	applymovement(0xFD,exclam)
-	namebox(Xylar)
+	speakername(Xylar1)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}What was that?"))
-	hidenamebox
-	namebox(name4)
+	 
+	speakername(name4)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, did you hear that? It sounded like a voice coming from the direction of the mansion.\pWe should go check it out!"))
-	hidenamebox
+	 
     applymovement(OBJ_EVENT_ID_PLAYER,notal)
     applymovement(0xFD,notal)
-	namebox(Xylar)
+	speakername(Xylar1)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Mom and Dad are in the Mansion."))
-	hidenamebox
+	 
     releaseall
 	setflag(FLAG_AFTERTRAGEDY_MUSIC)
 	setvar(LUXURA_TRAGEDY, 11)
@@ -163,21 +163,21 @@ script miraded {
 	waitmovement(0)
 	applymovement(OBJ_EVENT_ID_PLAYER,boo)
 	applymovement(0xFD,boo)
-    namebox(Xylar)
+    speakername(Xylar1)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Let's ask the officer and sailors for help.\pThey'll surely help us."))
-	hidenamebox
-	namebox(name4)
+	 
+	speakername(name4)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Okay, Master Xylar."))
-	hidenamebox
+	 
 	applymovement(OBJ_EVENT_ID_PLAYER,exclam)
 	applymovement(0xFD,exclam)
 	waitmovement(0)
-	namebox(Xylar)
+	speakername(Xylar1)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}What happened here?"))
-	hidenamebox
-	namebox(name4)
+	 
+	speakername(name4)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}That's horrible.\pWhy would they resort to this?"),MSGBOX_AUTOCLOSE)
-	hidenamebox
+	 
 	applymovement(OBJ_EVENT_ID_PLAYER,run)
 	applymovement(0xFD,run)
 	special(SpawnCameraObject)
@@ -197,13 +197,13 @@ script miraded {
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}We really are lucky today."),MSGBOX_AUTOCLOSE)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Yeah.\pWe were ordered to capture you two but you two came running to us on your own."),MSGBOX_AUTOCLOSE)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Now , Let's head back peacefully since I'm in a good mood today."),MSGBOX_AUTOCLOSE)
-	namebox(name4)
+	speakername(name4)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Not gonna happen."))
-	hidenamebox
+	 
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Do you guys really think you can escape?"),MSGBOX_AUTOCLOSE)
-	namebox(name4)
+	speakername(name4)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}..."),MSGBOX_AUTOCLOSE)
-	hidenamebox
+	 
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}You're joking? right?"),MSGBOX_AUTOCLOSE)
 	applymovement(12,talk)
 	applymovement(11,tak)
@@ -214,15 +214,15 @@ script miraded {
 	applymovement(11,innnn)
 	waitmovement(0)
 	facefollower
-	namebox(name4)
+	speakername(name4)
 	msgbox(format("(If we both try to escape we will end up getting captured.)\p{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, I'll slow them down.\pYou should run towards the forest quickly."),MSGBOX_AUTOCLOSE)
-	hidenamebox
-	namebox(Xylar)
+	 
+	speakername(Xylar1)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}No, I'm not gonna leave you behind."))
-	hidenamebox
-	namebox(name4)
+	 
+	speakername(name4)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I'll join you soon. So, trust me and run."),MSGBOX_AUTOCLOSE)
-	hidenamebox
+	 
 	applymovement(OBJ_EVENT_ID_PLAYER,lok)
 	applymovement(0xFD,lok)
 	waitmovement(0)
@@ -239,23 +239,23 @@ script miraded {
 	applymovement(11,innnn)
 	waitmovement(0)
 	facefollower
-	namebox(name4)
+	speakername(name4)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, Listen to me, from now no matter what happens don't look back and run as fast as you can\pGo! and remember it's not your fault."),MSGBOX_AUTOCLOSE)
-	hidenamebox
-	namebox(Xylar)
+	 
+	speakername(Xylar1)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Mira, why are you talking like this?"))
-	hidenamebox
-	namebox(name4)
+	 
+	speakername(name4)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}XYLAR!"),MSGBOX_AUTOCLOSE)
-	hidenamebox
+	 
 	applymovement(OBJ_EVENT_ID_PLAYER,byee)
 	waitmovement(0)
 	applymovement(0xFD,lok)
 	waitmovement(0)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Aww, how touching, He's running away.\pToo bad you won't get to see him grow up"),MSGBOX_AUTOCLOSE)
-	namebox(name4)
+	speakername(name4)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}And too bad for you since you won't be able to capture him."),MSGBOX_AUTOCLOSE)
-	hidenamebox
+	 
 	applymovement(12,exclam)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}What?\pYou dare mock me.\pKill her this instant. "))
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Say goodbye, lady. This is the end of the road for you."),MSGBOX_AUTOCLOSE)

@@ -31,11 +31,9 @@ mira::
 # 17 "data/maps/Playerroom/scripts.pory"
 	waitmovement 0
 # 18 "data/maps/Playerroom/scripts.pory"
-	namebox name4
+	speakername name4
 # 19 "data/maps/Playerroom/scripts.pory"
 	msgbox mira_Text_1
-# 20 "data/maps/Playerroom/scripts.pory"
-	hidenamebox
 # 21 "data/maps/Playerroom/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, camera
 # 22 "data/maps/Playerroom/scripts.pory"
@@ -45,51 +43,37 @@ mira::
 # 24 "data/maps/Playerroom/scripts.pory"
 	special RemoveCameraObject
 # 25 "data/maps/Playerroom/scripts.pory"
-	namebox name4
+	speakername name4
 # 26 "data/maps/Playerroom/scripts.pory"
 	msgbox mira_Text_2
-# 27 "data/maps/Playerroom/scripts.pory"
-	hidenamebox
 # 28 "data/maps/Playerroom/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, xylar1
 # 29 "data/maps/Playerroom/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 30 "data/maps/Playerroom/scripts.pory"
 	msgbox mira_Text_3
-# 31 "data/maps/Playerroom/scripts.pory"
-	hidenamebox
 # 32 "data/maps/Playerroom/scripts.pory"
-	namebox name4
+	speakername name4
 # 33 "data/maps/Playerroom/scripts.pory"
 	msgbox mira_Text_4
-# 34 "data/maps/Playerroom/scripts.pory"
-	hidenamebox
 # 35 "data/maps/Playerroom/scripts.pory"
-	namebox name4
+	speakername name4
 # 36 "data/maps/Playerroom/scripts.pory"
 	msgbox mira_Text_5
-# 37 "data/maps/Playerroom/scripts.pory"
-	hidenamebox
 # 38 "data/maps/Playerroom/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, xylar
 # 39 "data/maps/Playerroom/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 40 "data/maps/Playerroom/scripts.pory"
 	msgbox mira_Text_6
-# 41 "data/maps/Playerroom/scripts.pory"
-	hidenamebox
 # 42 "data/maps/Playerroom/scripts.pory"
-	namebox name4
+	speakername name4
 # 43 "data/maps/Playerroom/scripts.pory"
 	msgbox mira_Text_7
-# 44 "data/maps/Playerroom/scripts.pory"
-	hidenamebox
 # 45 "data/maps/Playerroom/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 46 "data/maps/Playerroom/scripts.pory"
 	msgbox mira_Text_8
-# 47 "data/maps/Playerroom/scripts.pory"
-	hidenamebox
 # 48 "data/maps/Playerroom/scripts.pory"
 	applymovement 1, miramove2
 # 49 "data/maps/Playerroom/scripts.pory"
@@ -327,6 +311,6 @@ metdad_Text_0:
 	.string "(He usually works downstairs, in the\n"
 	.string "first room on the left.)$"
 
-Xylar::
+Xylar1::
 # 80 "data/maps/Playerroom/scripts.pory"
-	.string "{COLOR DARK_GRAY}Xylar$"
+	.string "Xylar$"

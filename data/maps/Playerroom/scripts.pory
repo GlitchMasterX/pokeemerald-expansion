@@ -15,36 +15,36 @@ script mira{
 	applymovement(OBJ_EVENT_ID_CAMERA,camera1)
 	applymovement (1,miramove)
 	waitmovement(0)
-	namebox (name4)
+	speakername (name4)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, good morning. It's time for breakfast. Lord Aurther and Lady Elysia are waiting for you at the table."))
-    hidenamebox
+     
 	applymovement(OBJ_EVENT_ID_CAMERA,camera)
 	applymovement (1,miramove1)
 	waitmovement(0)
 	special(RemoveCameraObject)
-	namebox(name4)
+	speakername(name4)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Still in bed, I see? You know you can't stay there all day, young master. Come now, you wouldn't want to keep Lord Aurther and Lady Elysia waiting, would you?"))
-	hidenamebox
+	 
 	applymovement(OBJ_EVENT_ID_PLAYER,xylar1)
-	namebox(Xylar)
+	speakername(Xylar1)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Umm.."))
-	hidenamebox
-	namebox (name4)
+	 
+	speakername (name4)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Up with you, Master Xylar. If you don't hurry, I'll have to pull the covers off myself. Don't make me do it."))
-    hidenamebox
-	namebox(name4)
+     
+	speakername(name4)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Besides, I made your favorite Ramen this morning. You wouldn't want it to get cold, would you?"))
-	hidenamebox
+	 
 	applymovement(OBJ_EVENT_ID_PLAYER,xylar)
-	namebox(Xylar)
+	speakername(Xylar1)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Ramen? But didn't Dad say I shouldn't have it? He always forbids it."))
-	hidenamebox 
-	namebox(name4)
+	  
+	speakername(name4)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Ah, yes, Lord Aurther did mention that. But Lady Elysia insisted it was alright this morning. She thought it might be just the thing to brighten your day."))
-	hidenamebox 
-	namebox(Xylar)
+	  
+	speakername(Xylar1)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I'll be there in a sec."))
-	hidenamebox 
+	  
 	applymovement(1,miramove2)
     waitmovement(0)
 	removeobject (1)
@@ -77,8 +77,8 @@ movement xylar1{
 	delay_1
 	face_left
 }
-text Xylar{
-	format("{COLOR DARK_GRAY}Xylar")
+text Xylar1{
+	format("Xylar")
 }
 
 movement camera1{

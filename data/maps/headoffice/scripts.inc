@@ -52,23 +52,17 @@ Head::
 # 27 "data/maps/headoffice/scripts.pory"
 	applymovement 1, exclam
 # 28 "data/maps/headoffice/scripts.pory"
-	namebox alistair
+	speakername alistair
 # 29 "data/maps/headoffice/scripts.pory"
 	msgbox Head_Text_0
-# 30 "data/maps/headoffice/scripts.pory"
-	hidenamebox
 # 31 "data/maps/headoffice/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 32 "data/maps/headoffice/scripts.pory"
 	msgbox Head_Text_1
-# 33 "data/maps/headoffice/scripts.pory"
-	hidenamebox
 # 34 "data/maps/headoffice/scripts.pory"
-	namebox alistair
+	speakername alistair
 # 35 "data/maps/headoffice/scripts.pory"
 	msgbox Head_Text_2
-# 36 "data/maps/headoffice/scripts.pory"
-	hidenamebox
 # 37 "data/maps/headoffice/scripts.pory"
 	playmoncry SPECIES_TORCHIC, CRY_MODE_ENCOUNTER
 # 38 "data/maps/headoffice/scripts.pory"
@@ -130,17 +124,13 @@ Head1::
 # 69 "data/maps/headoffice/scripts.pory"
 	applymovement 0xFF, exclam
 # 70 "data/maps/headoffice/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 71 "data/maps/headoffice/scripts.pory"
 	msgbox Head1_Text_0
-# 72 "data/maps/headoffice/scripts.pory"
-	hidenamebox
 # 73 "data/maps/headoffice/scripts.pory"
-	namebox alistair
+	speakername alistair
 # 74 "data/maps/headoffice/scripts.pory"
 	msgbox Head1_Text_1
-# 75 "data/maps/headoffice/scripts.pory"
-	hidenamebox
 # 76 "data/maps/headoffice/scripts.pory"
 	initclock 10, 30
 # 77 "data/maps/headoffice/scripts.pory"
@@ -162,11 +152,9 @@ serenamet::
 # 86 "data/maps/headoffice/scripts.pory"
 	waitmovement 0
 # 87 "data/maps/headoffice/scripts.pory"
-	namebox serena
+	speakername serena
 # 88 "data/maps/headoffice/scripts.pory"
 	msgbox serenamet_Text_0
-# 89 "data/maps/headoffice/scripts.pory"
-	hidenamebox
 # 90 "data/maps/headoffice/scripts.pory"
 	applymovement 1, serenametmov2
 # 91 "data/maps/headoffice/scripts.pory"
@@ -174,27 +162,21 @@ serenamet::
 # 92 "data/maps/headoffice/scripts.pory"
 	waitmovement 0
 # 93 "data/maps/headoffice/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 94 "data/maps/headoffice/scripts.pory"
 	msgbox serenamet_Text_1
-# 95 "data/maps/headoffice/scripts.pory"
-	hidenamebox
 # 96 "data/maps/headoffice/scripts.pory"
-	namebox serena
+	speakername serena
 # 97 "data/maps/headoffice/scripts.pory"
 	msgbox serenamet_Text_2
-# 98 "data/maps/headoffice/scripts.pory"
-	hidenamebox
 # 99 "data/maps/headoffice/scripts.pory"
 	waitmessage
 # 100 "data/maps/headoffice/scripts.pory"
 	applymovement 0xFF, traces2
 # 101 "data/maps/headoffice/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 102 "data/maps/headoffice/scripts.pory"
 	msgbox serenamet_Text_3
-# 103 "data/maps/headoffice/scripts.pory"
-	hidenamebox
 # 104 "data/maps/headoffice/scripts.pory"
 	waitmessage
 # 105 "data/maps/headoffice/scripts.pory"
@@ -204,57 +186,41 @@ serenamet::
 # 107 "data/maps/headoffice/scripts.pory"
 	applymovement 0xFF, mov1
 # 108 "data/maps/headoffice/scripts.pory"
-	namebox serena
+	speakername serena
 # 109 "data/maps/headoffice/scripts.pory"
 	msgbox serenamet_Text_4
-# 110 "data/maps/headoffice/scripts.pory"
-	hidenamebox
 # 111 "data/maps/headoffice/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 112 "data/maps/headoffice/scripts.pory"
 	msgbox serenamet_Text_5
-# 113 "data/maps/headoffice/scripts.pory"
-	hidenamebox
 # 114 "data/maps/headoffice/scripts.pory"
-	namebox serena
+	speakername serena
 # 115 "data/maps/headoffice/scripts.pory"
 	msgbox serenamet_Text_6
-# 116 "data/maps/headoffice/scripts.pory"
-	hidenamebox
 # 117 "data/maps/headoffice/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 118 "data/maps/headoffice/scripts.pory"
 	msgbox serenamet_Text_7
-# 119 "data/maps/headoffice/scripts.pory"
-	hidenamebox
 # 120 "data/maps/headoffice/scripts.pory"
-	namebox serena
+	speakername serena
 # 121 "data/maps/headoffice/scripts.pory"
 	msgbox serenamet_Text_8
-# 122 "data/maps/headoffice/scripts.pory"
-	hidenamebox
 # 123 "data/maps/headoffice/scripts.pory"
 	applymovement 0xFF, exclam
 # 124 "data/maps/headoffice/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 125 "data/maps/headoffice/scripts.pory"
 	msgbox serenamet_Text_9, MSGBOX_AUTOCLOSE
-# 126 "data/maps/headoffice/scripts.pory"
-	hidenamebox
 # 127 "data/maps/headoffice/scripts.pory"
-	namebox serena
+	speakername serena
 # 128 "data/maps/headoffice/scripts.pory"
 	msgbox serenamet_Text_10
-# 129 "data/maps/headoffice/scripts.pory"
-	hidenamebox
 # 130 "data/maps/headoffice/scripts.pory"
 	applymovement 0xFF, upset
 # 131 "data/maps/headoffice/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 132 "data/maps/headoffice/scripts.pory"
 	msgbox serenamet_Text_11, MSGBOX_AUTOCLOSE
-# 133 "data/maps/headoffice/scripts.pory"
-	hidenamebox
 # 134 "data/maps/headoffice/scripts.pory"
 	playse MUS_DP_LETS_GO_TOGETHER
 # 135 "data/maps/headoffice/scripts.pory"
@@ -282,11 +248,9 @@ serenafollow::
 # 146 "data/maps/headoffice/scripts.pory"
 	applymovement 0xFD, happy
 # 147 "data/maps/headoffice/scripts.pory"
-	namebox serena
+	speakername serena
 # 148 "data/maps/headoffice/scripts.pory"
 	msgbox serenamet_Text_10
-# 149 "data/maps/headoffice/scripts.pory"
-	hidenamebox
 # 150 "data/maps/headoffice/scripts.pory"
 	release
 	return
@@ -358,41 +322,29 @@ serenaextend::
 # 176 "data/maps/headoffice/scripts.pory"
 	applymovement 0x7F, backes
 # 177 "data/maps/headoffice/scripts.pory"
-	namebox serena
+	speakername serena
 # 178 "data/maps/headoffice/scripts.pory"
 	msgbox serenaextend_Text_0, MSGBOX_AUTOCLOSE
-# 179 "data/maps/headoffice/scripts.pory"
-	hidenamebox
 # 180 "data/maps/headoffice/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 181 "data/maps/headoffice/scripts.pory"
 	msgbox serenaextend_Text_1, MSGBOX_AUTOCLOSE
-# 182 "data/maps/headoffice/scripts.pory"
-	hidenamebox
 # 183 "data/maps/headoffice/scripts.pory"
-	namebox serena
+	speakername serena
 # 184 "data/maps/headoffice/scripts.pory"
 	msgbox serenaextend_Text_2, MSGBOX_AUTOCLOSE
-# 185 "data/maps/headoffice/scripts.pory"
-	hidenamebox
 # 186 "data/maps/headoffice/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 187 "data/maps/headoffice/scripts.pory"
 	msgbox serenaextend_Text_3
-# 188 "data/maps/headoffice/scripts.pory"
-	hidenamebox
 # 189 "data/maps/headoffice/scripts.pory"
-	namebox serena
+	speakername serena
 # 190 "data/maps/headoffice/scripts.pory"
 	msgbox serenaextend_Text_4, MSGBOX_AUTOCLOSE
-# 191 "data/maps/headoffice/scripts.pory"
-	hidenamebox
 # 192 "data/maps/headoffice/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 193 "data/maps/headoffice/scripts.pory"
 	msgbox serenaextend_Text_3, MSGBOX_AUTOCLOSE
-# 194 "data/maps/headoffice/scripts.pory"
-	hidenamebox
 # 195 "data/maps/headoffice/scripts.pory"
 	applymovement 0x7F, serenametmov7
 # 196 "data/maps/headoffice/scripts.pory"
@@ -400,11 +352,9 @@ serenaextend::
 # 197 "data/maps/headoffice/scripts.pory"
 	special RemoveCameraObject
 # 198 "data/maps/headoffice/scripts.pory"
-	namebox serena
+	speakername serena
 # 199 "data/maps/headoffice/scripts.pory"
 	msgbox serenaextend_Text_5, MSGBOX_AUTOCLOSE
-# 200 "data/maps/headoffice/scripts.pory"
-	hidenamebox
 # 201 "data/maps/headoffice/scripts.pory"
 	applymovement 0xFD, serenametmov7
 # 202 "data/maps/headoffice/scripts.pory"

@@ -118,77 +118,77 @@ script Surgebattle {
     applymovement(OBJ_EVENT_ID_PLAYER,camera4)
     applymovement(10,camera4)
     waitmovement(0)
-    namebox(surge)
+    speakername(surge)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You're Aurther's kid, aren't you?"),MSGBOX_AUTOCLOSE)
-    hidenamebox
-    namebox(Xylar)
+     
+    speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Where is my Mom?"),MSGBOX_AUTOCLOSE)
-    hidenamebox
-    namebox(surge)
+     
+    speakername(surge)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Mom?\pOh.. you mean that thing..."),MSGBOX_AUTOCLOSE)
-    hidenamebox
+     
     waitmessage
     applymovement(6,surde)
     applymovement(OBJ_EVENT_ID_CAMERA,camera4)
     waitmovement(0)
     applymovement(OBJ_EVENT_ID_CAMERA,camera5)
     special(RemoveCameraObject)
-    namebox(surge)
+    speakername(surge)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}She was a tough one.\pNo one's ever survived a fusion with a Poison-type before, but she did.\p And even after all that...\n she still had a sliver of consciousness left.\pShe even tried to take us down.\pBut luckily, we recieved orders to put an end to that toxic bitch."),MSGBOX_AUTOCLOSE)
-    hidenamebox
-    namebox(Xylar)
+     
+    speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You...What the fuck did you just called my Mom?"),MSGBOX_AUTOCLOSE)
-    hidenamebox
-    namebox(surge)
+     
+    speakername(surge)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Struck a nerve, did I?\pHeh... Not surprising.\pShe was strong, I'll give her that. Even tried to kill us.\pBut in the end, we were ordered to dispose of that TOXIC mistake. Guess her strength wasn't enough, huh?"),MSGBOX_AUTOCLOSE)
-    hidenamebox
-    namebox(Xylar)
+     
+    speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You... You bastards... You... killed her?! You destroyed everything! I'll make you pay, I swear..."),MSGBOX_AUTOCLOSE)
-    hidenamebox
-    namebox(surge)
+     
+    speakername(surge)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Kid, you don't get it, do you? Your father, Aurther, saved the world once. He fought to stop Nexus Order from controlling Hoopa. But you know what they say, right?\pWhen a hero is too strong... he's always killed by the very people he saved."),MSGBOX_AUTOCLOSE)
-    hidenamebox
-    namebox(Xylar)
+     
+    speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}But why would you kill him?\pHe was a hero, he saved you guys ...he saved the world."),MSGBOX_AUTOCLOSE)
-    hidenamebox
-    namebox(surge)
+     
+    speakername(surge)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You still don't get it.\pWhy, you ask?\pBecause no matter what, he would never understand.\pHe led an organization that no one could defeat, but his ambitions didn't match the power of the organization.\pHe clung to those narrow ideals of justice and equality, fighting crime like some glorified cop!\pDo you really believe that?\pWe're not cops, we're the strongest.\pPeople fear going against us.\pHe wasn't qualified to be our leader.\pBut then HE joined. He had the ambition and the vision to lead us.\pHe was destined to be our leader."),MSGBOX_AUTOCLOSE)
-    hidenamebox
-    namebox(Xylar)
+     
+    speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Your leader? So you killed my father because he wasn't qualified? Because he believed in justice and equality?!\pAnd now you follow someone who thinks ambition is all that matters?\pYou're insane."),MSGBOX_AUTOCLOSE)
-    hidenamebox
-    namebox(surge)
+     
+    speakername(surge)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}He made Aurther step down from leadership as soon as he realized Aurther wasn't the one.\pYou see...\nEverything has always been according to his plan.\pBut your father tried to stop him and that's why he's dead.\pAll he wants is to reshape this world into something far more perfect: a world with no ruler, where everyone is equal, where no one starves, and where wealth and status don't exist.\pThat, he believes, We believe is true justice."),MSGBOX_AUTOCLOSE)
-  hidenamebox
-    namebox(Xylar)
+   
+    speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't give a damn about your leader or whatever twisted mess you've created.\nLet me make one thing crystal clear:\pNo matter who you are I'll destroy every single one of you. If there are hundreds of you I'll wipe every last one off the map.\pAnd if, by some sick twist of fate, you manage to create your so-called PERFECT WORLD....\pI'LL BURN THAT {COLOR RED}{SHADOW LIGHT_GRAY}PERFECT WORLD {COLOR BLUE}{SHADOW LIGHT_GRAY}OF YOURS."),MSGBOX_AUTOCLOSE)
-    hidenamebox
-    namebox(surge)
+     
+    speakername(surge)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You've got guts, kid. But don't fool yourself..nothing you do will ever be enough to break us. We're more than just an organization, we're a force that's reshaping the world. And if you think you can stand in our way, you're in for a world of hurt."),MSGBOX_AUTOCLOSE)
-    hidenamebox
-    namebox(Xylar)
+     
+    speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You can keep your delusions of grandeur. I've lost everything that mattered to me because of your kind. Every threat you make just fuels my rage.\pIf you think you're unstoppable, then good. I want you to understand the full depth of what you've created...\pstarting with you. I'll make sure you feel every bit of my pain and anger. It's time to settle this once and for all."),MSGBOX_AUTOCLOSE)
-    hidenamebox
+     
     trainerbattle_no_intro(SPARK_ADMIN_SURGE,surgelose)
-    namebox(surge)
+    speakername(surge)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You were lucky since Aurther injured my pokemon, they were not in the condition to fight but I'll defeat you next time since I'm stronger than you."),MSGBOX_AUTOCLOSE)
-    hidenamebox
-    namebox(Xylar)
+     
+    speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Let me tell you one thing, you see...\p I once heard someone saying that....\p Even the strongest can fall if you kill them."),MSGBOX_AUTOCLOSE)
-    hidenamebox
+     
     waitmessage
     applymovement(6,exclam)
-    namebox(surge)
+    speakername(surge)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}What the ..."),MSGBOX_AUTOCLOSE)
-    hidenamebox
-    namebox(Xylar)
+     
+    speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Mewtwo!"),MSGBOX_AUTOCLOSE)
-    hidenamebox
+     
     applymovement(10,fireball)
     waitmovement(0)
-    namebox(Xylar)
+    speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Use FireBlast!"),MSGBOX_AUTOCLOSE)
-    hidenamebox
+     
     playfirstmoncry
     waitmoncry
     applymovement(11,visible)
@@ -211,15 +211,15 @@ script Surgebattle {
     removeobject(11)
     removeobject(12)
     removeobject(13)   
-    namebox(Xylar)
+    speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Surge, you were just the start. This {COLOR RED}{SHADOW LIGHT_GRAY}Crimson Requiem {COLOR BLUE}{SHADOW LIGHT_GRAY}I've begun will be a symphony of retribution. Your death marks the first note in a melody of vengeance that will echo until everyone who wronged me has met their end. This is only the beginning."),MSGBOX_AUTOCLOSE)
-    hidenamebox
+     
     waitmessage
     applymovement(OBJ_EVENT_ID_PLAYER,startcrim)
     waitmovement(0)
-    namebox(Xylar)
+    speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I'm sorry, Mother... I failed you. I failed Father. But this… this isn't the end. I swear, they'll pay with everything they have. They stole you from me, and now… they'll face my wrath.\pThey think they can reshape this world, make it perfect by taking everything I hold dear. But I'll show them what true destruction is. I'll bring them the blood and ruin they deserve.\pThis is just the beginning... the {COLOR RED}{SHADOW LIGHT_GRAY}Crimson Requiem{COLOR BLUE}{SHADOW LIGHT_GRAY} will echo through their perfect world until it all crumbles into dust. They'll wish they'd never taken you away. I'll end them all... one by one.\pLet's go Mom."),MSGBOX_AUTOCLOSE)
-    hidenamebox
+     
     fadescreen(FADE_TO_BLACK)
     msgbox(format("A few days later........"),MSGBOX_AUTOCLOSE)
     destroyfollower

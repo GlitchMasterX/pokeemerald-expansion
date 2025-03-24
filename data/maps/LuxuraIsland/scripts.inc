@@ -55,29 +55,21 @@ ran::
 # 30 "data/maps/LuxuraIsland/scripts.pory"
 	waitmovement 0
 # 31 "data/maps/LuxuraIsland/scripts.pory"
-	namebox name4
+	speakername name4
 # 32 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox ran_Text_0, MSGBOX_AUTOCLOSE
-# 33 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 34 "data/maps/LuxuraIsland/scripts.pory"
-	namebox gardener
+	speakername gardener
 # 35 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox ran_Text_1, MSGBOX_AUTOCLOSE
-# 36 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 37 "data/maps/LuxuraIsland/scripts.pory"
-	namebox name4
+	speakername name4
 # 38 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox ran_Text_2, MSGBOX_AUTOCLOSE
-# 39 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 40 "data/maps/LuxuraIsland/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 41 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox ran_Text_3, MSGBOX_AUTOCLOSE
-# 42 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 43 "data/maps/LuxuraIsland/scripts.pory"
 	playbgm MUS_HG_FOLLOW_ME_2, TRUE
 # 44 "data/maps/LuxuraIsland/scripts.pory"
@@ -91,23 +83,17 @@ ran::
 # 48 "data/maps/LuxuraIsland/scripts.pory"
 	special RemoveCameraObject
 # 49 "data/maps/LuxuraIsland/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 50 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox ran_Text_4, MSGBOX_AUTOCLOSE
-# 51 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 52 "data/maps/LuxuraIsland/scripts.pory"
-	namebox name4
+	speakername name4
 # 53 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox ran_Text_5, MSGBOX_AUTOCLOSE
-# 54 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 55 "data/maps/LuxuraIsland/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 56 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox ran_Text_6, MSGBOX_AUTOCLOSE
-# 57 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 58 "data/maps/LuxuraIsland/scripts.pory"
 	applymovement 1, rum
 # 59 "data/maps/LuxuraIsland/scripts.pory"
@@ -115,19 +101,15 @@ ran::
 # 60 "data/maps/LuxuraIsland/scripts.pory"
 	waitmovement 0
 # 61 "data/maps/LuxuraIsland/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 62 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox ran_Text_7, MSGBOX_AUTOCLOSE
-# 63 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 64 "data/maps/LuxuraIsland/scripts.pory"
 	waitmessage
 # 65 "data/maps/LuxuraIsland/scripts.pory"
-	namebox name4
+	speakername name4
 # 66 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox ran_Text_8, MSGBOX_AUTOCLOSE
-# 67 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 68 "data/maps/LuxuraIsland/scripts.pory"
 	applymovement 1, move
 # 69 "data/maps/LuxuraIsland/scripts.pory"
@@ -135,19 +117,15 @@ ran::
 # 70 "data/maps/LuxuraIsland/scripts.pory"
 	waitmovement 0
 # 71 "data/maps/LuxuraIsland/scripts.pory"
-	namebox name4
+	speakername name4
 # 72 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox ran_Text_9, MSGBOX_AUTOCLOSE
-# 73 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 74 "data/maps/LuxuraIsland/scripts.pory"
 	applymovement 1, falls
 # 75 "data/maps/LuxuraIsland/scripts.pory"
-	namebox name4
+	speakername name4
 # 76 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox ran_Text_10
-# 77 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 78 "data/maps/LuxuraIsland/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, fall
 # 79 "data/maps/LuxuraIsland/scripts.pory"
@@ -155,33 +133,25 @@ ran::
 # 80 "data/maps/LuxuraIsland/scripts.pory"
 	applymovement 3, fallss
 # 81 "data/maps/LuxuraIsland/scripts.pory"
-	namebox name4
+	speakername name4
 # 82 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox ran_Text_11
-# 83 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 84 "data/maps/LuxuraIsland/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 85 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox ran_Text_12
-# 86 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 87 "data/maps/LuxuraIsland/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, falll
 # 88 "data/maps/LuxuraIsland/scripts.pory"
 	waitmovement 0
 # 89 "data/maps/LuxuraIsland/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 90 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox ran_Text_13
-# 91 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 92 "data/maps/LuxuraIsland/scripts.pory"
-	namebox name4
+	speakername name4
 # 93 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox ran_Text_14
-# 94 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 95 "data/maps/LuxuraIsland/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, fallls
 # 96 "data/maps/LuxuraIsland/scripts.pory"
@@ -189,21 +159,17 @@ ran::
 # 97 "data/maps/LuxuraIsland/scripts.pory"
 	waitmovement 0
 # 98 "data/maps/LuxuraIsland/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 99 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox ran_Text_15
-# 100 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 101 "data/maps/LuxuraIsland/scripts.pory"
 	applymovement 4, fals
 # 102 "data/maps/LuxuraIsland/scripts.pory"
 	waitmovement 0
 # 103 "data/maps/LuxuraIsland/scripts.pory"
-	namebox name4
+	speakername name4
 # 104 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox ran_Text_16
-# 105 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 106 "data/maps/LuxuraIsland/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 107 "data/maps/LuxuraIsland/scripts.pory"
@@ -225,41 +191,29 @@ ran::
 # 115 "data/maps/LuxuraIsland/scripts.pory"
 	fadescreen FADE_FROM_BLACK
 # 116 "data/maps/LuxuraIsland/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 117 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox ran_Text_17
-# 118 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 119 "data/maps/LuxuraIsland/scripts.pory"
-	namebox name4
+	speakername name4
 # 120 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox ran_Text_18
-# 121 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 122 "data/maps/LuxuraIsland/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 123 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox ran_Text_19
-# 124 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 125 "data/maps/LuxuraIsland/scripts.pory"
-	namebox name4
+	speakername name4
 # 126 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox ran_Text_20
-# 127 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 128 "data/maps/LuxuraIsland/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 129 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox ran_Text_21
-# 130 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 131 "data/maps/LuxuraIsland/scripts.pory"
-	namebox name4
+	speakername name4
 # 132 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox ran_Text_22
-# 133 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 134 "data/maps/LuxuraIsland/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 135 "data/maps/LuxuraIsland/scripts.pory"
@@ -701,17 +655,13 @@ indoor::
 # 268 "data/maps/LuxuraIsland/scripts.pory"
 	waitmovement 0
 # 269 "data/maps/LuxuraIsland/scripts.pory"
-	namebox name4
+	speakername name4
 # 270 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox indoor_Text_0
-# 271 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 272 "data/maps/LuxuraIsland/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 273 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox indoor_Text_1
-# 274 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 275 "data/maps/LuxuraIsland/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 276 "data/maps/LuxuraIsland/scripts.pory"
@@ -771,21 +721,17 @@ stroll::
 # 308 "data/maps/LuxuraIsland/scripts.pory"
 	waitmovement 0
 # 309 "data/maps/LuxuraIsland/scripts.pory"
-	namebox name4
+	speakername name4
 # 310 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox stroll_Text_0
-# 311 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 312 "data/maps/LuxuraIsland/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, strp
 # 313 "data/maps/LuxuraIsland/scripts.pory"
 	waitmovement 0
 # 314 "data/maps/LuxuraIsland/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 315 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox stroll_Text_1
-# 316 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 317 "data/maps/LuxuraIsland/scripts.pory"
 	setfollower 5, FOLLOWER_FLAG_CAN_LEAVE_ROUTE, mirafollowerscript
 # 318 "data/maps/LuxuraIsland/scripts.pory"
@@ -809,11 +755,9 @@ mirafollowerscript::
 # 327 "data/maps/LuxuraIsland/scripts.pory"
 	facefollower
 # 328 "data/maps/LuxuraIsland/scripts.pory"
-	namebox name4
+	speakername name4
 # 329 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox stroll_Text_0
-# 330 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 331 "data/maps/LuxuraIsland/scripts.pory"
 	release
 	return
@@ -1074,11 +1018,9 @@ strolll::
 # 442 "data/maps/LuxuraIsland/scripts.pory"
 	applymovement 0xFD, strp
 # 443 "data/maps/LuxuraIsland/scripts.pory"
-	namebox name4
+	speakername name4
 # 444 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox strolll_Text_0
-# 445 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 446 "data/maps/LuxuraIsland/scripts.pory"
 	releaseall
 	return
@@ -1140,11 +1082,9 @@ bloodsee::
 # 479 "data/maps/LuxuraIsland/scripts.pory"
 	facefollower
 # 480 "data/maps/LuxuraIsland/scripts.pory"
-	namebox name4
+	speakername name4
 # 481 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox bloodsee_Text_0
-# 482 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 483 "data/maps/LuxuraIsland/scripts.pory"
 	releaseall
 # 484 "data/maps/LuxuraIsland/scripts.pory"
@@ -1160,11 +1100,9 @@ blo::
 # 490 "data/maps/LuxuraIsland/scripts.pory"
 	applymovement 0xFD, io
 # 491 "data/maps/LuxuraIsland/scripts.pory"
-	namebox name4
+	speakername name4
 # 492 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox bloodsee_Text_0
-# 493 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 494 "data/maps/LuxuraIsland/scripts.pory"
 	releaseall
 	return
@@ -1193,11 +1131,9 @@ strollll::
 # 510 "data/maps/LuxuraIsland/scripts.pory"
 	applymovement 0xFD, strp
 # 511 "data/maps/LuxuraIsland/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 512 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox strollll_Text_0
-# 513 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 514 "data/maps/LuxuraIsland/scripts.pory"
 	releaseall
 	return
@@ -1292,11 +1228,9 @@ strolllll::
 # 568 "data/maps/LuxuraIsland/scripts.pory"
 	applymovement 0xFD, strrp
 # 569 "data/maps/LuxuraIsland/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 570 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox strollll_Text_0
-# 571 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 572 "data/maps/LuxuraIsland/scripts.pory"
 	release
 	return
@@ -1316,11 +1250,9 @@ stded::
 # 581 "data/maps/LuxuraIsland/scripts.pory"
 	applymovement 0xFD, strrp
 # 582 "data/maps/LuxuraIsland/scripts.pory"
-	namebox name4
+	speakername name4
 # 583 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox strolll_Text_0
-# 584 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 585 "data/maps/LuxuraIsland/scripts.pory"
 	release
 	return
@@ -1336,11 +1268,9 @@ alistairarrive::
 # 592 "data/maps/LuxuraIsland/scripts.pory"
 	waitmovement 0
 # 593 "data/maps/LuxuraIsland/scripts.pory"
-	namebox unknown
+	speakername unknown
 # 594 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox alistairarrive_Text_0, MSGBOX_AUTOCLOSE
-# 595 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 596 "data/maps/LuxuraIsland/scripts.pory"
 	waitmessage
 # 597 "data/maps/LuxuraIsland/scripts.pory"
@@ -1352,11 +1282,9 @@ alistairarrive::
 # 600 "data/maps/LuxuraIsland/scripts.pory"
 	playbgm MUS_PL_TITLE, FALSE
 # 601 "data/maps/LuxuraIsland/scripts.pory"
-	namebox unknown
+	speakername unknown
 # 602 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox alistairarrive_Text_1, MSGBOX_AUTOCLOSE
-# 603 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 604 "data/maps/LuxuraIsland/scripts.pory"
 	applymovement 13, exclam
 # 605 "data/maps/LuxuraIsland/scripts.pory"
@@ -1368,11 +1296,9 @@ alistairarrive::
 # 608 "data/maps/LuxuraIsland/scripts.pory"
 	applymovement 14, alistairarrive2
 # 609 "data/maps/LuxuraIsland/scripts.pory"
-	namebox unknown
+	speakername unknown
 # 610 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox alistairarrive_Text_2, MSGBOX_AUTOCLOSE
-# 611 "data/maps/LuxuraIsland/scripts.pory"
-	hidenamebox
 # 612 "data/maps/LuxuraIsland/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 613 "data/maps/LuxuraIsland/scripts.pory"

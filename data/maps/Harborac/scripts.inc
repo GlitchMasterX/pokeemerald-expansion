@@ -24,35 +24,25 @@ ONHARBOR1::
 # 12 "data/maps/Harborac/scripts.pory"
 	lock
 # 13 "data/maps/Harborac/scripts.pory"
-	namebox oldman
+	speakername oldman
 # 14 "data/maps/Harborac/scripts.pory"
 	msgbox ONHARBOR1_Text_0
-# 15 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 16 "data/maps/Harborac/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 17 "data/maps/Harborac/scripts.pory"
 	msgbox ONHARBOR1_Text_1
-# 18 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 19 "data/maps/Harborac/scripts.pory"
-	namebox oldman
+	speakername oldman
 # 20 "data/maps/Harborac/scripts.pory"
 	msgbox ONHARBOR1_Text_2
-# 21 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 22 "data/maps/Harborac/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 23 "data/maps/Harborac/scripts.pory"
 	msgbox ONHARBOR1_Text_3
-# 24 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 25 "data/maps/Harborac/scripts.pory"
-	namebox oldman
+	speakername oldman
 # 26 "data/maps/Harborac/scripts.pory"
 	msgbox ONHARBOR1_Text_4, MSGBOX_AUTOCLOSE
-# 27 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 28 "data/maps/Harborac/scripts.pory"
 	waitmessage
 # 29 "data/maps/Harborac/scripts.pory"
@@ -70,11 +60,9 @@ ONHARBOR1::
 # 35 "data/maps/Harborac/scripts.pory"
 	applymovement 0xFF, MOVE2
 # 36 "data/maps/Harborac/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 37 "data/maps/Harborac/scripts.pory"
 	msgbox ONHARBOR1_Text_5
-# 38 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 39 "data/maps/Harborac/scripts.pory"
 	fadedefaultbgm
 # 40 "data/maps/Harborac/scripts.pory"
@@ -136,11 +124,9 @@ Fionamet::
 # 72 "data/maps/Harborac/scripts.pory"
 	waitmovement 0
 # 73 "data/maps/Harborac/scripts.pory"
-	namebox unknown
+	speakername unknown
 # 74 "data/maps/Harborac/scripts.pory"
 	msgbox Fionamet_Text_0
-# 75 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 76 "data/maps/Harborac/scripts.pory"
 	applymovement 13, MOVE5
 # 77 "data/maps/Harborac/scripts.pory"
@@ -156,11 +142,9 @@ Fionamet::
 # 82 "data/maps/Harborac/scripts.pory"
 	applymovement 13, MOVE1
 # 83 "data/maps/Harborac/scripts.pory"
-	namebox unknown
+	speakername unknown
 # 84 "data/maps/Harborac/scripts.pory"
 	msgbox Fionamet_Text_3
-# 85 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 86 "data/maps/Harborac/scripts.pory"
 	msgbox Fionamet_Text_4
 # 87 "data/maps/Harborac/scripts.pory"
@@ -168,11 +152,9 @@ Fionamet::
 # 88 "data/maps/Harborac/scripts.pory"
 	applymovement 12, mov1
 # 89 "data/maps/Harborac/scripts.pory"
-	namebox unknown
+	speakername unknown
 # 90 "data/maps/Harborac/scripts.pory"
 	msgbox Fionamet_Text_5, MSGBOX_AUTOCLOSE
-# 91 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 92 "data/maps/Harborac/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 93 "data/maps/Harborac/scripts.pory"
@@ -441,23 +423,17 @@ elias::
 # 209 "data/maps/Harborac/scripts.pory"
 	applymovement 1, exclam
 # 210 "data/maps/Harborac/scripts.pory"
-	namebox unknown
+	speakername unknown
 # 211 "data/maps/Harborac/scripts.pory"
 	msgbox elias_Text_0
-# 212 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 213 "data/maps/Harborac/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 214 "data/maps/Harborac/scripts.pory"
 	msgbox elias_Text_1
-# 215 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 216 "data/maps/Harborac/scripts.pory"
-	namebox eliasn
+	speakername eliasn
 # 217 "data/maps/Harborac/scripts.pory"
 	msgbox elias_Text_2
-# 218 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 219 "data/maps/Harborac/scripts.pory"
 	applymovement 1, goin
 # 220 "data/maps/Harborac/scripts.pory"
@@ -465,11 +441,9 @@ elias::
 # 221 "data/maps/Harborac/scripts.pory"
 	waitse
 # 222 "data/maps/Harborac/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 223 "data/maps/Harborac/scripts.pory"
 	msgbox ONHARBOR1_Text_3
-# 224 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 225 "data/maps/Harborac/scripts.pory"
 	applymovement 0xFF, goin
 # 226 "data/maps/Harborac/scripts.pory"
@@ -602,11 +576,9 @@ AcademyNpc2_3:
 # 305 "data/maps/Harborac/scripts.pory"
 	faceplayer
 # 306 "data/maps/Harborac/scripts.pory"
-	namebox eliasn
+	speakername eliasn
 # 307 "data/maps/Harborac/scripts.pory"
 	msgbox AcademyNpc2_Text_2
-# 308 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 309 "data/maps/Harborac/scripts.pory"
 	release
 	return
@@ -617,11 +589,9 @@ AcademyNpc2_1:
 # 289 "data/maps/Harborac/scripts.pory"
 	faceplayer
 # 290 "data/maps/Harborac/scripts.pory"
-	namebox eliasn
+	speakername eliasn
 # 291 "data/maps/Harborac/scripts.pory"
 	msgbox AcademyNpc2_Text_0
-# 292 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 293 "data/maps/Harborac/scripts.pory"
 	release
 	return
@@ -632,11 +602,9 @@ AcademyNpc2_2:
 # 297 "data/maps/Harborac/scripts.pory"
 	faceplayer
 # 298 "data/maps/Harborac/scripts.pory"
-	namebox eliasn
+	speakername eliasn
 # 299 "data/maps/Harborac/scripts.pory"
 	msgbox AcademyNpc2_Text_1
-# 300 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 301 "data/maps/Harborac/scripts.pory"
 	release
 	return
@@ -746,11 +714,9 @@ AcademyNpc5_3:
 # 375 "data/maps/Harborac/scripts.pory"
 	faceplayer
 # 376 "data/maps/Harborac/scripts.pory"
-	namebox maribel
+	speakername maribel
 # 377 "data/maps/Harborac/scripts.pory"
 	msgbox AcademyNpc5_Text_2
-# 378 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 379 "data/maps/Harborac/scripts.pory"
 	release
 	return
@@ -761,11 +727,9 @@ AcademyNpc5_1:
 # 359 "data/maps/Harborac/scripts.pory"
 	faceplayer
 # 360 "data/maps/Harborac/scripts.pory"
-	namebox maribel
+	speakername maribel
 # 361 "data/maps/Harborac/scripts.pory"
 	msgbox AcademyNpc5_Text_0
-# 362 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 363 "data/maps/Harborac/scripts.pory"
 	release
 	return
@@ -776,11 +740,9 @@ AcademyNpc5_2:
 # 367 "data/maps/Harborac/scripts.pory"
 	faceplayer
 # 368 "data/maps/Harborac/scripts.pory"
-	namebox maribel
+	speakername maribel
 # 369 "data/maps/Harborac/scripts.pory"
 	msgbox AcademyNpc5_Text_1
-# 370 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 371 "data/maps/Harborac/scripts.pory"
 	release
 	return
@@ -846,11 +808,9 @@ AcademyNpc7_3:
 # 426 "data/maps/Harborac/scripts.pory"
 	faceplayer
 # 427 "data/maps/Harborac/scripts.pory"
-	namebox orson
+	speakername orson
 # 428 "data/maps/Harborac/scripts.pory"
 	msgbox AcademyNpc7_Text_2
-# 429 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 430 "data/maps/Harborac/scripts.pory"
 	release
 	return
@@ -861,11 +821,9 @@ AcademyNpc7_1:
 # 410 "data/maps/Harborac/scripts.pory"
 	faceplayer
 # 411 "data/maps/Harborac/scripts.pory"
-	namebox orson
+	speakername orson
 # 412 "data/maps/Harborac/scripts.pory"
 	msgbox AcademyNpc7_Text_0
-# 413 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 414 "data/maps/Harborac/scripts.pory"
 	release
 	return
@@ -876,11 +834,9 @@ AcademyNpc7_2:
 # 418 "data/maps/Harborac/scripts.pory"
 	faceplayer
 # 419 "data/maps/Harborac/scripts.pory"
-	namebox orson
+	speakername orson
 # 420 "data/maps/Harborac/scripts.pory"
 	msgbox AcademyNpc7_Text_1
-# 421 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 422 "data/maps/Harborac/scripts.pory"
 	release
 	return
@@ -943,11 +899,9 @@ AcademyNpc9::
 # 470 "data/maps/Harborac/scripts.pory"
 	faceplayer
 # 471 "data/maps/Harborac/scripts.pory"
-	namebox serena
+	speakername serena
 # 472 "data/maps/Harborac/scripts.pory"
 	msgbox AcademyNpc9_Text_1
-# 473 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 474 "data/maps/Harborac/scripts.pory"
 	release
 	return
@@ -958,11 +912,9 @@ AcademyNpc9_1:
 # 462 "data/maps/Harborac/scripts.pory"
 	faceplayer
 # 463 "data/maps/Harborac/scripts.pory"
-	namebox serena
+	speakername serena
 # 464 "data/maps/Harborac/scripts.pory"
 	msgbox AcademyNpc9_Text_0
-# 465 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 466 "data/maps/Harborac/scripts.pory"
 	release
 	return
@@ -976,11 +928,9 @@ AcademyNpc10::
 # 488 "data/maps/Harborac/scripts.pory"
 	faceplayer
 # 489 "data/maps/Harborac/scripts.pory"
-	namebox evelyn
+	speakername evelyn
 # 490 "data/maps/Harborac/scripts.pory"
 	msgbox AcademyNpc10_Text_1
-# 491 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 492 "data/maps/Harborac/scripts.pory"
 	release
 	return
@@ -991,11 +941,9 @@ AcademyNpc10_1:
 # 480 "data/maps/Harborac/scripts.pory"
 	faceplayer
 # 481 "data/maps/Harborac/scripts.pory"
-	namebox evelyn
+	speakername evelyn
 # 482 "data/maps/Harborac/scripts.pory"
 	msgbox AcademyNpc10_Text_0
-# 483 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 484 "data/maps/Harborac/scripts.pory"
 	release
 	return
@@ -1198,11 +1146,9 @@ AcademyNpc15_3:
 # 599 "data/maps/Harborac/scripts.pory"
 	faceplayer
 # 600 "data/maps/Harborac/scripts.pory"
-	namebox alistair
+	speakername alistair
 # 601 "data/maps/Harborac/scripts.pory"
 	msgbox AcademyNpc15_Text_2
-# 602 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 603 "data/maps/Harborac/scripts.pory"
 	release
 	return
@@ -1213,11 +1159,9 @@ AcademyNpc15_1:
 # 583 "data/maps/Harborac/scripts.pory"
 	faceplayer
 # 584 "data/maps/Harborac/scripts.pory"
-	namebox alistair
+	speakername alistair
 # 585 "data/maps/Harborac/scripts.pory"
 	msgbox AcademyNpc15_Text_0
-# 586 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 587 "data/maps/Harborac/scripts.pory"
 	release
 	return
@@ -1228,11 +1172,9 @@ AcademyNpc15_2:
 # 591 "data/maps/Harborac/scripts.pory"
 	faceplayer
 # 592 "data/maps/Harborac/scripts.pory"
-	namebox alistair
+	speakername alistair
 # 593 "data/maps/Harborac/scripts.pory"
 	msgbox AcademyNpc15_Text_1
-# 594 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 595 "data/maps/Harborac/scripts.pory"
 	release
 	return
@@ -1579,11 +1521,9 @@ AcademyNpc27_3:
 # 793 "data/maps/Harborac/scripts.pory"
 	faceplayer
 # 794 "data/maps/Harborac/scripts.pory"
-	namebox unknown
+	speakername unknown
 # 795 "data/maps/Harborac/scripts.pory"
 	msgbox AcademyNpc27_Text_2
-# 796 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 797 "data/maps/Harborac/scripts.pory"
 	release
 	return
@@ -1594,11 +1534,9 @@ AcademyNpc27_1:
 # 777 "data/maps/Harborac/scripts.pory"
 	faceplayer
 # 778 "data/maps/Harborac/scripts.pory"
-	namebox unknown
+	speakername unknown
 # 779 "data/maps/Harborac/scripts.pory"
 	msgbox AcademyNpc27_Text_0
-# 780 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 781 "data/maps/Harborac/scripts.pory"
 	release
 	return
@@ -1609,11 +1547,9 @@ AcademyNpc27_2:
 # 785 "data/maps/Harborac/scripts.pory"
 	faceplayer
 # 786 "data/maps/Harborac/scripts.pory"
-	namebox unknown
+	speakername unknown
 # 787 "data/maps/Harborac/scripts.pory"
 	msgbox AcademyNpc27_Text_1
-# 788 "data/maps/Harborac/scripts.pory"
-	hidenamebox
 # 789 "data/maps/Harborac/scripts.pory"
 	release
 	return
@@ -2829,16 +2765,16 @@ oldman::
 
 eliasn::
 # 235 "data/maps/Harborac/scripts.pory"
-	.string "Elias$"
+	.string "Prof.Elias$"
 
 maribel::
 # 383 "data/maps/Harborac/scripts.pory"
-	.string "Dorne$"
+	.string "Prof.Dorne$"
 
 orson::
 # 434 "data/maps/Harborac/scripts.pory"
-	.string "Orson$"
+	.string "Prof.Orson$"
 
 evelyn::
 # 495 "data/maps/Harborac/scripts.pory"
-	.string "Evelyn$"
+	.string "Prof.Evelyn$"

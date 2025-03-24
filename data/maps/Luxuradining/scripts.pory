@@ -15,12 +15,12 @@ script Youwake {
 	applymovement(OBJ_EVENT_ID_CAMERA,camera2)
 	waitmovement(0)
 	applymovement(2,mom)
-	namebox(Xylar)
+	speakername(Xylar1)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Good Morning, Mom,Dad.\pSorry to keep you waiting."),MSGBOX_AUTOCLOSE)
-	hidenamebox
-	namebox(name3)
+	 
+	speakername(name3)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}No need to apologize.We were just discussing today's plans.\pCome sit next to me."),MSGBOX_AUTOCLOSE)
-	hidenamebox
+	 
 	applymovement(OBJ_EVENT_ID_CAMERA,camera3)
 	waitmovement(0)
 	special(RemoveCameraObject)
@@ -29,56 +29,56 @@ script Youwake {
 	special(SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_CAMERA,camera4)
 	waitmovement(0)
-	namebox(name2)
+	speakername(name2)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}How did you sleep dear?"),MSGBOX_AUTOCLOSE)
-    hidenamebox
-	namebox(Xylar)
+     
+	speakername(Xylar1)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I slept well."),MSGBOX_AUTOCLOSE)
-	hidenamebox
+	 
 	applymovement(OBJ_EVENT_ID_PLAYER,mlq)
-	namebox(Xylar)
+	speakername(Xylar1)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Where is my Ramen?"),MSGBOX_AUTOCLOSE)
-	hidenamebox
+	 
 	applymovement(1,mlo)
-    namebox(name3)
+    speakername(name3)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Ramen? I thought I forbade it."),MSGBOX_AUTOCLOSE)
-	hidenamebox
+	 
 	applymovement(1,mol)
 	waitmovement(0)
-	namebox(Xylar)
+	speakername(Xylar1)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}But Mira told me you allowed it for today."),MSGBOX_AUTOCLOSE)
-	hidenamebox
+	 
 	applymovement(2,happy)
 	applymovement(1,happy)
-	namebox(name3)
+	speakername(name3)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Hahahaha..\pShe got you again."),MSGBOX_AUTOCLOSE)
-	hidenamebox
-	namebox(Xylar)
+	 
+	speakername(Xylar1)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}What do you mean?"),MSGBOX_AUTOCLOSE)
-	hidenamebox	
-	namebox(name2)
+	 	
+	speakername(name2)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}You have been tricked my dear."))
-    hidenamebox
+     
 	applymovement(OBJ_EVENT_ID_PLAYER,upset)
 	waitmovement(0)
-    namebox(name3)
+    speakername(name3)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Ok, now lets eat before the food gets cold."))
-	hidenamebox
-	namebox(name2)
+	 
+	speakername(name2)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Sure\pMaids!"),MSGBOX_AUTOCLOSE)
-    hidenamebox
+     
 	fadescreen(FADE_TO_BLACK)
 	playse(SE_USE_ITEM)
 	waitse
 	playse(SE_M_BITE)
 	waitse
 	fadescreen(FADE_FROM_BLACK)
-	namebox(Xylar)
+	speakername(Xylar1)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Where is Mira?\pI need to ask her something."))
-	hidenamebox
-	namebox(name2)
+	 
+	speakername(name2)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}She's out helping the gardener."))
-    hidenamebox
+     
 	applymovement(OBJ_EVENT_ID_CAMERA,camera5)
 	waitmovement(0)
 	special(RemoveCameraObject)
@@ -126,17 +126,17 @@ movement upset {
 script Mom {
 	lock
 	faceplayer
-	namebox(name2)
+	speakername(name2)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}She's always successful in tricking you"))
-	hidenamebox
+	 
 	release
 }
 script Dad{
 	lock 
 	faceplayer
-	namebox(name3)
+	speakername(name3)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Guess you guys are really close.\pShe always knows how to trick you."))
-    hidenamebox
+     
 	release
 }
 script waiting {
@@ -159,17 +159,17 @@ script Luxuradining_MapScripts_MAP_SCRIPT_ON_LOAD {
 script garden {
 	lock
 	faceplayer
-	namebox(gardener)
+	speakername(gardener)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}This garden has never looked better, thanks to Lady Mira."))
-	hidenamebox
+	 
 	release
 }
 script rest{
 	lock
 	faceplayer
-	namebox("Maid")
+	speakername("Maid")
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Good day, Young Master! It's my rest day so I'm taking it easy.\pBut if you need anything, just let me know."))
-	hidenamebox
+	 
 	release
 }
 script nurse{

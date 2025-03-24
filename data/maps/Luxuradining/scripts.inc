@@ -31,17 +31,13 @@ Youwake::
 # 17 "data/maps/Luxuradining/scripts.pory"
 	applymovement 2, mom
 # 18 "data/maps/Luxuradining/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 19 "data/maps/Luxuradining/scripts.pory"
 	msgbox Youwake_Text_0, MSGBOX_AUTOCLOSE
-# 20 "data/maps/Luxuradining/scripts.pory"
-	hidenamebox
 # 21 "data/maps/Luxuradining/scripts.pory"
-	namebox name3
+	speakername name3
 # 22 "data/maps/Luxuradining/scripts.pory"
 	msgbox Youwake_Text_1, MSGBOX_AUTOCLOSE
-# 23 "data/maps/Luxuradining/scripts.pory"
-	hidenamebox
 # 24 "data/maps/Luxuradining/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, camera3
 # 25 "data/maps/Luxuradining/scripts.pory"
@@ -59,81 +55,61 @@ Youwake::
 # 31 "data/maps/Luxuradining/scripts.pory"
 	waitmovement 0
 # 32 "data/maps/Luxuradining/scripts.pory"
-	namebox name2
+	speakername name2
 # 33 "data/maps/Luxuradining/scripts.pory"
 	msgbox Youwake_Text_2, MSGBOX_AUTOCLOSE
-# 34 "data/maps/Luxuradining/scripts.pory"
-	hidenamebox
 # 35 "data/maps/Luxuradining/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 36 "data/maps/Luxuradining/scripts.pory"
 	msgbox Youwake_Text_3, MSGBOX_AUTOCLOSE
-# 37 "data/maps/Luxuradining/scripts.pory"
-	hidenamebox
 # 38 "data/maps/Luxuradining/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, mlq
 # 39 "data/maps/Luxuradining/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 40 "data/maps/Luxuradining/scripts.pory"
 	msgbox Youwake_Text_4, MSGBOX_AUTOCLOSE
-# 41 "data/maps/Luxuradining/scripts.pory"
-	hidenamebox
 # 42 "data/maps/Luxuradining/scripts.pory"
 	applymovement 1, mlo
 # 43 "data/maps/Luxuradining/scripts.pory"
-	namebox name3
+	speakername name3
 # 44 "data/maps/Luxuradining/scripts.pory"
 	msgbox Youwake_Text_5, MSGBOX_AUTOCLOSE
-# 45 "data/maps/Luxuradining/scripts.pory"
-	hidenamebox
 # 46 "data/maps/Luxuradining/scripts.pory"
 	applymovement 1, mol
 # 47 "data/maps/Luxuradining/scripts.pory"
 	waitmovement 0
 # 48 "data/maps/Luxuradining/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 49 "data/maps/Luxuradining/scripts.pory"
 	msgbox Youwake_Text_6, MSGBOX_AUTOCLOSE
-# 50 "data/maps/Luxuradining/scripts.pory"
-	hidenamebox
 # 51 "data/maps/Luxuradining/scripts.pory"
 	applymovement 2, happy
 # 52 "data/maps/Luxuradining/scripts.pory"
 	applymovement 1, happy
 # 53 "data/maps/Luxuradining/scripts.pory"
-	namebox name3
+	speakername name3
 # 54 "data/maps/Luxuradining/scripts.pory"
 	msgbox Youwake_Text_7, MSGBOX_AUTOCLOSE
-# 55 "data/maps/Luxuradining/scripts.pory"
-	hidenamebox
 # 56 "data/maps/Luxuradining/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 57 "data/maps/Luxuradining/scripts.pory"
 	msgbox Youwake_Text_8, MSGBOX_AUTOCLOSE
-# 58 "data/maps/Luxuradining/scripts.pory"
-	hidenamebox
 # 59 "data/maps/Luxuradining/scripts.pory"
-	namebox name2
+	speakername name2
 # 60 "data/maps/Luxuradining/scripts.pory"
 	msgbox Youwake_Text_9
-# 61 "data/maps/Luxuradining/scripts.pory"
-	hidenamebox
 # 62 "data/maps/Luxuradining/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, upset
 # 63 "data/maps/Luxuradining/scripts.pory"
 	waitmovement 0
 # 64 "data/maps/Luxuradining/scripts.pory"
-	namebox name3
+	speakername name3
 # 65 "data/maps/Luxuradining/scripts.pory"
 	msgbox Youwake_Text_10
-# 66 "data/maps/Luxuradining/scripts.pory"
-	hidenamebox
 # 67 "data/maps/Luxuradining/scripts.pory"
-	namebox name2
+	speakername name2
 # 68 "data/maps/Luxuradining/scripts.pory"
 	msgbox Youwake_Text_11, MSGBOX_AUTOCLOSE
-# 69 "data/maps/Luxuradining/scripts.pory"
-	hidenamebox
 # 70 "data/maps/Luxuradining/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 71 "data/maps/Luxuradining/scripts.pory"
@@ -147,17 +123,13 @@ Youwake::
 # 75 "data/maps/Luxuradining/scripts.pory"
 	fadescreen FADE_FROM_BLACK
 # 76 "data/maps/Luxuradining/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 77 "data/maps/Luxuradining/scripts.pory"
 	msgbox Youwake_Text_12
-# 78 "data/maps/Luxuradining/scripts.pory"
-	hidenamebox
 # 79 "data/maps/Luxuradining/scripts.pory"
-	namebox name2
+	speakername name2
 # 80 "data/maps/Luxuradining/scripts.pory"
 	msgbox Youwake_Text_13
-# 81 "data/maps/Luxuradining/scripts.pory"
-	hidenamebox
 # 82 "data/maps/Luxuradining/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, camera5
 # 83 "data/maps/Luxuradining/scripts.pory"
@@ -383,11 +355,9 @@ Mom::
 # 128 "data/maps/Luxuradining/scripts.pory"
 	faceplayer
 # 129 "data/maps/Luxuradining/scripts.pory"
-	namebox name2
+	speakername name2
 # 130 "data/maps/Luxuradining/scripts.pory"
 	msgbox Mom_Text_0
-# 131 "data/maps/Luxuradining/scripts.pory"
-	hidenamebox
 # 132 "data/maps/Luxuradining/scripts.pory"
 	release
 	return
@@ -399,11 +369,9 @@ Dad::
 # 136 "data/maps/Luxuradining/scripts.pory"
 	faceplayer
 # 137 "data/maps/Luxuradining/scripts.pory"
-	namebox name3
+	speakername name3
 # 138 "data/maps/Luxuradining/scripts.pory"
 	msgbox Dad_Text_0
-# 139 "data/maps/Luxuradining/scripts.pory"
-	hidenamebox
 # 140 "data/maps/Luxuradining/scripts.pory"
 	release
 	return
@@ -445,11 +413,9 @@ garden::
 # 161 "data/maps/Luxuradining/scripts.pory"
 	faceplayer
 # 162 "data/maps/Luxuradining/scripts.pory"
-	namebox gardener
+	speakername gardener
 # 163 "data/maps/Luxuradining/scripts.pory"
 	msgbox garden_Text_0
-# 164 "data/maps/Luxuradining/scripts.pory"
-	hidenamebox
 # 165 "data/maps/Luxuradining/scripts.pory"
 	release
 	return
@@ -461,11 +427,9 @@ rest::
 # 169 "data/maps/Luxuradining/scripts.pory"
 	faceplayer
 # 170 "data/maps/Luxuradining/scripts.pory"
-	namebox rest_Text_0
+	speakername rest_Text_0
 # 171 "data/maps/Luxuradining/scripts.pory"
 	msgbox rest_Text_1
-# 172 "data/maps/Luxuradining/scripts.pory"
-	hidenamebox
 # 173 "data/maps/Luxuradining/scripts.pory"
 	release
 	return

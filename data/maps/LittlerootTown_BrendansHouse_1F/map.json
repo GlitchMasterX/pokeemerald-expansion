@@ -41,16 +41,29 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_NORMAL_M",
-      "x": 74,
+      "x": 54,
       "y": 7,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "AcademyNpc28",
       "flag": "FLAG_NORMAL_OUTFOREST"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_OFFICER",
+      "x": 75,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "lunarofficer1",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -77,7 +90,24 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 75,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_LUNAR_GROVE",
+      "var_value": "0",
+      "script": "lunarofficer"
+    },
+    {
+      "type": "trigger",
+      "x": 75,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_LUNAR_GROVE",
+      "var_value": "0",
+      "script": "lunarofficer"
+    }
   ],
   "bg_events": [
 

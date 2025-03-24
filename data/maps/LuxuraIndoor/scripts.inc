@@ -28,19 +28,15 @@ alistairarrive3::
 # 13 "data/maps/LuxuraIndoor/scripts.pory"
 	lock
 # 14 "data/maps/LuxuraIndoor/scripts.pory"
-	namebox unknown
+	speakername unknown
 # 15 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox alistairarrive3_Text_0, MSGBOX_AUTOCLOSE
-# 16 "data/maps/LuxuraIndoor/scripts.pory"
-	hidenamebox
 # 17 "data/maps/LuxuraIndoor/scripts.pory"
 	applymovement 10, exclam
 # 18 "data/maps/LuxuraIndoor/scripts.pory"
-	namebox unknown
+	speakername unknown
 # 19 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox alistairarrive3_Text_1
-# 20 "data/maps/LuxuraIndoor/scripts.pory"
-	hidenamebox
 # 21 "data/maps/LuxuraIndoor/scripts.pory"
 	setvar VAR_0x8000, 6
 # 22 "data/maps/LuxuraIndoor/scripts.pory"
@@ -50,11 +46,9 @@ alistairarrive3::
 # 24 "data/maps/LuxuraIndoor/scripts.pory"
 	special ClearMugshot
 # 25 "data/maps/LuxuraIndoor/scripts.pory"
-	namebox unknown
+	speakername unknown
 # 26 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox alistairarrive3_Text_2
-# 27 "data/maps/LuxuraIndoor/scripts.pory"
-	hidenamebox
 # 28 "data/maps/LuxuraIndoor/scripts.pory"
 	waitmessage
 # 29 "data/maps/LuxuraIndoor/scripts.pory"
@@ -68,11 +62,9 @@ alistairarrive3::
 # 33 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox alistairarrive3_Text_3
 # 34 "data/maps/LuxuraIndoor/scripts.pory"
-	namebox unknown
+	speakername unknown
 # 35 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox alistairarrive3_Text_4, MSGBOX_AUTOCLOSE
-# 36 "data/maps/LuxuraIndoor/scripts.pory"
-	hidenamebox
 # 37 "data/maps/LuxuraIndoor/scripts.pory"
 	waitmessage
 # 38 "data/maps/LuxuraIndoor/scripts.pory"
@@ -136,29 +128,23 @@ MaidZ::
 # 75 "data/maps/LuxuraIndoor/scripts.pory"
 	faceplayer
 # 76 "data/maps/LuxuraIndoor/scripts.pory"
-	namebox MaidZ_Text_0
+	speakername MaidZ_Text_0
 # 77 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox MaidZ_Text_1
-# 78 "data/maps/LuxuraIndoor/scripts.pory"
-	hidenamebox
 # 79 "data/maps/LuxuraIndoor/scripts.pory"
 	applymovement 1, exclam
 # 80 "data/maps/LuxuraIndoor/scripts.pory"
-	namebox MaidZ_Text_0
+	speakername MaidZ_Text_0
 # 81 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox MaidZ_Text_2
-# 82 "data/maps/LuxuraIndoor/scripts.pory"
-	hidenamebox
 # 83 "data/maps/LuxuraIndoor/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 84 "data/maps/LuxuraIndoor/scripts.pory"
 	fadescreen FADE_FROM_BLACK
 # 85 "data/maps/LuxuraIndoor/scripts.pory"
-	namebox MaidZ_Text_0
+	speakername MaidZ_Text_0
 # 86 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox MaidZ_Text_3
-# 87 "data/maps/LuxuraIndoor/scripts.pory"
-	hidenamebox
 # 88 "data/maps/LuxuraIndoor/scripts.pory"
 	setflag FLAG_SYS_B_DASH
 # 89 "data/maps/LuxuraIndoor/scripts.pory"
@@ -181,11 +167,9 @@ MaidZ_1:
 # 68 "data/maps/LuxuraIndoor/scripts.pory"
 	faceplayer
 # 69 "data/maps/LuxuraIndoor/scripts.pory"
-	namebox MaidZ_Text_0
+	speakername MaidZ_Text_0
 # 70 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox MaidZ_Text_1
-# 71 "data/maps/LuxuraIndoor/scripts.pory"
-	hidenamebox
 # 72 "data/maps/LuxuraIndoor/scripts.pory"
 	release
 	return
@@ -197,11 +181,9 @@ Maid::
 # 100 "data/maps/LuxuraIndoor/scripts.pory"
 	faceplayer
 # 101 "data/maps/LuxuraIndoor/scripts.pory"
-	namebox MaidZ_Text_0
+	speakername MaidZ_Text_0
 # 102 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox MaidZ_Text_1
-# 103 "data/maps/LuxuraIndoor/scripts.pory"
-	hidenamebox
 # 104 "data/maps/LuxuraIndoor/scripts.pory"
 	release
 	return
@@ -213,11 +195,9 @@ MaidG::
 # 109 "data/maps/LuxuraIndoor/scripts.pory"
 	faceplayer
 # 110 "data/maps/LuxuraIndoor/scripts.pory"
-	namebox MaidZ_Text_0
+	speakername MaidZ_Text_0
 # 111 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox MaidG_Text_0
-# 112 "data/maps/LuxuraIndoor/scripts.pory"
-	hidenamebox
 # 113 "data/maps/LuxuraIndoor/scripts.pory"
 	release
 	return
@@ -229,11 +209,9 @@ MaidD::
 # 118 "data/maps/LuxuraIndoor/scripts.pory"
 	faceplayer
 # 119 "data/maps/LuxuraIndoor/scripts.pory"
-	namebox MaidZ_Text_0
+	speakername MaidZ_Text_0
 # 120 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox MaidD_Text_0
-# 121 "data/maps/LuxuraIndoor/scripts.pory"
-	hidenamebox
 # 122 "data/maps/LuxuraIndoor/scripts.pory"
 	release
 	return
@@ -245,11 +223,9 @@ MaidB::
 # 127 "data/maps/LuxuraIndoor/scripts.pory"
 	faceplayer
 # 128 "data/maps/LuxuraIndoor/scripts.pory"
-	namebox MaidZ_Text_0
+	speakername MaidZ_Text_0
 # 129 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox MaidB_Text_0
-# 130 "data/maps/LuxuraIndoor/scripts.pory"
-	hidenamebox
 # 131 "data/maps/LuxuraIndoor/scripts.pory"
 	release
 	return
@@ -261,11 +237,9 @@ MaidM::
 # 136 "data/maps/LuxuraIndoor/scripts.pory"
 	faceplayer
 # 137 "data/maps/LuxuraIndoor/scripts.pory"
-	namebox MaidZ_Text_0
+	speakername MaidZ_Text_0
 # 138 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox MaidM_Text_0
-# 139 "data/maps/LuxuraIndoor/scripts.pory"
-	hidenamebox
 # 140 "data/maps/LuxuraIndoor/scripts.pory"
 	release
 	return
@@ -279,19 +253,15 @@ MaidE::
 # 153 "data/maps/LuxuraIndoor/scripts.pory"
 	faceplayer
 # 154 "data/maps/LuxuraIndoor/scripts.pory"
-	namebox MaidZ_Text_0
+	speakername MaidZ_Text_0
 # 155 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox MaidE_Text_0
-# 156 "data/maps/LuxuraIndoor/scripts.pory"
-	hidenamebox
 # 157 "data/maps/LuxuraIndoor/scripts.pory"
 	applymovement 2, exclam
 # 158 "data/maps/LuxuraIndoor/scripts.pory"
-	namebox felicia
+	speakername felicia
 # 159 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox MaidE_Text_1
-# 160 "data/maps/LuxuraIndoor/scripts.pory"
-	hidenamebox
 # 161 "data/maps/LuxuraIndoor/scripts.pory"
 	waitmessage
 # 162 "data/maps/LuxuraIndoor/scripts.pory"
@@ -316,11 +286,9 @@ MaidE_1:
 # 146 "data/maps/LuxuraIndoor/scripts.pory"
 	faceplayer
 # 147 "data/maps/LuxuraIndoor/scripts.pory"
-	namebox MaidZ_Text_0
+	speakername MaidZ_Text_0
 # 148 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox MaidE_Text_0
-# 149 "data/maps/LuxuraIndoor/scripts.pory"
-	hidenamebox
 # 150 "data/maps/LuxuraIndoor/scripts.pory"
 	release
 	return
@@ -332,11 +300,9 @@ MaidC::
 # 174 "data/maps/LuxuraIndoor/scripts.pory"
 	faceplayer
 # 175 "data/maps/LuxuraIndoor/scripts.pory"
-	namebox MaidZ_Text_0
+	speakername MaidZ_Text_0
 # 176 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox MaidC_Text_0
-# 177 "data/maps/LuxuraIndoor/scripts.pory"
-	hidenamebox
 # 178 "data/maps/LuxuraIndoor/scripts.pory"
 	release
 	return
@@ -348,13 +314,11 @@ Minccino::
 # 183 "data/maps/LuxuraIndoor/scripts.pory"
 	faceplayer
 # 184 "data/maps/LuxuraIndoor/scripts.pory"
-	namebox Minccino_Text_0
+	speakername Minccino_Text_0
 # 185 "data/maps/LuxuraIndoor/scripts.pory"
 	playmoncry SPECIES_MINCCINO, CRY_MODE_NORMAL
 # 186 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox Minccino_Text_1
-# 187 "data/maps/LuxuraIndoor/scripts.pory"
-	hidenamebox
 # 188 "data/maps/LuxuraIndoor/scripts.pory"
 	waitmoncry
 # 189 "data/maps/LuxuraIndoor/scripts.pory"
@@ -372,13 +336,11 @@ Grumpig::
 # 208 "data/maps/LuxuraIndoor/scripts.pory"
 	applymovement 5, heart
 # 209 "data/maps/LuxuraIndoor/scripts.pory"
-	namebox Grumpig_Text_0
+	speakername Grumpig_Text_0
 # 210 "data/maps/LuxuraIndoor/scripts.pory"
 	playmoncry SPECIES_GRUMPIG, CRY_MODE_NORMAL
 # 211 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox Grumpig_Text_1
-# 212 "data/maps/LuxuraIndoor/scripts.pory"
-	hidenamebox
 # 213 "data/maps/LuxuraIndoor/scripts.pory"
 	waitmoncry
 # 214 "data/maps/LuxuraIndoor/scripts.pory"
@@ -393,13 +355,11 @@ Grumpig_1:
 # 196 "data/maps/LuxuraIndoor/scripts.pory"
 	applymovement 5, heart
 # 197 "data/maps/LuxuraIndoor/scripts.pory"
-	namebox Grumpig_Text_0
+	speakername Grumpig_Text_0
 # 198 "data/maps/LuxuraIndoor/scripts.pory"
 	playmoncry SPECIES_GRUMPIG, CRY_MODE_NORMAL
 # 199 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox Grumpig_Text_1
-# 200 "data/maps/LuxuraIndoor/scripts.pory"
-	hidenamebox
 # 201 "data/maps/LuxuraIndoor/scripts.pory"
 	giveitem ITEM_TWISTED_SPOON, 1
 # 202 "data/maps/LuxuraIndoor/scripts.pory"
@@ -417,13 +377,11 @@ Blissey::
 # 219 "data/maps/LuxuraIndoor/scripts.pory"
 	faceplayer
 # 220 "data/maps/LuxuraIndoor/scripts.pory"
-	namebox Blissey_Text_0
+	speakername Blissey_Text_0
 # 221 "data/maps/LuxuraIndoor/scripts.pory"
 	playmoncry SPECIES_BLISSEY, CRY_MODE_NORMAL
 # 222 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox Blissey_Text_1
-# 223 "data/maps/LuxuraIndoor/scripts.pory"
-	hidenamebox
 # 224 "data/maps/LuxuraIndoor/scripts.pory"
 	waitmoncry
 # 225 "data/maps/LuxuraIndoor/scripts.pory"
@@ -1336,35 +1294,25 @@ caprun::
 # 674 "data/maps/LuxuraIndoor/scripts.pory"
 	facefollower
 # 675 "data/maps/LuxuraIndoor/scripts.pory"
-	namebox name4
+	speakername name4
 # 676 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox caprun_Text_0
-# 677 "data/maps/LuxuraIndoor/scripts.pory"
-	hidenamebox
 # 678 "data/maps/LuxuraIndoor/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 679 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox caprun_Text_1
-# 680 "data/maps/LuxuraIndoor/scripts.pory"
-	hidenamebox
 # 681 "data/maps/LuxuraIndoor/scripts.pory"
-	namebox name4
+	speakername name4
 # 682 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox caprun_Text_2
-# 683 "data/maps/LuxuraIndoor/scripts.pory"
-	hidenamebox
 # 684 "data/maps/LuxuraIndoor/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 685 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox caprun_Text_3, MSGBOX_AUTOCLOSE
-# 686 "data/maps/LuxuraIndoor/scripts.pory"
-	hidenamebox
 # 687 "data/maps/LuxuraIndoor/scripts.pory"
-	namebox name4
+	speakername name4
 # 688 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox caprun_Text_4
-# 689 "data/maps/LuxuraIndoor/scripts.pory"
-	hidenamebox
 # 690 "data/maps/LuxuraIndoor/scripts.pory"
 	release
 # 691 "data/maps/LuxuraIndoor/scripts.pory"
@@ -1392,11 +1340,9 @@ alistairarrive4::
 # 704 "data/maps/LuxuraIndoor/scripts.pory"
 	special HealPlayerParty
 # 705 "data/maps/LuxuraIndoor/scripts.pory"
-	namebox unknown
+	speakername unknown
 # 706 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox alistairarrive4_Text_0, MSGBOX_AUTOCLOSE
-# 707 "data/maps/LuxuraIndoor/scripts.pory"
-	hidenamebox
 # 708 "data/maps/LuxuraIndoor/scripts.pory"
 	waitmessage
 # 709 "data/maps/LuxuraIndoor/scripts.pory"
@@ -1408,11 +1354,9 @@ alistairarrive4::
 # 712 "data/maps/LuxuraIndoor/scripts.pory"
 	applymovement 10, exclam
 # 713 "data/maps/LuxuraIndoor/scripts.pory"
-	namebox unknown
+	speakername unknown
 # 714 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox alistairarrive4_Text_2, MSGBOX_AUTOCLOSE
-# 715 "data/maps/LuxuraIndoor/scripts.pory"
-	hidenamebox
 # 716 "data/maps/LuxuraIndoor/scripts.pory"
 	applymovement 0xFF, alistairgone3
 # 717 "data/maps/LuxuraIndoor/scripts.pory"

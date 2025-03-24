@@ -371,25 +371,31 @@
             },
         },
     },
-    [DIFFICULTY_NORMAL][TRAINER_GRUNT_PETALBURG_WOODS] =
+    [DIFFICULTY_NORMAL][DAMIEN_VOSS] =
     {
-        .trainerName = _("GRUNT"),
-        .trainerClass = TRAINER_CLASS_TEAM_AQUA,
-        .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
+        .trainerName = _("Damien"),
+        .trainerClass = TRAINER_CLASS_RIVAL,
+        .trainerPic = TRAINER_PIC_VOSS,
         .encounterMusic_gender =
-            TRAINER_ENCOUNTER_MUSIC_AQUA,
+        TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .aiFlags = AI_FLAG_BASIC_TRAINER  | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_WILL_SUICIDE,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
             {
-            .species = SPECIES_POOCHYENA,
-            .gender = TRAINER_MON_RANDOM_GENDER,
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-            .lvl = 9,
-            .nature = NATURE_HARDY,
+            .species = SPECIES_SHINX,
+            .gender = TRAINER_MON_MALE,
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .lvl = 5,
+            .nature = NATURE_LONELY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+                MOVE_THUNDER_WAVE,
+                MOVE_GROWL,
+                MOVE_CHARGE,
+                MOVE_NONE,
+            }
             },
         },
     },

@@ -93,27 +93,21 @@ forest::
 # 47 "data/maps/LuxuraIsland1/scripts.pory"
 	applymovement 0xFD, exclam
 # 48 "data/maps/LuxuraIsland1/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 49 "data/maps/LuxuraIsland1/scripts.pory"
 	msgbox forest_Text_1
-# 50 "data/maps/LuxuraIsland1/scripts.pory"
-	hidenamebox
 # 51 "data/maps/LuxuraIsland1/scripts.pory"
-	namebox name4
+	speakername name4
 # 52 "data/maps/LuxuraIsland1/scripts.pory"
 	msgbox forest_Text_2
-# 53 "data/maps/LuxuraIsland1/scripts.pory"
-	hidenamebox
 # 54 "data/maps/LuxuraIsland1/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, notal
 # 55 "data/maps/LuxuraIsland1/scripts.pory"
 	applymovement 0xFD, notal
 # 56 "data/maps/LuxuraIsland1/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 57 "data/maps/LuxuraIsland1/scripts.pory"
 	msgbox forest_Text_3
-# 58 "data/maps/LuxuraIsland1/scripts.pory"
-	hidenamebox
 # 59 "data/maps/LuxuraIsland1/scripts.pory"
 	releaseall
 # 60 "data/maps/LuxuraIsland1/scripts.pory"
@@ -336,17 +330,13 @@ miraded::
 # 165 "data/maps/LuxuraIsland1/scripts.pory"
 	applymovement 0xFD, boo
 # 166 "data/maps/LuxuraIsland1/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 167 "data/maps/LuxuraIsland1/scripts.pory"
 	msgbox miraded_Text_0
-# 168 "data/maps/LuxuraIsland1/scripts.pory"
-	hidenamebox
 # 169 "data/maps/LuxuraIsland1/scripts.pory"
-	namebox name4
+	speakername name4
 # 170 "data/maps/LuxuraIsland1/scripts.pory"
 	msgbox miraded_Text_1
-# 171 "data/maps/LuxuraIsland1/scripts.pory"
-	hidenamebox
 # 172 "data/maps/LuxuraIsland1/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, exclam
 # 173 "data/maps/LuxuraIsland1/scripts.pory"
@@ -354,17 +344,13 @@ miraded::
 # 174 "data/maps/LuxuraIsland1/scripts.pory"
 	waitmovement 0
 # 175 "data/maps/LuxuraIsland1/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 176 "data/maps/LuxuraIsland1/scripts.pory"
 	msgbox miraded_Text_2
-# 177 "data/maps/LuxuraIsland1/scripts.pory"
-	hidenamebox
 # 178 "data/maps/LuxuraIsland1/scripts.pory"
-	namebox name4
+	speakername name4
 # 179 "data/maps/LuxuraIsland1/scripts.pory"
 	msgbox miraded_Text_3, MSGBOX_AUTOCLOSE
-# 180 "data/maps/LuxuraIsland1/scripts.pory"
-	hidenamebox
 # 181 "data/maps/LuxuraIsland1/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, run
 # 182 "data/maps/LuxuraIsland1/scripts.pory"
@@ -404,19 +390,15 @@ miraded::
 # 199 "data/maps/LuxuraIsland1/scripts.pory"
 	msgbox miraded_Text_8, MSGBOX_AUTOCLOSE
 # 200 "data/maps/LuxuraIsland1/scripts.pory"
-	namebox name4
+	speakername name4
 # 201 "data/maps/LuxuraIsland1/scripts.pory"
 	msgbox miraded_Text_9
-# 202 "data/maps/LuxuraIsland1/scripts.pory"
-	hidenamebox
 # 203 "data/maps/LuxuraIsland1/scripts.pory"
 	msgbox miraded_Text_10, MSGBOX_AUTOCLOSE
 # 204 "data/maps/LuxuraIsland1/scripts.pory"
-	namebox name4
+	speakername name4
 # 205 "data/maps/LuxuraIsland1/scripts.pory"
 	msgbox miraded_Text_11, MSGBOX_AUTOCLOSE
-# 206 "data/maps/LuxuraIsland1/scripts.pory"
-	hidenamebox
 # 207 "data/maps/LuxuraIsland1/scripts.pory"
 	msgbox miraded_Text_12, MSGBOX_AUTOCLOSE
 # 208 "data/maps/LuxuraIsland1/scripts.pory"
@@ -438,23 +420,17 @@ miraded::
 # 216 "data/maps/LuxuraIsland1/scripts.pory"
 	facefollower
 # 217 "data/maps/LuxuraIsland1/scripts.pory"
-	namebox name4
+	speakername name4
 # 218 "data/maps/LuxuraIsland1/scripts.pory"
 	msgbox miraded_Text_15, MSGBOX_AUTOCLOSE
-# 219 "data/maps/LuxuraIsland1/scripts.pory"
-	hidenamebox
 # 220 "data/maps/LuxuraIsland1/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 221 "data/maps/LuxuraIsland1/scripts.pory"
 	msgbox miraded_Text_16
-# 222 "data/maps/LuxuraIsland1/scripts.pory"
-	hidenamebox
 # 223 "data/maps/LuxuraIsland1/scripts.pory"
-	namebox name4
+	speakername name4
 # 224 "data/maps/LuxuraIsland1/scripts.pory"
 	msgbox miraded_Text_17, MSGBOX_AUTOCLOSE
-# 225 "data/maps/LuxuraIsland1/scripts.pory"
-	hidenamebox
 # 226 "data/maps/LuxuraIsland1/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, lok
 # 227 "data/maps/LuxuraIsland1/scripts.pory"
@@ -488,23 +464,17 @@ miraded::
 # 241 "data/maps/LuxuraIsland1/scripts.pory"
 	facefollower
 # 242 "data/maps/LuxuraIsland1/scripts.pory"
-	namebox name4
+	speakername name4
 # 243 "data/maps/LuxuraIsland1/scripts.pory"
 	msgbox miraded_Text_23, MSGBOX_AUTOCLOSE
-# 244 "data/maps/LuxuraIsland1/scripts.pory"
-	hidenamebox
 # 245 "data/maps/LuxuraIsland1/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 246 "data/maps/LuxuraIsland1/scripts.pory"
 	msgbox miraded_Text_24
-# 247 "data/maps/LuxuraIsland1/scripts.pory"
-	hidenamebox
 # 248 "data/maps/LuxuraIsland1/scripts.pory"
-	namebox name4
+	speakername name4
 # 249 "data/maps/LuxuraIsland1/scripts.pory"
 	msgbox miraded_Text_25, MSGBOX_AUTOCLOSE
-# 250 "data/maps/LuxuraIsland1/scripts.pory"
-	hidenamebox
 # 251 "data/maps/LuxuraIsland1/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, byee
 # 252 "data/maps/LuxuraIsland1/scripts.pory"
@@ -516,11 +486,9 @@ miraded::
 # 255 "data/maps/LuxuraIsland1/scripts.pory"
 	msgbox miraded_Text_26, MSGBOX_AUTOCLOSE
 # 256 "data/maps/LuxuraIsland1/scripts.pory"
-	namebox name4
+	speakername name4
 # 257 "data/maps/LuxuraIsland1/scripts.pory"
 	msgbox miraded_Text_27, MSGBOX_AUTOCLOSE
-# 258 "data/maps/LuxuraIsland1/scripts.pory"
-	hidenamebox
 # 259 "data/maps/LuxuraIsland1/scripts.pory"
 	applymovement 12, exclam
 # 260 "data/maps/LuxuraIsland1/scripts.pory"

@@ -28,81 +28,81 @@ script ran{
     applymovement(1,face)
     applymovement(2,mol)
     waitmovement(0)
-    namebox(name4)
+    speakername(name4)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Now that's perfect."),MSGBOX_AUTOCLOSE)
-    hidenamebox
-    namebox(gardener)
+     
+    speakername(gardener)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Wow! Lady Mira, You really have a knack for this.\pIt turned out so beautiful."),MSGBOX_AUTOCLOSE)
-    hidenamebox
-    namebox(name4)
+     
+    speakername(name4)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}No no, It's all your hard wor.."),MSGBOX_AUTOCLOSE)
-    hidenamebox
-    namebox(Xylar)
+     
+    speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Miiiirrrraaaa!!"),MSGBOX_AUTOCLOSE)
-    hidenamebox
+     
     playbgm(MUS_HG_FOLLOW_ME_2,TRUE)
     applymovement(1,run)
     waitmovement(0)
     applymovement(OBJ_EVENT_ID_PLAYER,mir)
     waitmovement(0)
     special(RemoveCameraObject)
-    namebox(Xylar)
+    speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You tricked me with that Ramen, I ran down so fast and then they all started laughing.\pYou know Dad would never allow it.\pBut seroiusly, you won't get away with this so easily"),MSGBOX_AUTOCLOSE)
-    hidenamebox
-    namebox(name4)
+     
+    speakername(name4)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I'm sorry, Master Xylar, but I couldn't resist! You should've seen your face. "),MSGBOX_AUTOCLOSE)
-    hidenamebox
-    namebox(Xylar)
+     
+    speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Uhhhh!!!"),MSGBOX_AUTOCLOSE)
-    hidenamebox
+     
     applymovement(1,rum)
     applymovement(OBJ_EVENT_ID_PLAYER,rmu)
     waitmovement(0)
-    namebox(Xylar)
+    speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You can't escape that easily, Mira."),MSGBOX_AUTOCLOSE)
-    hidenamebox
+     
     waitmessage
-    namebox(name4)
+    speakername(name4)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Catch me if you can, Master Xylar."),MSGBOX_AUTOCLOSE)
-    hidenamebox
+     
     applymovement(1,move)
     applymovement(OBJ_EVENT_ID_PLAYER,move2)
     waitmovement(0)
-    namebox(name4)
+    speakername(name4)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Hahahaha"),MSGBOX_AUTOCLOSE)
-    hidenamebox
+     
     applymovement(1,falls)
-    namebox(name4)
+    speakername(name4)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Ahh..Oh no.."))
-    hidenamebox
+     
     applymovement(OBJ_EVENT_ID_PLAYER,fall)
     waitmovement(0)
     applymovement(3,fallss)
-    namebox(name4)
+    speakername(name4)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Well, this wasn't part of the plan."))
-    hidenamebox
-    namebox(Xylar)
+     
+    speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Hahahaha, Serves you right.\pI guess now I have to help you out, huh?"))
-    hidenamebox
+     
     applymovement(OBJ_EVENT_ID_PLAYER,falll)
     waitmovement(0)
-    namebox(Xylar)
+    speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Here Mira, grab my hand, I'll pull you out."))
-    hidenamebox
-    namebox(name4)
+     
+    speakername(name4)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Thanks, Master Xylar."))
-    hidenamebox
+     
     applymovement(OBJ_EVENT_ID_PLAYER,fallls)
     applymovement(3,fal)
     waitmovement(0)
-    namebox(Xylar)
+    speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Hey! Mira, What was that for?"))
-    hidenamebox
+     
     applymovement(4,fals)
     waitmovement(0)
-    namebox(name4)
+    speakername(name4)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Hahahaha!\pYou wanted to help me, didn't you?\pNow we're both in this together!"))
-    hidenamebox
+     
     fadescreen(FADE_TO_BLACK)
     fadedefaultbgm
     removeobject(3)
@@ -113,24 +113,24 @@ script ran{
     applymovement(OBJ_EVENT_ID_PLAYER,fade2)
     waitmovement(0)
     fadescreen(FADE_FROM_BLACK)
-    namebox(Xylar)
+    speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I can't believe you pulled me in.\pNow we're both soaked."))
-    hidenamebox
-    namebox(name4)
+     
+    speakername(name4)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}It was worth it.\pWe won't have any more moments like this when you leave for the Pokemon Academy."))
-    hidenamebox
-    namebox(Xylar)
+     
+    speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Yeah...\pIt feels strange knowing i'll be away from everyone.\pI'm a bit nervous."))
-    hidenamebox
-    namebox(name4)
+     
+    speakername(name4)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}You'll do great, Master Xylar.\pRemember, We're always here for you.\pAnd when you come back I'll make Ramen for you and this time for real."))
-    hidenamebox
-    namebox(Xylar)
+     
+    speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Promise?"))
-    hidenamebox
-    namebox(name4)
+     
+    speakername(name4)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Promise. Now, let's get inside before we catch a cold."))
-    hidenamebox
+     
     fadescreen(FADE_TO_BLACK)
     removeobject(1)
     removeobject(OBJ_EVENT_ID_PLAYER)
@@ -266,12 +266,12 @@ script indoor {
     applymovement(OBJ_EVENT_ID_PLAYER,inn)
     applymovement(6,in)
     waitmovement(0)
-    namebox(name4)
+    speakername(name4)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, You should take a bath and get changed before Lady Elysia sees you like this."))
-    hidenamebox
-    namebox(Xylar)
+     
+    speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Yeah. I'll do that."))
-    hidenamebox
+     
     fadescreen(FADE_TO_BLACK)
     warp(MAP_PLAYERROOM,2,5)
     fadescreen(FADE_FROM_BLACK)
@@ -306,14 +306,14 @@ script stroll {
     lock
     applymovement(5,str)
     waitmovement(0)
-    namebox(name4)
+    speakername(name4)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Let's go Master Xylar."))
-    hidenamebox
+     
     applymovement(OBJ_EVENT_ID_PLAYER,strp)
     waitmovement(0)
-    namebox(Xylar)
+    speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Okay, Let's go."))
-    hidenamebox
+     
     setfollower(5, FOLLOWER_FLAG_CAN_LEAVE_ROUTE, mirafollowerscript)
     releaseall
     setvar(LUXURA_TRAGEDY,10)
@@ -325,9 +325,9 @@ movement str{
 script mirafollowerscript {
     lock
     facefollower
-    namebox(name4)    
+    speakername(name4)    
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Let's go Master Xylar."))
-    hidenamebox
+     
     release
 }
 
@@ -440,9 +440,9 @@ script strolll{
     lock
     applymovement(OBJ_EVENT_ID_PLAYER,strp)
     applymovement(0xFD,strp)
-    namebox(name4)
+    speakername(name4)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}That's not the way,Master Xylar."))
-    hidenamebox
+     
     releaseall
 }
 script Sailor {
@@ -477,9 +477,9 @@ script bloodsee {
     applymovement(OBJ_EVENT_ID_PLAYER,exclam)
     applymovement(0xFD,exclam)
     facefollower
-    namebox(name4)
+    speakername(name4)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, Don't look at it. You're too young to see something like this... Please, just trust me and let's go back inside."))
-    hidenamebox
+     
     releaseall
     setvar(VAR_ROUTE103_STATE,4)
     
@@ -488,9 +488,9 @@ script blo {
     lock
     applymovement(OBJ_EVENT_ID_PLAYER,io)
     applymovement(0xFD,io)
-    namebox(name4)
+    speakername(name4)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, Don't look at it. You're too young to see something like this... Please, just trust me and let's go back inside."))
-    hidenamebox
+     
     releaseall
     
 }
@@ -508,9 +508,9 @@ script strollll{
     lock
     applymovement(OBJ_EVENT_ID_PLAYER,strp)
     applymovement(0xFD,strp)
-    namebox(Xylar)
+    speakername(Xylar1)
     msgbox(format("I should go to mansion.\pI'm worried about Mom and Dad."))
-    hidenamebox
+     
     releaseall
 }
 script signluxura {
@@ -566,9 +566,9 @@ script strolllll{
     lock
     applymovement(OBJ_EVENT_ID_PLAYER,strrp)
     applymovement(0xFD,strrp)
-    namebox(Xylar)
+    speakername(Xylar1)
     msgbox(format("I should go to mansion.\pI'm worried about Mom and Dad."))
-    hidenamebox
+     
     release
 }
 
@@ -579,9 +579,9 @@ script stded{
     lock
     applymovement(OBJ_EVENT_ID_PLAYER,strrp)
     applymovement(0xFD,strrp)
-    namebox(name4)
+    speakername(name4)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}That's not the way,Master Xylar."))
-    hidenamebox
+     
     release
 }
 
@@ -590,25 +590,25 @@ script alistairarrive {
     special(SpawnCameraObject)
     applymovement(0x7F,cameramovementalistair)
     waitmovement(0)
-    namebox(unknown)
+    speakername(unknown)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Aurther's family mansion.\nHe always spoke so highly of this place. It's been years since I've visited."),MSGBOX_AUTOCLOSE)
-    hidenamebox
+     
     waitmessage
     applymovement(13,alistairarrive1)
     applymovement(14,alistairarrive1)
     waitmovement(0)
     playbgm(MUS_PL_TITLE,FALSE)
-    namebox(unknown)
+    speakername(unknown)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Wait....Something's not right."),MSGBOX_AUTOCLOSE)
-    hidenamebox
+     
     applymovement(13,exclam)
     applymovement(0x7F,alistairarrive1)
     waitmovement(0)
     applymovement(13,alistairarrive2)
     applymovement(14,alistairarrive2)
-    namebox(unknown)
+    speakername(unknown)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Blood?.....\nNo....What happened here?"),MSGBOX_AUTOCLOSE)
-    hidenamebox
+     
     fadescreen(FADE_TO_BLACK)
     msgbox(format("He rushed inside, looking around the ruined mansion."),MSGBOX_AUTOCLOSE)
     release

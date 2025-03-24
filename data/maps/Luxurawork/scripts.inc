@@ -290,11 +290,9 @@ dad::
 # 179 "data/maps/Luxurawork/scripts.pory"
 	faceplayer
 # 180 "data/maps/Luxurawork/scripts.pory"
-	namebox name3
+	speakername name3
 # 181 "data/maps/Luxurawork/scripts.pory"
 	msgbox dad_Text_10
-# 182 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
 # 183 "data/maps/Luxurawork/scripts.pory"
 	releaseall
 	return
@@ -305,69 +303,49 @@ dad_1:
 # 142 "data/maps/Luxurawork/scripts.pory"
 	faceplayer
 # 143 "data/maps/Luxurawork/scripts.pory"
-	namebox name3
+	speakername name3
 # 144 "data/maps/Luxurawork/scripts.pory"
 	msgbox dad_Text_0
-# 145 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
 # 146 "data/maps/Luxurawork/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 147 "data/maps/Luxurawork/scripts.pory"
 	msgbox dad_Text_1
-# 148 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
 # 149 "data/maps/Luxurawork/scripts.pory"
-	namebox name3
+	speakername name3
 # 150 "data/maps/Luxurawork/scripts.pory"
 	msgbox dad_Text_2
-# 151 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
 # 152 "data/maps/Luxurawork/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 153 "data/maps/Luxurawork/scripts.pory"
 	msgbox dad_Text_3
-# 154 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
 # 155 "data/maps/Luxurawork/scripts.pory"
-	namebox name3
+	speakername name3
 # 156 "data/maps/Luxurawork/scripts.pory"
 	msgbox dad_Text_4
-# 157 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
 # 158 "data/maps/Luxurawork/scripts.pory"
 	waitmessage
 # 159 "data/maps/Luxurawork/scripts.pory"
 	applymovement 4, exclam
 # 160 "data/maps/Luxurawork/scripts.pory"
-	namebox name3
+	speakername name3
 # 161 "data/maps/Luxurawork/scripts.pory"
 	msgbox dad_Text_5
-# 162 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
 # 163 "data/maps/Luxurawork/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 164 "data/maps/Luxurawork/scripts.pory"
 	msgbox dad_Text_6
-# 165 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
 # 166 "data/maps/Luxurawork/scripts.pory"
-	namebox name3
+	speakername name3
 # 167 "data/maps/Luxurawork/scripts.pory"
 	msgbox dad_Text_7
-# 168 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
 # 169 "data/maps/Luxurawork/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 170 "data/maps/Luxurawork/scripts.pory"
 	msgbox dad_Text_8
-# 171 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
 # 172 "data/maps/Luxurawork/scripts.pory"
-	namebox name3
+	speakername name3
 # 173 "data/maps/Luxurawork/scripts.pory"
 	msgbox dad_Text_9
-# 174 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
 # 175 "data/maps/Luxurawork/scripts.pory"
 	releaseall
 # 176 "data/maps/Luxurawork/scripts.pory"
@@ -397,19 +375,15 @@ trage::
 # 197 "data/maps/Luxurawork/scripts.pory"
 	waitmovement 0
 # 198 "data/maps/Luxurawork/scripts.pory"
-	namebox surge
+	speakername surge
 # 199 "data/maps/Luxurawork/scripts.pory"
 	msgbox trageflash_Text_0, MSGBOX_AUTOCLOSE
-# 200 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
 # 201 "data/maps/Luxurawork/scripts.pory"
 	waitmessage
 # 202 "data/maps/Luxurawork/scripts.pory"
-	namebox name3
+	speakername name3
 # 203 "data/maps/Luxurawork/scripts.pory"
 	msgbox trageflash_Text_1, MSGBOX_AUTOCLOSE
-# 204 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
 # 205 "data/maps/Luxurawork/scripts.pory"
 	applymovement 14, visible
 # 206 "data/maps/Luxurawork/scripts.pory"
@@ -469,17 +443,13 @@ trage::
 # 233 "data/maps/Luxurawork/scripts.pory"
 	waitmovement 0
 # 234 "data/maps/Luxurawork/scripts.pory"
-	namebox surge
+	speakername surge
 # 235 "data/maps/Luxurawork/scripts.pory"
 	msgbox trageflash_Text_2, MSGBOX_AUTOCLOSE
-# 236 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
 # 237 "data/maps/Luxurawork/scripts.pory"
-	namebox name3
+	speakername name3
 # 238 "data/maps/Luxurawork/scripts.pory"
 	msgbox trageflash_Text_3, MSGBOX_AUTOCLOSE
-# 239 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
 # 240 "data/maps/Luxurawork/scripts.pory"
 	applymovement 15, capture
 # 241 "data/maps/Luxurawork/scripts.pory"
@@ -503,11 +473,9 @@ trage::
 # 250 "data/maps/Luxurawork/scripts.pory"
 	fadescreen FADE_FROM_BLACK
 # 251 "data/maps/Luxurawork/scripts.pory"
-	namebox name2
+	speakername name2
 # 252 "data/maps/Luxurawork/scripts.pory"
 	msgbox trage_Text_0
-# 253 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
 # 254 "data/maps/Luxurawork/scripts.pory"
 	applymovement 7, exclam
 # 255 "data/maps/Luxurawork/scripts.pory"
@@ -519,17 +487,13 @@ trage::
 # 258 "data/maps/Luxurawork/scripts.pory"
 	waitmovement 0
 # 259 "data/maps/Luxurawork/scripts.pory"
-	namebox unknown
+	speakername unknown
 # 260 "data/maps/Luxurawork/scripts.pory"
 	msgbox trage_Text_1
-# 261 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
 # 262 "data/maps/Luxurawork/scripts.pory"
-	namebox surge
+	speakername surge
 # 263 "data/maps/Luxurawork/scripts.pory"
 	msgbox trage_Text_2
-# 264 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
 # 265 "data/maps/Luxurawork/scripts.pory"
 	applymovement 10, revert
 # 266 "data/maps/Luxurawork/scripts.pory"
@@ -541,17 +505,13 @@ trage::
 # 269 "data/maps/Luxurawork/scripts.pory"
 	waitmovement 0
 # 270 "data/maps/Luxurawork/scripts.pory"
-	namebox surge
+	speakername surge
 # 271 "data/maps/Luxurawork/scripts.pory"
 	msgbox trage_Text_3
-# 272 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
 # 273 "data/maps/Luxurawork/scripts.pory"
-	namebox name2
+	speakername name2
 # 274 "data/maps/Luxurawork/scripts.pory"
 	msgbox trage_Text_4, MSGBOX_AUTOCLOSE
-# 275 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
 # 276 "data/maps/Luxurawork/scripts.pory"
 	waitmessage
 # 277 "data/maps/Luxurawork/scripts.pory"
@@ -571,11 +531,9 @@ trage::
 # 284 "data/maps/Luxurawork/scripts.pory"
 	applymovement 14, invisible
 # 285 "data/maps/Luxurawork/scripts.pory"
-	namebox unknown
+	speakername unknown
 # 286 "data/maps/Luxurawork/scripts.pory"
 	msgbox trage_Text_5, MSGBOX_AUTOCLOSE
-# 287 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
 # 288 "data/maps/Luxurawork/scripts.pory"
 	fadenewbgm MUS_ABNORMAL_WEATHER
 # 289 "data/maps/Luxurawork/scripts.pory"
@@ -583,11 +541,9 @@ trage::
 # 290 "data/maps/Luxurawork/scripts.pory"
 	waitmovement 0
 # 291 "data/maps/Luxurawork/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 292 "data/maps/Luxurawork/scripts.pory"
 	msgbox trage_Text_6
-# 293 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
 # 294 "data/maps/Luxurawork/scripts.pory"
 	waitmessage
 # 295 "data/maps/Luxurawork/scripts.pory"
@@ -601,17 +557,13 @@ trage::
 # 299 "data/maps/Luxurawork/scripts.pory"
 	waitmessage
 # 300 "data/maps/Luxurawork/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 301 "data/maps/Luxurawork/scripts.pory"
 	msgbox trage_Text_8, MSGBOX_AUTOCLOSE
-# 302 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
 # 303 "data/maps/Luxurawork/scripts.pory"
-	namebox surge
+	speakername surge
 # 304 "data/maps/Luxurawork/scripts.pory"
 	msgbox trage_Text_9, MSGBOX_AUTOCLOSE
-# 305 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
 # 306 "data/maps/Luxurawork/scripts.pory"
 	msgbox trage_Text_10, MSGBOX_AUTOCLOSE
 # 307 "data/maps/Luxurawork/scripts.pory"
@@ -621,11 +573,9 @@ trage::
 # 309 "data/maps/Luxurawork/scripts.pory"
 	waitmovement 0
 # 310 "data/maps/Luxurawork/scripts.pory"
-	namebox name2
+	speakername name2
 # 311 "data/maps/Luxurawork/scripts.pory"
 	msgbox trage_Text_11, MSGBOX_AUTOCLOSE
-# 312 "data/maps/Luxurawork/scripts.pory"
-	hidenamebox
 # 313 "data/maps/Luxurawork/scripts.pory"
 	special RemoveCameraObject
 # 314 "data/maps/Luxurawork/scripts.pory"

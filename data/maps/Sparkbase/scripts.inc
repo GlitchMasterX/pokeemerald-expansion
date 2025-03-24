@@ -128,23 +128,17 @@ Surgebattle::
 # 120 "data/maps/Sparkbase/scripts.pory"
 	waitmovement 0
 # 121 "data/maps/Sparkbase/scripts.pory"
-	namebox surge
+	speakername surge
 # 122 "data/maps/Sparkbase/scripts.pory"
 	msgbox Surgebattle_Text_0, MSGBOX_AUTOCLOSE
-# 123 "data/maps/Sparkbase/scripts.pory"
-	hidenamebox
 # 124 "data/maps/Sparkbase/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 125 "data/maps/Sparkbase/scripts.pory"
 	msgbox Surgebattle_Text_1, MSGBOX_AUTOCLOSE
-# 126 "data/maps/Sparkbase/scripts.pory"
-	hidenamebox
 # 127 "data/maps/Sparkbase/scripts.pory"
-	namebox surge
+	speakername surge
 # 128 "data/maps/Sparkbase/scripts.pory"
 	msgbox Surgebattle_Text_2, MSGBOX_AUTOCLOSE
-# 129 "data/maps/Sparkbase/scripts.pory"
-	hidenamebox
 # 130 "data/maps/Sparkbase/scripts.pory"
 	waitmessage
 # 131 "data/maps/Sparkbase/scripts.pory"
@@ -158,117 +152,83 @@ Surgebattle::
 # 135 "data/maps/Sparkbase/scripts.pory"
 	special RemoveCameraObject
 # 136 "data/maps/Sparkbase/scripts.pory"
-	namebox surge
+	speakername surge
 # 137 "data/maps/Sparkbase/scripts.pory"
 	msgbox Surgebattle_Text_3, MSGBOX_AUTOCLOSE
-# 138 "data/maps/Sparkbase/scripts.pory"
-	hidenamebox
 # 139 "data/maps/Sparkbase/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 140 "data/maps/Sparkbase/scripts.pory"
 	msgbox Surgebattle_Text_4, MSGBOX_AUTOCLOSE
-# 141 "data/maps/Sparkbase/scripts.pory"
-	hidenamebox
 # 142 "data/maps/Sparkbase/scripts.pory"
-	namebox surge
+	speakername surge
 # 143 "data/maps/Sparkbase/scripts.pory"
 	msgbox Surgebattle_Text_5, MSGBOX_AUTOCLOSE
-# 144 "data/maps/Sparkbase/scripts.pory"
-	hidenamebox
 # 145 "data/maps/Sparkbase/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 146 "data/maps/Sparkbase/scripts.pory"
 	msgbox Surgebattle_Text_6, MSGBOX_AUTOCLOSE
-# 147 "data/maps/Sparkbase/scripts.pory"
-	hidenamebox
 # 148 "data/maps/Sparkbase/scripts.pory"
-	namebox surge
+	speakername surge
 # 149 "data/maps/Sparkbase/scripts.pory"
 	msgbox Surgebattle_Text_7, MSGBOX_AUTOCLOSE
-# 150 "data/maps/Sparkbase/scripts.pory"
-	hidenamebox
 # 151 "data/maps/Sparkbase/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 152 "data/maps/Sparkbase/scripts.pory"
 	msgbox Surgebattle_Text_8, MSGBOX_AUTOCLOSE
-# 153 "data/maps/Sparkbase/scripts.pory"
-	hidenamebox
 # 154 "data/maps/Sparkbase/scripts.pory"
-	namebox surge
+	speakername surge
 # 155 "data/maps/Sparkbase/scripts.pory"
 	msgbox Surgebattle_Text_9, MSGBOX_AUTOCLOSE
-# 156 "data/maps/Sparkbase/scripts.pory"
-	hidenamebox
 # 157 "data/maps/Sparkbase/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 158 "data/maps/Sparkbase/scripts.pory"
 	msgbox Surgebattle_Text_10, MSGBOX_AUTOCLOSE
-# 159 "data/maps/Sparkbase/scripts.pory"
-	hidenamebox
 # 160 "data/maps/Sparkbase/scripts.pory"
-	namebox surge
+	speakername surge
 # 161 "data/maps/Sparkbase/scripts.pory"
 	msgbox Surgebattle_Text_11, MSGBOX_AUTOCLOSE
-# 162 "data/maps/Sparkbase/scripts.pory"
-	hidenamebox
 # 163 "data/maps/Sparkbase/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 164 "data/maps/Sparkbase/scripts.pory"
 	msgbox Surgebattle_Text_12, MSGBOX_AUTOCLOSE
-# 165 "data/maps/Sparkbase/scripts.pory"
-	hidenamebox
 # 166 "data/maps/Sparkbase/scripts.pory"
-	namebox surge
+	speakername surge
 # 167 "data/maps/Sparkbase/scripts.pory"
 	msgbox Surgebattle_Text_13, MSGBOX_AUTOCLOSE
-# 168 "data/maps/Sparkbase/scripts.pory"
-	hidenamebox
 # 169 "data/maps/Sparkbase/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 170 "data/maps/Sparkbase/scripts.pory"
 	msgbox Surgebattle_Text_14, MSGBOX_AUTOCLOSE
-# 171 "data/maps/Sparkbase/scripts.pory"
-	hidenamebox
 # 172 "data/maps/Sparkbase/scripts.pory"
 	trainerbattle_no_intro SPARK_ADMIN_SURGE, surgelose
 # 173 "data/maps/Sparkbase/scripts.pory"
-	namebox surge
+	speakername surge
 # 174 "data/maps/Sparkbase/scripts.pory"
 	msgbox Surgebattle_Text_15, MSGBOX_AUTOCLOSE
-# 175 "data/maps/Sparkbase/scripts.pory"
-	hidenamebox
 # 176 "data/maps/Sparkbase/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 177 "data/maps/Sparkbase/scripts.pory"
 	msgbox Surgebattle_Text_16, MSGBOX_AUTOCLOSE
-# 178 "data/maps/Sparkbase/scripts.pory"
-	hidenamebox
 # 179 "data/maps/Sparkbase/scripts.pory"
 	waitmessage
 # 180 "data/maps/Sparkbase/scripts.pory"
 	applymovement 6, exclam
 # 181 "data/maps/Sparkbase/scripts.pory"
-	namebox surge
+	speakername surge
 # 182 "data/maps/Sparkbase/scripts.pory"
 	msgbox Surgebattle_Text_17, MSGBOX_AUTOCLOSE
-# 183 "data/maps/Sparkbase/scripts.pory"
-	hidenamebox
 # 184 "data/maps/Sparkbase/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 185 "data/maps/Sparkbase/scripts.pory"
 	msgbox Surgebattle_Text_18, MSGBOX_AUTOCLOSE
-# 186 "data/maps/Sparkbase/scripts.pory"
-	hidenamebox
 # 187 "data/maps/Sparkbase/scripts.pory"
 	applymovement 10, fireball
 # 188 "data/maps/Sparkbase/scripts.pory"
 	waitmovement 0
 # 189 "data/maps/Sparkbase/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 190 "data/maps/Sparkbase/scripts.pory"
 	msgbox Surgebattle_Text_19, MSGBOX_AUTOCLOSE
-# 191 "data/maps/Sparkbase/scripts.pory"
-	hidenamebox
 # 192 "data/maps/Sparkbase/scripts.pory"
 	playfirstmoncry
 # 193 "data/maps/Sparkbase/scripts.pory"
@@ -314,11 +274,9 @@ Surgebattle::
 # 213 "data/maps/Sparkbase/scripts.pory"
 	removeobject 13
 # 214 "data/maps/Sparkbase/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 215 "data/maps/Sparkbase/scripts.pory"
 	msgbox Surgebattle_Text_20, MSGBOX_AUTOCLOSE
-# 216 "data/maps/Sparkbase/scripts.pory"
-	hidenamebox
 # 217 "data/maps/Sparkbase/scripts.pory"
 	waitmessage
 # 218 "data/maps/Sparkbase/scripts.pory"
@@ -326,11 +284,9 @@ Surgebattle::
 # 219 "data/maps/Sparkbase/scripts.pory"
 	waitmovement 0
 # 220 "data/maps/Sparkbase/scripts.pory"
-	namebox Xylar
+	speakername Xylar1
 # 221 "data/maps/Sparkbase/scripts.pory"
 	msgbox Surgebattle_Text_21, MSGBOX_AUTOCLOSE
-# 222 "data/maps/Sparkbase/scripts.pory"
-	hidenamebox
 # 223 "data/maps/Sparkbase/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 224 "data/maps/Sparkbase/scripts.pory"
