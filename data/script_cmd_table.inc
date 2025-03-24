@@ -249,7 +249,7 @@ gScriptCmdTable::
     script_cmd_table_entry SCR_OP_FACEFOLLOWER                  ScrCmd_facefollower						@ 0xe7
     script_cmd_table_entry SCR_OP_CHECKFOLLOWER                 ScrCmd_checkfollower						@ 0xe8
 	script_cmd_table_entry SCR_OP_UPDATEFOLLOWINGMON            ScrCmd_updatefollowingmon				@ 0xe9
-	script_cmd_table_entry SCR_OP_NAMEBOX                       ScrCmd_namebox                           @ 0xea
+	script_cmd_table_entry SCR_OP_SETSPEAKER                      ScrCmd_setspeaker                           @ 0xea
 	script_cmd_table_entry SCR_OP_HIDENAMEBOX                   ScrCmd_hidenamebox                       @ 0xeb
 	script_cmd_table_entry SCR_OP_TOGGLEOUTFIT                  ScrCmd_toggleoutfit                      @ 0xec
 	script_cmd_table_entry SCR_OP_GETOUTFITSTATUS               ScrCmd_getoutfitstatus                   @ 0xed
