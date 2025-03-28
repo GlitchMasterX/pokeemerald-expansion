@@ -528,11 +528,11 @@ FracturedMask::
 # 284 "data/maps/AstralisAcademy/scripts.pory"
 	fadescreen FADE_FROM_BLACK
 # 285 "data/maps/AstralisAcademy/scripts.pory"
-	speakername TrialAnnouncement_Text_3
+	speakername FracturedMask_Text_10
 # 286 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox FracturedMask_Text_10, MSGBOX_AUTOCLOSE
-# 287 "data/maps/AstralisAcademy/scripts.pory"
 	msgbox FracturedMask_Text_11, MSGBOX_AUTOCLOSE
+# 287 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox FracturedMask_Text_12, MSGBOX_AUTOCLOSE
 # 288 "data/maps/AstralisAcademy/scripts.pory"
 	applymovement 0xFF, TrialAnnouncement_Movement_2
 # 289 "data/maps/AstralisAcademy/scripts.pory"
@@ -540,7 +540,7 @@ FracturedMask::
 # 290 "data/maps/AstralisAcademy/scripts.pory"
 	speakername TrialAnnouncement1_Text_22
 # 291 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox FracturedMask_Text_12, MSGBOX_AUTOCLOSE
+	msgbox FracturedMask_Text_13, MSGBOX_AUTOCLOSE
 # 292 "data/maps/AstralisAcademy/scripts.pory"
 	applymovement 0xFF, FracturedMask_Movement_2
 # 293 "data/maps/AstralisAcademy/scripts.pory"
@@ -1042,10 +1042,10 @@ FracturedMask_Movement_3:
 
 TrialAnnouncement_Text_0:
 # 75 "data/maps/AstralisAcademy/scripts.pory"
-	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Hi Xylar!\p"
+	.string "{CREATE_MUGSHOT MUGSHOT_TEST EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Hi Xylar!\p"
 	.string "The Headmaster is making an\n"
-	.string "announcement right now.\p"
-	.string "Let's go together.$"
+	.string "announcement right now.{CREATE_MUGSHOT MUGSHOT_TEST EMOTE_ALT}\p"
+	.string "Let's go together.{DESTROY_MUGSHOT}$"
 
 TrialAnnouncement_Text_1:
 # 77 "data/maps/AstralisAcademy/scripts.pory"
@@ -1057,7 +1057,7 @@ TrialAnnouncement_Text_2:
 
 TrialAnnouncement_Text_3:
 # 95 "data/maps/AstralisAcademy/scripts.pory"
-	.string "Headmaster Alistair$"
+	.string "Alistair$"
 
 TrialAnnouncement_Text_4:
 # 96 "data/maps/AstralisAcademy/scripts.pory"
@@ -1251,14 +1251,18 @@ FracturedMask_Text_9:
 	.string "{COLOR BLUE}{SHADOW DARK_GRAY}I... I didn't...$"
 
 FracturedMask_Text_10:
+# 285 "data/maps/AstralisAcademy/scripts.pory"
+	.string "Headmaster Alistair$"
+
+FracturedMask_Text_11:
 # 286 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW DARK_GRAY}Expulsion is on the table...$"
 
-FracturedMask_Text_11:
+FracturedMask_Text_12:
 # 287 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW DARK_GRAY}They don't know about Luther.$"
 
-FracturedMask_Text_12:
+FracturedMask_Text_13:
 # 291 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW DARK_GRAY}Don't say his name.$"
 
