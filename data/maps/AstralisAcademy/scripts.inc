@@ -170,9 +170,9 @@ TrialAnnouncement::
 # 94 "data/maps/AstralisAcademy/scripts.pory"
 	setobjectxyperm 20, 21, 24
 # 95 "data/maps/AstralisAcademy/scripts.pory"
-	speakername alistair
+	speakername TrialAnnouncement_Text_3
 # 96 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox TrialAnnouncement_Text_3, MSGBOX_AUTOCLOSE
+	msgbox TrialAnnouncement_Text_4, MSGBOX_AUTOCLOSE
 # 97 "data/maps/AstralisAcademy/scripts.pory"
 	waitmessage
 # 98 "data/maps/AstralisAcademy/scripts.pory"
@@ -196,7 +196,7 @@ TrialAnnouncement::
 # 107 "data/maps/AstralisAcademy/scripts.pory"
 	speakername Xylar1
 # 108 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox TrialAnnouncement_Text_4, MSGBOX_AUTOCLOSE
+	msgbox TrialAnnouncement_Text_5, MSGBOX_AUTOCLOSE
 # 109 "data/maps/AstralisAcademy/scripts.pory"
 	waitmessage
 # 110 "data/maps/AstralisAcademy/scripts.pory"
@@ -437,6 +437,118 @@ TrialAnnouncement1::
 	initclock 23, 53
 # 234 "data/maps/AstralisAcademy/scripts.pory"
 	setvar ACADEMY_START, 11
+	return
+
+
+FracturedMask::
+# 242 "data/maps/AstralisAcademy/scripts.pory"
+	lockall
+# 243 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 4, FracturedMask_Movement_0
+# 244 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 0xFF, TrialAnnouncement_Movement_7
+# 245 "data/maps/AstralisAcademy/scripts.pory"
+	waitmovement 0
+# 246 "data/maps/AstralisAcademy/scripts.pory"
+	speakername FracturedMask_Text_0
+# 247 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox FracturedMask_Text_1, MSGBOX_AUTOCLOSE
+# 248 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox FracturedMask_Text_2, MSGBOX_AUTOCLOSE
+# 249 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 0xFF, TrialAnnouncement_Movement_2
+# 250 "data/maps/AstralisAcademy/scripts.pory"
+	waitmovement 0
+# 251 "data/maps/AstralisAcademy/scripts.pory"
+	speakername FracturedMask_Text_0
+# 252 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox FracturedMask_Text_3, MSGBOX_AUTOCLOSE
+# 253 "data/maps/AstralisAcademy/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 254 "data/maps/AstralisAcademy/scripts.pory"
+	playse SE_DOOR
+# 255 "data/maps/AstralisAcademy/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 256 "data/maps/AstralisAcademy/scripts.pory"
+	playse SE_M_PSYBEAM
+# 257 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 0xFF, TrialAnnouncement_Movement_2
+# 258 "data/maps/AstralisAcademy/scripts.pory"
+	waitmovement 0
+# 259 "data/maps/AstralisAcademy/scripts.pory"
+	speakername TrialAnnouncement1_Text_22
+# 260 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox FracturedMask_Text_4, MSGBOX_AUTOCLOSE
+# 261 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 4, TrialAnnouncement_Movement_2
+# 262 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 0xFF, FracturedMask_Movement_1
+# 263 "data/maps/AstralisAcademy/scripts.pory"
+	waitmovement 0
+# 264 "data/maps/AstralisAcademy/scripts.pory"
+	playse SE_M_VICEGRIP
+# 265 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 4, TrialAnnouncement_Movement_2
+# 266 "data/maps/AstralisAcademy/scripts.pory"
+	waitmovement 0
+# 267 "data/maps/AstralisAcademy/scripts.pory"
+	speakername TrialAnnouncement1_Text_22
+# 268 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox FracturedMask_Text_5, MSGBOX_AUTOCLOSE
+# 269 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 5, FracturedMask_Movement_2
+# 270 "data/maps/AstralisAcademy/scripts.pory"
+	waitmovement 0
+# 271 "data/maps/AstralisAcademy/scripts.pory"
+	speakername FracturedMask_Text_6
+# 272 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox FracturedMask_Text_7, MSGBOX_AUTOCLOSE
+# 273 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 6, FracturedMask_Movement_3
+# 274 "data/maps/AstralisAcademy/scripts.pory"
+	waitmovement 0
+# 275 "data/maps/AstralisAcademy/scripts.pory"
+	speakername TrialAnnouncement_Text_3
+# 276 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox FracturedMask_Text_8, MSGBOX_AUTOCLOSE
+# 277 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 0xFF, TrialAnnouncement_Movement_2
+# 278 "data/maps/AstralisAcademy/scripts.pory"
+	waitmovement 0
+# 279 "data/maps/AstralisAcademy/scripts.pory"
+	playse SE_PC_LOGIN
+# 280 "data/maps/AstralisAcademy/scripts.pory"
+	speakername TrialAnnouncement1_Text_22
+# 281 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox FracturedMask_Text_9, MSGBOX_AUTOCLOSE
+# 282 "data/maps/AstralisAcademy/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 283 "data/maps/AstralisAcademy/scripts.pory"
+	warpsilent MAP_HEADOFFICE, 5, 8
+# 284 "data/maps/AstralisAcademy/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 285 "data/maps/AstralisAcademy/scripts.pory"
+	speakername TrialAnnouncement_Text_3
+# 286 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox FracturedMask_Text_10, MSGBOX_AUTOCLOSE
+# 287 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox FracturedMask_Text_11, MSGBOX_AUTOCLOSE
+# 288 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 0xFF, TrialAnnouncement_Movement_2
+# 289 "data/maps/AstralisAcademy/scripts.pory"
+	waitmovement 0
+# 290 "data/maps/AstralisAcademy/scripts.pory"
+	speakername TrialAnnouncement1_Text_22
+# 291 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox FracturedMask_Text_12, MSGBOX_AUTOCLOSE
+# 292 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 0xFF, FracturedMask_Movement_2
+# 293 "data/maps/AstralisAcademy/scripts.pory"
+	waitmovement 0
+# 294 "data/maps/AstralisAcademy/scripts.pory"
+	removeobject 4
+# 295 "data/maps/AstralisAcademy/scripts.pory"
+	releaseall
 	return
 
 
@@ -896,6 +1008,38 @@ TrialAnnouncement1_Movement_11:
 	walk_up
 	step_end
 
+# 243 "data/maps/AstralisAcademy/scripts.pory"
+FracturedMask_Movement_0:
+# 243 "data/maps/AstralisAcademy/scripts.pory"
+	face_right
+# 243 "data/maps/AstralisAcademy/scripts.pory"
+	face_player
+	step_end
+
+# 262 "data/maps/AstralisAcademy/scripts.pory"
+FracturedMask_Movement_1:
+# 262 "data/maps/AstralisAcademy/scripts.pory"
+	walk_fast_right
+# 262 "data/maps/AstralisAcademy/scripts.pory"
+	walk_fast_right
+	step_end
+
+# 269 "data/maps/AstralisAcademy/scripts.pory"
+FracturedMask_Movement_2:
+# 269 "data/maps/AstralisAcademy/scripts.pory"
+	walk_fast_down
+# 269 "data/maps/AstralisAcademy/scripts.pory"
+	walk_fast_down
+	step_end
+
+# 273 "data/maps/AstralisAcademy/scripts.pory"
+FracturedMask_Movement_3:
+# 273 "data/maps/AstralisAcademy/scripts.pory"
+	walk_fast_left
+# 273 "data/maps/AstralisAcademy/scripts.pory"
+	walk_fast_left
+	step_end
+
 TrialAnnouncement_Text_0:
 # 75 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Hi Xylar!\p"
@@ -912,6 +1056,10 @@ TrialAnnouncement_Text_2:
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Come on, don't be shy.$"
 
 TrialAnnouncement_Text_3:
+# 95 "data/maps/AstralisAcademy/scripts.pory"
+	.string "Headmaster Alistair$"
+
+TrialAnnouncement_Text_4:
 # 96 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}This academy values strength through\n"
 	.string "experience...\p"
@@ -925,7 +1073,7 @@ TrialAnnouncement_Text_3:
 	.string "grounds and prepare to face your\l"
 	.string "opponent.$"
 
-TrialAnnouncement_Text_4:
+TrialAnnouncement_Text_5:
 # 108 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}...$"
 
@@ -1059,6 +1207,60 @@ TrialAnnouncement1_Text_24:
 	.string "surviving, not like a student trying to\l"
 	.string "prove himself.\p"
 	.string "Just what has this guy been through?$"
+
+FracturedMask_Text_0:
+# 246 "data/maps/AstralisAcademy/scripts.pory"
+	.string "Liam$"
+
+FracturedMask_Text_1:
+# 247 "data/maps/AstralisAcademy/scripts.pory"
+	.string "{COLOR BLUE}{SHADOW DARK_GRAY}Look at this guy. Acts like he's too\n"
+	.string "good to talk to us...$"
+
+FracturedMask_Text_2:
+# 248 "data/maps/AstralisAcademy/scripts.pory"
+	.string "{COLOR BLUE}{SHADOW DARK_GRAY}Bet his family's even more messed up.$"
+
+FracturedMask_Text_3:
+# 252 "data/maps/AstralisAcademy/scripts.pory"
+	.string "{COLOR BLUE}{SHADOW DARK_GRAY}What's wrong, rich boy? Daddy never\n"
+	.string "taught...$"
+
+FracturedMask_Text_4:
+# 260 "data/maps/AstralisAcademy/scripts.pory"
+	.string "{COLOR BLUE}{SHADOW DARK_GRAY}...What did you say?$"
+
+FracturedMask_Text_5:
+# 268 "data/maps/AstralisAcademy/scripts.pory"
+	.string "{COLOR BLUE}{SHADOW DARK_GRAY}You know NOTHING!$"
+
+FracturedMask_Text_6:
+# 271 "data/maps/AstralisAcademy/scripts.pory"
+	.string "Prof.Elias$"
+
+FracturedMask_Text_7:
+# 272 "data/maps/AstralisAcademy/scripts.pory"
+	.string "{COLOR BLUE}{SHADOW DARK_GRAY}Xylar, STOP!$"
+
+FracturedMask_Text_8:
+# 276 "data/maps/AstralisAcademy/scripts.pory"
+	.string "{COLOR BLUE}{SHADOW DARK_GRAY}Enough.$"
+
+FracturedMask_Text_9:
+# 281 "data/maps/AstralisAcademy/scripts.pory"
+	.string "{COLOR BLUE}{SHADOW DARK_GRAY}I... I didn't...$"
+
+FracturedMask_Text_10:
+# 286 "data/maps/AstralisAcademy/scripts.pory"
+	.string "{COLOR BLUE}{SHADOW DARK_GRAY}Expulsion is on the table...$"
+
+FracturedMask_Text_11:
+# 287 "data/maps/AstralisAcademy/scripts.pory"
+	.string "{COLOR BLUE}{SHADOW DARK_GRAY}They don't know about Luther.$"
+
+FracturedMask_Text_12:
+# 291 "data/maps/AstralisAcademy/scripts.pory"
+	.string "{COLOR BLUE}{SHADOW DARK_GRAY}Don't say his name.$"
 
 damien::
 # 116 "data/maps/AstralisAcademy/scripts.pory"

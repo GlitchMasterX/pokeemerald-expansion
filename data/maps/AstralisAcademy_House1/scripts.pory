@@ -116,6 +116,8 @@ mapscripts AstralisAcademy_House1_MapScripts {
 		msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}...I should also go.\pIt's getting late."),MSGBOX_AUTOCLOSE)
 		 
 		warp(MAP_DORMINDOOR1,3,7)
+		initclock(10,00)
+		pausefakertc
         setflag(FLAG_FIONA_NIGHT)
 	}
 	elif(flag(FLAG_FIONA_NIGHT)&&(!flag(FLAG_FIONA_NIGHT_1))&&(!flag(FLAG_FIONA_NIGHT_2))){

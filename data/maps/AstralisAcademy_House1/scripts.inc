@@ -8,7 +8,7 @@ Fionanight::
 # 5 "data/maps/AstralisAcademy_House1/scripts.pory"
 	goto_if_unset FLAG_FIONA_NIGHT, Fionanight_9
 Fionanight_5:
-# 121 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 123 "data/maps/AstralisAcademy_House1/scripts.pory"
 	goto_if_set FLAG_FIONA_NIGHT, Fionanight_4
 Fionanight_3:
 	end
@@ -153,201 +153,205 @@ Fionanight_1:
 # 118 "data/maps/AstralisAcademy_House1/scripts.pory"
 	warp MAP_DORMINDOOR1, 3, 7
 # 119 "data/maps/AstralisAcademy_House1/scripts.pory"
+	initclock 10, 00
+# 120 "data/maps/AstralisAcademy_House1/scripts.pory"
+	pausefakertc
+# 121 "data/maps/AstralisAcademy_House1/scripts.pory"
 	setflag FLAG_FIONA_NIGHT
 	return
 
 Fionanight_2:
-# 122 "data/maps/AstralisAcademy_House1/scripts.pory"
-	lock
-# 123 "data/maps/AstralisAcademy_House1/scripts.pory"
-	applymovement 0xFF, Fionanight_Movement_2
 # 124 "data/maps/AstralisAcademy_House1/scripts.pory"
-	waitmovement 0
+	lock
 # 125 "data/maps/AstralisAcademy_House1/scripts.pory"
-	speakername unknown
+	applymovement 0xFF, Fionanight_Movement_2
 # 126 "data/maps/AstralisAcademy_House1/scripts.pory"
-	msgbox Fionanight_Text_19, MSGBOX_AUTOCLOSE
-# 128 "data/maps/AstralisAcademy_House1/scripts.pory"
-	speakername Xylar1
-# 129 "data/maps/AstralisAcademy_House1/scripts.pory"
-	msgbox Fionanight_Text_20, MSGBOX_AUTOCLOSE
-# 131 "data/maps/AstralisAcademy_House1/scripts.pory"
-	waitmessage
-# 132 "data/maps/AstralisAcademy_House1/scripts.pory"
-	applymovement 1, Fionanight_Movement_1
-# 133 "data/maps/AstralisAcademy_House1/scripts.pory"
-	speakername unknown
-# 134 "data/maps/AstralisAcademy_House1/scripts.pory"
-	msgbox Fionanight_Text_21, MSGBOX_AUTOCLOSE
-# 136 "data/maps/AstralisAcademy_House1/scripts.pory"
-	speakername Xylar1
-# 137 "data/maps/AstralisAcademy_House1/scripts.pory"
-	msgbox Fionanight_Text_3, MSGBOX_AUTOCLOSE
-# 139 "data/maps/AstralisAcademy_House1/scripts.pory"
-	waitmessage
-# 140 "data/maps/AstralisAcademy_House1/scripts.pory"
-	applymovement 1, Fionanight_Movement_2
-# 141 "data/maps/AstralisAcademy_House1/scripts.pory"
-	speakername unknown
-# 142 "data/maps/AstralisAcademy_House1/scripts.pory"
-	msgbox Fionanight_Text_22, MSGBOX_AUTOCLOSE
-# 144 "data/maps/AstralisAcademy_House1/scripts.pory"
-	waitmessage
-# 145 "data/maps/AstralisAcademy_House1/scripts.pory"
-	applymovement 0xFF, Fionanight_Movement_6
-# 149 "data/maps/AstralisAcademy_House1/scripts.pory"
 	waitmovement 0
-# 150 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 127 "data/maps/AstralisAcademy_House1/scripts.pory"
 	speakername unknown
-# 151 "data/maps/AstralisAcademy_House1/scripts.pory"
-	msgbox Fionanight_Text_23, MSGBOX_AUTOCLOSE
-# 153 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 128 "data/maps/AstralisAcademy_House1/scripts.pory"
+	msgbox Fionanight_Text_19, MSGBOX_AUTOCLOSE
+# 130 "data/maps/AstralisAcademy_House1/scripts.pory"
 	speakername Xylar1
-# 154 "data/maps/AstralisAcademy_House1/scripts.pory"
-	msgbox Fionanight_Text_24, MSGBOX_AUTOCLOSE
-# 156 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 131 "data/maps/AstralisAcademy_House1/scripts.pory"
+	msgbox Fionanight_Text_20, MSGBOX_AUTOCLOSE
+# 133 "data/maps/AstralisAcademy_House1/scripts.pory"
+	waitmessage
+# 134 "data/maps/AstralisAcademy_House1/scripts.pory"
 	applymovement 1, Fionanight_Movement_1
-# 157 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 135 "data/maps/AstralisAcademy_House1/scripts.pory"
 	speakername unknown
+# 136 "data/maps/AstralisAcademy_House1/scripts.pory"
+	msgbox Fionanight_Text_21, MSGBOX_AUTOCLOSE
+# 138 "data/maps/AstralisAcademy_House1/scripts.pory"
+	speakername Xylar1
+# 139 "data/maps/AstralisAcademy_House1/scripts.pory"
+	msgbox Fionanight_Text_3, MSGBOX_AUTOCLOSE
+# 141 "data/maps/AstralisAcademy_House1/scripts.pory"
+	waitmessage
+# 142 "data/maps/AstralisAcademy_House1/scripts.pory"
+	applymovement 1, Fionanight_Movement_2
+# 143 "data/maps/AstralisAcademy_House1/scripts.pory"
+	speakername unknown
+# 144 "data/maps/AstralisAcademy_House1/scripts.pory"
+	msgbox Fionanight_Text_22, MSGBOX_AUTOCLOSE
+# 146 "data/maps/AstralisAcademy_House1/scripts.pory"
+	waitmessage
+# 147 "data/maps/AstralisAcademy_House1/scripts.pory"
+	applymovement 0xFF, Fionanight_Movement_6
+# 151 "data/maps/AstralisAcademy_House1/scripts.pory"
+	waitmovement 0
+# 152 "data/maps/AstralisAcademy_House1/scripts.pory"
+	speakername unknown
+# 153 "data/maps/AstralisAcademy_House1/scripts.pory"
+	msgbox Fionanight_Text_23, MSGBOX_AUTOCLOSE
+# 155 "data/maps/AstralisAcademy_House1/scripts.pory"
+	speakername Xylar1
+# 156 "data/maps/AstralisAcademy_House1/scripts.pory"
+	msgbox Fionanight_Text_24, MSGBOX_AUTOCLOSE
 # 158 "data/maps/AstralisAcademy_House1/scripts.pory"
-	msgbox Fionanight_Text_25, MSGBOX_AUTOCLOSE
+	applymovement 1, Fionanight_Movement_1
+# 159 "data/maps/AstralisAcademy_House1/scripts.pory"
+	speakername unknown
 # 160 "data/maps/AstralisAcademy_House1/scripts.pory"
+	msgbox Fionanight_Text_25, MSGBOX_AUTOCLOSE
+# 162 "data/maps/AstralisAcademy_House1/scripts.pory"
 	getplayerxy VAR_0x8000, VAR_0x8001
-# 161 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 163 "data/maps/AstralisAcademy_House1/scripts.pory"
 	compare VAR_0x8000, 39
 	goto_if_eq Fionanight_21
 Fionanight_19:
-# 165 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 167 "data/maps/AstralisAcademy_House1/scripts.pory"
 	compare VAR_0x8000, 41
 	goto_if_eq Fionanight_18
 Fionanight_17:
-# 169 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 171 "data/maps/AstralisAcademy_House1/scripts.pory"
 	applymovement 0xFF, Fionanight_Movement_9
-# 170 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 172 "data/maps/AstralisAcademy_House1/scripts.pory"
 	waitmovement 0
 Fionanight_14:
-# 171 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 173 "data/maps/AstralisAcademy_House1/scripts.pory"
 	speakername Xylar1
-# 172 "data/maps/AstralisAcademy_House1/scripts.pory"
-	msgbox Fionanight_Text_26, MSGBOX_AUTOCLOSE
 # 174 "data/maps/AstralisAcademy_House1/scripts.pory"
+	msgbox Fionanight_Text_26, MSGBOX_AUTOCLOSE
+# 176 "data/maps/AstralisAcademy_House1/scripts.pory"
 	waitmessage
-# 175 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 177 "data/maps/AstralisAcademy_House1/scripts.pory"
 	compare VAR_0x8000, 39
 	goto_if_eq Fionanight_31
 Fionanight_29:
-# 184 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 186 "data/maps/AstralisAcademy_House1/scripts.pory"
 	compare VAR_0x8000, 41
 	goto_if_eq Fionanight_28
 Fionanight_27:
-# 194 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 196 "data/maps/AstralisAcademy_House1/scripts.pory"
 	applymovement 0xFF, Fionanight_Movement_12
-# 200 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 202 "data/maps/AstralisAcademy_House1/scripts.pory"
 	waitmovement 0
 Fionanight_24:
-# 201 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 203 "data/maps/AstralisAcademy_House1/scripts.pory"
 	speakername Xylar1
-# 202 "data/maps/AstralisAcademy_House1/scripts.pory"
-	msgbox Fionanight_Text_27, MSGBOX_AUTOCLOSE
 # 204 "data/maps/AstralisAcademy_House1/scripts.pory"
+	msgbox Fionanight_Text_27, MSGBOX_AUTOCLOSE
+# 206 "data/maps/AstralisAcademy_House1/scripts.pory"
 	speakername unknown
-# 205 "data/maps/AstralisAcademy_House1/scripts.pory"
-	msgbox Fionanight_Text_28, MSGBOX_AUTOCLOSE
 # 207 "data/maps/AstralisAcademy_House1/scripts.pory"
+	msgbox Fionanight_Text_28, MSGBOX_AUTOCLOSE
+# 209 "data/maps/AstralisAcademy_House1/scripts.pory"
 	speakername Xylar1
-# 208 "data/maps/AstralisAcademy_House1/scripts.pory"
-	msgbox Fionanight_Text_29, MSGBOX_AUTOCLOSE
 # 210 "data/maps/AstralisAcademy_House1/scripts.pory"
-	waitmessage
-# 211 "data/maps/AstralisAcademy_House1/scripts.pory"
-	applymovement 1, Fionanight_Movement_13
+	msgbox Fionanight_Text_29, MSGBOX_AUTOCLOSE
 # 212 "data/maps/AstralisAcademy_House1/scripts.pory"
-	speakername unknown
+	waitmessage
 # 213 "data/maps/AstralisAcademy_House1/scripts.pory"
-	msgbox Fionanight_Text_30, MSGBOX_AUTOCLOSE
+	applymovement 1, Fionanight_Movement_13
+# 214 "data/maps/AstralisAcademy_House1/scripts.pory"
+	speakername unknown
 # 215 "data/maps/AstralisAcademy_House1/scripts.pory"
+	msgbox Fionanight_Text_30, MSGBOX_AUTOCLOSE
+# 217 "data/maps/AstralisAcademy_House1/scripts.pory"
 	waitmessage
-# 216 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 218 "data/maps/AstralisAcademy_House1/scripts.pory"
 	applymovement 0xFF, Fionanight_Movement_4
-# 222 "data/maps/AstralisAcademy_House1/scripts.pory"
-	waitmovement 0
-# 223 "data/maps/AstralisAcademy_House1/scripts.pory"
-	speakername Xylar1
 # 224 "data/maps/AstralisAcademy_House1/scripts.pory"
-	msgbox Fionanight_Text_31, MSGBOX_AUTOCLOSE
+	waitmovement 0
+# 225 "data/maps/AstralisAcademy_House1/scripts.pory"
+	speakername Xylar1
 # 226 "data/maps/AstralisAcademy_House1/scripts.pory"
+	msgbox Fionanight_Text_31, MSGBOX_AUTOCLOSE
+# 228 "data/maps/AstralisAcademy_House1/scripts.pory"
 	speakername unknown
-# 227 "data/maps/AstralisAcademy_House1/scripts.pory"
-	msgbox Fionanight_Text_32, MSGBOX_AUTOCLOSE
 # 229 "data/maps/AstralisAcademy_House1/scripts.pory"
+	msgbox Fionanight_Text_32, MSGBOX_AUTOCLOSE
+# 231 "data/maps/AstralisAcademy_House1/scripts.pory"
 	speakername Xylar1
-# 230 "data/maps/AstralisAcademy_House1/scripts.pory"
-	msgbox Fionanight_Text_33, MSGBOX_AUTOCLOSE
 # 232 "data/maps/AstralisAcademy_House1/scripts.pory"
-	applymovement 1, Fionanight_Movement_2
-# 233 "data/maps/AstralisAcademy_House1/scripts.pory"
-	speakername unknown
+	msgbox Fionanight_Text_33, MSGBOX_AUTOCLOSE
 # 234 "data/maps/AstralisAcademy_House1/scripts.pory"
-	msgbox Fionanight_Text_34, MSGBOX_AUTOCLOSE
-# 236 "data/maps/AstralisAcademy_House1/scripts.pory"
-	waitmessage
-# 237 "data/maps/AstralisAcademy_House1/scripts.pory"
-	applymovement 0xFF, Fionanight_Movement_3
-# 242 "data/maps/AstralisAcademy_House1/scripts.pory"
-	waitmovement 0
-# 243 "data/maps/AstralisAcademy_House1/scripts.pory"
-	applymovement 1, Fionanight_Movement_1
-# 244 "data/maps/AstralisAcademy_House1/scripts.pory"
-	speakername unknown
-# 245 "data/maps/AstralisAcademy_House1/scripts.pory"
-	msgbox Fionanight_Text_35, MSGBOX_AUTOCLOSE
-# 247 "data/maps/AstralisAcademy_House1/scripts.pory"
-	speakername Xylar1
-# 248 "data/maps/AstralisAcademy_House1/scripts.pory"
-	msgbox Fionanight_Text_36, MSGBOX_AUTOCLOSE
-# 250 "data/maps/AstralisAcademy_House1/scripts.pory"
 	applymovement 1, Fionanight_Movement_2
-# 251 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 235 "data/maps/AstralisAcademy_House1/scripts.pory"
+	speakername unknown
+# 236 "data/maps/AstralisAcademy_House1/scripts.pory"
+	msgbox Fionanight_Text_34, MSGBOX_AUTOCLOSE
+# 238 "data/maps/AstralisAcademy_House1/scripts.pory"
+	waitmessage
+# 239 "data/maps/AstralisAcademy_House1/scripts.pory"
+	applymovement 0xFF, Fionanight_Movement_3
+# 244 "data/maps/AstralisAcademy_House1/scripts.pory"
 	waitmovement 0
+# 245 "data/maps/AstralisAcademy_House1/scripts.pory"
+	applymovement 1, Fionanight_Movement_1
+# 246 "data/maps/AstralisAcademy_House1/scripts.pory"
+	speakername unknown
+# 247 "data/maps/AstralisAcademy_House1/scripts.pory"
+	msgbox Fionanight_Text_35, MSGBOX_AUTOCLOSE
+# 249 "data/maps/AstralisAcademy_House1/scripts.pory"
+	speakername Xylar1
+# 250 "data/maps/AstralisAcademy_House1/scripts.pory"
+	msgbox Fionanight_Text_36, MSGBOX_AUTOCLOSE
 # 252 "data/maps/AstralisAcademy_House1/scripts.pory"
-	speakername unknown
+	applymovement 1, Fionanight_Movement_2
 # 253 "data/maps/AstralisAcademy_House1/scripts.pory"
-	msgbox Fionanight_Text_37, MSGBOX_AUTOCLOSE
-# 255 "data/maps/AstralisAcademy_House1/scripts.pory"
-	speakername Xylar1
-# 256 "data/maps/AstralisAcademy_House1/scripts.pory"
-	msgbox Fionanight_Text_38, MSGBOX_AUTOCLOSE
-# 258 "data/maps/AstralisAcademy_House1/scripts.pory"
-	applymovement 1, Fionanight_Movement_14
-# 260 "data/maps/AstralisAcademy_House1/scripts.pory"
+	waitmovement 0
+# 254 "data/maps/AstralisAcademy_House1/scripts.pory"
 	speakername unknown
-# 261 "data/maps/AstralisAcademy_House1/scripts.pory"
-	msgbox Fionanight_Text_39, MSGBOX_AUTOCLOSE
-# 263 "data/maps/AstralisAcademy_House1/scripts.pory"
-	applymovement 0xFF, Fionanight_Movement_5
-# 267 "data/maps/AstralisAcademy_House1/scripts.pory"
-	waitmovement 0
-# 268 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 255 "data/maps/AstralisAcademy_House1/scripts.pory"
+	msgbox Fionanight_Text_37, MSGBOX_AUTOCLOSE
+# 257 "data/maps/AstralisAcademy_House1/scripts.pory"
 	speakername Xylar1
+# 258 "data/maps/AstralisAcademy_House1/scripts.pory"
+	msgbox Fionanight_Text_38, MSGBOX_AUTOCLOSE
+# 260 "data/maps/AstralisAcademy_House1/scripts.pory"
+	applymovement 1, Fionanight_Movement_14
+# 262 "data/maps/AstralisAcademy_House1/scripts.pory"
+	speakername unknown
+# 263 "data/maps/AstralisAcademy_House1/scripts.pory"
+	msgbox Fionanight_Text_39, MSGBOX_AUTOCLOSE
+# 265 "data/maps/AstralisAcademy_House1/scripts.pory"
+	applymovement 0xFF, Fionanight_Movement_5
 # 269 "data/maps/AstralisAcademy_House1/scripts.pory"
-	msgbox Fionanight_Text_40, MSGBOX_AUTOCLOSE
-# 271 "data/maps/AstralisAcademy_House1/scripts.pory"
-	applymovement 0xFF, Fionanight_Movement_15
-# 272 "data/maps/AstralisAcademy_House1/scripts.pory"
 	waitmovement 0
+# 270 "data/maps/AstralisAcademy_House1/scripts.pory"
+	speakername Xylar1
+# 271 "data/maps/AstralisAcademy_House1/scripts.pory"
+	msgbox Fionanight_Text_40, MSGBOX_AUTOCLOSE
 # 273 "data/maps/AstralisAcademy_House1/scripts.pory"
-	warp MAP_DORMINDOOR1, 3, 7
+	applymovement 0xFF, Fionanight_Movement_15
 # 274 "data/maps/AstralisAcademy_House1/scripts.pory"
+	waitmovement 0
+# 275 "data/maps/AstralisAcademy_House1/scripts.pory"
+	warp MAP_DORMINDOOR1, 3, 7
+# 276 "data/maps/AstralisAcademy_House1/scripts.pory"
 	setflag FLAG_FIONA_NIGHT_1
 	return
 
 Fionanight_4:
-# 121 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 123 "data/maps/AstralisAcademy_House1/scripts.pory"
 	goto_if_unset FLAG_FIONA_NIGHT_1, Fionanight_6
 	goto Fionanight_3
 
 Fionanight_6:
-# 121 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 123 "data/maps/AstralisAcademy_House1/scripts.pory"
 	goto_if_unset FLAG_FIONA_NIGHT_2, Fionanight_2
 	goto Fionanight_3
 
@@ -362,53 +366,53 @@ Fionanight_11:
 	goto Fionanight_5
 
 Fionanight_15:
-# 162 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 164 "data/maps/AstralisAcademy_House1/scripts.pory"
 	applymovement 0xFF, Fionanight_Movement_7
-# 163 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 165 "data/maps/AstralisAcademy_House1/scripts.pory"
 	waitmovement 0
 	goto Fionanight_14
 
 Fionanight_16:
-# 166 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 168 "data/maps/AstralisAcademy_House1/scripts.pory"
 	applymovement 0xFF, Fionanight_Movement_8
-# 167 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 169 "data/maps/AstralisAcademy_House1/scripts.pory"
 	waitmovement 0
 	goto Fionanight_14
 
 Fionanight_18:
-# 165 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 167 "data/maps/AstralisAcademy_House1/scripts.pory"
 	compare VAR_0x8001, 19
 	goto_if_eq Fionanight_16
 	goto Fionanight_17
 
 Fionanight_21:
-# 161 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 163 "data/maps/AstralisAcademy_House1/scripts.pory"
 	compare VAR_0x8001, 19
 	goto_if_eq Fionanight_15
 	goto Fionanight_19
 
 Fionanight_25:
-# 176 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 178 "data/maps/AstralisAcademy_House1/scripts.pory"
 	applymovement 0xFF, Fionanight_Movement_10
-# 182 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 184 "data/maps/AstralisAcademy_House1/scripts.pory"
 	waitmovement 0
 	goto Fionanight_24
 
 Fionanight_26:
-# 185 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 187 "data/maps/AstralisAcademy_House1/scripts.pory"
 	applymovement 0xFF, Fionanight_Movement_11
-# 191 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 193 "data/maps/AstralisAcademy_House1/scripts.pory"
 	waitmovement 0
 	goto Fionanight_24
 
 Fionanight_28:
-# 184 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 186 "data/maps/AstralisAcademy_House1/scripts.pory"
 	compare VAR_0x8001, 19
 	goto_if_eq Fionanight_26
 	goto Fionanight_27
 
 Fionanight_31:
-# 175 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 177 "data/maps/AstralisAcademy_House1/scripts.pory"
 	compare VAR_0x8001, 19
 	goto_if_eq Fionanight_25
 	goto Fionanight_29
@@ -472,103 +476,103 @@ Fionanight_Movement_5:
 	face_down
 	step_end
 
-# 145 "data/maps/AstralisAcademy_House1/scripts.pory"
-Fionanight_Movement_6:
-# 146 "data/maps/AstralisAcademy_House1/scripts.pory"
-	delay_16
 # 147 "data/maps/AstralisAcademy_House1/scripts.pory"
-	delay_16
+Fionanight_Movement_6:
 # 148 "data/maps/AstralisAcademy_House1/scripts.pory"
+	delay_16
+# 149 "data/maps/AstralisAcademy_House1/scripts.pory"
+	delay_16
+# 150 "data/maps/AstralisAcademy_House1/scripts.pory"
 	delay_16
 	step_end
 
-# 162 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 164 "data/maps/AstralisAcademy_House1/scripts.pory"
 Fionanight_Movement_7:
-# 162 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 164 "data/maps/AstralisAcademy_House1/scripts.pory"
 	face_right
 	step_end
 
-# 166 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 168 "data/maps/AstralisAcademy_House1/scripts.pory"
 Fionanight_Movement_8:
-# 166 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 168 "data/maps/AstralisAcademy_House1/scripts.pory"
 	face_left
 	step_end
 
-# 169 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 171 "data/maps/AstralisAcademy_House1/scripts.pory"
 Fionanight_Movement_9:
-# 169 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 171 "data/maps/AstralisAcademy_House1/scripts.pory"
 	face_original_direction
 	step_end
 
-# 176 "data/maps/AstralisAcademy_House1/scripts.pory"
-Fionanight_Movement_10:
-# 177 "data/maps/AstralisAcademy_House1/scripts.pory"
-	delay_16
 # 178 "data/maps/AstralisAcademy_House1/scripts.pory"
-	delay_16
+Fionanight_Movement_10:
 # 179 "data/maps/AstralisAcademy_House1/scripts.pory"
 	delay_16
 # 180 "data/maps/AstralisAcademy_House1/scripts.pory"
-	delay_8
+	delay_16
 # 181 "data/maps/AstralisAcademy_House1/scripts.pory"
+	delay_16
+# 182 "data/maps/AstralisAcademy_House1/scripts.pory"
+	delay_8
+# 183 "data/maps/AstralisAcademy_House1/scripts.pory"
 	face_right
 	step_end
 
-# 185 "data/maps/AstralisAcademy_House1/scripts.pory"
-Fionanight_Movement_11:
-# 186 "data/maps/AstralisAcademy_House1/scripts.pory"
-	delay_16
 # 187 "data/maps/AstralisAcademy_House1/scripts.pory"
-	delay_16
+Fionanight_Movement_11:
 # 188 "data/maps/AstralisAcademy_House1/scripts.pory"
 	delay_16
 # 189 "data/maps/AstralisAcademy_House1/scripts.pory"
-	delay_8
+	delay_16
 # 190 "data/maps/AstralisAcademy_House1/scripts.pory"
+	delay_16
+# 191 "data/maps/AstralisAcademy_House1/scripts.pory"
+	delay_8
+# 192 "data/maps/AstralisAcademy_House1/scripts.pory"
 	face_left
 	step_end
 
-# 194 "data/maps/AstralisAcademy_House1/scripts.pory"
-Fionanight_Movement_12:
-# 195 "data/maps/AstralisAcademy_House1/scripts.pory"
-	delay_16
 # 196 "data/maps/AstralisAcademy_House1/scripts.pory"
-	delay_16
+Fionanight_Movement_12:
 # 197 "data/maps/AstralisAcademy_House1/scripts.pory"
 	delay_16
 # 198 "data/maps/AstralisAcademy_House1/scripts.pory"
-	delay_8
+	delay_16
 # 199 "data/maps/AstralisAcademy_House1/scripts.pory"
+	delay_16
+# 200 "data/maps/AstralisAcademy_House1/scripts.pory"
+	delay_8
+# 201 "data/maps/AstralisAcademy_House1/scripts.pory"
 	face_original_direction
 	step_end
 
-# 211 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 213 "data/maps/AstralisAcademy_House1/scripts.pory"
 Fionanight_Movement_13:
-# 211 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 213 "data/maps/AstralisAcademy_House1/scripts.pory"
 	emote_happy
 	step_end
 
-# 258 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 260 "data/maps/AstralisAcademy_House1/scripts.pory"
 Fionanight_Movement_14:
-# 258 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 260 "data/maps/AstralisAcademy_House1/scripts.pory"
 	face_player
-# 259 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 261 "data/maps/AstralisAcademy_House1/scripts.pory"
 	emote_happy
 	step_end
 
-# 271 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 273 "data/maps/AstralisAcademy_House1/scripts.pory"
 Fionanight_Movement_15:
-# 271 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 273 "data/maps/AstralisAcademy_House1/scripts.pory"
 	walk_up
-# 271 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 273 "data/maps/AstralisAcademy_House1/scripts.pory"
 	walk_up
-# 271 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 273 "data/maps/AstralisAcademy_House1/scripts.pory"
 	walk_up
-# 271 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 273 "data/maps/AstralisAcademy_House1/scripts.pory"
 	walk_up
-# 271 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 273 "data/maps/AstralisAcademy_House1/scripts.pory"
 	walk_up
-# 271 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 273 "data/maps/AstralisAcademy_House1/scripts.pory"
 	walk_up
 	step_end
 
@@ -652,92 +656,92 @@ Fionanight_Text_18:
 	.string "It's getting late.$"
 
 Fionanight_Text_19:
-# 126 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 128 "data/maps/AstralisAcademy_House1/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}...You came back.$"
 
 Fionanight_Text_20:
-# 129 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 131 "data/maps/AstralisAcademy_House1/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}...Yeah.$"
 
 Fionanight_Text_21:
-# 134 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 136 "data/maps/AstralisAcademy_House1/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}...Couldn't sleep?$"
 
 Fionanight_Text_22:
-# 142 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 144 "data/maps/AstralisAcademy_House1/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}...Me neither.$"
 
 Fionanight_Text_23:
-# 151 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 153 "data/maps/AstralisAcademy_House1/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}..You always this quiet?$"
 
 Fionanight_Text_24:
-# 154 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 156 "data/maps/AstralisAcademy_House1/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}....\p"
 	.string "Depends.$"
 
 Fionanight_Text_25:
-# 158 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 160 "data/maps/AstralisAcademy_House1/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}On what?$"
 
 Fionanight_Text_26:
-# 172 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 174 "data/maps/AstralisAcademy_House1/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Who I'm talking to.$"
 
 Fionanight_Text_27:
-# 202 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 204 "data/maps/AstralisAcademy_House1/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}...You're blind.$"
 
 Fionanight_Text_28:
-# 205 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 207 "data/maps/AstralisAcademy_House1/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}...You just noticed?$"
 
 Fionanight_Text_29:
-# 208 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 210 "data/maps/AstralisAcademy_House1/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Yeah.$"
 
 Fionanight_Text_30:
-# 213 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 215 "data/maps/AstralisAcademy_House1/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}...Took you long enough.$"
 
 Fionanight_Text_31:
-# 224 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 226 "data/maps/AstralisAcademy_House1/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}....How do you get around?$"
 
 Fionanight_Text_32:
-# 227 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 229 "data/maps/AstralisAcademy_House1/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}...I manage.$"
 
 Fionanight_Text_33:
-# 230 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 232 "data/maps/AstralisAcademy_House1/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}That's not an answer.$"
 
 Fionanight_Text_34:
-# 234 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 236 "data/maps/AstralisAcademy_House1/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}...Maybe.$"
 
 Fionanight_Text_35:
-# 245 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 247 "data/maps/AstralisAcademy_House1/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}...You think it changes anything?$"
 
 Fionanight_Text_36:
-# 248 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 250 "data/maps/AstralisAcademy_House1/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}No.$"
 
 Fionanight_Text_37:
-# 253 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 255 "data/maps/AstralisAcademy_House1/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}..Good.$"
 
 Fionanight_Text_38:
-# 256 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 258 "data/maps/AstralisAcademy_House1/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}What's your name?$"
 
 Fionanight_Text_39:
-# 261 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 263 "data/maps/AstralisAcademy_House1/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}..Finally interested?\p"
 	.string "Fiona....\p"
 	.string "Fiona Everhart.$"
 
 Fionanight_Text_40:
-# 269 "data/maps/AstralisAcademy_House1/scripts.pory"
+# 271 "data/maps/AstralisAcademy_House1/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}...See you around, Fiona.$"
