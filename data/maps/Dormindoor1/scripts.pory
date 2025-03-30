@@ -55,9 +55,15 @@ script Kaelmet {
     waitmessage
     applymovement(0x7F,moves(walk_left*5))
     waitmovement(0)
+    fadescreen(FADE_TO_BLACK)
+    speakername(Xylar1)
+    msgbox(format("I came here beacuse I lost the bet.\pBut I don't know if it was the right choice.\pLet's just sleep for now."),MSGBOX_AUTOCLOSE)     
+    playse(MUS_HEAL)
+    waitse
     setvar(ACADEMY_START,9)
     setvar(VAR_CURRENT_DAY_OF_WEEK,2)
     special(RemoveCameraObject)
+    fadescreen(FADE_FROM_BLACK)
     release
     fadedefaultbgm
 }

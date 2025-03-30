@@ -72,7 +72,7 @@ script TrialAnnouncement {
 	applymovement(20,moves(walk_up*5))
 	waitmovement(0)
 	speakername(serena)  
-    msgbox(format("{CREATE_MUGSHOT MUGSHOT_TEST EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Hi Xylar!\pThe Headmaster is making an announcement right now.{CREATE_MUGSHOT MUGSHOT_TEST EMOTE_ALT}\pLet's go together.{DESTROY_MUGSHOT}"), MSGBOX_AUTOCLOSE)        
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Hi Xylar!\pThe Headmaster is making an announcement right now.\pLet's go together."), MSGBOX_AUTOCLOSE)        
 	speakername(Xylar1)  
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Leave me alone."), MSGBOX_AUTOCLOSE) // Silent internal monologue  
 	speakername(serena)  

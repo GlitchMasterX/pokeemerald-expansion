@@ -2649,7 +2649,7 @@
 	@ 	createfieldmugshot MUGSHOT_TEST, EMOTE_NORMAL
 	@ 	msgbox test
 	@ 	removefieldmugshot
-	@ 	createfieldmugshot MUGSHOT_TEST, EMOTE_ALT
+	@ 	createfieldmugshot MUGSHOT_TEST, EMOTE_QUESTION
 	@ 	msgbox test2
 	@ 	removefieldmugshot
 

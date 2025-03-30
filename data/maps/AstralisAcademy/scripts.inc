@@ -1042,10 +1042,10 @@ FracturedMask_Movement_3:
 
 TrialAnnouncement_Text_0:
 # 75 "data/maps/AstralisAcademy/scripts.pory"
-	.string "{CREATE_MUGSHOT MUGSHOT_TEST EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Hi Xylar!\p"
+	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Hi Xylar!\p"
 	.string "The Headmaster is making an\n"
-	.string "announcement right now.{CREATE_MUGSHOT MUGSHOT_TEST EMOTE_ALT}\p"
-	.string "Let's go together.{DESTROY_MUGSHOT}$"
+	.string "announcement right now.\p"
+	.string "Let's go together.$"
 
 TrialAnnouncement_Text_1:
 # 77 "data/maps/AstralisAcademy/scripts.pory"
