@@ -15,11 +15,6 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ASTRALIS_ACADEMY_GYM",
-      "offset": -31,
-      "direction": "right"
-    },
-    {
       "map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
       "offset": -18,
       "direction": "down"
@@ -28,6 +23,11 @@
       "map": "MAP_HARBORAC",
       "offset": 1,
       "direction": "left"
+    },
+    {
+      "map": "MAP_ACADEMY_DORM",
+      "offset": -32,
+      "direction": "right"
     }
   ],
   "object_events": [
@@ -323,14 +323,14 @@
       "x": 42,
       "y": 22,
       "elevation": 0,
-      "dest_map": "MAP_ASTRALIS_ACADEMY_GYM",
+      "dest_map": "MAP_ACADEMY_DORM",
       "dest_warp_id": "0"
     },
     {
       "x": 42,
       "y": 21,
       "elevation": 0,
-      "dest_map": "MAP_ASTRALIS_ACADEMY_GYM",
+      "dest_map": "MAP_ACADEMY_DORM",
       "dest_warp_id": "1"
     },
     {

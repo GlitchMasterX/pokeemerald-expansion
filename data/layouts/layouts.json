@@ -782,7 +782,7 @@
       "blockdata_filepath": "data/layouts/PacifidlogTown_House2/map.bin"
     },
     {
-      "id": "LAYOUT_ASTRALIS_ACADEMY_GYM",
+      "id": "LAYOUT_ACADEMY_DORM",
       "name": "AcademyDorm_Layout",
       "width": 46,
       "height": 60,

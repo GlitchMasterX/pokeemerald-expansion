@@ -29,14 +29,14 @@
       "x": 9,
       "y": 29,
       "elevation": 0,
-      "dest_map": "MAP_ASTRALIS_ACADEMY_GYM",
+      "dest_map": "MAP_ACADEMY_DORM",
       "dest_warp_id": "2"
     },
     {
       "x": 10,
       "y": 29,
       "elevation": 0,
-      "dest_map": "MAP_ASTRALIS_ACADEMY_GYM",
+      "dest_map": "MAP_ACADEMY_DORM",
       "dest_warp_id": "2"
     }
   ],

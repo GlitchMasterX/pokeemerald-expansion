@@ -1,7 +1,7 @@
 {
-  "id": "MAP_ASTRALIS_ACADEMY_GYM",
+  "id": "MAP_ACADEMY_DORM",
   "name": "AcademyDorm",
-  "layout": "LAYOUT_ASTRALIS_ACADEMY_GYM",
+  "layout": "LAYOUT_ACADEMY_DORM",
   "music": "MUS_DP_HEARTHOME_DAY",
   "region_map_section": "MAPSEC_ASTRALIS_ACADEMY",
   "requires_flash": false,
@@ -17,6 +17,11 @@
     {
       "map": "MAP_ASTRALIS_ACADEMY",
       "offset": 31,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_ASTRALIS_ACADEMY",
+      "offset": 32,
       "direction": "left"
     }
   ],
@@ -103,14 +108,14 @@
   "warp_events": [
     {
       "x": 0,
-      "y": 54,
+      "y": 55,
       "elevation": 0,
       "dest_map": "MAP_ASTRALIS_ACADEMY",
       "dest_warp_id": "1"
     },
     {
       "x": 0,
-      "y": 53,
+      "y": 54,
       "elevation": 0,
       "dest_map": "MAP_ASTRALIS_ACADEMY",
       "dest_warp_id": "1"

@@ -1,10 +1,13 @@
 mapscripts headoffice_MapScripts {
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
 	ACADEMY_START,4:HEADMET
+     ACADEMY_START,13:HEADMET2
 ]
+
 MAP_SCRIPT_ON_RESUME:HEADMET1
 MAP_SCRIPT_ON_FRAME_TABLE[
 	ACADEMY_START,4:Head
+    ACADEMY_START,13:FracturedMask1
 ]
 MAP_SCRIPT_ON_LOAD:DAYNIGHT_NPC
 }
@@ -20,6 +23,10 @@ script HEADMET {
     setobjectxy(1,7,9)
     applymovement(0xFF,traces2)
     createvobject(OBJ_EVENT_GFX_PROF_ELIAS,2,8,13,3,DIR_NORTH)
+}
+script HEADMET2 {
+    applymovement(0xFF,traces2)
+    
 }
 
 script Head {
@@ -229,4 +236,38 @@ movement serenametmov5 {
 movement serenametmov6 {
     delay_16
     walk_down*4
+}
+
+script FracturedMask1 {
+    lock
+    fadenewbgm(MUS_DUMMY)
+    speakername("Alistair")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar, expulsion is on the table.\pThis kind of behavior is unacceptable.\pAll the teachers wanted you expelled, but I convinced them to give you one more chance."), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovement (1, moves(emote_question_mark))
+    speakername("Alistair")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Tell me, why did you beat him so badly?"), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovement (0xFF, moves(emote_upset))
+    speakername("Xylar")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}He wouldn't stop running his mouth, so I shut it for him."), MSGBOX_AUTOCLOSE)
+    speakername("Alistair")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Violence isn't the answer, Xylar.\pNext time, there won't be a second chance."), MSGBOX_AUTOCLOSE)
+    speakername("Xylar")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Then maybe people should learn when to keep their mouths shut."), MSGBOX_AUTOCLOSE)
+    speakername("Alistair")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}This isn't the path your father would have wanted for you."), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovement (0xFF, moves(emote_upset))
+    speakername("Xylar")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Don't.\pTalk.\pAbout.\pHim."), MSGBOX_AUTOCLOSE)
+    applymovement (0xFF, moves(walk_fast_down*3))
+    waitmovement(0)
+    fadescreen(FADE_TO_BLACK)
+    msgbox(format("After this incident, the students began to fear Xylar, treating him as an outcast."), MSGBOX_AUTOCLOSE)
+    setflag(FLAG_AFTER_OUTBURST)
+    warp(MAP_ASTRALIS_ACADEMY_HOUSE2,12,2)
+    setvar(ACADEMY_START,14)
+    releaseall
+    
 }

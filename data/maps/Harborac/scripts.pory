@@ -320,7 +320,7 @@ if(!flag(FLAG_AFTER_OUTBURST)){
 elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
     lock
     faceplayer
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Man, I respected Xylar… but now I don't know. That wasn't just battle rage."))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Man, I respected Xylar… but now I don't know. That wasn't just rage."))
     release
 }
 else{
@@ -341,6 +341,7 @@ if (!flag(FLAG_AFTER_OUTBURST)){
 elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
     lock
     faceplayer
+    applymovement(2,moves(emote_exclamation_mark))
     msgbox(format("(Flinches when Xylar approaches)\p{COLOR RED}{SHADOW LIGHT_GRAY}…I-I shouldn't talk to you."))
     release
 }
@@ -621,8 +622,9 @@ script AcademyNpc17 {
 else{
     lock
     faceplayer
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I don't mind a little violence."))
-    applymovement(4,heart)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I don't mind getting a little rough."))
+    applymovement(4,moves(emote_heart))
+    waitmovement(0)
     release
 }
 }
@@ -688,7 +690,7 @@ script AcademyNpc21 {
 elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
     lock
     faceplayer
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}The Murkrow scattered that night.\pThey fear rage more than darkness."))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}The Murkrow scattered since that incident.\pThey fear rage more than darkness."))
     release
 }
 else{

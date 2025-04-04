@@ -13,6 +13,13 @@ script DAYNIGHT_NPC {
     setflag(FLAG_NORMAL_OUTFOREST)
     setflag(FLAG_TRIAL_SERENA)
     }
+    elif((var(VAR_CURRENT_TIME_OF_DAY)>2) && (var(ACADEMY_START)>12)){
+    setflag(FLAG_DAY_NPC)
+    clearflag(FLAG_NIGHT_NPC)
+    setflag(FLAG_ACDAEMY_MURKROW)
+    clearflag(FLAG_NORMAL_OUTFOREST)
+    setflag(FLAG_TRIAL_SERENA)
+    }
     else{
     setflag(FLAG_DAY_NPC)
     clearflag(FLAG_NIGHT_NPC)
@@ -61,7 +68,7 @@ script Kaelmet {
     playse(MUS_HEAL)
     waitse
     setvar(ACADEMY_START,9)
-    setvar(VAR_CURRENT_DAY_OF_WEEK,2)
+    addvar(VAR_CURRENT_DAY_OF_WEEK,1)
     special(RemoveCameraObject)
     fadescreen(FADE_FROM_BLACK)
     release
@@ -98,6 +105,7 @@ script lunarofficer {
 
 script lunarofficer1 {
     lock
+    faceplayer
     speakername("Officer")   
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}First years are not allowed in the forest yet."))
     release
