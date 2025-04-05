@@ -13,220 +13,202 @@
   "show_map_name": true,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": [
-    {
-      "map": "MAP_ROUTE110",
-      "offset": 0,
-      "direction": "up"
-    },
-    {
-      "map": "MAP_ROUTE109",
-      "offset": 0,
-      "direction": "down"
-    },
-    {
-      "map": "MAP_ROUTE134",
-      "offset": 0,
-      "direction": "right"
-    }
-  ],
-  "object_events": [
-
-  ],
+  "connections": null,
+  "object_events": [],
   "warp_events": [
     {
-      "x": 19,
-      "y": 19,
-      "elevation": 0,
       "dest_map": "MAP_SLATEPORT_CITY_POKEMON_CENTER_1F",
-      "dest_warp_id": "0"
+      "dest_warp_id": "0",
+      "elevation": 0,
+      "x": 19,
+      "y": 19
     },
     {
-      "x": 13,
-      "y": 26,
-      "elevation": 0,
       "dest_map": "MAP_SLATEPORT_CITY_MART",
-      "dest_warp_id": "0"
+      "dest_warp_id": "0",
+      "elevation": 0,
+      "x": 13,
+      "y": 26
     },
     {
-      "x": 26,
-      "y": 38,
-      "elevation": 0,
       "dest_map": "MAP_SLATEPORT_CITY_STERNS_SHIPYARD_1F",
-      "dest_warp_id": "0"
+      "dest_warp_id": "0",
+      "elevation": 0,
+      "x": 26,
+      "y": 38
     },
     {
-      "x": 10,
-      "y": 12,
-      "elevation": 0,
       "dest_map": "MAP_SLATEPORT_CITY_BATTLE_TENT_LOBBY",
-      "dest_warp_id": "0"
+      "dest_warp_id": "0",
+      "elevation": 0,
+      "x": 10,
+      "y": 12
     },
     {
-      "x": 4,
-      "y": 26,
-      "elevation": 0,
       "dest_map": "MAP_SLATEPORT_CITY_POKEMON_FAN_CLUB",
-      "dest_warp_id": "0"
+      "dest_warp_id": "0",
+      "elevation": 0,
+      "x": 4,
+      "y": 26
     },
     {
+      "dest_map": "MAP_SLATEPORT_CITY_OCEANIC_MUSEUM_1F",
+      "dest_warp_id": "0",
+      "elevation": 0,
       "x": 30,
-      "y": 26,
-      "elevation": 0,
-      "dest_map": "MAP_SLATEPORT_CITY_OCEANIC_MUSEUM_1F",
-      "dest_warp_id": "0"
+      "y": 26
     },
     {
-      "x": 5,
-      "y": 19,
-      "elevation": 0,
       "dest_map": "MAP_SLATEPORT_CITY_NAME_RATERS_HOUSE",
-      "dest_warp_id": "0"
+      "dest_warp_id": "0",
+      "elevation": 0,
+      "x": 5,
+      "y": 19
     },
     {
-      "x": 31,
-      "y": 26,
-      "elevation": 0,
       "dest_map": "MAP_SLATEPORT_CITY_OCEANIC_MUSEUM_1F",
-      "dest_warp_id": "1"
+      "dest_warp_id": "1",
+      "elevation": 0,
+      "x": 31,
+      "y": 26
     },
     {
+      "dest_map": "MAP_SLATEPORT_CITY_HARBOR",
+      "dest_warp_id": "0",
+      "elevation": 0,
       "x": 28,
-      "y": 12,
-      "elevation": 0,
-      "dest_map": "MAP_SLATEPORT_CITY_HARBOR",
-      "dest_warp_id": "0"
+      "y": 12
     },
     {
+      "dest_map": "MAP_SLATEPORT_CITY_HARBOR",
+      "dest_warp_id": "2",
+      "elevation": 0,
       "x": 40,
-      "y": 7,
-      "elevation": 0,
-      "dest_map": "MAP_SLATEPORT_CITY_HARBOR",
-      "dest_warp_id": "2"
+      "y": 7
     },
     {
-      "x": 21,
-      "y": 44,
-      "elevation": 0,
       "dest_map": "MAP_SLATEPORT_CITY_HOUSE",
-      "dest_warp_id": "0"
+      "dest_warp_id": "0",
+      "elevation": 0,
+      "x": 21,
+      "y": 44
     }
   ],
   "coord_events": [
     {
-      "type": "trigger",
-      "x": 10,
-      "y": 13,
       "elevation": 3,
+      "script": "SlateportCity_EventScript_ScottBattleTentScene",
+      "type": "trigger",
       "var": "VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE",
       "var_value": "2",
-      "script": "SlateportCity_EventScript_ScottBattleTentScene"
+      "x": 10,
+      "y": 13
     }
   ],
   "bg_events": [
     {
-      "type": "sign",
-      "x": 8,
-      "y": 19,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SlateportCity_EventScript_NameRatersHouseSign"
+      "script": "SlateportCity_EventScript_NameRatersHouseSign",
+      "type": "sign",
+      "x": 8,
+      "y": 19
     },
     {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Common_EventScript_ShowPokemonCenterSign",
       "type": "sign",
       "x": 20,
-      "y": 19,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "Common_EventScript_ShowPokemonCenterSign"
+      "y": 19
     },
     {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Common_EventScript_ShowPokemonCenterSign",
       "type": "sign",
       "x": 21,
-      "y": 19,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "Common_EventScript_ShowPokemonCenterSign"
+      "y": 19
     },
     {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Common_EventScript_ShowPokemartSign",
       "type": "sign",
       "x": 14,
-      "y": 26,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "Common_EventScript_ShowPokemartSign"
+      "y": 26
     },
     {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SlateportCity_EventScript_HarborSign",
       "type": "sign",
       "x": 24,
-      "y": 12,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SlateportCity_EventScript_HarborSign"
+      "y": 12
     },
     {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Common_EventScript_ShowPokemartSign",
       "type": "sign",
       "x": 15,
-      "y": 26,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "Common_EventScript_ShowPokemartSign"
+      "y": 26
     },
     {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SlateportCity_EventScript_MarketSign",
       "type": "sign",
       "x": 14,
-      "y": 51,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SlateportCity_EventScript_MarketSign"
+      "y": 51
     },
     {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SlateportCity_EventScript_OceanicMuseumSign",
       "type": "sign",
       "x": 26,
-      "y": 26,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SlateportCity_EventScript_OceanicMuseumSign"
+      "y": 26
     },
     {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SlateportCity_EventScript_CitySign",
       "type": "sign",
       "x": 16,
-      "y": 22,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SlateportCity_EventScript_CitySign"
+      "y": 22
     },
     {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SlateportCity_EventScript_PokemonFanClubSign",
       "type": "sign",
       "x": 8,
-      "y": 26,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SlateportCity_EventScript_PokemonFanClubSign"
+      "y": 26
     },
     {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SlateportCity_EventScript_BattleTentSign",
       "type": "sign",
       "x": 7,
-      "y": 13,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SlateportCity_EventScript_BattleTentSign"
+      "y": 13
     },
     {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SlateportCity_EventScript_SternsShipyardSign",
       "type": "sign",
       "x": 23,
-      "y": 38,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SlateportCity_EventScript_SternsShipyardSign"
+      "y": 38
     },
     {
-      "type": "sign",
-      "x": 10,
-      "y": 36,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "SlateportCity_EventScript_BerryCrushRankingsSign"
+      "script": "SlateportCity_EventScript_BerryCrushRankingsSign",
+      "type": "sign",
+      "x": 10,
+      "y": 36
     }
   ]
 }

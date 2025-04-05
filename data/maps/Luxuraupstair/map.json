@@ -12,76 +12,72 @@
   "allow_running": true,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
-      "x": 10,
-      "y": 10,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_RIGHT_AND_LEFT",
+      "flag": "0",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "movement_type": "MOVEMENT_TYPE_WANDER_RIGHT_AND_LEFT",
       "script": "MaidZ",
-      "flag": "0"
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 10,
+      "y": 10
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(MINCCINO)",
-      "x": 16,
-      "y": 8,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "flag": "0",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(MINCCINO)",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "script": "Minccino",
-      "flag": "0"
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 16,
+      "y": 8
     }
   ],
   "warp_events": [
     {
-      "x": 2,
-      "y": 7,
-      "elevation": 0,
       "dest_map": "MAP_LUXURA_INDOOR",
-      "dest_warp_id": "7"
+      "dest_warp_id": "7",
+      "elevation": 0,
+      "x": 2,
+      "y": 7
     },
     {
-      "x": 5,
-      "y": 6,
-      "elevation": 0,
       "dest_map": "MAP_PARENTROOM",
-      "dest_warp_id": "0"
+      "dest_warp_id": "0",
+      "elevation": 0,
+      "x": 5,
+      "y": 6
     },
     {
-      "x": 21,
-      "y": 6,
-      "elevation": 0,
       "dest_map": "MAP_NEW_MAP1",
-      "dest_warp_id": "0"
+      "dest_warp_id": "0",
+      "elevation": 0,
+      "x": 21,
+      "y": 6
     },
     {
-      "x": 14,
-      "y": 6,
-      "elevation": 0,
       "dest_map": "MAP_PLAYERROOM",
-      "dest_warp_id": "0"
+      "dest_warp_id": "0",
+      "elevation": 0,
+      "x": 14,
+      "y": 6
     },
     {
-      "x": 27,
-      "y": 6,
-      "elevation": 0,
       "dest_map": "MAP_GUEST",
-      "dest_warp_id": "0"
+      "dest_warp_id": "0",
+      "elevation": 0,
+      "x": 27,
+      "y": 6
     }
   ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }

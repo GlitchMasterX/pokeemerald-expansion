@@ -13,51 +13,45 @@
   "show_map_name": false,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
-  "object_events": [
-
-  ],
+  "connections": null,
+  "object_events": [],
   "warp_events": [
     {
-      "x": 1,
-      "y": 20,
-      "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
-      "dest_warp_id": "0"
+      "dest_warp_id": "0",
+      "elevation": 0,
+      "x": 1,
+      "y": 20
     },
     {
-      "x": 1,
-      "y": 21,
-      "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
-      "dest_warp_id": "1"
+      "dest_warp_id": "1",
+      "elevation": 0,
+      "x": 1,
+      "y": 21
     },
     {
-      "x": 1,
-      "y": 22,
-      "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
-      "dest_warp_id": "3"
+      "dest_warp_id": "3",
+      "elevation": 0,
+      "x": 1,
+      "y": 22
     },
     {
+      "dest_map": "MAP_LUNAR_GROVE",
+      "dest_warp_id": "2",
+      "elevation": 0,
       "x": 34,
-      "y": 2,
-      "elevation": 0,
-      "dest_map": "MAP_LUNAR_GROVE",
-      "dest_warp_id": "2"
+      "y": 2
     },
     {
-      "x": 35,
-      "y": 2,
-      "elevation": 0,
       "dest_map": "MAP_LUNAR_GROVE",
-      "dest_warp_id": "3"
+      "dest_warp_id": "3",
+      "elevation": 0,
+      "x": 35,
+      "y": 2
     }
   ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }

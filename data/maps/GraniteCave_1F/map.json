@@ -13,61 +13,57 @@
   "show_map_name": false,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
+      "elevation": 0,
+      "flag": "0",
       "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
-      "x": 17,
-      "y": 5,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "movement_type": "MOVEMENT_TYPE_NONE",
       "script": "EventScript_StrengthBoulder",
-      "flag": "0"
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 17,
+      "y": 5
     },
     {
+      "elevation": 0,
+      "flag": "FLAG_UNUSED_0x4B4",
       "graphics_id": "OBJ_EVENT_GFX_CONTEST_JUDGE",
-      "x": 12,
-      "y": 10,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "movement_type": "MOVEMENT_TYPE_NONE",
       "script": "revive",
-      "flag": "FLAG_UNUSED_0x4B4"
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 12,
+      "y": 10
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(MEWTWO)",
-      "x": 12,
-      "y": 10,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "flag": "FLAG_UNUSED_0x4B5",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(MEWTWO)",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "script": "NULL",
-      "flag": "FLAG_UNUSED_0x4B5"
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 12,
+      "y": 10
     }
   ],
   "warp_events": [
     {
-      "x": 14,
-      "y": 19,
-      "elevation": 0,
       "dest_map": "MAP_LUXURAWOODS",
-      "dest_warp_id": "4"
+      "dest_warp_id": "4",
+      "elevation": 0,
+      "x": 14,
+      "y": 19
     }
   ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }

@@ -13,84 +13,84 @@
   "show_map_name": false,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
-      "x": 5,
-      "y": 9,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "flag": "FLAG_UNUSED_0x0E9",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "script": "NULL",
-      "flag": "FLAG_UNUSED_0x0E9"
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 5,
+      "y": 9
     }
   ],
   "warp_events": [
     {
-      "x": 5,
-      "y": 9,
-      "elevation": 0,
       "dest_map": "MAP_LUXURAUPSTAIR",
-      "dest_warp_id": "3"
+      "dest_warp_id": "3",
+      "elevation": 0,
+      "x": 5,
+      "y": 9
     }
   ],
   "coord_events": [
     {
+      "elevation": 0,
+      "script": "clock",
       "type": "trigger",
+      "var": "LUXURA_TRAGEDY",
+      "var_value": "2",
       "x": 4,
-      "y": 9,
-      "elevation": 0,
-      "var": "LUXURA_TRAGEDY",
-      "var_value": "2",
-      "script": "clock"
+      "y": 9
     },
     {
+      "elevation": 0,
+      "script": "clock",
       "type": "trigger",
+      "var": "LUXURA_TRAGEDY",
+      "var_value": "2",
       "x": 5,
-      "y": 8,
-      "elevation": 0,
-      "var": "LUXURA_TRAGEDY",
-      "var_value": "2",
-      "script": "clock"
+      "y": 8
     },
     {
-      "type": "trigger",
-      "x": 6,
-      "y": 9,
       "elevation": 0,
+      "script": "clock",
+      "type": "trigger",
       "var": "LUXURA_TRAGEDY",
       "var_value": "2",
-      "script": "clock"
+      "x": 6,
+      "y": 9
     }
   ],
   "bg_events": [
     {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "LittlerootTown_BrendansHouse_2F_EventScript_PC",
       "type": "sign",
       "x": 0,
-      "y": 2,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_BrendansHouse_2F_EventScript_PC"
+      "y": 2
     },
     {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PlayersHouse_2F_EventScript_GameCube",
       "type": "sign",
       "x": 4,
-      "y": 3,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "PlayersHouse_2F_EventScript_GameCube"
+      "y": 3
     },
     {
-      "type": "sign",
-      "x": 6,
-      "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "LittlerootTown_BrendansHouse_2F_EventScript_WallClock"
+      "script": "LittlerootTown_BrendansHouse_2F_EventScript_WallClock",
+      "type": "sign",
+      "x": 6,
+      "y": 1
     }
   ]
 }

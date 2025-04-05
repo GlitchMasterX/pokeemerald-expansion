@@ -127,8 +127,8 @@ gStdScripts_End::
 	.include "data/maps/DewfordTown/scripts.inc"
 	.include "data/maps/LavaridgeTown/scripts.inc"
 	.include "data/maps/FallarborTown/scripts.inc"
-	.include "data/maps/VerdanturfTown/scripts.inc"
-	.include "data/maps/PacifidlogTown/scripts.inc"
+	
+	
 	.include "data/maps/Route101/scripts.inc"
 	.include "data/maps/Route102/scripts.inc"
 	.include "data/maps/Route103/scripts.inc"

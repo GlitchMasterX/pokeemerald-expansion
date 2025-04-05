@@ -15,133 +15,133 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_TEALA",
-      "x": 5,
-      "y": 10,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "flag": "0",
+      "graphics_id": "OBJ_EVENT_GFX_TEALA",
       "movement_range_x": 1,
       "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "script": "BattleFrontier_BattleDomeLobby_EventScript_SinglesAttendant",
-      "flag": "0"
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 5,
+      "y": 10
     },
     {
+      "elevation": 0,
+      "flag": "0",
       "graphics_id": "OBJ_EVENT_GFX_MAN_3",
-      "x": 1,
-      "y": 11,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "script": "BattleFrontier_BattleDomeLobby_EventScript_Man",
-      "flag": "0"
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 1,
+      "y": 11
     },
     {
+      "elevation": 0,
+      "flag": "0",
       "graphics_id": "OBJ_EVENT_GFX_LASS",
-      "x": 14,
-      "y": 14,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "script": "BattleFrontier_BattleDomeLobby_EventScript_Lass",
-      "flag": "0"
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 14,
+      "y": 14
     },
     {
+      "elevation": 0,
+      "flag": "0",
       "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
-      "x": 18,
-      "y": 14,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "script": "BattleFrontier_BattleDomeLobby_EventScript_FatMan",
-      "flag": "0"
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 18,
+      "y": 14
     },
     {
+      "elevation": 0,
+      "flag": "0",
       "graphics_id": "OBJ_EVENT_GFX_MANIAC",
-      "x": 8,
-      "y": 14,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "script": "BattleFrontier_BattleDomeLobby_EventScript_Maniac",
-      "flag": "0"
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 8,
+      "y": 14
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_TEALA",
-      "x": 17,
-      "y": 10,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "flag": "0",
+      "graphics_id": "OBJ_EVENT_GFX_TEALA",
       "movement_range_x": 1,
       "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "script": "BattleFrontier_BattleDomeLobby_EventScript_DoublesAttendant",
-      "flag": "0"
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 17,
+      "y": 10
     }
   ],
   "warp_events": [
     {
-      "x": 11,
-      "y": 16,
-      "elevation": 0,
       "dest_map": "MAP_BATTLE_FRONTIER_OUTSIDE_WEST",
-      "dest_warp_id": "1"
+      "dest_warp_id": "1",
+      "elevation": 0,
+      "x": 11,
+      "y": 16
     },
     {
-      "x": 12,
-      "y": 16,
-      "elevation": 0,
       "dest_map": "MAP_BATTLE_FRONTIER_OUTSIDE_WEST",
-      "dest_warp_id": "1"
+      "dest_warp_id": "1",
+      "elevation": 0,
+      "x": 12,
+      "y": 16
     }
   ],
   "coord_events": [],
   "bg_events": [
     {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BattleFrontier_BattleDomeLobby_EventScript_ShowSinglesResults",
       "type": "sign",
       "x": 4,
-      "y": 10,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "BattleFrontier_BattleDomeLobby_EventScript_ShowSinglesResults"
+      "y": 10
     },
     {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BattleFrontier_BattleDomeLobby_EventScript_ShowPrevTourneyTree",
       "type": "sign",
       "x": 7,
-      "y": 10,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "BattleFrontier_BattleDomeLobby_EventScript_ShowPrevTourneyTree"
+      "y": 10
     },
     {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BattleFrontier_BattleDomeLobby_EventScript_ShowDoublesResults",
       "type": "sign",
       "x": 18,
-      "y": 10,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "BattleFrontier_BattleDomeLobby_EventScript_ShowDoublesResults"
+      "y": 10
     },
     {
-      "type": "sign",
-      "x": 15,
-      "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "BattleFrontier_BattleDomeLobby_EventScript_RulesBoard"
+      "script": "BattleFrontier_BattleDomeLobby_EventScript_RulesBoard",
+      "type": "sign",
+      "x": 15,
+      "y": 10
     }
   ]
 }

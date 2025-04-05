@@ -15,96 +15,96 @@
   "connections": null,
   "object_events": [
     {
+      "elevation": 3,
+      "flag": "0",
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
-      "x": 6,
-      "y": 5,
-      "elevation": 3,
+      "movement_range_x": 1,
+      "movement_range_y": 1,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_BattleTentLobby_EventScript_Attendant",
-      "flag": "0"
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 6,
+      "y": 5
     },
     {
+      "elevation": 3,
+      "flag": "0",
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
-      "x": 1,
-      "y": 5,
-      "elevation": 3,
+      "movement_range_x": 1,
+      "movement_range_y": 1,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_BattleTentLobby_EventScript_TormentGiver",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
-      "x": 3,
-      "y": 7,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SlateportCity_BattleTentLobby_EventScript_Man",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_1",
+      "trainer_type": "TRAINER_TYPE_NONE",
       "x": 1,
-      "y": 8,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "SlateportCity_BattleTentLobby_EventScript_Girl",
-      "flag": "0"
+      "y": 5
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
-      "x": 11,
-      "y": 8,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "flag": "0",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
       "movement_range_x": 1,
       "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "script": "SlateportCity_BattleTentLobby_EventScript_Man",
       "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 3,
+      "y": 7
+    },
+    {
+      "elevation": 3,
+      "flag": "0",
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_1",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "script": "SlateportCity_BattleTentLobby_EventScript_Girl",
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 1,
+      "y": 8
+    },
+    {
+      "elevation": 3,
+      "flag": "0",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "script": "SlateportCity_BattleTentLobby_EventScript_Woman",
-      "flag": "0"
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 11,
+      "y": 8
     }
   ],
   "warp_events": [
     {
-      "x": 6,
-      "y": 9,
-      "elevation": 0,
       "dest_map": "MAP_SLATEPORT_CITY",
-      "dest_warp_id": "3"
+      "dest_warp_id": "3",
+      "elevation": 0,
+      "x": 6,
+      "y": 9
     },
     {
-      "x": 7,
-      "y": 9,
-      "elevation": 0,
       "dest_map": "MAP_SLATEPORT_CITY",
-      "dest_warp_id": "3"
+      "dest_warp_id": "3",
+      "elevation": 0,
+      "x": 7,
+      "y": 9
     }
   ],
   "coord_events": [],
   "bg_events": [
     {
-      "type": "sign",
-      "x": 4,
-      "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SlateportCity_BattleTentLobby_EventScript_RulesBoard"
+      "script": "SlateportCity_BattleTentLobby_EventScript_RulesBoard",
+      "type": "sign",
+      "x": 4,
+      "y": 5
     }
   ]
 }

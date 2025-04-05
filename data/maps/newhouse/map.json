@@ -13,44 +13,40 @@
   "show_map_name": false,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
-  "object_events": [
-
-  ],
+  "connections": null,
+  "object_events": [],
   "warp_events": [
     {
-      "x": 4,
-      "y": 9,
-      "elevation": 0,
       "dest_map": "MAP_NEWMAP11",
-      "dest_warp_id": "0"
+      "dest_warp_id": "0",
+      "elevation": 0,
+      "x": 4,
+      "y": 9
     },
     {
+      "dest_map": "MAP_NEWHOUSE",
+      "dest_warp_id": "2",
+      "elevation": 0,
       "x": 7,
-      "y": 21,
-      "elevation": 0,
-      "dest_map": "MAP_NEWHOUSE",
-      "dest_warp_id": "2"
+      "y": 21
     },
     {
-      "x": 8,
-      "y": 2,
-      "elevation": 0,
       "dest_map": "MAP_NEWHOUSE",
-      "dest_warp_id": "1"
+      "dest_warp_id": "1",
+      "elevation": 0,
+      "x": 8,
+      "y": 2
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
-      "type": "sign",
-      "x": 0,
-      "y": 21,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_BrendansHouse_2F_EventScript_PC"
+      "script": "LittlerootTown_BrendansHouse_2F_EventScript_PC",
+      "type": "sign",
+      "x": 0,
+      "y": 21
     }
   ]
 }

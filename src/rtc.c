@@ -18,6 +18,34 @@ struct Time gLocalTime;
 
 static const struct SiiRtcInfo sRtcDummy = {0, MONTH_JAN, 1}; // 2000 Jan 1
 
+u8 GetMonthFromDays(u16 days)
+{
+    u16 dayOfYear = days % 365; // Day of the year (assuming non-leap year)
+    u8 calculatedMonth = 0;
+
+    for (calculatedMonth = 0; calculatedMonth < MONTH_COUNT; calculatedMonth++)
+    {
+        if (dayOfYear < sNumDaysInMonths[calculatedMonth])
+            break;
+        dayOfYear -= sNumDaysInMonths[calculatedMonth];
+    }
+
+    // Store the calculated month in Var
+    VarSet(VAR_CURRENT_CALCULATED_MONTH, calculatedMonth + 1); // Store as 1-indexed month
+
+    // Retrieve the current game-set month, which may have been manually changed
+    u8 currentMonth = VarGet(VAR_CURRENT_MONTH);
+
+    // If the month hasn't been manually set, use the calculated month
+    if (currentMonth == 0)  // Assuming 0 indicates an unset month
+    {
+        currentMonth = calculatedMonth + 1; // Set to the calculated month
+        VarSet(VAR_CURRENT_MONTH, currentMonth); // Store the current month in the game
+    }
+
+    return currentMonth; // Return the current month (either calculated or manually set)
+}
+
 void RtcDisableInterrupts(void)
 {
     sSavedIme = REG_IME;

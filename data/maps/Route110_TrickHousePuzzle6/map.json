@@ -15,90 +15,90 @@
   "connections": null,
   "object_events": [
     {
+      "elevation": 3,
+      "flag": "0",
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
-      "x": 7,
-      "y": 9,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "1",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "script": "Route110_TrickHousePuzzle6_EventScript_Sophia",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_NORMAL_M",
-      "x": 11,
-      "y": 10,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
-      "script": "Route110_TrickHousePuzzle6_EventScript_Benny",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
-      "x": 4,
-      "y": 5,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
-      "script": "Route110_TrickHousePuzzle6_EventScript_Sebastian",
-      "flag": "0"
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "x": 7,
+      "y": 9
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 11,
-      "y": 21,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "flag": "0",
+      "graphics_id": "OBJ_EVENT_GFX_NORMAL_M",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_GLITTER_MAIL",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "script": "Route110_TrickHousePuzzle6_EventScript_Benny",
+      "trainer_sight_or_berry_tree_id": "3",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "x": 11,
+      "y": 10
+    },
+    {
+      "elevation": 3,
+      "flag": "0",
+      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "script": "Route110_TrickHousePuzzle6_EventScript_Sebastian",
+      "trainer_sight_or_berry_tree_id": "1",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "x": 4,
+      "y": 5
+    },
+    {
+      "elevation": 3,
+      "flag": "FLAG_ITEM_TRICK_HOUSE_PUZZLE_6_GLITTER_MAIL",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_TRICK_HOUSE_PUZZLE_6_GLITTER_MAIL"
+      "trainer_sight_or_berry_tree_id": "ITEM_GLITTER_MAIL",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 11,
+      "y": 21
     }
   ],
   "warp_events": [
     {
+      "dest_map": "MAP_ROUTE110_TRICK_HOUSE_ENTRANCE",
+      "dest_warp_id": "2",
+      "elevation": 3,
       "x": 0,
-      "y": 21,
-      "elevation": 3,
-      "dest_map": "MAP_ROUTE110_TRICK_HOUSE_ENTRANCE",
-      "dest_warp_id": "2"
+      "y": 21
     },
     {
+      "dest_map": "MAP_ROUTE110_TRICK_HOUSE_ENTRANCE",
+      "dest_warp_id": "2",
+      "elevation": 3,
       "x": 1,
-      "y": 21,
-      "elevation": 3,
-      "dest_map": "MAP_ROUTE110_TRICK_HOUSE_ENTRANCE",
-      "dest_warp_id": "2"
+      "y": 21
     },
     {
-      "x": 13,
-      "y": 1,
-      "elevation": 3,
       "dest_map": "MAP_ROUTE110_TRICK_HOUSE_END",
-      "dest_warp_id": "0"
+      "dest_warp_id": "0",
+      "elevation": 3,
+      "x": 13,
+      "y": 1
     }
   ],
   "coord_events": [],
   "bg_events": [
     {
-      "type": "sign",
-      "x": 0,
-      "y": 10,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route110_TrickHousePuzzle6_EventScript_Scroll"
+      "script": "Route110_TrickHousePuzzle6_EventScript_Scroll",
+      "type": "sign",
+      "x": 0,
+      "y": 10
     }
   ]
 }

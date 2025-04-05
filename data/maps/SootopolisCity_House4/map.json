@@ -15,59 +15,59 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
-      "x": 2,
-      "y": 4,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "flag": "0",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "script": "SootopolisCity_House4_EventScript_Man",
-      "flag": "0"
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 2,
+      "y": 4
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
-      "x": 5,
-      "y": 2,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "flag": "0",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
       "movement_range_x": 1,
       "movement_range_y": 2,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "script": "SootopolisCity_House4_EventScript_Woman",
-      "flag": "0"
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 5,
+      "y": 2
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_AZUMARILL",
-      "x": 2,
-      "y": 3,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "flag": "0",
+      "graphics_id": "OBJ_EVENT_GFX_AZUMARILL",
       "movement_range_x": 1,
       "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "script": "SootopolisCity_House4_EventScript_Azumarill",
-      "flag": "0"
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 2,
+      "y": 3
     }
   ],
   "warp_events": [
     {
-      "x": 3,
-      "y": 6,
-      "elevation": 0,
       "dest_map": "MAP_SOOTOPOLIS_CITY",
-      "dest_warp_id": "7"
+      "dest_warp_id": "7",
+      "elevation": 0,
+      "x": 3,
+      "y": 6
     },
     {
-      "x": 4,
-      "y": 6,
-      "elevation": 0,
       "dest_map": "MAP_SOOTOPOLIS_CITY",
-      "dest_warp_id": "7"
+      "dest_warp_id": "7",
+      "elevation": 0,
+      "x": 4,
+      "y": 6
     }
   ],
   "coord_events": [],

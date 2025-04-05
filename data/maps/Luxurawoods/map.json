@@ -13,384 +13,384 @@
   "show_map_name": true,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
+      "elevation": 0,
+      "flag": "FLAG_UNUSED_0x4AF",
       "graphics_id": "OBJ_EVENT_GFX_CONTEST_JUDGE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "script": "NULL",
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
       "x": 26,
-      "y": 4,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_UNUSED_0x4AF"
+      "y": 4
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
-      "x": 41,
-      "y": 31,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "flag": "FLAG_ITEM_ROUTE_102_POTION",
+      "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "script": "revivalherb",
-      "flag": "FLAG_ITEM_ROUTE_102_POTION"
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 41,
+      "y": 31
     },
     {
+      "elevation": 0,
+      "flag": "FLAG_ITEM_ROUTE_116_X_SPECIAL",
       "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
-      "x": 19,
-      "y": 4,
-      "elevation": 0,
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_FRESH_WATER",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_116_X_SPECIAL"
+      "trainer_sight_or_berry_tree_id": "ITEM_FRESH_WATER",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 19,
+      "y": 4
     },
     {
+      "elevation": 0,
+      "flag": "FLAG_UNUSED_0x4B2",
       "graphics_id": "OBJ_EVENT_GFX_SPARK_F",
-      "x": 40,
-      "y": 2,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "script": "NULL",
-      "flag": "FLAG_UNUSED_0x4B2"
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 40,
+      "y": 2
     },
     {
+      "elevation": 0,
+      "flag": "FLAG_UNUSED_0x4B2",
       "graphics_id": "OBJ_EVENT_GFX_SPARK_M",
-      "x": 42,
-      "y": 2,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "script": "NULL",
-      "flag": "FLAG_UNUSED_0x4B2"
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 42,
+      "y": 2
     },
     {
+      "elevation": 0,
+      "flag": "FLAG_UNUSED_0x4B2",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(ELECTRODE)",
-      "x": 41,
-      "y": 3,
-      "elevation": 0,
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_UNUSED_0x4B2"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BLOOD",
-      "x": 40,
-      "y": 2,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "blood",
-      "flag": "FLAG_UNUSED_0x4B3"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BLOOD",
+      "trainer_type": "TRAINER_TYPE_NONE",
       "x": 41,
-      "y": 3,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "blood",
-      "flag": "FLAG_UNUSED_0x4B3"
+      "y": 3
     },
     {
+      "elevation": 0,
+      "flag": "FLAG_UNUSED_0x4B3",
       "graphics_id": "OBJ_EVENT_GFX_BLOOD",
-      "x": 42,
-      "y": 2,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "movement_type": "MOVEMENT_TYPE_NONE",
       "script": "blood",
-      "flag": "FLAG_UNUSED_0x4B3"
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 40,
+      "y": 2
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(MEWTWO)",
-      "x": 43,
-      "y": 3,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "flag": "FLAG_UNUSED_0x4B3",
+      "graphics_id": "OBJ_EVENT_GFX_BLOOD",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "script": "blood",
       "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 41,
+      "y": 3
+    },
+    {
+      "elevation": 0,
+      "flag": "FLAG_UNUSED_0x4B3",
+      "graphics_id": "OBJ_EVENT_GFX_BLOOD",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "script": "blood",
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 42,
+      "y": 2
+    },
+    {
+      "elevation": 0,
+      "flag": "FLAG_UNUSED_0x4B2",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(MEWTWO)",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
       "script": "NULL",
-      "flag": "FLAG_UNUSED_0x4B2"
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 43,
+      "y": 3
     }
   ],
   "warp_events": [
     {
-      "x": 1,
-      "y": 34,
-      "elevation": 0,
       "dest_map": "MAP_LUXURA_ISLAND1",
-      "dest_warp_id": "1"
+      "dest_warp_id": "1",
+      "elevation": 0,
+      "x": 1,
+      "y": 34
     },
     {
-      "x": 1,
-      "y": 33,
-      "elevation": 0,
       "dest_map": "MAP_LUXURA_ISLAND1",
-      "dest_warp_id": "2"
+      "dest_warp_id": "2",
+      "elevation": 0,
+      "x": 1,
+      "y": 33
     },
     {
-      "x": 1,
-      "y": 35,
-      "elevation": 0,
       "dest_map": "MAP_LUXURA_ISLAND1",
-      "dest_warp_id": "1"
+      "dest_warp_id": "1",
+      "elevation": 0,
+      "x": 1,
+      "y": 35
     },
     {
-      "x": 1,
-      "y": 36,
-      "elevation": 0,
       "dest_map": "MAP_LUXURA_ISLAND1",
-      "dest_warp_id": "3"
+      "dest_warp_id": "3",
+      "elevation": 0,
+      "x": 1,
+      "y": 36
     },
     {
-      "x": 54,
-      "y": 11,
-      "elevation": 0,
       "dest_map": "MAP_GRANITE_CAVE_1F",
-      "dest_warp_id": "0"
+      "dest_warp_id": "0",
+      "elevation": 0,
+      "x": 54,
+      "y": 11
     }
   ],
   "coord_events": [
     {
-      "type": "trigger",
-      "x": 1,
-      "y": 36,
       "elevation": 0,
+      "script": "miradr",
+      "type": "trigger",
       "var": "LUXURA_TRAGEDY",
       "var_value": "14",
-      "script": "miradr"
+      "x": 1,
+      "y": 36
     },
     {
-      "type": "trigger",
-      "x": 1,
-      "y": 35,
       "elevation": 0,
+      "script": "miradr",
+      "type": "trigger",
       "var": "LUXURA_TRAGEDY",
       "var_value": "14",
-      "script": "miradr"
+      "x": 1,
+      "y": 35
     },
     {
-      "type": "trigger",
-      "x": 1,
-      "y": 34,
       "elevation": 0,
+      "script": "miradr",
+      "type": "trigger",
       "var": "LUXURA_TRAGEDY",
       "var_value": "14",
-      "script": "miradr"
+      "x": 1,
+      "y": 34
     },
     {
-      "type": "trigger",
-      "x": 1,
-      "y": 33,
       "elevation": 0,
+      "script": "miradr",
+      "type": "trigger",
       "var": "LUXURA_TRAGEDY",
       "var_value": "14",
-      "script": "miradr"
+      "x": 1,
+      "y": 33
     },
     {
+      "elevation": 0,
+      "script": "mewtwotend",
       "type": "trigger",
+      "var": "LUXURA_TRAGEDY",
+      "var_value": "14",
       "x": 26,
-      "y": 12,
-      "elevation": 0,
-      "var": "LUXURA_TRAGEDY",
-      "var_value": "14",
-      "script": "mewtwotend"
+      "y": 12
     },
     {
+      "elevation": 0,
+      "script": "mewtwotendq",
       "type": "trigger",
+      "var": "LUXURA_TRAGEDY",
+      "var_value": "14",
       "x": 27,
-      "y": 12,
-      "elevation": 0,
-      "var": "LUXURA_TRAGEDY",
-      "var_value": "14",
-      "script": "mewtwotendq"
+      "y": 12
     },
     {
+      "elevation": 0,
+      "script": "mewtwotende",
       "type": "trigger",
+      "var": "LUXURA_TRAGEDY",
+      "var_value": "14",
       "x": 28,
-      "y": 12,
-      "elevation": 0,
-      "var": "LUXURA_TRAGEDY",
-      "var_value": "14",
-      "script": "mewtwotende"
+      "y": 12
     },
     {
-      "type": "trigger",
-      "x": 1,
-      "y": 33,
       "elevation": 0,
+      "script": "mewherb",
+      "type": "trigger",
       "var": "LUXURA_TRAGEDY",
       "var_value": "16",
-      "script": "mewherb"
+      "x": 1,
+      "y": 33
     },
     {
-      "type": "trigger",
-      "x": 1,
-      "y": 34,
       "elevation": 0,
+      "script": "mewherb",
+      "type": "trigger",
       "var": "LUXURA_TRAGEDY",
       "var_value": "16",
-      "script": "mewherb"
+      "x": 1,
+      "y": 34
     },
     {
-      "type": "trigger",
-      "x": 1,
-      "y": 35,
       "elevation": 0,
+      "script": "mewherb",
+      "type": "trigger",
       "var": "LUXURA_TRAGEDY",
       "var_value": "16",
-      "script": "mewherb"
+      "x": 1,
+      "y": 35
     },
     {
-      "type": "trigger",
-      "x": 1,
-      "y": 36,
       "elevation": 0,
+      "script": "mewherb",
+      "type": "trigger",
       "var": "LUXURA_TRAGEDY",
       "var_value": "16",
-      "script": "mewherb"
+      "x": 1,
+      "y": 36
     },
     {
-      "type": "trigger",
-      "x": 1,
-      "y": 33,
       "elevation": 0,
+      "script": "mewrev",
+      "type": "trigger",
       "var": "LUXURA_TRAGEDY",
       "var_value": "17",
-      "script": "mewrev"
+      "x": 1,
+      "y": 33
     },
     {
-      "type": "trigger",
-      "x": 1,
-      "y": 34,
       "elevation": 0,
+      "script": "mewrev",
+      "type": "trigger",
       "var": "LUXURA_TRAGEDY",
       "var_value": "17",
-      "script": "mewrev"
+      "x": 1,
+      "y": 34
     },
     {
-      "type": "trigger",
-      "x": 1,
-      "y": 35,
       "elevation": 0,
+      "script": "mewrev",
+      "type": "trigger",
       "var": "LUXURA_TRAGEDY",
       "var_value": "17",
-      "script": "mewrev"
+      "x": 1,
+      "y": 35
     },
     {
-      "type": "trigger",
-      "x": 1,
-      "y": 36,
       "elevation": 0,
+      "script": "mewrev",
+      "type": "trigger",
       "var": "LUXURA_TRAGEDY",
       "var_value": "17",
-      "script": "mewrev"
+      "x": 1,
+      "y": 36
     },
     {
+      "elevation": 0,
+      "script": "grut",
       "type": "trigger",
+      "var": "LUXURA_TRAGEDY",
+      "var_value": "17",
       "x": 40,
-      "y": 9,
-      "elevation": 0,
-      "var": "LUXURA_TRAGEDY",
-      "var_value": "17",
-      "script": "grut"
+      "y": 9
     },
     {
+      "elevation": 0,
+      "script": "gruntsded",
       "type": "trigger",
+      "var": "LUXURA_TRAGEDY",
+      "var_value": "17",
       "x": 41,
-      "y": 9,
-      "elevation": 0,
-      "var": "LUXURA_TRAGEDY",
-      "var_value": "17",
-      "script": "gruntsded"
+      "y": 9
     },
     {
+      "elevation": 0,
+      "script": "gruntded",
       "type": "trigger",
+      "var": "LUXURA_TRAGEDY",
+      "var_value": "17",
       "x": 42,
-      "y": 9,
-      "elevation": 0,
-      "var": "LUXURA_TRAGEDY",
-      "var_value": "17",
-      "script": "gruntded"
+      "y": 9
     },
     {
+      "elevation": 0,
+      "script": "nio",
       "type": "trigger",
+      "var": "LUXURA_TRAGEDY",
+      "var_value": "17",
       "x": 26,
-      "y": 12,
-      "elevation": 0,
-      "var": "LUXURA_TRAGEDY",
-      "var_value": "17",
-      "script": "nio"
+      "y": 12
     },
     {
+      "elevation": 0,
+      "script": "nio",
       "type": "trigger",
+      "var": "LUXURA_TRAGEDY",
+      "var_value": "17",
       "x": 27,
-      "y": 12,
-      "elevation": 0,
-      "var": "LUXURA_TRAGEDY",
-      "var_value": "17",
-      "script": "nio"
+      "y": 12
     },
     {
+      "elevation": 0,
+      "script": "nio",
       "type": "trigger",
+      "var": "LUXURA_TRAGEDY",
+      "var_value": "17",
       "x": 28,
-      "y": 12,
-      "elevation": 0,
-      "var": "LUXURA_TRAGEDY",
-      "var_value": "17",
-      "script": "nio"
+      "y": 12
     },
     {
-      "type": "trigger",
-      "x": 54,
-      "y": 12,
       "elevation": 0,
+      "script": "nocave",
+      "type": "trigger",
       "var": "LUXURA_TRAGEDY",
       "var_value": "14",
-      "script": "nocave"
+      "x": 54,
+      "y": 12
     }
   ],
   "bg_events": [
     {
-      "type": "sign",
-      "x": 13,
-      "y": 34,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "signforest"
+      "script": "signforest",
+      "type": "sign",
+      "x": 13,
+      "y": 34
     }
   ]
 }

@@ -142,26 +142,6 @@
       "blockdata_filepath": "data/layouts/FallarborTown/map.bin"
     },
     {
-      "id": "LAYOUT_VERDANTURF_TOWN",
-      "name": "VerdanturfTown_Layout",
-      "width": 20,
-      "height": 20,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mauville",
-      "border_filepath": "data/layouts/VerdanturfTown/border.bin",
-      "blockdata_filepath": "data/layouts/VerdanturfTown/map.bin"
-    },
-    {
-      "id": "LAYOUT_PACIFIDLOG_TOWN",
-      "name": "PacifidlogTown_Layout",
-      "width": 20,
-      "height": 40,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Pacifidlog",
-      "border_filepath": "data/layouts/PacifidlogTown/border.bin",
-      "blockdata_filepath": "data/layouts/PacifidlogTown/map.bin"
-    },
-    {
       "id": "LAYOUT_ROUTE101",
       "name": "Route101_Layout",
       "width": 40,

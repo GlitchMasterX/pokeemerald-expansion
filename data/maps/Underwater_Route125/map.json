@@ -12,28 +12,22 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": [
-    {
-      "map": "MAP_ROUTE125",
-      "offset": 0,
-      "direction": "emerge"
-    }
-  ],
+  "connections": null,
   "object_events": [],
   "warp_events": [
     {
-      "x": 22,
-      "y": 10,
-      "elevation": 0,
       "dest_map": "MAP_UNDERWATER_MARINE_CAVE",
-      "dest_warp_id": "0"
+      "dest_warp_id": "0",
+      "elevation": 0,
+      "x": 22,
+      "y": 10
     },
     {
-      "x": 45,
-      "y": 30,
-      "elevation": 0,
       "dest_map": "MAP_UNDERWATER_MARINE_CAVE",
-      "dest_warp_id": "0"
+      "dest_warp_id": "0",
+      "elevation": 0,
+      "x": 45,
+      "y": 30
     }
   ],
   "coord_events": [],

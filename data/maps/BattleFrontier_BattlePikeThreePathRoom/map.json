@@ -15,114 +15,114 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_LINK_RECEPTIONIST",
-      "x": 4,
-      "y": 10,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "flag": "0",
+      "graphics_id": "OBJ_EVENT_GFX_LINK_RECEPTIONIST",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "script": "BattleFrontier_BattlePikeThreePathRoom_EventScript_Attendant",
-      "flag": "0"
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 4,
+      "y": 10
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_LINK_RECEPTIONIST",
-      "x": 8,
-      "y": 5,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "flag": "0",
+      "graphics_id": "OBJ_EVENT_GFX_LINK_RECEPTIONIST",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "script": "BattleFrontier_BattlePikeThreePathRoom_EventScript_HintGiver",
-      "flag": "0"
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 8,
+      "y": 5
     }
   ],
   "warp_events": [],
   "coord_events": [
     {
+      "elevation": 3,
+      "script": "BattleFrontier_BattlePikeThreePathRoom_EventScript_LeftRoomWarp",
       "type": "trigger",
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
       "x": 2,
-      "y": 3,
-      "elevation": 3,
-      "var": "VAR_TEMP_1",
-      "var_value": "0",
-      "script": "BattleFrontier_BattlePikeThreePathRoom_EventScript_LeftRoomWarp"
+      "y": 3
     },
     {
+      "elevation": 3,
+      "script": "BattleFrontier_BattlePikeThreePathRoom_EventScript_CenterRoomWarp",
       "type": "trigger",
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
       "x": 6,
-      "y": 3,
-      "elevation": 3,
-      "var": "VAR_TEMP_1",
-      "var_value": "0",
-      "script": "BattleFrontier_BattlePikeThreePathRoom_EventScript_CenterRoomWarp"
+      "y": 3
     },
     {
+      "elevation": 3,
+      "script": "BattleFrontier_BattlePikeThreePathRoom_EventScript_RightRoomWarp",
       "type": "trigger",
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
       "x": 10,
-      "y": 3,
-      "elevation": 3,
-      "var": "VAR_TEMP_1",
-      "var_value": "0",
-      "script": "BattleFrontier_BattlePikeThreePathRoom_EventScript_RightRoomWarp"
+      "y": 3
     },
     {
+      "elevation": 0,
+      "script": "BattleFrontier_BattlePikeThreePathRoom_EventScript_NoTurningBack",
       "type": "trigger",
+      "var": "VAR_TEMP_3",
+      "var_value": "1",
       "x": 5,
-      "y": 10,
-      "elevation": 0,
-      "var": "VAR_TEMP_3",
-      "var_value": "1",
-      "script": "BattleFrontier_BattlePikeThreePathRoom_EventScript_NoTurningBack"
+      "y": 10
     },
     {
-      "type": "trigger",
-      "x": 6,
-      "y": 10,
       "elevation": 0,
+      "script": "BattleFrontier_BattlePikeThreePathRoom_EventScript_NoTurningBack",
+      "type": "trigger",
       "var": "VAR_TEMP_3",
       "var_value": "1",
-      "script": "BattleFrontier_BattlePikeThreePathRoom_EventScript_NoTurningBack"
+      "x": 6,
+      "y": 10
     },
     {
-      "type": "trigger",
-      "x": 6,
-      "y": 9,
       "elevation": 3,
+      "script": "BattleFrontier_BattlePikeThreePathRoom_EventScript_SetEnteredRoom",
+      "type": "trigger",
       "var": "VAR_TEMP_2",
       "var_value": "0",
-      "script": "BattleFrontier_BattlePikeThreePathRoom_EventScript_SetEnteredRoom"
+      "x": 6,
+      "y": 9
     },
     {
+      "elevation": 3,
+      "script": "BattleFrontier_BattlePikeThreePathRoom_EventScript_SetEnteredRoom",
       "type": "trigger",
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
       "x": 5,
-      "y": 9,
-      "elevation": 3,
-      "var": "VAR_TEMP_2",
-      "var_value": "0",
-      "script": "BattleFrontier_BattlePikeThreePathRoom_EventScript_SetEnteredRoom"
+      "y": 9
     },
     {
-      "type": "trigger",
-      "x": 7,
-      "y": 9,
       "elevation": 3,
+      "script": "BattleFrontier_BattlePikeThreePathRoom_EventScript_SetEnteredRoom",
+      "type": "trigger",
       "var": "VAR_TEMP_2",
       "var_value": "0",
-      "script": "BattleFrontier_BattlePikeThreePathRoom_EventScript_SetEnteredRoom"
+      "x": 7,
+      "y": 9
     },
     {
-      "type": "trigger",
-      "x": 7,
-      "y": 10,
       "elevation": 0,
+      "script": "BattleFrontier_BattlePikeThreePathRoom_EventScript_NoTurningBack",
+      "type": "trigger",
       "var": "VAR_TEMP_3",
       "var_value": "1",
-      "script": "BattleFrontier_BattlePikeThreePathRoom_EventScript_NoTurningBack"
+      "x": 7,
+      "y": 10
     }
   ],
   "bg_events": []

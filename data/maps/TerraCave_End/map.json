@@ -15,37 +15,37 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_GROUDON_FRONT",
-      "x": 17,
-      "y": 22,
       "elevation": 1,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "flag": "FLAG_HIDE_TERRA_CAVE_GROUDON",
+      "graphics_id": "OBJ_EVENT_GFX_GROUDON_FRONT",
       "movement_range_x": 1,
       "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "script": "0x0",
-      "flag": "FLAG_HIDE_TERRA_CAVE_GROUDON"
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 17,
+      "y": 22
     }
   ],
   "warp_events": [
     {
-      "x": 5,
-      "y": 4,
-      "elevation": 3,
       "dest_map": "MAP_TERRA_CAVE_ENTRANCE",
-      "dest_warp_id": "1"
+      "dest_warp_id": "1",
+      "elevation": 3,
+      "x": 5,
+      "y": 4
     }
   ],
   "coord_events": [
     {
-      "type": "trigger",
-      "x": 17,
-      "y": 26,
       "elevation": 3,
+      "script": "TerraCave_End_EventScript_Groudon",
+      "type": "trigger",
       "var": "VAR_TEMP_1",
       "var_value": "1",
-      "script": "TerraCave_End_EventScript_Groudon"
+      "x": 17,
+      "y": 26
     }
   ],
   "bg_events": []

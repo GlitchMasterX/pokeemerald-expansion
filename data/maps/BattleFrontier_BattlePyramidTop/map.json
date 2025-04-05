@@ -15,42 +15,42 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_HIKER",
-      "x": 17,
-      "y": 11,
       "elevation": 6,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "flag": "0",
+      "graphics_id": "OBJ_EVENT_GFX_HIKER",
       "movement_range_x": 1,
       "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "3",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "script": "BattleFrontier_BattlePyramidTop_EventScript_Attendant",
-      "flag": "0"
+      "trainer_sight_or_berry_tree_id": "3",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 17,
+      "y": 11
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SILAS",
-      "x": 17,
-      "y": 7,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "flag": "0",
+      "graphics_id": "OBJ_EVENT_GFX_SILAS",
       "movement_range_x": 1,
       "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "script": "0x0",
-      "flag": "0"
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 17,
+      "y": 7
     }
   ],
   "warp_events": [],
   "coord_events": [
     {
-      "type": "trigger",
-      "x": 17,
-      "y": 9,
       "elevation": 4,
+      "script": "BattleFrontier_BattlePyramidTop_EventScript_BattleBrandon",
+      "type": "trigger",
       "var": "VAR_TEMP_2",
       "var_value": "0",
-      "script": "BattleFrontier_BattlePyramidTop_EventScript_BattleBrandon"
+      "x": 17,
+      "y": 9
     }
   ],
   "bg_events": []

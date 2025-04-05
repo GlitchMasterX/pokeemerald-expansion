@@ -15,85 +15,85 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_LINK_RECEPTIONIST",
-      "x": 10,
-      "y": 5,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "flag": "0",
+      "graphics_id": "OBJ_EVENT_GFX_LINK_RECEPTIONIST",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "script": "RecordCorner_EventScript_Attendant",
-      "flag": "0"
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 10,
+      "y": 5
     }
   ],
   "warp_events": [
     {
+      "dest_map": "MAP_DYNAMIC",
+      "dest_warp_id": "WARP_ID_DYNAMIC",
+      "elevation": 3,
       "x": 8,
-      "y": 9,
-      "elevation": 3,
-      "dest_map": "MAP_DYNAMIC",
-      "dest_warp_id": "WARP_ID_DYNAMIC"
+      "y": 9
     },
     {
+      "dest_map": "MAP_DYNAMIC",
+      "dest_warp_id": "WARP_ID_DYNAMIC",
+      "elevation": 3,
       "x": 9,
-      "y": 9,
-      "elevation": 3,
-      "dest_map": "MAP_DYNAMIC",
-      "dest_warp_id": "WARP_ID_DYNAMIC"
+      "y": 9
     },
     {
+      "dest_map": "MAP_DYNAMIC",
+      "dest_warp_id": "WARP_ID_DYNAMIC",
+      "elevation": 3,
       "x": 11,
-      "y": 9,
-      "elevation": 3,
-      "dest_map": "MAP_DYNAMIC",
-      "dest_warp_id": "WARP_ID_DYNAMIC"
+      "y": 9
     },
     {
-      "x": 10,
-      "y": 9,
-      "elevation": 3,
       "dest_map": "MAP_DYNAMIC",
-      "dest_warp_id": "WARP_ID_DYNAMIC"
+      "dest_warp_id": "WARP_ID_DYNAMIC",
+      "elevation": 3,
+      "x": 10,
+      "y": 9
     }
   ],
   "coord_events": [
     {
+      "elevation": 3,
+      "script": "EventScript_RecordCenter_Spot0",
       "type": "trigger",
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
       "x": 6,
-      "y": 4,
-      "elevation": 3,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "EventScript_RecordCenter_Spot0"
+      "y": 4
     },
     {
+      "elevation": 3,
+      "script": "EventScript_RecordCenter_Spot2",
       "type": "trigger",
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
       "x": 6,
-      "y": 6,
-      "elevation": 3,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "EventScript_RecordCenter_Spot2"
+      "y": 6
     },
     {
-      "type": "trigger",
-      "x": 13,
-      "y": 4,
       "elevation": 3,
+      "script": "EventScript_RecordCenter_Spot1",
+      "type": "trigger",
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "EventScript_RecordCenter_Spot1"
+      "x": 13,
+      "y": 4
     },
     {
-      "type": "trigger",
-      "x": 13,
-      "y": 6,
       "elevation": 3,
+      "script": "EventScript_RecordCenter_Spot3",
+      "type": "trigger",
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "EventScript_RecordCenter_Spot3"
+      "x": 13,
+      "y": 6
     }
   ],
   "bg_events": []

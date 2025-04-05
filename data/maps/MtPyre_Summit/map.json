@@ -15,205 +15,205 @@
   "connections": null,
   "object_events": [
     {
+      "elevation": 3,
+      "flag": "0",
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
-      "x": 22,
-      "y": 5,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "script": "MtPyre_Summit_EventScript_OldMan",
-      "flag": "0"
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 22,
+      "y": 5
     },
     {
+      "elevation": 3,
+      "flag": "FLAG_HIDE_MT_PYRE_SUMMIT_ARCHIE",
       "graphics_id": "OBJ_EVENT_GFX_ARCHIE",
-      "x": 23,
-      "y": 6,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "script": "0x0",
-      "flag": "FLAG_HIDE_MT_PYRE_SUMMIT_ARCHIE"
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 23,
+      "y": 6
     },
     {
+      "elevation": 3,
+      "flag": "0",
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
-      "x": 23,
-      "y": 5,
-      "elevation": 3,
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
       "script": "MtPyre_Summit_EventScript_OldLady",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 21,
-      "y": 15,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
-      "script": "MtPyre_Summit_EventScript_Grunt1",
-      "flag": "FLAG_HIDE_MT_PYRE_SUMMIT_TEAM_AQUA"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 25,
-      "y": 18,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
-      "script": "MtPyre_Summit_EventScript_Grunt2",
-      "flag": "FLAG_HIDE_MT_PYRE_SUMMIT_TEAM_AQUA"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 21,
-      "y": 11,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
-      "script": "MtPyre_Summit_EventScript_Grunt3",
-      "flag": "FLAG_HIDE_MT_PYRE_SUMMIT_TEAM_AQUA"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
-      "x": 25,
-      "y": 11,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
-      "script": "MtPyre_Summit_EventScript_Grunt4",
-      "flag": "FLAG_HIDE_MT_PYRE_SUMMIT_TEAM_AQUA"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_MAXIE",
-      "x": 23,
-      "y": 6,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 23,
+      "y": 5
+    },
+    {
+      "elevation": 3,
+      "flag": "FLAG_HIDE_MT_PYRE_SUMMIT_TEAM_AQUA",
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "script": "MtPyre_Summit_EventScript_Grunt1",
+      "trainer_sight_or_berry_tree_id": "3",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "x": 21,
+      "y": 15
+    },
+    {
+      "elevation": 3,
+      "flag": "FLAG_HIDE_MT_PYRE_SUMMIT_TEAM_AQUA",
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "script": "MtPyre_Summit_EventScript_Grunt2",
+      "trainer_sight_or_berry_tree_id": "3",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "x": 25,
+      "y": 18
+    },
+    {
+      "elevation": 3,
+      "flag": "FLAG_HIDE_MT_PYRE_SUMMIT_TEAM_AQUA",
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "script": "MtPyre_Summit_EventScript_Grunt3",
+      "trainer_sight_or_berry_tree_id": "3",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "x": 21,
+      "y": 11
+    },
+    {
+      "elevation": 3,
+      "flag": "FLAG_HIDE_MT_PYRE_SUMMIT_TEAM_AQUA",
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "script": "MtPyre_Summit_EventScript_Grunt4",
+      "trainer_sight_or_berry_tree_id": "3",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "x": 25,
+      "y": 11
+    },
+    {
+      "elevation": 3,
+      "flag": "FLAG_HIDE_MT_PYRE_SUMMIT_MAXIE",
+      "graphics_id": "OBJ_EVENT_GFX_MAXIE",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "script": "0x0",
-      "flag": "FLAG_HIDE_MT_PYRE_SUMMIT_MAXIE"
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 23,
+      "y": 6
     }
   ],
   "warp_events": [
     {
+      "dest_map": "MAP_MT_PYRE_EXTERIOR",
+      "dest_warp_id": "1",
+      "elevation": 3,
       "x": 22,
-      "y": 31,
-      "elevation": 3,
-      "dest_map": "MAP_MT_PYRE_EXTERIOR",
-      "dest_warp_id": "1"
+      "y": 31
     },
     {
+      "dest_map": "MAP_MT_PYRE_EXTERIOR",
+      "dest_warp_id": "1",
+      "elevation": 3,
       "x": 23,
-      "y": 31,
-      "elevation": 3,
-      "dest_map": "MAP_MT_PYRE_EXTERIOR",
-      "dest_warp_id": "1"
+      "y": 31
     },
     {
-      "x": 24,
-      "y": 31,
-      "elevation": 3,
       "dest_map": "MAP_MT_PYRE_EXTERIOR",
-      "dest_warp_id": "1"
+      "dest_warp_id": "1",
+      "elevation": 3,
+      "x": 24,
+      "y": 31
     }
   ],
   "coord_events": [
     {
+      "elevation": 3,
+      "script": "MtPyre_Summit_EventScript_TeamAquaTrigger0",
       "type": "trigger",
+      "var": "VAR_MT_PYRE_STATE",
+      "var_value": "0",
       "x": 22,
-      "y": 7,
-      "elevation": 3,
-      "var": "VAR_MT_PYRE_STATE",
-      "var_value": "0",
-      "script": "MtPyre_Summit_EventScript_TeamAquaTrigger0"
+      "y": 7
     },
     {
+      "elevation": 3,
+      "script": "MtPyre_Summit_EventScript_TeamAquaTrigger1",
       "type": "trigger",
+      "var": "VAR_MT_PYRE_STATE",
+      "var_value": "0",
       "x": 23,
-      "y": 7,
-      "elevation": 3,
-      "var": "VAR_MT_PYRE_STATE",
-      "var_value": "0",
-      "script": "MtPyre_Summit_EventScript_TeamAquaTrigger1"
+      "y": 7
     },
     {
+      "elevation": 3,
+      "script": "MtPyre_Summit_EventScript_TeamAquaTrigger2",
       "type": "trigger",
+      "var": "VAR_MT_PYRE_STATE",
+      "var_value": "0",
       "x": 24,
-      "y": 7,
-      "elevation": 3,
-      "var": "VAR_MT_PYRE_STATE",
-      "var_value": "0",
-      "script": "MtPyre_Summit_EventScript_TeamAquaTrigger2"
+      "y": 7
     },
     {
+      "elevation": 3,
+      "script": "MtPyre_Summit_EventScript_ArchieMaxieTrigger0",
       "type": "trigger",
+      "var": "VAR_MT_PYRE_STATE",
+      "var_value": "2",
       "x": 22,
-      "y": 9,
-      "elevation": 3,
-      "var": "VAR_MT_PYRE_STATE",
-      "var_value": "2",
-      "script": "MtPyre_Summit_EventScript_ArchieMaxieTrigger0"
+      "y": 9
     },
     {
+      "elevation": 3,
+      "script": "MtPyre_Summit_EventScript_ArchieMaxieTrigger1",
       "type": "trigger",
+      "var": "VAR_MT_PYRE_STATE",
+      "var_value": "2",
       "x": 23,
-      "y": 9,
-      "elevation": 3,
-      "var": "VAR_MT_PYRE_STATE",
-      "var_value": "2",
-      "script": "MtPyre_Summit_EventScript_ArchieMaxieTrigger1"
+      "y": 9
     },
     {
-      "type": "trigger",
-      "x": 24,
-      "y": 9,
       "elevation": 3,
+      "script": "MtPyre_Summit_EventScript_ArchieMaxieTrigger2",
+      "type": "trigger",
       "var": "VAR_MT_PYRE_STATE",
       "var_value": "2",
-      "script": "MtPyre_Summit_EventScript_ArchieMaxieTrigger2"
+      "x": 24,
+      "y": 9
     }
   ],
   "bg_events": [
     {
+      "elevation": 0,
+      "flag": "FLAG_HIDDEN_ITEM_MT_PYRE_SUMMIT_ZINC",
+      "item": "ITEM_ZINC",
       "type": "hidden_item",
       "x": 9,
-      "y": 25,
-      "elevation": 0,
-      "item": "ITEM_ZINC",
-      "flag": "FLAG_HIDDEN_ITEM_MT_PYRE_SUMMIT_ZINC"
+      "y": 25
     },
     {
+      "elevation": 3,
+      "flag": "FLAG_HIDDEN_ITEM_MT_PYRE_SUMMIT_RARE_CANDY",
+      "item": "ITEM_RARE_CANDY",
       "type": "hidden_item",
       "x": 37,
-      "y": 7,
-      "elevation": 3,
-      "item": "ITEM_RARE_CANDY",
-      "flag": "FLAG_HIDDEN_ITEM_MT_PYRE_SUMMIT_RARE_CANDY"
+      "y": 7
     }
   ]
 }

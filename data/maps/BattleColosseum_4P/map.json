@@ -16,70 +16,70 @@
   "object_events": [],
   "warp_events": [
     {
+      "dest_map": "MAP_DYNAMIC",
+      "dest_warp_id": "WARP_ID_DYNAMIC",
+      "elevation": 3,
       "x": 5,
-      "y": 8,
-      "elevation": 3,
-      "dest_map": "MAP_DYNAMIC",
-      "dest_warp_id": "WARP_ID_DYNAMIC"
+      "y": 8
     },
     {
+      "dest_map": "MAP_DYNAMIC",
+      "dest_warp_id": "WARP_ID_DYNAMIC",
+      "elevation": 3,
       "x": 6,
-      "y": 8,
-      "elevation": 3,
-      "dest_map": "MAP_DYNAMIC",
-      "dest_warp_id": "WARP_ID_DYNAMIC"
+      "y": 8
     },
     {
+      "dest_map": "MAP_DYNAMIC",
+      "dest_warp_id": "WARP_ID_DYNAMIC",
+      "elevation": 3,
       "x": 7,
-      "y": 8,
-      "elevation": 3,
-      "dest_map": "MAP_DYNAMIC",
-      "dest_warp_id": "WARP_ID_DYNAMIC"
+      "y": 8
     },
     {
-      "x": 8,
-      "y": 8,
-      "elevation": 3,
       "dest_map": "MAP_DYNAMIC",
-      "dest_warp_id": "WARP_ID_DYNAMIC"
+      "dest_warp_id": "WARP_ID_DYNAMIC",
+      "elevation": 3,
+      "x": 8,
+      "y": 8
     }
   ],
   "coord_events": [
     {
+      "elevation": 3,
+      "script": "EventScript_BattleColosseum_4P_PlayerSpot0",
       "type": "trigger",
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
       "x": 3,
-      "y": 4,
-      "elevation": 3,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "EventScript_BattleColosseum_4P_PlayerSpot0"
+      "y": 4
     },
     {
+      "elevation": 3,
+      "script": "EventScript_BattleColosseum_4P_PlayerSpot2",
       "type": "trigger",
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
       "x": 3,
-      "y": 6,
-      "elevation": 3,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "EventScript_BattleColosseum_4P_PlayerSpot2"
+      "y": 6
     },
     {
-      "type": "trigger",
-      "x": 10,
-      "y": 4,
       "elevation": 3,
+      "script": "EventScript_BattleColosseum_4P_PlayerSpot1",
+      "type": "trigger",
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "EventScript_BattleColosseum_4P_PlayerSpot1"
+      "x": 10,
+      "y": 4
     },
     {
-      "type": "trigger",
-      "x": 10,
-      "y": 6,
       "elevation": 3,
+      "script": "EventScript_BattleColosseum_4P_PlayerSpot3",
+      "type": "trigger",
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "EventScript_BattleColosseum_4P_PlayerSpot3"
+      "x": 10,
+      "y": 6
     }
   ],
   "bg_events": []
