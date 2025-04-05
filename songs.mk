@@ -55,7 +55,7 @@ $(MID_SUBDIR)/mus_vs_gym_leader.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G120 -V080 -P1
 
 $(MID_SUBDIR)/mus_vs_champion.s: %.s: %.mid
-	$(MID) $< $@ -E -R$(STD_REVERB) -G191 -V080 -P1
+	$(MID) $< $@ -E -R$(STD_REVERB) -G536 -V080 -P1
 
 $(MID_SUBDIR)/mus_vs_kyogre_groudon.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -E -R50 -G121 -V080 -P1
@@ -1836,35 +1836,8 @@ $(MID_SUBDIR)/mus_hg_ecruteak.s: %.s: %.mid
 $(MID_SUBDIR)/mus_hg_cianwood.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G229 -V073
 
-$(MID_SUBDIR)/mus_hg_route29.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V063
-
-$(MID_SUBDIR)/mus_hg_route30.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V093
-
-$(MID_SUBDIR)/mus_hg_route34.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V092
-
-$(MID_SUBDIR)/mus_hg_route38.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V083
-
-$(MID_SUBDIR)/mus_hg_route42.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V085
-
-$(MID_SUBDIR)/mus_hg_poke_mart.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V078
-
 $(MID_SUBDIR)/mus_hg_dance_theater.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G229 -V080
-
-$(MID_SUBDIR)/mus_hg_game_corner.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V092
-
-$(MID_SUBDIR)/mus_hg_b_tower.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V097
-
-$(MID_SUBDIR)/mus_hg_b_tower_reception.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V070
 
 $(MID_SUBDIR)/mus_hg_sprout_tower.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G229 -V062
@@ -1923,24 +1896,6 @@ $(MID_SUBDIR)/mus_hg_rocket_takeover.s: %.s: %.mid
 $(MID_SUBDIR)/mus_hg_magnet_train.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G229 -V100
 
-$(MID_SUBDIR)/mus_hg_ss_aqua.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V077
-
-$(MID_SUBDIR)/mus_hg_mt_moon_square.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V105
-
-$(MID_SUBDIR)/mus_hg_radio_jingle.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V082
-
-$(MID_SUBDIR)/mus_hg_radio_lullaby.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V082
-
-$(MID_SUBDIR)/mus_hg_radio_march.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V082
-
-$(MID_SUBDIR)/mus_hg_radio_unown.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V089 -X
-
 $(MID_SUBDIR)/mus_hg_eusine.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G229 -V086
 
@@ -1989,35 +1944,11 @@ $(MID_SUBDIR)/mus_hg_vs_ho_oh.s: %.s: %.mid
 $(MID_SUBDIR)/mus_hg_vs_lugia.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G229 -V102
 
-$(MID_SUBDIR)/mus_hg_b_factory.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V077
-
-$(MID_SUBDIR)/mus_hg_b_hall.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V080
-
-$(MID_SUBDIR)/mus_hg_b_arcade.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V077 -X
-
-$(MID_SUBDIR)/mus_hg_b_castle.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V097
-
-$(MID_SUBDIR)/mus_hg_route47.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V073
-
-$(MID_SUBDIR)/mus_hg_safari_zone_gate.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V079
-
-$(MID_SUBDIR)/mus_hg_safari_zone.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V087
-
 $(MID_SUBDIR)/mus_hg_ethan.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G229 -V087
 
 $(MID_SUBDIR)/mus_hg_lyra.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G229 -V087
-
-$(MID_SUBDIR)/mus_hg_game_corner_win.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V078
 
 $(MID_SUBDIR)/mus_hg_kimono_girl_dance.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G229 -V088
@@ -2030,34 +1961,3 @@ $(MID_SUBDIR)/mus_hg_ho_oh_appears.s: %.s: %.mid
 
 $(MID_SUBDIR)/mus_hg_lugia_appears.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G229 -V092
-
-$(MID_SUBDIR)/mus_hg_spiky_eared_pichu.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V100
-
-$(MID_SUBDIR)/mus_hg_sinjou_ruins.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V088
-
-$(MID_SUBDIR)/mus_hg_vs_kyogre_groudon.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V110
-
-$(MID_SUBDIR)/mus_hg_pokewalker.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V106
-
-$(MID_SUBDIR)/mus_hg_vs_arceus.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V099
-
-$(MID_SUBDIR)/mus_hg_obtain_egg.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V088 -P5
-
-$(MID_SUBDIR)/mus_hg_lets_go_together.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V088 -p5
-
-$(MID_SUBDIR)/mus_hg_pokeathlon_ready.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V102 -p5
-
-$(MID_SUBDIR)/mus_hg_pokeathlon_1st_place.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V098 -p5
-
-$(MID_SUBDIR)/mus_hg_receive_pokemon.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G229 -V098 -p5
-
