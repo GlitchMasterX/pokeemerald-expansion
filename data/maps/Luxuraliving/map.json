@@ -11,58 +11,63 @@
   "allow_escaping": false,
   "allow_running": true,
   "show_map_name": false,
+  "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
-      "elevation": 0,
-      "flag": "0",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "script": "MaidM",
-      "trainer_sight_or_berry_tree_id": "0",
-      "trainer_type": "TRAINER_TYPE_NONE",
       "x": 2,
-      "y": 10
+      "y": 10,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MaidM",
+      "flag": "0"
     },
     {
-      "elevation": 0,
-      "flag": "0",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
+      "x": 18,
+      "y": 18,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "script": "Maid",
-      "trainer_sight_or_berry_tree_id": "0",
       "trainer_type": "TRAINER_TYPE_NONE",
-      "x": 18,
-      "y": 18
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Maid",
+      "flag": "0"
     },
     {
-      "elevation": 0,
-      "flag": "0",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(MINCCINO)",
+      "x": 4,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "script": "Minccino",
-      "trainer_sight_or_berry_tree_id": "0",
       "trainer_type": "TRAINER_TYPE_NONE",
-      "x": 4,
-      "y": 8
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Minccino",
+      "flag": "0"
     }
   ],
   "warp_events": [
     {
-      "dest_map": "MAP_LUXURA_INDOOR",
-      "dest_warp_id": "2",
-      "elevation": 0,
       "x": 10,
-      "y": 23
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_LUXURA_INDOOR",
+      "dest_warp_id": "2"
     }
   ],
-  "coord_events": [],
-  "bg_events": []
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
 }

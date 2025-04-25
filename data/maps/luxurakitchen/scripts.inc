@@ -138,7 +138,7 @@ luxurakitchen_MapScripts_MAP_SCRIPT_ON_LOAD_6:
 momm::
 # 67 "data/maps/luxurakitchen/scripts.pory"
 	goto_if_unset FLAG_UNUSED_0x49D, momm_1
-# 81 "data/maps/luxurakitchen/scripts.pory"
+# 79 "data/maps/luxurakitchen/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x49D, momm_2
 	return
 
@@ -151,192 +151,204 @@ momm_1:
 	speakername name2
 # 71 "data/maps/luxurakitchen/scripts.pory"
 	msgbox momm_Text_0
-# 73 "data/maps/luxurakitchen/scripts.pory"
+# 72 "data/maps/luxurakitchen/scripts.pory"
 	speakername Xylar1
-# 74 "data/maps/luxurakitchen/scripts.pory"
+# 73 "data/maps/luxurakitchen/scripts.pory"
 	msgbox momm_Text_1
-# 76 "data/maps/luxurakitchen/scripts.pory"
+# 74 "data/maps/luxurakitchen/scripts.pory"
 	speakername name2
-# 77 "data/maps/luxurakitchen/scripts.pory"
+# 75 "data/maps/luxurakitchen/scripts.pory"
 	msgbox momm_Text_2
-# 79 "data/maps/luxurakitchen/scripts.pory"
+# 76 "data/maps/luxurakitchen/scripts.pory"
+	removefieldmugshot
+# 77 "data/maps/luxurakitchen/scripts.pory"
 	release
 	return
 
 momm_2:
-# 82 "data/maps/luxurakitchen/scripts.pory"
+# 80 "data/maps/luxurakitchen/scripts.pory"
 	lock
-# 83 "data/maps/luxurakitchen/scripts.pory"
+# 81 "data/maps/luxurakitchen/scripts.pory"
 	faceplayer
-# 84 "data/maps/luxurakitchen/scripts.pory"
+# 82 "data/maps/luxurakitchen/scripts.pory"
 	speakername name2
-# 85 "data/maps/luxurakitchen/scripts.pory"
+# 83 "data/maps/luxurakitchen/scripts.pory"
 	msgbox momm_Text_3
-# 87 "data/maps/luxurakitchen/scripts.pory"
+# 84 "data/maps/luxurakitchen/scripts.pory"
+	removefieldmugshot
+# 85 "data/maps/luxurakitchen/scripts.pory"
 	release
-# 88 "data/maps/luxurakitchen/scripts.pory"
+# 86 "data/maps/luxurakitchen/scripts.pory"
 	setflag FLAG_UNUSED_0x49E
 	return
 
 
 mommafter::
-# 93 "data/maps/luxurakitchen/scripts.pory"
+# 91 "data/maps/luxurakitchen/scripts.pory"
 	lock
-# 94 "data/maps/luxurakitchen/scripts.pory"
+# 92 "data/maps/luxurakitchen/scripts.pory"
 	faceplayer
-# 95 "data/maps/luxurakitchen/scripts.pory"
+# 93 "data/maps/luxurakitchen/scripts.pory"
 	speakername name2
-# 96 "data/maps/luxurakitchen/scripts.pory"
+# 94 "data/maps/luxurakitchen/scripts.pory"
 	msgbox mommafter_Text_0
-# 98 "data/maps/luxurakitchen/scripts.pory"
+# 95 "data/maps/luxurakitchen/scripts.pory"
+	removefieldmugshot
+# 96 "data/maps/luxurakitchen/scripts.pory"
 	release
 	return
 
 
 feliciaafter::
-# 101 "data/maps/luxurakitchen/scripts.pory"
+# 99 "data/maps/luxurakitchen/scripts.pory"
 	lock
-# 102 "data/maps/luxurakitchen/scripts.pory"
+# 100 "data/maps/luxurakitchen/scripts.pory"
 	faceplayer
-# 103 "data/maps/luxurakitchen/scripts.pory"
+# 101 "data/maps/luxurakitchen/scripts.pory"
 	speakername felicia
-# 104 "data/maps/luxurakitchen/scripts.pory"
+# 102 "data/maps/luxurakitchen/scripts.pory"
 	msgbox feliciaafter_Text_0
-# 106 "data/maps/luxurakitchen/scripts.pory"
+# 103 "data/maps/luxurakitchen/scripts.pory"
 	release
 	return
 
 
 mirakitchen::
-# 110 "data/maps/luxurakitchen/scripts.pory"
+# 107 "data/maps/luxurakitchen/scripts.pory"
 	goto_if_unset FLAG_UNUSED_0x49F, mirakitchen_6
 mirakitchen_4:
-# 118 "data/maps/luxurakitchen/scripts.pory"
+# 115 "data/maps/luxurakitchen/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x49F, mirakitchen_2
-# 118 "data/maps/luxurakitchen/scripts.pory"
+# 115 "data/maps/luxurakitchen/scripts.pory"
 	goto_if_unset FLAG_SYS_B_DASH, mirakitchen_2
 	return
 
 mirakitchen_1:
-# 111 "data/maps/luxurakitchen/scripts.pory"
+# 108 "data/maps/luxurakitchen/scripts.pory"
 	lock
-# 112 "data/maps/luxurakitchen/scripts.pory"
+# 109 "data/maps/luxurakitchen/scripts.pory"
 	faceplayer
-# 113 "data/maps/luxurakitchen/scripts.pory"
+# 110 "data/maps/luxurakitchen/scripts.pory"
 	speakername name4
-# 114 "data/maps/luxurakitchen/scripts.pory"
+# 111 "data/maps/luxurakitchen/scripts.pory"
 	msgbox mirakitchen_Text_0
-# 116 "data/maps/luxurakitchen/scripts.pory"
+# 112 "data/maps/luxurakitchen/scripts.pory"
+	removefieldmugshot
+# 113 "data/maps/luxurakitchen/scripts.pory"
 	release
 	return
 
 mirakitchen_2:
-# 119 "data/maps/luxurakitchen/scripts.pory"
+# 116 "data/maps/luxurakitchen/scripts.pory"
 	lock
-# 120 "data/maps/luxurakitchen/scripts.pory"
+# 117 "data/maps/luxurakitchen/scripts.pory"
 	faceplayer
-# 121 "data/maps/luxurakitchen/scripts.pory"
+# 118 "data/maps/luxurakitchen/scripts.pory"
 	speakername Xylar1
-# 122 "data/maps/luxurakitchen/scripts.pory"
+# 119 "data/maps/luxurakitchen/scripts.pory"
 	msgbox mirakitchen_Text_1
-# 124 "data/maps/luxurakitchen/scripts.pory"
+# 120 "data/maps/luxurakitchen/scripts.pory"
 	speakername name4
-# 125 "data/maps/luxurakitchen/scripts.pory"
-	msgbox mirakitchen_Text_2
-# 127 "data/maps/luxurakitchen/scripts.pory"
+# 121 "data/maps/luxurakitchen/scripts.pory"
+	msgbox mirakitchen_Text_2, MSGBOX_AUTOCLOSE
+# 122 "data/maps/luxurakitchen/scripts.pory"
+	removefieldmugshot
+# 123 "data/maps/luxurakitchen/scripts.pory"
 	msgbox mirakitchen_Text_3
-# 128 "data/maps/luxurakitchen/scripts.pory"
+# 124 "data/maps/luxurakitchen/scripts.pory"
 	release
-# 129 "data/maps/luxurakitchen/scripts.pory"
+# 125 "data/maps/luxurakitchen/scripts.pory"
 	setflag FLAG_UNUSED_0x4A2
 	return
 
 mirakitchen_6:
-# 110 "data/maps/luxurakitchen/scripts.pory"
+# 107 "data/maps/luxurakitchen/scripts.pory"
 	goto_if_unset FLAG_SYS_B_DASH, mirakitchen_1
 	goto mirakitchen_4
 
 
 mirastrol::
-# 134 "data/maps/luxurakitchen/scripts.pory"
+# 130 "data/maps/luxurakitchen/scripts.pory"
 	lock
-# 135 "data/maps/luxurakitchen/scripts.pory"
+# 131 "data/maps/luxurakitchen/scripts.pory"
 	faceplayer
-# 136 "data/maps/luxurakitchen/scripts.pory"
+# 132 "data/maps/luxurakitchen/scripts.pory"
 	speakername name4
-# 137 "data/maps/luxurakitchen/scripts.pory"
+# 133 "data/maps/luxurakitchen/scripts.pory"
 	msgbox mirastrol_Text_0
-# 139 "data/maps/luxurakitchen/scripts.pory"
+# 134 "data/maps/luxurakitchen/scripts.pory"
+	removefieldmugshot
+# 135 "data/maps/luxurakitchen/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 140 "data/maps/luxurakitchen/scripts.pory"
+# 136 "data/maps/luxurakitchen/scripts.pory"
 	removeobject 11
-# 141 "data/maps/luxurakitchen/scripts.pory"
+# 137 "data/maps/luxurakitchen/scripts.pory"
 	fadescreen FADE_FROM_BLACK
-# 142 "data/maps/luxurakitchen/scripts.pory"
+# 138 "data/maps/luxurakitchen/scripts.pory"
 	release
-# 143 "data/maps/luxurakitchen/scripts.pory"
+# 139 "data/maps/luxurakitchen/scripts.pory"
 	setflag FLAG_UNUSED_0x4A3
-# 144 "data/maps/luxurakitchen/scripts.pory"
+# 140 "data/maps/luxurakitchen/scripts.pory"
 	setvar LUXURA_TRAGEDY, 9
-# 145 "data/maps/luxurakitchen/scripts.pory"
+# 141 "data/maps/luxurakitchen/scripts.pory"
 	setvar VAR_ROUTE103_STATE, 2
 	return
 
 
 momm_Text_0:
 # 71 "data/maps/luxurakitchen/scripts.pory"
-	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Xylar, your Father wanted to have a\n"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Xylar, your Father wanted to have a\n"
 	.string "talk with you.\p"
 	.string "He's in his workroom busy as usual.\p"
 	.string "You should go see him.$"
 
 momm_Text_1:
-# 74 "data/maps/luxurakitchen/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Okay, Mom.\p"
+# 73 "data/maps/luxurakitchen/scripts.pory"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Okay, Mom.\p"
 	.string "I'll head there now.$"
 
 momm_Text_2:
-# 77 "data/maps/luxurakitchen/scripts.pory"
-	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Don't worry, I'm sure it's nothing\n"
+# 75 "data/maps/luxurakitchen/scripts.pory"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Don't worry, I'm sure it's nothing\n"
 	.string "serious.$"
 
 momm_Text_3:
-# 85 "data/maps/luxurakitchen/scripts.pory"
-	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Xylar, Can you call Felicia for me?\p"
+# 83 "data/maps/luxurakitchen/scripts.pory"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Xylar, Can you call Felicia for me?\p"
 	.string "She must be in the Library.$"
 
 mommafter_Text_0:
-# 96 "data/maps/luxurakitchen/scripts.pory"
-	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Thanks, dear.$"
+# 94 "data/maps/luxurakitchen/scripts.pory"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Thanks, dear.$"
 
 feliciaafter_Text_0:
-# 104 "data/maps/luxurakitchen/scripts.pory"
+# 102 "data/maps/luxurakitchen/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}I'd do anything for her.$"
 
 mirakitchen_Text_0:
-# 114 "data/maps/luxurakitchen/scripts.pory"
-	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, I'm a little busy right\n"
+# 111 "data/maps/luxurakitchen/scripts.pory"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, I'm a little busy right\n"
 	.string "now.\p"
 	.string "Why don't you find something else to do\n"
 	.string "for a while.$"
 
 mirakitchen_Text_1:
-# 122 "data/maps/luxurakitchen/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Mira, It's time for our walk.\p"
+# 119 "data/maps/luxurakitchen/scripts.pory"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Mira, It's time for our walk.\p"
 	.string "Ready to go.$"
 
 mirakitchen_Text_2:
-# 125 "data/maps/luxurakitchen/scripts.pory"
-	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Already?\p"
-	.string "Alright, Master Xylar.Just give me a\n"
+# 121 "data/maps/luxurakitchen/scripts.pory"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SHOCK}{COLOR RED}{SHADOW LIGHT_GRAY}Already?\p"
+	.string "Alright, Master Xylar. Just give me a\n"
 	.string "moment and we can head out.$"
 
 mirakitchen_Text_3:
-# 127 "data/maps/luxurakitchen/scripts.pory"
+# 123 "data/maps/luxurakitchen/scripts.pory"
 	.string "I should go grab my shoes.\p"
 	.string "The maid upstairs should have it.$"
 
 mirastrol_Text_0:
-# 137 "data/maps/luxurakitchen/scripts.pory"
-	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, I'll be waiting for you\n"
+# 133 "data/maps/luxurakitchen/scripts.pory"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, I'll be waiting for you\n"
 	.string "outside.$"

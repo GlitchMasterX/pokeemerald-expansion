@@ -1416,56 +1416,6 @@ static void DestroyWindow(u8 windowId) // sub_080E9750
     X(MUS_PL_OBTAIN_CASTLE_POINTS     , "MUS-PL-OBTAIN-CASTLE-POINTS"     ) \
     X(MUS_PL_OBTAIN_B_POINTS          , "MUS-PL-OBTAIN-B-POINTS"          ) \
     X(MUS_PL_WIN_MINIGAME             , "MUS-PL-WIN-MINIGAME"             ) \
-    X(MUS_HG_HALL_OF_FAME             , "MUS-HG-HALL-OF-FAME"             ) \
-    X(MUS_HG_NEW_BARK                 , "MUS-HG-NEW-BARK"                 ) \
-    X(MUS_HG_CHERRYGROVE              , "MUS-HG-CHERRYGROVE"              ) \
-    X(MUS_HG_VIOLET                   , "MUS-HG-VIOLET"                   ) \
-    X(MUS_HG_AZALEA                   , "MUS-HG-AZALEA"                   ) \
-    X(MUS_HG_GOLDENROD                , "MUS-HG-GOLDENROD"                ) \
-    X(MUS_HG_ECRUTEAK                 , "MUS-HG-ECRUTEAK"                 ) \
-    X(MUS_HG_CIANWOOD                 , "MUS-HG-CIANWOOD"                 ) \
-    X(MUS_HG_DANCE_THEATER            , "MUS-HG-DANCE-THEATER"            ) \
-    X(MUS_HG_SPROUT_TOWER             , "MUS-HG-SPROUT-TOWER"             ) \
-    X(MUS_HG_UNION_CAVE               , "MUS-HG-UNION-CAVE"               ) \
-    X(MUS_HG_RUINS_OF_ALPH            , "MUS-HG-RUINS-OF-ALPH"            ) \
-    X(MUS_HG_NATIONAL_PARK            , "MUS-HG-NATIONAL-PARK"            ) \
-    X(MUS_HG_BURNED_TOWER             , "MUS-HG-BURNED-TOWER"             ) \
-    X(MUS_HG_BELL_TOWER               , "MUS-HG-BELL-TOWER"               ) \
-    X(MUS_HG_LIGHTHOUSE               , "MUS-HG-LIGHTHOUSE"               ) \
-    X(MUS_HG_TEAM_ROCKET_HQ           , "MUS-HG-TEAM-ROCKET-HQ"           ) \
-    X(MUS_HG_ICE_PATH                 , "MUS-HG-ICE-PATH"                 ) \
-    X(MUS_HG_DRAGONS_DEN              , "MUS-HG-DRAGONS-DEN"              ) \
-    X(MUS_HG_POKEMON_LEAGUE           , "MUS-HG-POKEMON-LEAGUE"           ) \
-    X(MUS_HG_FOLLOW_ME_1              , "MUS-HG-FOLLOW-ME-1"              ) \
-    X(MUS_HG_FOLLOW_ME_2              , "MUS-HG-FOLLOW-ME-2"              ) \
-    X(MUS_HG_ENCOUNTER_RIVAL          , "MUS-HG-ENCOUNTER-RIVAL"          ) \
-    X(MUS_HG_RIVAL_EXIT               , "MUS-HG-RIVAL-EXIT"               ) \
-    X(MUS_HG_BUG_CONTEST_PREP         , "MUS-HG-BUG-CONTEST-PREP"         ) \
-    X(MUS_HG_BUG_CATCHING_CONTEST     , "MUS-HG-BUG-CATCHING-CONTEST"     ) \
-    X(MUS_HG_ROCKET_TAKEOVER          , "MUS-HG-ROCKET-TAKEOVER"          ) \
-    X(MUS_HG_MAGNET_TRAIN             , "MUS-HG-MAGNET-TRAIN"             ) \
-    X(MUS_HG_EUSINE                   , "MUS-HG-EUSINE"                   ) \
-    X(MUS_HG_CLAIR                    , "MUS-HG-CLAIR"                    ) \
-    X(MUS_HG_ENCOUNTER_GIRL_1         , "MUS-HG-ENCOUNTER-GIRL-1"         ) \
-    X(MUS_HG_ENCOUNTER_BOY_1          , "MUS-HG-ENCOUNTER-BOY-1"          ) \
-    X(MUS_HG_ENCOUNTER_SUSPICIOUS_1   , "MUS-HG-ENCOUNTER-SUSPICIOUS-1"   ) \
-    X(MUS_HG_ENCOUNTER_SAGE           , "MUS-HG-ENCOUNTER-SAGE"           ) \
-    X(MUS_HG_ENCOUNTER_KIMONO_GIRL    , "MUS-HG-ENCOUNTER-KIMONO-GIRL"    ) \
-    X(MUS_HG_ENCOUNTER_ROCKET         , "MUS-HG-ENCOUNTER-ROCKET"         ) \
-    X(MUS_HG_ENCOUNTER_SUSPICIOUS_2   , "MUS-HG-ENCOUNTER-SUSPICIOUS-2"   ) \
-    X(MUS_HG_VS_GYM_LEADER            , "MUS-HG-VS-GYM-LEADER"            ) \
-    X(MUS_HG_VS_RIVAL                 , "MUS-HG-VS-RIVAL"                 ) \
-    X(MUS_HG_VS_ROCKET                , "MUS-HG-VS-ROCKET"                ) \
-    X(MUS_HG_VS_RAIKOU                , "MUS-HG-VS-RAIKOU"                ) \
-    X(MUS_HG_VS_CHAMPION              , "MUS-HG-VS-CHAMPION"              ) \
-    X(MUS_HG_VS_HO_OH                 , "MUS-HG-VS-HO-OH"                 ) \
-    X(MUS_HG_VS_LUGIA                 , "MUS-HG-VS-LUGIA"                 ) \
-    X(MUS_HG_ETHAN                    , "MUS-HG-ETHAN"                    ) \
-    X(MUS_HG_LYRA                     , "MUS-HG-LYRA"                     ) \
-    X(MUS_HG_KIMONO_GIRL_DANCE        , "MUS-HG-KIMONO-GIRL-DANCE"        ) \
-    X(MUS_HG_KIMONO_GIRL              , "MUS-HG-KIMONO-GIRL"              ) \
-    X(MUS_HG_HO_OH_APPEARS            , "MUS-HG-HO-OH-APPEARS"            ) \
-    X(MUS_HG_LUGIA_APPEARS            , "MUS-HG-LUGIA-APPEARS"            ) \
 
 #define SOUND_LIST_SE \
     X(SE_STOP                  , "STOP"                     ) \

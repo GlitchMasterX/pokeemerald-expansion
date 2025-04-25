@@ -34,46 +34,62 @@ mira::
 	speakername name4
 # 19 "data/maps/Playerroom/scripts.pory"
 	msgbox mira_Text_1
+# 20 "data/maps/Playerroom/scripts.pory"
+	removefieldmugshot
 # 21 "data/maps/Playerroom/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, camera
+	closemessage
 # 22 "data/maps/Playerroom/scripts.pory"
-	applymovement 1, miramove1
+	applymovement OBJ_EVENT_ID_CAMERA, camera
 # 23 "data/maps/Playerroom/scripts.pory"
-	waitmovement 0
+	applymovement 1, miramove1
 # 24 "data/maps/Playerroom/scripts.pory"
-	special RemoveCameraObject
+	waitmovement 0
 # 25 "data/maps/Playerroom/scripts.pory"
-	speakername name4
+	special RemoveCameraObject
 # 26 "data/maps/Playerroom/scripts.pory"
+	speakername name4
+# 27 "data/maps/Playerroom/scripts.pory"
 	msgbox mira_Text_2
 # 28 "data/maps/Playerroom/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, xylar1
+	closemessage
 # 29 "data/maps/Playerroom/scripts.pory"
-	speakername Xylar1
+	applymovement OBJ_EVENT_ID_PLAYER, xylar1
 # 30 "data/maps/Playerroom/scripts.pory"
+	speakername Xylar1
+# 31 "data/maps/Playerroom/scripts.pory"
 	msgbox mira_Text_3
 # 32 "data/maps/Playerroom/scripts.pory"
-	speakername name4
+	applymovement 0xFF, mira_Movement_0
 # 33 "data/maps/Playerroom/scripts.pory"
-	msgbox mira_Text_4
-# 35 "data/maps/Playerroom/scripts.pory"
+	waitbuttonpress
+# 34 "data/maps/Playerroom/scripts.pory"
 	speakername name4
+# 35 "data/maps/Playerroom/scripts.pory"
+	msgbox mira_Text_4
 # 36 "data/maps/Playerroom/scripts.pory"
-	msgbox mira_Text_5
+	waitmessage
+# 37 "data/maps/Playerroom/scripts.pory"
+	playse SE_PIN
 # 38 "data/maps/Playerroom/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, xylar
 # 39 "data/maps/Playerroom/scripts.pory"
 	speakername Xylar1
 # 40 "data/maps/Playerroom/scripts.pory"
-	msgbox mira_Text_6
+	msgbox mira_Text_5
+# 41 "data/maps/Playerroom/scripts.pory"
+	removefieldmugshot
 # 42 "data/maps/Playerroom/scripts.pory"
 	speakername name4
 # 43 "data/maps/Playerroom/scripts.pory"
-	msgbox mira_Text_7
-# 45 "data/maps/Playerroom/scripts.pory"
+	msgbox mira_Text_6
+# 44 "data/maps/Playerroom/scripts.pory"
 	speakername Xylar1
+# 45 "data/maps/Playerroom/scripts.pory"
+	msgbox mira_Text_7
 # 46 "data/maps/Playerroom/scripts.pory"
-	msgbox mira_Text_8
+	removefieldmugshot
+# 47 "data/maps/Playerroom/scripts.pory"
+	closemessage
 # 48 "data/maps/Playerroom/scripts.pory"
 	applymovement 1, miramove2
 # 49 "data/maps/Playerroom/scripts.pory"
@@ -239,55 +255,58 @@ metdad::
 	return
 
 
+# 32 "data/maps/Playerroom/scripts.pory"
+mira_Movement_0:
+# 32 "data/maps/Playerroom/scripts.pory"
+	delay_16
+	step_end
+
 mira_Text_0:
 # 13 "data/maps/Playerroom/scripts.pory"
 	.string "KNOCK..KNOCK$"
 
 mira_Text_1:
 # 19 "data/maps/Playerroom/scripts.pory"
-	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, good morning. It's time\n"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, good morning. It's time\n"
 	.string "for breakfast. Lord Aurther and Lady\l"
 	.string "Elysia are waiting for you at the table.$"
 
 mira_Text_2:
-# 26 "data/maps/Playerroom/scripts.pory"
-	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Still in bed, I see? You know you can't\n"
+# 27 "data/maps/Playerroom/scripts.pory"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Still in bed, I see? You know you can't\n"
 	.string "stay there all day, young master. Come\l"
 	.string "now, you wouldn't want to keep Lord\l"
 	.string "Aurther and Lady Elysia waiting, would\l"
 	.string "you?$"
 
 mira_Text_3:
-# 30 "data/maps/Playerroom/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Umm..$"
+# 31 "data/maps/Playerroom/scripts.pory"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SPECIAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Umm........$"
 
 mira_Text_4:
-# 33 "data/maps/Playerroom/scripts.pory"
-	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Up with you, Master Xylar. If you don't\n"
-	.string "hurry, I'll have to pull the covers off\l"
-	.string "myself. Don't make me do it.$"
+# 35 "data/maps/Playerroom/scripts.pory"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SMILE}{COLOR RED}{SHADOW LIGHT_GRAY}Up with you, Master Xylar. If you don't\n"
+	.string "get up soon, I'm pulling the covers off\l"
+	.string "myself, don't make me do it.\p"
+	.string "And I made your favorite pancakes this\n"
+	.string "morning. You don't want them getting\l"
+	.string "cold, do you?$"
 
 mira_Text_5:
-# 36 "data/maps/Playerroom/scripts.pory"
-	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Besides, I made your favorite Ramen\n"
-	.string "this morning. You wouldn't want it to\l"
-	.string "get cold, would you?$"
+# 40 "data/maps/Playerroom/scripts.pory"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Pancakes? But I thought Dad said I\n"
+	.string "wasn't allowed… He always forbids it.$"
 
 mira_Text_6:
-# 40 "data/maps/Playerroom/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Ramen? But didn't Dad say I shouldn't\n"
-	.string "have it? He always forbids it.$"
-
-mira_Text_7:
 # 43 "data/maps/Playerroom/scripts.pory"
-	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Ah, yes, Lord Aurther did mention that.\n"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Ah, yes, Lord Aurther did mention that.\n"
 	.string "But Lady Elysia insisted it was alright\l"
 	.string "this morning. She thought it might be\l"
 	.string "just the thing to brighten your day.$"
 
-mira_Text_8:
-# 46 "data/maps/Playerroom/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}I'll be there in a sec.$"
+mira_Text_7:
+# 45 "data/maps/Playerroom/scripts.pory"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}I'll be there in a sec.$"
 
 clock_Text_0:
 # 95 "data/maps/Playerroom/scripts.pory"

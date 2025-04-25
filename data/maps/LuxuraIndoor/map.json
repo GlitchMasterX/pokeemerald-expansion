@@ -13,308 +13,310 @@
   "show_map_name": true,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
-      "elevation": 0,
-      "flag": "FLAG_UNUSED_0x4A7",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "script": "MaidM",
-      "trainer_sight_or_berry_tree_id": "0",
-      "trainer_type": "TRAINER_TYPE_NONE",
       "x": 4,
-      "y": 31
-    },
-    {
+      "y": 31,
       "elevation": 0,
-      "flag": "FLAG_UNUSED_0x4A7",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "MaidM",
-      "trainer_sight_or_berry_tree_id": "0",
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "x": 25,
-      "y": 23
+      "flag": "FLAG_UNUSED_0x4A7"
     },
     {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
+      "x": 25,
+      "y": 23,
       "elevation": 0,
-      "flag": "FLAG_UNUSED_0x4A8",
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(MINCCINO)",
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "script": "Minccino",
-      "trainer_sight_or_berry_tree_id": "0",
       "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MaidM",
+      "flag": "FLAG_UNUSED_0x4A7"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(MINCCINO)",
       "x": 22,
-      "y": 20
-    },
-    {
+      "y": 20,
       "elevation": 0,
-      "flag": "FLAG_UNUSED_0x4A8",
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(MINCCINO)",
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "Minccino",
-      "trainer_sight_or_berry_tree_id": "0",
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "x": 4,
-      "y": 25
+      "flag": "FLAG_UNUSED_0x4A8"
     },
     {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(MINCCINO)",
+      "x": 4,
+      "y": 25,
       "elevation": 0,
-      "flag": "FLAG_UNUSED_0x4A7",
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Minccino",
+      "flag": "FLAG_UNUSED_0x4A8"
+    },
+    {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "x": 25,
+      "y": 38,
+      "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "Maid",
-      "trainer_sight_or_berry_tree_id": "0",
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "x": 25,
-      "y": 38
+      "flag": "FLAG_UNUSED_0x4A7"
     },
     {
-      "elevation": 0,
-      "flag": "FLAG_UNUSED_0x496",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "x": 15,
+      "y": 41,
+      "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "gone",
-      "trainer_sight_or_berry_tree_id": "0",
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "x": 15,
-      "y": 41
+      "flag": "FLAG_UNUSED_0x496"
     },
     {
-      "elevation": 0,
-      "flag": "FLAG_UNUSED_0x4A6",
       "graphics_id": "OBJ_EVENT_GFX_BLOOD",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "script": "blood",
-      "trainer_sight_or_berry_tree_id": "0",
-      "trainer_type": "TRAINER_TYPE_NONE",
       "x": 4,
-      "y": 31
-    },
-    {
+      "y": 31,
       "elevation": 0,
-      "flag": "FLAG_UNUSED_0x4A6",
-      "graphics_id": "OBJ_EVENT_GFX_BLOOD",
+      "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "script": "blood",
-      "trainer_sight_or_berry_tree_id": "0",
       "trainer_type": "TRAINER_TYPE_NONE",
-      "x": 25,
-      "y": 23
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "blood",
+      "flag": "FLAG_UNUSED_0x4A6"
     },
     {
-      "elevation": 0,
-      "flag": "FLAG_UNUSED_0x4A6",
       "graphics_id": "OBJ_EVENT_GFX_BLOOD",
+      "x": 25,
+      "y": 23,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "script": "blood",
-      "trainer_sight_or_berry_tree_id": "0",
       "trainer_type": "TRAINER_TYPE_NONE",
-      "x": 25,
-      "y": 38
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "blood",
+      "flag": "FLAG_UNUSED_0x4A6"
     },
     {
+      "graphics_id": "OBJ_EVENT_GFX_BLOOD",
+      "x": 25,
+      "y": 38,
       "elevation": 0,
-      "flag": "FLAG_ALISTAIR_ARRIVE",
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "blood",
+      "flag": "FLAG_UNUSED_0x4A6"
+    },
+    {
       "graphics_id": "OBJ_EVENT_GFX_ALISTAIR",
+      "x": 15,
+      "y": 33,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "script": "NULL",
-      "trainer_sight_or_berry_tree_id": "0",
       "trainer_type": "TRAINER_TYPE_NONE",
-      "x": 15,
-      "y": 33
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_ALISTAIR_ARRIVE"
     },
     {
-      "elevation": 0,
-      "flag": "FLAG_ALISTAIR_ARRIVE",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(ALAKAZAM)",
+      "x": 15,
+      "y": 34,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "script": "NULL",
-      "trainer_sight_or_berry_tree_id": "0",
       "trainer_type": "TRAINER_TYPE_NONE",
-      "x": 15,
-      "y": 34
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_ALISTAIR_ARRIVE"
     }
   ],
   "warp_events": [
     {
-      "dest_map": "MAP_LUXURA_ISLAND",
-      "dest_warp_id": "0",
-      "elevation": 0,
       "x": 15,
-      "y": 41
+      "y": 41,
+      "elevation": 0,
+      "dest_map": "MAP_LUXURA_ISLAND",
+      "dest_warp_id": "0"
     },
     {
-      "dest_map": "MAP_LUXURA_ISLAND",
-      "dest_warp_id": "0",
-      "elevation": 0,
       "x": 14,
-      "y": 41
+      "y": 41,
+      "elevation": 0,
+      "dest_map": "MAP_LUXURA_ISLAND",
+      "dest_warp_id": "0"
     },
     {
-      "dest_map": "MAP_LUXURALIVING",
-      "dest_warp_id": "0",
-      "elevation": 0,
       "x": 15,
-      "y": 5
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_LUXURALIVING",
+      "dest_warp_id": "0"
     },
     {
-      "dest_map": "MAP_LUXURADINING",
-      "dest_warp_id": "0",
-      "elevation": 0,
       "x": 0,
-      "y": 6
-    },
-    {
+      "y": 6,
+      "elevation": 0,
       "dest_map": "MAP_LUXURADINING",
-      "dest_warp_id": "0",
-      "elevation": 0,
-      "x": 0,
-      "y": 7
+      "dest_warp_id": "0"
     },
     {
-      "dest_map": "MAP_LUXURALIB",
-      "dest_warp_id": "0",
+      "x": 0,
+      "y": 7,
       "elevation": 0,
+      "dest_map": "MAP_LUXURADINING",
+      "dest_warp_id": "0"
+    },
+    {
       "x": 23,
-      "y": 5
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_LUXURALIB",
+      "dest_warp_id": "0"
     },
     {
-      "dest_map": "MAP_LUXURAWORK",
-      "dest_warp_id": "0",
-      "elevation": 0,
       "x": 7,
-      "y": 5
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_LUXURAWORK",
+      "dest_warp_id": "0"
     },
     {
-      "dest_map": "MAP_LUXURAUPSTAIR",
-      "dest_warp_id": "0",
-      "elevation": 0,
       "x": 27,
-      "y": 6
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_LUXURAUPSTAIR",
+      "dest_warp_id": "0"
     },
     {
-      "dest_map": "MAP_SPARKBASE",
-      "dest_warp_id": "0",
-      "elevation": 0,
       "x": 2,
-      "y": 36
+      "y": 36,
+      "elevation": 0,
+      "dest_map": "MAP_SPARKBASE",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
     {
-      "elevation": 0,
-      "script": "waiting",
       "type": "trigger",
-      "var": "LUXURA_TRAGEDY",
-      "var_value": "3",
       "x": 14,
-      "y": 40
-    },
-    {
+      "y": 40,
       "elevation": 0,
-      "script": "waiting",
-      "type": "trigger",
       "var": "LUXURA_TRAGEDY",
       "var_value": "3",
+      "script": "waiting"
+    },
+    {
+      "type": "trigger",
       "x": 15,
-      "y": 40
-    },
-    {
+      "y": 40,
       "elevation": 0,
-      "script": "waiting",
-      "type": "trigger",
       "var": "LUXURA_TRAGEDY",
       "var_value": "3",
+      "script": "waiting"
+    },
+    {
+      "type": "trigger",
       "x": 13,
-      "y": 41
-    },
-    {
+      "y": 41,
       "elevation": 0,
-      "script": "waiting",
-      "type": "trigger",
       "var": "LUXURA_TRAGEDY",
       "var_value": "3",
+      "script": "waiting"
+    },
+    {
+      "type": "trigger",
       "x": 16,
-      "y": 41
+      "y": 41,
+      "elevation": 0,
+      "var": "LUXURA_TRAGEDY",
+      "var_value": "3",
+      "script": "waiting"
     },
     {
-      "elevation": 0,
-      "script": "strol",
       "type": "trigger",
-      "var": "VAR_ROUTE103_STATE",
-      "var_value": "1",
       "x": 14,
-      "y": 41
-    },
-    {
+      "y": 41,
       "elevation": 0,
-      "script": "strol",
-      "type": "trigger",
       "var": "VAR_ROUTE103_STATE",
       "var_value": "1",
-      "x": 15,
-      "y": 41
+      "script": "strol"
     },
     {
-      "elevation": 0,
-      "script": "strolll",
       "type": "trigger",
+      "x": 15,
+      "y": 41,
+      "elevation": 0,
+      "var": "VAR_ROUTE103_STATE",
+      "var_value": "1",
+      "script": "strol"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 6,
+      "elevation": 0,
       "var": "LUXURA_TRAGEDY",
       "var_value": "13",
-      "x": 7,
-      "y": 6
+      "script": "strolll"
     },
     {
-      "elevation": 0,
-      "script": "caprun",
       "type": "trigger",
-      "var": "LUXURA_TRAGEDY",
-      "var_value": "12",
       "x": 8,
-      "y": 6
-    },
-    {
+      "y": 6,
       "elevation": 0,
-      "script": "caprun",
-      "type": "trigger",
       "var": "LUXURA_TRAGEDY",
       "var_value": "12",
+      "script": "caprun"
+    },
+    {
+      "type": "trigger",
       "x": 7,
-      "y": 7
-    },
-    {
+      "y": 7,
       "elevation": 0,
-      "script": "caprun",
-      "type": "trigger",
       "var": "LUXURA_TRAGEDY",
       "var_value": "12",
+      "script": "caprun"
+    },
+    {
+      "type": "trigger",
       "x": 6,
-      "y": 6
+      "y": 6,
+      "elevation": 0,
+      "var": "LUXURA_TRAGEDY",
+      "var_value": "12",
+      "script": "caprun"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+
+  ]
 }

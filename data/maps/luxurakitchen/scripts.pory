@@ -68,22 +68,20 @@ script momm {
 		lock
 		faceplayer
 		speakername(name2)
-		msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Xylar, your Father wanted to have a talk with you.\pHe's in his workroom busy as usual.\pYou should go see him."))
-		 
+		msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Xylar, your Father wanted to have a talk with you.\pHe's in his workroom busy as usual.\pYou should go see him.")) 
 		speakername(Xylar1)
-		msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Okay, Mom.\pI'll head there now."))
-		 
+		msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Okay, Mom.\pI'll head there now."))
 		speakername(name2)
-		msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Don't worry, I'm sure it's nothing serious."))
-		 
+		msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Don't worry, I'm sure it's nothing serious.")) 
+		removefieldmugshot
 		release
 	}
 	elif(flag(FLAG_UNUSED_0x49D)){
 		lock
 		faceplayer
 		speakername(name2)
-		msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Xylar, Can you call Felicia for me?\pShe must be in the Library."))
-		 
+		msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Xylar, Can you call Felicia for me?\pShe must be in the Library."))
+		removefieldmugshot
 		release
 		setflag(FLAG_UNUSED_0x49E)
 	}
@@ -93,8 +91,8 @@ script mommafter{
 	lock
 	faceplayer
 	speakername(name2)
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Thanks, dear."))
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Thanks, dear."))
+	removefieldmugshot 
 	release
 }
 script feliciaafter{
@@ -102,7 +100,6 @@ script feliciaafter{
 	faceplayer
 	speakername(felicia)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I'd do anything for her."))
-	 
 	release
 }
 
@@ -111,19 +108,18 @@ script mirakitchen {
 		lock
 		faceplayer
 		speakername(name4)
-	    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, I'm a little busy right now.\pWhy don't you find something else to do for a while."))
-	     
+	    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, I'm a little busy right now.\pWhy don't you find something else to do for a while."))
+	    removefieldmugshot 
         release
 	}
 	elif((flag(FLAG_UNUSED_0x49F))||(!flag(FLAG_SYS_B_DASH)))
 	{	lock
 		faceplayer
 		speakername(Xylar1)
-		msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Mira, It's time for our walk.\pReady to go."))
-		 
+		msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Mira, It's time for our walk.\pReady to go."))
 		speakername(name4)
-	    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Already?\pAlright, Master Xylar.Just give me a moment and we can head out."))
-	     
+	    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SHOCK}{COLOR RED}{SHADOW LIGHT_GRAY}Already?\pAlright, Master Xylar. Just give me a moment and we can head out."),MSGBOX_AUTOCLOSE)
+	    removefieldmugshot 
 		msgbox(format("I should go grab my shoes.\pThe maid upstairs should have it."))
         release
 		setflag(FLAG_UNUSED_0x4A2)
@@ -134,8 +130,8 @@ script mirastrol {
 	lock
 	faceplayer
 	speakername(name4)
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, I'll be waiting for you outside."))
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, I'll be waiting for you outside."))
+	removefieldmugshot 
 	fadescreen(FADE_TO_BLACK)
 	removeobject(11)
 	fadescreen(FADE_FROM_BLACK)

@@ -48,19 +48,16 @@ GraniteCave_1F_Text_ExplainFlash:
 script herb {
     lockall
     speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}These cuts... they're deep.\pI don't know how to fix this!"),MSGBOX_AUTOCLOSE)
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}These cuts... they're deep.\pI don't know how to fix this!"),MSGBOX_AUTOCLOSE)
+    removefieldmugshot 
 	applymovement(OBJ_EVENT_ID_PLAYER,exclam)
     speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Wait…\pMira. She said something about herbs before...\pYeah, herbs can help heal wounds!"),MSGBOX_AUTOCLOSE)
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Wait…\pMira. She said something about herbs before...\pYeah, herbs can help heal wounds!"),MSGBOX_AUTOCLOSE)
 	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Hang in there. I'll find something.\pMira always knew which ones to pick…\nI just have to remember."),MSGBOX_AUTOCLOSE)
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Hang in there. I'll find something.\pMira always knew which ones to pick…\nI just have to remember."),MSGBOX_AUTOCLOSE)
     applymovement(OBJ_EVENT_ID_PLAYER,str)
 	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I won't let you down, not like this.\pYou'll make it. You have to."),MSGBOX_AUTOCLOSE)
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}I won't let you down, not like this.\pYou'll make it. You have to."),MSGBOX_AUTOCLOSE) 
 	releaseall
 	setvar(LUXURA_TRAGEDY,16)
 	setvar(VAR_CURRENT_MONTH,2)
@@ -92,32 +89,25 @@ script mewrt {
 	applymovement(OBJ_EVENT_ID_PLAYER,exclam)
 	waitmovement(0)
 	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Why?"),MSGBOX_AUTOCLOSE)
-	 
-    speakername(mewtwo)
-	msgbox(format("{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Because you... saved me.\pI sense no malice in your thoughts."),MSGBOX_AUTOCLOSE)
-	 
-    speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I didn't do much.\pI just didn't want to lose someone else... like I lost my family."),MSGBOX_AUTOCLOSE)
-	 
-    speakername(mewtwo)
-	msgbox(format("{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}........\pYour pain... is like mine.\pPerhaps... we are not so different."),MSGBOX_AUTOCLOSE)
-	 
-	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Does that mean... you'll trust me?"),MSGBOX_AUTOCLOSE)
-	 
-    speakername(mewtwo)
-	msgbox(format("{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}For now. You have proven yourself...\pdifferent from the others.\pBut know this..\pif you betray me, the consequences will be dire."),MSGBOX_AUTOCLOSE)
-	 
-	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Consequences?\pThere's nothing left to lose. No one left to face...\pexcept the ones who took everything from me."),MSGBOX_AUTOCLOSE)
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Why?"),MSGBOX_AUTOCLOSE)
 	speakername(mewtwo)
-	msgbox(format("{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}I sense your resolve, human.\pPerhaps... our goals align. I will join you.\pBut remember, my trust is not easily earned."),MSGBOX_AUTOCLOSE)
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORMAL}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Because you... saved me.\pI sense no malice in your thoughts."),MSGBOX_AUTOCLOSE)
+	speakername(Xylar1)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}I didn't do much.\pI just didn't want to lose someone else... like I lost my family."),MSGBOX_AUTOCLOSE)
+    speakername(mewtwo)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORMAL}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}........\pYour pain... is like mine.\pPerhaps... we are not so different."),MSGBOX_AUTOCLOSE)
+	speakername(Xylar1)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Does that mean... you'll trust me?"),MSGBOX_AUTOCLOSE)
+	speakername(mewtwo)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORMAL}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}For now. You have proven yourself...\pdifferent from the others.\pBut know this..\pif you betray me, the consequences will be dire."),MSGBOX_AUTOCLOSE)
+	speakername(Xylar1)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SMILE}{COLOR BLUE}{SHADOW LIGHT_GRAY}Consequences?\pThere's nothing left to lose. No one left to face...\pexcept the ones who took everything from me."),MSGBOX_AUTOCLOSE) 
+	speakername(mewtwo)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORMAL}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}I sense your resolve, human.\pPerhaps... our goals align. I will join you.\pBut remember, my trust is not easily earned."),MSGBOX_AUTOCLOSE)
+	removefieldmugshot
 	removeobject(3)
 	setflag(FLAG_UNUSED_0x4B5)
-	givemon(SPECIES_MEWTWO,5,ITEM_MEWTWONITE_Y,ITEM_POKE_BALL,NATURE_HASTY,0,0,0,0,0,0,0,0,31,31,31,31,31,31,MOVE_PSYBEAM,MOVE_FIRE_BLAST,MOVE_RECOVER,MOVE_HYPNOSIS)
+	givemon(SPECIES_MEWTWO,5,ITEM_NONE,ITEM_POKE_BALL,NATURE_HASTY,0,0,0,0,0,0,0,0,31,31,31,31,31,31,MOVE_PSYBEAM,MOVE_FIRE_BLAST,MOVE_RECOVER,MOVE_HYPNOSIS)
 	playfanfare(MUS_OBTAIN_ITEM)
 	msgbox(format("Mewtwo decided to join you."))
 	waitfanfare

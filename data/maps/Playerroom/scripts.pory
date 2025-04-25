@@ -16,35 +16,35 @@ script mira{
 	applymovement (1,miramove)
 	waitmovement(0)
 	speakername (name4)
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, good morning. It's time for breakfast. Lord Aurther and Lady Elysia are waiting for you at the table."))
-     
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, good morning. It's time for breakfast. Lord Aurther and Lady Elysia are waiting for you at the table."))
+	removefieldmugshot
+	closemessage
 	applymovement(OBJ_EVENT_ID_CAMERA,camera)
 	applymovement (1,miramove1)
 	waitmovement(0)
 	special(RemoveCameraObject)
 	speakername(name4)
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Still in bed, I see? You know you can't stay there all day, young master. Come now, you wouldn't want to keep Lord Aurther and Lady Elysia waiting, would you?"))
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Still in bed, I see? You know you can't stay there all day, young master. Come now, you wouldn't want to keep Lord Aurther and Lady Elysia waiting, would you?"))	 
+	closemessage
 	applymovement(OBJ_EVENT_ID_PLAYER,xylar1)
 	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Umm.."))
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SPECIAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Umm........"))
+	applymovement(0xFF,moves(delay_16))
+	waitbuttonpress 
 	speakername (name4)
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Up with you, Master Xylar. If you don't hurry, I'll have to pull the covers off myself. Don't make me do it."))
-     
-	speakername(name4)
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Besides, I made your favorite Ramen this morning. You wouldn't want it to get cold, would you?"))
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SMILE}{COLOR RED}{SHADOW LIGHT_GRAY}Up with you, Master Xylar. If you don't get up soon, I'm pulling the covers off myself, don't make me do it.\pAnd I made your favorite pancakes this morning. You don't want them getting cold, do you?"))
+	waitmessage
+	playse(SE_PIN)
 	applymovement(OBJ_EVENT_ID_PLAYER,xylar)
 	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Ramen? But didn't Dad say I shouldn't have it? He always forbids it."))
-	  
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Pancakes? But I thought Dad said I wasn't allowed… He always forbids it."))  
+	removefieldmugshot
 	speakername(name4)
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Ah, yes, Lord Aurther did mention that. But Lady Elysia insisted it was alright this morning. She thought it might be just the thing to brighten your day."))
-	  
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Ah, yes, Lord Aurther did mention that. But Lady Elysia insisted it was alright this morning. She thought it might be just the thing to brighten your day.")) 
 	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I'll be there in a sec."))
-	  
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}I'll be there in a sec."))
+	removefieldmugshot 
+	closemessage
 	applymovement(1,miramove2)
     waitmovement(0)
 	removeobject (1)

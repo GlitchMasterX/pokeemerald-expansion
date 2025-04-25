@@ -16,11 +16,10 @@ script Youwake {
 	waitmovement(0)
 	applymovement(2,mom)
 	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Good Morning, Mom,Dad.\pSorry to keep you waiting."),MSGBOX_AUTOCLOSE)
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Good Morning, Mom, Dad.\pSorry to keep you waiting."),MSGBOX_AUTOCLOSE)
 	speakername(name3)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}No need to apologize.We were just discussing today's plans.\pCome sit next to me."),MSGBOX_AUTOCLOSE)
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}No need to apologize. We were just discussing today's plans.\pCome sit next to me."),MSGBOX_AUTOCLOSE)
+	removefieldmugshot
 	applymovement(OBJ_EVENT_ID_CAMERA,camera3)
 	waitmovement(0)
 	special(RemoveCameraObject)
@@ -30,43 +29,35 @@ script Youwake {
 	applymovement(OBJ_EVENT_ID_CAMERA,camera4)
 	waitmovement(0)
 	speakername(name2)
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}How did you sleep dear?"),MSGBOX_AUTOCLOSE)
-     
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}How did you sleep dear?"),MSGBOX_AUTOCLOSE) 
 	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I slept well."),MSGBOX_AUTOCLOSE)
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}I slept well."),MSGBOX_AUTOCLOSE)	 
 	applymovement(OBJ_EVENT_ID_PLAYER,mlq)
 	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Where is my Ramen?"),MSGBOX_AUTOCLOSE)
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_QUESTION}{COLOR BLUE}{SHADOW LIGHT_GRAY}Where are my pancakes?"),MSGBOX_AUTOCLOSE)
 	applymovement(1,mlo)
     speakername(name3)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Ramen? I thought I forbade it."),MSGBOX_AUTOCLOSE)
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_QUESTION}{COLOR BLUE}{SHADOW LIGHT_GRAY}Pancakes? I believe I forbade that."),MSGBOX_AUTOCLOSE)
+	playse(SE_PIN)
 	applymovement(1,mol)
 	waitmovement(0)
 	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}But Mira told me you allowed it for today."),MSGBOX_AUTOCLOSE)
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}But Mira told me you said it was okay… just for today."),MSGBOX_AUTOCLOSE)
+	playse(SE_PIN)
 	applymovement(2,happy)
 	applymovement(1,happy)
 	speakername(name3)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Hahahaha..\pShe got you again."),MSGBOX_AUTOCLOSE)
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Hahahaha..\pShe got you again."),MSGBOX_AUTOCLOSE) 
 	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}What do you mean?"),MSGBOX_AUTOCLOSE)
-	 	
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_QUESTION}{COLOR BLUE}{SHADOW LIGHT_GRAY}What do you mean?"),MSGBOX_AUTOCLOSE)
 	speakername(name2)
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}You have been tricked my dear."))
-     
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}You have been tricked my dear."))
 	applymovement(OBJ_EVENT_ID_PLAYER,upset)
 	waitmovement(0)
     speakername(name3)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Ok, now lets eat before the food gets cold."))
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Ok, now lets eat before the food gets cold."))
 	speakername(name2)
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Sure\pMaids!"),MSGBOX_AUTOCLOSE)
-     
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Sure\pMaids!"),MSGBOX_AUTOCLOSE)     
 	fadescreen(FADE_TO_BLACK)
 	playse(SE_USE_ITEM)
 	waitse
@@ -74,11 +65,10 @@ script Youwake {
 	waitse
 	fadescreen(FADE_FROM_BLACK)
 	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Where is Mira?\pI need to ask her something."))
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_QUESTION}{COLOR BLUE}{SHADOW LIGHT_GRAY}Where is Mira?\pI need to ask her something."))	 
 	speakername(name2)
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}She's out helping the gardener."))
-     
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}She's out helping the gardener.")) 
+	removefieldmugshot
 	applymovement(OBJ_EVENT_ID_CAMERA,camera5)
 	waitmovement(0)
 	special(RemoveCameraObject)
@@ -127,16 +117,16 @@ script Mom {
 	lock
 	faceplayer
 	speakername(name2)
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}She's always successful in tricking you"))
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}She's always successful in tricking you"))
+	removefieldmugshot 
 	release
 }
 script Dad{
 	lock 
 	faceplayer
 	speakername(name3)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Guess you guys are really close.\pShe always knows how to trick you."))
-     
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Guess you guys are really close.\pShe always knows how to trick you."))
+    removefieldmugshot 
 	release
 }
 script waiting {
@@ -168,8 +158,7 @@ script rest{
 	lock
 	faceplayer
 	speakername("Maid")
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Good day, Young Master! It's my rest day so I'm taking it easy.\pBut if you need anything, just let me know."))
-	 
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Good day, Young Master! It's my rest day so I'm taking it easy.\pBut if you need anything, just let me know.")) 
 	release
 }
 script nurse{

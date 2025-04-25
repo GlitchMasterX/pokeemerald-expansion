@@ -1075,23 +1075,24 @@ void HandleLowHpMusicChange(struct Pokemon *mon, u8 battler)
     {
         if (!gBattleSpritesDataPtr->battlerData[battler].lowHpSong)
         {
-            if (!gBattleSpritesDataPtr->battlerData[BATTLE_PARTNER(battler)].lowHpSong)
-                PlaySE(SE_LOW_HEALTH);
+            if (!gBattleSpritesDataPtr->battlerData[BATTLE_PARTNER(battler)].lowHpSong)    
+                PlayBGM(MUS_BW12_VS_IN_DANGER); // Play low HP music
             gBattleSpritesDataPtr->battlerData[battler].lowHpSong = 1;
         }
     }
     else
     {
-        gBattleSpritesDataPtr->battlerData[battler].lowHpSong = 0;
-        if (!IsDoubleBattle())
+        if (gBattleSpritesDataPtr->battlerData[battler].lowHpSong)
         {
-            m4aSongNumStop(SE_LOW_HEALTH);
-            return;
-        }
-        if (IsDoubleBattle() && !gBattleSpritesDataPtr->battlerData[BATTLE_PARTNER(battler)].lowHpSong)
-        {
-            m4aSongNumStop(SE_LOW_HEALTH);
-            return;
+            gBattleSpritesDataPtr->battlerData[battler].lowHpSong = 0;
+
+            if (!IsDoubleBattle() ||
+                !gBattleSpritesDataPtr->battlerData[BATTLE_PARTNER(battler)].lowHpSong)
+            {
+                // Restore normal BGM after low HP
+                u16 normalBGM = GetBattleBGM(); // Should return the battle’s intended BGM
+                PlayBGM(normalBGM);
+            }
         }
     }
 }

@@ -5771,7 +5771,7 @@ u16 GetBattleBGM(void)
     }
     else if (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK))
     {
-        return MUS_VS_TRAINER;
+        return MUS_BW12_VS_TRAINER_1;
     }
     else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
     {
@@ -5794,6 +5794,8 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_AQUA_ADMIN:
         case TRAINER_CLASS_MAGMA_ADMIN:
             return MUS_VS_AQUA_MAGMA;
+        case TRAINER_CLASS_SPARK_SYNDICATE:
+            return MUS_BW12_VS_PLASMA_GRUNT_1;
         case TRAINER_CLASS_SPARK_ADMIN:
             return MUS_DP_VS_GALACTIC_COMMANDER;
         case TRAINER_CLASS_ACADEMY_HEAD:
@@ -5806,7 +5808,7 @@ u16 GetBattleBGM(void)
             if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
                 return MUS_DP_VS_RIVAL;
             if (!StringCompare(GetTrainerNameFromId(gTrainerBattleOpponent_A), gText_BattleWallyName))
-                return MUS_VS_TRAINER;
+                return MUS_DP_VS_TRAINER;
             return MUS_DP_VS_RIVAL;
         case TRAINER_CLASS_ELITE_FOUR:
             return MUS_VS_ELITE_FOUR;
@@ -5819,12 +5821,12 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_PYRAMID_KING:
             return MUS_VS_FRONTIER_BRAIN;
         default:
-            return MUS_VS_TRAINER;
+            return MUS_DP_VS_TRAINER;
         }
     }
     else
     {
-        return MUS_VS_WILD;
+        return MUS_BW12_VS_WILD_1;
     }
 }
 

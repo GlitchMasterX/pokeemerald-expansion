@@ -38,7 +38,7 @@ alistairarrive3::
 # 19 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox alistairarrive3_Text_1
 # 21 "data/maps/LuxuraIndoor/scripts.pory"
-	setvar VAR_0x8000, 6
+	setvar VAR_0x8000, 0
 # 22 "data/maps/LuxuraIndoor/scripts.pory"
 	special DrawMugshot
 # 23 "data/maps/LuxuraIndoor/scripts.pory"
@@ -1382,13 +1382,13 @@ alistairarrive4::
 # 727 "data/maps/LuxuraIndoor/scripts.pory"
 	waitmovement 0
 # 728 "data/maps/LuxuraIndoor/scripts.pory"
-	setvar VAR_0x8000, 6
+	setvar VAR_0x8000, 0
 # 729 "data/maps/LuxuraIndoor/scripts.pory"
 	special DrawMugshot
 # 730 "data/maps/LuxuraIndoor/scripts.pory"
 	waitbuttonpress
 # 731 "data/maps/LuxuraIndoor/scripts.pory"
-	setvar VAR_0x8000, 7
+	setvar VAR_0x8000, 1
 # 732 "data/maps/LuxuraIndoor/scripts.pory"
 	special DrawMugshot
 # 733 "data/maps/LuxuraIndoor/scripts.pory"
@@ -1693,7 +1693,7 @@ Minccino_Text_0:
 
 Minccino_Text_1:
 # 186 "data/maps/LuxuraIndoor/scripts.pory"
-	.string "{COLOR RED}{SHADOW LIGHT_GRAY} Chii,chii! Min-min!$"
+	.string "{COLOR RED}{SHADOW LIGHT_GRAY} Chii, chii! Min-min!$"
 
 Grumpig_Text_0:
 # 197 "data/maps/LuxuraIndoor/scripts.pory"

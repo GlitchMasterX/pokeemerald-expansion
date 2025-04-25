@@ -4554,7 +4554,7 @@
     {
       "id": "LAYOUT_SPARKBASE",
       "name": "Sparkbase_Layout",
-      "width": 80,
+      "width": 110,
       "height": 16,
       "primary_tileset": "gTileset_building2",
       "secondary_tileset": "gTileset_Evilbase",

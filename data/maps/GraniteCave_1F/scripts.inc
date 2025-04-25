@@ -96,240 +96,244 @@ herb::
 	speakername Xylar1
 # 51 "data/maps/GraniteCave_1F/scripts.pory"
 	msgbox herb_Text_0, MSGBOX_AUTOCLOSE
+# 52 "data/maps/GraniteCave_1F/scripts.pory"
+	removefieldmugshot
 # 53 "data/maps/GraniteCave_1F/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, exclam
 # 54 "data/maps/GraniteCave_1F/scripts.pory"
 	speakername Xylar1
 # 55 "data/maps/GraniteCave_1F/scripts.pory"
 	msgbox herb_Text_1, MSGBOX_AUTOCLOSE
+# 56 "data/maps/GraniteCave_1F/scripts.pory"
+	speakername Xylar1
 # 57 "data/maps/GraniteCave_1F/scripts.pory"
-	speakername Xylar1
-# 58 "data/maps/GraniteCave_1F/scripts.pory"
 	msgbox herb_Text_2, MSGBOX_AUTOCLOSE
-# 60 "data/maps/GraniteCave_1F/scripts.pory"
+# 58 "data/maps/GraniteCave_1F/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, str
-# 61 "data/maps/GraniteCave_1F/scripts.pory"
+# 59 "data/maps/GraniteCave_1F/scripts.pory"
 	speakername Xylar1
-# 62 "data/maps/GraniteCave_1F/scripts.pory"
+# 60 "data/maps/GraniteCave_1F/scripts.pory"
 	msgbox herb_Text_3, MSGBOX_AUTOCLOSE
-# 64 "data/maps/GraniteCave_1F/scripts.pory"
+# 61 "data/maps/GraniteCave_1F/scripts.pory"
 	releaseall
-# 65 "data/maps/GraniteCave_1F/scripts.pory"
+# 62 "data/maps/GraniteCave_1F/scripts.pory"
 	setvar LUXURA_TRAGEDY, 16
-# 66 "data/maps/GraniteCave_1F/scripts.pory"
+# 63 "data/maps/GraniteCave_1F/scripts.pory"
 	setvar VAR_CURRENT_MONTH, 2
 	return
 
 
 Mewtworecover::
-# 70 "data/maps/GraniteCave_1F/scripts.pory"
+# 67 "data/maps/GraniteCave_1F/scripts.pory"
 	compare LUXURA_TRAGEDY, 18
 	goto_if_eq Mewtworecover_1
-# 77 "data/maps/GraniteCave_1F/scripts.pory"
+# 74 "data/maps/GraniteCave_1F/scripts.pory"
 	compare LUXURA_TRAGEDY, 18
 	goto_if_lt Mewtworecover_2
-# 83 "data/maps/GraniteCave_1F/scripts.pory"
+# 80 "data/maps/GraniteCave_1F/scripts.pory"
 	compare LUXURA_TRAGEDY, 18
 	goto_if_gt Mewtworecover_3
 	return
 
 Mewtworecover_1:
-# 71 "data/maps/GraniteCave_1F/scripts.pory"
+# 68 "data/maps/GraniteCave_1F/scripts.pory"
 	removeobject 2
-# 72 "data/maps/GraniteCave_1F/scripts.pory"
+# 69 "data/maps/GraniteCave_1F/scripts.pory"
 	setflag FLAG_UNUSED_0x4B4
-# 73 "data/maps/GraniteCave_1F/scripts.pory"
+# 70 "data/maps/GraniteCave_1F/scripts.pory"
 	addobject 3
-# 74 "data/maps/GraniteCave_1F/scripts.pory"
+# 71 "data/maps/GraniteCave_1F/scripts.pory"
 	clearflag FLAG_UNUSED_0x4B5
 	return
 
 Mewtworecover_2:
-# 78 "data/maps/GraniteCave_1F/scripts.pory"
+# 75 "data/maps/GraniteCave_1F/scripts.pory"
 	removeobject 3
-# 79 "data/maps/GraniteCave_1F/scripts.pory"
+# 76 "data/maps/GraniteCave_1F/scripts.pory"
 	setflag FLAG_UNUSED_0x4B5
-# 80 "data/maps/GraniteCave_1F/scripts.pory"
+# 77 "data/maps/GraniteCave_1F/scripts.pory"
 	addobject 2
-# 81 "data/maps/GraniteCave_1F/scripts.pory"
+# 78 "data/maps/GraniteCave_1F/scripts.pory"
 	clearflag FLAG_UNUSED_0x4B4
 	return
 
 Mewtworecover_3:
-# 84 "data/maps/GraniteCave_1F/scripts.pory"
+# 81 "data/maps/GraniteCave_1F/scripts.pory"
 	removeobject 3
-# 85 "data/maps/GraniteCave_1F/scripts.pory"
+# 82 "data/maps/GraniteCave_1F/scripts.pory"
 	setflag FLAG_UNUSED_0x4B5
-# 86 "data/maps/GraniteCave_1F/scripts.pory"
+# 83 "data/maps/GraniteCave_1F/scripts.pory"
 	removeobject 2
-# 87 "data/maps/GraniteCave_1F/scripts.pory"
+# 84 "data/maps/GraniteCave_1F/scripts.pory"
 	setflag FLAG_UNUSED_0x4B4
 	return
 
 
 mewrt::
-# 91 "data/maps/GraniteCave_1F/scripts.pory"
+# 88 "data/maps/GraniteCave_1F/scripts.pory"
 	lockall
-# 92 "data/maps/GraniteCave_1F/scripts.pory"
+# 89 "data/maps/GraniteCave_1F/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, exclam
-# 93 "data/maps/GraniteCave_1F/scripts.pory"
+# 90 "data/maps/GraniteCave_1F/scripts.pory"
 	waitmovement 0
-# 94 "data/maps/GraniteCave_1F/scripts.pory"
+# 91 "data/maps/GraniteCave_1F/scripts.pory"
 	speakername Xylar1
-# 95 "data/maps/GraniteCave_1F/scripts.pory"
+# 92 "data/maps/GraniteCave_1F/scripts.pory"
 	msgbox mewrt_Text_0, MSGBOX_AUTOCLOSE
+# 93 "data/maps/GraniteCave_1F/scripts.pory"
+	speakername mewtwo
+# 94 "data/maps/GraniteCave_1F/scripts.pory"
+	msgbox mewrt_Text_1, MSGBOX_AUTOCLOSE
+# 95 "data/maps/GraniteCave_1F/scripts.pory"
+	speakername Xylar1
+# 96 "data/maps/GraniteCave_1F/scripts.pory"
+	msgbox mewrt_Text_2, MSGBOX_AUTOCLOSE
 # 97 "data/maps/GraniteCave_1F/scripts.pory"
 	speakername mewtwo
 # 98 "data/maps/GraniteCave_1F/scripts.pory"
-	msgbox mewrt_Text_1, MSGBOX_AUTOCLOSE
-# 100 "data/maps/GraniteCave_1F/scripts.pory"
-	speakername Xylar1
-# 101 "data/maps/GraniteCave_1F/scripts.pory"
-	msgbox mewrt_Text_2, MSGBOX_AUTOCLOSE
-# 103 "data/maps/GraniteCave_1F/scripts.pory"
-	speakername mewtwo
-# 104 "data/maps/GraniteCave_1F/scripts.pory"
 	msgbox mewrt_Text_3, MSGBOX_AUTOCLOSE
-# 106 "data/maps/GraniteCave_1F/scripts.pory"
+# 99 "data/maps/GraniteCave_1F/scripts.pory"
 	speakername Xylar1
-# 107 "data/maps/GraniteCave_1F/scripts.pory"
+# 100 "data/maps/GraniteCave_1F/scripts.pory"
 	msgbox mewrt_Text_4, MSGBOX_AUTOCLOSE
-# 109 "data/maps/GraniteCave_1F/scripts.pory"
+# 101 "data/maps/GraniteCave_1F/scripts.pory"
 	speakername mewtwo
-# 110 "data/maps/GraniteCave_1F/scripts.pory"
+# 102 "data/maps/GraniteCave_1F/scripts.pory"
 	msgbox mewrt_Text_5, MSGBOX_AUTOCLOSE
-# 112 "data/maps/GraniteCave_1F/scripts.pory"
+# 103 "data/maps/GraniteCave_1F/scripts.pory"
 	speakername Xylar1
-# 113 "data/maps/GraniteCave_1F/scripts.pory"
+# 104 "data/maps/GraniteCave_1F/scripts.pory"
 	msgbox mewrt_Text_6, MSGBOX_AUTOCLOSE
-# 115 "data/maps/GraniteCave_1F/scripts.pory"
+# 105 "data/maps/GraniteCave_1F/scripts.pory"
 	speakername mewtwo
-# 116 "data/maps/GraniteCave_1F/scripts.pory"
+# 106 "data/maps/GraniteCave_1F/scripts.pory"
 	msgbox mewrt_Text_7, MSGBOX_AUTOCLOSE
-# 118 "data/maps/GraniteCave_1F/scripts.pory"
+# 107 "data/maps/GraniteCave_1F/scripts.pory"
+	removefieldmugshot
+# 108 "data/maps/GraniteCave_1F/scripts.pory"
 	removeobject 3
-# 119 "data/maps/GraniteCave_1F/scripts.pory"
+# 109 "data/maps/GraniteCave_1F/scripts.pory"
 	setflag FLAG_UNUSED_0x4B5
-# 120 "data/maps/GraniteCave_1F/scripts.pory"
-	givemon SPECIES_MEWTWO, 5, ITEM_MEWTWONITE_Y, ITEM_POKE_BALL, NATURE_HASTY, 0, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_PSYBEAM, MOVE_FIRE_BLAST, MOVE_RECOVER, MOVE_HYPNOSIS
-# 121 "data/maps/GraniteCave_1F/scripts.pory"
+# 110 "data/maps/GraniteCave_1F/scripts.pory"
+	givemon SPECIES_MEWTWO, 5, ITEM_NONE, ITEM_POKE_BALL, NATURE_HASTY, 0, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_PSYBEAM, MOVE_FIRE_BLAST, MOVE_RECOVER, MOVE_HYPNOSIS
+# 111 "data/maps/GraniteCave_1F/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 122 "data/maps/GraniteCave_1F/scripts.pory"
+# 112 "data/maps/GraniteCave_1F/scripts.pory"
 	msgbox mewrt_Text_8
-# 123 "data/maps/GraniteCave_1F/scripts.pory"
+# 113 "data/maps/GraniteCave_1F/scripts.pory"
 	waitfanfare
-# 124 "data/maps/GraniteCave_1F/scripts.pory"
+# 114 "data/maps/GraniteCave_1F/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
-# 125 "data/maps/GraniteCave_1F/scripts.pory"
+# 115 "data/maps/GraniteCave_1F/scripts.pory"
 	releaseall
-# 126 "data/maps/GraniteCave_1F/scripts.pory"
+# 116 "data/maps/GraniteCave_1F/scripts.pory"
 	setvar LUXURA_TRAGEDY, 19
-# 127 "data/maps/GraniteCave_1F/scripts.pory"
+# 117 "data/maps/GraniteCave_1F/scripts.pory"
 	clearflag FLAG_UNUSED_0x26B
 	return
 
 
 newheal::
-# 132 "data/maps/GraniteCave_1F/scripts.pory"
+# 122 "data/maps/GraniteCave_1F/scripts.pory"
 	setrespawn HEAL_LOCATION_MEWTWOMET
 	end
 
 
 spark1::
-# 137 "data/maps/GraniteCave_1F/scripts.pory"
+# 127 "data/maps/GraniteCave_1F/scripts.pory"
 	trainerbattle_single SPARK_GRUNT_1, Grunt1_Intro, Grunt1_Outro
-# 138 "data/maps/GraniteCave_1F/scripts.pory"
+# 128 "data/maps/GraniteCave_1F/scripts.pory"
 	msgbox PostBattle_Grunt1, MSGBOX_AUTOCLOSE
-# 139 "data/maps/GraniteCave_1F/scripts.pory"
+# 129 "data/maps/GraniteCave_1F/scripts.pory"
 	waitmessage
 	end
 
 
 herb_Text_0:
 # 51 "data/maps/GraniteCave_1F/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}These cuts... they're deep.\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}These cuts... they're deep.\p"
 	.string "I don't know how to fix this!$"
 
 herb_Text_1:
 # 55 "data/maps/GraniteCave_1F/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Wait…\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Wait…\p"
 	.string "Mira. She said something about herbs\n"
 	.string "before...\p"
 	.string "Yeah, herbs can help heal wounds!$"
 
 herb_Text_2:
-# 58 "data/maps/GraniteCave_1F/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Hang in there. I'll find something.\p"
+# 57 "data/maps/GraniteCave_1F/scripts.pory"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Hang in there. I'll find something.\p"
 	.string "Mira always knew which ones to pick…\n"
 	.string "I just have to remember.$"
 
 herb_Text_3:
-# 62 "data/maps/GraniteCave_1F/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}I won't let you down, not like this.\p"
+# 60 "data/maps/GraniteCave_1F/scripts.pory"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}I won't let you down, not like this.\p"
 	.string "You'll make it. You have to.$"
 
 mewrt_Text_0:
-# 95 "data/maps/GraniteCave_1F/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Why?$"
+# 92 "data/maps/GraniteCave_1F/scripts.pory"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Why?$"
 
 mewrt_Text_1:
-# 98 "data/maps/GraniteCave_1F/scripts.pory"
-	.string "{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Because you... saved me.\p"
+# 94 "data/maps/GraniteCave_1F/scripts.pory"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORMAL}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Because you... saved me.\p"
 	.string "I sense no malice in your thoughts.$"
 
 mewrt_Text_2:
-# 101 "data/maps/GraniteCave_1F/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}I didn't do much.\p"
+# 96 "data/maps/GraniteCave_1F/scripts.pory"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}I didn't do much.\p"
 	.string "I just didn't want to lose someone\n"
 	.string "else... like I lost my family.$"
 
 mewrt_Text_3:
-# 104 "data/maps/GraniteCave_1F/scripts.pory"
-	.string "{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}........\p"
+# 98 "data/maps/GraniteCave_1F/scripts.pory"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORMAL}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}........\p"
 	.string "Your pain... is like mine.\p"
 	.string "Perhaps... we are not so different.$"
 
 mewrt_Text_4:
-# 107 "data/maps/GraniteCave_1F/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Does that mean... you'll trust me?$"
+# 100 "data/maps/GraniteCave_1F/scripts.pory"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Does that mean... you'll trust me?$"
 
 mewrt_Text_5:
-# 110 "data/maps/GraniteCave_1F/scripts.pory"
-	.string "{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}For now. You have proven yourself...\p"
+# 102 "data/maps/GraniteCave_1F/scripts.pory"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORMAL}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}For now. You have proven yourself...\p"
 	.string "different from the others.\p"
 	.string "But know this..\p"
 	.string "if you betray me, the consequences will\n"
 	.string "be dire.$"
 
 mewrt_Text_6:
-# 113 "data/maps/GraniteCave_1F/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Consequences?\p"
+# 104 "data/maps/GraniteCave_1F/scripts.pory"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SMILE}{COLOR BLUE}{SHADOW LIGHT_GRAY}Consequences?\p"
 	.string "There's nothing left to lose. No one\n"
 	.string "left to face...\p"
 	.string "except the ones who took everything\n"
 	.string "from me.$"
 
 mewrt_Text_7:
-# 116 "data/maps/GraniteCave_1F/scripts.pory"
-	.string "{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}I sense your resolve, human.\p"
+# 106 "data/maps/GraniteCave_1F/scripts.pory"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORMAL}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}I sense your resolve, human.\p"
 	.string "Perhaps... our goals align. I will join\n"
 	.string "you.\p"
 	.string "But remember, my trust is not easily\n"
 	.string "earned.$"
 
 mewrt_Text_8:
-# 122 "data/maps/GraniteCave_1F/scripts.pory"
+# 112 "data/maps/GraniteCave_1F/scripts.pory"
 	.string "Mewtwo decided to join you.$"
 
 Grunt1_Intro::
-# 144 "data/maps/GraniteCave_1F/scripts.pory"
+# 134 "data/maps/GraniteCave_1F/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Feel the strikes of Sparks power!!$"
 
 Grunt1_Outro::
-# 148 "data/maps/GraniteCave_1F/scripts.pory"
+# 138 "data/maps/GraniteCave_1F/scripts.pory"
 	.string "No way! How could you withstand our\n"
 	.string "lightning strikes?$"
 
 PostBattle_Grunt1::
-# 152 "data/maps/GraniteCave_1F/scripts.pory"
+# 142 "data/maps/GraniteCave_1F/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Our general will defeat you.$"

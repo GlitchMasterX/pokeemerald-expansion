@@ -95,28 +95,33 @@ script mewtwotend {
 	lockall
 	applymovement(OBJ_EVENT_ID_PLAYER,str)
 	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Why isn't Mira here yet? She said she'd catch up… Did something happen?\pShe's strong, I know she can handle them… right? But how?\pNo… I can't stop now, she told me to run. She'll be okay…\pShe has to be okay."))
-     
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_TEAR}{COLOR BLUE}{SHADOW LIGHT_GRAY}Why isn't Mira here yet? She said she'd catch up… Did something happen?\pShe's strong, I know she can handle them… right? But how?\pNo… I can't stop now, she told me to run. She'll be okay…\pShe has to be okay."))
+    removefieldmugshot
+	closemessage
 	applymovement(OBJ_EVENT_ID_PLAYER,exclam)
 	special(SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_CAMERA,mw)
 	waitmovement(0)
 	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}What the...?\pIs that... a Pokémon?\pWhat happened to you...?"),MSGBOX_AUTOCLOSE)
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}What the...?\pIs that... a Pokémon?\pWhat happened to you...?"),MSGBOX_AUTOCLOSE)
+	removefieldmugshot 
 	applymovement(OBJ_EVENT_ID_PLAYER,mw)
 	waitmovement(0)
 	special(RemoveCameraObject)
+	speakername("Mewtwo")
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORM}........."),MSGBOX_AUTOCLOSE)
 	playmoncry(SPECIES_MEWTWO,CRY_MODE_FAINT)
 	waitmoncry
+	waitbuttonpress
     speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You're hurt... bad. I can't just leave you here.\pI don't know if you can understand me, but...\pI'll definitely save you. I promise."),MSGBOX_AUTOCLOSE)
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_TEAR}{COLOR BLUE}{SHADOW LIGHT_GRAY}You're hurt... bad. I can't just leave you here."),MSGBOX_AUTOCLOSE)
+	speakername(Xylar1)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't know if you can understand me, but...\pI'll definitely save you. I promise."),MSGBOX_AUTOCLOSE)
+	removefieldmugshot 
 	waitmessage
 	fadescreen(FADE_TO_BLACK)
 	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I've lost too much already.I won't let you die here,too."),MSGBOX_AUTOCLOSE)
-	 
+	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I've lost too much already.I won't let you die here,too."),MSGBOX_AUTOCLOSE) 
 	waitmessage
 	warp(MAP_GRANITE_CAVE_1F,12,9)
 	fadescreen(FADE_FROM_BLACK)
@@ -132,13 +137,13 @@ script nocave {
 script mewtwotendq {
 	lockall
 	applymovement(OBJ_EVENT_ID_PLAYER,thuddd)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I'm worried."))
+	waitmovement(0)
 	goto(mewtwotend)
 }
 script mewtwotende {
 	lockall
 	applymovement(OBJ_EVENT_ID_PLAYER,mq)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I'm worried."))
+	waitmovement(0)
 	goto(mewtwotend)
 }
 movement mq {
@@ -190,7 +195,6 @@ script revivalherb {
 	lockall
 	speakername(Xylar1)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I found it... This is it!\pMira, you were right, these herbs really do grow everywhere."),MSGBOX_AUTOCLOSE)
-	 
 	finditem(ITEM_REVIVAL_HERB,1)
 	removeobject(2)
 	setflag(FLAG_ITEM_ROUTE_102_POTION)
@@ -205,25 +209,21 @@ script revive {
 	if (var(VAR_RESULT)==TRUE){
 	speakername(Xylar1)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I should apply the herb on the wounds."),MSGBOX_AUTOCLOSE)
-	 
-    fadescreen(FADE_TO_BLACK)
+	fadescreen(FADE_TO_BLACK)
 	removeitem(ITEM_REVIVAL_HERB,1)
 	playse(MUS_DP_HEAL)
 	waitse
 	fadescreen(FADE_FROM_BLACK)
     speakername(Xylar1)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}This should help stop the bleeding...\pBut it's not enough. You need water too."),MSGBOX_AUTOCLOSE)
-	 
 	applymovement(OBJ_EVENT_ID_PLAYER,str)
     speakername(Xylar1)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Hang in there, I'll be back in no time."),MSGBOX_AUTOCLOSE)
-	 
 	setflag(FLAG_UNUSED_0x4B0)
 	}
 	else{
 	speakername(Xylar1)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I should go search for the herbs\pthe wounds look pretty painful."),MSGBOX_AUTOCLOSE)
-	 
 	}
     releaseall
 	}
@@ -233,7 +233,6 @@ script revive {
 	if (var(VAR_RESULT)==TRUE){
 	speakername(Xylar1)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Hang in there, I've got the water."),MSGBOX_AUTOCLOSE)
-	 
 	fadescreen(FADE_TO_BLACK)
 	removeitem(ITEM_FRESH_WATER,1)
 	playse(MUS_DP_HEAL)
@@ -241,35 +240,29 @@ script revive {
 	fadescreen(FADE_FROM_BLACK)
 	speakername(Xylar1)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Finally... This should do.\pYou've been through so much... Just a little longer.\pWe'll get through this together."),MSGBOX_AUTOCLOSE)
-	 
 	fadescreen(FADE_TO_BLACK)
 	msgbox(format("Xylar continued to take care of the pokemon for a few days hoping it would open it's eyes."),MSGBOX_AUTOCLOSE)
 	msgbox(format("A few days later..."),MSGBOX_AUTOCLOSE)
 	fadescreen(FADE_FROM_BLACK)
 	speakername(Xylar1)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I can't... I can't keep going like this. How many days has it been... since I last ate anything real? These plants... they barely keep me standing\p but he looks better than before."),MSGBOX_AUTOCLOSE)
-	 
 	setflag(FLAG_UNUSED_0x4B1)
 	}	
 	else{
     lockall
 	speakername(Xylar1)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I have to find some water for him."),MSGBOX_AUTOCLOSE)
-	 
 	}
 	releaseall
 }
 elif((flag(FLAG_UNUSED_0x4B0)) && (flag(FLAG_UNUSED_0x4B1))&& (!flag(FLAG_UNUSED_0x479))){
 	lockall
 	speakername(mewtwo)
-	msgbox(format("{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}...Who... are you?"),MSGBOX_AUTOCLOSE)
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORM}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}...Who... are you?"),MSGBOX_AUTOCLOSE)
 	speakername(Xylar1)
-	msgbox(format("(Is this telepathy?)\p{COLOR BLUE}{SHADOW LIGHT_GRAY}I...\pI found you.You were hurt, bleeding...\pI couldn't just leave you there."),MSGBOX_AUTOCLOSE)
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}(Is this telepathy?)\p{COLOR BLUE}{SHADOW LIGHT_GRAY}I...\pI found you.You were hurt, bleeding...\pI couldn't just leave you there."),MSGBOX_AUTOCLOSE)
 	speakername(mewtwo)
-	msgbox(format("{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Why would you help me?\pHumans are nothing but deceivers..."),MSGBOX_AUTOCLOSE)
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORM}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Why would you help me?\pHumans are nothing but deceivers..."),MSGBOX_AUTOCLOSE)
 	fadescreen(FADE_TO_BLACK)
 	playse(SE_M_PSYBEAM2)
 	waitse
@@ -277,10 +270,8 @@ elif((flag(FLAG_UNUSED_0x4B0)) && (flag(FLAG_UNUSED_0x4B1))&& (!flag(FLAG_UNUSED
     fadescreen(FADE_FROM_BLACK)
     speakername(mewtwo)
 	msgbox(format("(He's... telling the truth. His concern... it's genu...)"),MSGBOX_AUTOCLOSE)
-	 
 	speakername(Xylar1)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}He fainted.\pMaybe using telepathy strained him, since he hasn't fully recovered yet.\pI should also rest for a bit."),MSGBOX_AUTOCLOSE)
-	 
 	fadescreen(FADE_TO_BLACK)
 	playse(MUS_DP_HEAL)
 	msgbox(format("Zzzzzz....."),MSGBOX_AUTOCLOSE)
@@ -312,65 +303,80 @@ script gruntsded {
 	applymovement(10,invisible)
 	applymovement(OBJ_EVENT_ID_PLAYER,dd)
 	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}It's a relief i remembered about the herbs.\pI'm worried about Mira, It's been almost a week.\pI hope she is okay."),MSGBOX_AUTOCLOSE)
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SMILE}{COLOR BLUE}{SHADOW LIGHT_GRAY}It's a relief i remembered about the herbs.\pI'm worried about Mira, It's been almost a week.\pI hope she is okay."),MSGBOX_AUTOCLOSE)
+	removefieldmugshot
 	special(SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_PLAYER,exclam)
 	waitmovement(0)
 	applymovement(OBJ_EVENT_ID_CAMERA,in)
 	playbgm(MUS_RG_ROCKET_HIDEOUT,TRUE)
+	speakername("Grunt M")
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Look who we have here..."),MSGBOX_AUTOCLOSE)
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}The little runaway.\pAnd all alone this time..."),MSGBOX_AUTOCLOSE)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Poor little rich boy... you think you can run? Think you can hide? No, no, no... your fate is written, carved in the same blood as your family's."),MSGBOX_AUTOCLOSE)
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Look at him... so lost, so angry.\pWe can almost taste it, can't we?"),MSGBOX_AUTOCLOSE)
+    speakername("Grunt F")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}The little runaway.\pAnd all alone this time..."),MSGBOX_AUTOCLOSE)
+    speakername("Grunt M")
+	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Poor little rich boy... you think you can run? Think you can hide? No, no, no... your fate is written, carved in the same blood as your family's."),MSGBOX_AUTOCLOSE)
+    speakername("Grunt F")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Look at him... so lost, so angry.\pWe can almost taste it, can't we?"),MSGBOX_AUTOCLOSE)
     speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Where is Mira? What did you do to her?"),MSGBOX_AUTOCLOSE)
-	 
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Mira... such a sweet girl.\pBrave.\pToo brave for her own good."),MSGBOX_AUTOCLOSE)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Where is Mira? What did you do to her?"),MSGBOX_AUTOCLOSE)
+	removefieldmugshot
+	speakername("Grunt F")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Mira... such a sweet girl.\pBrave.\pToo brave for her own good."),MSGBOX_AUTOCLOSE)
+	speakername("Grunt M")
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}She fought so hard.\pBut do you know what broke her? It wasn't the pain\p...\pIt was You.\pHer hope in you... shattered like glass. She screamed for you, right before we made her...\pDisappear."),MSGBOX_AUTOCLOSE)
     speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Stop... stop lying!"),MSGBOX_AUTOCLOSE)
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Stop... stop lying!"),MSGBOX_AUTOCLOSE)
+	removefieldmugshot
 	applymovement(10,dds)
+	speakername("Grunt F")
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Lie? Why would we lie? It was beautiful.\pThe way her eyes widened when she realized... you weren't coming.\pYou couldn't save her, just like you couldn't save anyone!"),MSGBOX_AUTOCLOSE)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You think this all started today? Oh, no... it's always been you, Xylar. Your weakness... your failure. They're dead because of you."),MSGBOX_AUTOCLOSE)
+    speakername("Grunt M")
+	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You think this all started today? Oh, no... it's always been you, Xylar. Your weakness... your failure. They're dead because of you."),MSGBOX_AUTOCLOSE)
+	speakername("Grunt F")
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Your father... your mother... Mira... They all died... waiting for you."),MSGBOX_AUTOCLOSE)
+	speakername("Grunt M")
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You couldn't save her. You couldn't save any of them.\pAnd now you're alone... Just like you were always meant to be.\pAlone in the dark, where no one will hear you scream."),MSGBOX_AUTOCLOSE)
 	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I'll kill you! I'll fucking kill you all!"),MSGBOX_AUTOCLOSE)
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}I'll kill you! I'll fucking kill you all!"),MSGBOX_AUTOCLOSE)
+	removefieldmugshot
+	speakername("Grunt F")
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Kill us?\pYou?\pYou can't even save yourself! You're drowning in your own guilt.\pAnd the deeper you sink, the closer you get to her... to all of them, waiting for you in the dark."),MSGBOX_AUTOCLOSE)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Yes, join them! Let the guilt consume you. Soon... you'll hear their voices too, whispering your name. Waiting for you to fall... just like them."),MSGBOX_AUTOCLOSE)
+    speakername("Grunt M")
+	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Yes, join them! Let the guilt consume you. Soon... you'll hear their voices too, whispering your name. Waiting for you to fall... just like them."),MSGBOX_AUTOCLOSE)
 	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I SAID SHUT UP!"),MSGBOX_AUTOCLOSE)
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}I SAID SHUT UP!"),MSGBOX_AUTOCLOSE)
+	removefieldmugshot
+	speakername("Grunt F")
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}They died because of you. And now... you'll join them.\pLet's see how strong you really are when you can't even save yourself.\pElectrode!"),MSGBOX_AUTOCLOSE)
+	playse(SE_BALL_THROW)
 	applymovement(6,visible)
+	speakername("Grunt M")
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Let's end this...\pElectrode, EXPLODE!"),MSGBOX_AUTOCLOSE)
 	playmoncry(SPECIES_ELECTRODE,CRY_MODE_ENCOUNTER)
 	msgbox(format("Bzzz"))
 	waitmoncry
 	speakername(Xylar1)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}HAHAHAHAHAHAHA!"),MSGBOX_AUTOCLOSE)
-	 
 	applymovement(4,exclam)
 	applymovement(5,exclam)
 	waitmovement(0)
 	playbgm(MUS_DUMMY,FALSE)
+	speakername("Grunt M")
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}What... what the hell is wrong with you?"),MSGBOX_AUTOCLOSE)
 	waitmessage
     speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You think I couldn't save her? You think it's over? It's never over!\pI'LL TEAR THIS WORLD APART! RIP EVERY ONE OF YOU TO SHREDS!\pYOU'RE DEAD! DEAD! DEAD!\pI'LL KILL EVERY LAST ONE OF YOU! I'LL MAKE YOU FEEL EVERYTHING I'VE FELT! YOU HEAR ME?!"),MSGBOX_AUTOCLOSE)
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}You think I couldn't save her? You think it's over? It's never over!\pI'LL TEAR THIS WORLD APART! RIP EVERY ONE OF YOU TO SHREDS!\pYOU'RE DEAD! DEAD! DEAD!\pI'LL KILL EVERY LAST ONE OF YOU! I'LL MAKE YOU FEEL EVERYTHING I'VE FELT! YOU HEAR ME?!"),MSGBOX_AUTOCLOSE)
+	speakername("Grunt F")
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}He's... he's broken."),MSGBOX_AUTOCLOSE)
     speakername(unknown)
 	msgbox(format("{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}This ends now!"),MSGBOX_AUTOCLOSE)
-	 
 	playbgm(MUS_PL_GIRATINA_APPEARS_1,TRUE)
 	fadescreen(FADE_TO_BLACK)
 	waitbuttonpress
 	applymovement(10,visible)
 	fadescreen(FADE_FROM_BLACK)
+	speakername("Grunt M")
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}What the...\pElectrode finish both of them.\pUse Explosion!"),MSGBOX_AUTOCLOSE)
 	playmoncry(SPECIES_ELECTRODE,CRY_MODE_WEAK)
 	msgbox(format("Bzzz"))
@@ -378,20 +384,21 @@ script gruntsded {
 	playse(SE_M_COSMIC_POWER)
 	waitse
 	msgbox(format("Electrode, frozen mid-charge, begins to tremble under Mewtwo's control."))
+	speakername("Grunt F")
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Do something you stupid ball."),MSGBOX_AUTOCLOSE)
 	speakername(mewtwo)
-	msgbox(format("{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}You know what to do."),MSGBOX_AUTOCLOSE)
-	 
-    applymovement(6,ee)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_SPECIAL}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}You know what to do."),MSGBOX_AUTOCLOSE)
+	applymovement(6,ee)
 	applymovement(4,exclam)
 	applymovement(5,exclam)
 	waitmovement(0)
+	speakername("Grunt M")
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}W-What?! No! What's happening?!"),MSGBOX_AUTOCLOSE)
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Stop it, you stupid ball! Listen to us!"),MSGBOX_AUTOCLOSE)
+    speakername("Grunt F")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Stop it, you stupid ball! Listen to us!"),MSGBOX_AUTOCLOSE)
     waitmessage
 	speakername(mewtwo)
 	msgbox(format("{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Now...\pExplode."),MSGBOX_AUTOCLOSE)
-	 
 	fadescreen(FADE_TO_BLACK)
 	playse(SE_M_EXPLOSION)
 	waitse
@@ -408,8 +415,7 @@ script gruntsded {
 	applymovement(0xFF,exclam)
 	waitmovement(0)
 	speakername(mewtwo)
-	msgbox(format("{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Let's go, Human."),MSGBOX_AUTOCLOSE)
-	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORMAL}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Let's go, Human."),MSGBOX_AUTOCLOSE)
 	fadescreen(FADE_TO_BLACK)
 	removeobject(10)
 	setflag(FLAG_UNUSED_0x4B2)

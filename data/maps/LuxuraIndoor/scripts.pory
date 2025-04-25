@@ -18,7 +18,7 @@ script alistairarrive3 {
 	speakername(unknown)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}What's that?"))
      
-	setvar(VAR_0x8000,6)
+	setvar(VAR_0x8000,0)
 	special(DrawMugshot)
 	waitbuttonpress
 	special(ClearMugshot)
@@ -183,7 +183,7 @@ script Minccino{
 	faceplayer
 	speakername ("Minccino")
 	playmoncry(SPECIES_MINCCINO,CRY_MODE_NORMAL)
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} Chii,chii! Min-min!"))
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} Chii, chii! Min-min!"))
 	 
 	waitmoncry
 	release
@@ -725,10 +725,10 @@ script alistairarrive4 {
 	special(SpawnCameraObject)
 	applymovement(0x7F,alistairgone2)
 	waitmovement(0)
-	setvar(VAR_0x8000,6)
+	setvar(VAR_0x8000,0)
 	special(DrawMugshot)
 	waitbuttonpress
-	setvar(VAR_0x8000,7)
+	setvar(VAR_0x8000,1)
 	special(DrawMugshot)
     waitbuttonpress
 	special(ClearMugshot)

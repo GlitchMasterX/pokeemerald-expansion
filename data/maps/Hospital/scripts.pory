@@ -57,12 +57,10 @@ playse MUS_DUMMY
 # 29 "data/maps/Hospital/scripts.pory"
     speakername(name1)
 	msgbox Luxura_Text_2 , MSGBOX_AUTOCLOSE
-	 
+	msgbox Luxura_Text_nurse , MSGBOX_AUTOCLOSE
 # 30 "data/maps/Hospital/scripts.pory"
-    setvar VAR_0x8000, MUGSHOT_BABY
-    callnative DrawMugshot
 	msgbox Luxura_Text_3
-	callnative ClearMugshot
+	removefieldmugshot
 # 31 "data/maps/Hospital/scripts.pory"
 	applymovement 2, heart
 # 32 "data/maps/Hospital/scripts.pory"
@@ -76,10 +74,8 @@ playse MUS_DUMMY
 	msgbox Luxura_Text_5 , MSGBOX_AUTOCLOSE
 	 
 # 35 "data/maps/Hospital/scripts.pory"
-    setvar VAR_0x8000, MUGSHOT_BABY
-    callnative DrawMugshot
 	msgbox Luxura_Text_6 , MSGBOX_AUTOCLOSE
-	callnative ClearMugshot
+	removefieldmugshot
 # 36 "data/maps/Hospital/scripts.pory"
 	applymovement 4, bye
 # 37 "data/maps/Hospital/scripts.pory"
@@ -95,10 +91,8 @@ playse MUS_DUMMY
 	msgbox Luxura_Text_8 , MSGBOX_AUTOCLOSE
 	 
 # 41 "data/maps/Hospital/scripts.pory"
-    setvar VAR_0x8000, MUGSHOT_BABY
-    callnative DrawMugshot
 	msgbox Luxura_Text_9 , MSGBOX_AUTOCLOSE
-	callnative ClearMugshot
+    removefieldmugshot
 # 42 "data/maps/Hospital/scripts.pory"
 	speakername(name4)
 	msgbox Luxura_Text_10 , MSGBOX_AUTOCLOSE
@@ -342,13 +336,15 @@ Luxura_Text_1:
 
 Luxura_Text_2:
 # 29 "data/maps/Hospital/scripts.pory"
-	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Congratulations, it's a boy!\p"
-	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}(The nurse gently hands baby to his\n"
+	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Congratulations, it's a boy!$"
+
+Luxura_Text_nurse:
+    .string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}(The nurse gently hands baby to his\n"
 	.string "mother.)$"
 
 Luxura_Text_3:
 # 30 "data/maps/Hospital/scripts.pory"
-	.string "Baby:Wahh...Wahh$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_NORM}Baby: Wahh...Wahh$"
 
 Luxura_Text_4:
 # 32 "data/maps/Hospital/scripts.pory"
@@ -364,7 +360,7 @@ Luxura_Text_5:
 
 Luxura_Text_6:
 # 35 "data/maps/Hospital/scripts.pory"
-	.string "Baby:Hehh...Hehh$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_NORM}Baby:Hehh...Hehh$"
 
 Luxura_Text_7:
 # 39 "data/maps/Hospital/scripts.pory"
@@ -379,7 +375,7 @@ Luxura_Text_8:
 
 Luxura_Text_9:
 # 41 "data/maps/Hospital/scripts.pory"
-	.string "Baby:Goo...Gahh$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_NORM}Baby:Goo...Gahh$"
 
 Luxura_Text_10:
 # 42 "data/maps/Hospital/scripts.pory"
