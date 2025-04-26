@@ -22,7 +22,6 @@
 #include "field_effect.h"
 #include "gpu_regs.h"
 #include "field_camera.h"
-#include "day_night.h"
 
 #define DROUGHT_COLOR_INDEX(color) ((((color) >> 1) & 0xF) | (((color) >> 2) & 0xF0) | (((color) >> 3) & 0xF00))
 
@@ -208,7 +207,7 @@ void StartWeather(void)
     if (!FuncIsActiveTask(Task_WeatherMain))
     {
         u8 index = AllocSpritePalette(PALTAG_WEATHER);
-        LoadPaletteDayNight(gFogPalette, OBJ_PLTT_ID(index), PLTT_SIZE_4BPP);
+        LoadPalette(gFogPalette, OBJ_PLTT_ID(index), PLTT_SIZE_4BPP);
         ApplyGlobalFieldPaletteTint(index);
         sPaletteColorMapTypes = sBasePaletteColorMapTypes;
 

@@ -2,9 +2,10 @@
 #include "sprite.h"
 #include "main.h"
 #include "palette.h"
-#include "day_night.h"
 
 #define MAX_SPRITE_COPY_REQUESTS 64
+
+#define OAM_MATRIX_COUNT 32
 
 #define sAnchorX data[6]
 #define sAnchorY data[7]
@@ -51,6 +52,7 @@ static void SortSprites(u32 *spritePriorities, s32 n);
 static u32 CreateSpriteAt(u32 index, const struct SpriteTemplate *template, s16 x, s16 y, u32 subpriority);
 static void ResetOamMatrices(void);
 static void ResetSprite(struct Sprite *sprite);
+static void RequestSpriteFrameImageCopy(u16 index, u16 tileNum, const struct SpriteFrameImage *images);
 static void ResetAllSprites(void);
 static void BeginAnim(struct Sprite *sprite);
 static void ContinueAnim(struct Sprite *sprite);
@@ -73,6 +75,7 @@ static void AffineAnimCmd_end(u8 matrixNum, struct Sprite *sprite);
 static void AffineAnimCmd_frame(u8 matrixNum, struct Sprite *sprite);
 static void CopyOamMatrix(u8 destMatrixIndex, struct OamMatrix *srcMatrix);
 static u8 GetSpriteMatrixNum(struct Sprite *sprite);
+static void SetSpriteOamFlipBits(struct Sprite *sprite, u8 hFlip, u8 vFlip);
 static void AffineAnimStateRestartAnim(u8 matrixNum);
 static void AffineAnimStateStartAnim(u8 matrixNum, u8 animNum);
 static void AffineAnimStateReset(u8 matrixNum);
@@ -85,7 +88,7 @@ static void GetAffineAnimFrame(u8 matrixNum, struct Sprite *sprite, struct Affin
 static void ApplyAffineAnimFrame(u8 matrixNum, struct AffineAnimFrameCmd *frameCmd);
 static u8 IndexOfSpriteTileTag(u16 tag);
 static void AllocSpriteTileRange(u16 tag, u16 start, u16 count);
-static void DoLoadSpritePalette(const u16 *src, u16 paletteOffset, bool32 isDayNight);
+static void DoLoadSpritePalette(const u16 *src, u16 paletteOffset);
 static void UpdateSpriteMatrixAnchorPos(struct Sprite *, s32, s32);
 
 typedef void (*AnimFunc)(struct Sprite *);
@@ -257,8 +260,8 @@ static struct AffineAnimState sAffineAnimStates[OAM_MATRIX_COUNT];
 static u16 sSpritePaletteTags[16];
 
 // iwram common
-  u32 gOamMatrixAllocBitmap = 0;
-  u8 gReservedSpritePaletteCount = 0;
+u32 gOamMatrixAllocBitmap;
+u8 gReservedSpritePaletteCount;
 
 EWRAM_DATA struct Sprite gSprites[MAX_SPRITES + 1] = {0};
 EWRAM_DATA static u8 sSpriteOrder[MAX_SPRITES] = {0};
@@ -1047,13 +1050,9 @@ void ContinueAffineAnim(struct Sprite *sprite)
         u8 matrixNum = GetSpriteMatrixNum(sprite);
 
         if (sAffineAnimStates[matrixNum].delayCounter)
-        {
             AffineAnimDelay(matrixNum, sprite);
-        }
         else if (sprite->affineAnimPaused)
-        {
             return;
-        }
         else
         {
             s16 type;
@@ -1568,7 +1567,7 @@ void FreeAllSpritePalettes(void)
         sSpritePaletteTags[i] = TAG_NONE;
 }
 
-static u8 LoadSpritePalette_HandleDayNight(const struct SpritePalette *palette, bool32 isDayNight)
+u8 LoadSpritePalette(const struct SpritePalette *palette)
 {
     u8 index = IndexOfSpritePaletteTag(palette->tag);
 
@@ -1584,13 +1583,9 @@ static u8 LoadSpritePalette_HandleDayNight(const struct SpritePalette *palette, 
     else
     {
         sSpritePaletteTags[index] = palette->tag;
-        DoLoadSpritePalette(palette->data, index * 16, isDayNight);
+        DoLoadSpritePalette(palette->data, PLTT_ID(index));
         return index;
     }
-}
-u8 LoadSpritePalette(const struct SpritePalette *palette)
-{
-    return LoadSpritePalette_HandleDayNight(palette, FALSE);
 }
 
 void LoadSpritePalettes(const struct SpritePalette *palettes)
@@ -1601,11 +1596,10 @@ void LoadSpritePalettes(const struct SpritePalette *palettes)
             break;
 }
 
-static void DoLoadSpritePalette(const u16 *src, u16 paletteOffset, bool32 isDayNight)
+void DoLoadSpritePalette(const u16 *src, u16 paletteOffset)
 {
-    LoadPalette_HandleDayNight(src, OBJ_PLTT_OFFSET + paletteOffset, PLTT_SIZE_4BPP, isDayNight);
+    LoadPalette(src, OBJ_PLTT_OFFSET + paletteOffset, PLTT_SIZE_4BPP);
 }
-
 
 u8 AllocSpritePalette(u16 tag)
 {
@@ -1769,8 +1763,4 @@ static const u8 sSpanPerImage[4][4] =
 u32 GetSpanPerImage(u32 shape, u32 size)
 {
     return sSpanPerImage[shape][size];
-}
-u8 LoadSpritePaletteDayNight(const struct SpritePalette *palette)
-{
-    return LoadSpritePalette_HandleDayNight(palette, TRUE);
 }

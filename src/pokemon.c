@@ -68,8 +68,6 @@
 #include "wild_encounter.h"
 
 #define FRIENDSHIP_EVO_THRESHOLD ((P_FRIENDSHIP_EVO_THRESHOLD >= GEN_9) ? 160 : 220)
-#include "day_night.h"
-#include "constants/day_night.h"
 
 struct SpeciesItem
 {
@@ -4529,27 +4527,22 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, enum EvolutionMode mode, u16 
                     targetSpecies = evolutions[i].targetSpecies;
                 break;
             case EVO_FRIENDSHIP_DAY:
-                RtcCalcLocalTime();
                 if (GetTimeOfDay() != TIME_NIGHT && friendship >= FRIENDSHIP_EVO_THRESHOLD)
                     targetSpecies = evolutions[i].targetSpecies;
                 break;
             case EVO_LEVEL_DAY:
-            RtcCalcLocalTime();
                 if (GetTimeOfDay() != TIME_NIGHT && evolutions[i].param <= level)
                     targetSpecies = evolutions[i].targetSpecies;
                 break;
             case EVO_FRIENDSHIP_NIGHT:
-                RtcCalcLocalTime();
                 if (GetTimeOfDay() == TIME_NIGHT && friendship >= FRIENDSHIP_EVO_THRESHOLD)
                     targetSpecies = evolutions[i].targetSpecies;
                 break;
             case EVO_LEVEL_NIGHT:
-                RtcCalcLocalTime();
                 if (GetTimeOfDay() == TIME_NIGHT && evolutions[i].param <= level)
                     targetSpecies = evolutions[i].targetSpecies;
                 break;
             case EVO_ITEM_HOLD_NIGHT:
-                RtcCalcLocalTime();
                 if (GetTimeOfDay() == TIME_NIGHT && heldItem == evolutions[i].param)
                 {
                     targetSpecies = evolutions[i].targetSpecies;
@@ -4557,7 +4550,6 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, enum EvolutionMode mode, u16 
                 }
                 break;
             case EVO_ITEM_HOLD_DAY:
-                RtcCalcLocalTime();
                 if (GetTimeOfDay() != TIME_NIGHT && heldItem == evolutions[i].param)
                 {
                     targetSpecies = evolutions[i].targetSpecies;
@@ -4565,7 +4557,6 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, enum EvolutionMode mode, u16 
                 }
                 break;
             case EVO_LEVEL_DUSK:
-                RtcCalcLocalTime();
                 if (GetTimeOfDay() == TIME_EVENING && evolutions[i].param <= level)
                     targetSpecies = evolutions[i].targetSpecies;
                 break;

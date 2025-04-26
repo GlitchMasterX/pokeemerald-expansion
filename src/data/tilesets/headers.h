@@ -7,7 +7,6 @@ const struct Tileset gTileset_General =
     .metatiles = gMetatiles_General,
     .metatileAttributes = gMetatileAttributes_General,
     .callback = InitTilesetAnim_General,
-    .paletteOverrides = gTilesetPalOverrides_General,
     .palettes_summer = gTilesetPalettes_General_Summer,
     .palettes_autumn = gTilesetPalettes_General_Autumn,
     .palettes_winter = gTilesetPalettes_General_Winter,
@@ -22,7 +21,9 @@ const struct Tileset gTileset_Petalburg =
     .metatiles = gMetatiles_Petalburg,
     .metatileAttributes = gMetatileAttributes_Petalburg,
     .callback = InitTilesetAnim_Petalburg,
-    .paletteOverrides = gTilesetPalOverrides_Petalburg,
+    .palettes_summer = NULL,
+    .palettes_autumn = NULL,
+    .palettes_winter = NULL,
 };
 
 const struct Tileset gTileset_Rustboro =
@@ -636,7 +637,7 @@ const struct Tileset gTileset_PetalburgGym =
     .metatiles = gMetatiles_PetalburgGym,
     .metatileAttributes = gMetatileAttributes_PetalburgGym,
     .callback = NULL,
-    .paletteOverrides = gTilesetPalOverrides_Dorm,
+
     .palettes_summer = NULL,
     .palettes_autumn = NULL,
     .palettes_winter = NULL,
@@ -906,7 +907,6 @@ const struct Tileset gTileset_AcademyOutdoor =
     .metatiles = gMetatiles_BattleArena,
     .metatileAttributes = gMetatileAttributes_BattleArena,
     .callback = NULL,
-    .paletteOverrides = gTilesetPalOverrides_Academy,
     .palettes_summer = NULL,
     .palettes_autumn = NULL,
     .palettes_winter = NULL,
@@ -1072,7 +1072,7 @@ const struct Tileset gTileset_luxuraisland =
     .metatiles = gMetatiles_luxuraisland,
     .metatileAttributes = gMetatileAttributes_luxuraisland,
     .callback = NULL,
-    .paletteOverrides = gTilesetPalOverrides_Luxura,
+
 };
 
 const struct Tileset gTileset_Luxuraindoor =

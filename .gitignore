@@ -45,3 +45,8 @@ tools/trainerproc/trainerproc
 *.smol
 *.fastSmol
 *.smolTM
+data/tilesets/primary/general/override_palettes/01.pal
+data/tilesets/secondary/petalburg/override_palettes/06_08.pal
+src/data/tilesets/overrides.h
+src/day_night.c
+src/day_night.c

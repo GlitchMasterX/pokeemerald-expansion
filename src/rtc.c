@@ -432,19 +432,5 @@ void FormatDecimalTimeWithoutSeconds(u8 *txtPtr, s8 hour, s8 minute, bool32 is24
     }
 
     *txtPtr++ = EOS;
-    *txtPtr = EOS;}
-void RtcCalcLocalTimeFast(void)
-{
-    if (sErrorStatus & RTC_ERR_FLAG_MASK)
-    {
-        sRtc = sRtcDummy;
-    }
-    else
-    {
-        RtcGetStatus(&sRtc);
-        RtcDisableInterrupts();
-        SiiRtcGetTime(&sRtc);
-        RtcRestoreInterrupts();
-    }
-    RtcCalcTimeDifference(&sRtc, &gLocalTime, &gSaveBlock2Ptr->localTimeOffset);
+    *txtPtr = EOS;
 }
