@@ -5,8 +5,8 @@
 #include "blit.h"
 
 // This global is set to 0 and never changed.
-  u8 gTransparentTileNumber = 0;
-  void *gWindowBgTilemapBuffers[NUM_BACKGROUNDS] = {0};
+COMMON_DATA u8 gTransparentTileNumber = 0;
+COMMON_DATA void *gWindowBgTilemapBuffers[NUM_BACKGROUNDS] = {0};
 extern u32 gWindowTileAutoAllocEnabled;
 
 EWRAM_DATA struct Window gWindows[WINDOWS_MAX] = {0};
@@ -237,6 +237,20 @@ void RemoveWindow(u32 windowId)
     {
         Free(gWindows[windowId].tileData);
         gWindows[windowId].tileData = NULL;
+    }
+}
+
+void RemoveAllWindowsOnBg(u32 bgId)
+{
+    u32 i;
+
+    if (bgId > NUM_BACKGROUNDS)
+        return;
+
+    for (i = 0; i < WINDOWS_MAX; i++)
+    {
+        if (gWindows[i].window.bg == bgId)
+            RemoveWindow(i);
     }
 }
 

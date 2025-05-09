@@ -3,7 +3,6 @@
 #include "battle.h"
 #include "battle_message.h"
 #include "bg.h"
-#include "bw_summary_screen.h"
 #include "data.h"
 #include "decompress.h"
 #include "evolution_scene.h"
@@ -48,7 +47,7 @@ struct EvoInfo
 static EWRAM_DATA struct EvoInfo *sEvoStructPtr = NULL;
 static EWRAM_DATA u16 *sBgAnimPal = NULL;
 
-void (*gCB2_AfterEvolution)(void);
+COMMON_DATA void (*gCB2_AfterEvolution)(void) = NULL;
 
 #define sEvoCursorPos           gBattleCommunication[1] // when learning a new move
 #define sEvoGraphicsTaskId      gBattleCommunication[2]
@@ -237,7 +236,7 @@ void EvolutionScene(struct Pokemon *mon, u16 postEvoSpecies, bool8 canStopEvo, u
     gBattle_BG3_X = 256;
     gBattle_BG3_Y = 0;
 
-    gBattleTerrain = BATTLE_TERRAIN_PLAIN;
+    gBattleEnvironment = BATTLE_ENVIRONMENT_PLAIN;
 
     InitBattleBgsVideo();
     LoadBattleTextboxAndBackground();
@@ -263,7 +262,7 @@ void EvolutionScene(struct Pokemon *mon, u16 postEvoSpecies, bool8 canStopEvo, u
                         currSpecies,
                         personality,
                         TRUE);
-    LoadCompressedPalette(GetMonSpritePalFromSpeciesAndPersonality(currSpecies, isShiny, personality), OBJ_PLTT_ID(1), PLTT_SIZE_4BPP);
+    LoadPalette(GetMonSpritePalFromSpeciesAndPersonality(currSpecies, isShiny, personality), OBJ_PLTT_ID(1), PLTT_SIZE_4BPP);
 
     SetMultiuseSpriteTemplateToPokemon(currSpecies, B_POSITION_OPPONENT_LEFT);
     gMultiuseSpriteTemplate.affineAnims = gDummySpriteAffineAnimTable;
@@ -278,7 +277,7 @@ void EvolutionScene(struct Pokemon *mon, u16 postEvoSpecies, bool8 canStopEvo, u
                         postEvoSpecies,
                         personality,
                         TRUE);
-    LoadCompressedPalette(GetMonSpritePalFromSpeciesAndPersonality(postEvoSpecies, isShiny, personality), OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
+    LoadPalette(GetMonSpritePalFromSpeciesAndPersonality(postEvoSpecies, isShiny, personality), OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
 
     SetMultiuseSpriteTemplateToPokemon(postEvoSpecies, B_POSITION_OPPONENT_RIGHT);
     gMultiuseSpriteTemplate.affineAnims = gDummySpriteAffineAnimTable;
@@ -343,7 +342,7 @@ static void CB2_EvolutionSceneLoadGraphics(void)
     gBattle_BG3_X = 256;
     gBattle_BG3_Y = 0;
 
-    gBattleTerrain = BATTLE_TERRAIN_PLAIN;
+    gBattleEnvironment = BATTLE_ENVIRONMENT_PLAIN;
 
     InitBattleBgsVideo();
     LoadBattleTextboxAndBackground();
@@ -355,7 +354,7 @@ static void CB2_EvolutionSceneLoadGraphics(void)
                         postEvoSpecies,
                         personality,
                         TRUE);
-    LoadCompressedPalette(GetMonSpritePalFromSpeciesAndPersonality(postEvoSpecies, isShiny, personality), OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
+    LoadPalette(GetMonSpritePalFromSpeciesAndPersonality(postEvoSpecies, isShiny, personality), OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
 
     SetMultiuseSpriteTemplateToPokemon(postEvoSpecies, B_POSITION_OPPONENT_RIGHT);
     gMultiuseSpriteTemplate.affineAnims = gDummySpriteAffineAnimTable;
@@ -425,7 +424,7 @@ static void CB2_TradeEvolutionSceneLoadGraphics(void)
                                 postEvoSpecies,
                                 personality,
                                 TRUE);
-            LoadCompressedPalette(GetMonSpritePalFromSpeciesAndPersonality(postEvoSpecies, isShiny, personality), OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
+            LoadPalette(GetMonSpritePalFromSpeciesAndPersonality(postEvoSpecies, isShiny, personality), OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
             gMain.state++;
         }
         break;
@@ -490,7 +489,7 @@ void TradeEvolutionScene(struct Pokemon *mon, u16 postEvoSpecies, u8 preEvoSprit
                         personality,
                         TRUE);
 
-    LoadCompressedPalette(GetMonSpritePalFromSpeciesAndPersonality(postEvoSpecies, isShiny, personality), OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
+    LoadPalette(GetMonSpritePalFromSpeciesAndPersonality(postEvoSpecies, isShiny, personality), OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
 
     SetMultiuseSpriteTemplateToPokemon(postEvoSpecies, B_POSITION_OPPONENT_LEFT);
     gMultiuseSpriteTemplate.affineAnims = gDummySpriteAffineAnimTable;
@@ -543,7 +542,7 @@ static void CB2_TradeEvolutionSceneUpdate(void)
     RunTasks();
 }
 
-static void CreateShedinja(u16 preEvoSpecies, struct Pokemon *mon)
+static void CreateShedinja(u32 preEvoSpecies, u32 postEvoSpecies, struct Pokemon *mon)
 {
     u32 data = 0;
     u16 ball = ITEM_POKE_BALL;
@@ -552,41 +551,48 @@ static void CreateShedinja(u16 preEvoSpecies, struct Pokemon *mon)
     if (evolutions == NULL)
         return;
 
-    if (evolutions[0].method == EVO_LEVEL_NINJASK && gPlayerPartyCount < PARTY_SIZE && (P_SHEDINJA_BALL < GEN_4 || CheckBagHasItem(ball, 1)))
+    for (u32 i = 0; evolutions[i].method != EVOLUTIONS_END; i++)
     {
-        s32 i;
-        struct Pokemon *shedinja = &gPlayerParty[gPlayerPartyCount];
-
-        CopyMon(&gPlayerParty[gPlayerPartyCount], mon, sizeof(struct Pokemon));
-        SetMonData(&gPlayerParty[gPlayerPartyCount], MON_DATA_SPECIES, &evolutions[1].targetSpecies);
-        SetMonData(&gPlayerParty[gPlayerPartyCount], MON_DATA_NICKNAME, GetSpeciesName(evolutions[1].targetSpecies));
-        SetMonData(&gPlayerParty[gPlayerPartyCount], MON_DATA_HELD_ITEM, &data);
-        SetMonData(&gPlayerParty[gPlayerPartyCount], MON_DATA_MARKINGS, &data);
-        if (P_SHEDINJA_BALL >= GEN_4)
+        if (evolutions[i].method == EVO_SPLIT_FROM_EVO
+         && evolutions[i].param == postEvoSpecies
+         && gPlayerPartyCount < PARTY_SIZE
+         && DoesMonMeetAdditionalConditions(mon, evolutions[i].params, NULL, PARTY_SIZE, NULL, CHECK_EVO))
         {
-            SetMonData(&gPlayerParty[gPlayerPartyCount], MON_DATA_POKEBALL, &ball);
-            RemoveBagItem(ball, 1);
+            s32 j;
+            struct Pokemon *shedinja = &gPlayerParty[gPlayerPartyCount];
+    
+            CopyMon(&gPlayerParty[gPlayerPartyCount], mon, sizeof(struct Pokemon));
+            SetMonData(&gPlayerParty[gPlayerPartyCount], MON_DATA_SPECIES, &evolutions[i].targetSpecies);
+            SetMonData(&gPlayerParty[gPlayerPartyCount], MON_DATA_NICKNAME, GetSpeciesName(evolutions[i].targetSpecies));
+            SetMonData(&gPlayerParty[gPlayerPartyCount], MON_DATA_HELD_ITEM, &data);
+            SetMonData(&gPlayerParty[gPlayerPartyCount], MON_DATA_MARKINGS, &data);
+            if (P_SHEDINJA_BALL >= GEN_4)
+            {
+                SetMonData(&gPlayerParty[gPlayerPartyCount], MON_DATA_POKEBALL, &ball);
+                RemoveBagItem(ball, 1);
+            }
+    
+            for (j = MON_DATA_COOL_RIBBON; j < MON_DATA_COOL_RIBBON + CONTEST_CATEGORIES_COUNT; j++)
+                SetMonData(&gPlayerParty[gPlayerPartyCount], j, &data);
+            for (j = MON_DATA_CHAMPION_RIBBON; j <= MON_DATA_WORLD_RIBBON; j++)
+                SetMonData(&gPlayerParty[gPlayerPartyCount], j, &data);
+    
+            SetMonData(&gPlayerParty[gPlayerPartyCount], MON_DATA_STATUS, &data);
+            data = MAIL_NONE;
+            SetMonData(&gPlayerParty[gPlayerPartyCount], MON_DATA_MAIL, &data);
+    
+            CalculateMonStats(&gPlayerParty[gPlayerPartyCount]);
+            CalculatePlayerPartyCount();
+    
+            GetSetPokedexFlag(SpeciesToNationalPokedexNum(evolutions[i].targetSpecies), FLAG_SET_SEEN);
+            GetSetPokedexFlag(SpeciesToNationalPokedexNum(evolutions[i].targetSpecies), FLAG_SET_CAUGHT);
+    
+            if (GetMonData(shedinja, MON_DATA_SPECIES) == SPECIES_SHEDINJA
+                && GetMonData(shedinja, MON_DATA_LANGUAGE) == LANGUAGE_JAPANESE
+                && GetMonData(mon, MON_DATA_SPECIES) == SPECIES_NINJASK)
+                    SetMonData(shedinja, MON_DATA_NICKNAME, sText_ShedinjaJapaneseName);
+
         }
-
-        for (i = MON_DATA_COOL_RIBBON; i < MON_DATA_COOL_RIBBON + CONTEST_CATEGORIES_COUNT; i++)
-            SetMonData(&gPlayerParty[gPlayerPartyCount], i, &data);
-        for (i = MON_DATA_CHAMPION_RIBBON; i <= MON_DATA_WORLD_RIBBON; i++)
-            SetMonData(&gPlayerParty[gPlayerPartyCount], i, &data);
-
-        SetMonData(&gPlayerParty[gPlayerPartyCount], MON_DATA_STATUS, &data);
-        data = MAIL_NONE;
-        SetMonData(&gPlayerParty[gPlayerPartyCount], MON_DATA_MAIL, &data);
-
-        CalculateMonStats(&gPlayerParty[gPlayerPartyCount]);
-        CalculatePlayerPartyCount();
-
-        GetSetPokedexFlag(SpeciesToNationalPokedexNum(evolutions[1].targetSpecies), FLAG_SET_SEEN);
-        GetSetPokedexFlag(SpeciesToNationalPokedexNum(evolutions[1].targetSpecies), FLAG_SET_CAUGHT);
-
-        if (GetMonData(shedinja, MON_DATA_SPECIES) == SPECIES_SHEDINJA
-            && GetMonData(shedinja, MON_DATA_LANGUAGE) == LANGUAGE_JAPANESE
-            && GetMonData(mon, MON_DATA_SPECIES) == SPECIES_NINJASK)
-                SetMonData(shedinja, MON_DATA_NICKNAME, sText_ShedinjaJapaneseName);
     }
 }
 
@@ -683,7 +689,7 @@ static void Task_EvolutionScene(u8 taskId)
     case EVOSTATE_INTRO_SOUND:
         if (EvoScene_IsMonAnimFinished(sEvoStructPtr->preEvoSpriteId))
         {
-            PlaySE(MUS_DP_EVOLUTION);
+            PlaySE(MUS_EVOLUTION_INTRO);
             gTasks[taskId].tState++;
         }
         break;
@@ -819,10 +825,12 @@ static void Task_EvolutionScene(u8 taskId)
             {
                 StopMapMusic();
                 Overworld_PlaySpecialMapMusic();
+                
             }
-            if (!gTasks[taskId].tEvoWasStopped)
-                CreateShedinja(gTasks[taskId].tPreEvoSpecies, mon);
 
+            if (!gTasks[taskId].tEvoWasStopped)
+                CreateShedinja(gTasks[taskId].tPreEvoSpecies, gTasks[taskId].tPostEvoSpecies, mon);
+            
             DestroyTask(taskId);
             FreeMonSpritesGfx();
             FREE_AND_SET_NULL(sEvoStructPtr);
@@ -862,7 +870,7 @@ static void Task_EvolutionScene(u8 taskId)
         if (!IsTextPrinterActive(0) && !IsSEPlaying())
         {
             BufferMoveToLearnIntoBattleTextBuff2();
-            PlayFanfare(MUS_DP_LEVEL_UP);
+            PlayFanfare(MUS_LEVEL_UP);
             BattleStringExpandPlaceholdersToDisplayedString(gBattleStringsTable[STRINGID_PKMNLEARNEDMOVE]);
             BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MSG);
             gTasks[taskId].tLearnsFirstMove = 0x40; // re-used as a counter
@@ -965,18 +973,9 @@ static void Task_EvolutionScene(u8 taskId)
             if (!gPaletteFade.active)
             {
                 FreeAllWindowBuffers();
-                if (BW_SUMMARY_SCREEN)
-                {
-                    ShowSelectMovePokemonSummaryScreen_BW(gPlayerParty, gTasks[taskId].tPartyId,
-                                gPlayerPartyCount - 1, CB2_EvolutionSceneLoadGraphics,
-                                gMoveToLearn);
-                }
-                else
-                {
-                    ShowSelectMovePokemonSummaryScreen(gPlayerParty, gTasks[taskId].tPartyId,
-                                gPlayerPartyCount - 1, CB2_EvolutionSceneLoadGraphics,
-                                gMoveToLearn);
-                }
+                ShowSelectMovePokemonSummaryScreen(gPlayerParty, gTasks[taskId].tPartyId,
+                            gPlayerPartyCount - 1, CB2_EvolutionSceneLoadGraphics,
+                            gMoveToLearn);
                 gTasks[taskId].tLearnMoveState++;
             }
             break;
@@ -1119,7 +1118,7 @@ static void Task_TradeEvolutionScene(u8 taskId)
         if (IsCryFinished())
         {
             m4aSongNumStop(MUS_EVOLUTION);
-            PlaySE(MUS_DP_EVOLUTION);
+            PlaySE(MUS_EVOLUTION_INTRO);
             gTasks[taskId].tState++;
         }
         break;
@@ -1358,18 +1357,9 @@ static void Task_TradeEvolutionScene(u8 taskId)
                 Free(GetBgTilemapBuffer(0));
                 FreeAllWindowBuffers();
 
-                if (BW_SUMMARY_SCREEN)
-                {
-                    ShowSelectMovePokemonSummaryScreen_BW(gPlayerParty, gTasks[taskId].tPartyId,
-                                gPlayerPartyCount - 1, CB2_TradeEvolutionSceneLoadGraphics,
-                                gMoveToLearn);
-                }
-                else
-                {
-                    ShowSelectMovePokemonSummaryScreen(gPlayerParty, gTasks[taskId].tPartyId,
-                                gPlayerPartyCount - 1, CB2_TradeEvolutionSceneLoadGraphics,
-                                gMoveToLearn);
-                }
+                ShowSelectMovePokemonSummaryScreen(gPlayerParty, gTasks[taskId].tPartyId,
+                            gPlayerPartyCount - 1, CB2_TradeEvolutionSceneLoadGraphics,
+                            gMoveToLearn);
                 gTasks[taskId].tLearnMoveState++;
             }
             break;

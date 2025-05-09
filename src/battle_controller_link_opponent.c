@@ -24,7 +24,6 @@
 #include "text.h"
 #include "util.h"
 #include "window.h"
-#include "outfit_menu.h"
 #include "constants/battle_anim.h"
 #include "constants/songs.h"
 #include "constants/trainers.h"
@@ -88,10 +87,6 @@ static void (*const sLinkOpponentBufferCommands[CONTROLLER_CMDS_COUNT])(u32 batt
     [CONTROLLER_CHOSENMONRETURNVALUE]     = BtlController_Empty,
     [CONTROLLER_ONERETURNVALUE]           = BtlController_Empty,
     [CONTROLLER_ONERETURNVALUE_DUPLICATE] = BtlController_Empty,
-    [CONTROLLER_CLEARUNKVAR]              = BtlController_HandleClearUnkVar,
-    [CONTROLLER_SETUNKVAR]                = BtlController_HandleSetUnkVar,
-    [CONTROLLER_CLEARUNKFLAG]             = BtlController_HandleClearUnkFlag,
-    [CONTROLLER_TOGGLEUNKFLAG]            = BtlController_HandleToggleUnkFlag,
     [CONTROLLER_HITANIMATION]             = BtlController_HandleHitAnimation,
     [CONTROLLER_CANTSWITCH]               = BtlController_Empty,
     [CONTROLLER_PLAYSE]                   = BtlController_HandlePlaySE,
@@ -203,14 +198,14 @@ static void Intro_TryShinyAnimShowHealthbox(u32 battler)
         && !gBattleSpritesDataPtr->healthBoxesData[battler].triedShinyMonAnim
         && !gBattleSpritesDataPtr->healthBoxesData[battler].finishedShinyMonAnim)
     {
-        TryShinyAnimation(battler, &gEnemyParty[gBattlerPartyIndexes[battler]]);
+        TryShinyAnimation(battler, GetPartyBattlerData(battler));
     }
     if (!(gBattleTypeFlags & BATTLE_TYPE_MULTI)
         && !gBattleSpritesDataPtr->healthBoxesData[BATTLE_PARTNER(battler)].ballAnimActive
         && !gBattleSpritesDataPtr->healthBoxesData[BATTLE_PARTNER(battler)].triedShinyMonAnim
         && !gBattleSpritesDataPtr->healthBoxesData[BATTLE_PARTNER(battler)].finishedShinyMonAnim)
     {
-        TryShinyAnimation(BATTLE_PARTNER(battler), &gEnemyParty[gBattlerPartyIndexes[BATTLE_PARTNER(battler)]]);
+        TryShinyAnimation(BATTLE_PARTNER(battler), GetPartyBattlerData(BATTLE_PARTNER(battler)));
     }
 
     if (!gBattleSpritesDataPtr->healthBoxesData[battler].ballAnimActive && !gBattleSpritesDataPtr->healthBoxesData[BATTLE_PARTNER(battler)].ballAnimActive)
@@ -219,11 +214,11 @@ static void Intro_TryShinyAnimShowHealthbox(u32 battler)
         {
             if (IsDoubleBattle() && !(gBattleTypeFlags & BATTLE_TYPE_MULTI))
             {
-                UpdateHealthboxAttribute(gHealthboxSpriteIds[BATTLE_PARTNER(battler)], &gEnemyParty[gBattlerPartyIndexes[BATTLE_PARTNER(battler)]], HEALTHBOX_ALL);
+                UpdateHealthboxAttribute(gHealthboxSpriteIds[BATTLE_PARTNER(battler)], GetPartyBattlerData(BATTLE_PARTNER(battler)), HEALTHBOX_ALL);
                 StartHealthboxSlideIn(BATTLE_PARTNER(battler));
                 SetHealthboxSpriteVisible(gHealthboxSpriteIds[BATTLE_PARTNER(battler)]);
             }
-            UpdateHealthboxAttribute(gHealthboxSpriteIds[battler], &gEnemyParty[gBattlerPartyIndexes[battler]], HEALTHBOX_ALL);
+            UpdateHealthboxAttribute(gHealthboxSpriteIds[battler], GetPartyBattlerData(battler), HEALTHBOX_ALL);
             StartHealthboxSlideIn(battler);
             SetHealthboxSpriteVisible(gHealthboxSpriteIds[battler]);
         }
@@ -267,12 +262,12 @@ static void Intro_TryShinyAnimShowHealthbox(u32 battler)
             if (IsDoubleBattle() && !(gBattleTypeFlags & BATTLE_TYPE_MULTI))
             {
                 DestroySprite(&gSprites[gBattleControllerData[BATTLE_PARTNER(battler)]]);
-                SetBattlerShadowSpriteCallback(BATTLE_PARTNER(battler), GetMonData(&gEnemyParty[gBattlerPartyIndexes[BATTLE_PARTNER(battler)]], MON_DATA_SPECIES));
+                SetBattlerShadowSpriteCallback(BATTLE_PARTNER(battler), GetMonData(GetPartyBattlerData(BATTLE_PARTNER(battler)), MON_DATA_SPECIES));
             }
 
 
             DestroySprite(&gSprites[gBattleControllerData[battler]]);
-            SetBattlerShadowSpriteCallback(battler, GetMonData(&gEnemyParty[gBattlerPartyIndexes[battler]], MON_DATA_SPECIES));
+            SetBattlerShadowSpriteCallback(battler, GetMonData(GetPartyBattlerData(battler), MON_DATA_SPECIES));
 
             gBattleSpritesDataPtr->animationData->introAnimActive = FALSE;
             gBattleSpritesDataPtr->healthBoxesData[battler].bgmRestored = FALSE;
@@ -290,7 +285,7 @@ static void TryShinyAnimAfterMonAnim(u32 battler)
     {
         if (!gBattleSpritesDataPtr->healthBoxesData[battler].triedShinyMonAnim)
         {
-            TryShinyAnimation(battler, &gEnemyParty[gBattlerPartyIndexes[battler]]);
+            TryShinyAnimation(battler, GetPartyBattlerData(battler));
         }
         else if (gBattleSpritesDataPtr->healthBoxesData[battler].finishedShinyMonAnim)
         {
@@ -340,7 +335,7 @@ static void SwitchIn_ShowHealthbox(u32 battler)
 
         StartSpriteAnim(&gSprites[gBattlerSpriteIds[battler]], 0);
 
-        UpdateHealthboxAttribute(gHealthboxSpriteIds[battler], &gEnemyParty[gBattlerPartyIndexes[battler]], HEALTHBOX_ALL);
+        UpdateHealthboxAttribute(gHealthboxSpriteIds[battler], GetPartyBattlerData(battler), HEALTHBOX_ALL);
         StartHealthboxSlideIn(battler);
         SetHealthboxSpriteVisible(gHealthboxSpriteIds[battler]);
         CopyBattleSpriteInvisibility(battler);
@@ -353,14 +348,14 @@ static void SwitchIn_TryShinyAnim(u32 battler)
     if (!gBattleSpritesDataPtr->healthBoxesData[battler].ballAnimActive
         && !gBattleSpritesDataPtr->healthBoxesData[battler].triedShinyMonAnim)
     {
-        TryShinyAnimation(battler, &gEnemyParty[gBattlerPartyIndexes[battler]]);
+        TryShinyAnimation(battler, GetPartyBattlerData(battler));
     }
 
     if (gSprites[gBattleControllerData[battler]].callback == SpriteCallbackDummy
         && !gBattleSpritesDataPtr->healthBoxesData[battler].ballAnimActive)
     {
         DestroySprite(&gSprites[gBattleControllerData[battler]]);
-        SetBattlerShadowSpriteCallback(battler, GetMonData(&gEnemyParty[gBattlerPartyIndexes[battler]], MON_DATA_SPECIES));
+        SetBattlerShadowSpriteCallback(battler, GetMonData(GetPartyBattlerData(battler), MON_DATA_SPECIES));
         gBattlerControllerFuncs[battler] = SwitchIn_ShowHealthbox;
     }
 }
@@ -406,9 +401,9 @@ static void LinkOpponentHandleDrawTrainerPic(u32 battler)
         if (gBattleTypeFlags & BATTLE_TYPE_BATTLE_TOWER)
         {
             if (battler == B_POSITION_OPPONENT_LEFT)
-                trainerPicId = GetFrontierTrainerFrontSpriteId(gTrainerBattleOpponent_A);
+                trainerPicId = GetFrontierTrainerFrontSpriteId(TRAINER_BATTLE_PARAM.opponentA);
             else
-                trainerPicId = GetFrontierTrainerFrontSpriteId(gTrainerBattleOpponent_B);
+                trainerPicId = GetFrontierTrainerFrontSpriteId(TRAINER_BATTLE_PARAM.opponentB);
         }
         else
         {
@@ -430,24 +425,14 @@ static void LinkOpponentHandleDrawTrainerPic(u32 battler)
             }
             else
             {
-                //! neverRead was set to 0 by vanilla, we use it to our
-                //! advantage so that our game won't freak out as much
-                //! we also defaults to 0 if the player has an outfit
-                //! our game don't
-                u8 outfit = gLinkPlayers[GetBattlerMultiplayerId(battler)].currOutfitId;
-                u8 gender = gLinkPlayers[GetBattlerMultiplayerId(battler)].gender;
-
-                if (outfit < OUTFIT_COUNT)
-                    trainerPicId = GetPlayerTrainerPicIdByOutfitGenderType(outfit, gender, 0);
-                else
-                    trainerPicId = PlayerGenderToFrontTrainerPicId(gLinkPlayers[GetBattlerMultiplayerId(battler)].gender);
+                trainerPicId = PlayerGenderToFrontTrainerPicId(gLinkPlayers[GetBattlerMultiplayerId(battler)].gender);
             }
         }
     }
     else
     {
         xPos = 176;
-        if (gTrainerBattleOpponent_A == TRAINER_UNION_ROOM)
+        if (TRAINER_BATTLE_PARAM.opponentA == TRAINER_UNION_ROOM)
         {
             trainerPicId = GetUnionRoomTrainerPic();
         }
@@ -469,17 +454,7 @@ static void LinkOpponentHandleDrawTrainerPic(u32 battler)
         }
         else
         {
-            //! neverRead was set to 0 by vanilla, we use it to our
-            //! advantage so that our game won't freak out as much
-            //! we also defaults to 0 if the player has an outfit
-            //! our game don't
-            u8 outfit = gLinkPlayers[GetMultiplayerId() ^ BIT_SIDE].currOutfitId;
-            u8 gender = gLinkPlayers[GetMultiplayerId() ^ BIT_SIDE].gender;
-
-            if (outfit < OUTFIT_COUNT)
-                trainerPicId = GetPlayerTrainerPicIdByOutfitGenderType(outfit, gender, 0);
-            else
-                trainerPicId = PlayerGenderToFrontTrainerPicId(gender);
+            trainerPicId = PlayerGenderToFrontTrainerPicId(gLinkPlayers[GetMultiplayerId() ^ BIT_SIDE].gender);
         }
     }
 
@@ -491,9 +466,9 @@ static void LinkOpponentHandleTrainerSlide(u32 battler)
     u32 trainerPicId;
 
     if (battler == B_POSITION_OPPONENT_LEFT)
-        trainerPicId = GetFrontierTrainerFrontSpriteId(gTrainerBattleOpponent_A);
+        trainerPicId = GetFrontierTrainerFrontSpriteId(TRAINER_BATTLE_PARAM.opponentA);
     else
-        trainerPicId = GetFrontierTrainerFrontSpriteId(gTrainerBattleOpponent_B);
+        trainerPicId = GetFrontierTrainerFrontSpriteId(TRAINER_BATTLE_PARAM.opponentB);
 
     BtlController_HandleTrainerSlide(battler, trainerPicId);
     LinkOpponentBufferExecCompleted(battler); // Possibly a bug, because execution should be completed after the slide in finishes. See Controller_WaitForTrainerPic.

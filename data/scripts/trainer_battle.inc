@@ -67,7 +67,7 @@ EventScript_TryDoRematchBattle::
 	waitstate
 	releaseall
 	end
-	
+
 EventScript_NoRematchTrainerBattle::
 	gotopostbattlescript
 

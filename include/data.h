@@ -33,7 +33,7 @@ struct TrainerSprite
 {
     u8 y_offset;
     struct CompressedSpriteSheet frontPic;
-    struct CompressedSpritePalette palette;
+    struct SpritePalette palette;
     const union AnimCmd *const *const animation;
     const struct Coords16 mugshotCoords;
     s16 mugshotRotation;
@@ -43,13 +43,13 @@ struct TrainerBacksprite
 {
     struct MonCoords coordinates;
     struct CompressedSpriteSheet backPic;
-    struct CompressedSpritePalette palette;
+    struct SpritePalette palette;
     const union AnimCmd *const *const animation;
 };
 
-#define MON_COORDS_SIZE(width, height)(DIV_ROUND_UP(width, 8) << 4 | DIV_ROUND_UP(height, 8))
-#define GET_MON_COORDS_WIDTH(size)((size >> 4) * 8)
-#define GET_MON_COORDS_HEIGHT(size)((size & 0xF) * 8)
+#define MON_COORDS_SIZE(width, height) (DIV_ROUND_UP(width, 8) << 4 | DIV_ROUND_UP(height, 8))
+#define GET_MON_COORDS_WIDTH(size) ((size >> 4) * 8)
+#define GET_MON_COORDS_HEIGHT(size) ((size & 0xF) * 8)
 #define TRAINER_PARTY_IVS(hp, atk, def, speed, spatk, spdef) (hp | (atk << 5) | (def << 10) | (speed << 15) | (spatk << 20) | (spdef << 25))
 #define TRAINER_PARTY_EVS(hp, atk, def, speed, spatk, spdef) ((const u8[6]){hp,atk,def,spatk,spdef,speed})
 
@@ -76,13 +76,14 @@ struct TrainerMon
     u8 padding1:1;
     u8 dynamaxLevel:4;
     u8 padding2:4;
+    u32 tags;
 };
 
 #define TRAINER_PARTY(partyArray) partyArray, .partySize = ARRAY_COUNT(partyArray)
 
 struct Trainer
 {
-    /*0x00*/ u32 aiFlags;
+    /*0x00*/ u64 aiFlags;
     /*0x04*/ const struct TrainerMon *party;
     /*0x08*/ u16 items[MAX_TRAINER_ITEMS];
     /*0x10*/ u8 trainerClass;
@@ -94,6 +95,10 @@ struct Trainer
              u8 startingStatus:6;    // this trainer starts a battle with a given status. see include/constants/battle.h for values
     /*0x1F*/ u8 mugshotColor;
     /*0x20*/ u8 partySize;
+    /*0x21*/ u8 poolSize;
+    /*0x22*/ u8 poolRuleIndex;
+    /*0x23*/ u8 poolPickIndex;
+    /*0x24*/ u8 poolPruneIndex;
 };
 
 struct TrainerClass
@@ -116,7 +121,7 @@ struct TypeInfo
     u16 isSpecialCaseType:1;
     u16 isHiddenPowerType:1; // Changing this for any type will change the distribution of all Hidden Power types from vanilla.
     u16 padding:11;
-    const u32 *const paletteTMHM;
+    const u16 *const paletteTMHM;
     //u16 enhanceItem;
     //u16 berry;
     //u16 gem;
@@ -154,7 +159,7 @@ extern const struct SpriteFrameImage gTrainerBackPicTable_Leaf[];
 extern const struct SpriteFrameImage gTrainerBackPicTable_RubySapphireBrendan[];
 extern const struct SpriteFrameImage gTrainerBackPicTable_RubySapphireMay[];
 extern const struct SpriteFrameImage gTrainerBackPicTable_Wally[];
-extern const struct SpriteFrameImage gTrainerBackPicTable_Silas[];
+extern const struct SpriteFrameImage gTrainerBackPicTable_Steven[];
 
 extern const union AffineAnimCmd *const gAffineAnims_BattleSpritePlayerSide[];
 extern const union AffineAnimCmd *const gAffineAnims_BattleSpriteOpponentSide[];
@@ -163,9 +168,10 @@ extern const union AffineAnimCmd *const gAffineAnims_BattleSpriteContest[];
 extern const union AnimCmd sAnim_GeneralFrame0[];
 extern const union AnimCmd sAnim_GeneralFrame3[];
 extern const union AnimCmd *const gAnims_MonPic[];
-extern const union AnimCmd *const sAnims_Trainer[];
+extern const union AnimCmd *const gAnims_Trainer[];
 extern const struct TrainerSprite gTrainerSprites[];
 extern const struct TrainerBacksprite gTrainerBacksprites[];
+extern const u16 gTrainerPicToTrainerBackPic[];
 
 extern const struct Trainer gTrainers[DIFFICULTY_COUNT][TRAINERS_COUNT];
 extern const struct Trainer gBattlePartners[DIFFICULTY_COUNT][PARTNER_COUNT];
@@ -234,6 +240,10 @@ static inline const u8 GetTrainerPicFromId(u16 trainerId)
 {
     u32 sanitizedTrainerId = SanitizeTrainerId(trainerId);
     enum DifficultyLevel difficulty = GetTrainerDifficultyLevel(sanitizedTrainerId);
+    enum DifficultyLevel partnerDifficulty = GetBattlePartnerDifficultyLevel(trainerId);
+
+    if (trainerId > TRAINER_PARTNER(PARTNER_NONE))
+        return gBattlePartners[partnerDifficulty][trainerId - TRAINER_PARTNER(PARTNER_NONE)].trainerPic;
 
     return gTrainers[difficulty][sanitizedTrainerId].trainerPic;
 }
@@ -285,35 +295,12 @@ static inline const struct TrainerMon *GetTrainerPartyFromId(u16 trainerId)
     return gTrainers[difficulty][sanitizedTrainerId].party;
 }
 
-static inline const bool32 GetTrainerAIFlagsFromId(u16 trainerId)
+static inline const u64 GetTrainerAIFlagsFromId(u16 trainerId)
 {
     u32 sanitizedTrainerId = SanitizeTrainerId(trainerId);
     enum DifficultyLevel difficulty = GetTrainerDifficultyLevel(sanitizedTrainerId);
 
     return gTrainers[difficulty][sanitizedTrainerId].aiFlags;
 }
-
-//! outfits
-
-struct Outfit
-{
-    u8 isHidden:1; //! Will not shows up in the menu if locked.
-    u8 hasRunAnims:1;
-    u8 canBike: 1;
-    u32 prices[GENDER_COUNT]; //! heh
-    const u8 *name;
-    const u8 *desc;
-    u16 trainerPics[GENDER_COUNT][2];
-    u16 avatarGfxIds[GENDER_COUNT][PLAYER_AVATAR_STATE_COUNT];
-    u16 animGfxIds[GENDER_COUNT][PLAYER_AVATAR_GFX_COUNT];
-    //! region map & frontier pass
-    const void *iconsRM[GENDER_COUNT]; //! region map
-    const void *iconsFP; //! frontier pass
-};
-
-extern const struct Outfit gOutfits[OUTFIT_COUNT];
-
-#define GFX 0
-#define PAL 1
 
 #endif // GUARD_DATA_H

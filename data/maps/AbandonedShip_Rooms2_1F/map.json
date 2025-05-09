@@ -15,92 +15,92 @@
   "connections": null,
   "object_events": [
     {
-      "elevation": 3,
-      "flag": "0",
       "graphics_id": "OBJ_EVENT_GFX_MAN_4",
+      "x": 7,
+      "y": 13,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "1",
       "script": "AbandonedShip_Rooms2_1F_EventScript_Dan",
-      "trainer_sight_or_berry_tree_id": "1",
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "x": 7,
-      "y": 13
+      "flag": "0"
     },
     {
-      "elevation": 3,
-      "flag": "0",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
+      "x": 6,
+      "y": 13,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "script": "AbandonedShip_Rooms2_1F_EventScript_Kira",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "x": 6,
-      "y": 13
+      "script": "AbandonedShip_Rooms2_1F_EventScript_Kira",
+      "flag": "0"
     },
     {
-      "elevation": 3,
-      "flag": "FLAG_ITEM_ABANDONED_SHIP_ROOMS_2_1F_REVIVE",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "script": "Common_EventScript_FindItem",
-      "trainer_sight_or_berry_tree_id": "ITEM_REVIVE",
-      "trainer_type": "TRAINER_TYPE_NONE",
       "x": 4,
-      "y": 4
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_REVIVE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ABANDONED_SHIP_ROOMS_2_1F_REVIVE"
     },
     {
-      "elevation": 3,
-      "flag": "0",
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "x": 3,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 1,
       "movement_range_y": 1,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "script": "AbandonedShip_Rooms2_1F_EventScript_Garrison",
-      "trainer_sight_or_berry_tree_id": "3",
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "x": 3,
-      "y": 2
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "AbandonedShip_Rooms2_1F_EventScript_Garrison",
+      "flag": "0"
     },
     {
-      "elevation": 3,
-      "flag": "0",
       "graphics_id": "OBJ_EVENT_GFX_TUBER_F",
+      "x": 7,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
       "movement_range_y": 1,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "script": "AbandonedShip_Rooms2_1F_EventScript_Jani",
-      "trainer_sight_or_berry_tree_id": "3",
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "x": 7,
-      "y": 2
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "AbandonedShip_Rooms2_1F_EventScript_Jani",
+      "flag": "0"
     }
   ],
   "warp_events": [
     {
-      "dest_map": "MAP_ABANDONED_SHIP_CORRIDORS_1F",
-      "dest_warp_id": "8",
-      "elevation": 3,
       "x": 4,
-      "y": 16
+      "y": 16,
+      "elevation": 3,
+      "dest_map": "MAP_ABANDONED_SHIP_CORRIDORS_1F",
+      "dest_warp_id": "8"
     },
     {
-      "dest_map": "MAP_ABANDONED_SHIP_CORRIDORS_1F",
-      "dest_warp_id": "8",
-      "elevation": 3,
       "x": 5,
-      "y": 16
+      "y": 16,
+      "elevation": 3,
+      "dest_map": "MAP_ABANDONED_SHIP_CORRIDORS_1F",
+      "dest_warp_id": "8"
     },
     {
-      "dest_map": "MAP_ABANDONED_SHIP_CORRIDORS_1F",
-      "dest_warp_id": "11",
-      "elevation": 3,
       "x": 4,
-      "y": 1
+      "y": 1,
+      "elevation": 3,
+      "dest_map": "MAP_ABANDONED_SHIP_CORRIDORS_1F",
+      "dest_warp_id": "11"
     }
   ],
   "coord_events": [],

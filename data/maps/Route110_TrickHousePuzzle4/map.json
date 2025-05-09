@@ -15,220 +15,220 @@
   "connections": null,
   "object_events": [
     {
-      "elevation": 3,
-      "flag": "0",
       "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "x": 2,
+      "y": 2,
+      "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "script": "Route110_TrickHousePuzzle4_EventScript_Cora",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "x": 2,
-      "y": 2
+      "script": "Route110_TrickHousePuzzle4_EventScript_Cora",
+      "flag": "0"
     },
     {
-      "elevation": 3,
-      "flag": "0",
       "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "x": 14,
+      "y": 7,
+      "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
       "script": "Route110_TrickHousePuzzle4_EventScript_Paula",
-      "trainer_sight_or_berry_tree_id": "2",
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "x": 14,
-      "y": 7
+      "flag": "0"
     },
     {
-      "elevation": 3,
-      "flag": "0",
       "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "x": 2,
+      "y": 14,
+      "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "script": "Route110_TrickHousePuzzle4_EventScript_Yuji",
-      "trainer_sight_or_berry_tree_id": "2",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "x": 2,
-      "y": 14
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "Route110_TrickHousePuzzle4_EventScript_Yuji",
+      "flag": "0"
     },
     {
-      "elevation": 3,
-      "flag": "FLAG_ITEM_TRICK_HOUSE_PUZZLE_4_MECH_MAIL",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "script": "Common_EventScript_FindItem",
-      "trainer_sight_or_berry_tree_id": "ITEM_MECH_MAIL",
-      "trainer_type": "TRAINER_TYPE_NONE",
       "x": 2,
-      "y": 5
-    },
-    {
+      "y": 5,
       "elevation": 3,
-      "flag": "FLAG_TEMP_11",
-      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "script": "EventScript_StrengthBoulder",
-      "trainer_sight_or_berry_tree_id": "0",
       "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_MECH_MAIL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_TRICK_HOUSE_PUZZLE_4_MECH_MAIL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
       "x": 13,
-      "y": 3
-    },
-    {
+      "y": 3,
       "elevation": 3,
-      "flag": "FLAG_TEMP_12",
-      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "script": "EventScript_StrengthBoulder",
-      "trainer_sight_or_berry_tree_id": "0",
       "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_StrengthBoulder",
+      "flag": "FLAG_TEMP_11"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
       "x": 12,
-      "y": 5
-    },
-    {
+      "y": 5,
       "elevation": 3,
-      "flag": "FLAG_TEMP_13",
-      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "script": "EventScript_StrengthBoulder",
-      "trainer_sight_or_berry_tree_id": "0",
       "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_StrengthBoulder",
+      "flag": "FLAG_TEMP_12"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
       "x": 5,
-      "y": 16
-    },
-    {
+      "y": 16,
       "elevation": 3,
-      "flag": "FLAG_TEMP_14",
-      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "script": "EventScript_StrengthBoulder",
-      "trainer_sight_or_berry_tree_id": "0",
       "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_StrengthBoulder",
+      "flag": "FLAG_TEMP_13"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
       "x": 4,
-      "y": 6
-    },
-    {
+      "y": 6,
       "elevation": 3,
-      "flag": "FLAG_TEMP_15",
-      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "script": "EventScript_StrengthBoulder",
-      "trainer_sight_or_berry_tree_id": "0",
       "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_StrengthBoulder",
+      "flag": "FLAG_TEMP_14"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
       "x": 12,
-      "y": 2
-    },
-    {
+      "y": 2,
       "elevation": 3,
-      "flag": "FLAG_TEMP_16",
-      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "script": "EventScript_StrengthBoulder",
-      "trainer_sight_or_berry_tree_id": "0",
       "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_StrengthBoulder",
+      "flag": "FLAG_TEMP_15"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
       "x": 5,
-      "y": 7
-    },
-    {
+      "y": 7,
       "elevation": 3,
-      "flag": "FLAG_TEMP_17",
-      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "script": "EventScript_StrengthBoulder",
-      "trainer_sight_or_berry_tree_id": "0",
       "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_StrengthBoulder",
+      "flag": "FLAG_TEMP_16"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
       "x": 9,
-      "y": 3
-    },
-    {
+      "y": 3,
       "elevation": 3,
-      "flag": "FLAG_TEMP_18",
-      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "script": "EventScript_StrengthBoulder",
-      "trainer_sight_or_berry_tree_id": "0",
       "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_StrengthBoulder",
+      "flag": "FLAG_TEMP_17"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
       "x": 10,
-      "y": 12
-    },
-    {
+      "y": 12,
       "elevation": 3,
-      "flag": "FLAG_TEMP_19",
-      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "script": "EventScript_StrengthBoulder",
-      "trainer_sight_or_berry_tree_id": "0",
       "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_StrengthBoulder",
+      "flag": "FLAG_TEMP_18"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
       "x": 14,
-      "y": 2
-    },
-    {
+      "y": 2,
       "elevation": 3,
-      "flag": "FLAG_TEMP_1A",
-      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "script": "EventScript_StrengthBoulder",
-      "trainer_sight_or_berry_tree_id": "0",
       "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_StrengthBoulder",
+      "flag": "FLAG_TEMP_19"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
       "x": 10,
-      "y": 15
+      "y": 15,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_StrengthBoulder",
+      "flag": "FLAG_TEMP_1A"
     }
   ],
   "warp_events": [
     {
-      "dest_map": "MAP_ROUTE110_TRICK_HOUSE_ENTRANCE",
-      "dest_warp_id": "2",
-      "elevation": 3,
       "x": 0,
-      "y": 21
-    },
-    {
+      "y": 21,
+      "elevation": 3,
       "dest_map": "MAP_ROUTE110_TRICK_HOUSE_ENTRANCE",
-      "dest_warp_id": "2",
-      "elevation": 3,
-      "x": 1,
-      "y": 21
+      "dest_warp_id": "2"
     },
     {
-      "dest_map": "MAP_ROUTE110_TRICK_HOUSE_END",
-      "dest_warp_id": "0",
+      "x": 1,
+      "y": 21,
       "elevation": 3,
+      "dest_map": "MAP_ROUTE110_TRICK_HOUSE_ENTRANCE",
+      "dest_warp_id": "2"
+    },
+    {
       "x": 13,
-      "y": 1
+      "y": 1,
+      "elevation": 3,
+      "dest_map": "MAP_ROUTE110_TRICK_HOUSE_END",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],
   "bg_events": [
     {
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route110_TrickHousePuzzle4_EventScript_Scroll",
       "type": "sign",
       "x": 14,
-      "y": 13
+      "y": 13,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route110_TrickHousePuzzle4_EventScript_Scroll"
     }
   ]
 }

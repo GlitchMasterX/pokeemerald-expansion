@@ -3,6 +3,7 @@
 #include "battle.h"
 #include "data.h"
 #include "graphics.h"
+#include "trainer_pools.h"
 #include "battle_transition.h"
 #include "constants/abilities.h"
 #include "constants/items.h"
@@ -56,12 +57,7 @@ const union AnimCmd sAnim_GeneralFrame0[] =
 
 const union AnimCmd sAnim_GeneralFrame3[] =
 {
-    ANIMCMD_FRAME(3,0),
-    ANIMCMD_END,
-};
-const union AnimCmd sAnim_GeneralFrame4[] =
-{
-    ANIMCMD_FRAME(4,3),
+    ANIMCMD_FRAME(3, 0),
     ANIMCMD_END,
 };
 
@@ -225,7 +221,7 @@ const union AnimCmd *const gAnims_MonPic[MAX_MON_PIC_FRAMES] =
     sAnim_MonPic_1,
 };
 
-const union AnimCmd *const sAnims_Trainer[] ={
+const union AnimCmd *const gAnims_Trainer[] ={
     sAnim_GeneralFrame0,
     sAnim_GeneralFrame0,
 };
@@ -238,5 +234,3 @@ const struct Trainer gTrainers[DIFFICULTY_COUNT][TRAINERS_COUNT] =
 };
 
 #include "data/text/follower_messages.h"
-#include "data/outfit_tables.h"
-

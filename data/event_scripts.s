@@ -30,7 +30,7 @@
 #include "constants/field_tasks.h"
 #include "constants/field_weather.h"
 #include "constants/flags.h"
-#include "constants/follow_me.h"
+#include "constants/follower_npc.h"
 #include "constants/frontier_util.h"
 #include "constants/game_stat.h"
 #include "constants/item.h"
@@ -45,7 +45,6 @@
 #include "constants/moves.h"
 #include "constants/party_menu.h"
 #include "constants/pokedex.h"
-#include "constants/rgb.h"
 #include "constants/pokemon.h"
 #include "constants/roulette.h"
 #include "constants/script_menu.h"
@@ -60,9 +59,6 @@
 #include "constants/union_room.h"
 #include "constants/vars.h"
 #include "constants/weather.h"
-#include "constants/mugshots.h"
-#include "constants/outfits.h"
-#include "constants/field_mugshots.h"
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"
 	.include "constants/constants.inc"
@@ -94,7 +90,7 @@ gSpecialVars::
 	.4byte gSpecialVar_MonBoxId
 	.4byte gSpecialVar_MonBoxPos
 	.4byte gSpecialVar_Unused_0x8014
-	.4byte gTrainerBattleOpponent_A
+	.4byte gTrainerBattleParameter + 2 // gTrainerBattleParameter.params.opponentA
 
 	.include "data/specials.inc"
 
@@ -112,7 +108,7 @@ gStdScripts::
 	.4byte Std_MsgboxPokenav           @ MSGBOX_POKENAV
 gStdScripts_End::
 
-	.include "data/maps/AstralisAcademy/scripts.inc"
+	.include "data/maps/PetalburgCity/scripts.inc"
 	.include "data/maps/SlateportCity/scripts.inc"
 	.include "data/maps/MauvilleCity/scripts.inc"
 	.include "data/maps/RustboroCity/scripts.inc"
@@ -126,8 +122,8 @@ gStdScripts_End::
 	.include "data/maps/DewfordTown/scripts.inc"
 	.include "data/maps/LavaridgeTown/scripts.inc"
 	.include "data/maps/FallarborTown/scripts.inc"
-	
-	
+	.include "data/maps/VerdanturfTown/scripts.inc"
+	.include "data/maps/PacifidlogTown/scripts.inc"
 	.include "data/maps/Route101/scripts.inc"
 	.include "data/maps/Route102/scripts.inc"
 	.include "data/maps/Route103/scripts.inc"
@@ -216,13 +212,13 @@ gStdScripts_End::
 	.include "data/maps/PacifidlogTown_House3/scripts.inc"
 	.include "data/maps/PacifidlogTown_House4/scripts.inc"
 	.include "data/maps/PacifidlogTown_House5/scripts.inc"
-	.include "data/maps/AstralisAcademy_WallysHouse/scripts.inc"
-	.include "data/maps/AcademyDorm/scripts.inc"
-	.include "data/maps/AstralisAcademy_House1/scripts.inc"
-	.include "data/maps/AstralisAcademy_House2/scripts.inc"
-	.include "data/maps/AstralisAcademy_PokemonCenter_1F/scripts.inc"
-	.include "data/maps/AstralisAcademy_PokemonCenter_2F/scripts.inc"
-	.include "data/maps/AstralisAcademy_Mart/scripts.inc"
+	.include "data/maps/PetalburgCity_WallysHouse/scripts.inc"
+	.include "data/maps/PetalburgCity_Gym/scripts.inc"
+	.include "data/maps/PetalburgCity_House1/scripts.inc"
+	.include "data/maps/PetalburgCity_House2/scripts.inc"
+	.include "data/maps/PetalburgCity_PokemonCenter_1F/scripts.inc"
+	.include "data/maps/PetalburgCity_PokemonCenter_2F/scripts.inc"
+	.include "data/maps/PetalburgCity_Mart/scripts.inc"
 	.include "data/maps/SlateportCity_SternsShipyard_1F/scripts.inc"
 	.include "data/maps/SlateportCity_SternsShipyard_2F/scripts.inc"
 	.include "data/maps/SlateportCity_BattleTentLobby/scripts.inc"
@@ -573,8 +569,8 @@ gStdScripts_End::
 	.include "data/maps/Route110_TrickHousePuzzle6/scripts.inc"
 	.include "data/maps/Route110_TrickHousePuzzle7/scripts.inc"
 	.include "data/maps/Route110_TrickHousePuzzle8/scripts.inc"
-	.include "data/maps/Route110_SeasideCyclingRoadNorthEntrance/scripts.inc"
 	.include "data/maps/Route110_SeasideCyclingRoadSouthEntrance/scripts.inc"
+	.include "data/maps/Route110_SeasideCyclingRoadNorthEntrance/scripts.inc"
 	.include "data/maps/Route113_GlassWorkshop/scripts.inc"
 	.include "data/maps/Route123_BerryMastersHouse/scripts.inc"
 	.include "data/maps/Route119_WeatherInstitute_1F/scripts.inc"
@@ -760,17 +756,17 @@ Common_EventScript_SetAbnormalWeather::
 	return
 
 Common_EventScript_PlayGymBadgeFanfare::
-	playfanfare MUS_DP_OBTAIN_BADGE
+	playfanfare MUS_OBTAIN_BADGE
 	waitfanfare
 	return
 
 Common_EventScript_OutOfCenterPartyHeal::
-	fadescreen FADE_TO_BLACK
-	playfanfare MUS_DP_HEAL
+	fadescreenswapbuffers FADE_TO_BLACK
+	playfanfare MUS_HEAL
 	waitfanfare
 	special HealPlayerParty
 	callnative UpdateFollowingPokemon
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	return
 
 EventScript_RegionMap::
@@ -866,7 +862,7 @@ Common_EventScript_NameReceivedPartyMon::
 
 Common_EventScript_PlayerHandedOverTheItem::
 	bufferitemname STR_VAR_1, VAR_0x8004
-	playfanfare MUS_DP_OBTAIN_TMHM
+	playfanfare MUS_OBTAIN_TMHM
 	message gText_PlayerHandedOverTheItem
 	waitmessage
 	waitfanfare
@@ -881,22 +877,6 @@ Common_EventScript_PlayerHandedOverTheItem::
 	.include "data/text/pkmn_center_nurse.inc"
 	.include "data/text/mart_clerk.inc"
 	.include "data/text/obtain_item.inc"
-
-Script_SetGrayscaleTint::
-	setptr GLOBAL_FIELD_TINT_GRAYSCALE, gGlobalFieldTintMode
-	callnative InitMapView
-	return
-
-Script_SetSepiaTint::
-	setptr GLOBAL_FIELD_TINT_SEPIA, gGlobalFieldTintMode
-	callnative InitMapView
-	return
-
-Script_RemoveTint::
-	setptr GLOBAL_FIELD_TINT_NONE, gGlobalFieldTintMode
-	callnative RemoveTintFromObjectEvents
-	callnative InitMapView
-	return
 
 @ The below and surf.inc could be split into some text/notices.inc
 gText_PokemartSign::
@@ -1174,38 +1154,4 @@ EventScript_VsSeekerChargingDone::
 	.include "data/scripts/follower.inc"
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
-	.include "data/maps/LuxuraIsland/scripts.inc"
-	.include "data/maps/LuxuraIndoor/scripts.inc"
-	.include "data/maps/Luxuraliving/scripts.inc"
-	.include "data/maps/Luxuradining/scripts.inc"
-	.include "data/maps/luxurakitchen/scripts.inc"
-	.include "data/maps/Luxuralib/scripts.inc"
-	.include "data/maps/Luxurawork/scripts.inc"
-	.include "data/maps/Luxuraupstair/scripts.inc"
-	.include "data/maps/NewMap1/scripts.inc"
-	.include "data/maps/Parentroom/scripts.inc"
-	.include "data/maps/Playerroom/scripts.inc"
-	.include "data/maps/guest/scripts.inc"
-	.include "data/maps/LuxuraIsland1/scripts.inc"
-	.include "data/maps/Luxurawoods/scripts.inc"
-	.include "data/maps/Hospital/scripts.inc"
-	.include "data/maps/Servantquarter/scripts.inc"
-	.include "data/maps/Sparkbase/scripts.inc"
-	.include "data/maps/Newmap11/scripts.inc"
-	.include "data/maps/newhouse/scripts.inc"
 	.include "data/scripts/dexnav.inc"
-
-
-	.include "data/maps/Academy_Lib/scripts.inc"
-
-	.include "data/maps/NewMap2/scripts.inc"
-
-	.include "data/maps/DormIndoor/scripts.inc"
-
-	.include "data/maps/Dormindoor1/scripts.inc"
-
-	.include "data/maps/headoffice/scripts.inc"
-
-	.include "data/maps/Harborac/scripts.inc"
-
-	.include "data/maps/LunarGrove/scripts.inc"

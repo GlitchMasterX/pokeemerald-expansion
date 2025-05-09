@@ -41,6 +41,7 @@ enum MapPopUp_Themes_BW
 
 // static functions
 static void Task_MapNamePopUpWindow(u8 taskId);
+static void UpdateSecondaryPopUpWindow(u8 secondaryPopUpWindowId);
 static void ShowMapNamePopUpWindow(void);
 static void LoadMapNamePopUpWindowBg(void);
 
@@ -82,14 +83,14 @@ static const u16 sMapPopUp_Palette_Underwater[16] = INCBIN_U16("graphics/map_pop
 
 static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping[] =
 {
-    [MAPSEC_LUXURA_ISLAND] = MAPPOPUP_THEME_WOOD,
-    [MAPSEC_LUXURA_MANSION] = MAPPOPUP_THEME_WOOD,
-    [MAPSEC_SPARK] = MAPPOPUP_THEME_WOOD,
-    [MAPSEC_LUXURA_VEILWOOD] = MAPPOPUP_THEME_WOOD,
-    [MAPSEC_MT_CINDER] = MAPPOPUP_THEME_WOOD,
+    [MAPSEC_LITTLEROOT_TOWN] = MAPPOPUP_THEME_WOOD,
+    [MAPSEC_OLDALE_TOWN] = MAPPOPUP_THEME_WOOD,
+    [MAPSEC_DEWFORD_TOWN] = MAPPOPUP_THEME_WOOD,
+    [MAPSEC_LAVARIDGE_TOWN] = MAPPOPUP_THEME_WOOD,
+    [MAPSEC_FALLARBOR_TOWN] = MAPPOPUP_THEME_WOOD,
     [MAPSEC_VERDANTURF_TOWN] = MAPPOPUP_THEME_WOOD,
     [MAPSEC_PACIFIDLOG_TOWN] = MAPPOPUP_THEME_WOOD,
-    [MAPSEC_ASTRALIS_ACADEMY] = MAPPOPUP_THEME_BRICK,
+    [MAPSEC_PETALBURG_CITY] = MAPPOPUP_THEME_BRICK,
     [MAPSEC_SLATEPORT_CITY] = MAPPOPUP_THEME_MARBLE,
     [MAPSEC_MAUVILLE_CITY] = MAPPOPUP_THEME_MARBLE,
     [MAPSEC_RUSTBORO_CITY] = MAPPOPUP_THEME_MARBLE,
@@ -98,7 +99,7 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping[] =
     [MAPSEC_MOSSDEEP_CITY] = MAPPOPUP_THEME_BRICK,
     [MAPSEC_SOOTOPOLIS_CITY] = MAPPOPUP_THEME_MARBLE,
     [MAPSEC_EVER_GRANDE_CITY] = MAPPOPUP_THEME_BRICK,
-    [MAPSEC_LUNAR_GROVE] = MAPPOPUP_THEME_WOOD,
+    [MAPSEC_ROUTE_101] = MAPPOPUP_THEME_WOOD,
     [MAPSEC_ROUTE_102] = MAPPOPUP_THEME_WOOD,
     [MAPSEC_ROUTE_103] = MAPPOPUP_THEME_WOOD,
     [MAPSEC_ROUTE_104] = MAPPOPUP_THEME_WOOD,
@@ -185,7 +186,7 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping[] =
     [MAPSEC_DESERT_UNDERPASS - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_STONE,
     [MAPSEC_ALTERING_CAVE - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_STONE,
     [MAPSEC_NAVEL_ROCK - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_STONE,
-    [MAPSEC_SERVANTQUARTER - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_MARBLE
+    [MAPSEC_TRAINER_HILL - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_MARBLE
 };
 
 #if OW_POPUP_GENERATION == GEN_5
@@ -203,14 +204,14 @@ static const u16 sMapPopUpTilesPalette_BW_White[] = {0};
 
 static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping_BW[] =
 {
-    [MAPSEC_LUXURA_ISLAND] = MAPPOPUP_THEME_BW_DEFAULT,
-    [MAPSEC_LUXURA_MANSION] = MAPPOPUP_THEME_BW_DEFAULT,
-    [MAPSEC_SPARK] = MAPPOPUP_THEME_BW_DEFAULT,
-    [MAPSEC_LUXURA_VEILWOOD] = MAPPOPUP_THEME_BW_DEFAULT,
-    [MAPSEC_MT_CINDER] = MAPPOPUP_THEME_BW_DEFAULT,
+    [MAPSEC_LITTLEROOT_TOWN] = MAPPOPUP_THEME_BW_DEFAULT,
+    [MAPSEC_OLDALE_TOWN] = MAPPOPUP_THEME_BW_DEFAULT,
+    [MAPSEC_DEWFORD_TOWN] = MAPPOPUP_THEME_BW_DEFAULT,
+    [MAPSEC_LAVARIDGE_TOWN] = MAPPOPUP_THEME_BW_DEFAULT,
+    [MAPSEC_FALLARBOR_TOWN] = MAPPOPUP_THEME_BW_DEFAULT,
     [MAPSEC_VERDANTURF_TOWN] = MAPPOPUP_THEME_BW_DEFAULT,
     [MAPSEC_PACIFIDLOG_TOWN] = MAPPOPUP_THEME_BW_DEFAULT,
-    [MAPSEC_ASTRALIS_ACADEMY] = MAPPOPUP_THEME_BW_DEFAULT,
+    [MAPSEC_PETALBURG_CITY] = MAPPOPUP_THEME_BW_DEFAULT,
     [MAPSEC_SLATEPORT_CITY] = MAPPOPUP_THEME_BW_DEFAULT,
     [MAPSEC_MAUVILLE_CITY] = MAPPOPUP_THEME_BW_DEFAULT,
     [MAPSEC_RUSTBORO_CITY] = MAPPOPUP_THEME_BW_DEFAULT,
@@ -219,7 +220,7 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping_BW[] =
     [MAPSEC_MOSSDEEP_CITY] = MAPPOPUP_THEME_BW_DEFAULT,
     [MAPSEC_SOOTOPOLIS_CITY] = MAPPOPUP_THEME_BW_DEFAULT,
     [MAPSEC_EVER_GRANDE_CITY] = MAPPOPUP_THEME_BW_DEFAULT,
-    [MAPSEC_LUNAR_GROVE] = MAPPOPUP_THEME_BW_DEFAULT,
+    [MAPSEC_ROUTE_101] = MAPPOPUP_THEME_BW_DEFAULT,
     [MAPSEC_ROUTE_102] = MAPPOPUP_THEME_BW_DEFAULT,
     [MAPSEC_ROUTE_103] = MAPPOPUP_THEME_BW_DEFAULT,
     [MAPSEC_ROUTE_104] = MAPPOPUP_THEME_BW_DEFAULT,
@@ -306,7 +307,7 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping_BW[] =
     [MAPSEC_DESERT_UNDERPASS - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT,
     [MAPSEC_ALTERING_CAVE - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT,
     [MAPSEC_NAVEL_ROCK - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT,
-    [MAPSEC_SERVANTQUARTER - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT,
+    [MAPSEC_TRAINER_HILL - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT,
 };
 
 static const u8 sText_PyramidFloor1[] = _("PYRAMID FLOOR 1");
@@ -423,6 +424,7 @@ static void Task_MapNamePopUpWindow(u8 taskId)
         break;
     case STATE_WAIT:
         // Wait while the window is fully onscreen.
+        UpdateSecondaryPopUpWindow(GetSecondaryPopUpWindowId());
         if (++task->tOnscreenTimer > 120)
         {
             task->tOnscreenTimer = 0;
@@ -500,6 +502,20 @@ void HideMapNamePopUpWindow(void)
     }
 }
 
+static void UpdateSecondaryPopUpWindow(u8 secondaryPopUpWindowId)
+{
+    u8 mapDisplayHeader[24];
+    u8 *withoutPrefixPtr = &(mapDisplayHeader[0]);
+
+    if (OW_POPUP_BW_TIME_MODE != OW_POPUP_BW_TIME_NONE)
+    {
+        RtcCalcLocalTime();
+        FormatDecimalTimeWithoutSeconds(withoutPrefixPtr, gLocalTime.hours, gLocalTime.minutes, OW_POPUP_BW_TIME_MODE == OW_POPUP_BW_TIME_24_HR);
+        AddTextPrinterParameterized(secondaryPopUpWindowId, FONT_SMALL, mapDisplayHeader, GetStringRightAlignXOffset(FONT_SMALL, mapDisplayHeader, DISPLAY_WIDTH) - 5, 8, TEXT_SKIP_DRAW, NULL);
+    }
+    CopyWindowToVram(secondaryPopUpWindowId, COPYWIN_FULL);
+}
+
 static void ShowMapNamePopUpWindow(void)
 {
     u8 mapDisplayHeader[24];
@@ -550,16 +566,8 @@ static void ShowMapNamePopUpWindow(void)
     if (OW_POPUP_GENERATION == GEN_5)
     {
         AddTextPrinterParameterized(mapNamePopUpWindowId, FONT_SHORT, mapDisplayHeader, 8, 2, TEXT_SKIP_DRAW, NULL);
-
-        if (OW_POPUP_BW_TIME_MODE != OW_POPUP_BW_TIME_NONE)
-        {
-            RtcCalcLocalTime();
-            FormatDecimalTimeWithoutSeconds(withoutPrefixPtr, gLocalTime.hours, gLocalTime.minutes, OW_POPUP_BW_TIME_MODE == OW_POPUP_BW_TIME_24_HR);
-            AddTextPrinterParameterized(secondaryPopUpWindowId, FONT_SMALL, mapDisplayHeader, GetStringRightAlignXOffset(FONT_SMALL, mapDisplayHeader, DISPLAY_WIDTH) - 5, 8, TEXT_SKIP_DRAW, NULL);
-        }
-
         CopyWindowToVram(mapNamePopUpWindowId, COPYWIN_FULL);
-        CopyWindowToVram(secondaryPopUpWindowId, COPYWIN_FULL);
+        UpdateSecondaryPopUpWindow(secondaryPopUpWindowId);
     }
     else
     {
@@ -651,9 +659,4 @@ static void LoadMapNamePopUpWindowBg(void)
             LoadPalette(sMapPopUp_PaletteTable[popUpThemeId], BG_PLTT_ID(14), sizeof(sMapPopUp_PaletteTable[0]));
         BlitBitmapToWindow(popupWindowId, sMapPopUp_Table[popUpThemeId], 0, 0, 80, 24);
     }
-}
-
-void Script_MapPopUp(void)
-{
-    ShowMapNamePopup();
 }

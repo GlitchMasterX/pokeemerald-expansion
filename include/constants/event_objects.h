@@ -27,7 +27,7 @@
 #define OBJ_EVENT_GFX_MAN_2                       23
 #define OBJ_EVENT_GFX_WOMAN_3                     24
 #define OBJ_EVENT_GFX_POKEFAN_M                   25
-#define OBJ_EVENT_GFX_WOMAN_4                        26
+#define OBJ_EVENT_GFX_WOMAN_4                     26
 #define OBJ_EVENT_GFX_COOK                        27
 #define OBJ_EVENT_GFX_LINK_RECEPTIONIST           28
 #define OBJ_EVENT_GFX_OLD_MAN                     29
@@ -35,7 +35,7 @@
 #define OBJ_EVENT_GFX_CAMPER                      31
 #define OBJ_EVENT_GFX_PICNICKER                   32
 #define OBJ_EVENT_GFX_MAN_3                       33
-#define OBJ_EVENT_GFX_WOMAN_5                        34
+#define OBJ_EVENT_GFX_WOMAN_5                     34
 #define OBJ_EVENT_GFX_YOUNGSTER                   35
 #define OBJ_EVENT_GFX_BUG_CATCHER                 36
 #define OBJ_EVENT_GFX_PSYCHIC_M                   37
@@ -65,9 +65,9 @@
 #define OBJ_EVENT_GFX_BERRY_TREE_EARLY_STAGES     61
 #define OBJ_EVENT_GFX_BERRY_TREE_LATE_STAGES      62
 #define OBJ_EVENT_GFX_BRENDAN_ACRO_BIKE           63
-#define OBJ_EVENT_GFX_PROF_ELIAS                  64
+#define OBJ_EVENT_GFX_PROF_BIRCH                  64
 #define OBJ_EVENT_GFX_MAN_4                       65
-#define OBJ_EVENT_GFX_NORMAL_M                       66
+#define OBJ_EVENT_GFX_MAN_5                       66
 #define OBJ_EVENT_GFX_REPORTER_M                  67
 #define OBJ_EVENT_GFX_REPORTER_F                  68
 #define OBJ_EVENT_GFX_BARD                        69
@@ -76,7 +76,7 @@
 #define OBJ_EVENT_GFX_GRETA                       72
 #define OBJ_EVENT_GFX_SPENSER                     73
 #define OBJ_EVENT_GFX_NOLAND                      74
-#define OBJ_EVENT_GFX_SELENE                        75
+#define OBJ_EVENT_GFX_LUCY                        75
 #define OBJ_EVENT_GFX_UNUSED_NATU_DOLL            76
 #define OBJ_EVENT_GFX_UNUSED_MAGNEMITE_DOLL       77
 #define OBJ_EVENT_GFX_UNUSED_SQUIRTLE_DOLL        78
@@ -117,7 +117,7 @@
 #define OBJ_EVENT_GFX_MOVING_BOX                 113
 #define OBJ_EVENT_GFX_CABLE_CAR                  114
 #define OBJ_EVENT_GFX_SCIENTIST_2                115
-#define OBJ_EVENT_GFX_DEVON_EMPLOYEE                       116
+#define OBJ_EVENT_GFX_DEVON_EMPLOYEE             116
 #define OBJ_EVENT_GFX_AQUA_MEMBER_M              117
 #define OBJ_EVENT_GFX_AQUA_MEMBER_F              118
 #define OBJ_EVENT_GFX_MAGMA_MEMBER_M             119
@@ -137,7 +137,7 @@
 #define OBJ_EVENT_GFX_WALLACE                    133
 #define OBJ_EVENT_GFX_STEVEN                     134
 #define OBJ_EVENT_GFX_WALLY                      135
-#define OBJ_EVENT_GFX_NORMAL_F               136
+#define OBJ_EVENT_GFX_LITTLE_BOY_3               136
 #define OBJ_EVENT_GFX_BRENDAN_FISHING            137
 #define OBJ_EVENT_GFX_MAY_FISHING                138
 #define OBJ_EVENT_GFX_HOT_SPRINGS_OLD_WOMAN      139
@@ -191,7 +191,7 @@
 #define OBJ_EVENT_GFX_LATIAS                     187
 #define OBJ_EVENT_GFX_LATIOS                     188
 #define OBJ_EVENT_GFX_GAMEBOY_KID                189
-#define OBJ_EVENT_GFX_CONTEST_JUDGE                    190
+#define OBJ_EVENT_GFX_CONTEST_JUDGE              190
 #define OBJ_EVENT_GFX_BRENDAN_WATERING           191
 #define OBJ_EVENT_GFX_MAY_WATERING               192
 #define OBJ_EVENT_GFX_BRENDAN_DECORATING         193
@@ -235,7 +235,7 @@
 #define OBJ_EVENT_GFX_LEAF                       231
 #define OBJ_EVENT_GFX_DEOXYS                     232
 #define OBJ_EVENT_GFX_DEOXYS_TRIANGLE            233
-#define OBJ_EVENT_GFX_SILAS                      234
+#define OBJ_EVENT_GFX_BRANDON                    234
 #define OBJ_EVENT_GFX_LINK_RS_BRENDAN            235
 #define OBJ_EVENT_GFX_LINK_RS_MAY                236
 #define OBJ_EVENT_GFX_LUGIA                      237
@@ -301,10 +301,12 @@
 #define OBJ_EVENT_GFX_KAEL                       297
 #define OBJ_EVENT_GFX_ORSON                       298
 #define OBJ_EVENT_GFX_EVELYN                       299
+#define OBJ_EVENT_GFX_LIGHT_SPRITE               300
+
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        300
+#define NUM_OBJ_EVENT_GFX                        301
 
 
 // These are dynamic object gfx ids.
@@ -328,13 +330,14 @@
 #define OBJ_EVENT_GFX_VAR_E  (OBJ_EVENT_GFX_VARS + 0xE)
 #define OBJ_EVENT_GFX_VAR_F  (OBJ_EVENT_GFX_VARS + 0xF)
 
+// Don't use (1u << 15) to avoid conflict with BLEND_IMMUNE_FLAG.
 #define OBJ_EVENT_MON               (1u << 14)
 #define OBJ_EVENT_MON_SHINY         (1u << 13)
 #define OBJ_EVENT_MON_FEMALE        (1u << 12)
 #define OBJ_EVENT_MON_SPECIES_MASK  (~(7u << 12))
 
 // Used to call a specific species' follower graphics. Useful for static encounters.
-#define OBJ_EVENT_GFX_SPECIES(name)                 (SPECIES_##name | OBJ_EVENT_MON)
+#define OBJ_EVENT_GFX_SPECIES(name)                 (SPECIES_##name + OBJ_EVENT_MON)
 #define OBJ_EVENT_GFX_SPECIES_SHINY(name)           (SPECIES_##name + OBJ_EVENT_MON + OBJ_EVENT_MON_SHINY)
 #define OBJ_EVENT_GFX_SPECIES_FEMALE(name)          (SPECIES_##name + OBJ_EVENT_MON + OBJ_EVENT_MON_FEMALE)
 #define OBJ_EVENT_GFX_SPECIES_SHINY_FEMALE(name)    (SPECIES_##name + OBJ_EVENT_MON + OBJ_EVENT_MON_SHINY + OBJ_EVENT_MON_FEMALE)
@@ -363,16 +366,23 @@
 #define TRACKS_SPOT       4
 #define TRACKS_BUG        5
 
+#define LIGHT_TYPE_BALL             0
+#define LIGHT_TYPE_PKMN_CENTER_SIGN 1
+#define LIGHT_TYPE_POKE_MART_SIGN   2
+
 #define FIRST_DECORATION_SPRITE_GFX OBJ_EVENT_GFX_PICHU_DOLL
 
 #define OBJ_KIND_NORMAL 0
 #define OBJ_KIND_CLONE  255 // Exclusive to FRLG
 
 // Special object event local ids
+// Used for link player OWs in CreateLinkPlayerSprite
+#define OBJ_EVENT_ID_DYNAMIC_BASE 0xF0
+
 #define OBJ_EVENT_ID_PLAYER 0xFF
 #define OBJ_EVENT_ID_CAMERA 0x7F
 #define OBJ_EVENT_ID_FOLLOWER 0xFE
-#define OBJ_EVENT_ID_FOLLOW_ME 0xFD
+#define OBJ_EVENT_ID_NPC_FOLLOWER 0xFD
 
 // Object event local ids referenced in C files
 #define LOCALID_ROUTE111_PLAYER_FALLING 45
@@ -516,14 +526,18 @@
 #define OBJ_EVENT_PAL_TAG_SPARK                   0x1190
 #define OBJ_EVENT_PAL_TAG_PORTAL                  0x1191
 #define OBJ_EVENT_PAL_TAG_FIRE                    0x1192
-#define OBJ_EVENT_PAL_TAG_ALISTAIR                    0x1193
-#define OBJ_EVENT_PAL_TAG_XYLAR                    0x1194
-#define OBJ_EVENT_PAL_TAG_FIONA                    0x1195
+#define OBJ_EVENT_PAL_TAG_ALISTAIR                0x1193
+#define OBJ_EVENT_PAL_TAG_XYLAR                   0x1194
+#define OBJ_EVENT_PAL_TAG_FIONA                   0x1195
 #define OBJ_EVENT_PAL_TAG_VOSS                    0x1196
+
 #endif //OW_FOLLOWERS_POKEBALLS
 // Used as a placeholder follower graphic
 #define OBJ_EVENT_PAL_TAG_SUBSTITUTE              0x7611
-#define OBJ_EVENT_PAL_TAG_EMOTES                  0x8002
+#define OBJ_EVENT_PAL_TAG_LIGHT                   0x8001
+#define OBJ_EVENT_PAL_TAG_LIGHT_2                 0x8002
+#define OBJ_EVENT_PAL_TAG_EMOTES                  0x8003
+#define OBJ_EVENT_PAL_TAG_NEON_LIGHT              0x8004
 // Not a real OW palette tag; used for the white flash applied to followers
 #define OBJ_EVENT_PAL_TAG_WHITE                   (OBJ_EVENT_PAL_TAG_NONE - 1)
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF

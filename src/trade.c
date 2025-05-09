@@ -3,7 +3,6 @@
 #include "battle_anim.h"
 #include "battle_interface.h"
 #include "bg.h"
-#include "bw_summary_screen.h"
 #include "cable_club.h"
 #include "data.h"
 #include "daycare.h"
@@ -1549,19 +1548,9 @@ static void CB_ShowTradeMonSummaryScreen(void)
     if (!gPaletteFade.active)
     {
         if (sTradeMenu->cursorPosition < PARTY_SIZE)
-        {
-            if (BW_SUMMARY_SCREEN)
-                ShowPokemonSummaryScreen_BW(SUMMARY_MODE_LOCK_MOVES, gPlayerParty, sTradeMenu->cursorPosition, sTradeMenu->partyCounts[TRADE_PLAYER] - 1, CB2_ReturnToTradeMenu);
-            else
-                ShowPokemonSummaryScreen(SUMMARY_MODE_LOCK_MOVES, gPlayerParty, sTradeMenu->cursorPosition, sTradeMenu->partyCounts[TRADE_PLAYER] - 1, CB2_ReturnToTradeMenu);
-        }
+            ShowPokemonSummaryScreen(SUMMARY_MODE_LOCK_MOVES, gPlayerParty, sTradeMenu->cursorPosition, sTradeMenu->partyCounts[TRADE_PLAYER] - 1, CB2_ReturnToTradeMenu);
         else
-        {
-            if (BW_SUMMARY_SCREEN)
-                ShowPokemonSummaryScreen_BW(SUMMARY_MODE_LOCK_MOVES, gEnemyParty, sTradeMenu->cursorPosition - PARTY_SIZE, sTradeMenu->partyCounts[TRADE_PARTNER] - 1, CB2_ReturnToTradeMenu);
-            else
-                ShowPokemonSummaryScreen(SUMMARY_MODE_LOCK_MOVES, gEnemyParty, sTradeMenu->cursorPosition - PARTY_SIZE, sTradeMenu->partyCounts[TRADE_PARTNER] - 1, CB2_ReturnToTradeMenu);
-        }
+            ShowPokemonSummaryScreen(SUMMARY_MODE_LOCK_MOVES, gEnemyParty, sTradeMenu->cursorPosition - PARTY_SIZE, sTradeMenu->partyCounts[TRADE_PARTNER] - 1, CB2_ReturnToTradeMenu);
         FreeAllWindowBuffers();
     }
 }
@@ -2801,7 +2790,7 @@ static void LoadTradeMonPic(u8 whichParty, u8 state)
 
         HandleLoadSpecialPokePic(TRUE, gMonSpritesGfxPtr->spritesGfx[whichParty * 2 + B_POSITION_OPPONENT_LEFT], species, personality);
 
-        LoadCompressedSpritePaletteWithTag(GetMonFrontSpritePal(mon), species);
+        LoadSpritePaletteWithTag(GetMonFrontSpritePal(mon), species);
         sTradeAnim->monSpecies[whichParty] = species;
         sTradeAnim->monPersonalities[whichParty] = personality;
         break;
@@ -2970,17 +2959,11 @@ static void TradeAnimInit_LoadGfx(void)
     SetBgTilemapBuffer(1, Alloc(BG_SCREEN_SIZE));
     SetBgTilemapBuffer(3, Alloc(BG_SCREEN_SIZE));
     DeactivateAllTextPrinters();
-    // Doing the graphics load...
+    // Doing the graphics load.
     DecompressAndLoadBgGfxUsingHeap(0, gBattleTextboxTiles, 0, 0, 0);
-    LZDecompressWram(gBattleTextboxTilemap, gDecompressionBuffer);
-    CopyToBgTilemapBuffer(0, gDecompressionBuffer, BG_SCREEN_SIZE, 0);
-    LoadCompressedPalette(gBattleTextboxPalette, BG_PLTT_ID(0), PLTT_SIZE_4BPP);
+    DecompressAndCopyToBgTilemapBuffer(0, gBattleTextboxTilemap, BG_SCREEN_SIZE, 0);
+    LoadPalette(gBattleTextboxPalette, BG_PLTT_ID(0), PLTT_SIZE_4BPP);
     InitWindows(sTradeSequenceWindowTemplates);
-    // ... and doing the same load again
-    DecompressAndLoadBgGfxUsingHeap(0, gBattleTextboxTiles, 0, 0, 0);
-    LZDecompressWram(gBattleTextboxTilemap, gDecompressionBuffer);
-    CopyToBgTilemapBuffer(0, gDecompressionBuffer, BG_SCREEN_SIZE, 0);
-    LoadCompressedPalette(gBattleTextboxPalette, BG_PLTT_ID(0), PLTT_SIZE_4BPP);
 }
 
 static void CB2_InitInGameTrade(void)
@@ -3098,10 +3081,6 @@ static void TradeMons(u8 playerPartyIdx, u8 partnerPartyIdx)
 
     struct Pokemon *partnerMon = &gEnemyParty[partnerPartyIdx];
     u16 partnerMail = GetMonData(partnerMon, MON_DATA_MAIL);
-
-    if (gSaveBlock3Ptr->followerIndex == playerPartyIdx)
-        gSaveBlock3Ptr->followerIndex = OW_FOLLOWER_NOT_SET;
-    // Unset preferred follower if it is traded away
 
     // The mail attached to the sent Pokémon no longer exists in your file.
     if (playerMail != MAIL_NONE)
@@ -3431,7 +3410,7 @@ enum {
 
 static bool8 DoTradeAnim_Cable(void)
 {
-    u16 evoTarget;
+    u32 evoTarget;
 
     switch (sTradeAnim->state)
     {
@@ -3867,9 +3846,12 @@ static bool8 DoTradeAnim_Cable(void)
     case STATE_TRY_EVOLUTION: // Only if in-game trade, link trades use CB2_TryLinkTradeEvolution
         TradeMons(gSpecialVar_0x8005, 0);
         gCB2_AfterEvolution = CB2_InGameTrade;
-        evoTarget = GetEvolutionTargetSpecies(&gPlayerParty[gSelectedTradeMonPositions[TRADE_PLAYER]], EVO_MODE_TRADE, ITEM_NONE, &gPlayerParty[gSelectedTradeMonPositions[TRADE_PARTNER]]);
+        evoTarget = GetEvolutionTargetSpecies(&gPlayerParty[gSelectedTradeMonPositions[TRADE_PLAYER]], EVO_MODE_TRADE, ITEM_NONE, &gPlayerParty[gSelectedTradeMonPositions[TRADE_PARTNER]], NULL, CHECK_EVO);
         if (evoTarget != SPECIES_NONE)
+        {
+            GetEvolutionTargetSpecies(&gPlayerParty[gSelectedTradeMonPositions[TRADE_PLAYER]], EVO_MODE_TRADE, ITEM_NONE, &gPlayerParty[gSelectedTradeMonPositions[TRADE_PARTNER]], NULL, DO_EVO);
             TradeEvolutionScene(&gPlayerParty[gSelectedTradeMonPositions[TRADE_PLAYER]], evoTarget, sTradeAnim->monSpriteIds[TRADE_PARTNER], gSelectedTradeMonPositions[TRADE_PLAYER]);
+        }
         sTradeAnim->state++;
         break;
     case STATE_FADE_OUT_END:
@@ -3904,7 +3886,7 @@ static bool8 DoTradeAnim_Cable(void)
 
 static bool8 DoTradeAnim_Wireless(void)
 {
-    u16 evoTarget;
+    u32 evoTarget;
 
     switch (sTradeAnim->state)
     {
@@ -4364,9 +4346,13 @@ static bool8 DoTradeAnim_Wireless(void)
     case STATE_TRY_EVOLUTION: // Only if in-game trade, link trades use CB2_TryLinkTradeEvolution
         TradeMons(gSpecialVar_0x8005, 0);
         gCB2_AfterEvolution = CB2_InGameTrade;
-        evoTarget = GetEvolutionTargetSpecies(&gPlayerParty[gSelectedTradeMonPositions[TRADE_PLAYER]], EVO_MODE_TRADE, ITEM_NONE, &gPlayerParty[gSelectedTradeMonPositions[TRADE_PARTNER]]);
+        evoTarget = GetEvolutionTargetSpecies(&gPlayerParty[gSelectedTradeMonPositions[TRADE_PLAYER]], EVO_MODE_TRADE, ITEM_NONE, &gPlayerParty[gSelectedTradeMonPositions[TRADE_PARTNER]], NULL, CHECK_EVO);
         if (evoTarget != SPECIES_NONE)
+        {
+            GetEvolutionTargetSpecies(&gPlayerParty[gSelectedTradeMonPositions[TRADE_PLAYER]], EVO_MODE_TRADE, ITEM_NONE, &gPlayerParty[gSelectedTradeMonPositions[TRADE_PARTNER]], NULL, DO_EVO);
             TradeEvolutionScene(&gPlayerParty[gSelectedTradeMonPositions[TRADE_PLAYER]], evoTarget, sTradeAnim->monSpriteIds[TRADE_PARTNER], gSelectedTradeMonPositions[TRADE_PLAYER]);
+        }
+
         sTradeAnim->state++;
         break;
     case STATE_FADE_OUT_END:
@@ -4398,7 +4384,7 @@ static bool8 DoTradeAnim_Wireless(void)
 // In-game trades resolve evolution during the trade sequence, in STATE_TRY_EVOLUTION
 static void CB2_TryLinkTradeEvolution(void)
 {
-    u16 evoTarget;
+    u32 evoTarget;
     switch (gMain.state)
     {
     case 0:
@@ -4407,9 +4393,12 @@ static void CB2_TryLinkTradeEvolution(void)
         break;
     case 4:
         gCB2_AfterEvolution = CB2_SaveAndEndTrade;
-        evoTarget = GetEvolutionTargetSpecies(&gPlayerParty[gSelectedTradeMonPositions[TRADE_PLAYER]], EVO_MODE_TRADE, ITEM_NONE, &gPlayerParty[gSelectedTradeMonPositions[TRADE_PARTNER]]);
+        evoTarget = GetEvolutionTargetSpecies(&gPlayerParty[gSelectedTradeMonPositions[TRADE_PLAYER]], EVO_MODE_TRADE, ITEM_NONE, &gPlayerParty[gSelectedTradeMonPositions[TRADE_PARTNER]], NULL, CHECK_EVO);
         if (evoTarget != SPECIES_NONE)
+        {
+            GetEvolutionTargetSpecies(&gPlayerParty[gSelectedTradeMonPositions[TRADE_PLAYER]], EVO_MODE_TRADE, ITEM_NONE, &gPlayerParty[gSelectedTradeMonPositions[TRADE_PARTNER]], NULL, DO_EVO);
             TradeEvolutionScene(&gPlayerParty[gSelectedTradeMonPositions[TRADE_PLAYER]], evoTarget, sTradeAnim->monSpriteIds[TRADE_PARTNER], gSelectedTradeMonPositions[TRADE_PLAYER]);
+        }
         else if (IsWirelessTrade())
             SetMainCallback2(CB2_SaveAndEndWirelessTrade);
         else

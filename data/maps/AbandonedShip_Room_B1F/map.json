@@ -15,33 +15,33 @@
   "connections": null,
   "object_events": [
     {
-      "elevation": 3,
-      "flag": "FLAG_ITEM_ABANDONED_SHIP_ROOMS_B1F_TM_ICE_BEAM",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 4,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 1,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "script": "Common_EventScript_FindItem",
-      "trainer_sight_or_berry_tree_id": "ITEM_TM_ICE_BEAM",
       "trainer_type": "TRAINER_TYPE_NONE",
-      "x": 4,
-      "y": 4
+      "trainer_sight_or_berry_tree_id": "ITEM_TM_ICE_BEAM",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ABANDONED_SHIP_ROOMS_B1F_TM_ICE_BEAM"
     }
   ],
   "warp_events": [
     {
-      "dest_map": "MAP_ABANDONED_SHIP_CORRIDORS_B1F",
-      "dest_warp_id": "5",
-      "elevation": 3,
       "x": 4,
-      "y": 7
+      "y": 7,
+      "elevation": 3,
+      "dest_map": "MAP_ABANDONED_SHIP_CORRIDORS_B1F",
+      "dest_warp_id": "5"
     },
     {
-      "dest_map": "MAP_ABANDONED_SHIP_CORRIDORS_B1F",
-      "dest_warp_id": "5",
-      "elevation": 3,
       "x": 5,
-      "y": 7
+      "y": 7,
+      "elevation": 3,
+      "dest_map": "MAP_ABANDONED_SHIP_CORRIDORS_B1F",
+      "dest_warp_id": "5"
     }
   ],
   "coord_events": [],

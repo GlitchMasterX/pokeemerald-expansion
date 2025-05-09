@@ -5,20 +5,21 @@
 #define USE_DEXNAV_SEARCH_LEVELS      FALSE  /* WARNING: POSSIBLY EXCEEDS SAVEBLOCK SPACE! REQUIRES 1 BYTE PER SPECIES */
 
 // Flag/var defines
-#define FLAG_SYS_DEXNAV_SEARCH          1 // Searching for mon
-#define FLAG_SYS_DETECTOR_MODE          1 // Allow player to find hidden mons
-#define VAR_DEXNAV_SPECIES              1 // Registered DexNav species
-#define VAR_DEXNAV_STEP_COUNTER         1 // Steps for finding hidden pokemon
+#define DN_FLAG_SEARCHING             1 // Searching for mon
+#define DN_FLAG_DEXNAV_GET            FLAG_SYS_DEXNAV_GET // DexNav shows in start menu
+#define DN_FLAG_DETECTOR_MODE         1 // Allow player to find hidden mons
+#define DN_VAR_SPECIES                1 // Registered DexNav species
+#define DN_VAR_STEP_COUNTER           1 // Steps for finding hidden pokemon
 
 // Search parameters
-#define DEXNAV_TIMEOUT                  30  // 15 seconds is the time out. Max of 1092 seconds allowed
+#define DEXNAV_TIMEOUT                  15  // 15 seconds is the time out. Max of 1092 seconds allowed
 #define SNEAKING_PROXIMITY              4   // Tile amount
 #define CREEPING_PROXIMITY              2
 #define MAX_PROXIMITY                   20
 
 #define DEXNAV_CHAIN_MAX                100 // maximum chain value
 
-// hidden pokemon options - an approximation of values to due to lack of available data
+// hidden pokemon options - an approximation of values due to lack of available data
 #define HIDDEN_MON_STEP_COUNT       100  // Look for hidden pokemon every x steps
 #define HIDDEN_MON_SEARCH_RATE      25   // x% chance of finding hidden pokemon every x steps
 #define HIDDEN_MON_PROBABILTY       15   // x% chance of finding hidden mon compared to regular encounter data
@@ -26,7 +27,7 @@
 //// SEARCH PROBABILITIES
 // See https://bulbapedia.bulbagarden.net/wiki/DexNav#Benefits
 // Chance of encountering egg move at search levels
-#define SEARCHLEVEL0_MOVECHANCE         10
+#define SEARCHLEVEL0_MOVECHANCE         0
 #define SEARCHLEVEL5_MOVECHANCE         21
 #define SEARCHLEVEL10_MOVECHANCE        46
 #define SEARCHLEVEL25_MOVECHANCE        58

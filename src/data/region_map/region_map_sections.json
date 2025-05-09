@@ -1,40 +1,40 @@
 {
   "map_sections": [
     {
-      "map_section": "MAPSEC_LUXURA_ISLAND",
-      "name": "LUXURA ISLAND",
+      "map_section": "MAPSEC_LITTLEROOT_TOWN",
+      "name": "LITTLEROOT TOWN",
       "x": 4,
       "y": 11,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_LUXURA_MANSION",
-      "name": "LUXURA MANSION",
+      "map_section": "MAPSEC_OLDALE_TOWN",
+      "name": "OLDALE TOWN",
       "x": 4,
       "y": 9,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_SPARK",
-      "name": "SPARK'S BASE",
+      "map_section": "MAPSEC_DEWFORD_TOWN",
+      "name": "DEWFORD TOWN",
       "x": 2,
       "y": 14,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_LUXURA_VEILWOOD",
-      "name": "LUXURA VEILWOOD",
+      "map_section": "MAPSEC_LAVARIDGE_TOWN",
+      "name": "LAVARIDGE TOWN",
       "x": 5,
       "y": 3,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_MT_CINDER",
-      "name": "MT.CINDER",
+      "map_section": "MAPSEC_FALLARBOR_TOWN",
+      "name": "FALLARBOR TOWN",
       "x": 3,
       "y": 0,
       "width": 1,
@@ -57,8 +57,8 @@
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ASTRALIS_ACADEMY",
-      "name": "ASTRALIS ACADEMY",
+      "map_section": "MAPSEC_PETALBURG_CITY",
+      "name": "PETALBURG CITY",
       "x": 1,
       "y": 9,
       "width": 1,
@@ -129,8 +129,8 @@
       "height": 2
     },
     {
-      "map_section": "MAPSEC_LUNAR_GROVE",
-      "name": "LUNAR GROVE",
+      "map_section": "MAPSEC_ROUTE_101",
+      "name": "ROUTE 101",
       "x": 4,
       "y": 10,
       "width": 1,
@@ -1704,8 +1704,8 @@
       "height": 1
     },
     {
-      "map_section": "MAPSEC_SERVANTQUARTER",
-      "name": "SERVANT'S QUARTER",
+      "map_section": "MAPSEC_TRAINER_HILL",
+      "name": "TRAINER HILL",
       "x": 8,
       "y": 4,
       "width": 1,

@@ -87,7 +87,7 @@ PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial::
 	waitmovement 0
 	playse SE_EXIT
 	removeobject LOCALID_WALLY
-	setflag FLAG_HIDE_PETALBURG_CITY_WALLY
+	setflag FLAG_HIDE_ASTRALIS_ACADEMY_WALLY
 	delay 30
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
@@ -183,10 +183,10 @@ PetalburgCity_Gym_EventScript_BeginWallyTutorial::
 	call_if_eq VAR_0x8008, 2, PetalburgCity_Gym_EventScript_ExitGymWithWallyWest
 	call_if_eq VAR_0x8008, 3, PetalburgCity_Gym_EventScript_ExitGymWithWallyEast
 	removeobject LOCALID_WALLY
-	setflag FLAG_HIDE_PETALBURG_CITY_WALLYS_MOM
+	setflag FLAG_HIDE_ASTRALIS_ACADEMY_WALLYS_MOM
 	setvar VAR_PETALBURG_GYM_STATE, 1
-	setvar VAR_PETALBURG_CITY_STATE, 2
-	clearflag FLAG_HIDE_PETALBURG_CITY_WALLY
+	setvar VAR_ASTRALIS_ACADEMY_STATE, 2
+	clearflag FLAG_HIDE_ASTRALIS_ACADEMY_WALLY
 	clearflag FLAG_HIDE_PETALBURG_GYM_WALLY
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_RIVAL
 	special InitBirchState
@@ -449,8 +449,8 @@ PetalburgCity_Gym_EventScript_WallysDadArrives::
 	call_if_eq VAR_0x8008, 2, PetalburgCity_Gym_EventScript_ExitGymWithWallysDadEast
 	call_if_eq VAR_0x8008, 3, PetalburgCity_Gym_EventScript_ExitGymWithWallysDadWest
 	removeobject LOCALID_WALLYS_DAD
-	setvar VAR_PETALBURG_CITY_STATE, 4
-	clearflag FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD
+	setvar VAR_ASTRALIS_ACADEMY_STATE, 4
+	clearflag FLAG_HIDE_ASTRALIS_ACADEMY_WALLYS_DAD
 	warp MAP_PETALBURG_CITY, 15, 8
 	waitstate
 	release

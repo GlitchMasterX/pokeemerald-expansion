@@ -513,7 +513,7 @@ void ClearRematchMovementByTrainerId(void)
     struct ObjectEventTemplate *objectEventTemplates = gSaveBlock1Ptr->objectEventTemplates;
     struct ObjectEvent *objectEvent;
 
-    int vsSeekerDataIdx = TrainerIdToRematchTableId(gRematchTable, gTrainerBattleOpponent_A);
+    int vsSeekerDataIdx = TrainerIdToRematchTableId(gRematchTable, TRAINER_BATTLE_PARAM.opponentA);
 
     if (!I_VS_SEEKER_CHARGING) return;
 
@@ -647,7 +647,7 @@ static bool32 IsRegularLandTrainer(u8 graphicsId)
         OBJ_EVENT_GFX_MAGMA_MEMBER_M,
         OBJ_EVENT_GFX_MAN_3,
         OBJ_EVENT_GFX_MAN_4,
-        OBJ_EVENT_GFX_NORMAL_M,
+        OBJ_EVENT_GFX_MAN_5,
         OBJ_EVENT_GFX_MANIAC,
         OBJ_EVENT_GFX_NINJA_BOY,
         OBJ_EVENT_GFX_PICNICKER,

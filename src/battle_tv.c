@@ -11,7 +11,7 @@
 #include "constants/battle_move_effects.h"
 
 // this file's functions
-static bool8 IsNotSpecialBattleString(u16 stringId);
+static bool8 IsNotSpecialBattleString(enum StringID stringId);
 static void AddMovePoints(u8 caseId, u16 arg1, u8 arg2, u8 arg3);
 static void TrySetBattleSeminarShow(void);
 static void AddPointsOnFainting(bool8 targetFainted);
@@ -319,7 +319,7 @@ static const u16 sSpecialBattleStrings[] =
 };
 
 // code
-void BattleTv_SetDataBasedOnString(u16 stringId)
+void BattleTv_SetDataBasedOnString(enum StringID stringId)
 {
     struct BattleTv *tvPtr;
     u32 atkSide, defSide, effSide, scriptingSide;
@@ -342,7 +342,7 @@ void BattleTv_SetDataBasedOnString(u16 stringId)
     defMon = GetPartyBattlerData(gBattlerTarget);
     moveSlot = GetBattlerMoveSlotId(gBattlerAttacker, gBattleMsgDataPtr->currentMove);
 
-    if (moveSlot >= MAX_MON_MOVES && IsNotSpecialBattleString(stringId) && stringId > BATTLESTRINGS_TABLE_START)
+    if (moveSlot >= MAX_MON_MOVES && IsNotSpecialBattleString(stringId) && stringId > STRINGID_TABLE_START)
     {
         tvPtr->side[atkSide].faintCause = FNT_OTHER;
         return;
@@ -720,10 +720,12 @@ void BattleTv_SetDataBasedOnString(u16 stringId)
     case STRINGID_PKMNHITWITHRECOIL:
         tvPtr->side[atkSide].faintCause = FNT_RECOIL;
         break;
+    default:
+        break;
     }
 }
 
-static bool8 IsNotSpecialBattleString(u16 stringId)
+static bool8 IsNotSpecialBattleString(enum StringID stringId)
 {
     s32 i = 0;
 
@@ -934,7 +936,7 @@ static void AddMovePoints(u8 caseId, u16 arg1, u8 arg2, u8 arg3)
         // Various cases to add/remove points
         if (GetMoveRecoil(arg2) > 0)
             baseFromEffect++; // Recoil moves
-        if (gMovesInfo[arg2].effect == EFFECT_RAPID_SPIN)
+        if (GetMoveEffect(arg2) == EFFECT_RAPID_SPIN)
             baseFromEffect++;
         if (MoveHasAdditionalEffect(arg2, MOVE_EFFECT_SP_ATK_MINUS_2) || MoveHasAdditionalEffect(arg2, MOVE_EFFECT_ATK_DEF_DOWN))
             baseFromEffect += 2; // Overheat, Superpower, etc.
@@ -1228,7 +1230,7 @@ static void TrySetBattleSeminarShow(void)
         return;
     else if (gBattleTypeFlags & (BATTLE_TYPE_PALACE | BATTLE_TYPE_PIKE | BATTLE_TYPE_PYRAMID))
         return;
-    else if (IS_MOVE_STATUS(gBattleMons[gBattlerAttacker].moves[gMoveSelectionCursor[gBattlerAttacker]]))
+    else if (IsBattleMoveStatus(gBattleMons[gBattlerAttacker].moves[gMoveSelectionCursor[gBattlerAttacker]]))
         return;
 
     i = 0;
@@ -1261,7 +1263,7 @@ static void TrySetBattleSeminarShow(void)
             damageCalcData.updateFlags = FALSE;
             gBattleStruct->moveDamage[gBattlerTarget] = CalculateMoveDamage(&damageCalcData, powerOverride);
             dmgByMove[i] = gBattleStruct->moveDamage[gBattlerTarget];
-            if (dmgByMove[i] == 0 && MoveResultHasEffect(gBattlerTarget))
+            if (dmgByMove[i] == 0 && !(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT))
                 dmgByMove[i] = 1;
         }
     }
@@ -1284,8 +1286,8 @@ static void TrySetBattleSeminarShow(void)
                     bestMoveId = i;
             }
 
-            opponentSpecies = GetMonData(&gEnemyParty [gBattlerPartyIndexes[gBattlerTarget]],   MON_DATA_SPECIES, NULL);
-            playerSpecies   = GetMonData(&gPlayerParty[gBattlerPartyIndexes[gBattlerAttacker]], MON_DATA_SPECIES, NULL);
+            opponentSpecies = GetMonData(GetPartyBattlerData(gBattlerTarget),   MON_DATA_SPECIES, NULL);
+            playerSpecies   = GetMonData(GetPartyBattlerData(gBattlerAttacker), MON_DATA_SPECIES, NULL);
             TryPutBattleSeminarOnAir(opponentSpecies, playerSpecies, gMoveSelectionCursor[gBattlerAttacker], gBattleMons[gBattlerAttacker].moves, gBattleMons[gBattlerAttacker].moves[bestMoveId]);
             break;
         }
@@ -1297,7 +1299,7 @@ static void TrySetBattleSeminarShow(void)
 
 static bool8 ShouldCalculateDamage(u16 moveId, s32 *dmg, u16 *powerOverride)
 {
-    if (IS_MOVE_STATUS(moveId))
+    if (IsBattleMoveStatus(moveId))
     {
         *dmg = 0;
         return FALSE;
@@ -1361,15 +1363,14 @@ void BattleTv_ClearExplosionFaintCause(void)
 u8 GetBattlerMoveSlotId(u8 battlerId, u16 moveId)
 {
     s32 i;
-    struct Pokemon *party;
-    party = GetBattlerParty(battlerId);
+    struct Pokemon *mon = GetPartyBattlerData(battlerId);
 
     i = 0;
     while (1)
     {
         if (i >= MAX_MON_MOVES)
             break;
-        if (GetMonData(&party[gBattlerPartyIndexes[battlerId]], MON_DATA_MOVE1 + i, NULL) == moveId)
+        if (GetMonData(mon, MON_DATA_MOVE1 + i, NULL) == moveId)
             break;
         i++;
     }

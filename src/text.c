@@ -12,7 +12,6 @@
 #include "menu.h"
 #include "dynamic_placeholder_text_util.h"
 #include "fonts.h"
-#include "field_mugshot.h"
 
 static u16 RenderText(struct TextPrinter *);
 static u32 RenderFont(struct TextPrinter *);
@@ -24,7 +23,6 @@ static u16 FontFunc_ShortCopy2(struct TextPrinter *);
 static u16 FontFunc_ShortCopy3(struct TextPrinter *);
 static u16 FontFunc_Narrow(struct TextPrinter *);
 static u16 FontFunc_SmallNarrow(struct TextPrinter *);
-static u16 FontFunc_BW_Summary_Screen(struct TextPrinter *);
 static u16 FontFunc_Narrower(struct TextPrinter *);
 static u16 FontFunc_SmallNarrower(struct TextPrinter *);
 static u16 FontFunc_ShortNarrow(struct TextPrinter *);
@@ -57,10 +55,10 @@ static u16 sLastTextBgColor;
 static u16 sLastTextFgColor;
 static u16 sLastTextShadowColor;
 
-  const struct FontInfo *gFonts = NULL;
-  bool8 gDisableTextPrinters = 0;
-  struct TextGlyph gCurGlyph = {0};
-  TextFlags gTextFlags = {0};
+COMMON_DATA const struct FontInfo *gFonts = NULL;
+COMMON_DATA bool8 gDisableTextPrinters = 0;
+COMMON_DATA struct TextGlyph gCurGlyph = {0};
+COMMON_DATA TextFlags gTextFlags = {0};
 
 static const u8 sFontHalfRowOffsets[] =
 {
@@ -108,7 +106,6 @@ static const struct GlyphWidthFunc sGlyphWidthFuncs[] =
     { FONT_SMALL_NARROWER, GetGlyphWidth_SmallNarrower },
     { FONT_SHORT_NARROW,   GetGlyphWidth_ShortNarrow },
     { FONT_SHORT_NARROWER, GetGlyphWidth_ShortNarrower },
-    { FONT_BW_SUMMARY_SCREEN, GetGlyphWidth_Short },
 };
 
 struct
@@ -267,19 +264,9 @@ static const struct FontInfo sFontInfos[] =
         .bgColor = 1,
         .shadowColor = 3,
     },
-     [FONT_SHORT_NARROWER] = {
+    [FONT_SHORT_NARROWER] = {
         .fontFunction = FontFunc_ShortNarrower,
         .maxLetterWidth = 5,
-        .maxLetterHeight = 14,
-        .letterSpacing = 0,
-        .lineSpacing = 0,
-        .fgColor = 2,
-        .bgColor = 1,
-        .shadowColor = 3,
-    },
-    [FONT_BW_SUMMARY_SCREEN] = {
-        .fontFunction = FontFunc_BW_Summary_Screen,
-        .maxLetterWidth = 6,
         .maxLetterHeight = 14,
         .letterSpacing = 0,
         .lineSpacing = 0,
@@ -305,7 +292,6 @@ static const u8 sMenuCursorDimensions[][2] =
     [FONT_SMALL_NARROWER] = { 8,   8 },
     [FONT_SHORT_NARROW]   = { 8,  14 },
     [FONT_SHORT_NARROWER] = { 8,  14 },
-    [FONT_BW_SUMMARY_SCREEN] = { 8,  14 },
 };
 
 static const u16 sFontBoldJapaneseGlyphs[] = INCBIN_U16("graphics/fonts/bold.hwjpnfont");
@@ -855,7 +841,6 @@ static u16 FontFunc_Narrower(struct TextPrinter *textPrinter)
     return RenderText(textPrinter);
 }
 
-
 static u16 FontFunc_SmallNarrower(struct TextPrinter *textPrinter)
 {
     struct TextPrinterSubStruct *subStruct = (struct TextPrinterSubStruct *)(&textPrinter->subStructFields);
@@ -887,17 +872,6 @@ static u16 FontFunc_ShortNarrower(struct TextPrinter *textPrinter)
     if (subStruct->hasFontIdBeenSet == FALSE)
     {
         subStruct->fontId = FONT_SHORT_NARROWER;
-        subStruct->hasFontIdBeenSet = TRUE;
-    }
-    return RenderText(textPrinter);
-}
-static u16 FontFunc_BW_Summary_Screen(struct TextPrinter *textPrinter)
-{
-    struct TextPrinterSubStruct *subStruct = (struct TextPrinterSubStruct *)(&textPrinter->subStructFields);
-
-    if (subStruct->hasFontIdBeenSet == FALSE)
-    {
-        subStruct->fontId = FONT_BW_SUMMARY_SCREEN;
         subStruct->hasFontIdBeenSet = TRUE;
     }
     return RenderText(textPrinter);
@@ -1110,8 +1084,6 @@ static u16 RenderText(struct TextPrinter *textPrinter)
         case CHAR_NEWLINE:
             textPrinter->printerTemplate.currentX = textPrinter->printerTemplate.x;
             textPrinter->printerTemplate.currentY += (gFonts[textPrinter->printerTemplate.fontId].maxLetterHeight + textPrinter->printerTemplate.lineSpacing);
-            if (subStruct->fontId == FONT_BW_SUMMARY_SCREEN)
-                textPrinter->printerTemplate.currentY -= 2;
             return RENDER_REPEAT;
         case PLACEHOLDER_BEGIN:
             textPrinter->printerTemplate.currentChar++;
@@ -1241,23 +1213,6 @@ static u16 RenderText(struct TextPrinter *textPrinter)
             case EXT_CTRL_CODE_ENG:
                 textPrinter->japanese = FALSE;
                 return RENDER_REPEAT;
-            case EXT_CTRL_CODE_CREATE_MUGSHOT:
-            {
-                u32 id, emote;
-                id = *textPrinter->printerTemplate.currentChar;
-                textPrinter->printerTemplate.currentChar++;
-                emote = *textPrinter->printerTemplate.currentChar;
-                textPrinter->printerTemplate.currentChar++;
-                _CreateFieldMugshot(id, emote);
-                if (IsFieldMugshotActive())
-                {
-                    gSprites[GetFieldMugshotSpriteId()].data[0] = TRUE;
-                }
-            }
-                return RENDER_REPEAT;
-            case EXT_CTRL_CODE_DESTROY_MUGSHOT:
-                RemoveFieldMugshot();
-                return RENDER_REPEAT;
             }
             break;
         case CHAR_PROMPT_CLEAR:
@@ -1293,7 +1248,6 @@ static u16 RenderText(struct TextPrinter *textPrinter)
         case FONT_SHORT_COPY_1:
         case FONT_SHORT_COPY_2:
         case FONT_SHORT_COPY_3:
-        case FONT_BW_SUMMARY_SCREEN:
             DecompressGlyph_Short(currChar, textPrinter->japanese);
             break;
         case FONT_NARROW:
@@ -1586,8 +1540,6 @@ s32 GetStringWidth(u8 fontId, const u8 *str, s16 letterSpacing)
             {
             case EXT_CTRL_CODE_COLOR_HIGHLIGHT_SHADOW:
                 ++str;
-            case EXT_CTRL_CODE_CREATE_MUGSHOT:
-            case EXT_CTRL_CODE_DESTROY_MUGSHOT:
             case EXT_CTRL_CODE_PLAY_BGM:
             case EXT_CTRL_CODE_PLAY_SE:
                 ++str;

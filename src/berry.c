@@ -2174,6 +2174,11 @@ void ObjectEventInteractionGetBerryCountString(void)
     u8 berry = GetBerryTypeByBerryTreeId(treeId);
     u8 count = GetBerryCountByBerryTreeId(treeId);
 
+    // The strings for growing Berries all refer to a singular berry plant.
+    // This ensures that text about planting a Berry and the growing Berry reads correctly.
+    if (GetStageByBerryTreeId(treeId) != BERRY_STAGE_BERRIES)
+        count = 1;
+
     gSpecialVar_0x8006 = BerryTypeToItemId(berry);
     CopyItemNameHandlePlural(BerryTypeToItemId(berry), gStringVar1, count);
     berry = GetTreeMutationValue(treeId);
@@ -2417,6 +2422,8 @@ static u8 GetTreeMutationValue(u8 id)
     myMutation.asField.a = tree->mutationA;
     myMutation.asField.b = tree->mutationB;
     myMutation.asField.unused = 0;
+    if (myMutation.value == 0) // no mutation
+        return 0;
     return sBerryMutations[myMutation.value - 1][2];
 #else
     return 0;

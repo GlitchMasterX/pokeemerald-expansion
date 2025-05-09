@@ -61,7 +61,7 @@ static void (*const sPlayerPartnerBufferCommands[CONTROLLER_CMDS_COUNT])(u32 bat
     [CONTROLLER_SWITCHINANIM]             = PlayerPartnerHandleSwitchInAnim,
     [CONTROLLER_RETURNMONTOBALL]          = BtlController_HandleReturnMonToBall,
     [CONTROLLER_DRAWTRAINERPIC]           = PlayerPartnerHandleDrawTrainerPic,
-    [CONTROLLER_TRAINERSLIDE]             = OpponentHandleTrainerSlide,
+    [CONTROLLER_TRAINERSLIDE]             = BtlController_Empty,
     [CONTROLLER_TRAINERSLIDEBACK]         = PlayerPartnerHandleTrainerSlideBack,
     [CONTROLLER_FAINTANIMATION]           = BtlController_HandleFaintAnimation,
     [CONTROLLER_PALETTEFADE]              = BtlController_Empty,
@@ -90,10 +90,6 @@ static void (*const sPlayerPartnerBufferCommands[CONTROLLER_CMDS_COUNT])(u32 bat
     [CONTROLLER_CHOSENMONRETURNVALUE]     = BtlController_Empty,
     [CONTROLLER_ONERETURNVALUE]           = BtlController_Empty,
     [CONTROLLER_ONERETURNVALUE_DUPLICATE] = BtlController_Empty,
-    [CONTROLLER_CLEARUNKVAR]              = BtlController_HandleClearUnkVar,
-    [CONTROLLER_SETUNKVAR]                = BtlController_HandleSetUnkVar,
-    [CONTROLLER_CLEARUNKFLAG]             = BtlController_HandleClearUnkFlag,
-    [CONTROLLER_TOGGLEUNKFLAG]            = BtlController_HandleToggleUnkFlag,
     [CONTROLLER_HITANIMATION]             = BtlController_HandleHitAnimation,
     [CONTROLLER_CANTSWITCH]               = BtlController_Empty,
     [CONTROLLER_PLAYSE]                   = BtlController_HandlePlaySE,
@@ -177,18 +173,18 @@ void Controller_PlayerPartnerShowIntroHealthbox(u32 battler)
         && ++gBattleSpritesDataPtr->healthBoxesData[battler].introEndDelay != 1)
     {
         gBattleSpritesDataPtr->healthBoxesData[battler].introEndDelay = 0;
-        TryShinyAnimation(battler, &gPlayerParty[gBattlerPartyIndexes[battler]]);
+        TryShinyAnimation(battler, GetPartyBattlerData(battler));
 
         if (IsDoubleBattle() && !(gBattleTypeFlags & BATTLE_TYPE_MULTI))
         {
             DestroySprite(&gSprites[gBattleControllerData[BATTLE_PARTNER(battler)]]);
-            UpdateHealthboxAttribute(gHealthboxSpriteIds[BATTLE_PARTNER(battler)], &gPlayerParty[gBattlerPartyIndexes[BATTLE_PARTNER(battler)]], HEALTHBOX_ALL);
+            UpdateHealthboxAttribute(gHealthboxSpriteIds[BATTLE_PARTNER(battler)], GetPartyBattlerData(BATTLE_PARTNER(battler)), HEALTHBOX_ALL);
             StartHealthboxSlideIn(BATTLE_PARTNER(battler));
             SetHealthboxSpriteVisible(gHealthboxSpriteIds[BATTLE_PARTNER(battler)]);
         }
 
         DestroySprite(&gSprites[gBattleControllerData[battler]]);
-        UpdateHealthboxAttribute(gHealthboxSpriteIds[battler], &gPlayerParty[gBattlerPartyIndexes[battler]], HEALTHBOX_ALL);
+        UpdateHealthboxAttribute(gHealthboxSpriteIds[battler], GetPartyBattlerData(battler), HEALTHBOX_ALL);
         StartHealthboxSlideIn(battler);
         SetHealthboxSpriteVisible(gHealthboxSpriteIds[battler]);
 
@@ -236,9 +232,9 @@ static void SwitchIn_ShowHealthbox(u32 battler)
         FreeSpritePaletteByTag(ANIM_TAG_GOLD_STARS);
 
         CreateTask(Task_PlayerController_RestoreBgmAfterCry, 10);
-        HandleLowHpMusicChange(&gPlayerParty[gBattlerPartyIndexes[battler]], battler);
+        HandleLowHpMusicChange(GetPartyBattlerData(battler), battler);
         StartSpriteAnim(&gSprites[gBattlerSpriteIds[battler]], 0);
-        UpdateHealthboxAttribute(gHealthboxSpriteIds[battler], &gPlayerParty[gBattlerPartyIndexes[battler]], HEALTHBOX_ALL);
+        UpdateHealthboxAttribute(gHealthboxSpriteIds[battler], GetPartyBattlerData(battler), HEALTHBOX_ALL);
         StartHealthboxSlideIn(battler);
         SetHealthboxSpriteVisible(gHealthboxSpriteIds[battler]);
 
@@ -251,7 +247,7 @@ static void SwitchIn_TryShinyAnim(u32 battler)
     if (!gBattleSpritesDataPtr->healthBoxesData[battler].triedShinyMonAnim
         && !gBattleSpritesDataPtr->healthBoxesData[battler].ballAnimActive)
     {
-        TryShinyAnimation(battler, &gPlayerParty[gBattlerPartyIndexes[battler]]);
+        TryShinyAnimation(battler, GetPartyBattlerData(battler));
     }
 
     if (gSprites[gBattleControllerData[battler]].callback == SpriteCallbackDummy
@@ -350,14 +346,14 @@ static void PlayerPartnerHandleChooseAction(u32 battler)
 
 static void PlayerPartnerHandleChooseMove(u32 battler)
 {
-    u8 chosenMoveId;
+    u32 chosenMoveIndex;
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
 
-    chosenMoveId = gBattleStruct->aiMoveOrAction[battler];
-    gBattlerTarget = gBattleStruct->aiChosenTarget[battler];
-    u32 moveTarget = GetBattlerMoveTargetType(battler, moveInfo->moves[chosenMoveId]);
+    chosenMoveIndex = gAiBattleData->chosenMoveIndex[battler];
+    gBattlerTarget = gAiBattleData->chosenTarget[battler];
+    u32 moveTarget = GetBattlerMoveTargetType(battler, moveInfo->moves[chosenMoveIndex]);
 
-    if (gMovesInfo[moveInfo->moves[chosenMoveId]].target & MOVE_TARGET_USER)
+    if (moveTarget & MOVE_TARGET_USER)
         gBattlerTarget = battler;
     else if (moveTarget & MOVE_TARGET_BOTH)
     {
@@ -368,13 +364,13 @@ static void PlayerPartnerHandleChooseMove(u32 battler)
     // If partner can and should use a gimmick (considering trainer data), do it
     if (gBattleStruct->gimmick.usableGimmick[battler] != GIMMICK_NONE
         && !(gBattleStruct->gimmick.usableGimmick[battler] == GIMMICK_Z_MOVE
-        && !ShouldUseZMove(battler, gBattlerTarget, moveInfo->moves[chosenMoveId])))
+        && !ShouldUseZMove(battler, gBattlerTarget, moveInfo->moves[chosenMoveIndex])))
     {
-        BtlController_EmitTwoReturnValues(battler, BUFFER_B, 10, (chosenMoveId) | (RET_GIMMICK) | (gBattlerTarget << 8));
+        BtlController_EmitTwoReturnValues(battler, BUFFER_B, 10, (chosenMoveIndex) | (RET_GIMMICK) | (gBattlerTarget << 8));
     }
     else
     {
-        BtlController_EmitTwoReturnValues(battler, BUFFER_B, 10, (chosenMoveId) | (gBattlerTarget << 8));
+        BtlController_EmitTwoReturnValues(battler, BUFFER_B, 10, (chosenMoveIndex) | (gBattlerTarget << 8));
     }
 
     PlayerPartnerBufferExecCompleted(battler);
@@ -391,7 +387,7 @@ static void PlayerPartnerHandleChoosePokemon(u32 battler)
     // Switching out
     else if (gBattleStruct->monToSwitchIntoId[battler] >= PARTY_SIZE || !IsValidForBattle(&gPlayerParty[gBattleStruct->monToSwitchIntoId[battler]]))
     {
-        chosenMonId = GetMostSuitableMonToSwitchInto(battler, TRUE);
+        chosenMonId = GetMostSuitableMonToSwitchInto(battler, SWITCH_AFTER_KO);
 
         if (chosenMonId == PARTY_SIZE || !IsValidForBattle(&gPlayerParty[chosenMonId])) // just switch to the next mon
         {
@@ -409,7 +405,7 @@ static void PlayerPartnerHandleChoosePokemon(u32 battler)
                 }
             }
         }
-        *(gBattleStruct->monToSwitchIntoId + battler) = chosenMonId;
+        gBattleStruct->monToSwitchIntoId[battler] = chosenMonId;
     }
     else // Mon to switch out has been already chosen.
     {
@@ -428,7 +424,7 @@ static void PlayerPartnerHandleHealthBarUpdate(u32 battler)
 
 static void PlayerPartnerHandleIntroTrainerBallThrow(u32 battler)
 {
-    const u32 *trainerPal;
+    const u16 *trainerPal;
     enum DifficultyLevel difficulty = GetBattlePartnerDifficultyLevel(gPartnerTrainerId);
 
     if (gPartnerTrainerId > TRAINER_PARTNER(PARTNER_NONE))

@@ -15,72 +15,72 @@
   "connections": null,
   "object_events": [
     {
-      "elevation": 3,
-      "flag": "0",
       "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "script": "VerdanturfTown_Mart_EventScript_Clerk",
-      "trainer_sight_or_berry_tree_id": "0",
-      "trainer_type": "TRAINER_TYPE_NONE",
       "x": 1,
-      "y": 3
-    },
-    {
+      "y": 3,
       "elevation": 3,
-      "flag": "0",
-      "graphics_id": "OBJ_EVENT_GFX_BOY_2",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "script": "VerdanturfTown_Mart_EventScript_Boy",
-      "trainer_sight_or_berry_tree_id": "0",
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "x": 5,
-      "y": 4
-    },
-    {
-      "elevation": 3,
-      "flag": "0",
-      "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "script": "VerdanturfTown_Mart_EventScript_ExpertF",
-      "trainer_sight_or_berry_tree_id": "0",
       "trainer_type": "TRAINER_TYPE_NONE",
-      "x": 8,
-      "y": 5
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "VerdanturfTown_Mart_EventScript_Clerk",
+      "flag": "0"
     },
     {
+      "graphics_id": "OBJ_EVENT_GFX_BOY_2",
+      "x": 5,
+      "y": 4,
       "elevation": 3,
-      "flag": "0",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "VerdanturfTown_Mart_EventScript_Boy",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
+      "x": 8,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "VerdanturfTown_Mart_EventScript_ExpertF",
+      "flag": "0"
+    },
+    {
       "graphics_id": "OBJ_EVENT_GFX_LASS",
+      "x": 3,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
       "movement_range_y": 1,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "script": "VerdanturfTown_Mart_EventScript_Lass",
-      "trainer_sight_or_berry_tree_id": "0",
       "trainer_type": "TRAINER_TYPE_NONE",
-      "x": 3,
-      "y": 2
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "VerdanturfTown_Mart_EventScript_Lass",
+      "flag": "0"
     }
   ],
   "warp_events": [
     {
-      "dest_map": "MAP_PACIFIDLOG_TOWN_HOUSE1",
-      "dest_warp_id": "1",
-      "elevation": 0,
       "x": 3,
-      "y": 7
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_VERDANTURF_TOWN",
+      "dest_warp_id": "1"
     },
     {
-      "dest_map": "MAP_PACIFIDLOG_TOWN_HOUSE1",
-      "dest_warp_id": "1",
-      "elevation": 0,
       "x": 4,
-      "y": 7
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_VERDANTURF_TOWN",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [],

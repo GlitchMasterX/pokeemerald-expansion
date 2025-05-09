@@ -8,8 +8,6 @@ BATINTGFXDIR := graphics/battle_interface
 MASKSGFXDIR := graphics/battle_anims/masks
 BATTRANSGFXDIR := graphics/battle_transitions
 TYPESGFXDIR := graphics/types
-TYPESBWGFXDIR := graphics/types_bw
-TYPESBWTERAGFXDIR := graphics/types_bw/tera
 RAYQUAZAGFXDIR := graphics/rayquaza_scene
 ROULETTEGFXDIR := graphics/roulette
 SLOTMACHINEGFXDIR := graphics/slot_machine
@@ -23,6 +21,7 @@ POKEDEXGFXDIR := graphics/pokedex
 STARTERGFXDIR := graphics/starter_choose
 NAMINGGFXDIR := graphics/naming_screen
 SPINDAGFXDIR := graphics/pokemon/spinda/spots
+TITLESCREENGFXDIR := graphics/title_screen
 
 types := none normal fight flying poison ground rock bug ghost steel mystery fire water grass electric psychic ice dragon dark fairy stellar
 contest_types := cool beauty cute smart tough
@@ -275,8 +274,12 @@ $(FONTGFXDIR)/frlg_female.fwjpnfont: $(FONTGFXDIR)/japanese_frlg_female.png
 
 
 ### Miscellaneous ###
-graphics/title_screen/pokemon_logo.gbapal: %.gbapal: %.pal
+
+$(TITLESCREENGFXDIR)/pokemon_logo.gbapal: %.gbapal: %.pal
 	$(GFX) $< $@ -num_colors 224
+
+$(TITLESCREENGFXDIR)/emerald_version.8bpp: %.8bpp: %.png
+	$(GFX) $< $@ -mwidth 8 -mheight 4
 
 graphics/pokemon_jump/bg.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 63 -Wnum_tiles
@@ -286,6 +289,9 @@ graphics/pokenav/region_map/map.8bpp: %.8bpp: %.png
 
 $(MISCGFXDIR)/japanese_hof.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 29 -Wnum_tiles
+
+$(MISCGFXDIR)/mirage_tower.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -num_tiles 73 -Wnum_tiles
 
 $(BATINTGFXDIR)/textbox.gbapal: $(BATINTGFXDIR)/textbox_0.gbapal \
                                 $(BATINTGFXDIR)/textbox_1.gbapal
@@ -384,17 +390,6 @@ $(TYPESGFXDIR)/move_types.4bpp: $(types:%=$(TYPESGFXDIR)/%.4bpp) $(contest_types
 $(TYPESGFXDIR)/move_types.gbapal: $(TYPESGFXDIR)/move_types_1.gbapal \
                                   $(TYPESGFXDIR)/move_types_2.gbapal \
                                   $(TYPESGFXDIR)/move_types_3.gbapal
-	@cat $^ >$@
-
-$(TYPESBWGFXDIR)/move_types_bw.4bpp: $(types:%=$(TYPESBWGFXDIR)/%.4bpp) $(contest_types:%=$(TYPESBWGFXDIR)/contest_%.4bpp)
-	@cat $^ >$@
-
-$(TYPESBWGFXDIR)/move_types_bw.gbapal: $(TYPESBWGFXDIR)/move_types_bw_1.gbapal \
-                                  $(TYPESBWGFXDIR)/move_types_bw_2.gbapal \
-                                  $(TYPESBWGFXDIR)/move_types_bw_3.gbapal
-	@cat $^ >$@
-
-$(TYPESBWTERAGFXDIR)/tera_types_bw.4bpp: $(types:%=$(TYPESBWTERAGFXDIR)/%.4bpp)
 	@cat $^ >$@
 
 graphics/bag/menu.4bpp: %.4bpp: %.png

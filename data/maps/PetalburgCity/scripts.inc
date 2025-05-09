@@ -10,10 +10,10 @@ PetalburgCity_MapScripts::
 	.byte 0
 
 PetalburgCity_OnTransition:
-	setflag FLAG_VISITED_PETALBURG_CITY
-	call_if_eq VAR_PETALBURG_CITY_STATE, 0, PetalburgCity_EventScript_MoveGymBoyToWestEntrance
-	call_if_eq VAR_PETALBURG_CITY_STATE, 2, PetalburgCity_EventScript_DisableMapNameAndMusic
-	call_if_eq VAR_PETALBURG_CITY_STATE, 4, PetalburgCity_EventScript_DisableMapNameAndMusic
+	setflag FLAG_VISITED_ASTRALIS_ACADEMY
+	call_if_eq VAR_ASTRALIS_ACADEMY_STATE, 0, PetalburgCity_EventScript_MoveGymBoyToWestEntrance
+	call_if_eq VAR_ASTRALIS_ACADEMY_STATE, 2, PetalburgCity_EventScript_DisableMapNameAndMusic
+	call_if_eq VAR_ASTRALIS_ACADEMY_STATE, 4, PetalburgCity_EventScript_DisableMapNameAndMusic
 	call_if_eq VAR_PETALBURG_GYM_STATE, 8, PetalburgCity_EventScript_SetGymDoorsUnlocked
 	end
 
@@ -31,8 +31,8 @@ PetalburgCity_EventScript_SetGymDoorsUnlocked::
 	return
 
 PetalburgCity_OnFrame:
-	map_script_2 VAR_PETALBURG_CITY_STATE, 2, PetalburgCity_EventScript_WallyTutorial
-	map_script_2 VAR_PETALBURG_CITY_STATE, 4, PetalburgCity_EventScript_WalkToWallyHouse
+	map_script_2 VAR_ASTRALIS_ACADEMY_STATE, 2, PetalburgCity_EventScript_WallyTutorial
+	map_script_2 VAR_ASTRALIS_ACADEMY_STATE, 4, PetalburgCity_EventScript_WalkToWallyHouse
 	.2byte 0
 
 PetalburgCity_EventScript_WallyTutorial::
@@ -51,7 +51,7 @@ PetalburgCity_EventScript_WallyTutorial::
 	msgbox Route102_Text_LetsGoBack, MSGBOX_DEFAULT
 	closemessage
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
-	setvar VAR_PETALBURG_CITY_STATE, 3
+	setvar VAR_ASTRALIS_ACADEMY_STATE, 3
 	fadedefaultbgm
 	clearflag FLAG_DONT_TRANSITION_MUSIC
 	special LoadPlayerParty
@@ -74,7 +74,7 @@ PetalburgCity_EventScript_WalkToWallyHouse::
 	applymovement LOCALID_WALLYS_DAD, PetalburgCity_Movement_WalkInsideHouseWallysDad
 	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCity_Movement_WalkInsideHousePlayer
 	waitmovement 0
-	setflag FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD
+	setflag FLAG_HIDE_ASTRALIS_ACADEMY_WALLYS_DAD
 	hideobjectat OBJ_EVENT_ID_PLAYER, MAP_PETALBURG_CITY
 	closedoor VAR_0x8004, VAR_0x8005
 	waitdooranim

@@ -3,7 +3,7 @@
   "name": "DewfordTown_Gym",
   "layout": "LAYOUT_DEWFORD_TOWN_GYM",
   "music": "MUS_GYM",
-  "region_map_section": "MAPSEC_SPARK",
+  "region_map_section": "MAPSEC_DEWFORD_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -15,159 +15,159 @@
   "connections": null,
   "object_events": [
     {
-      "elevation": 0,
-      "flag": "0",
       "graphics_id": "OBJ_EVENT_GFX_BRAWLY",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "script": "DewfordTown_Gym_EventScript_Brawly",
-      "trainer_sight_or_berry_tree_id": "0",
-      "trainer_type": "TRAINER_TYPE_NONE",
       "x": 4,
-      "y": 3
-    },
-    {
+      "y": 3,
       "elevation": 0,
-      "flag": "0",
-      "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "script": "DewfordTown_Gym_EventScript_Takao",
-      "trainer_sight_or_berry_tree_id": "3",
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "x": 2,
-      "y": 18
-    },
-    {
-      "elevation": 3,
-      "flag": "0",
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "script": "DewfordTown_Gym_EventScript_Jocelyn",
-      "trainer_sight_or_berry_tree_id": "3",
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "x": 15,
-      "y": 3
-    },
-    {
-      "elevation": 3,
-      "flag": "0",
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "script": "DewfordTown_Gym_EventScript_Laura",
-      "trainer_sight_or_berry_tree_id": "2",
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "x": 12,
-      "y": 25
-    },
-    {
-      "elevation": 3,
-      "flag": "0",
-      "graphics_id": "OBJ_EVENT_GFX_MAN_2",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "script": "DewfordTown_Gym_EventScript_GymGuide",
-      "trainer_sight_or_berry_tree_id": "0",
       "trainer_type": "TRAINER_TYPE_NONE",
-      "x": 5,
-      "y": 24
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DewfordTown_Gym_EventScript_Brawly",
+      "flag": "0"
     },
     {
-      "elevation": 1,
-      "flag": "0",
       "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "script": "DewfordTown_Gym_EventScript_Cristian",
-      "trainer_sight_or_berry_tree_id": "3",
+      "x": 2,
+      "y": 18,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "x": 7,
-      "y": 8
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "DewfordTown_Gym_EventScript_Takao",
+      "flag": "0"
     },
     {
-      "elevation": 3,
-      "flag": "0",
       "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
+      "x": 15,
+      "y": 3,
+      "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "script": "DewfordTown_Gym_EventScript_Lilith",
-      "trainer_sight_or_berry_tree_id": "3",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "x": 16,
-      "y": 9
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "DewfordTown_Gym_EventScript_Jocelyn",
+      "flag": "0"
     },
     {
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
+      "x": 12,
+      "y": 25,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "DewfordTown_Gym_EventScript_Laura",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_2",
+      "x": 5,
+      "y": 24,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DewfordTown_Gym_EventScript_GymGuide",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
+      "x": 7,
+      "y": 8,
       "elevation": 1,
-      "flag": "0",
-      "graphics_id": "OBJ_EVENT_GFX_SAILOR",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 1,
       "movement_range_y": 1,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "script": "DewfordTown_Gym_EventScript_Brenden",
-      "trainer_sight_or_berry_tree_id": "2",
       "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "DewfordTown_Gym_EventScript_Cristian",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
+      "x": 16,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "DewfordTown_Gym_EventScript_Lilith",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SAILOR",
       "x": 14,
-      "y": 12
+      "y": 12,
+      "elevation": 1,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "DewfordTown_Gym_EventScript_Brenden",
+      "flag": "0"
     }
   ],
   "warp_events": [
     {
-      "dest_map": "MAP_DEWFORD_TOWN",
-      "dest_warp_id": "2",
-      "elevation": 0,
       "x": 5,
-      "y": 27
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_DEWFORD_TOWN",
+      "dest_warp_id": "2"
     },
     {
-      "dest_map": "MAP_DEWFORD_TOWN",
-      "dest_warp_id": "2",
-      "elevation": 0,
       "x": 6,
-      "y": 27
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_DEWFORD_TOWN",
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [],
   "bg_events": [
     {
-      "elevation": 3,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "DewfordTown_Gym_EventScript_LeftGymStatue",
       "type": "sign",
       "x": 4,
-      "y": 23
-    },
-    {
+      "y": 23,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "DewfordTown_Gym_EventScript_RightGymStatue",
-      "type": "sign",
-      "x": 7,
-      "y": 23
+      "script": "DewfordTown_Gym_EventScript_LeftGymStatue"
     },
     {
-      "elevation": 0,
+      "type": "sign",
+      "x": 7,
+      "y": 23,
+      "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "DewfordTown_Gym_EventScript_LeftGymStatue",
+      "script": "DewfordTown_Gym_EventScript_RightGymStatue"
+    },
+    {
       "type": "sign",
       "x": 4,
-      "y": 24
-    },
-    {
+      "y": 24,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "DewfordTown_Gym_EventScript_RightGymStatue",
+      "script": "DewfordTown_Gym_EventScript_LeftGymStatue"
+    },
+    {
       "type": "sign",
       "x": 7,
-      "y": 24
+      "y": 24,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "DewfordTown_Gym_EventScript_RightGymStatue"
     }
   ]
 }

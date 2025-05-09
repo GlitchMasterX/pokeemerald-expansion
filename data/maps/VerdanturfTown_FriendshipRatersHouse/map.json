@@ -15,46 +15,46 @@
   "connections": null,
   "object_events": [
     {
-      "elevation": 3,
-      "flag": "0",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "x": 3,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "script": "VerdanturfTown_FriendshipRatersHouse_EventScript_FriendshipRater",
-      "trainer_sight_or_berry_tree_id": "0",
       "trainer_type": "TRAINER_TYPE_NONE",
-      "x": 3,
-      "y": 4
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "VerdanturfTown_FriendshipRatersHouse_EventScript_FriendshipRater",
+      "flag": "0"
     },
     {
-      "elevation": 3,
-      "flag": "0",
       "graphics_id": "OBJ_EVENT_GFX_PIKACHU",
+      "x": 4,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "script": "VerdanturfTown_FriendshipRatersHouse_EventScript_Pikachu",
-      "trainer_sight_or_berry_tree_id": "0",
       "trainer_type": "TRAINER_TYPE_NONE",
-      "x": 4,
-      "y": 4
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "VerdanturfTown_FriendshipRatersHouse_EventScript_Pikachu",
+      "flag": "0"
     }
   ],
   "warp_events": [
     {
-      "dest_map": "MAP_PACIFIDLOG_TOWN_HOUSE1",
-      "dest_warp_id": "5",
-      "elevation": 0,
       "x": 3,
-      "y": 7
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_VERDANTURF_TOWN",
+      "dest_warp_id": "5"
     },
     {
-      "dest_map": "MAP_PACIFIDLOG_TOWN_HOUSE1",
-      "dest_warp_id": "5",
-      "elevation": 0,
       "x": 4,
-      "y": 7
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_VERDANTURF_TOWN",
+      "dest_warp_id": "5"
     }
   ],
   "coord_events": [],

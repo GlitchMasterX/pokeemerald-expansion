@@ -1,7 +1,8 @@
 #include "global.h"
 #include "malloc.h"
 #include "berry_powder.h"
-#include "follow_me.h"
+#include "fake_rtc.h"
+#include "follower_npc.h"
 #include "item.h"
 #include "load_save.h"
 #include "main.h"
@@ -42,11 +43,11 @@ EWRAM_DATA struct LoadedSaveData gLoadedSaveData = {0};
 EWRAM_DATA u32 gLastEncryptionKey = 0;
 
 // IWRAM common
-bool32 gFlashMemoryPresent;
-struct SaveBlock1 *gSaveBlock1Ptr;
-struct SaveBlock2 *gSaveBlock2Ptr;
+COMMON_DATA bool32 gFlashMemoryPresent = 0;
+COMMON_DATA struct SaveBlock1 *gSaveBlock1Ptr = NULL;
+COMMON_DATA struct SaveBlock2 *gSaveBlock2Ptr = NULL;
 IWRAM_INIT struct SaveBlock3 *gSaveBlock3Ptr = &gSaveblock3;
-struct PokemonStorage *gPokemonStoragePtr;
+COMMON_DATA struct PokemonStorage *gPokemonStoragePtr = NULL;
 
 // code
 void CheckForFlashMemory(void)
@@ -65,6 +66,7 @@ void CheckForFlashMemory(void)
 void ClearSav3(void)
 {
     CpuFill16(0, &gSaveblock3, sizeof(struct SaveBlock3));
+    FakeRtc_Reset();
 }
 
 void ClearSav2(void)
@@ -195,32 +197,6 @@ void LoadPlayerParty(void)
         SetBoxMonData(&gPlayerParty[i].box, MON_DATA_HP_LOST, &data);
         data = gPlayerParty[i].status;
         SetBoxMonData(&gPlayerParty[i].box, MON_DATA_STATUS, &data);
-    }
-}
-
-void LoadLastThreeMons(void)
-{
-    int i;
-
-    gPlayerPartyCount = gSaveBlock1Ptr->playerPartyCount;
-
-    for (i = 3; i < PARTY_SIZE; i++)
-    {
-        u32 data;
-        gPlayerParty[i] = gSaveBlock1Ptr->playerParty[i];
-
-        // TODO: Turn this into a save migration once those are available.
-        // At which point we can remove hp and status from Pokemon entirely.
-        data = gPlayerParty[i].maxHP - gPlayerParty[i].hp;
-        SetBoxMonData(&gPlayerParty[i].box, MON_DATA_HP_LOST, &data);
-        data = gPlayerParty[i].status;
-        SetBoxMonData(&gPlayerParty[i].box, MON_DATA_STATUS, &data);
-    }
-
-    if (F_FLAG_HEAL_AFTER_FOLLOWER_BATTLE != 0
-     && (FlagGet(F_FLAG_HEAL_AFTER_FOLLOWER_BATTLE) || F_FLAG_HEAL_AFTER_FOLLOWER_BATTLE == ALWAYS))
-    {
-        HealPlayerParty();
     }
 }
 

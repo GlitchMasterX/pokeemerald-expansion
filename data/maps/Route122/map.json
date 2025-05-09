@@ -12,15 +12,26 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": [
+    {
+      "map": "MAP_ROUTE121",
+      "offset": -20,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_ROUTE123",
+      "offset": -100,
+      "direction": "down"
+    }
+  ],
   "object_events": [],
   "warp_events": [
     {
-      "dest_map": "MAP_MT_PYRE_1F",
-      "dest_warp_id": "0",
-      "elevation": 0,
       "x": 22,
-      "y": 29
+      "y": 29,
+      "elevation": 0,
+      "dest_map": "MAP_MT_PYRE_1F",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

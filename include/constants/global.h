@@ -9,6 +9,9 @@
 #include "config/pokemon.h"
 #include "config/overworld.h"
 #include "config/dexnav.h"
+#include "config/summary_screen.h"
+#include "config/ai.h"
+#include "config/follower_npc.h"
 
 // Invalid Versions show as "----------" in Gen 4 and Gen 5's summary screen.
 // In Gens 6 and 7, invalid versions instead show "a distant land" in the summary screen.
@@ -122,6 +125,7 @@
 #define TYPE_NAME_LENGTH 8
 #define ABILITY_NAME_LENGTH 16
 #define TRAINER_NAME_LENGTH 10
+#define CODE_NAME_LENGTH 11
 
 #define MAX_STAMP_CARD_STAMPS 7
 
@@ -173,15 +177,8 @@
 #define CONNECTION_DIVE     5
 #define CONNECTION_EMERGE   6
 
-#define SIDEWAYS_STAIRS_IMPLEMENTED         TRUE
-#define POST_BATTLE_FOLLOWER_FIX            FALSE   //if you experience the follower de-syncing with the player after battle, set to TRUE
-
 #if TESTING
 #include "config/test.h"
 #endif
-#define SEASON_SPRING 0
-#define SEASON_SUMMER 1
-#define SEASON_AUTUMN 2
-#define SEASON_WINTER 3
 
 #endif // GUARD_CONSTANTS_GLOBAL_H

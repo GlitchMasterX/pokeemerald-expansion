@@ -15,100 +15,100 @@
   "connections": null,
   "object_events": [
     {
-      "elevation": 3,
-      "flag": "0",
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "script": "AbandonedShip_Rooms_1F_EventScript_Gentleman",
-      "trainer_sight_or_berry_tree_id": "0",
-      "trainer_type": "TRAINER_TYPE_NONE",
       "x": 12,
-      "y": 5
-    },
-    {
+      "y": 5,
       "elevation": 3,
-      "flag": "FLAG_ITEM_ABANDONED_SHIP_ROOMS_1F_HARBOR_MAIL",
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 1,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "script": "Common_EventScript_FindItem",
-      "trainer_sight_or_berry_tree_id": "ITEM_HARBOR_MAIL",
       "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AbandonedShip_Rooms_1F_EventScript_Gentleman",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 4,
-      "y": 5
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_HARBOR_MAIL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ABANDONED_SHIP_ROOMS_1F_HARBOR_MAIL"
     },
     {
-      "elevation": 3,
-      "flag": "0",
       "graphics_id": "OBJ_EVENT_GFX_BEAUTY",
+      "x": 10,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
       "movement_range_y": 1,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "script": "AbandonedShip_Rooms_1F_EventScript_Thalia",
-      "trainer_sight_or_berry_tree_id": "4",
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "x": 10,
-      "y": 11
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "AbandonedShip_Rooms_1F_EventScript_Thalia",
+      "flag": "0"
     },
     {
-      "elevation": 3,
-      "flag": "0",
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "x": 10,
+      "y": 16,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP_AND_RIGHT",
       "movement_range_x": 1,
       "movement_range_y": 1,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP_AND_RIGHT",
-      "script": "AbandonedShip_Rooms_1F_EventScript_Demetrius",
-      "trainer_sight_or_berry_tree_id": "4",
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "x": 10,
-      "y": 16
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "AbandonedShip_Rooms_1F_EventScript_Demetrius",
+      "flag": "0"
     }
   ],
   "warp_events": [
     {
-      "dest_map": "MAP_ABANDONED_SHIP_CORRIDORS_1F",
-      "dest_warp_id": "4",
-      "elevation": 3,
       "x": 4,
-      "y": 16
+      "y": 16,
+      "elevation": 3,
+      "dest_map": "MAP_ABANDONED_SHIP_CORRIDORS_1F",
+      "dest_warp_id": "4"
     },
     {
-      "dest_map": "MAP_ABANDONED_SHIP_CORRIDORS_1F",
-      "dest_warp_id": "4",
-      "elevation": 3,
       "x": 5,
-      "y": 16
+      "y": 16,
+      "elevation": 3,
+      "dest_map": "MAP_ABANDONED_SHIP_CORRIDORS_1F",
+      "dest_warp_id": "4"
     },
     {
-      "dest_map": "MAP_ABANDONED_SHIP_CORRIDORS_1F",
-      "dest_warp_id": "6",
-      "elevation": 3,
       "x": 4,
-      "y": 1
+      "y": 1,
+      "elevation": 3,
+      "dest_map": "MAP_ABANDONED_SHIP_CORRIDORS_1F",
+      "dest_warp_id": "6"
     },
     {
-      "dest_map": "MAP_ABANDONED_SHIP_CORRIDORS_1F",
-      "dest_warp_id": "5",
-      "elevation": 3,
       "x": 13,
-      "y": 16
+      "y": 16,
+      "elevation": 3,
+      "dest_map": "MAP_ABANDONED_SHIP_CORRIDORS_1F",
+      "dest_warp_id": "5"
     },
     {
-      "dest_map": "MAP_ABANDONED_SHIP_CORRIDORS_1F",
-      "dest_warp_id": "7",
-      "elevation": 3,
       "x": 13,
-      "y": 1
+      "y": 1,
+      "elevation": 3,
+      "dest_map": "MAP_ABANDONED_SHIP_CORRIDORS_1F",
+      "dest_warp_id": "7"
     },
     {
-      "dest_map": "MAP_ABANDONED_SHIP_CORRIDORS_1F",
-      "dest_warp_id": "5",
-      "elevation": 3,
       "x": 14,
-      "y": 16
+      "y": 16,
+      "elevation": 3,
+      "dest_map": "MAP_ABANDONED_SHIP_CORRIDORS_1F",
+      "dest_warp_id": "5"
     }
   ],
   "coord_events": [],

@@ -14,7 +14,7 @@
 // Each parent player can lead a group of up to MAX_RFU_PLAYERS (including themselves).
 // Multiply the leader's id by MAX_RFU_PLAYERS and add the member's id (0 if the leader) to
 // get the sprite index of that player.
-#define UR_PLAYER_SPRITE_ID(leaderId, memberId)(MAX_RFU_PLAYERS * leaderId + memberId)
+#define UR_PLAYER_SPRITE_ID(leaderId, memberId) (MAX_RFU_PLAYERS * leaderId + memberId)
 
 static EWRAM_DATA struct UnionRoomObject * sUnionObjWork = NULL;
 static EWRAM_DATA u32 sUnionObjRefreshTimer = 0;
@@ -33,7 +33,7 @@ static const u16 sUnionRoomObjGfxIds[GENDER_COUNT][NUM_UNION_ROOM_CLASSES] = {
         OBJ_EVENT_GFX_PSYCHIC_M,
         OBJ_EVENT_GFX_BUG_CATCHER,
         OBJ_EVENT_GFX_MAN_4,
-        OBJ_EVENT_GFX_NORMAL_M
+        OBJ_EVENT_GFX_MAN_5
     },
     [FEMALE] = {
         OBJ_EVENT_GFX_WOMAN_5,

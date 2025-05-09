@@ -16,22 +16,22 @@
   "object_events": [],
   "warp_events": [
     {
-      "dest_map": "MAP_UNDERWATER_ROUTE134",
-      "dest_warp_id": "0",
-      "elevation": 0,
       "x": 7,
-      "y": 1
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERWATER_ROUTE134",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],
   "bg_events": [
     {
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Underwater_SealedChamber_EventScript_Braille",
       "type": "sign",
       "x": 12,
-      "y": 43
+      "y": 43,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Underwater_SealedChamber_EventScript_Braille"
     }
   ]
 }

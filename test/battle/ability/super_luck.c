@@ -1,6 +1,6 @@
 #include "global.h"
 #include "test/battle.h"
-#include "generational_changes.h"
+
 SINGLE_BATTLE_TEST("Super Luck increases the critical hit ratio by 1 stage")
 {
     u32 j, genConfig = 0, passes = 0, trials = 0;
@@ -15,9 +15,9 @@ SINGLE_BATTLE_TEST("Super Luck increases the critical hit ratio by 1 stage")
         PLAYER(SPECIES_TOGEPI) { Ability(ABILITY_SUPER_LUCK); };
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { MOVE(player, MOVE_TACKLE); }
+        TURN { MOVE(player, MOVE_SCRATCH); }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, player);
         MESSAGE("A critical hit!");
     }
 }

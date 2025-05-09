@@ -1,7 +1,6 @@
 #include "global.h"
 #include "battle_pyramid.h"
 #include "bg.h"
-#include "event_data.h"
 #include "fieldmap.h"
 #include "fldeff.h"
 #include "fldeff_misc.h"
@@ -18,7 +17,6 @@
 #include "constants/rgb.h"
 #include "constants/metatile_behaviors.h"
 #include "wild_encounter.h"
-#include "event_object_movement.h"
 
 struct ConnectionFlags
 {
@@ -32,9 +30,8 @@ EWRAM_DATA u16 ALIGNED(4) sBackupMapData[MAX_MAP_DATA_SIZE] = {0};
 EWRAM_DATA struct MapHeader gMapHeader = {0};
 EWRAM_DATA struct Camera gCamera = {0};
 EWRAM_DATA static struct ConnectionFlags sMapConnectionFlags = {0};
-//EWRAM_DATA static u32 UNUSED sFiller = 0; // without this, the next file won't align properly
-EWRAM_DATA u8 gGlobalFieldTintMode = GLOBAL_FIELD_TINT_NONE;
-struct BackupMapLayout gBackupMapLayout;
+
+COMMON_DATA struct BackupMapLayout gBackupMapLayout = {0};
 
 static const struct ConnectionFlags sDummyConnectionFlags = {0};
 
@@ -872,20 +869,7 @@ static void CopyTilesetToVramUsingHeap(struct Tileset const *tileset, u16 numTil
 // Below two are dummied functions from FRLG, used to tint the overworld palettes for the Quest Log
 static void ApplyGlobalTintToPaletteEntries(u16 offset, u16 size)
 {
-switch (gGlobalFieldTintMode)
-    {
-        case GLOBAL_FIELD_TINT_NONE:
-            return;
-        case GLOBAL_FIELD_TINT_GRAYSCALE:
-            TintPalette_GrayScale(gPlttBufferUnfaded + offset, size);
-            break;
-        case GLOBAL_FIELD_TINT_SEPIA:
-            TintPalette_SepiaTone(gPlttBufferUnfaded + offset, size);
-            break;
-        default:
-            return;
-    }
-    CpuCopy16(gPlttBufferUnfaded + offset, gPlttBufferFaded + offset, size * sizeof(u16));
+
 }
 
 static void UNUSED ApplyGlobalTintToPaletteSlot(u8 slot, u8 count)
@@ -893,94 +877,31 @@ static void UNUSED ApplyGlobalTintToPaletteSlot(u8 slot, u8 count)
 
 }
 
-static void LoadTilesetPalette(struct Tileset const *tileset, u16 destOffset, u16 size)
+static void LoadTilesetPalette(struct Tileset const *tileset, u16 destOffset, u16 size, bool8 skipFaded)
 {
-    u16 black = RGB_BLACK;
-    u8 season = GetSeasonFromMonth();
-
     if (tileset)
     {
         if (tileset->isSecondary == FALSE)
         {
-            LoadPalette(&black, destOffset, PLTT_SIZEOF(1));
-            switch(season){
-                case SEASON_SPRING:
-                LoadPalette(tileset->palettes[0] + 1, destOffset + 1, size - PLTT_SIZEOF(1));
-                break;
-                case SEASON_SUMMER:
-                    if(tileset->palettes_summer != NULL)
-                    LoadPalette(tileset->palettes_summer[0] + 1, destOffset + 1, size - PLTT_SIZEOF(1));
-                    else
-                    LoadPalette(tileset->palettes[0] + 1, destOffset + 1, size - PLTT_SIZEOF(1));
-                break;
-                case SEASON_AUTUMN:
-                    if(tileset->palettes_autumn != NULL)
-                    LoadPalette(tileset->palettes_autumn[0] + 1, destOffset + 1, size - PLTT_SIZEOF(1));
-                    else
-                    LoadPalette(tileset->palettes[0] + 1, destOffset + 1, size - PLTT_SIZEOF(1));
-                break;
-                case SEASON_WINTER:
-                    if(tileset->palettes_winter != NULL)
-                    LoadPalette(tileset->palettes_winter[0] + 1, destOffset + 1, size - PLTT_SIZEOF(1));
-                    else
-                    LoadPalette(tileset->palettes[0] + 1, destOffset + 1, size - PLTT_SIZEOF(1));
-                break;
-            }
-            ApplyGlobalTintToPaletteEntries(destOffset + 1, (size - PLTT_SIZEOF(1)) >> 1);
+            if (skipFaded)
+                CpuFastCopy(tileset->palettes, &gPlttBufferUnfaded[destOffset], size); // always word-aligned
+            else
+                LoadPaletteFast(tileset->palettes, destOffset, size);
+            gPlttBufferFaded[destOffset] = gPlttBufferUnfaded[destOffset] = RGB_BLACK;
+            ApplyGlobalTintToPaletteEntries(destOffset + 1, (size - 2) >> 1);
         }
         else if (tileset->isSecondary == TRUE)
         {
-            switch(season){
-                
-                case SEASON_SPRING:
-                    LoadPalette(tileset->palettes[NUM_PALS_IN_PRIMARY], destOffset, size);
-                break;
-                case SEASON_SUMMER:
-                    if(tileset->palettes_summer != NULL)
-                    LoadPalette(tileset->palettes_summer[NUM_PALS_IN_PRIMARY], destOffset, size);
-                    else
-                    LoadPalette(tileset->palettes[NUM_PALS_IN_PRIMARY], destOffset, size);
-                break;
-                case SEASON_AUTUMN:
-                    if(tileset->palettes_autumn != NULL)
-                    LoadPalette(tileset->palettes_autumn[NUM_PALS_IN_PRIMARY], destOffset, size);
-                    else
-                    LoadPalette(tileset->palettes[NUM_PALS_IN_PRIMARY], destOffset, size);
-                break;
-                case SEASON_WINTER:
-                    if(tileset->palettes_winter != NULL)
-                    LoadPalette(tileset->palettes_winter[NUM_PALS_IN_PRIMARY], destOffset, size);
-                    else
-                    LoadPalette(tileset->palettes[NUM_PALS_IN_PRIMARY], destOffset, size);
-                break;
-            }
-            ApplyGlobalTintToPaletteEntries(destOffset, size >> 1);
+            // All 'gTilesetPalettes_' arrays should have ALIGNED(4) in them,
+            // but we use SmartCopy here just in case they don't
+            if (skipFaded)
+                CpuCopy16(tileset->palettes[NUM_PALS_IN_PRIMARY], &gPlttBufferUnfaded[destOffset], size);
+            else
+                LoadPaletteFast(tileset->palettes[NUM_PALS_IN_PRIMARY], destOffset, size);
         }
         else
         {
-            switch(season){
-                case SEASON_SPRING:
-                 LoadCompressedPalette((const u32 *)tileset->palettes, destOffset, size);
-                break;
-                case SEASON_SUMMER:
-                    if(tileset->palettes_summer != NULL)
-                    LoadCompressedPalette((const u32 *)tileset->palettes_summer, destOffset, size);
-                    else
-                    LoadCompressedPalette((const u32 *)tileset->palettes, destOffset, size);
-                break;
-                case SEASON_AUTUMN:
-                    if(tileset->palettes_autumn != NULL)
-                    LoadCompressedPalette((const u32 *)tileset->palettes_autumn, destOffset, size);
-                    else
-                    LoadCompressedPalette((const u32 *)tileset->palettes, destOffset, size);
-                break;
-                case SEASON_WINTER:
-                    if(tileset->palettes_winter != NULL)
-                    LoadCompressedPalette((const u32 *)tileset->palettes_winter, destOffset, size);
-                    else
-                    LoadCompressedPalette((const u32 *)tileset->palettes, destOffset, size);
-                break;
-            }
+            LoadPalette((const u16 *)tileset->palettes, destOffset, size);
             ApplyGlobalTintToPaletteEntries(destOffset, size >> 1);
         }
     }
@@ -1003,12 +924,12 @@ void CopySecondaryTilesetToVramUsingHeap(struct MapLayout const *mapLayout)
 
 static void LoadPrimaryTilesetPalette(struct MapLayout const *mapLayout)
 {
-    LoadTilesetPalette(mapLayout->primaryTileset, BG_PLTT_ID(0), NUM_PALS_IN_PRIMARY * PLTT_SIZE_4BPP);
+    LoadTilesetPalette(mapLayout->primaryTileset, 0, NUM_PALS_IN_PRIMARY * PLTT_SIZE_4BPP, FALSE);
 }
 
-void LoadSecondaryTilesetPalette(struct MapLayout const *mapLayout)
+void LoadSecondaryTilesetPalette(struct MapLayout const *mapLayout, bool8 skipFaded)
 {
-    LoadTilesetPalette(mapLayout->secondaryTileset, BG_PLTT_ID(NUM_PALS_IN_PRIMARY), (NUM_PALS_TOTAL - NUM_PALS_IN_PRIMARY) * PLTT_SIZE_4BPP);
+    LoadTilesetPalette(mapLayout->secondaryTileset, NUM_PALS_IN_PRIMARY * 16, (NUM_PALS_TOTAL - NUM_PALS_IN_PRIMARY) * PLTT_SIZE_4BPP, skipFaded);
 }
 
 void CopyMapTilesetsToVram(struct MapLayout const *mapLayout)
@@ -1025,24 +946,6 @@ void LoadMapTilesetPalettes(struct MapLayout const *mapLayout)
     if (mapLayout)
     {
         LoadPrimaryTilesetPalette(mapLayout);
-        LoadSecondaryTilesetPalette(mapLayout);
+        LoadSecondaryTilesetPalette(mapLayout, FALSE);
     }
-}
-
-extern void DrawWholeMapView(void);
-void CopyMetatileIdsFromMapLayout(u16 mapGroup, u16 mapNum, const struct UCoords8 *pos)
-{
-    u32 i, block, x, y;
-    struct MapLayout const *layout = Overworld_GetMapHeaderByGroupAndId(mapGroup, mapNum)->mapLayout;
-    
-    i = 0;
-    do {
-        x = pos[i].x;
-        y = pos[i].y;
-        block = layout->map[x + layout->width * y];
-        gBackupMapLayout.map[(x + MAP_OFFSET) + (y + MAP_OFFSET) * gBackupMapLayout.width] = block;
-        i++;
-    } while (pos[i].x != 0xFF);
-    
-    DrawWholeMapView();
 }

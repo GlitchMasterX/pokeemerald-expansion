@@ -68,12 +68,10 @@
 #include "constants/battle_frontier.h"
 #include "constants/weather.h"
 #include "constants/metatile_labels.h"
-#include "constants/trainer_types.h"
+#include "constants/rgb.h"
 #include "palette.h"
 #include "battle_util.h"
-#include "battle_pyramid.h"
-#include "trainer_hill.h"
-
+#include "naming_screen.h"
 
 #define TAG_ITEM_ICON 5500
 
@@ -101,7 +99,7 @@ static EWRAM_DATA u8 sFrontierExchangeCorner_ItemIconWindowId = 0;
 static EWRAM_DATA u8 sPCBoxToSendMon = 0;
 static EWRAM_DATA u32 sBattleTowerMultiBattleTypeFlags = 0;
 
-struct ListMenuTemplate gScrollableMultichoice_ListMenuTemplate;
+COMMON_DATA struct ListMenuTemplate gScrollableMultichoice_ListMenuTemplate = {0};
 EWRAM_DATA u16 gScrollableMultichoice_ScrollOffset = 0;
 
 void TryLoseFansFromPlayTime(void);
@@ -190,13 +188,10 @@ void Special_BeginCyclingRoadChallenge(void)
 
 u16 GetPlayerAvatarBike(void)
 {
-    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_BIKE))
-    {
-        if (gSaveBlock2Ptr->playerBike != MACH_BIKE)
-            return 1;
-        else
-            return 2;
-    }
+    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_ACRO_BIKE))
+        return 1;
+    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_MACH_BIKE))
+        return 2;
     return 0;
 }
 
@@ -289,7 +284,7 @@ u16 GetRecordedCyclingRoadResults(void)
 
 void UpdateCyclingRoadState(void)
 {
-    if (gLastUsedWarp.mapNum == MAP_NUM(ROUTE110_SEASIDE_CYCLING_ROAD_SOUTH_ENTRANCE) && gLastUsedWarp.mapGroup == MAP_GROUP(ROUTE110_SEASIDE_CYCLING_ROAD_SOUTH_ENTRANCE))
+    if (gLastUsedWarp.mapNum == MAP_NUM(ROUTE110_SEASIDE_CYCLING_ROAD_NORTH_ENTRANCE) && gLastUsedWarp.mapGroup == MAP_GROUP(ROUTE110_SEASIDE_CYCLING_ROAD_NORTH_ENTRANCE))
         return;
 
     if (VarGet(VAR_CYCLING_CHALLENGE_STATE) == 2 || VarGet(VAR_CYCLING_CHALLENGE_STATE) == 3)
@@ -577,14 +572,16 @@ void SpawnLinkPartnerObjectEvent(void)
                     linkSpriteId = OBJ_EVENT_GFX_LINK_RS_MAY;
                 break;
             case VERSION_EMERALD:
-            default:
-            {
-                u8 outfit = gLinkPlayers[i].currOutfitId, gender = gLinkPlayers[i].gender;
-                if (outfit < OUTFIT_COUNT)
-                    linkSpriteId = GetLinkPlayerAvatarGraphicsIdByStateIdLinkIdAndGender(PLAYER_AVATAR_STATE_NORMAL, i, gender);
+                if (gLinkPlayers[i].gender == 0)
+                    linkSpriteId = OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL;
                 else
-                    linkSpriteId = (gender == 0) ? OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL : OBJ_EVENT_GFX_RIVAL_MAY_NORMAL;
-            }
+                    linkSpriteId = OBJ_EVENT_GFX_RIVAL_MAY_NORMAL;
+                break;
+            default:
+                if (gLinkPlayers[i].gender == 0)
+                    linkSpriteId = OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL;
+                else
+                    linkSpriteId = OBJ_EVENT_GFX_RIVAL_MAY_NORMAL;
                 break;
             }
             SpawnSpecialObjectEventParameterized(linkSpriteId, movementTypes[j], 240 - i, coordOffsets[j][0] + x + MAP_OFFSET, coordOffsets[j][1] + y + MAP_OFFSET, 0);
@@ -598,26 +595,37 @@ void SpawnLinkPartnerObjectEvent(void)
 
 static void LoadLinkPartnerObjectEventSpritePalette(u16 graphicsId, u8 localEventId, u8 paletteNum)
 {
-    u32 i = 0;
-    u8 outfit = 0;
-    u8 gender = 0;
-    u8 adjustedPaletteNum = paletteNum + 6;
-    u8 obj = GetObjectEventIdByLocalIdAndMap(localEventId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
-    u16 gfx = 0;
-    u8 spriteId = gObjectEvents[obj].spriteId;
-    struct Sprite *sprite = &gSprites[spriteId];
-
-    while (i < MAX_LINK_PLAYERS)
+    u8 adjustedPaletteNum;
+    // Note: This temp var is necessary; paletteNum += 6 doesn't match.
+    adjustedPaletteNum = paletteNum + 6;
+    if (graphicsId == OBJ_EVENT_GFX_LINK_RS_BRENDAN ||
+        graphicsId == OBJ_EVENT_GFX_LINK_RS_MAY ||
+        graphicsId == OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL ||
+        graphicsId == OBJ_EVENT_GFX_RIVAL_MAY_NORMAL)
     {
-        gender = gLinkPlayers[i].gender;
-        outfit = gLinkPlayers[i].currOutfitId;
-        gfx = GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(outfit, PLAYER_AVATAR_STATE_NORMAL, gender);
-        if (graphicsId == gfx && obj != OBJECT_EVENTS_COUNT)
+        u8 obj = GetObjectEventIdByLocalIdAndMap(localEventId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
+        if (obj != OBJECT_EVENTS_COUNT)
         {
+            u8 spriteId = gObjectEvents[obj].spriteId;
+            struct Sprite *sprite = &gSprites[spriteId];
             sprite->oam.paletteNum = adjustedPaletteNum;
-            PatchObjectPalette(GetObjectEventGraphicsInfo(graphicsId)->paletteTag, adjustedPaletteNum);
+
+            switch (graphicsId)
+            {
+            case OBJ_EVENT_GFX_LINK_RS_BRENDAN:
+                LoadPalette(gObjectEventPal_RubySapphireBrendan, OBJ_PLTT_ID(adjustedPaletteNum), PLTT_SIZE_4BPP);
+                break;
+            case OBJ_EVENT_GFX_LINK_RS_MAY:
+                LoadPalette(gObjectEventPal_RubySapphireMay, OBJ_PLTT_ID(adjustedPaletteNum), PLTT_SIZE_4BPP);
+                break;
+            case OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL:
+                LoadPalette(gObjectEventPal_Brendan, OBJ_PLTT_ID(adjustedPaletteNum), PLTT_SIZE_4BPP);
+                break;
+            case OBJ_EVENT_GFX_RIVAL_MAY_NORMAL:
+                LoadPalette(gObjectEventPal_May, OBJ_PLTT_ID(adjustedPaletteNum), PLTT_SIZE_4BPP);
+                break;
+            }
         }
-        i++;
     }
 }
 
@@ -2042,7 +2050,7 @@ bool8 UsedPokemonCenterWarp(void)
         MAP_FALLARBOR_TOWN_POKEMON_CENTER_1F,
         MAP_VERDANTURF_TOWN_POKEMON_CENTER_1F,
         MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_1F,
-        MAP_ASTRALIS_ACADEMY_POKEMON_CENTER_1F,
+        MAP_PETALBURG_CITY_POKEMON_CENTER_1F,
         MAP_SLATEPORT_CITY_POKEMON_CENTER_1F,
         MAP_MAUVILLE_CITY_POKEMON_CENTER_1F,
         MAP_RUSTBORO_CITY_POKEMON_CENTER_1F,
@@ -3274,7 +3282,8 @@ static void ChangeDeoxysRockLevel(u8 rockLevel)
 {
     u8 paletteNum = IndexOfSpritePaletteTag(OBJ_EVENT_PAL_TAG_BIRTH_ISLAND_STONE);
     LoadPalette(&sDeoxysRockPalettes[rockLevel], OBJ_PLTT_ID(paletteNum), PLTT_SIZEOF(4));
-    ApplyGlobalFieldPaletteTint(10);
+    UpdateSpritePaletteWithWeather(paletteNum, FALSE);
+
     if (rockLevel == 0)
         PlaySE(SE_M_CONFUSE_RAY); // Failure sound
     else
@@ -3325,7 +3334,7 @@ void SetDeoxysRockPalette(void)
     u32 paletteNum = IndexOfSpritePaletteTag(OBJ_EVENT_PAL_TAG_BIRTH_ISLAND_STONE);
     LoadPalette(&sDeoxysRockPalettes[(u8)VarGet(VAR_DEOXYS_ROCK_LEVEL)], OBJ_PLTT_ID(paletteNum), PLTT_SIZEOF(4));
     // Set faded to all black, weather blending handled during fade-in
-    CpuFill16(0, &gPlttBufferFaded[OBJ_PLTT_ID(paletteNum)], 32);
+    CpuFill16(RGB_BLACK, &gPlttBufferFaded[OBJ_PLTT_ID(paletteNum)], PLTT_SIZE_4BPP);
 }
 
 void SetPCBoxToSendMon(u8 boxId)
@@ -3529,7 +3538,7 @@ u32 GetMartEmployeeObjectEventId(void)
         { MAP_GROUP(LAVARIDGE_TOWN_MART),  MAP_NUM(LAVARIDGE_TOWN_MART),  LOCALID_LAVARIDGE_MART_CLERK },
         { MAP_GROUP(FALLARBOR_TOWN_MART),  MAP_NUM(FALLARBOR_TOWN_MART),  LOCALID_FALLARBOR_MART_CLERK },
         { MAP_GROUP(VERDANTURF_TOWN_MART), MAP_NUM(VERDANTURF_TOWN_MART), LOCALID_VERDANTURF_MART_CLERK },
-        { MAP_GROUP(ASTRALIS_ACADEMY_MART),  MAP_NUM(ASTRALIS_ACADEMY_MART),  LOCALID_PETALBURG_MART_CLERK },
+        { MAP_GROUP(PETALBURG_CITY_MART),  MAP_NUM(PETALBURG_CITY_MART),  LOCALID_PETALBURG_MART_CLERK },
         { MAP_GROUP(SLATEPORT_CITY_MART),  MAP_NUM(SLATEPORT_CITY_MART),  LOCALID_SLATEPORT_MART_CLERK },
         { MAP_GROUP(MAUVILLE_CITY_MART),   MAP_NUM(MAUVILLE_CITY_MART),   LOCALID_MAUVILLE_MART_CLERK },
         { MAP_GROUP(RUSTBORO_CITY_MART),   MAP_NUM(RUSTBORO_CITY_MART),   LOCALID_RUSTBORO_MART_CLERK },
@@ -3556,7 +3565,7 @@ bool32 IsTrainerRegistered(void)
     int index = GetRematchIdxByTrainerIdx(gSpecialVar_0x8004);
     if (index >= 0)
     {
-        if (FlagGet(FLAG_MATCH_CALL_REGISTERED + index) == TRUE)
+        if (FlagGet(TRAINER_REGISTERED_FLAGS_START + index) == TRUE)
             return TRUE;
     }
     return FALSE;
@@ -3817,7 +3826,7 @@ void GetBattlePyramidHint(void)
 void ResetHealLocationFromDewford(void)
 {
     if (gSaveBlock1Ptr->lastHealLocation.mapGroup == MAP_GROUP(DEWFORD_TOWN) && gSaveBlock1Ptr->lastHealLocation.mapNum == MAP_NUM(DEWFORD_TOWN))
-        SetLastHealLocationWarp(HEAL_LOCATION_ASTRALIS_ACADEMY);
+        SetLastHealLocationWarp(HEAL_LOCATION_PETALBURG_CITY);
 }
 
 bool8 InPokemonCenter(void)
@@ -3830,7 +3839,7 @@ bool8 InPokemonCenter(void)
         MAP_FALLARBOR_TOWN_POKEMON_CENTER_1F,
         MAP_VERDANTURF_TOWN_POKEMON_CENTER_1F,
         MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_1F,
-        MAP_ASTRALIS_ACADEMY_POKEMON_CENTER_1F,
+        MAP_PETALBURG_CITY_POKEMON_CENTER_1F,
         MAP_SLATEPORT_CITY_POKEMON_CENTER_1F,
         MAP_MAUVILLE_CITY_POKEMON_CENTER_1F,
         MAP_RUSTBORO_CITY_POKEMON_CENTER_1F,
@@ -3893,14 +3902,14 @@ bool8 InPokemonCenter(void)
 #define FANCLUB_BITFIELD (gSaveBlock1Ptr->vars[VAR_FANCLUB_FAN_COUNTER - VARS_START])
 #define FANCLUB_COUNTER    0x007F
 
-#define GET_TRAINER_FAN_CLUB_FLAG(flag) (FANCLUB_BITFIELD >> (flag) & 1)
-#define SET_TRAINER_FAN_CLUB_FLAG(flag) (FANCLUB_BITFIELD |= 1 << (flag))
-#define FLIP_TRAINER_FAN_CLUB_FLAG(flag)(FANCLUB_BITFIELD ^= 1 << (flag))
+#define GET_TRAINER_FAN_CLUB_FLAG(flag)  (FANCLUB_BITFIELD >> (flag) & 1)
+#define SET_TRAINER_FAN_CLUB_FLAG(flag)  (FANCLUB_BITFIELD |= 1 << (flag))
+#define FLIP_TRAINER_FAN_CLUB_FLAG(flag) (FANCLUB_BITFIELD ^= 1 << (flag))
 
-#define GET_TRAINER_FAN_CLUB_COUNTER        (FANCLUB_BITFIELD & FANCLUB_COUNTER)
-#define SET_TRAINER_FAN_CLUB_COUNTER(count) (FANCLUB_BITFIELD = (FANCLUB_BITFIELD & ~FANCLUB_COUNTER) | (count))
-#define INCR_TRAINER_FAN_CLUB_COUNTER(count)(FANCLUB_BITFIELD += (count))
-#define CLEAR_TRAINER_FAN_CLUB_COUNTER      (FANCLUB_BITFIELD &= ~FANCLUB_COUNTER)
+#define GET_TRAINER_FAN_CLUB_COUNTER         (FANCLUB_BITFIELD & FANCLUB_COUNTER)
+#define SET_TRAINER_FAN_CLUB_COUNTER(count)  (FANCLUB_BITFIELD = (FANCLUB_BITFIELD & ~FANCLUB_COUNTER) | (count))
+#define INCR_TRAINER_FAN_CLUB_COUNTER(count) (FANCLUB_BITFIELD += (count))
+#define CLEAR_TRAINER_FAN_CLUB_COUNTER       (FANCLUB_BITFIELD &= ~FANCLUB_COUNTER)
 
 void ResetFanClub(void)
 {
@@ -4339,60 +4348,16 @@ void UseBlankMessageToCancelPokemonPic(void)
     ScriptMenu_HidePokemonPic();
 }
 
-#define MAX_BIRD_SPOTS 10
-
-static const u8 randomBirdArray[MAX_BIRD_SPOTS + 1][4] =
+void EnterCode(void)
 {
-    [0]  = { 0, 0, 0, 0 },
-    [1]  = { 1, 0, 1, 0 },
-    [2]  = { 1, 0, 1, 0 },
-    [3]  = { 2, 1, 1, 0 },
-    [4]  = { 2, 1, 1, 0 },
-    [5]  = { 2, 1, 2, 0 },
-    [6]  = { 3, 2, 2, 1 },
-    [7]  = { 3, 2, 3, 2 },
-    [8]  = { 4, 2, 3, 2 },
-    [9]  = { 4, 3, 3, 2 },
-    [10] = { 4, 3, 4, 3 },
-};
+    DoNamingScreen(NAMING_SCREEN_CODE, gStringVar2, 0, 0, 0, CB2_ReturnToFieldContinueScript);
+}
 
-void SetRoofBirds(void)
+void GetCodeFeedback(void)
 {
-    u8 i;
-    u8 objectEventCount;
-    struct ObjectEventTemplate *template;
-    u8 birdIndexes[MAX_BIRD_SPOTS + 1] = {0};
-    u32 birdCount = 0;
-    if (gMapHeader.events != NULL)
-    {
-        if (InBattlePyramid())
-           objectEventCount = GetNumBattlePyramidObjectEvents();
-        else if (InTrainerHill())
-           objectEventCount = HILL_TRAINERS_PER_FLOOR;
-        else
-           objectEventCount = gMapHeader.events->objectEventCount;
-
-        for (i = 0; i < objectEventCount; i++)
-        {
-            template = &gSaveBlock1Ptr->objectEventTemplates[i];
-            if (template->trainerType == TRAINER_TYPE_BIRD && birdCount <= MAX_BIRD_SPOTS)
-            {
-                birdIndexes[birdCount] = i; // Store index of bird
-                birdCount++;
-            }
-        }
-    
-        if (birdCount > 0)
-        {
-            u8 visibleCount = randomBirdArray[birdCount][Random() % 4];
-            Shuffle8(birdIndexes, birdCount);
-            // Hide random birds until only `visibleCount` remain
-            for (i = visibleCount; i < birdCount; i++)
-            {
-                u8 birdIndex = birdIndexes[i];
-                template = &gSaveBlock1Ptr->objectEventTemplates[birdIndex];
-                FlagSet(template->flagId);
-            }
-        }
-    }
+    static const u8 sText_SampleCode[] = _("SampleCode");
+    if (!StringCompare(gStringVar2, sText_SampleCode))
+        gSpecialVar_Result = 1;
+    else
+        gSpecialVar_Result = 0;
 }

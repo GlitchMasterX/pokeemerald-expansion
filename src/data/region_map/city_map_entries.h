@@ -1,27 +1,27 @@
 static const struct CityMapEntry sPokenavCityMaps[NUM_CITY_MAPS] =
 {
     {
-        .mapSecId = MAPSEC_LUXURA_ISLAND,
+        .mapSecId = MAPSEC_LITTLEROOT_TOWN,
         .index = 0,
         .tilemap = gPokenavCityMap_Littleroot_0,
     },
     {
-        .mapSecId = MAPSEC_LUXURA_MANSION,
+        .mapSecId = MAPSEC_OLDALE_TOWN,
         .index = 0,
         .tilemap = gPokenavCityMap_Oldale_0,
     },
     {
-        .mapSecId = MAPSEC_SPARK,
+        .mapSecId = MAPSEC_DEWFORD_TOWN,
         .index = 0,
         .tilemap = gPokenavCityMap_Dewford_0,
     },
     {
-        .mapSecId = MAPSEC_LUXURA_VEILWOOD,
+        .mapSecId = MAPSEC_LAVARIDGE_TOWN,
         .index = 0,
         .tilemap = gPokenavCityMap_Lavaridge_0,
     },
     {
-        .mapSecId = MAPSEC_MT_CINDER,
+        .mapSecId = MAPSEC_FALLARBOR_TOWN,
         .index = 0,
         .tilemap = gPokenavCityMap_Fallarbor_0,
     },
@@ -36,7 +36,7 @@ static const struct CityMapEntry sPokenavCityMaps[NUM_CITY_MAPS] =
         .tilemap = gPokenavCityMap_Pacifidlog_0,
     },
     {
-        .mapSecId = MAPSEC_ASTRALIS_ACADEMY,
+        .mapSecId = MAPSEC_PETALBURG_CITY,
         .index = 0,
         .tilemap = gPokenavCityMap_Petalburg_0,
     },

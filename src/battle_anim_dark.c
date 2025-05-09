@@ -932,16 +932,9 @@ void AnimTask_MetallicShine(u8 taskId)
     }
 
     if (IsContest())
-    {
         species = gContestResources->moveAnim->species;
-    }
     else
-    {
-        if (GetBattlerSide(gBattleAnimAttacker) != B_SIDE_PLAYER)
-            species = GetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattleAnimAttacker]], MON_DATA_SPECIES);
-        else
-            species = GetMonData(&gPlayerParty[gBattlerPartyIndexes[gBattleAnimAttacker]], MON_DATA_SPECIES);
-    }
+        species = GetMonData(GetPartyBattlerData(gBattleAnimAttacker), MON_DATA_SPECIES);
 
     spriteId = GetAnimBattlerSpriteId(ANIM_ATTACKER);
     newSpriteId = CreateInvisibleSpriteCopy(gBattleAnimAttacker, spriteId, species);
@@ -949,7 +942,7 @@ void AnimTask_MetallicShine(u8 taskId)
     GetBattleAnimBg1Data(&animBg);
     AnimLoadCompressedBgTilemap(animBg.bgId, gMetalShineTilemap);
     AnimLoadCompressedBgGfx(animBg.bgId, gMetalShineGfx, animBg.tilesOffset);
-    LoadCompressedPalette(gMetalShinePalette, BG_PLTT_ID(animBg.paletteId), PLTT_SIZE_4BPP);
+    LoadPalette(gMetalShinePalette, BG_PLTT_ID(animBg.paletteId), PLTT_SIZE_4BPP);
 
     gBattle_BG1_X = -gSprites[spriteId].x + 96;
     gBattle_BG1_Y = -gSprites[spriteId].y + 32;

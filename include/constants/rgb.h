@@ -15,6 +15,7 @@
 
 #define RGB_BLACK      RGB(0, 0, 0)
 #define RGB_WHITE      RGB(31, 31, 31)
+#define RGB_GRAY       RGB(15, 15, 15)
 #define RGB_RED        RGB(31, 0, 0)
 #define RGB_GREEN      RGB(0, 31, 0)
 #define RGB_BLUE       RGB(0, 0, 31)
@@ -25,10 +26,5 @@
 #define RGB_WHITEALPHA (RGB_WHITE | RGB_ALPHA)
 
 #define RGB_LIME_GREEN  RGB2GBA(222, 230, 49)
-
-// gGlobalFieldTintMode
-#define GLOBAL_FIELD_TINT_NONE              0
-#define GLOBAL_FIELD_TINT_GRAYSCALE         1
-#define GLOBAL_FIELD_TINT_SEPIA             2
 
 #endif // GUARD_RGB_H

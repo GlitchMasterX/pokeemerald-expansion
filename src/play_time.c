@@ -1,7 +1,7 @@
 #include "global.h"
 #include "play_time.h"
 #include "fake_rtc.h"
-#include "rtc.h"
+#include "field_player_avatar.h"
 
 enum
 {
@@ -41,6 +41,7 @@ void PlayTimeCounter_Update(void)
         return;
 
     gSaveBlock2Ptr->playTimeVBlanks++;
+    UpdateSpinData();
 
     if (gSaveBlock2Ptr->playTimeVBlanks < 60)
         return;
@@ -51,10 +52,9 @@ void PlayTimeCounter_Update(void)
 
     if (gSaveBlock2Ptr->playTimeSeconds < 60)
         return;
-    
+
     gSaveBlock2Ptr->playTimeSeconds = 0;
     gSaveBlock2Ptr->playTimeMinutes++;
-    RtcCalcLocalTime(); 
 
     if (gSaveBlock2Ptr->playTimeMinutes < 60)
         return;

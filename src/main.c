@@ -62,15 +62,15 @@ const IntrFunc gIntrTableTemplate[] =
 
 #define INTR_COUNT ((int)(sizeof(gIntrTableTemplate)/sizeof(IntrFunc)))
 
-  u16 gKeyRepeatStartDelay = 0;
-  bool8 gLinkTransferringData = 0;
-  struct Main gMain = {0};
-  u16 gKeyRepeatContinueDelay = 0;
-  bool8 gSoftResetDisabled = 0;
-  IntrFunc gIntrTable[INTR_COUNT] = {0};
-  u8 gLinkVSyncDisabled = 0;
-  s8 gPcmDmaCounter = 0;
-  void *gAgbMainLoop_sp = NULL;
+COMMON_DATA u16 gKeyRepeatStartDelay = 0;
+COMMON_DATA bool8 gLinkTransferringData = 0;
+COMMON_DATA struct Main gMain = {0};
+COMMON_DATA u16 gKeyRepeatContinueDelay = 0;
+COMMON_DATA bool8 gSoftResetDisabled = 0;
+COMMON_DATA IntrFunc gIntrTable[INTR_COUNT] = {0};
+COMMON_DATA u8 gLinkVSyncDisabled = 0;
+COMMON_DATA s8 gPcmDmaCounter = 0;
+COMMON_DATA void *gAgbMainLoop_sp = NULL;
 
 static EWRAM_DATA u16 sTrainerId = 0;
 
@@ -93,7 +93,9 @@ void AgbMain()
 {
     *(vu16 *)BG_PLTT = RGB_WHITE; // Set the backdrop to white on startup
     InitGpuRegManager();
-    REG_WAITCNT = WAITCNT_PREFETCH_ENABLE | WAITCNT_WS0_S_1 | WAITCNT_WS0_N_3;
+    REG_WAITCNT = WAITCNT_PREFETCH_ENABLE
+	        | WAITCNT_WS0_S_1 | WAITCNT_WS0_N_3
+	        | WAITCNT_WS1_S_1 | WAITCNT_WS1_N_3;
     InitKeys();
     InitIntrHandlers();
     m4aSoundInit();
@@ -122,7 +124,7 @@ void AgbMain()
 #if (LOG_HANDLER == LOG_HANDLER_MGBA_PRINT)
     (void) MgbaOpen();
 #elif (LOG_HANDLER == LOG_HANDLER_AGB_PRINT)
-    AGBPrintfInit();
+    AGBPrintInit();
 #endif
 #endif
     gAgbMainLoop_sp = __builtin_frame_address(0);

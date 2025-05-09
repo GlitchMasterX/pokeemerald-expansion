@@ -4,9 +4,7 @@ Despite the persistent rumors about an incredibly strong third form of Mew hidin
 In this tutorial, we will add a new Pokémon species to the game.
 
 ## IMPORTANT: This tutorial applies to Version 1.6.2 and lower.
-- [Version 1.9.x](how_to_new_pokemon_1_9_0.md)
-- [Version 1.8.x](how_to_new_pokemon_1_8_0.md)
-- [Version 1.7.x](how_to_new_pokemon_1_7_0.md)
+- [Version 1.7.x onwards](how_to_new_pokemon.md)
 
 # Changes compared to vanilla
 The main things that the Expansion changes are listed here.
@@ -99,13 +97,13 @@ Edit [src/data/graphics/pokemon.h](https://github.com/rh-hideout/pokeemerald-exp
 ```
 
 ```diff
- const u32 gMonPalette_Calyrex[] = INCBIN_U32("graphics/pokemon/calyrex/normal.gbapal.lz");
-+const u32 gMonPalette_Mewthree[] = INCBIN_U32("graphics/pokemon/mewthree/normal.gbapal.lz");
+ const u32 gMonPalette_Calyrex[] = INCBIN_U32("graphics/pokemon/calyrex/normal.gbapal");
++const u32 gMonPalette_Mewthree[] = INCBIN_U32("graphics/pokemon/mewthree/normal.gbapal");
 ```
 
 ```diff
- const u32 gMonShinyPalette_Calyrex[] = INCBIN_U32("graphics/pokemon/calyrex/shiny.gbapal.lz");
-+const u32 gMonShinyPalette_Mewthree[] = INCBIN_U32("graphics/pokemon/mewthree/shiny.gbapal.lz");
+ const u32 gMonShinyPalette_Calyrex[] = INCBIN_U32("graphics/pokemon/calyrex/shiny.gbapal");
++const u32 gMonShinyPalette_Mewthree[] = INCBIN_U32("graphics/pokemon/mewthree/shiny.gbapal");
 ```
 
 ```diff

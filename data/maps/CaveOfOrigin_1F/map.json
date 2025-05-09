@@ -16,18 +16,18 @@
   "object_events": [],
   "warp_events": [
     {
-      "dest_map": "MAP_CAVE_OF_ORIGIN_ENTRANCE",
-      "dest_warp_id": "1",
-      "elevation": 3,
       "x": 11,
-      "y": 17
+      "y": 17,
+      "elevation": 3,
+      "dest_map": "MAP_CAVE_OF_ORIGIN_ENTRANCE",
+      "dest_warp_id": "1"
     },
     {
-      "dest_map": "MAP_CAVE_OF_ORIGIN_B1F",
-      "dest_warp_id": "0",
-      "elevation": 3,
       "x": 14,
-      "y": 5
+      "y": 5,
+      "elevation": 3,
+      "dest_map": "MAP_CAVE_OF_ORIGIN_B1F",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

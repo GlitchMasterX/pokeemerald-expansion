@@ -49,8 +49,6 @@
 #include "constants/battle_frontier.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
-#include "ui_startmenu_full.h"
-
 
 // Menu actions
 enum
@@ -82,7 +80,7 @@ enum
 };
 
 // IWRAM common
-bool8 (*gMenuCallback)(void);
+COMMON_DATA bool8 (*gMenuCallback)(void) = NULL;
 
 // EWRAM
 EWRAM_DATA static u8 sSafariBallsWindowId = 0;
@@ -331,13 +329,13 @@ static void AddStartMenuAction(u8 action)
 }
 
 static void BuildNormalStartMenu(void)
-{ 
+{
     if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_POKEDEX);
-    
-    if (FLAG_SYS_DEXNAV_GET != 0 && FlagGet(FLAG_SYS_DEXNAV_GET))
+
+    if (DN_FLAG_DEXNAV_GET != 0 && FlagGet(DN_FLAG_DEXNAV_GET))
         AddStartMenuAction(MENU_ACTION_DEXNAV);
-    
+
     if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_POKEMON);
 
@@ -617,20 +615,7 @@ void ShowStartMenu(void)
         PlayerFreeze();
         StopPlayerAvatar();
     }
-//    CreateStartMenuTask(Task_ShowStartMenu);
-     else{
-        CreateStartMenuTask(Task_ShowStartMenu);
-        LockPlayerFieldControls();
-        return;
-    }
-    if (GetSafariZoneFlag() || InBattlePyramid() || InBattlePike() || InUnionRoom() || InMultiPartnerRoom())
-    {
-        CreateStartMenuTask(Task_ShowStartMenu);
-        LockPlayerFieldControls();
-        return;
-    }
-    BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
-    CreateTask(Task_OpenStartMenuFullScreen, 0);
+    CreateStartMenuTask(Task_ShowStartMenu);
     LockPlayerFieldControls();
 }
 
@@ -659,7 +644,7 @@ static bool8 HandleStartMenuInput(void)
         if (sCurrentStartMenuActions[sStartMenuCursorPos] == MENU_ACTION_DEXNAV
           && MapHasNoEncounterData())
             return FALSE;
-        
+
         gMenuCallback = sStartMenuItems[sCurrentStartMenuActions[sStartMenuCursorPos]].func.u8_void;
 
         if (gMenuCallback != StartMenuSaveCallback
@@ -882,51 +867,6 @@ static bool8 SaveStartCallback(void)
 
     return FALSE;
 }
-static void Task_SaveFromStartMenuFull(u8 taskId);
-
-void SaveStartCallback_FullStartMenu(void)
-{
-    WarpFadeInScreen();
-    InitSave();
-    CreateTask( Task_SaveFromStartMenuFull, 0);
-    return;
-}
-
-static void Task_SaveFromStartMenuFull(u8 taskId)
-{
-    s16 *state = gTasks[taskId].data;
-
-    if (!gPaletteFade.active)
-    {
-        switch (*state)
-        {
-            case 0:
-                ShowSaveInfoWindow();
-                *state = 1;
-                break;
-            case 1:
-                ShowSaveMessage(gText_SavingDontTurnOff, SaveDoSaveCallback);
-                *state = 2;
-                break;
-            case 2:
-                if (SaveCallback())
-                    *state = 3;
-                break;
-            case 3:
-                if (SaveCallback())
-                    *state = 4;
-                break;
-            case 4:
-                DestroyTask(taskId);
-                ClearDialogWindowAndFrameToTransparent(0, TRUE);
-                HideSaveMessageWindow();
-                ScriptUnfreezeObjectEvents();
-                UnlockPlayerFieldControls();
-                SoftResetInBattlePyramid();
-                break;
-        }
-    }
-}
 
 static bool8 SaveCallback(void)
 {
@@ -935,10 +875,10 @@ static bool8 SaveCallback(void)
     case SAVE_IN_PROGRESS:
         return FALSE;
     case SAVE_CANCELED: // Back to start menu
-   //     ClearDialogWindowAndFrameToTransparent(0, FALSE);
-     //   InitStartMenu();
-     //   gMenuCallback = HandleStartMenuInput;
-       // return FALSE;
+        ClearDialogWindowAndFrameToTransparent(0, FALSE);
+        InitStartMenu();
+        gMenuCallback = HandleStartMenuInput;
+        return FALSE;
     case SAVE_SUCCESS:
     case SAVE_ERROR:    // Close start menu
         ClearDialogWindowAndFrameToTransparent(0, TRUE);
@@ -1469,7 +1409,7 @@ static void ShowSaveInfoWindow(void)
 
     // Print region name
     yOffset = 1;
-    BufferSaveMenuText(SAVE_MENU_LOCATION, gStringVar4, TEXT_COLOR_BLUE);
+    BufferSaveMenuText(SAVE_MENU_LOCATION, gStringVar4, TEXT_COLOR_GREEN);
     AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, 0, yOffset, TEXT_SKIP_DRAW, NULL);
 
     // Print player name
@@ -1556,4 +1496,12 @@ static bool8 StartMenuDexNavCallback(void)
 {
     CreateTask(Task_OpenDexNavFromStartMenu, 0);
     return TRUE;
+}
+
+void Script_ForceSaveGame(struct ScriptContext *ctx)
+{
+    SaveGame();
+    ShowSaveInfoWindow();
+    gMenuCallback = SaveCallback;
+    sSaveDialogCallback = SaveSavingMessageCallback;
 }

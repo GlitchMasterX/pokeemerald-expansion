@@ -1,9 +1,13 @@
 #include "global.h"
+#include "battle_pike.h"
+#include "battle_pyramid.h"
+#include "datetime.h"
 #include "rtc.h"
 #include "string_util.h"
 #include "strings.h"
 #include "text.h"
 #include "fake_rtc.h"
+#include "overworld.h"
 
 // iwram bss
 static u16 sErrorStatus;
@@ -12,39 +16,27 @@ static u8 sProbeResult;
 static u16 sSavedIme;
 
 // iwram common
-struct Time gLocalTime;
+COMMON_DATA struct Time gLocalTime = {0};
 
 // const rom
 
 static const struct SiiRtcInfo sRtcDummy = {0, MONTH_JAN, 1}; // 2000 Jan 1
 
-u8 GetMonthFromDays(u16 days)
+const s32 sNumDaysInMonths[MONTH_COUNT] =
 {
-    u16 dayOfYear = days % 365; // Day of the year (assuming non-leap year)
-    u8 calculatedMonth = 0;
-
-    for (calculatedMonth = 0; calculatedMonth < MONTH_COUNT; calculatedMonth++)
-    {
-        if (dayOfYear < sNumDaysInMonths[calculatedMonth])
-            break;
-        dayOfYear -= sNumDaysInMonths[calculatedMonth];
-    }
-
-    // Store the calculated month in Var
-    VarSet(VAR_CURRENT_CALCULATED_MONTH, calculatedMonth + 1); // Store as 1-indexed month
-
-    // Retrieve the current game-set month, which may have been manually changed
-    u8 currentMonth = VarGet(VAR_CURRENT_MONTH);
-
-    // If the month hasn't been manually set, use the calculated month
-    if (currentMonth == 0)  // Assuming 0 indicates an unset month
-    {
-        currentMonth = calculatedMonth + 1; // Set to the calculated month
-        VarSet(VAR_CURRENT_MONTH, currentMonth); // Store the current month in the game
-    }
-
-    return currentMonth; // Return the current month (either calculated or manually set)
-}
+    [MONTH_JAN - 1] = 31,
+    [MONTH_FEB - 1] = 28,
+    [MONTH_MAR - 1] = 31,
+    [MONTH_APR - 1] = 30,
+    [MONTH_MAY - 1] = 31,
+    [MONTH_JUN - 1] = 30,
+    [MONTH_JUL - 1] = 31,
+    [MONTH_AUG - 1] = 31,
+    [MONTH_SEP - 1] = 30,
+    [MONTH_OCT - 1] = 31,
+    [MONTH_NOV - 1] = 30,
+    [MONTH_DEC - 1] = 31,
+};
 
 void RtcDisableInterrupts(void)
 {
@@ -106,9 +98,6 @@ u16 ConvertDateToDayCount(u8 year, u8 month, u8 day)
 u16 RtcGetDayCount(struct SiiRtcInfo *rtc)
 {
     u8 year, month, day;
-
-    if (OW_USE_FAKE_RTC)
-        return rtc->day;
 
     year = ConvertBcdToBinary(rtc->year);
     month = ConvertBcdToBinary(rtc->month);
@@ -242,7 +231,7 @@ void RtcReset(void)
 {
     if (OW_USE_FAKE_RTC)
     {
-        memset(FakeRtc_GetCurrentTime(), 0, sizeof(struct Time));
+        FakeRtc_Reset();
         return;
     }
 
@@ -331,27 +320,22 @@ void RtcCalcLocalTime(void)
 
 bool8 IsBetweenHours(s32 hours, s32 begin, s32 end)
 {
-    if (end < begin) // Handles cases like NIGHT (20-3)
-        return (hours >= begin || hours < end) ? TRUE : FALSE;
-    else             // Normal cases (e.g., Morning 4-10)
-        return (hours >= begin && hours < end) ? TRUE : FALSE;
+    if (end < begin)
+        return hours >= begin || hours < end;
+    else
+        return hours >= begin && hours < end;
 }
 
-
-u8 GetTimeOfDay(void)
+enum TimeOfDay GetTimeOfDay(void)
 {
-    RtcCalcLocalTime(); // Get the latest time
-
-    if (IsBetweenHours(gLocalTime.hours, MORNING_HOUR_BEGIN, MORNING_HOUR_END))
-        return TIME_MORNING;
-    else if (IsBetweenHours(gLocalTime.hours, EVENING_HOUR_BEGIN, EVENING_HOUR_END))
-        return TIME_EVENING;
-    else if (IsBetweenHours(gLocalTime.hours, NIGHT_HOUR_BEGIN, NIGHT_HOUR_END))
-        return TIME_NIGHT;
-    
-    return TIME_DAY; // Default to daytime if no other conditions match
+    UpdateTimeOfDay();
+    return gTimeOfDay;
 }
 
+enum TimeOfDay GetTimeOfDayForDex(void)
+{
+    return OW_TIME_OF_DAY_ENCOUNTERS ? GetTimeOfDay() : TIME_OF_DAY_DEFAULT;
+}
 
 void RtcInitLocalTimeOffset(s32 hour, s32 minute)
 {
@@ -433,4 +417,50 @@ void FormatDecimalTimeWithoutSeconds(u8 *txtPtr, s8 hour, s8 minute, bool32 is24
 
     *txtPtr++ = EOS;
     *txtPtr = EOS;
+}
+
+u16 GetFullYear(void)
+{
+    struct DateTime dateTime;
+    RtcCalcLocalTime();
+    ConvertTimeToDateTime(&dateTime, &gLocalTime);
+
+    return dateTime.year;
+}
+
+enum Month GetMonth(void)
+{
+    struct DateTime dateTime;
+    RtcCalcLocalTime();
+    ConvertTimeToDateTime(&dateTime, &gLocalTime);
+
+    return dateTime.month;
+}
+
+u8 GetDay(void)
+{
+    struct DateTime dateTime;
+    RtcCalcLocalTime();
+    ConvertTimeToDateTime(&dateTime, &gLocalTime);
+
+    return dateTime.day;
+}
+
+enum Weekday GetDayOfWeek(void)
+{
+    struct DateTime dateTime;
+    RtcCalcLocalTime();
+    ConvertTimeToDateTime(&dateTime, &gLocalTime);
+
+    return dateTime.dayOfWeek;
+}
+  
+enum TimeOfDay TryIncrementTimeOfDay(enum TimeOfDay timeOfDay)
+{
+    return timeOfDay == TIME_NIGHT ? TIME_MORNING : timeOfDay + 1;
+}
+
+enum TimeOfDay TryDecrementTimeOfDay(enum TimeOfDay timeOfDay)
+{
+    return timeOfDay == TIME_MORNING ? TIME_NIGHT : timeOfDay - 1;
 }

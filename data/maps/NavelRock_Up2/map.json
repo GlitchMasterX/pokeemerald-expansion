@@ -16,18 +16,18 @@
   "object_events": [],
   "warp_events": [
     {
-      "dest_map": "MAP_NAVEL_ROCK_UP1",
-      "dest_warp_id": "1",
-      "elevation": 3,
       "x": 3,
-      "y": 3
+      "y": 3,
+      "elevation": 3,
+      "dest_map": "MAP_NAVEL_ROCK_UP1",
+      "dest_warp_id": "1"
     },
     {
-      "dest_map": "MAP_NAVEL_ROCK_UP3",
-      "dest_warp_id": "0",
-      "elevation": 3,
       "x": 5,
-      "y": 5
+      "y": 5,
+      "elevation": 3,
+      "dest_map": "MAP_NAVEL_ROCK_UP3",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

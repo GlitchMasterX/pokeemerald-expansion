@@ -6,18 +6,18 @@ extern const u8 gCgb3Vol[];
 
 #define BSS_CODE __attribute__((section(".bss.code")))
 
-  struct SoundInfo gSoundInfo = {0};
-  struct PokemonCrySong gPokemonCrySongs[MAX_POKEMON_CRIES] = {0};
-  struct MusicPlayerInfo gPokemonCryMusicPlayers[MAX_POKEMON_CRIES] = {0};
-  struct MusicPlayerInfo gMPlayInfo_BGM = {0};
-  MPlayFunc gMPlayJumpTable[36] = {0};
-  struct CgbChannel gCgbChans[4] = {0};
-  struct MusicPlayerInfo gMPlayInfo_SE1 = {0};
-  struct MusicPlayerInfo gMPlayInfo_SE2 = {0};
-  struct MusicPlayerTrack gPokemonCryTracks[MAX_POKEMON_CRIES * 2] = {0};
-  struct PokemonCrySong gPokemonCrySong = {0};
-  u8 gMPlayMemAccArea[0x10] = {0};
-  struct MusicPlayerInfo gMPlayInfo_SE3 = {0};
+COMMON_DATA struct SoundInfo gSoundInfo = {0};
+COMMON_DATA struct PokemonCrySong gPokemonCrySongs[MAX_POKEMON_CRIES] = {0};
+COMMON_DATA struct MusicPlayerInfo gPokemonCryMusicPlayers[MAX_POKEMON_CRIES] = {0};
+COMMON_DATA struct MusicPlayerInfo gMPlayInfo_BGM = {0};
+COMMON_DATA MPlayFunc gMPlayJumpTable[36] = {0};
+COMMON_DATA struct CgbChannel gCgbChans[4] = {0};
+COMMON_DATA struct MusicPlayerInfo gMPlayInfo_SE1 = {0};
+COMMON_DATA struct MusicPlayerInfo gMPlayInfo_SE2 = {0};
+COMMON_DATA struct MusicPlayerTrack gPokemonCryTracks[MAX_POKEMON_CRIES * 2] = {0};
+COMMON_DATA struct PokemonCrySong gPokemonCrySong = {0};
+COMMON_DATA u8 gMPlayMemAccArea[0x10] = {0};
+COMMON_DATA struct MusicPlayerInfo gMPlayInfo_SE3 = {0};
 
 u32 MidiKeyToFreq(struct WaveData *wav, u8 key, u8 fineAdjust)
 {
@@ -73,9 +73,9 @@ void m4aSoundInit(void)
     SoundInit(&gSoundInfo);
     MPlayExtender(gCgbChans);
     m4aSoundMode(SOUND_MODE_DA_BIT_8
-               | SOUND_MODE_FREQ_18157
+               | SOUND_MODE_FREQ_13379
                | (12 << SOUND_MODE_MASVOL_SHIFT)
-               | (15 << SOUND_MODE_MAXCHN_SHIFT));
+               | (5 << SOUND_MODE_MAXCHN_SHIFT));
 
     for (i = 0; i < NUM_MUSIC_PLAYERS; i++)
     {

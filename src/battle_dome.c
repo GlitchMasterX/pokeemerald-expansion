@@ -32,7 +32,6 @@
 #include "scanline_effect.h"
 #include "script_pokemon_util.h"
 #include "graphics.h"
-#include "outfit_menu.h"
 #include "constants/battle_dome.h"
 #include "constants/battle_move_effects.h"
 #include "constants/frontier_util.h"
@@ -537,7 +536,7 @@ static const struct CompressedSpriteSheet sTourneyTreeButtonsSpriteSheet[] =
 };
 
 // Unused
-static const struct CompressedSpritePalette sTourneyTreeButtonsSpritePal[] =
+static const struct SpritePalette sTourneyTreeButtonsSpritePal[] =
 {
     {.data = gDomeTourneyTreeButtons_Pal, .tag = TAG_BUTTONS},
     {},
@@ -1783,7 +1782,7 @@ static void InitDomeChallenge(void)
         gSaveBlock2Ptr->frontier.domeWinStreaks[battleMode][lvlMode] = 0;
 
     SetDynamicWarp(0, gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum, WARP_ID_NONE);
-    gTrainerBattleOpponent_A = 0;
+    TRAINER_BATTLE_PARAM.opponentA = 0;
 }
 
 static void GetDomeData(void)
@@ -2183,13 +2182,13 @@ static void BufferDomeRoundText(void)
 static void BufferDomeOpponentName(void)
 {
     StringCopy(gStringVar1, gRoundsStringTable[gSaveBlock2Ptr->frontier.curChallengeBattleNum]);
-    CopyDomeTrainerName(gStringVar2, gTrainerBattleOpponent_A);
+    CopyDomeTrainerName(gStringVar2, TRAINER_BATTLE_PARAM.opponentA);
 }
 
 static void InitDomeOpponentParty(void)
 {
     CalculatePlayerPartyCount();
-    CreateDomeOpponentMons(TrainerIdToTournamentId(gTrainerBattleOpponent_A));
+    CreateDomeOpponentMons(TrainerIdToTournamentId(TRAINER_BATTLE_PARAM.opponentA));
 }
 
 static void CreateDomeOpponentMon(u8 monPartyId, u16 tournamentTrainerId, u8 tournamentMonId, u32 otId)
@@ -2396,7 +2395,7 @@ static int GetTypeEffectivenessPoints(int move, int targetSpecies, int mode)
     int defType1, defType2, defAbility, moveType;
     int typePower = TYPE_x1;
 
-    if (move == MOVE_NONE || move == MOVE_UNAVAILABLE || IS_MOVE_STATUS(move))
+    if (move == MOVE_NONE || move == MOVE_UNAVAILABLE || IsBattleMoveStatus(move))
         return 0;
 
     defType1 = gSpeciesInfo[targetSpecies].types[0];
@@ -2578,7 +2577,7 @@ static int TournamentIdOfOpponent(int roundId, int trainerId)
 
 static void SetDomeOpponentId(void)
 {
-    gTrainerBattleOpponent_A = TrainerIdOfPlayerOpponent();
+    TRAINER_BATTLE_PARAM.opponentA = TrainerIdOfPlayerOpponent();
 }
 
 // While not an issue in-game, this will overflow if called after the player's opponent for the current round has been eliminated
@@ -2589,7 +2588,7 @@ static u16 TrainerIdOfPlayerOpponent(void)
 
 static void SetDomeOpponentGraphicsId(void)
 {
-    SetBattleFacilityTrainerGfxId(gTrainerBattleOpponent_A, 0);
+    SetBattleFacilityTrainerGfxId(TRAINER_BATTLE_PARAM.opponentA, 0);
 }
 
 static void SaveDomeChallenge(void)
@@ -2681,11 +2680,11 @@ static void Task_ShowTourneyInfoCard(u8 taskId)
         DecompressAndLoadBgGfxUsingHeap(2, gDomeTourneyInfoCard_Tilemap, 0x2000, 0, 1);
         DecompressAndLoadBgGfxUsingHeap(3, gDomeTourneyInfoCardBg_Tilemap, 0x800, 0, 1);
         LoadCompressedSpriteSheet(sTourneyTreeButtonsSpriteSheet);
-        LoadCompressedPalette(gDomeTourneyTree_Pal, BG_PLTT_OFFSET, BG_PLTT_SIZE);
-        LoadCompressedPalette(gDomeTourneyTreeButtons_Pal, OBJ_PLTT_OFFSET, OBJ_PLTT_SIZE);
-        LoadCompressedPalette(gBattleWindowTextPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+        LoadPalette(gDomeTourneyTree_Pal, BG_PLTT_OFFSET, BG_PLTT_SIZE);
+        LoadPalette(gDomeTourneyTreeButtons_Pal, OBJ_PLTT_OFFSET, OBJ_PLTT_SIZE);
+        LoadPalette(gBattleWindowTextPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
         if (mode == INFOCARD_MATCH)
-            LoadCompressedPalette(gDomeTourneyMatchCardBg_Pal, BG_PLTT_ID(5), PLTT_SIZE_4BPP); // Changes the moving info card bg to orange when in match card mode
+            LoadPalette(gDomeTourneyMatchCardBg_Pal, BG_PLTT_ID(5), PLTT_SIZE_4BPP); // Changes the moving info card bg to orange when in match card mode
         CpuFill32(0, gPlttBufferFaded, PLTT_SIZE);
         ShowBg(0);
         ShowBg(1);
@@ -3902,7 +3901,7 @@ static bool32 IsDomeHealingMove(u32 move)
     }
 }
 
-static bool32 IsDomeDefensiveMoveEffect(u32 effect)
+static bool32 IsDomeDefensiveMoveEffect(enum BattleMoveEffects effect)
 {
     switch(effect)
     {
@@ -3934,7 +3933,7 @@ static bool32 IsDomeDefensiveMoveEffect(u32 effect)
     }
 }
 
-static bool32 IsDomeRiskyMoveEffect(u32 effect)
+static bool32 IsDomeRiskyMoveEffect(enum BattleMoveEffects effect)
 {
     switch(effect)
     {
@@ -4045,7 +4044,7 @@ static bool32 IsDomeRareMove(u32 move)
     return TRUE;
 }
 
-static bool32 IsDomeComboMoveEffect(u32 effect)
+static bool32 IsDomeComboMoveEffect(enum BattleMoveEffects effect)
 {
     switch(effect)
     {
@@ -4138,7 +4137,6 @@ static void DisplayTrainerInfoOnCard(u8 flags, u8 trainerTourneyId)
     int x = 0, y = 0;
     u8 palSlot = 0;
     s16 *allocatedArray = AllocZeroed(sizeof(s16) * ALLOC_ARRAY_SIZE);
-    u32 trainerPic = GetPlayerTrainerPicIdByOutfitGenderType(gSaveBlock2Ptr->currOutfitId, gSaveBlock2Ptr->playerGender, 0);
     trainerId = DOME_TRAINERS[trainerTourneyId].trainerId;
 
     if (flags & CARD_ALTERNATE_SLOT)
@@ -4154,7 +4152,7 @@ static void DisplayTrainerInfoOnCard(u8 flags, u8 trainerTourneyId)
 
     // Create trainer pic sprite
     if (trainerId == TRAINER_PLAYER)
-        sInfoCard->spriteIds[arrId] = CreateTrainerPicSprite(trainerPic, TRUE, x + 48, y + 64, palSlot + 12, TAG_NONE);
+        sInfoCard->spriteIds[arrId] = CreateTrainerPicSprite(PlayerGenderToFrontTrainerPicId(gSaveBlock2Ptr->playerGender), TRUE, x + 48, y + 64, palSlot + 12, TAG_NONE);
     else if (trainerId == TRAINER_FRONTIER_BRAIN)
         sInfoCard->spriteIds[arrId] = CreateTrainerPicSprite(GetFrontierBrainTrainerPicIndex(), TRUE, x + 48, y + 64, palSlot + 12, TAG_NONE);
     else
@@ -4303,7 +4301,7 @@ static void DisplayTrainerInfoOnCard(u8 flags, u8 trainerTourneyId)
                     move = gSaveBlock2Ptr->frontier.domePlayerPartyData[i].moves[j];
                 else
                     move = gFacilityTrainerMons[DOME_MONS[trainerTourneyId][i]].moves[j];
-                u32 effect = GetMoveEffect(move);
+                enum BattleMoveEffects effect = GetMoveEffect(move);
                 u32 accuracy = GetMoveAccuracy(move);
 
                 switch (k)
@@ -4330,7 +4328,7 @@ static void DisplayTrainerInfoOnCard(u8 flags, u8 trainerTourneyId)
                     allocatedArray[k] = IsDomeStatusMoveEffect(move);
                     break;
                 case MOVE_POINTS_DMG:
-                    allocatedArray[k] = (!IS_MOVE_STATUS(move)) ? 1 : 0;
+                    allocatedArray[k] = (!IsBattleMoveStatus(move)) ? 1 : 0;
                     break;
                 case MOVE_POINTS_DEF:
                     allocatedArray[k] = IsDomeDefensiveMoveEffect(effect) ? 1 : 0;
@@ -4657,7 +4655,6 @@ static void DisplayMatchInfoOnCard(u8 flags, u8 matchNo)
     int windowId = 0;
     int x = 0, y = 0;
     u8 palSlot = 0;
-    u16 picId = GetPlayerTrainerPicIdByOutfitGenderType(gSaveBlock2Ptr->currOutfitId, gSaveBlock2Ptr->playerGender, 0);
 
     if (flags & CARD_ALTERNATE_SLOT)
         arrId = 2 * (FRONTIER_PARTY_SIZE + 1), windowId = NUM_INFO_CARD_WINDOWS, palSlot = 2;
@@ -4685,7 +4682,7 @@ static void DisplayMatchInfoOnCard(u8 flags, u8 matchNo)
 
     // Draw left trainer sprite.
     if (trainerIds[0] == TRAINER_PLAYER)
-        sInfoCard->spriteIds[arrId] = CreateTrainerPicSprite(picId, TRUE, x + 48, y + 88, palSlot + 12, TAG_NONE);
+        sInfoCard->spriteIds[arrId] = CreateTrainerPicSprite(PlayerGenderToFrontTrainerPicId(gSaveBlock2Ptr->playerGender), TRUE, x + 48, y + 88, palSlot + 12, TAG_NONE);
     else if (trainerIds[0] == TRAINER_FRONTIER_BRAIN)
         sInfoCard->spriteIds[arrId] = CreateTrainerPicSprite(GetFrontierBrainTrainerPicIndex(), TRUE, x + 48, y + 88, palSlot + 12, TAG_NONE);
     else
@@ -4698,7 +4695,7 @@ static void DisplayMatchInfoOnCard(u8 flags, u8 matchNo)
 
     // Draw right trainer sprite.
     if (trainerIds[1] == TRAINER_PLAYER)
-        sInfoCard->spriteIds[1 + arrId] = CreateTrainerPicSprite(picId, TRUE, x + 192, y + 88, palSlot + 13, TAG_NONE);
+        sInfoCard->spriteIds[1 + arrId] = CreateTrainerPicSprite(PlayerGenderToFrontTrainerPicId(gSaveBlock2Ptr->playerGender), TRUE, x + 192, y + 88, palSlot + 13, TAG_NONE);
     else if (trainerIds[1] == TRAINER_FRONTIER_BRAIN)
         sInfoCard->spriteIds[1 + arrId] = CreateTrainerPicSprite(GetFrontierBrainTrainerPicIndex(), TRUE, x + 192, y + 88, palSlot + 13, TAG_NONE);
     else
@@ -5066,9 +5063,9 @@ static void ResolveDomeRoundWinners(void)
 
     if (gSpecialVar_0x8005 == DOME_PLAYER_WON_MATCH)
     {
-        DOME_TRAINERS[TrainerIdToTournamentId(gTrainerBattleOpponent_A)].isEliminated = TRUE;
-        DOME_TRAINERS[TrainerIdToTournamentId(gTrainerBattleOpponent_A)].eliminatedAt = gSaveBlock2Ptr->frontier.curChallengeBattleNum;
-        gSaveBlock2Ptr->frontier.domeWinningMoves[TrainerIdToTournamentId(gTrainerBattleOpponent_A)] = gBattleResults.lastUsedMovePlayer;
+        DOME_TRAINERS[TrainerIdToTournamentId(TRAINER_BATTLE_PARAM.opponentA)].isEliminated = TRUE;
+        DOME_TRAINERS[TrainerIdToTournamentId(TRAINER_BATTLE_PARAM.opponentA)].eliminatedAt = gSaveBlock2Ptr->frontier.curChallengeBattleNum;
+        gSaveBlock2Ptr->frontier.domeWinningMoves[TrainerIdToTournamentId(TRAINER_BATTLE_PARAM.opponentA)] = gBattleResults.lastUsedMovePlayer;
 
         // If the player's match was the final one, no NPC vs NPC matches to decide
         if (gSaveBlock2Ptr->frontier.curChallengeBattleNum < DOME_FINAL)
@@ -5113,7 +5110,7 @@ static u16 GetWinningMove(int winnerTournamentId, int loserTournamentId, u8 roun
                 moveIds[i * MAX_MON_MOVES + j] = gFacilityTrainerMons[DOME_MONS[winnerTournamentId][i]].moves[j];
 
             movePower = GetMovePower(moveIds[i * MAX_MON_MOVES + j]);
-            if (IS_MOVE_STATUS(moveIds[i * MAX_MON_MOVES + j]))
+            if (IsBattleMoveStatus(moveIds[i * MAX_MON_MOVES + j]))
                 movePower = 40;
             else if (movePower == 1)
                 movePower = 60;
@@ -5255,9 +5252,9 @@ static void Task_ShowTourneyTree(u8 taskId)
         DecompressAndLoadBgGfxUsingHeap(2, gDomeTourneyLine_Gfx, 0x2000, 0, 0);
         DecompressAndLoadBgGfxUsingHeap(2, gDomeTourneyLineDown_Tilemap, 0x2000, 0, 1);
         DecompressAndLoadBgGfxUsingHeap(3, gDomeTourneyLineUp_Tilemap, 0x2000, 0, 1);
-        LoadCompressedPalette(gDomeTourneyTree_Pal, BG_PLTT_OFFSET, BG_PLTT_SIZE);
-        LoadCompressedPalette(gDomeTourneyTreeButtons_Pal, OBJ_PLTT_OFFSET, OBJ_PLTT_SIZE);
-        LoadCompressedPalette(gBattleWindowTextPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+        LoadPalette(gDomeTourneyTree_Pal, BG_PLTT_OFFSET, BG_PLTT_SIZE);
+        LoadPalette(gDomeTourneyTreeButtons_Pal, OBJ_PLTT_OFFSET, OBJ_PLTT_SIZE);
+        LoadPalette(gBattleWindowTextPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
         CpuFill32(0, gPlttBufferFaded, PLTT_SIZE);
         ShowBg(0);
         ShowBg(1);
@@ -5696,7 +5693,7 @@ static void ReduceDomePlayerPartyToSelectedMons(void)
 static void GetPlayerSeededBeforeOpponent(void)
 {
     // A higher tournament ID is a worse seed
-    if (TrainerIdToTournamentId(gTrainerBattleOpponent_A) > TrainerIdToTournamentId(TRAINER_PLAYER))
+    if (TrainerIdToTournamentId(TRAINER_BATTLE_PARAM.opponentA) > TrainerIdToTournamentId(TRAINER_PLAYER))
         gSpecialVar_Result = 1;
     else
         gSpecialVar_Result = 2;

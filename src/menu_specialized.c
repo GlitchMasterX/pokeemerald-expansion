@@ -318,7 +318,7 @@ void MailboxMenu_Free(void)
 // filled with the graph color.
 //---------------------------------------
 
-#define SHIFT_RIGHT_ADJUSTED(n, s)(((n) >> (s)) + (((n) >> ((s) - 1)) & 1))
+#define SHIFT_RIGHT_ADJUSTED(n, s) (((n) >> (s)) + (((n) >> ((s) - 1)) & 1))
 
 void ConditionGraph_Init(struct ConditionGraph *graph)
 {
@@ -1074,7 +1074,7 @@ void GetConditionMenuMonGfx(void *tilesDst, void *palDst, u16 boxId, u16 monId, 
         u32 personality = GetBoxOrPartyMonData(boxId, monId, MON_DATA_PERSONALITY, NULL);
 
         LoadSpecialPokePic(tilesDst, species, personality, TRUE);
-        LZ77UnCompWram(GetMonSpritePalFromSpeciesAndPersonality(species, isShiny, personality), palDst);
+        memcpy(palDst, GetMonSpritePalFromSpeciesAndPersonality(species, isShiny, personality), 32);
     }
 }
 

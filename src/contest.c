@@ -358,7 +358,7 @@ EWRAM_DATA bool8 gCurContestWinnerIsForArtist = 0;
 EWRAM_DATA u8 gCurContestWinnerSaveIdx = 0;
 
 // IWRAM common vars.
-rng_value_t gContestRngValue;
+COMMON_DATA rng_value_t gContestRngValue = {0};
 
 extern const u8 gText_LinkStandby4[];
 extern const u8 gText_BDot[];
@@ -667,7 +667,7 @@ static const struct CompressedSpriteSheet sSpriteSheet_JudgeSymbols =
     .tag = TAG_JUDGE_SYMBOLS_GFX
 };
 
-static const struct CompressedSpritePalette sSpritePalette_JudgeSymbols =
+static const struct SpritePalette sSpritePalette_JudgeSymbols =
 {
     .data = gContestJudgeSymbolsPal,
     .tag = TAG_CONTEST_SYMBOLS_PAL
@@ -1137,7 +1137,7 @@ void LoadContestBgAfterMoveAnim(void)
     LZDecompressVram(gContestAudienceGfx, (void *)(BG_SCREEN_ADDR(4)));
     CopyToBgTilemapBuffer(3, gContestAudienceTilemap, 0, 0);
     CopyBgTilemapBufferToVram(3);
-    LoadCompressedPalette(gContestInterfaceAudiencePalette, BG_PLTT_OFFSET, BG_PLTT_SIZE);
+    LoadPalette(gContestInterfaceAudiencePalette, BG_PLTT_OFFSET, BG_PLTT_SIZE);
     LoadContestPalettes();
     for (i = 0; i < CONTESTANT_COUNT; i++)
     {
@@ -1431,7 +1431,7 @@ static bool8 SetupContestGraphics(u8 *stateVar)
         DmaCopy32Defvars(3, gContestResources->contestBgTilemaps[2], eContestTempSave.savedJunk, sizeof(eContestTempSave.savedJunk));
         break;
     case 5:
-        LoadCompressedPalette(gContestInterfaceAudiencePalette, BG_PLTT_OFFSET, BG_PLTT_SIZE);
+        LoadPalette(gContestInterfaceAudiencePalette, BG_PLTT_OFFSET, BG_PLTT_SIZE);
         CpuCopy32(&gPlttBufferUnfaded[BG_PLTT_ID(8)], tempPalette1, PLTT_SIZE_4BPP);
         CpuCopy32(&gPlttBufferUnfaded[BG_PLTT_ID(5 + gContestPlayerMonIndex)], tempPalette2, PLTT_SIZE_4BPP);
         CpuCopy32(tempPalette2, &gPlttBufferUnfaded[BG_PLTT_ID(8)], PLTT_SIZE_4BPP);
@@ -2956,7 +2956,6 @@ void SetContestants(u8 contestType, u8 rank)
     u8 opponentsCount = 0;
     u8 opponents[100];
     bool8 allowPostgameContestants = FALSE;
-    const u8 *filter;
 
     TryPutPlayerLast();
 
@@ -2964,19 +2963,18 @@ void SetContestants(u8 contestType, u8 rank)
         allowPostgameContestants = TRUE;
 
     // Find all suitable opponents
-    filter = gPostgameContestOpponentFilter;
     for (i = 0; i < ARRAY_COUNT(gContestOpponents); i++)
     {
         if (rank == gContestOpponents[i].whichRank)
         {
             if (allowPostgameContestants == TRUE)
             {
-                if (filter[i] == CONTEST_FILTER_NO_POSTGAME)
+                if (gContestOpponents[i].filter == CONTEST_FILTER_NO_POSTGAME)
                     continue;
             }
             else
             {
-                if (filter[i] == CONTEST_FILTER_ONLY_POSTGAME)
+                if (gContestOpponents[i].filter == CONTEST_FILTER_ONLY_POSTGAME)
                     continue;
             }
             if      (contestType == CONTEST_CATEGORY_COOL && gContestOpponents[i].aiPool_Cool)
@@ -3025,12 +3023,12 @@ void SetLinkAIContestants(u8 contestType, u8 rank, bool32 isPostgame)
 
         if (isPostgame == TRUE)
         {
-            if (gPostgameContestOpponentFilter[i] == CONTEST_FILTER_NO_POSTGAME)
+            if (gContestOpponents[i].filter == CONTEST_FILTER_NO_POSTGAME)
                 continue;
         }
         else
         {
-            if (gPostgameContestOpponentFilter[i] == CONTEST_FILTER_ONLY_POSTGAME)
+            if (gContestOpponents[i].filter == CONTEST_FILTER_ONLY_POSTGAME)
                 continue;
         }
         if ((contestType == CONTEST_CATEGORY_COOL && gContestOpponents[i].aiPool_Cool)
@@ -3200,7 +3198,7 @@ static u8 CreateJudgeSprite(void)
     u8 spriteId;
 
     LoadCompressedSpriteSheet(&sSpriteSheet_Judge);
-    LoadCompressedPalette(gContest2Pal, OBJ_PLTT_ID(1), PLTT_SIZE_4BPP);
+    LoadPalette(gContest2Pal, OBJ_PLTT_ID(1), PLTT_SIZE_4BPP);
     spriteId = CreateSprite(&sSpriteTemplate_Judge, 112, 36, 30);
     gSprites[spriteId].oam.paletteNum = 1;
     gSprites[spriteId].callback = SpriteCallbackDummy;
@@ -3212,7 +3210,7 @@ static u8 CreateJudgeSpeechBubbleSprite(void)
     u8 spriteId;
 
     LoadCompressedSpriteSheet(&sSpriteSheet_JudgeSymbols);
-    LoadCompressedSpritePalette(&sSpritePalette_JudgeSymbols);
+    LoadSpritePalette(&sSpritePalette_JudgeSymbols);
     spriteId = CreateSprite(&sSpriteTemplate_JudgeSpeechBubble, 96, 10, 29);
     gSprites[spriteId].invisible = TRUE;
     gSprites[spriteId].data[0] = gSprites[spriteId].oam.tileNum;
@@ -3226,7 +3224,7 @@ static u8 CreateContestantSprite(u16 species, bool8 isShiny, u32 personality, u3
 
     HandleLoadSpecialPokePic(FALSE, gMonSpritesGfxPtr->spritesGfx[B_POSITION_PLAYER_LEFT], species, personality);
 
-    LoadCompressedPalette(GetMonSpritePalFromSpeciesAndPersonality(species, isShiny, personality), OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
+    LoadPalette(GetMonSpritePalFromSpeciesAndPersonality(species, isShiny, personality), OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
     SetMultiuseSpriteTemplateToPokemon(species, B_POSITION_PLAYER_LEFT);
 
     spriteId = CreateSprite(&gMultiuseSpriteTemplate, 0x70, GetBattlerSpriteFinal_Y(2, species, FALSE), 30);
