@@ -1117,7 +1117,8 @@ extern struct FieldTimer gFieldTimers;
 extern u16 gBattleTurnCounter;
 extern u8 gBattlerAbility;
 extern struct QueuedStatBoost gQueuedStatBoosts[MAX_BATTLERS_COUNT];
-
+extern bool8 gPlayerDoesNotWantToEvolveLeft;
+extern bool8 gPlayerDoesNotWantToEvolveRight;
 extern void (*gPreBattleCallback1)(void);
 extern void (*gBattleMainFunc)(void);
 extern struct BattleResults gBattleResults;
@@ -1132,6 +1133,7 @@ extern u16 gBallToDisplay;
 extern bool8 gLastUsedBallMenuPresent;
 extern u8 gPartyCriticalHits[PARTY_SIZE];
 extern u8 gCategoryIconSpriteId;
+extern u8 gBattleEnvironmentBackup;
 
 static inline bool32 IsBattlerAlive(u32 battler)
 {

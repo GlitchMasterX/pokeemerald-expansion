@@ -10,6 +10,7 @@
 #include "data.h"
 #include "decompress.h"
 #include "decoration.h"
+#include "new_shop.h"
 #include "decoration_inventory.h"
 #include "event_data.h"
 #include "field_door.h"
@@ -58,6 +59,7 @@
 #include "malloc.h"
 #include "constants/event_objects.h"
 #include "constants/map_types.h"
+#include "constants/new_shop.h"
 
 typedef u16 (*SpecialFunc)(void);
 typedef void (*NativeFunc)(struct ScriptContext *ctx);
@@ -2520,10 +2522,24 @@ bool8 ScrCmd_dowildbattle(struct ScriptContext *ctx)
 bool8 ScrCmd_pokemart(struct ScriptContext *ctx)
 {
     const void *ptr = (void *)ScriptReadWord(ctx);
-
+    u16 shopType = ScriptReadHalfword(ctx);
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
 
-    CreatePokemartMenu(ptr);
+    switch (shopType)
+    {
+    case NEW_SHOP_PRICE_TYPE_VARIABLE:
+        NewShop_CreateVariablePokemartMenu(ptr);
+        break;
+    case NEW_SHOP_PRICE_TYPE_COINS:
+        NewShop_CreateCoinPokemartMenu(ptr);
+        break;
+    case NEW_SHOP_PRICE_TYPE_POINTS:
+        NewShop_CreatePointsPokemartMenu(ptr);
+        break;
+    default:
+        NewShop_CreatePokemartMenu(ptr);
+        break;
+    }
     ScriptContext_Stop();
     return TRUE;
 }
@@ -2534,7 +2550,7 @@ bool8 ScrCmd_pokemartdecoration(struct ScriptContext *ctx)
 
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
 
-    CreateDecorationShop1Menu(ptr);
+    NewShop_CreateDecorationShop1Menu(ptr);
     ScriptContext_Stop();
     return TRUE;
 }
@@ -2546,7 +2562,7 @@ bool8 ScrCmd_pokemartdecoration2(struct ScriptContext *ctx)
 
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
 
-    CreateDecorationShop2Menu(ptr);
+    NewShop_CreateDecorationShop2Menu(ptr);
     ScriptContext_Stop();
     return TRUE;
 }

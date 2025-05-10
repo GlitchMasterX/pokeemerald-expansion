@@ -34,7 +34,7 @@ static u32 GetHPHealAmount(u8 itemEffectParam, struct Pokemon *mon);
 
 static void InitializeSwitchinCandidate(struct Pokemon *mon)
 {
-    PokemonToBattleMon(mon, &AI_DATA->switchinCandidate.battleMon);
+    PokemonToBattleMon(mon, &AI_DATA->switchinCandidate.battleMon, FALSE);
     AI_DATA->switchinCandidate.hypotheticalStatus = FALSE;
 }
 

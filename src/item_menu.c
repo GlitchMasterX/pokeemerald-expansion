@@ -12,6 +12,7 @@
 #include "event_data.h"
 #include "event_object_movement.h"
 #include "event_scripts.h"
+#include "new_shop.h"
 #include "field_player_avatar.h"
 #include "field_specials.h"
 #include "graphics.h"
@@ -599,7 +600,11 @@ void ChooseBerryForMachine(void (*exitCallback)(void))
 
 void CB2_GoToSellMenu(void)
 {
+    #ifdef MUDSKIP_SHOP_UI
+    GoToBagMenu(ITEMMENULOCATION_SHOP, POCKETS_COUNT, CB2_ExitSellNewShopMenu);
+    #else
     GoToBagMenu(ITEMMENULOCATION_SHOP, POCKETS_COUNT, CB2_ExitSellMenu);
+    #endif
 }
 
 void CB2_GoToItemDepositMenu(void)
