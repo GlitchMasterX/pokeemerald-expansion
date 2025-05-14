@@ -1892,6 +1892,12 @@
 	.4byte \name
 	.2byte \id
 	.endm
+    
+    @ Sets the text of the name box in the next-shown message box.
+	.macro speakername text:req
+	.byte  SCR_OP_SPEAKERNAME
+	.4byte \text
+	.endm
 
 	.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
 	_dynmultichoice \left, \top, \ignoreBPress, \maxBeforeScroll, \shouldSort, \initialSelected, \callbacks, NULL

@@ -38,6 +38,14 @@ const s32 sNumDaysInMonths[MONTH_COUNT] =
     [MONTH_DEC - 1] = 31,
 };
 
+const s32 GetNumDaysInMonth(u8 month)
+{
+    if (month >= 1 && month <= 12)
+        return sNumDaysInMonths[month - 1];
+    return -1; // invalid input
+}
+
+
 void RtcDisableInterrupts(void)
 {
     sSavedIme = REG_IME;
