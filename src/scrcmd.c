@@ -71,6 +71,7 @@ static EWRAM_DATA u16 sMovingNpcId = 0;
 static EWRAM_DATA u16 sMovingNpcMapGroup = 0;
 static EWRAM_DATA u16 sMovingNpcMapNum = 0;
 static EWRAM_DATA u16 sFieldEffectScriptId = 0;
+static EWRAM_DATA const u8 *afterWarpScript = {0};
 
 static u8 sBrailleWindowId;
 static bool8 sIsScriptedWildDouble;
@@ -3191,4 +3192,32 @@ bool8 ScrCmd_setspeaker(struct ScriptContext *ctx)
     const u8 *name = (const u8 *)ScriptReadWord(ctx);
     SetSpeakerName(name);
     return FALSE;
+}
+
+static void FieldCallback_SetupWarpScript(void)
+{
+    if(afterWarpScript == NULL)
+    {
+        gFieldCallback = NULL;
+        return;
+    }
+
+    Overworld_PlaySpecialMapMusic();
+    LockPlayerFieldControls();
+    CpuFastFill(0, gPlttBufferFaded, PLTT_SIZE);
+    ScriptContext_SetupScript(afterWarpScript);
+}
+
+bool8 ScrCmd_warp_continue_script(struct ScriptContext *ctx)
+{
+    u8 mapNum = ScriptReadByte(ctx);
+    u8 mapGroup = ScriptReadByte(ctx);
+    u16 x = VarGet(ScriptReadHalfword(ctx));
+    u16 y = VarGet(ScriptReadHalfword(ctx));
+    afterWarpScript = (const u8 *) ScriptReadWord(ctx);
+    gFieldCallback = FieldCallback_SetupWarpScript;
+    SetWarpDestination(mapGroup, mapNum, WARP_ID_NONE, x, y);
+    WarpIntoMap();
+    SetMainCallback2(CB2_LoadMap);
+    return TRUE;
 }

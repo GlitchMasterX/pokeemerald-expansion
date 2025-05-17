@@ -791,7 +791,11 @@ u8 GetTrainerBattleTransition(void)
         || trainerClass == TRAINER_CLASS_AQUA_LEADER
         || trainerClass == TRAINER_CLASS_AQUA_ADMIN)
         return B_TRANSITION_AQUA;
-
+    if (trainerClass == TRAINER_CLASS_SPARK_SYNDICATE
+        || trainerClass == TRAINER_CLASS_SPARK_LEADER
+        || trainerClass == TRAINER_CLASS_SPARK_ADMIN)
+        return B_TRANSITION_SPARK;
+        
     if (IsTrainerDoubleBattle(trainerId))
         minPartyCount = 2; // double battles always at least have 2 Pokémon.
     else

@@ -1898,6 +1898,15 @@
 	.byte  SCR_OP_SPEAKERNAME
 	.4byte \text
 	.endm
+    
+		@ Warps to a map, and plays the script passed to it
+	.macro warp_continue_script map:req, X:req, Y:req, script:req, startBlack=TRUE
+	.byte SCR_OP_WARPCONTINUESCRIPT
+	.2byte \map
+	.2byte \X
+	.2byte \Y
+	.4byte \script
+	.endm
 
 	.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
 	_dynmultichoice \left, \top, \ignoreBPress, \maxBeforeScroll, \shouldSort, \initialSelected, \callbacks, NULL

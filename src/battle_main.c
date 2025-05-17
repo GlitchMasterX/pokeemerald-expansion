@@ -370,6 +370,11 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_PIKE_QUEEN] = { _("PIKE QUEEN") },
     [TRAINER_CLASS_PYRAMID_KING] = { _("PYRAMID KING") },
     [TRAINER_CLASS_RS_PROTAG] = { _("{PKMN} TRAINER") },
+    [TRAINER_CLASS_SPARK_SYNDICATE] = { _("SPARK") },
+    [TRAINER_CLASS_SPARK_ADMIN] = { _("SPARK ADMIN"),20 },
+    [TRAINER_CLASS_SPARK_LEADER] = { _("SPARK LEADER"),50 },
+    [TRAINER_CLASS_SHADOW_SLAYER] = { _("SHADOW"), 20 },
+    [TRAINER_CLASS_ACADEMY_HEAD] = { _("ACADEMY HEAD"),100 },
 };
 
 static void (* const sTurnActionsFuncsTable[])(void) =
