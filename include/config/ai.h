@@ -61,11 +61,17 @@
 #define RISKY_AI_CRIT_THRESHOLD_GEN_1                           128 // "Stat stage" at which Risky will assume it gets a crit with gen 1 mechanics (this translates to an X / 255 % crit threshold)
 
 // AI prediction chances
-#define PREDICT_SWITCH_CHANCE                                   60
+#define PREDICT_SWITCH_CHANCE                                   70
+#define PREDICT_MOVE_CHANCE                                     100
 
 // AI PP Stall detection chance per roll
 #define PP_STALL_DISREGARD_MOVE_PERCENTAGE                      50
 // Score reduction if any roll for PP stall detection passes
 #define PP_STALL_SCORE_REDUCTION                                20
+
+// AI's acceptable number of hits to KO the partner via friendly fire in a double battle.
+#define FRIENDLY_FIRE_RISKY_THRESHOLD           2
+#define FRIENDLY_FIRE_NORMAL_THRESHOLD          3
+#define FRIENDLY_FIRE_CONSERVATIVE_THRESHOLD    4
 
 #endif // GUARD_CONFIG_AI_H

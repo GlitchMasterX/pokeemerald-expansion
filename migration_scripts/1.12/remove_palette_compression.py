@@ -15,7 +15,7 @@ def find_pals(fileInput):
         return False
     with open(fileInput, 'r', encoding='UTF-8') as file:
         while line:=file.readline():
-            if ".gbapal" in line and "u32" in line:
+            if ".gbapal.lz" in line and "u32" in line:
                 allPals.append(line)
                 line, sep, tail = line.partition("=")
                 line, sep, tail = line.partition("[]")

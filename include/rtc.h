@@ -99,7 +99,7 @@ enum TimeOfDay
 
 extern struct Time gLocalTime;
 extern const s32 sNumDaysInMonths[12];
-extern const s32 GetNumDaysInMonth(u8 month);
+
 void RtcDisableInterrupts(void);
 void RtcRestoreInterrupts(void);
 u32 ConvertBcdToBinary(u8 bcd);

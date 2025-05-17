@@ -83,6 +83,8 @@
 
 STATIC_ASSERT((B_FLAG_FOLLOWERS_DISABLED == 0 || OW_FOLLOWERS_ENABLED), FollowersFlagAssignedWithoutEnablingThem);
 
+STATIC_ASSERT((B_FLAG_FOLLOWERS_DISABLED == 0 || OW_FOLLOWERS_ENABLED), FollowersFlagAssignedWithoutEnablingThem);
+
 struct CableClubPlayer
 {
     u8 playerId;
@@ -443,6 +445,7 @@ void Overworld_ResetBattleFlagsAndVars(void)
     FlagClear(B_FLAG_NO_RUNNING);
     FlagClear(B_FLAG_DYNAMAX_BATTLE);
     FlagClear(B_FLAG_SKY_BATTLE);
+    FlagClear(B_FLAG_NO_WHITEOUT);
 }
 #endif
 
