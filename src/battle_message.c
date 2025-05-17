@@ -3122,18 +3122,6 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
                 else
                     toCpy = sText_Opposing2;
                 break;
-            case B_TXT_SCR_TEAM1:
-                if (GetBattlerSide(gBattleScripting.battler) == B_SIDE_PLAYER)
-                    toCpy = sText_Your1;
-                else
-                    toCpy = sText_Opposing1;
-                break;
-            case B_TXT_SCR_TEAM2:
-                if (GetBattlerSide(gBattleScripting.battler) == B_SIDE_PLAYER)
-                    toCpy = sText_Your2;
-                else
-                    toCpy = sText_Opposing2;
-                break;
             case B_TXT_ATK_NAME_WITH_PREFIX2:
                 HANDLE_NICKNAME_STRING_LOWERCASE(gBattlerAttacker)
                 break;

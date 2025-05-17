@@ -3734,7 +3734,7 @@ void PokemonToBattleMon(struct Pokemon *src, struct BattlePokemon *dst, bool8 re
 
 void CopyPartyMonToBattleData(u32 battlerId, u32 partyIndex, bool8 resetStats)
 {
-    u32 side = GetBattlerSide(battler);
+    u32 side = GetBattlerSide(battlerId);
     struct Pokemon *party = GetSideParty(side);
     PokemonToBattleMon(&party[partyIndex], &gBattleMons[battlerId], resetStats);
     gBattleStruct->hpOnSwitchout[side] = gBattleMons[battlerId].hp;

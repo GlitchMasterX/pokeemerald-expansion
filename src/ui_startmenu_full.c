@@ -1290,7 +1290,7 @@ void IncrementMonth(void)
     
     if (currentMonth == 0)  // If the month is unset (0), set it to the current calculated month
     {
-        currentMonth = GetNumDaysInMonth(sNumDaysInMonths[GetMonth() - 1]);  // For example, based on days
+        currentMonth = GetMonth();  // For example, based on days
         VarSet(VAR_CURRENT_MONTH, currentMonth);
     }
     else  // If the month is already set, increment it
@@ -1337,7 +1337,7 @@ static void PrintMapNameAndTime(void)
 
     hours = gLocalTime.hours;
     minutes = gLocalTime.minutes;
-    month = GetNumDaysInMonth(sNumDaysInMonths[GetMonth() - 1]); // Compute the month using total days
+    month = GetMonth(); // Compute the month using total days
     currentDay = gLocalTime.days;  // Get the total number of days since the game started
     lastSavedDay = VarGet(VAR_LAST_SAVED_DAY); // Get the last recorded day
 

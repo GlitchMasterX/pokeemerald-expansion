@@ -3261,13 +3261,6 @@ void Script_EndTrainerCanSeeIf(struct ScriptContext *ctx)
         StopScript(ctx);
 }
 
-void Script_EndTrainerCanSeeIf(struct ScriptContext *ctx)
-{
-    u8 condition = ScriptReadByte(ctx);
-    if (ctx->breakOnTrainerBattle && sScriptConditionTable[condition][ctx->comparisonResult] == 1)
-        StopScript(ctx);
-}
-
 bool8 ScrCmd_setspeaker(struct ScriptContext *ctx)
 {
     const u8 *name = (const u8 *)ScriptReadWord(ctx);
