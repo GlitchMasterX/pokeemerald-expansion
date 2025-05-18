@@ -915,6 +915,22 @@ bool8 ScrCmd_gettimeofday(struct ScriptContext *ctx)
     return FALSE;
 }
 
+bool8 ScrCmd_getday(struct ScriptContext *ctx)
+{
+    Script_RequestEffects(SCREFF_V1);
+    
+    gSpecialVar_0x8000 = GetDayOfWeek();
+    return FALSE;
+}
+
+bool8 ScrCmd_getmonth(struct ScriptContext *ctx)
+{
+    Script_RequestEffects(SCREFF_V1);
+    
+    gSpecialVar_0x8000 = GetMonth();
+    return FALSE;
+}
+
 bool8 ScrCmd_setweather(struct ScriptContext *ctx)
 {
     u16 weather = VarGet(ScriptReadHalfword(ctx));
@@ -3253,6 +3269,51 @@ bool8 ScrCmd_fwdweekday(struct ScriptContext *ctx)
     FakeRtc_AdvanceTimeBy(daysToAdd, 0, 0, 0);
     return FALSE;
 }
+
+bool8 ScrCmd_fwdmonth(struct ScriptContext *ctx)
+{
+    struct SiiRtcInfo *rtc = FakeRtc_GetCurrentTime();
+
+    u32 targetMonth = ScriptReadWord(ctx); // Target month (1–12)
+    u32 currentMonth = rtc->month;
+    u32 currentYear = 2000 + rtc->year; // Assume base year is 2000
+
+    // Handle wrap-around from December to next year
+    u32 monthsToAdd = (targetMonth - currentMonth + 12) % 12;
+
+    u32 totalDaysToAdd = 0;
+    u32 month = currentMonth;
+    u32 year = currentYear;
+
+    for (u32 i = 0; i < monthsToAdd; i++)
+    {
+        switch (month)
+        {
+        case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+            totalDaysToAdd += 31;
+            break;
+        case 4: case 6: case 9: case 11:
+            totalDaysToAdd += 30;
+            break;
+        case 2:
+            totalDaysToAdd += ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) ? 29 : 28;
+            break;
+        }
+
+        // Move to next month/year
+        month++;
+        if (month > 12)
+        {
+            month = 1;
+            year++;
+        }
+    }
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+    FakeRtc_AdvanceTimeBy(totalDaysToAdd, 0, 0, 0);
+    return FALSE;
+}
+
 
 void Script_EndTrainerCanSeeIf(struct ScriptContext *ctx)
 {

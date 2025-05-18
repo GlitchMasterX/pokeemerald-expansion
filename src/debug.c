@@ -562,15 +562,16 @@ static const u8 sDebugText_Util_Weather_ID[] =               _("Weather ID: {STR
 
 //Time Menu
 
-static const u8 *const gDayNameStringsTable[WEEKDAY_COUNT] = {
-    COMPOUND_STRING("Sunday"),
-    COMPOUND_STRING("Monday"),
-    COMPOUND_STRING("Tuesday"),
-    COMPOUND_STRING("Wednesday"),
-    COMPOUND_STRING("Thursday"),
-    COMPOUND_STRING("Friday"),
-    COMPOUND_STRING("Saturday"),
+const u8 *const gDayNameStringsTable[WEEKDAY_COUNT] = {
+    COMPOUND_STRING("Sun."),
+    COMPOUND_STRING("Mon."),
+    COMPOUND_STRING("Tues."),
+    COMPOUND_STRING("Wed."),
+    COMPOUND_STRING("Thurs."),
+    COMPOUND_STRING("Fri."),
+    COMPOUND_STRING("Sat."),
 };
+
 
 static const u8 *const gTimeOfDayStringsTable[TIMES_OF_DAY_COUNT] = {
     COMPOUND_STRING("Morning"),

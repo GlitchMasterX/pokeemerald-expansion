@@ -343,6 +343,16 @@
 	.macro gettimeofday
 	callnative ScrCmd_gettimeofday, requests_effects=1
 	.endm
+    
+    @ Sets the values of variable VAR_0x8000 to the day of week.
+	.macro getday
+	callnative ScrCmd_getday, requests_effects=1
+	.endm
+
+    @ Sets the values of variable VAR_0x8000 to the month.
+	.macro getmonth
+	callnative ScrCmd_getmonth, requests_effects=1
+	.endm
 
 	@ Plays the specified sound. Only one sound may play at a time, with newer ones interrupting older ones.
 	.macro playse song:req
@@ -2391,6 +2401,12 @@
 	.macro fwdweekday weekday:req
 	callnative ScrCmd_fwdweekday, requests_effects=1
 	.4byte \weekday
+	.endm
+
+	@ Forwards the time to a specified day of the month. Uses a 0-index starting from Jan.
+	.macro fwdmonth month:req
+	callnative ScrCmd_fwdmonth, requests_effects=1
+	.4byte \month
 	.endm
 
 	@ ============================ @

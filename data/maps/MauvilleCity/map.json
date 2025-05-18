@@ -230,7 +230,9 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "sign",
@@ -246,7 +248,7 @@
       "y": 6,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "MauvilleCity_EventScript_GymSign"
+      "script": "AbandonedShip125"
     },
     {
       "type": "sign",
@@ -278,7 +280,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "MauvilleCity_EventScript_CitySign"
+      "script": "AbandonedShip122"
     },
     {
       "type": "sign",
@@ -286,7 +288,7 @@
       "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "MauvilleCity_EventScript_BikeShopSign"
+      "script": "AbandonedShip123"
     },
     {
       "type": "sign",
@@ -294,7 +296,7 @@
       "y": 15,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "MauvilleCity_EventScript_GameCornerSign"
+      "script": "AbandonedShip124"
     }
   ]
 }

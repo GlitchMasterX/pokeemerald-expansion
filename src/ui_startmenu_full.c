@@ -4,13 +4,15 @@
 #include "bg.h"
 #include "data.h"
 #include "decompress.h"
+#include "clock.h"
 #include "event_data.h"
-#include "fake_rtc.h"
+#include "datetime.h"
 #include "field_weather.h"
 #include "gpu_regs.h"
 #include "graphics.h"
 #include "item.h"
 #include "item_menu.h"
+#include "debug.h"
 #include "item_menu_icons.h"
 #include "field_message_box.h"
 #include "list_menu.h"
@@ -41,7 +43,9 @@
 #include "region_map.h"
 #include "constants/battle_frontier.h"
 #include "constants/layouts.h"
+#include "siirtc.h"
 #include "rtc.h"
+#include "fake_rtc.h"
 #include "pokedex.h"
 #include "trainer_card.h"
 #include "pokenav.h"
@@ -228,7 +232,7 @@ static const u32 sGreyMenuButtonDexnav_Gfx[] = INCBIN_U32("graphics/ui_startmenu
 static const u32 sGreyMenuButtonDex_Gfx[] = INCBIN_U32("graphics/ui_startmenu_full/dex_dark_sprite.4bpp.lz");
 static const u32 sGreyMenuButtonParty_Gfx[] = INCBIN_U32("graphics/ui_startmenu_full/party_dark_sprite.4bpp.lz");
 static const u16 sGreyMenuButton_Pal[] = INCBIN_U16("graphics/ui_startmenu_full/menu_dark.gbapal");
-
+const u8 gText_QuestionMark[]  = _("???");
 
 //
 //  Sprite Data for Cursor, IconBox, GreyedBoxes, and Statuses
@@ -1237,8 +1241,6 @@ else{
 }
 }
 
-
-
 static const u8 gText_January[] = _("Jan.");
 static const u8 gText_February[] = _("Feb.");
 static const u8 gText_March[] = _("Mar.");
@@ -1266,23 +1268,7 @@ static const u8 *const sMonthStrings[] =
     gText_November,
     gText_December,
 };
-static const u8 sText_Sunday[] = _("Sun.");
-static const u8 sText_Monday[] = _("Mon.");
-static const u8 sText_Tuesday[] = _("Tues.");
-static const u8 sText_Wednesday[] = _("Wed.");
-static const u8 sText_Thursday[] = _("Thurs.");
-static const u8 sText_Friday[] = _("Fri.");
-static const u8 sText_Saturday[] = _("Sat.");
-static const u8 * const sDayOfWeekStrings[7] =
-{
-    sText_Sunday,
-    sText_Monday,
-    sText_Tuesday,
-    sText_Wednesday,
-    sText_Thursday,
-    sText_Friday,
-    sText_Saturday,
-};
+
 void IncrementMonth(void)
 {
     // If the month is not manually set (or is set to 0), automatically increment it
@@ -1311,9 +1297,7 @@ static void PrintMapNameAndTime(void)
     u8 mapDisplayHeader[24];
     u8 *withoutPrefixPtr;
     u8 x;
-    const u8 *str;
     u8 sTimeTextColors[] = {TEXT_COLOR_TRANSPARENT, 2, 3};
-
     u16 hours;
     u16 minutes;
     u8 dayOfWeek;
@@ -1322,7 +1306,7 @@ static void PrintMapNameAndTime(void)
     u16 lastSavedDay;
     s32 width = 0;  // Initialize width to avoid uninitialized usage
     u32 y = 1, totalWidth;
-
+    struct SiiRtcInfo *rtc = FakeRtc_GetCurrentTime();
     FillWindowPixelBuffer(WINDOW_TOP_BAR, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
 
     withoutPrefixPtr = &(mapDisplayHeader[3]);
@@ -1338,7 +1322,7 @@ static void PrintMapNameAndTime(void)
     hours = gLocalTime.hours;
     minutes = gLocalTime.minutes;
     month = GetMonth(); // Compute the month using total days
-    currentDay = gLocalTime.days;  // Get the total number of days since the game started
+    currentDay = GetDayOfWeek();  // Get the total number of days since the game started
     lastSavedDay = VarGet(VAR_LAST_SAVED_DAY); // Get the last recorded day
 
     // Retrieve the stored weekday
@@ -1351,17 +1335,20 @@ static void PrintMapNameAndTime(void)
         VarSet(VAR_CURRENT_DAY_OF_WEEK, dayOfWeek); // Save new weekday
         VarSet(VAR_LAST_SAVED_DAY, currentDay);     // Update last saved day
     }
+    
+// Safely access day string
+const u8 *str = (rtc->dayOfWeek < WEEKDAY_COUNT)
+              ? gDayNameStringsTable[rtc->dayOfWeek]
+              : gText_QuestionMark;
 
-    // Print the day of the week
-    str = sDayOfWeekStrings[dayOfWeek];
-    AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, 5, y, sTimeTextColors, TEXT_SKIP_DRAW, str);
+AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, 5, y, sTimeTextColors, TEXT_SKIP_DRAW, str);
 
     // Print the month
     const u8 *monthStr = sMonthStrings[month - 1]; // Assuming you have an array of month names in `sMonthStrings`
     AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, 70, y, sTimeTextColors, TEXT_SKIP_DRAW, monthStr);
 
     // Print the time
-    x = 35; // Set the initial x position for the time
+    x = 26; // Set the initial x position for the time
     ConvertIntToDecimalStringN(gStringVar4, hours, STR_CONV_MODE_RIGHT_ALIGN, 3);
     AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, x, y, sTimeTextColors, TEXT_SKIP_DRAW, gStringVar4);
 

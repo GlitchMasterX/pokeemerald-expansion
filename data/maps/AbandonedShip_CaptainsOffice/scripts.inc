@@ -16,6 +16,21 @@ AbandonedShip_CaptainsOffice_EventScript_CanYouDeliverScanner::
 	msgbox AbandonedShip_CaptainsOffice_Text_OhCanYouDeliverScanner, MSGBOX_DEFAULT
 	release
 	end
+AbandonedShip122::
+    getmonth
+	end
+
+AbandonedShip123::
+    fwdmonth 3
+	end
+
+AbandonedShip124::
+    getday
+	end
+
+AbandonedShip125::
+    fwdweekday 3
+	end
 
 AbandonedShip_CaptainsOffice_EventScript_ThisIsSSCactus::
 	msgbox AbandonedShip_CaptainsOffice_Text_ThisIsSSCactus, MSGBOX_DEFAULT
