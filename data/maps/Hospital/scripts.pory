@@ -66,9 +66,7 @@ playse MUS_DUMMY
 # 32 "data/maps/Hospital/scripts.pory"
 	speakername(name2)
 	msgbox Luxura_Text_4 , MSGBOX_AUTOCLOSE
-	 
-# 33 "data/maps/Hospital/scripts.pory"
-	waitmovement 0
+	
 # 34 "data/maps/Hospital/scripts.pory"
     speakername(name3)
 	msgbox Luxura_Text_5 , MSGBOX_AUTOCLOSE

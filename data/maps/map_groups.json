@@ -149,7 +149,8 @@
     "FallarborTown_CozmosHouse",
     "FallarborTown_MoveRelearnersHouse"
   ],
-
+  "gMapGroup_IndoorVerdanturf": [],
+  "gMapGroup_IndoorPacifidlog": [],
   "gMapGroup_IndoorPetalburg": [
     "AcademyView",
     "Academy_Lighthouse",
