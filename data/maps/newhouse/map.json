@@ -1,0 +1,52 @@
+{
+  "id": "MAP_NEWHOUSE",
+  "name": "newhouse",
+  "layout": "LAYOUT_NEWHOUSE",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_NONE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "dest_map": "MAP_NEWMAP11",
+      "dest_warp_id": "0",
+      "elevation": 0,
+      "x": 4,
+      "y": 9
+    },
+    {
+      "dest_map": "MAP_NEWHOUSE",
+      "dest_warp_id": "2",
+      "elevation": 0,
+      "x": 7,
+      "y": 21
+    },
+    {
+      "dest_map": "MAP_NEWHOUSE",
+      "dest_warp_id": "1",
+      "elevation": 0,
+      "x": 8,
+      "y": 2
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Academy_Lighthouse_EventScript_PC",
+      "type": "sign",
+      "x": 0,
+      "y": 21
+    }
+  ]
+}

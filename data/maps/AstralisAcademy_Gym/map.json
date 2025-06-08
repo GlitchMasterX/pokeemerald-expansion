@@ -1,0 +1,167 @@
+{
+  "id": "MAP_ASTRALIS_ACADEMY_DORM",
+  "name": "AcademyDorm",
+  "layout": "LAYOUT_ACADEMY_DORM",
+  "music": "MUS_DP_HEARTHOME_DAY",
+  "region_map_section": "MAPSEC_ASTRALIS_ACADEMY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ASTRALIS_ACADEMY",
+      "offset": 31,
+      "direction": "left"
+    }
+  ],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_OFFICER",
+      "x": 28,
+      "y": 25,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "6",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ACE_F",
+      "x": 28,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_1",
+      "x": 31,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_NERD",
+      "x": 14,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AcademyNpc37",
+      "flag": "FLAG_NIGHT_NPC"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ACE_M",
+      "x": 18,
+      "y": 16,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AcademyNpc38",
+      "flag": "FLAG_NIGHT_NPC"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
+      "x": 25,
+      "y": 39,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AcademyNpc36",
+      "flag": "FLAG_DAY_NPC"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 0,
+      "y": 54,
+      "elevation": 0,
+      "dest_map": "MAP_ASTRALIS_ACADEMY",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 0,
+      "y": 53,
+      "elevation": 0,
+      "dest_map": "MAP_ASTRALIS_ACADEMY",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 7,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_DORM_INDOOR",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_GIRLSHOSTEL",
+      "var_value": "0",
+      "script": "girlsdorm"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_GIRLSHOSTEL",
+      "var_value": "0",
+      "script": "girlsdorm"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 29,
+      "elevation": 0,
+      "var": "VAR_GIRLSHOSTEL",
+      "var_value": "0",
+      "script": "girlsdorm"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 28,
+      "elevation": 0,
+      "var": "VAR_GIRLSHOSTEL",
+      "var_value": "0",
+      "script": "girlsdorm"
+    }
+  ],
+  "bg_events": [
+
+  ]
+}

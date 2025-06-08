@@ -1,0 +1,25 @@
+mapscripts AstralisAcademy_Classroom_MapScripts{
+MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
+	ACADEMY_START,12:trial2
+]
+MAP_SCRIPT_ON_FRAME_TABLE[
+	ACADEMY_START,12:FracturedMask
+]
+}
+script trial2 {
+	clearflag(FLAG_TRIAL_SERENA)
+	setobjectxyperm(4,41,11)
+	setobjectxyperm(2,44,11)
+	setobjectxyperm(8,35,14)
+	setobjectmovementtype(6,MOVEMENT_TYPE_FACE_DOWN)
+	addobject(9)
+	addobject(6)
+	addobject(10)
+	addobject(8)
+	addobject(4)
+	addobject(2)
+	createvobject(OBJ_EVENT_GFX_ACE_F,24,35,8,3,DIR_NORTH)
+	createvobject(OBJ_EVENT_GFX_GIRL_2,25,38,8,3,DIR_NORTH)
+	createvobject(OBJ_EVENT_GFX_GIRL_1,26,41,8,3,DIR_NORTH)
+	createvobject(OBJ_EVENT_GFX_GAMEBOY_KID,23,44,8,3,DIR_NORTH)
+}

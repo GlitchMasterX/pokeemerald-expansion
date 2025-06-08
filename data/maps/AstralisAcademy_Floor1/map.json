@@ -1,0 +1,151 @@
+{
+  "id": "MAP_ASTRALIS_ACADEMY_FLOOR1",
+  "name": "AstralisAcademy_Floor1",
+  "layout": "LAYOUT_HOUSE1",
+  "music": "MUS_DP_FIGHT_AREA_DAY",
+  "region_map_section": "MAPSEC_ASTRALIS_ACADEMY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "elevation": 0,
+      "flag": "0",
+      "graphics_id": "OBJ_EVENT_GFX_LINK_RECEPTIONIST",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "script": "AcademyNpc14",
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 13,
+      "y": 23
+    },
+    {
+      "elevation": 0,
+      "flag": "FLAG_DAY_NPC",
+      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+      "script": "AcademyNpc",
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 7,
+      "y": 35
+    },
+    {
+      "elevation": 0,
+      "flag": "0",
+      "graphics_id": "OBJ_EVENT_GFX_OFFICER",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "script": "AcademyNpc16",
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 13,
+      "y": 4
+    },
+    {
+      "elevation": 0,
+      "flag": "FLAG_DAY_NPC",
+      "graphics_id": "OBJ_EVENT_GFX_ACE_F",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "script": "AcademyNpc17",
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 19,
+      "y": 10
+    },
+    {
+      "elevation": 0,
+      "flag": "FLAG_NIGHT_NPC",
+      "graphics_id": "OBJ_EVENT_GFX_BREEDER",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "script": "AcademyNpc32",
+      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "x": 19,
+      "y": 28
+    }
+  ],
+  "warp_events": [
+    {
+      "dest_map": "MAP_ASTRALIS_ACADEMY",
+      "dest_warp_id": "2",
+      "elevation": 0,
+      "x": 12,
+      "y": 39
+    },
+    {
+      "dest_map": "MAP_ASTRALIS_ACADEMY",
+      "dest_warp_id": "2",
+      "elevation": 0,
+      "x": 13,
+      "y": 39
+    },
+    {
+      "dest_map": "MAP_ASTRALIS_ACADEMY_HALLWAY",
+      "dest_warp_id": "0",
+      "elevation": 0,
+      "x": 0,
+      "y": 31
+    },
+    {
+      "dest_map": "MAP_ASTRALIS_ACADEMY_HALLWAY",
+      "dest_warp_id": "1",
+      "elevation": 0,
+      "x": 0,
+      "y": 32
+    },
+    {
+      "dest_map": "MAP_ASTRALIS_ACADEMY_HALLWAY",
+      "dest_warp_id": "2",
+      "elevation": 0,
+      "x": 26,
+      "y": 31
+    },
+    {
+      "dest_map": "MAP_ASTRALIS_ACADEMY_HALLWAY",
+      "dest_warp_id": "3",
+      "elevation": 0,
+      "x": 26,
+      "y": 32
+    },
+    {
+      "dest_map": "MAP_ASTRALIS_ACADEMY_FLOOR2",
+      "dest_warp_id": "1",
+      "elevation": 0,
+      "x": 24,
+      "y": 12
+    },
+    {
+      "dest_map": "MAP_ASTRALIS_ACADEMY_FLOOR2",
+      "dest_warp_id": "0",
+      "elevation": 0,
+      "x": 2,
+      "y": 12
+    },
+    {
+      "dest_map": "MAP_BATTLE_ROOM_LOBBY",
+      "dest_warp_id": "4",
+      "elevation": 0,
+      "x": 13,
+      "y": 2
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

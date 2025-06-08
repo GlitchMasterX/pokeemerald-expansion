@@ -1,0 +1,113 @@
+{
+  "id": "MAP_ACADEMY_VIEW",
+  "name": "AcademyView",
+  "layout": "LAYOUT_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
+  "music": "MUS_DP_CANALAVE_NIGHT",
+  "region_map_section": "MAPSEC_ASTRALIS_ACADEMY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ASTRALIS_ACADEMY",
+      "offset": 18,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_ACADEMY_LIGHTHOUSE",
+      "offset": 2,
+      "direction": "left"
+    }
+  ],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FIONA",
+      "x": 40,
+      "y": 19,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Fionanight",
+      "flag": "FLAG_FIONA"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_NORMAL_M",
+      "x": 54,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AcademyNpc28",
+      "flag": "FLAG_NORMAL_OUTFOREST"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_OFFICER",
+      "x": 75,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "lunarofficer1",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 79,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 79,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 79,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 75,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_LUNAR_GROVE",
+      "var_value": "0",
+      "script": "lunarofficer"
+    },
+    {
+      "type": "trigger",
+      "x": 75,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_LUNAR_GROVE",
+      "var_value": "0",
+      "script": "lunarofficer"
+    }
+  ],
+  "bg_events": [],
+  "floor_number": 0
+}

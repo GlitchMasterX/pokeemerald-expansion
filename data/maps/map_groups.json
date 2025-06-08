@@ -36,7 +36,7 @@
     "gMapGroup_IndoorRoute124"
   ],
   "gMapGroup_TownsAndRoutes": [
-    "PetalburgCity",
+    "AstralisAcademy",
     "SlateportCity",
     "MauvilleCity",
     "RustboroCity",
@@ -50,8 +50,6 @@
     "DewfordTown",
     "LavaridgeTown",
     "FallarborTown",
-    "VerdanturfTown",
-    "PacifidlogTown",
     "Route101",
     "Route102",
     "Route103",
@@ -92,14 +90,30 @@
     "Underwater_Route128",
     "Underwater_Route129",
     "Underwater_Route105",
-    "Underwater_Route125"
+    "Underwater_Route125",
+    "LuxuraIsland",
+    "Luxuradining",
+    "LuxuraIsland1",
+    "Newmap11"
   ],
   "gMapGroup_IndoorLittleroot": [
-    "LittlerootTown_BrendansHouse_1F",
-    "LittlerootTown_BrendansHouse_2F",
     "LittlerootTown_MaysHouse_1F",
     "LittlerootTown_MaysHouse_2F",
-    "LittlerootTown_ProfessorBirchsLab"
+    "LittlerootTown_ProfessorBirchsLab",
+    "LuxuraIndoor",
+    "Luxuraliving",
+    "luxurakitchen",
+    "Luxuralib",
+    "Luxurawork",
+    "Luxuraupstair",
+    "NewMap1",
+    "Parentroom",
+    "Playerroom",
+    "guest",
+    "Hospital",
+    "Servantquarter",
+    "Sparkbase",
+    "newhouse"
   ],
   "gMapGroup_IndoorOldale": [
     "OldaleTown_House1",
@@ -135,34 +149,23 @@
     "FallarborTown_CozmosHouse",
     "FallarborTown_MoveRelearnersHouse"
   ],
-  "gMapGroup_IndoorVerdanturf": [
-    "VerdanturfTown_BattleTentLobby",
-    "VerdanturfTown_BattleTentCorridor",
-    "VerdanturfTown_BattleTentBattleRoom",
-    "VerdanturfTown_Mart",
-    "VerdanturfTown_PokemonCenter_1F",
-    "VerdanturfTown_PokemonCenter_2F",
-    "VerdanturfTown_WandasHouse",
-    "VerdanturfTown_FriendshipRatersHouse",
-    "VerdanturfTown_House"
-  ],
-  "gMapGroup_IndoorPacifidlog": [
-    "PacifidlogTown_PokemonCenter_1F",
-    "PacifidlogTown_PokemonCenter_2F",
-    "PacifidlogTown_House1",
-    "PacifidlogTown_House2",
-    "PacifidlogTown_House3",
-    "PacifidlogTown_House4",
-    "PacifidlogTown_House5"
-  ],
+
   "gMapGroup_IndoorPetalburg": [
-    "PetalburgCity_WallysHouse",
-    "PetalburgCity_Gym",
-    "PetalburgCity_House1",
-    "PetalburgCity_House2",
-    "PetalburgCity_PokemonCenter_1F",
-    "PetalburgCity_PokemonCenter_2F",
-    "PetalburgCity_Mart"
+    "AcademyView",
+    "Academy_Lighthouse",
+    "AstralisAcademy_Classroom",
+    "AcademyDorm",
+    "AstralisAcademy_Floor1",
+    "AstralisAcademy_Floor2",
+    "AstralisAcademy_Hallway",
+    "AstralisAcademy_PokemonCenter",
+    "AstralisAcademy_BattleRoom",
+    "Academy_Lib",
+    "Battleroomlobby",
+    "DormIndoor",
+    "Dormindoor1",
+    "headoffice",
+    "Harborac"
   ],
   "gMapGroup_IndoorSlateport": [
     "SlateportCity_SternsShipyard_1F",
@@ -583,7 +586,9 @@
     "NavelRock_Down10",
     "NavelRock_Down11",
     "NavelRock_Bottom",
-    "TrainerHill_Elevator"
+    "TrainerHill_Elevator",
+    "Luxurawoods",
+    "LunarGrove"
   ],
   "gMapGroup_IndoorRoute104Prototype": [
     "Route104_Prototype",
@@ -604,8 +609,8 @@
     "Route110_TrickHousePuzzle6",
     "Route110_TrickHousePuzzle7",
     "Route110_TrickHousePuzzle8",
-    "Route110_SeasideCyclingRoadSouthEntrance",
-    "Route110_SeasideCyclingRoadNorthEntrance"
+    "Route110_SeasideCyclingRoadNorthEntrance",
+    "Route110_SeasideCyclingRoadSouthEntrance"
   ],
   "gMapGroup_IndoorRoute113": [
     "Route113_GlassWorkshop"

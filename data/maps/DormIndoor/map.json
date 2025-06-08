@@ -1,0 +1,164 @@
+{
+  "id": "MAP_DORM_INDOOR",
+  "name": "DormIndoor",
+  "layout": "LAYOUT_DORM_INDOOR",
+  "music": "MUS_DP_TWINLEAF_DAY",
+  "region_map_section": "MAPSEC_ASTRALIS_ACADEMY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "dest_map": "MAP_DORMINDOOR1",
+      "dest_warp_id": "0",
+      "elevation": 0,
+      "x": 3,
+      "y": 1
+    },
+    {
+      "dest_map": "MAP_ACADEMY_DORM",
+      "dest_warp_id": "2",
+      "elevation": 0,
+      "x": 9,
+      "y": 29
+    },
+    {
+      "dest_map": "MAP_ACADEMY_DORM",
+      "dest_warp_id": "2",
+      "elevation": 0,
+      "x": 10,
+      "y": 29
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Doorlock",
+      "type": "sign",
+      "x": 1,
+      "y": 10
+    },
+    {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Doorlock",
+      "type": "sign",
+      "x": 6,
+      "y": 10
+    },
+    {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Doorlock",
+      "type": "sign",
+      "x": 8,
+      "y": 1
+    },
+    {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Doorlock",
+      "type": "sign",
+      "x": 12,
+      "y": 1
+    },
+    {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Doorlock",
+      "type": "sign",
+      "x": 17,
+      "y": 1
+    },
+    {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Doorlock",
+      "type": "sign",
+      "x": 13,
+      "y": 10
+    },
+    {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Doorlock",
+      "type": "sign",
+      "x": 18,
+      "y": 10
+    },
+    {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Doorlock",
+      "type": "sign",
+      "x": 13,
+      "y": 18
+    },
+    {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Doorlock",
+      "type": "sign",
+      "x": 18,
+      "y": 18
+    },
+    {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Doorlock",
+      "type": "sign",
+      "x": 6,
+      "y": 18
+    },
+    {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Doorlock",
+      "type": "sign",
+      "x": 1,
+      "y": 18
+    },
+    {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Doorlock",
+      "type": "sign",
+      "x": 6,
+      "y": 26
+    },
+    {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Doorlock",
+      "type": "sign",
+      "x": 1,
+      "y": 26
+    },
+    {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Doorlock",
+      "type": "sign",
+      "x": 13,
+      "y": 26
+    },
+    {
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Doorlock",
+      "type": "sign",
+      "x": 18,
+      "y": 26
+    }
+  ]
+}

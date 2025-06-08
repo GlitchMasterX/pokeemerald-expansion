@@ -1,0 +1,50 @@
+{
+  "id": "MAP_ASTRALIS_ACADEMY_BATTLE_ROOM",
+  "name": "AstralisAcademy_BattleRoom",
+  "layout": "LAYOUT_MART",
+  "music": "MUS_B_PYRAMID",
+  "region_map_section": "MAPSEC_ASTRALIS_ACADEMY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "dest_map": "MAP_BATTLE_ROOM_LOBBY",
+      "dest_warp_id": "0",
+      "elevation": 0,
+      "x": 4,
+      "y": 15
+    },
+    {
+      "dest_map": "MAP_BATTLE_ROOM_LOBBY",
+      "dest_warp_id": "1",
+      "elevation": 0,
+      "x": 4,
+      "y": 14
+    },
+    {
+      "dest_map": "MAP_BATTLE_ROOM_LOBBY",
+      "dest_warp_id": "2",
+      "elevation": 0,
+      "x": 25,
+      "y": 15
+    },
+    {
+      "dest_map": "MAP_BATTLE_ROOM_LOBBY",
+      "dest_warp_id": "3",
+      "elevation": 0,
+      "x": 25,
+      "y": 14
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

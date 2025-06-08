@@ -168,7 +168,9 @@
 	create_movement_action walk_slow_stairs_up, MOVEMENT_ACTION_WALK_SLOW_STAIRS_UP
 	create_movement_action walk_slow_stairs_left, MOVEMENT_ACTION_WALK_SLOW_STAIRS_LEFT
 	create_movement_action walk_slow_stairs_right, MOVEMENT_ACTION_WALK_SLOW_STAIRS_RIGHT
-
+    create_movement_action emote_happy, MOVEMENT_ACTION_EMOTE_HAPPY
+	create_movement_action emote_upset, MOVEMENT_ACTION_EMOTE_UPSET
+	
 	create_movement_action exit_pokeball, MOVEMENT_ACTION_EXIT_POKEBALL
 	create_movement_action enter_pokeball, MOVEMENT_ACTION_ENTER_POKEBALL
 	create_movement_action step_end, MOVEMENT_ACTION_STEP_END

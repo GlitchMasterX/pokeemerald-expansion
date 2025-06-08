@@ -2529,18 +2529,18 @@ void GetFollowerAction(struct ScriptContext *ctx) // Essentially a big switch fo
         case MAPSEC_PEWTER_CITY:
             multi = TYPE_ROCK;
             break;
-        case MAPSEC_DEWFORD_TOWN:
+        case MAPSEC_SPARK:
             multi = TYPE_FIGHTING;
             break;
         case MAPSEC_MAUVILLE_CITY:
         case MAPSEC_VERMILION_CITY:
             multi = TYPE_ELECTRIC;
             break;
-        case MAPSEC_LAVARIDGE_TOWN:
+        case MAPSEC_LUXURA_VEILWOOD:
         case MAPSEC_CINNABAR_ISLAND:
             multi = TYPE_FIRE;
             break;
-        case MAPSEC_PETALBURG_CITY:
+        case MAPSEC_ASTRALIS_ACADEMY:
             multi = TYPE_NORMAL;
             break;
         case MAPSEC_FORTREE_CITY:
@@ -11544,4 +11544,20 @@ bool8 MovementAction_SurfStillRight_Step1(struct ObjectEvent *objectEvent, struc
         return TRUE;
     }
     return FALSE;
+}
+
+bool8 MovementAction_EmoteHappy_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
+    FieldEffectStart(FLDEFF_HAPPY_ICON);
+    sprite->sActionFuncId = 1;
+    return TRUE;
+}
+
+bool8 MovementAction_EmoteUpset_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
+    FieldEffectStart(FLDEFF_UPSET_ICON);
+    sprite->sActionFuncId = 1;
+    return TRUE;
 }

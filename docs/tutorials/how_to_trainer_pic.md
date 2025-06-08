@@ -90,7 +90,7 @@ You can test your trainer type by going to [src/data/trainers](https://github.co
 +       .trainerPic = TRAINER_PIC_MY_TRAINER_CLASS,
         .trainerName = _("BRENDAN"),
         .items = {},
-        .doubleBattle = FALSE,
+        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = 0,
         .partySize = ARRAY_COUNT(sParty_BrendanLinkPlaceholder),
         .party = {.NoItemDefaultMoves = sParty_BrendanLinkPlaceholder},

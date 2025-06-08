@@ -872,12 +872,82 @@ static const struct FadeColors sFadeColors[] = {
         .color2 = RGB2GBA(, , ),
         .colorIndex = 
     }
-*/
-    {
-        .color1 = RGB2GBA(0, 74, 98),
-        .color2 = RGB2GBA(255, 255, 96),
+*/ {
+        .color1 = RGB2GBA(140, 142, 144),
+        .color2 = RGB2GBA(0, 0, 0),
+        .colorIndex = 1
+    }
+    ,{
+        .color1 = RGB2GBA(72, 78, 76),
+        .color2 = RGB2GBA(0, 0, 0),
+        .colorIndex = 2
+    }
+    ,{
+        .color1 = RGB2GBA(208, 206, 204),
+        .color2 = RGB2GBA(0, 0, 0),
+        .colorIndex = 3
+    }
+    ,{
+        .color1 = RGB2GBA(52, 46, 44),
+        .color2 = RGB2GBA(0, 0, 0),
+        .colorIndex = 4
+    }
+    ,{
+        .color1 = RGB2GBA(179, 174, 160),
+        .color2 = RGB2GBA(0, 0, 0),
+        .colorIndex = 5
+    }
+    ,{
+        .color1 = RGB2GBA(104, 110, 108),
+        .color2 = RGB2GBA(0, 0, 0),
+        .colorIndex = 6
+    }
+    ,{
+        .color1 = RGB2GBA(20, 14, 16),
+        .color2 = RGB2GBA(0, 0, 0),
+        .colorIndex = 7
+    }
+    ,{
+        .color1 = RGB2GBA(108, 74, 124),
+        .color2 = RGB2GBA(0, 0, 0),
+        .colorIndex = 8
+    }
+    ,{
+        .color1 = RGB2GBA(72, 48, 88),
+        .color2 = RGB2GBA(0, 0, 0),
+        .colorIndex = 11
+    }
+    ,{
+        .color1 = RGB2GBA(140, 110, 156),
+        .color2 = RGB2GBA(232, 44, 240),
+        .colorIndex = 9
+    }
+    ,{
+        .color1 = RGB2GBA(35, 35, 35),
+        .color2 = RGB2GBA(108, 10, 128),
+        .colorIndex = 10
+    }
+    ,{
+        .color1 = RGB2GBA(90, 69, 101),
+        .color2 = RGB2GBA(240, 60, 240),
+        .colorIndex = 12
+    }
+    ,{
+        .color1 = RGB2GBA(38, 18, 52),
+        .color2 = RGB2GBA(0, 0, 0),
+        .colorIndex = 13
+    }
+    ,{
+        .color1 = RGB2GBA(108, 78, 84),
+        .color2 = RGB2GBA(0, 0, 0),
+        .colorIndex = 14
+    }
+    ,{
+        .color1 = RGB2GBA(140, 110, 112),
+        .color2 = RGB2GBA(0, 0, 0),
         .colorIndex = 15
     }
+
 };
 
 static void UpdateLegendaryMarkingColor(u8 frameNum)

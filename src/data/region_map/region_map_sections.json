@@ -1,40 +1,40 @@
 {
   "map_sections": [
     {
-      "id": "MAPSEC_LITTLEROOT_TOWN",
-      "name": "LITTLEROOT TOWN",
+      "id": "MAPSEC_LUXURA_ISLAND",
+      "name": "LUXURA ISLAND",
       "x": 4,
       "y": 11,
       "width": 1,
       "height": 1
     },
     {
-      "id": "MAPSEC_OLDALE_TOWN",
-      "name": "OLDALE TOWN",
+      "id": "MAPSEC_LUXURA_MANSION",
+      "name": "LUXURA MANSION",
       "x": 4,
       "y": 9,
       "width": 1,
       "height": 1
     },
     {
-      "id": "MAPSEC_DEWFORD_TOWN",
-      "name": "DEWFORD TOWN",
+      "id": "MAPSEC_SPARK",
+      "name": "SPARK'S BASE",
       "x": 2,
       "y": 14,
       "width": 1,
       "height": 1
     },
     {
-      "id": "MAPSEC_LAVARIDGE_TOWN",
-      "name": "LAVARIDGE TOWN",
+      "id": "MAPSEC_LUXURA_VEILWOOD",
+      "name": "LUXURA VEILWOOD",
       "x": 5,
       "y": 3,
       "width": 1,
       "height": 1
     },
     {
-      "id": "MAPSEC_FALLARBOR_TOWN",
-      "name": "FALLARBOR TOWN",
+      "id": "MAPSEC_MT_CINDER",
+      "name": "MT. CINDER",
       "x": 3,
       "y": 0,
       "width": 1,
@@ -57,8 +57,8 @@
       "height": 1
     },
     {
-      "id": "MAPSEC_PETALBURG_CITY",
-      "name": "PETALBURG CITY",
+      "id": "MAPSEC_ASTRALIS_ACADEMY",
+      "name": "ASTRALIS ACADEMY",
       "x": 1,
       "y": 9,
       "width": 1,
@@ -129,8 +129,8 @@
       "height": 2
     },
     {
-      "id": "MAPSEC_ROUTE_101",
-      "name": "ROUTE 101",
+      "id": "MAPSEC_LUNAR_GROVE",
+      "name": "LUNAR GROVE",
       "x": 4,
       "y": 10,
       "width": 1,
@@ -531,7 +531,6 @@
     {
       "id": "MAPSEC_AQUA_HIDEOUT_OLD",
       "name": "{AQUA} HIDEOUT",
-      "name_clone": true,
       "x": 19,
       "y": 3,
       "width": 1,
@@ -699,7 +698,6 @@
     },
     {
       "id": "MAPSEC_DYNAMIC",
-      "name": "",
       "x": 0,
       "y": 0,
       "width": 1,
@@ -796,7 +794,6 @@
     {
       "id": "MAPSEC_ROUTE_4_POKECENTER",
       "name": "ROUTE 4",
-      "name_clone": true,
       "x": 0,
       "y": 0,
       "width": 1,
@@ -805,7 +802,6 @@
     {
       "id": "MAPSEC_ROUTE_10_POKECENTER",
       "name": "ROUTE 10",
-      "name_clone": true,
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1046,7 +1042,6 @@
     {
       "id": "MAPSEC_UNDERGROUND_PATH_2",
       "name": "UNDERGROUND PATH",
-      "name_clone": true,
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1063,7 +1058,6 @@
     {
       "id": "MAPSEC_KANTO_VICTORY_ROAD",
       "name": "VICTORY ROAD",
-      "name_clone": true,
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1096,7 +1090,6 @@
     {
       "id": "MAPSEC_KANTO_SAFARI_ZONE",
       "name": "SAFARI ZONE",
-      "name_clone": true,
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1441,7 +1434,6 @@
     {
       "id": "MAPSEC_TRAINER_TOWER_2",
       "name": "TRAINER TOWER",
-      "name_clone": true,
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1704,8 +1696,8 @@
       "height": 1
     },
     {
-      "id": "MAPSEC_TRAINER_HILL",
-      "name": "TRAINER HILL",
+      "id": "MAPSEC_SERVANTQUARTER",
+      "name": "SERVANT'S QUARTER",
       "x": 8,
       "y": 4,
       "width": 1,

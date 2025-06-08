@@ -1,0 +1,273 @@
+mapscripts headoffice_MapScripts {
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
+	ACADEMY_START,4:HEADMET
+     ACADEMY_START,13:HEADMET2
+]
+
+MAP_SCRIPT_ON_RESUME:HEADMET1
+MAP_SCRIPT_ON_FRAME_TABLE[
+	ACADEMY_START,4:Head
+    ACADEMY_START,13:FracturedMask1
+]
+MAP_SCRIPT_ON_LOAD:DAYNIGHT_NPC
+}
+script HEADMET1 {
+if(var(ACADEMY_START)== 4){
+    applymovement(0xFF,traces2)
+    createvobject(OBJ_EVENT_GFX_PROF_ELIAS,2,8,13,3,DIR_NORTH)
+}
+
+}
+script HEADMET {
+    addobject(1)
+    setobjectxy(1,7,9)
+    applymovement(0xFF,traces2)
+    createvobject(OBJ_EVENT_GFX_PROF_ELIAS,2,8,13,3,DIR_NORTH)
+}
+script HEADMET2 {
+    applymovement(0xFF,traces2)
+    
+}
+
+script Head {
+    lock
+    applymovement(1,exclam)
+    speakername(alistair)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar, I trust your journey here was uneventful.\pI understand this is all new for you, but it's time to start fresh."))
+     
+    speakername(Xylar1)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}..........."))
+     
+    speakername(alistair)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}We have a tradition of giving every first year a starter pokemon of their choice on the first day.\pBut since you arrived late there's only one left.\pHere you go."))
+     
+    playmoncry(SPECIES_TORCHIC,CRY_MODE_ENCOUNTER)
+    showmonpic(SPECIES_TORCHIC,10,3)
+    waitmoncry
+    givemon(SPECIES_TORCHIC,5,ITEM_EXP_SHARE,ITEM_POKE_BALL,NATURE_ADAMANT,2,0,0,0,0,0,0,0,15,31,20,31,21,10)
+    bufferspeciesname(STR_VAR_1,SPECIES_TORCHIC)
+    playse(MUS_DP_OBTAIN_ITEM)
+    msgbox(format("Xylar recieved {STR_VAR_1}."))
+    hidemonpic
+    msgbox(gText_NicknameThisPokemon,MSGBOX_YESNO)
+    if(var(VAR_RESULT)==FALSE){
+        goto(Head1)
+    }
+    else{
+        call(Common_EventScript_GetGiftMonPartySlot)
+        call(Common_EventScript_NameReceivedPartyMon)
+        goto(Head1)
+    }
+}
+
+script girlsdorm {
+    lock
+    applymovement(1,exclam)
+    applymovement(0xFF,traces2)
+    waitmovement(0)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}This way leads to the girl's dorm.\pBoys are not allowed there."))
+    applymovement(0xFF,strrp)
+    waitmovement(0)
+    release
+}
+
+script Head1 {
+    lock
+    applymovement(0xFF,exclam)
+    speakername(Xylar1)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}This is it? I thought I was supposed to grow stronger, not babysit a chicken."))
+     
+    speakername(alistair)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Strength isn't always obvious at first glance.\pGive it time.\nTorchic may surprise you."))
+     
+    initclock(10,30)
+    clearflag(FLAG_PAUSE_TIME)
+    setvar(ACADEMY_START,5)
+    warp(MAP_ASTRALIS_ACADEMY_FLOOR2,12,1)   
+}
+
+script serenamet {
+    lockall
+    playbgm(MUS_HG_LYRA,FALSE)
+    applymovement(1,serenametmov1)
+    waitmovement(0)
+    speakername(serena)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}There you are!\pI'm Serena, your assigned mentor.\pLucky you, right?"))
+     
+    applymovement(1,serenametmov2)
+    applymovement(0xFF,serenametmov3)
+    waitmovement(0)
+    speakername(Xylar1)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't need a mentor."))
+     
+    speakername(serena)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Well, that's too bad.\pRules are rules.\pYou're stuck with me, like it or not."))
+     
+    waitmessage
+    applymovement(0xFF,traces2)
+    speakername(Xylar1)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}If you're expecting me to follow your lead then do yourself a favor.\pFind someone else."))
+     
+    waitmessage
+    applymovement(1,serenametmov4)
+    waitmovement(0)
+    applymovement(0xFF,mov1)
+    speakername(serena)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}You've got quite the attitude.\pLook, I don't care if you think you don't need help.\pI'm here to make sure you don't blow something up."))
+     
+    speakername(Xylar1)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Do what you like.\pJust don't get in my way."))
+     
+    speakername(serena)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Deal.\pYou might be all broody, but I bet you'll come around eventually.\pI'm pretty good at breaking through tough shells."))
+     
+    speakername(Xylar1)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Don't count on it."))
+     
+    speakername(serena)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Now that you have accepted my help, let me show you around."))
+     
+    applymovement(0xFF,exclam)
+    speakername(Xylar1)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Huh?\pI never di.."),MSGBOX_AUTOCLOSE)
+     
+    speakername(serena)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Let's gooo!"))
+     
+    applymovement(0xFF,upset)
+    speakername(Xylar1)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Ugh!"),MSGBOX_AUTOCLOSE)
+     
+    playse(MUS_DP_LETS_GO_TOGETHER)
+    msgbox(format("Serena decided to join you!"))
+    waitse
+    setflag(FLAG_PAUSE_TIME)
+    setfollowernpc(1,FNPC_LEAVE_ROUTE,serenafollow)
+    fadedefaultbgm
+    setvar(ACADEMY_START,6)
+    releaseall
+}
+script serenafollow {
+    lock
+    facefollowernpc
+    applymovement(0xFD,happy)
+    speakername(serena)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Let's gooo!"))
+     
+    release
+}
+movement serenametmov1 {
+    walk_fast_up*7
+}
+movement serenametmov2 {
+    walk_right
+    emote_exclamation_mark
+    face_down
+}
+movement serenametmov3 {
+    walk_down*4
+}
+movement serenametmov4 {
+    walk_down*3
+    face_left
+}
+text serena {
+    format("Serena")   
+}
+script serenaextend {
+    lock
+    applymovement(0xFD,serenametmov5)
+    applymovement(0xFF,serenametmov6)
+    waitmovement(0)
+    special(SpawnCameraObject)
+    applymovement(0x7F,backes)
+    speakername(serena)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}This is where real fun happens.\pYou'll get plenty of chances to show your skills here.\pOR.....\pDo you think you're too good for practice?"),MSGBOX_AUTOCLOSE)
+     
+    speakername(Xylar1)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Results are all that matter and I don't care how I get them."),MSGBOX_AUTOCLOSE)
+     
+    speakername(serena)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Results come from experience, you know.\pLet me guess, you think you can handle everything on your own."),MSGBOX_AUTOCLOSE)
+     
+    speakername(Xylar1)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}..................."))
+     
+    speakername(serena)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Look, I get it.\pYou've got your walls up but you'll see doing it alone doesn't always work.\pMaybe Torchic will teach you that."),MSGBOX_AUTOCLOSE)
+     
+    speakername(Xylar1)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}..................."),MSGBOX_AUTOCLOSE)
+     
+    applymovement(0x7F,serenametmov7)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    speakername(serena)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}You should head to the reception to pick up your dorm room keys.\pI'll be going now."),MSGBOX_AUTOCLOSE)
+     
+    applymovement(0xFD,serenametmov7)
+    waitmovement(0)
+    destroyfollowernpc
+    setflag(FLAG_SERENAMET)
+    setvar(ACADEMY_START,7)
+    release
+
+}
+script serenaextend1{
+    applymovement(0xFF,MOVE2)
+    applymovement(0xFD,MOVE2)
+    waitmovement(0)
+    goto(serenaextend)
+}
+script serenaextend2{
+    applymovement(0xFF,strrp)
+    applymovement(0xFD,strrp)
+    waitmovement(0)
+    goto(serenaextend)
+}
+movement serenametmov7 {
+    walk_up*7
+    
+}
+movement serenametmov5 {
+    walk_left
+    walk_down*5
+}
+movement serenametmov6 {
+    delay_16
+    walk_down*4
+}
+
+script FracturedMask1 {
+    lock
+    fadenewbgm(MUS_DUMMY)
+    speakername("Alistair")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar, expulsion is on the table.\pThis kind of behavior is unacceptable.\pAll the teachers wanted you expelled, but I convinced them to give you one more chance."), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovement (1, moves(emote_question_mark))
+    speakername("Alistair")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Tell me, why did you beat him so badly?"), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovement (0xFF, moves(emote_upset))
+    speakername("Xylar")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}He wouldn't stop running his mouth, so I shut it for him."), MSGBOX_AUTOCLOSE)
+    speakername("Alistair")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Violence isn't the answer, Xylar.\pNext time, there won't be a second chance."), MSGBOX_AUTOCLOSE)
+    speakername("Xylar")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Then maybe people should learn when to keep their mouths shut."), MSGBOX_AUTOCLOSE)
+    speakername("Alistair")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}This isn't the path your father would have wanted for you."), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovement (0xFF, moves(emote_upset))
+    speakername("Xylar")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Don't.\pTalk.\pAbout.\pHim."), MSGBOX_AUTOCLOSE)
+    applymovement (0xFF, moves(walk_fast_down*3))
+    waitmovement(0)
+    fadescreen(FADE_TO_BLACK)
+    msgbox(format("After this incident, the students began to fear Xylar, treating him as an outcast."), MSGBOX_AUTOCLOSE)
+    setflag(FLAG_AFTER_OUTBURST)
+    warp(MAP_ASTRALIS_ACADEMY_FLOOR2,12,2)
+    setvar(ACADEMY_START,14)
+    releaseall
+    
+}

@@ -4,15 +4,15 @@
 #include "constants/battle_partner.h"
 
 #define TRAINER_NONE                          0
-#define TRAINER_SAWYER_1                      1
-#define TRAINER_GRUNT_AQUA_HIDEOUT_1          2
-#define TRAINER_GRUNT_AQUA_HIDEOUT_2          3
-#define TRAINER_GRUNT_AQUA_HIDEOUT_3          4
-#define TRAINER_GRUNT_AQUA_HIDEOUT_4          5
-#define TRAINER_GRUNT_SEAFLOOR_CAVERN_1       6
-#define TRAINER_GRUNT_SEAFLOOR_CAVERN_2       7
-#define TRAINER_GRUNT_SEAFLOOR_CAVERN_3       8
-#define TRAINER_GABRIELLE_1                   9
+#define SPARK_GRUNT_1                      1
+#define SPARK_GRUNT_2          2
+#define SPARK_GRUNT_3          3
+#define SPARK_GRUNT_4          4
+#define SPARK_GRUNT_5          5
+#define SPARK_GRUNT_6       6
+#define SPARK_ADMIN_SURGE       7
+#define ACADEMY_HEAD       8
+#define DAMIEN_VOSS                   9
 #define TRAINER_GRUNT_PETALBURG_WOODS        10
 #define TRAINER_MARCEL                       11
 #define TRAINER_ALBERTO                      12

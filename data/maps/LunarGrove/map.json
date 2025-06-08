@@ -1,0 +1,50 @@
+{
+  "id": "MAP_LUNAR_GROVE",
+  "name": "LunarGrove",
+  "layout": "LAYOUT_LUNAR_GROVE",
+  "music": "MUS_DP_LAKE",
+  "region_map_section": "MAPSEC_LUNAR_GROVE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_NONE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "dest_map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_2F",
+      "dest_warp_id": "0",
+      "elevation": 0,
+      "x": 21,
+      "y": 10
+    },
+    {
+      "dest_map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_2F",
+      "dest_warp_id": "1",
+      "elevation": 0,
+      "x": 22,
+      "y": 10
+    },
+    {
+      "dest_map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
+      "dest_warp_id": "3",
+      "elevation": 0,
+      "x": 37,
+      "y": 85
+    },
+    {
+      "dest_map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
+      "dest_warp_id": "4",
+      "elevation": 0,
+      "x": 38,
+      "y": 85
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

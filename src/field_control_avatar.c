@@ -288,7 +288,7 @@ static bool8 TryStartInteractionScript(struct MapPosition *position, u16 metatil
         return FALSE;
 
     // Don't play interaction sound for certain scripts.
-    if (script != LittlerootTown_BrendansHouse_2F_EventScript_PC
+    if (script != Academy_Lighthouse_EventScript_TurnOffPlayerPC
      && script != LittlerootTown_MaysHouse_2F_EventScript_PC
      && script != SecretBase_EventScript_PC
      && script != SecretBase_EventScript_RecordMixingPC
@@ -492,6 +492,10 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
         return EventScript_BookShelf;
     if (MetatileBehavior_IsPokeCenterBookShelf(metatileBehavior) == TRUE)
         return EventScript_PokemonCenterBookShelf;
+    if (MetatileBehavior_IsBlood(metatileBehavior) == TRUE)
+        return EventScript_Blood;
+    if (MetatileBehavior_IsM_Grave(metatileBehavior) == TRUE)
+        return EventScript_M_Grave;
     if (MetatileBehavior_IsVase(metatileBehavior) == TRUE)
         return EventScript_Vase;
     if (MetatileBehavior_IsTrashCan(metatileBehavior) == TRUE)

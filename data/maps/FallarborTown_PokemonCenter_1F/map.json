@@ -3,7 +3,7 @@
   "name": "FallarborTown_PokemonCenter_1F",
   "layout": "LAYOUT_POKEMON_CENTER_1F",
   "music": "MUS_POKE_CENTER",
-  "region_map_section": "MAPSEC_FALLARBOR_TOWN",
+  "region_map_section": "MAPSEC_VIRIDIAN_FOREST",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -66,7 +66,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "FallarborTown_PokemonCenter_1F_EventScript_Lanette",
-      "flag": "FLAG_HIDE_FALLORBOR_POKEMON_CENTER_LANETTE"
+      "flag": "0"
     }
   ],
   "warp_events": [
