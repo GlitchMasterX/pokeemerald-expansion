@@ -73,8 +73,8 @@ static const u16 sCaveTransitionPalette_Black[] = INCBIN_U16("graphics/cave_tran
 
 static const u16 sCaveTransitionPalette_Enter[] = INCBIN_U16("graphics/cave_transition/enter.gbapal");
 
-static const u32 sCaveTransitionTilemap[] = INCBIN_U32("graphics/cave_transition/tilemap.bin.lz");
-static const u32 sCaveTransitionTiles[] = INCBIN_U32("graphics/cave_transition/tiles.4bpp.lz");
+static const u32 sCaveTransitionTilemap[] = INCBIN_U32("graphics/cave_transition/tilemap.bin.smolTM");
+static const u32 sCaveTransitionTiles[] = INCBIN_U32("graphics/cave_transition/tiles.4bpp.smol");
 
 bool32 SetUpFieldMove_Flash(void)
 {
@@ -161,8 +161,8 @@ void CB2_DoChangeMap(void)
 static bool8 TryDoMapTransition(void)
 {
     u8 i;
-    u8 fromType = GetLastUsedWarpMapType();
-    u8 toType = GetCurrentMapType();
+    enum MapType fromType = GetLastUsedWarpMapType();
+    enum MapType toType = GetCurrentMapType();
 
     if (GetLastUsedWarpMapSectionId() != gMapHeader.regionMapSectionId && (MapHasPreviewScreen_HandleQLState2(gMapHeader.regionMapSectionId, MPS_TYPE_CAVE) == TRUE || MapHasPreviewScreen_HandleQLState2(gMapHeader.regionMapSectionId, MPS_TYPE_BASIC) == TRUE))
     {
