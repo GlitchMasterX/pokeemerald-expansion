@@ -22,7 +22,7 @@ script officer {
 
 script forest {
     lock
-    applymovement(5,exclam)
+    applymovement(5,moves(emote_exclamation_mark face_down))
 	waitmovement(0)
 	applymovement(OBJ_EVENT_ID_PLAYER,run)
 	waitmovement(0)
@@ -234,7 +234,7 @@ script miraded {
 	applymovement(11,tak)
 	waitmovement(0)
 	speakername("Grunt F")
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}YEAH YEAH, make her explode like BOOM!\pMake her bleed.\pMake her scream.\pOh, I can already hear it."),MSGBOX_AUTOCLOSE)
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}YEAH YEAH, make her explode!\pMake her bleed.\pMake her scream.\pOh, I can already hear it."),MSGBOX_AUTOCLOSE)
 	speakername("Grunt M")
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}And kid's reaction...priceless i would say."),MSGBOX_AUTOCLOSE)
 	speakername("Grunt F")

@@ -452,7 +452,7 @@ script escape {
 	waitse
 	playse(SE_M_HEAL_BELL)
 	speakername(Xylar1)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_QUESTION}{COLOR BLUE}{SHADOW LIGHT_GRAY}What was that"),MSGBOX_AUTOCLOSE)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_QUESTION}{COLOR BLUE}{SHADOW LIGHT_GRAY}What was that?"),MSGBOX_AUTOCLOSE)
 	speakername(name4)
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Let's go check."),MSGBOX_AUTOCLOSE)
 	waitmessage
@@ -485,11 +485,11 @@ script escape {
     applymovement(0xFD,exclam)
     waitmovement(0)
 	speakername(name4)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SHOCK}{COLOR RED}{SHADOW LIGHT_GRAY}Are youu helping us?"))
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SHOCK}{COLOR RED}{SHADOW LIGHT_GRAY}Are you trying to help us?"))
 	removefieldmugshot
 	playmoncry(SPECIES_HOOPA,CRY_MODE_HIGH_PITCH)
     speakername("Hoopa")
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_HOOPA}{EMOTE_ANGRY}{COLOR RED}{SHADOW LIGHT_GRAY}Hooo....paaa"))
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_HOOPA}{EMOTE_ANGRY}{COLOR RED}{SHADOW LIGHT_GRAY}Hooo....paaa!!!"))
 	closemessage
 	waitmoncry
 	removefieldmugshot
@@ -498,11 +498,11 @@ script escape {
 	playse(SE_BANG)
 	applymovement(15,moves(slide_up slide_down face_up))
     waitse
-	applymovement(0xFF,moves(jump_up))
+	applymovement(0xFF,moves(jump_2_up))
     waitmovement(0)
 	playse(SE_EXIT)
 	waitse
-	applymovement(0xfD,moves(walk_right face_down))
+	applymovement(0xFD,moves(walk_right face_down))
 	waitmovement(0)
     speakername(name4)
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Thank you… For still protecting him."))

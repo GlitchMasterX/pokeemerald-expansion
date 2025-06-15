@@ -20,6 +20,7 @@ Playerroom_MapScripts::
 mira::
 # 12 "data/maps/Playerroom/scripts.pory"
 	lockall
+	fwdmonth 1
 # 13 "data/maps/Playerroom/scripts.pory"
 	msgbox mira_Text_0
 # 14 "data/maps/Playerroom/scripts.pory"

@@ -9,7 +9,7 @@ Dormindoor1_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 # 3 "data/maps/Dormindoor1/scripts.pory"
 	map_script_2 ACADEMY_START, 8, Kaelmet
 # 4 "data/maps/Dormindoor1/scripts.pory"
-	map_script_2 ACADEMY_START, 11, Nightstroll
+	map_script_2 ACADEMY_START, 10, Nightstroll
 	.2byte 0
 
 
@@ -198,7 +198,7 @@ Nightstroll::
 # 92 "data/maps/Dormindoor1/scripts.pory"
 	release
 # 93 "data/maps/Dormindoor1/scripts.pory"
-	setvar ACADEMY_START, 12
+	setvar ACADEMY_START, 11
 	return
 
 

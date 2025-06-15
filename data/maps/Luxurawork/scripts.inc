@@ -1053,7 +1053,7 @@ escape::
 # 504 "data/maps/Luxurawork/scripts.pory"
 	waitse
 # 505 "data/maps/Luxurawork/scripts.pory"
-	applymovement 0xfD, escape_Movement_7
+	applymovement 0xFD, escape_Movement_7
 # 506 "data/maps/Luxurawork/scripts.pory"
 	waitmovement 0
 # 507 "data/maps/Luxurawork/scripts.pory"
@@ -1214,7 +1214,7 @@ escape_Movement_5:
 # 501 "data/maps/Luxurawork/scripts.pory"
 escape_Movement_6:
 # 501 "data/maps/Luxurawork/scripts.pory"
-	jump_up
+	jump_2_up
 	step_end
 
 # 505 "data/maps/Luxurawork/scripts.pory"
@@ -1518,7 +1518,7 @@ escape_Text_3:
 
 escape_Text_4:
 # 455 "data/maps/Luxurawork/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_QUESTION}{COLOR BLUE}{SHADOW LIGHT_GRAY}What was that$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_QUESTION}{COLOR BLUE}{SHADOW LIGHT_GRAY}What was that?$"
 
 escape_Text_5:
 # 457 "data/maps/Luxurawork/scripts.pory"
@@ -1534,11 +1534,11 @@ escape_Text_7:
 
 escape_Text_8:
 # 488 "data/maps/Luxurawork/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SHOCK}{COLOR RED}{SHADOW LIGHT_GRAY}Are youu helping us?$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SHOCK}{COLOR RED}{SHADOW LIGHT_GRAY}Are you trying to help us?$"
 
 escape_Text_9:
 # 492 "data/maps/Luxurawork/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_HOOPA}{EMOTE_ANGRY}{COLOR RED}{SHADOW LIGHT_GRAY}Hooo....paaa$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_HOOPA}{EMOTE_ANGRY}{COLOR RED}{SHADOW LIGHT_GRAY}Hooo....paaa!!!$"
 
 escape_Text_10:
 # 508 "data/maps/Luxurawork/scripts.pory"

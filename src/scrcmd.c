@@ -3319,8 +3319,13 @@ bool8 ScrCmd_fwdmonth(struct ScriptContext *ctx)
 
     Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
     FakeRtc_AdvanceTimeBy(totalDaysToAdd, 0, 0, 0);
+
+    // 🔁 Update season after advancing time
+    UpdateSeasonOncePerMinute(); // ensures gCurrentSeason is in sync with new month
+
     return FALSE;
 }
+
 
 
 void Script_EndTrainerCanSeeIf(struct ScriptContext *ctx)

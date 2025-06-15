@@ -342,6 +342,7 @@ movement strp{
 }
 
 script LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD {
+    special(SetRoofBirds)
     if(var(LUXURA_TRAGEDY)<9){
         removeobject(5)
         setflag(FLAG_UNUSED_0x4EF)
@@ -361,8 +362,7 @@ script LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD {
         setflag(FLAG_ALISTAIR_ARRIVE)
     }
     elif(var(LUXURA_TRAGEDY)==10){
-        addobject(5)
-        clearflag(FLAG_UNUSED_0x4EF)
+        setflag(FLAG_UNUSED_0x4EF)
         removeobject(6)
         setflag(FLAG_UNUSED_0x4A5)
         removeobject(13)
@@ -370,8 +370,6 @@ script LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD {
         setflag(FLAG_ALISTAIR_ARRIVE)
     }
     elif(var(LUXURA_TRAGEDY)==11){
-        addobject(5)
-        clearflag(FLAG_UNUSED_0x4EF)
         removeobject(2)
         setflag(FLAG_UNUSED_0x4A4)
         addobject(6)
@@ -382,8 +380,6 @@ script LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD {
         setflag(FLAG_ALISTAIR_ARRIVE)
     }
     elif(var(LUXURA_TRAGEDY)>11 && var(LUXURA_TRAGEDY)<14){
-        addobject(5)
-        clearflag(FLAG_UNUSED_0x4EF)
         removeobject(2)
         setflag(FLAG_UNUSED_0x4A4)
         addobject(6)

@@ -8,6 +8,7 @@
 #include "text.h"
 #include "fake_rtc.h"
 #include "overworld.h"
+#include "event_data.h"
 
 // iwram bss
 static u16 sErrorStatus;
@@ -19,6 +20,9 @@ static u16 sSavedIme;
 COMMON_DATA struct Time gLocalTime = {0};
 
 // const rom
+EWRAM_DATA static u8 sLastCheckedMinute = 0;
+EWRAM_DATA static bool8 sUseManualMonth = FALSE;
+EWRAM_DATA static u8 sManualMonth = 0; // Default to January
 
 static const struct SiiRtcInfo sRtcDummy = {0, MONTH_JAN, 1}; // 2000 Jan 1
 
@@ -438,11 +442,41 @@ u16 GetFullYear(void)
 
 enum Month GetMonth(void)
 {
-    struct DateTime dateTime;
-    RtcCalcLocalTime();
-    ConvertTimeToDateTime(&dateTime, &gLocalTime);
+    if (sUseManualMonth)
+        return sManualMonth;
 
-    return dateTime.month;
+    struct SiiRtcInfo *rtc = FakeRtc_GetCurrentTime();
+    return rtc->month;
+}
+
+
+void UpdateSeasonOncePerMinute(void)
+{
+    struct SiiRtcInfo *rtc = FakeRtc_GetCurrentTime();
+
+    if (rtc->minute == sLastCheckedMinute)
+        return;
+
+    sLastCheckedMinute = rtc->minute;
+
+    switch (GetMonth()) // IMPORTANT: this will still respect manual override
+    {
+    case 3: case 4: case 5:
+        VarSet(VAR_CURRENT_SEASON, 0);
+        break;
+    case 6: case 7: case 8:
+        VarSet(VAR_CURRENT_SEASON, 1);
+        break;
+    case 9: case 10: case 11:
+        VarSet(VAR_CURRENT_SEASON, 2);
+        break;
+    case 12: case 1: case 2:
+        VarSet(VAR_CURRENT_SEASON, 3);
+        break;
+    default:
+        VarSet(VAR_CURRENT_SEASON, 0);
+        break;
+    }
 }
 
 u8 GetDay(void)

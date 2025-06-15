@@ -259,10 +259,9 @@ script grave {
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Mom, I'll be leaving for the academy now.....\pThey think it's a place to learn and grow but all I'll find there will be the strength to avenge you.\pI won't forget why I'm doing this.\pI'll make sure your death isn't forgotten.\p..........\pI'll make them all pay."),MSGBOX_AUTOCLOSE)   
      
     fadescreen(FADE_TO_BLACK)
-    initclock(10,10)
-    pausefakertc
     clearflag(FLAG_TALK_GRAVE)
-    setvar(VAR_CURRENT_MONTH,3)
+    initclock(10,10)
+    fwdmonth(3)
     warpsilent(MAP_HARBORAC,22,27)
     }
     else{

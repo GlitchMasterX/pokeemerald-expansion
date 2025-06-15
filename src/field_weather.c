@@ -317,7 +317,7 @@ static void None_Init(void)
 {
     if (EXPANSION_VERSION_MINOR >= 9 && MapHasPreviewScreen_HandleQLState2(gMapHeader.regionMapSectionId, MPS_TYPE_FADE_IN) == FALSE)
     {
-    Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY); // Indoor shadows
+    Weather_SetBlendCoeffs(8, 12); // Indoor shadows
     }
     gWeatherPtr->noShadows = FALSE;
     gWeatherPtr->targetColorMapIndex = 0;
@@ -328,6 +328,13 @@ static void None_Main(void)
 {
 }
 
+/*************  ✨ Windsurf Command ⭐  *************/
+// None_Finish is a dummy implementation of the finish() callback function.
+// It is used for the "None" weather effect, which doesn't have a finish()
+// state.
+//
+// Returns 0.
+/*******  2a678237-deb7-4ad5-9b3d-fe652648e554  *******/
 static u8 None_Finish(void)
 {
     return 0;
@@ -1191,3 +1198,7 @@ bool32 IsWeatherAlphaBlend(void)
          || gWeatherPtr->currWeather == WEATHER_UNDERWATER_BUBBLES
          || gWeatherPtr->currWeather == WEATHER_UNDERWATER);
 }
+
+
+
+

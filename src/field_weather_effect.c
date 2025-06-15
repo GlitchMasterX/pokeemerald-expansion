@@ -162,7 +162,7 @@ void Sunny_InitVars(void)
     gWeatherPtr->colorMapStepDelay = 20;
     if (EXPANSION_VERSION_MINOR >= 9 && MapHasPreviewScreen_HandleQLState2(gMapHeader.regionMapSectionId, MPS_TYPE_FADE_IN) == FALSE)
     {
-    Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY); // preserve shadow darkness
+    Weather_SetBlendCoeffs(8, OW_SHADOW_INTENSITY); // preserve shadow darkness
     }
     gWeatherPtr->noShadows = FALSE;
 }

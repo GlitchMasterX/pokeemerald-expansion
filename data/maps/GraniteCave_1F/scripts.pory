@@ -60,7 +60,7 @@ script herb {
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}I won't let you down, not like this.\pYou'll make it. You have to."),MSGBOX_AUTOCLOSE) 
 	releaseall
 	setvar(LUXURA_TRAGEDY,16)
-	setvar(VAR_CURRENT_MONTH,2)
+	fwdmonth(2)
 }
 
 script Mewtworecover {
@@ -128,6 +128,7 @@ script spark1 {
 	msgbox(PostBattle_Grunt1, MSGBOX_AUTOCLOSE) 
 	waitmessage
     end
+ 
 }
  
 text Grunt1_Intro{

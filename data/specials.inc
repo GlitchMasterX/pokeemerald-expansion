@@ -565,3 +565,4 @@ gSpecials::
 	def_special GetCodeFeedback
     def_special DrawMugshot
     def_special ClearMugshot
+	def_special SetRoofBirds

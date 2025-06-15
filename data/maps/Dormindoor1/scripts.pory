@@ -1,7 +1,7 @@
 mapscripts Dormindoor1_MapScripts {
     MAP_SCRIPT_ON_FRAME_TABLE[
 	ACADEMY_START,8:Kaelmet
-    ACADEMY_START,11:Nightstroll
+    ACADEMY_START,10:Nightstroll
 ]
 MAP_SCRIPT_ON_LOAD:DAYNIGHT_NPC
 }
@@ -90,7 +90,7 @@ script Nightstroll {
     speakername("Xylar")
     msgbox(format("I can't fall sleep, maybe I should go for a walk."))
     release
-    setvar(ACADEMY_START,12)
+    setvar(ACADEMY_START,11)
 }
 script lunarofficer {
     lock

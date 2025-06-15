@@ -119,7 +119,7 @@ herb::
 # 62 "data/maps/GraniteCave_1F/scripts.pory"
 	setvar LUXURA_TRAGEDY, 16
 # 63 "data/maps/GraniteCave_1F/scripts.pory"
-	setvar VAR_CURRENT_MONTH, 2
+	fwdmonth 2
 	return
 
 
@@ -326,14 +326,14 @@ mewrt_Text_8:
 	.string "Mewtwo decided to join you.$"
 
 Grunt1_Intro::
-# 133 "data/maps/GraniteCave_1F/scripts.pory"
+# 134 "data/maps/GraniteCave_1F/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Feel the strikes of Sparks power!!$"
 
 Grunt1_Outro::
-# 137 "data/maps/GraniteCave_1F/scripts.pory"
+# 138 "data/maps/GraniteCave_1F/scripts.pory"
 	.string "No way! How could you withstand our\n"
 	.string "lightning strikes?$"
 
 PostBattle_Grunt1::
-# 141 "data/maps/GraniteCave_1F/scripts.pory"
+# 142 "data/maps/GraniteCave_1F/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Our general will defeat you.$"

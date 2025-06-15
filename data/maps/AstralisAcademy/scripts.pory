@@ -2,14 +2,21 @@ mapscripts AstralisAcademy_MapScripts {
 	MAP_SCRIPT_ON_LOAD:DAYNIGHT_NPC
 	MAP_SCRIPT_ON_FRAME_TABLE[
 	ACADEMY_START,9:TrialAnnouncement
-	ACADEMY_START,10:TrialAnnouncement1
 ]
 MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
 	ACADEMY_START,9:trial
-    ACADEMY_START,10:trial1
+    ACADEMY_START,9:trial1
 ]
 }
-
+script fwdmonth {
+	fwdmonth(1)
+}
+script fwdmonth1 {
+	fwdmonth(6)
+}
+script fwdmonth3 {
+	fwdmonth(11)
+}
 script trial1 {
 	clearflag(FLAG_TRIAL_SERENA)
 	setobjectxyperm(20,10,57)
@@ -108,15 +115,14 @@ script TrialAnnouncement {
     waitmessage
 	applymovement(0xFF,moves(walk_down*4))
 	applymovement(20,moves(face_down))
-	warpsilent(MAP_ASTRALIS_ACADEMY,10,56) 
-	setvar(ACADEMY_START,10)  
-	release
+	warp_continue_script(MAP_ASTRALIS_ACADEMY,10,56,TrialAnnouncement1,TRUE) 
     }  
 text damien {
 	format("Damien")	
 }
 
 script TrialAnnouncement1 {
+	fadescreen(FADE_FROM_BLACK)
     playbgm(MUS_HG_LYRA,FALSE)    
     speakername(serena)  
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Guess that means you're battling.\pFeeling nervous?"), MSGBOX_AUTOCLOSE)  
@@ -230,7 +236,7 @@ script TrialAnnouncement1 {
 	resumefakertc
 	warp(MAP_DORMINDOOR1,4,7)
 	initclock(23,53)
-	setvar(ACADEMY_START,11)
+	setvar(ACADEMY_START,10)
 	
 }
 text damienlose{
@@ -343,7 +349,7 @@ script FracturedMask {
         initclock(14,43)
 		resumefakertc
 		warpsilent(MAP_HEADOFFICE,7,8)
-		setvar(ACADEMY_START,13)
+		setvar(ACADEMY_START,12)
 		}
 		 elif((var(VAR_0x8000)==18) && (var(VAR_0x8001)> 8) && (var(VAR_0x8001)<11)){
 			lock

@@ -13,14 +13,14 @@ headoffice_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 # 3 "data/maps/headoffice/scripts.pory"
 	map_script_2 ACADEMY_START, 4, HEADMET
 # 4 "data/maps/headoffice/scripts.pory"
-	map_script_2 ACADEMY_START, 13, HEADMET2
+	map_script_2 ACADEMY_START, 12, HEADMET2
 	.2byte 0
 
 headoffice_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 # 9 "data/maps/headoffice/scripts.pory"
 	map_script_2 ACADEMY_START, 4, Head
 # 10 "data/maps/headoffice/scripts.pory"
-	map_script_2 ACADEMY_START, 13, FracturedMask1
+	map_script_2 ACADEMY_START, 12, FracturedMask1
 	.2byte 0
 
 
@@ -141,9 +141,9 @@ Head1::
 	speakername alistair
 # 81 "data/maps/headoffice/scripts.pory"
 	msgbox Head1_Text_1
-# 83 "data/maps/headoffice/scripts.pory"
+# 82 "data/maps/headoffice/scripts.pory"
 	initclock 10, 30
-# 84 "data/maps/headoffice/scripts.pory"
+# 83 "data/maps/headoffice/scripts.pory"
 	clearflag FLAG_PAUSE_TIME
 # 85 "data/maps/headoffice/scripts.pory"
 	setvar ACADEMY_START, 5
@@ -240,301 +240,303 @@ serenamet::
 # 144 "data/maps/headoffice/scripts.pory"
 	setflag FLAG_PAUSE_TIME
 # 145 "data/maps/headoffice/scripts.pory"
-	setfollowernpc 1, FNPC_LEAVE_ROUTE, serenafollow
+	fwdmonth 3
 # 146 "data/maps/headoffice/scripts.pory"
-	fadedefaultbgm
+	setfollowernpc 1, FNPC_LEAVE_ROUTE, serenafollow
 # 147 "data/maps/headoffice/scripts.pory"
-	setvar ACADEMY_START, 6
+	fadedefaultbgm
 # 148 "data/maps/headoffice/scripts.pory"
+	setvar ACADEMY_START, 6
+# 149 "data/maps/headoffice/scripts.pory"
 	releaseall
 	return
 
 
 serenafollow::
-# 151 "data/maps/headoffice/scripts.pory"
-	lock
 # 152 "data/maps/headoffice/scripts.pory"
-	facefollowernpc
+	lock
 # 153 "data/maps/headoffice/scripts.pory"
-	applymovement 0xFD, happy
+	facefollowernpc
 # 154 "data/maps/headoffice/scripts.pory"
-	speakername serena
+	applymovement 0xFD, happy
 # 155 "data/maps/headoffice/scripts.pory"
+	speakername serena
+# 156 "data/maps/headoffice/scripts.pory"
 	msgbox serenamet_Text_10
-# 157 "data/maps/headoffice/scripts.pory"
+# 158 "data/maps/headoffice/scripts.pory"
 	release
 	return
 
 
-# 159 "data/maps/headoffice/scripts.pory"
+# 160 "data/maps/headoffice/scripts.pory"
 serenametmov1:
-# 160 "data/maps/headoffice/scripts.pory"
+# 161 "data/maps/headoffice/scripts.pory"
 	walk_fast_up
-# 160 "data/maps/headoffice/scripts.pory"
+# 161 "data/maps/headoffice/scripts.pory"
 	walk_fast_up
-# 160 "data/maps/headoffice/scripts.pory"
+# 161 "data/maps/headoffice/scripts.pory"
 	walk_fast_up
-# 160 "data/maps/headoffice/scripts.pory"
+# 161 "data/maps/headoffice/scripts.pory"
 	walk_fast_up
-# 160 "data/maps/headoffice/scripts.pory"
+# 161 "data/maps/headoffice/scripts.pory"
 	walk_fast_up
-# 160 "data/maps/headoffice/scripts.pory"
+# 161 "data/maps/headoffice/scripts.pory"
 	walk_fast_up
-# 160 "data/maps/headoffice/scripts.pory"
+# 161 "data/maps/headoffice/scripts.pory"
 	walk_fast_up
 	step_end
 
-# 162 "data/maps/headoffice/scripts.pory"
-serenametmov2:
 # 163 "data/maps/headoffice/scripts.pory"
-	walk_right
+serenametmov2:
 # 164 "data/maps/headoffice/scripts.pory"
-	emote_exclamation_mark
+	walk_right
 # 165 "data/maps/headoffice/scripts.pory"
+	emote_exclamation_mark
+# 166 "data/maps/headoffice/scripts.pory"
 	face_down
 	step_end
 
-# 167 "data/maps/headoffice/scripts.pory"
+# 168 "data/maps/headoffice/scripts.pory"
 serenametmov3:
-# 168 "data/maps/headoffice/scripts.pory"
+# 169 "data/maps/headoffice/scripts.pory"
 	walk_down
-# 168 "data/maps/headoffice/scripts.pory"
+# 169 "data/maps/headoffice/scripts.pory"
 	walk_down
-# 168 "data/maps/headoffice/scripts.pory"
+# 169 "data/maps/headoffice/scripts.pory"
 	walk_down
-# 168 "data/maps/headoffice/scripts.pory"
+# 169 "data/maps/headoffice/scripts.pory"
 	walk_down
 	step_end
 
-# 170 "data/maps/headoffice/scripts.pory"
+# 171 "data/maps/headoffice/scripts.pory"
 serenametmov4:
-# 171 "data/maps/headoffice/scripts.pory"
-	walk_down
-# 171 "data/maps/headoffice/scripts.pory"
-	walk_down
-# 171 "data/maps/headoffice/scripts.pory"
+# 172 "data/maps/headoffice/scripts.pory"
 	walk_down
 # 172 "data/maps/headoffice/scripts.pory"
+	walk_down
+# 172 "data/maps/headoffice/scripts.pory"
+	walk_down
+# 173 "data/maps/headoffice/scripts.pory"
 	face_left
 	step_end
 
 serenaextend::
-# 178 "data/maps/headoffice/scripts.pory"
-	lock
 # 179 "data/maps/headoffice/scripts.pory"
-	applymovement 0xFD, serenametmov5
+	lock
 # 180 "data/maps/headoffice/scripts.pory"
-	applymovement 0xFF, serenametmov6
+	applymovement 0xFD, serenametmov5
 # 181 "data/maps/headoffice/scripts.pory"
-	waitmovement 0
+	applymovement 0xFF, serenametmov6
 # 182 "data/maps/headoffice/scripts.pory"
-	special SpawnCameraObject
+	waitmovement 0
 # 183 "data/maps/headoffice/scripts.pory"
-	applymovement 0x7F, backes
+	special SpawnCameraObject
 # 184 "data/maps/headoffice/scripts.pory"
-	speakername serena
+	applymovement 0x7F, backes
 # 185 "data/maps/headoffice/scripts.pory"
+	speakername serena
+# 186 "data/maps/headoffice/scripts.pory"
 	msgbox serenaextend_Text_0, MSGBOX_AUTOCLOSE
-# 187 "data/maps/headoffice/scripts.pory"
-	speakername Xylar1
 # 188 "data/maps/headoffice/scripts.pory"
+	speakername Xylar1
+# 189 "data/maps/headoffice/scripts.pory"
 	msgbox serenaextend_Text_1, MSGBOX_AUTOCLOSE
-# 190 "data/maps/headoffice/scripts.pory"
-	speakername serena
 # 191 "data/maps/headoffice/scripts.pory"
+	speakername serena
+# 192 "data/maps/headoffice/scripts.pory"
 	msgbox serenaextend_Text_2, MSGBOX_AUTOCLOSE
-# 193 "data/maps/headoffice/scripts.pory"
-	speakername Xylar1
 # 194 "data/maps/headoffice/scripts.pory"
-	msgbox serenaextend_Text_3
-# 196 "data/maps/headoffice/scripts.pory"
-	speakername serena
-# 197 "data/maps/headoffice/scripts.pory"
-	msgbox serenaextend_Text_4, MSGBOX_AUTOCLOSE
-# 199 "data/maps/headoffice/scripts.pory"
 	speakername Xylar1
-# 200 "data/maps/headoffice/scripts.pory"
-	msgbox serenaextend_Text_3, MSGBOX_AUTOCLOSE
-# 202 "data/maps/headoffice/scripts.pory"
-	applymovement 0x7F, serenametmov7
-# 203 "data/maps/headoffice/scripts.pory"
-	waitmovement 0
-# 204 "data/maps/headoffice/scripts.pory"
-	special RemoveCameraObject
-# 205 "data/maps/headoffice/scripts.pory"
+# 195 "data/maps/headoffice/scripts.pory"
+	msgbox serenaextend_Text_3
+# 197 "data/maps/headoffice/scripts.pory"
 	speakername serena
-# 206 "data/maps/headoffice/scripts.pory"
-	msgbox serenaextend_Text_5, MSGBOX_AUTOCLOSE
-# 208 "data/maps/headoffice/scripts.pory"
-	applymovement 0xFD, serenametmov7
-# 209 "data/maps/headoffice/scripts.pory"
+# 198 "data/maps/headoffice/scripts.pory"
+	msgbox serenaextend_Text_4, MSGBOX_AUTOCLOSE
+# 200 "data/maps/headoffice/scripts.pory"
+	speakername Xylar1
+# 201 "data/maps/headoffice/scripts.pory"
+	msgbox serenaextend_Text_3, MSGBOX_AUTOCLOSE
+# 203 "data/maps/headoffice/scripts.pory"
+	applymovement 0x7F, serenametmov7
+# 204 "data/maps/headoffice/scripts.pory"
 	waitmovement 0
+# 205 "data/maps/headoffice/scripts.pory"
+	special RemoveCameraObject
+# 206 "data/maps/headoffice/scripts.pory"
+	speakername serena
+# 207 "data/maps/headoffice/scripts.pory"
+	msgbox serenaextend_Text_5, MSGBOX_AUTOCLOSE
+# 209 "data/maps/headoffice/scripts.pory"
+	applymovement 0xFD, serenametmov7
 # 210 "data/maps/headoffice/scripts.pory"
-	destroyfollowernpc
+	waitmovement 0
 # 211 "data/maps/headoffice/scripts.pory"
-	setflag FLAG_SERENAMET
+	destroyfollowernpc
 # 212 "data/maps/headoffice/scripts.pory"
-	setvar ACADEMY_START, 7
+	setflag FLAG_SERENAMET
 # 213 "data/maps/headoffice/scripts.pory"
+	setvar ACADEMY_START, 7
+# 214 "data/maps/headoffice/scripts.pory"
 	release
 	return
 
 
 serenaextend1::
-# 217 "data/maps/headoffice/scripts.pory"
-	applymovement 0xFF, MOVE2
 # 218 "data/maps/headoffice/scripts.pory"
-	applymovement 0xFD, MOVE2
+	applymovement 0xFF, MOVE2
 # 219 "data/maps/headoffice/scripts.pory"
-	waitmovement 0
+	applymovement 0xFD, MOVE2
 # 220 "data/maps/headoffice/scripts.pory"
+	waitmovement 0
+# 221 "data/maps/headoffice/scripts.pory"
 	goto serenaextend
 	return
 
 
 serenaextend2::
-# 223 "data/maps/headoffice/scripts.pory"
-	applymovement 0xFF, strrp
 # 224 "data/maps/headoffice/scripts.pory"
-	applymovement 0xFD, strrp
+	applymovement 0xFF, strrp
 # 225 "data/maps/headoffice/scripts.pory"
-	waitmovement 0
+	applymovement 0xFD, strrp
 # 226 "data/maps/headoffice/scripts.pory"
+	waitmovement 0
+# 227 "data/maps/headoffice/scripts.pory"
 	goto serenaextend
 	return
 
 
-# 228 "data/maps/headoffice/scripts.pory"
+# 229 "data/maps/headoffice/scripts.pory"
 serenametmov7:
-# 229 "data/maps/headoffice/scripts.pory"
+# 230 "data/maps/headoffice/scripts.pory"
 	walk_up
-# 229 "data/maps/headoffice/scripts.pory"
+# 230 "data/maps/headoffice/scripts.pory"
 	walk_up
-# 229 "data/maps/headoffice/scripts.pory"
+# 230 "data/maps/headoffice/scripts.pory"
 	walk_up
-# 229 "data/maps/headoffice/scripts.pory"
+# 230 "data/maps/headoffice/scripts.pory"
 	walk_up
-# 229 "data/maps/headoffice/scripts.pory"
+# 230 "data/maps/headoffice/scripts.pory"
 	walk_up
-# 229 "data/maps/headoffice/scripts.pory"
+# 230 "data/maps/headoffice/scripts.pory"
 	walk_up
-# 229 "data/maps/headoffice/scripts.pory"
+# 230 "data/maps/headoffice/scripts.pory"
 	walk_up
 	step_end
 
-# 232 "data/maps/headoffice/scripts.pory"
-serenametmov5:
 # 233 "data/maps/headoffice/scripts.pory"
+serenametmov5:
+# 234 "data/maps/headoffice/scripts.pory"
 	walk_left
-# 234 "data/maps/headoffice/scripts.pory"
+# 235 "data/maps/headoffice/scripts.pory"
 	walk_down
-# 234 "data/maps/headoffice/scripts.pory"
+# 235 "data/maps/headoffice/scripts.pory"
 	walk_down
-# 234 "data/maps/headoffice/scripts.pory"
+# 235 "data/maps/headoffice/scripts.pory"
 	walk_down
-# 234 "data/maps/headoffice/scripts.pory"
+# 235 "data/maps/headoffice/scripts.pory"
 	walk_down
-# 234 "data/maps/headoffice/scripts.pory"
+# 235 "data/maps/headoffice/scripts.pory"
 	walk_down
 	step_end
 
-# 236 "data/maps/headoffice/scripts.pory"
-serenametmov6:
 # 237 "data/maps/headoffice/scripts.pory"
+serenametmov6:
+# 238 "data/maps/headoffice/scripts.pory"
 	delay_16
-# 238 "data/maps/headoffice/scripts.pory"
+# 239 "data/maps/headoffice/scripts.pory"
 	walk_down
-# 238 "data/maps/headoffice/scripts.pory"
+# 239 "data/maps/headoffice/scripts.pory"
 	walk_down
-# 238 "data/maps/headoffice/scripts.pory"
+# 239 "data/maps/headoffice/scripts.pory"
 	walk_down
-# 238 "data/maps/headoffice/scripts.pory"
+# 239 "data/maps/headoffice/scripts.pory"
 	walk_down
 	step_end
 
 FracturedMask1::
-# 242 "data/maps/headoffice/scripts.pory"
-	lock
 # 243 "data/maps/headoffice/scripts.pory"
-	fadenewbgm MUS_DUMMY
+	lock
 # 244 "data/maps/headoffice/scripts.pory"
-	speakername FracturedMask1_Text_0
+	fadenewbgm MUS_DUMMY
 # 245 "data/maps/headoffice/scripts.pory"
-	msgbox FracturedMask1_Text_1, MSGBOX_AUTOCLOSE
+	speakername FracturedMask1_Text_0
 # 246 "data/maps/headoffice/scripts.pory"
-	playse SE_PIN
+	msgbox FracturedMask1_Text_1, MSGBOX_AUTOCLOSE
 # 247 "data/maps/headoffice/scripts.pory"
-	applymovement 1, FracturedMask1_Movement_0
+	playse SE_PIN
 # 248 "data/maps/headoffice/scripts.pory"
-	speakername FracturedMask1_Text_0
+	applymovement 1, FracturedMask1_Movement_0
 # 249 "data/maps/headoffice/scripts.pory"
-	msgbox FracturedMask1_Text_2, MSGBOX_AUTOCLOSE
+	speakername FracturedMask1_Text_0
 # 250 "data/maps/headoffice/scripts.pory"
-	playse SE_PIN
+	msgbox FracturedMask1_Text_2, MSGBOX_AUTOCLOSE
 # 251 "data/maps/headoffice/scripts.pory"
-	applymovement 0xFF, FracturedMask1_Movement_1
-# 252 "data/maps/headoffice/scripts.pory"
-	speakername FracturedMask1_Text_3
-# 253 "data/maps/headoffice/scripts.pory"
-	msgbox FracturedMask1_Text_4, MSGBOX_AUTOCLOSE
-# 254 "data/maps/headoffice/scripts.pory"
-	speakername FracturedMask1_Text_0
-# 255 "data/maps/headoffice/scripts.pory"
-	msgbox FracturedMask1_Text_5, MSGBOX_AUTOCLOSE
-# 256 "data/maps/headoffice/scripts.pory"
-	speakername FracturedMask1_Text_3
-# 257 "data/maps/headoffice/scripts.pory"
-	msgbox FracturedMask1_Text_6, MSGBOX_AUTOCLOSE
-# 258 "data/maps/headoffice/scripts.pory"
-	speakername FracturedMask1_Text_0
-# 259 "data/maps/headoffice/scripts.pory"
-	msgbox FracturedMask1_Text_7, MSGBOX_AUTOCLOSE
-# 260 "data/maps/headoffice/scripts.pory"
 	playse SE_PIN
-# 261 "data/maps/headoffice/scripts.pory"
+# 252 "data/maps/headoffice/scripts.pory"
 	applymovement 0xFF, FracturedMask1_Movement_1
-# 262 "data/maps/headoffice/scripts.pory"
+# 253 "data/maps/headoffice/scripts.pory"
 	speakername FracturedMask1_Text_3
+# 254 "data/maps/headoffice/scripts.pory"
+	msgbox FracturedMask1_Text_4, MSGBOX_AUTOCLOSE
+# 255 "data/maps/headoffice/scripts.pory"
+	speakername FracturedMask1_Text_0
+# 256 "data/maps/headoffice/scripts.pory"
+	msgbox FracturedMask1_Text_5, MSGBOX_AUTOCLOSE
+# 257 "data/maps/headoffice/scripts.pory"
+	speakername FracturedMask1_Text_3
+# 258 "data/maps/headoffice/scripts.pory"
+	msgbox FracturedMask1_Text_6, MSGBOX_AUTOCLOSE
+# 259 "data/maps/headoffice/scripts.pory"
+	speakername FracturedMask1_Text_0
+# 260 "data/maps/headoffice/scripts.pory"
+	msgbox FracturedMask1_Text_7, MSGBOX_AUTOCLOSE
+# 261 "data/maps/headoffice/scripts.pory"
+	playse SE_PIN
+# 262 "data/maps/headoffice/scripts.pory"
+	applymovement 0xFF, FracturedMask1_Movement_1
 # 263 "data/maps/headoffice/scripts.pory"
-	msgbox FracturedMask1_Text_8, MSGBOX_AUTOCLOSE
+	speakername FracturedMask1_Text_3
 # 264 "data/maps/headoffice/scripts.pory"
-	applymovement 0xFF, FracturedMask1_Movement_2
+	msgbox FracturedMask1_Text_8, MSGBOX_AUTOCLOSE
 # 265 "data/maps/headoffice/scripts.pory"
-	waitmovement 0
+	applymovement 0xFF, FracturedMask1_Movement_2
 # 266 "data/maps/headoffice/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	waitmovement 0
 # 267 "data/maps/headoffice/scripts.pory"
-	msgbox FracturedMask1_Text_9, MSGBOX_AUTOCLOSE
+	fadescreen FADE_TO_BLACK
 # 268 "data/maps/headoffice/scripts.pory"
-	setflag FLAG_AFTER_OUTBURST
+	msgbox FracturedMask1_Text_9, MSGBOX_AUTOCLOSE
 # 269 "data/maps/headoffice/scripts.pory"
-	warp MAP_ASTRALIS_ACADEMY_FLOOR2, 12, 2
+	setflag FLAG_AFTER_OUTBURST
 # 270 "data/maps/headoffice/scripts.pory"
-	setvar ACADEMY_START, 14
+	warp MAP_ASTRALIS_ACADEMY_FLOOR2, 12, 2
 # 271 "data/maps/headoffice/scripts.pory"
+	setvar ACADEMY_START, 13
+# 272 "data/maps/headoffice/scripts.pory"
 	releaseall
 	return
 
 
-# 247 "data/maps/headoffice/scripts.pory"
+# 248 "data/maps/headoffice/scripts.pory"
 FracturedMask1_Movement_0:
-# 247 "data/maps/headoffice/scripts.pory"
+# 248 "data/maps/headoffice/scripts.pory"
 	emote_question_mark
 	step_end
 
-# 251 "data/maps/headoffice/scripts.pory"
+# 252 "data/maps/headoffice/scripts.pory"
 FracturedMask1_Movement_1:
-# 251 "data/maps/headoffice/scripts.pory"
+# 252 "data/maps/headoffice/scripts.pory"
 	emote_upset
 	step_end
 
-# 264 "data/maps/headoffice/scripts.pory"
+# 265 "data/maps/headoffice/scripts.pory"
 FracturedMask1_Movement_2:
-# 264 "data/maps/headoffice/scripts.pory"
+# 265 "data/maps/headoffice/scripts.pory"
 	walk_fast_down
-# 264 "data/maps/headoffice/scripts.pory"
+# 265 "data/maps/headoffice/scripts.pory"
 	walk_fast_down
-# 264 "data/maps/headoffice/scripts.pory"
+# 265 "data/maps/headoffice/scripts.pory"
 	walk_fast_down
 	step_end
 
@@ -649,7 +651,7 @@ serenamet_Text_12:
 	.string "Serena decided to join you!$"
 
 serenaextend_Text_0:
-# 185 "data/maps/headoffice/scripts.pory"
+# 186 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}This is where real fun happens.\p"
 	.string "You'll get plenty of chances to show\n"
 	.string "your skills here.\p"
@@ -658,39 +660,39 @@ serenaextend_Text_0:
 	.string "practice?$"
 
 serenaextend_Text_1:
-# 188 "data/maps/headoffice/scripts.pory"
+# 189 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Results are all that matter and I don't\n"
 	.string "care how I get them.$"
 
 serenaextend_Text_2:
-# 191 "data/maps/headoffice/scripts.pory"
+# 192 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Results come from experience, you know.\p"
 	.string "Let me guess, you think you can handle\n"
 	.string "everything on your own.$"
 
 serenaextend_Text_3:
-# 194 "data/maps/headoffice/scripts.pory"
+# 195 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}...................$"
 
 serenaextend_Text_4:
-# 197 "data/maps/headoffice/scripts.pory"
+# 198 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Look, I get it.\p"
 	.string "You've got your walls up but you'll see\n"
 	.string "doing it alone doesn't always work.\p"
 	.string "Maybe Torchic will teach you that.$"
 
 serenaextend_Text_5:
-# 206 "data/maps/headoffice/scripts.pory"
+# 207 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}You should head to the reception to\n"
 	.string "pick up your dorm room keys.\p"
 	.string "I'll be going now.$"
 
 FracturedMask1_Text_0:
-# 244 "data/maps/headoffice/scripts.pory"
+# 245 "data/maps/headoffice/scripts.pory"
 	.string "Alistair$"
 
 FracturedMask1_Text_1:
-# 245 "data/maps/headoffice/scripts.pory"
+# 246 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar, expulsion is on the table.\p"
 	.string "This kind of behavior is unacceptable.\p"
 	.string "All the teachers wanted you expelled,\n"
@@ -698,47 +700,47 @@ FracturedMask1_Text_1:
 	.string "more chance.$"
 
 FracturedMask1_Text_2:
-# 249 "data/maps/headoffice/scripts.pory"
+# 250 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Tell me, why did you beat him so badly?$"
 
 FracturedMask1_Text_3:
-# 252 "data/maps/headoffice/scripts.pory"
+# 253 "data/maps/headoffice/scripts.pory"
 	.string "Xylar$"
 
 FracturedMask1_Text_4:
-# 253 "data/maps/headoffice/scripts.pory"
+# 254 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}He wouldn't stop running his mouth, so I\n"
 	.string "shut it for him.$"
 
 FracturedMask1_Text_5:
-# 255 "data/maps/headoffice/scripts.pory"
+# 256 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Violence isn't the answer, Xylar.\p"
 	.string "Next time, there won't be a second\n"
 	.string "chance.$"
 
 FracturedMask1_Text_6:
-# 257 "data/maps/headoffice/scripts.pory"
+# 258 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Then maybe people should learn when to\n"
 	.string "keep their mouths shut.$"
 
 FracturedMask1_Text_7:
-# 259 "data/maps/headoffice/scripts.pory"
+# 260 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}This isn't the path your father would\n"
 	.string "have wanted for you.$"
 
 FracturedMask1_Text_8:
-# 263 "data/maps/headoffice/scripts.pory"
+# 264 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Don't.\p"
 	.string "Talk.\p"
 	.string "About.\p"
 	.string "Him.$"
 
 FracturedMask1_Text_9:
-# 267 "data/maps/headoffice/scripts.pory"
+# 268 "data/maps/headoffice/scripts.pory"
 	.string "After this incident, the students\n"
 	.string "began to fear Xylar, treating him as an\l"
 	.string "outcast.$"
 
 serena::
-# 174 "data/maps/headoffice/scripts.pory"
+# 175 "data/maps/headoffice/scripts.pory"
 	.string "Serena$"

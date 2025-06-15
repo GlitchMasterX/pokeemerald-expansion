@@ -461,7 +461,7 @@ question:
 grave::
 # 256 "data/maps/Newmap11/scripts.pory"
 	goto_if_set FLAG_TALK_GRAVE, grave_1
-# 269 "data/maps/Newmap11/scripts.pory"
+# 268 "data/maps/Newmap11/scripts.pory"
 	goto EventScript_M_Grave
 	return
 
@@ -475,14 +475,12 @@ grave_1:
 # 261 "data/maps/Newmap11/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 262 "data/maps/Newmap11/scripts.pory"
-	initclock 10, 10
-# 263 "data/maps/Newmap11/scripts.pory"
-	pausefakertc
-# 264 "data/maps/Newmap11/scripts.pory"
 	clearflag FLAG_TALK_GRAVE
+# 263 "data/maps/Newmap11/scripts.pory"
+	initclock 10, 10
+# 264 "data/maps/Newmap11/scripts.pory"
+	fwdmonth 3
 # 265 "data/maps/Newmap11/scripts.pory"
-	setvar VAR_CURRENT_MONTH, 3
-# 266 "data/maps/Newmap11/scripts.pory"
 	warpsilent MAP_HARBORAC, 22, 27
 	return
 

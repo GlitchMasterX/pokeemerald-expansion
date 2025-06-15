@@ -193,23 +193,21 @@ script Grumpig{
 	if(!flag(FLAG_UNUSED_0x493)){
 	lock
 	faceplayer
-	applymovement(5,heart)
 	speakername ("Grumpig")
 	playmoncry(SPECIES_GRUMPIG,CRY_MODE_NORMAL)
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} Pii, pii! Grrum, grrum!"))
-	 
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} Pii, pii! Grrum, grrum!"),MSGBOX_AUTOCLOSE)
+	applymovement(5,heart)
 	giveitem(ITEM_TWISTED_SPOON,1)
 	setflag(FLAG_UNUSED_0x493)
 	waitmoncry
 	release}
 	else
-	{lock
+	{
 	faceplayer
-	applymovement(5,heart)
 	speakername ("Grumpig")
 	playmoncry(SPECIES_GRUMPIG,CRY_MODE_NORMAL)
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} Pii, pii! Grrum, grrum!"))
-	 
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} Pii, pii! Grrum, grrum!")) 
+	applymovement(5,heart)
 	waitmoncry
 	release}
 }

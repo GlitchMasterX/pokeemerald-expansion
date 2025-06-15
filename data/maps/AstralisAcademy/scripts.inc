@@ -3,1436 +3,1450 @@ AstralisAcademy_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, DAYNIGHT_NPC
 # 3 "data/maps/AstralisAcademy/scripts.pory"
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, AstralisAcademy_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
-# 7 "data/maps/AstralisAcademy/scripts.pory"
+# 6 "data/maps/AstralisAcademy/scripts.pory"
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, AstralisAcademy_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
 	.byte 0
 
 AstralisAcademy_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 # 4 "data/maps/AstralisAcademy/scripts.pory"
 	map_script_2 ACADEMY_START, 9, TrialAnnouncement
-# 5 "data/maps/AstralisAcademy/scripts.pory"
-	map_script_2 ACADEMY_START, 10, TrialAnnouncement1
 	.2byte 0
 
 AstralisAcademy_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
-# 8 "data/maps/AstralisAcademy/scripts.pory"
+# 7 "data/maps/AstralisAcademy/scripts.pory"
 	map_script_2 ACADEMY_START, 9, trial
-# 9 "data/maps/AstralisAcademy/scripts.pory"
-	map_script_2 ACADEMY_START, 10, trial1
+# 8 "data/maps/AstralisAcademy/scripts.pory"
+	map_script_2 ACADEMY_START, 9, trial1
 	.2byte 0
 
 
-trial1::
-# 14 "data/maps/AstralisAcademy/scripts.pory"
-	clearflag FLAG_TRIAL_SERENA
+fwdmonth::
+# 12 "data/maps/AstralisAcademy/scripts.pory"
+	fwdmonth 1
+	return
+
+
+fwdmonth1::
 # 15 "data/maps/AstralisAcademy/scripts.pory"
-	setobjectxyperm 20, 10, 57
-# 16 "data/maps/AstralisAcademy/scripts.pory"
-	setobjectxyperm 2, 6, 55
-# 17 "data/maps/AstralisAcademy/scripts.pory"
-	setobjectxyperm 3, 6, 59
+	fwdmonth 6
+	return
+
+
+fwdmonth3::
 # 18 "data/maps/AstralisAcademy/scripts.pory"
-	setobjectxyperm 5, 4, 53
-# 19 "data/maps/AstralisAcademy/scripts.pory"
-	setobjectxyperm 10, 4, 57
-# 20 "data/maps/AstralisAcademy/scripts.pory"
-	setobjectxyperm 6, 6, 51
+	fwdmonth 11
+	return
+
+
+trial1::
 # 21 "data/maps/AstralisAcademy/scripts.pory"
-	setobjectmovementtype 3, MOVEMENT_TYPE_FACE_RIGHT
+	clearflag FLAG_TRIAL_SERENA
 # 22 "data/maps/AstralisAcademy/scripts.pory"
-	setobjectmovementtype 5, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectxyperm 20, 10, 57
 # 23 "data/maps/AstralisAcademy/scripts.pory"
-	setobjectmovementtype 6, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectxyperm 2, 6, 55
 # 24 "data/maps/AstralisAcademy/scripts.pory"
-	setobjectmovementtype 2, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectxyperm 3, 6, 59
 # 25 "data/maps/AstralisAcademy/scripts.pory"
-	setobjectmovementtype 10, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectxyperm 5, 4, 53
 # 26 "data/maps/AstralisAcademy/scripts.pory"
-	addobject 20
+	setobjectxyperm 10, 4, 57
 # 27 "data/maps/AstralisAcademy/scripts.pory"
-	addobject 21
+	setobjectxyperm 6, 6, 51
 # 28 "data/maps/AstralisAcademy/scripts.pory"
-	addobject 22
+	setobjectmovementtype 3, MOVEMENT_TYPE_FACE_RIGHT
 # 29 "data/maps/AstralisAcademy/scripts.pory"
-	addobject 3
+	setobjectmovementtype 5, MOVEMENT_TYPE_FACE_RIGHT
 # 30 "data/maps/AstralisAcademy/scripts.pory"
-	addobject 6
+	setobjectmovementtype 6, MOVEMENT_TYPE_FACE_RIGHT
 # 31 "data/maps/AstralisAcademy/scripts.pory"
-	addobject 5
+	setobjectmovementtype 2, MOVEMENT_TYPE_FACE_RIGHT
 # 32 "data/maps/AstralisAcademy/scripts.pory"
-	addobject 2
+	setobjectmovementtype 10, MOVEMENT_TYPE_FACE_RIGHT
 # 33 "data/maps/AstralisAcademy/scripts.pory"
-	addobject 10
+	addobject 20
 # 34 "data/maps/AstralisAcademy/scripts.pory"
-	createvobject OBJ_EVENT_GFX_AROMA, 24, 6, 53, 4, DIR_EAST
+	addobject 21
 # 35 "data/maps/AstralisAcademy/scripts.pory"
-	createvobject OBJ_EVENT_GFX_SELENE, 25, 6, 57, 4, DIR_EAST
+	addobject 22
 # 36 "data/maps/AstralisAcademy/scripts.pory"
-	createvobject OBJ_EVENT_GFX_TENNIS, 26, 4, 55, 4, DIR_EAST
+	addobject 3
 # 37 "data/maps/AstralisAcademy/scripts.pory"
+	addobject 6
+# 38 "data/maps/AstralisAcademy/scripts.pory"
+	addobject 5
+# 39 "data/maps/AstralisAcademy/scripts.pory"
+	addobject 2
+# 40 "data/maps/AstralisAcademy/scripts.pory"
+	addobject 10
+# 41 "data/maps/AstralisAcademy/scripts.pory"
+	createvobject OBJ_EVENT_GFX_AROMA, 24, 6, 53, 4, DIR_EAST
+# 42 "data/maps/AstralisAcademy/scripts.pory"
+	createvobject OBJ_EVENT_GFX_SELENE, 25, 6, 57, 4, DIR_EAST
+# 43 "data/maps/AstralisAcademy/scripts.pory"
+	createvobject OBJ_EVENT_GFX_TENNIS, 26, 4, 55, 4, DIR_EAST
+# 44 "data/maps/AstralisAcademy/scripts.pory"
 	createvobject OBJ_EVENT_GFX_MAN_2, 27, 4, 59, 4, DIR_EAST
 	return
 
 
 trial::
-# 41 "data/maps/AstralisAcademy/scripts.pory"
-	addobject 3
-# 42 "data/maps/AstralisAcademy/scripts.pory"
-	addobject 6
-# 43 "data/maps/AstralisAcademy/scripts.pory"
-	addobject 5
-# 44 "data/maps/AstralisAcademy/scripts.pory"
-	setobjectmovementtype 3, MOVEMENT_TYPE_FACE_UP
-# 45 "data/maps/AstralisAcademy/scripts.pory"
-	setobjectmovementtype 5, MOVEMENT_TYPE_FACE_UP
-# 46 "data/maps/AstralisAcademy/scripts.pory"
-	setobjectmovementtype 6, MOVEMENT_TYPE_FACE_UP
-# 47 "data/maps/AstralisAcademy/scripts.pory"
-	setobjectxyperm 2, 25, 16
 # 48 "data/maps/AstralisAcademy/scripts.pory"
-	setobjectxyperm 3, 24, 17
+	addobject 3
 # 49 "data/maps/AstralisAcademy/scripts.pory"
-	createvobject OBJ_EVENT_GFX_ALISTAIR, 30, 21, 10, 4, DIR_SOUTH
+	addobject 6
 # 50 "data/maps/AstralisAcademy/scripts.pory"
-	createvobject OBJ_EVENT_GFX_ACE_F, 21, 19, 18, 4, DIR_NORTH
+	addobject 5
 # 51 "data/maps/AstralisAcademy/scripts.pory"
-	createvobject OBJ_EVENT_GFX_ACTOR_M, 22, 17, 19, 4, DIR_NORTH
+	setobjectmovementtype 3, MOVEMENT_TYPE_FACE_UP
 # 52 "data/maps/AstralisAcademy/scripts.pory"
-	setobjectxyperm 5, 21, 19
+	setobjectmovementtype 5, MOVEMENT_TYPE_FACE_UP
 # 53 "data/maps/AstralisAcademy/scripts.pory"
-	createvobject OBJ_EVENT_GFX_ACTOR_F, 23, 17, 20, 4, DIR_NORTH
+	setobjectmovementtype 6, MOVEMENT_TYPE_FACE_UP
 # 54 "data/maps/AstralisAcademy/scripts.pory"
-	setobjectxyperm 6, 19, 20
+	setobjectxyperm 2, 25, 16
 # 55 "data/maps/AstralisAcademy/scripts.pory"
-	createvobject OBJ_EVENT_GFX_AROMA, 24, 22, 20, 4, DIR_NORTH
+	setobjectxyperm 3, 24, 17
 # 56 "data/maps/AstralisAcademy/scripts.pory"
-	createvobject OBJ_EVENT_GFX_SELENE, 25, 25, 20, 4, DIR_NORTH
+	createvobject OBJ_EVENT_GFX_ALISTAIR, 30, 21, 10, 4, DIR_SOUTH
 # 57 "data/maps/AstralisAcademy/scripts.pory"
-	createvobject OBJ_EVENT_GFX_BOY_1, 26, 22, 21, 4, DIR_NORTH
+	createvobject OBJ_EVENT_GFX_ACE_F, 21, 19, 18, 4, DIR_NORTH
 # 58 "data/maps/AstralisAcademy/scripts.pory"
-	createvobject OBJ_EVENT_GFX_MAN_2, 27, 19, 22, 4, DIR_NORTH
+	createvobject OBJ_EVENT_GFX_ACTOR_M, 22, 17, 19, 4, DIR_NORTH
 # 59 "data/maps/AstralisAcademy/scripts.pory"
-	createvobject OBJ_EVENT_GFX_LASS, 28, 17, 22, 4, DIR_NORTH
+	setobjectxyperm 5, 21, 19
 # 60 "data/maps/AstralisAcademy/scripts.pory"
+	createvobject OBJ_EVENT_GFX_ACTOR_F, 23, 17, 20, 4, DIR_NORTH
+# 61 "data/maps/AstralisAcademy/scripts.pory"
+	setobjectxyperm 6, 19, 20
+# 62 "data/maps/AstralisAcademy/scripts.pory"
+	createvobject OBJ_EVENT_GFX_AROMA, 24, 22, 20, 4, DIR_NORTH
+# 63 "data/maps/AstralisAcademy/scripts.pory"
+	createvobject OBJ_EVENT_GFX_SELENE, 25, 25, 20, 4, DIR_NORTH
+# 64 "data/maps/AstralisAcademy/scripts.pory"
+	createvobject OBJ_EVENT_GFX_BOY_1, 26, 22, 21, 4, DIR_NORTH
+# 65 "data/maps/AstralisAcademy/scripts.pory"
+	createvobject OBJ_EVENT_GFX_MAN_2, 27, 19, 22, 4, DIR_NORTH
+# 66 "data/maps/AstralisAcademy/scripts.pory"
+	createvobject OBJ_EVENT_GFX_LASS, 28, 17, 22, 4, DIR_NORTH
+# 67 "data/maps/AstralisAcademy/scripts.pory"
 	createvobject OBJ_EVENT_GFX_NERD, 29, 22, 22, 4, DIR_NORTH
 	return
 
 
 TrialAnnouncement::
-# 64 "data/maps/AstralisAcademy/scripts.pory"
-	lock
-# 65 "data/maps/AstralisAcademy/scripts.pory"
-	clearflag FLAG_TRIAL_SERENA
-# 66 "data/maps/AstralisAcademy/scripts.pory"
-	addobject 20
-# 67 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0xFF, TrialAnnouncement_Movement_0
-# 69 "data/maps/AstralisAcademy/scripts.pory"
-	waitmovement 0
-# 70 "data/maps/AstralisAcademy/scripts.pory"
-	playbgm MUS_HG_LYRA, FALSE
 # 71 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 20, TrialAnnouncement_Movement_1
+	lock
 # 72 "data/maps/AstralisAcademy/scripts.pory"
-	waitmovement 0
+	clearflag FLAG_TRIAL_SERENA
 # 73 "data/maps/AstralisAcademy/scripts.pory"
-	speakername serena
+	addobject 20
 # 74 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox TrialAnnouncement_Text_0, MSGBOX_AUTOCLOSE
-# 75 "data/maps/AstralisAcademy/scripts.pory"
-	speakername Xylar1
+	applymovement 0xFF, TrialAnnouncement_Movement_0
 # 76 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox TrialAnnouncement_Text_1, MSGBOX_AUTOCLOSE
-# 77 "data/maps/AstralisAcademy/scripts.pory"
-	speakername serena
-# 78 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox TrialAnnouncement_Text_2, MSGBOX_AUTOCLOSE
-# 79 "data/maps/AstralisAcademy/scripts.pory"
-	waitmessage
-# 80 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0xFF, TrialAnnouncement_Movement_2
-# 81 "data/maps/AstralisAcademy/scripts.pory"
 	waitmovement 0
+# 77 "data/maps/AstralisAcademy/scripts.pory"
+	playbgm MUS_HG_LYRA, FALSE
+# 78 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 20, TrialAnnouncement_Movement_1
+# 79 "data/maps/AstralisAcademy/scripts.pory"
+	waitmovement 0
+# 80 "data/maps/AstralisAcademy/scripts.pory"
+	speakername serena
+# 81 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox TrialAnnouncement_Text_0, MSGBOX_AUTOCLOSE
 # 82 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 20, TrialAnnouncement_Movement_3
+	speakername Xylar1
+# 83 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox TrialAnnouncement_Text_1, MSGBOX_AUTOCLOSE
+# 84 "data/maps/AstralisAcademy/scripts.pory"
+	speakername serena
 # 85 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0xFF, TrialAnnouncement_Movement_4
+	msgbox TrialAnnouncement_Text_2, MSGBOX_AUTOCLOSE
+# 86 "data/maps/AstralisAcademy/scripts.pory"
+	waitmessage
+# 87 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 0xFF, TrialAnnouncement_Movement_2
 # 88 "data/maps/AstralisAcademy/scripts.pory"
 	waitmovement 0
 # 89 "data/maps/AstralisAcademy/scripts.pory"
-	special SpawnCameraObject
-# 90 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0x7F, TrialAnnouncement_Movement_5
-# 91 "data/maps/AstralisAcademy/scripts.pory"
-	waitmovement 0
+	applymovement 20, TrialAnnouncement_Movement_3
 # 92 "data/maps/AstralisAcademy/scripts.pory"
-	fadenewbgm MUS_HG_BUG_CONTEST_PREP
-# 93 "data/maps/AstralisAcademy/scripts.pory"
-	setobjectxyperm 20, 21, 24
-# 94 "data/maps/AstralisAcademy/scripts.pory"
-	speakername TrialAnnouncement_Text_3
+	applymovement 0xFF, TrialAnnouncement_Movement_4
 # 95 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox TrialAnnouncement_Text_4, MSGBOX_AUTOCLOSE
+	waitmovement 0
 # 96 "data/maps/AstralisAcademy/scripts.pory"
-	waitmessage
+	special SpawnCameraObject
 # 97 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0x7F, TrialAnnouncement_Movement_6
+	applymovement 0x7F, TrialAnnouncement_Movement_5
 # 98 "data/maps/AstralisAcademy/scripts.pory"
 	waitmovement 0
 # 99 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 2, TrialAnnouncement_Movement_7
+	fadenewbgm MUS_HG_BUG_CONTEST_PREP
 # 100 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 3, TrialAnnouncement_Movement_8
+	setobjectxyperm 20, 21, 24
 # 101 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 5, TrialAnnouncement_Movement_9
+	speakername TrialAnnouncement_Text_3
 # 102 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 6, TrialAnnouncement_Movement_10
+	msgbox TrialAnnouncement_Text_4, MSGBOX_AUTOCLOSE
 # 103 "data/maps/AstralisAcademy/scripts.pory"
-	waitmovement 0
+	waitmessage
 # 104 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0x7F, TrialAnnouncement_Movement_11
+	applymovement 0x7F, TrialAnnouncement_Movement_6
 # 105 "data/maps/AstralisAcademy/scripts.pory"
 	waitmovement 0
 # 106 "data/maps/AstralisAcademy/scripts.pory"
-	speakername Xylar1
+	applymovement 2, TrialAnnouncement_Movement_7
 # 107 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox TrialAnnouncement_Text_5, MSGBOX_AUTOCLOSE
+	applymovement 3, TrialAnnouncement_Movement_8
 # 108 "data/maps/AstralisAcademy/scripts.pory"
-	waitmessage
+	applymovement 5, TrialAnnouncement_Movement_9
 # 109 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0xFF, TrialAnnouncement_Movement_12
+	applymovement 6, TrialAnnouncement_Movement_10
 # 110 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 20, TrialAnnouncement_Movement_13
+	waitmovement 0
 # 111 "data/maps/AstralisAcademy/scripts.pory"
-	warpsilent MAP_ASTRALIS_ACADEMY, 10, 56
+	applymovement 0x7F, TrialAnnouncement_Movement_11
 # 112 "data/maps/AstralisAcademy/scripts.pory"
-	setvar ACADEMY_START, 10
+	waitmovement 0
 # 113 "data/maps/AstralisAcademy/scripts.pory"
-	release
+	speakername Xylar1
+# 114 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox TrialAnnouncement_Text_5, MSGBOX_AUTOCLOSE
+# 115 "data/maps/AstralisAcademy/scripts.pory"
+	waitmessage
+# 116 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 0xFF, TrialAnnouncement_Movement_12
+# 117 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 20, TrialAnnouncement_Movement_13
+# 118 "data/maps/AstralisAcademy/scripts.pory"
+	warp_continue_script MAP_ASTRALIS_ACADEMY, 10, 56, TrialAnnouncement1, TRUE
 	return
 
 
 TrialAnnouncement1::
-# 120 "data/maps/AstralisAcademy/scripts.pory"
-	playbgm MUS_HG_LYRA, FALSE
-# 121 "data/maps/AstralisAcademy/scripts.pory"
-	speakername serena
-# 122 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox TrialAnnouncement1_Text_0, MSGBOX_AUTOCLOSE
-# 123 "data/maps/AstralisAcademy/scripts.pory"
-	speakername Xylar1
-# 124 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox TrialAnnouncement1_Text_1, MSGBOX_AUTOCLOSE
 # 125 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 20, TrialAnnouncement_Movement_9
+	fadescreen FADE_FROM_BLACK
 # 126 "data/maps/AstralisAcademy/scripts.pory"
-	speakername serena
+	playbgm MUS_HG_LYRA, FALSE
 # 127 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox TrialAnnouncement1_Text_2, MSGBOX_AUTOCLOSE
-# 128 "data/maps/AstralisAcademy/scripts.pory"
-	speakername Xylar1
-# 129 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox TrialAnnouncement1_Text_3, MSGBOX_AUTOCLOSE
-# 130 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 20, TrialAnnouncement1_Movement_0
-# 131 "data/maps/AstralisAcademy/scripts.pory"
 	speakername serena
-# 132 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox TrialAnnouncement1_Text_4, MSGBOX_AUTOCLOSE
-# 133 "data/maps/AstralisAcademy/scripts.pory"
+# 128 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox TrialAnnouncement1_Text_0, MSGBOX_AUTOCLOSE
+# 129 "data/maps/AstralisAcademy/scripts.pory"
 	speakername Xylar1
+# 130 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox TrialAnnouncement1_Text_1, MSGBOX_AUTOCLOSE
+# 131 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 20, TrialAnnouncement_Movement_9
+# 132 "data/maps/AstralisAcademy/scripts.pory"
+	speakername serena
+# 133 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox TrialAnnouncement1_Text_2, MSGBOX_AUTOCLOSE
 # 134 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox TrialAnnouncement1_Text_5, MSGBOX_AUTOCLOSE
+	speakername Xylar1
 # 135 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0xFF, TrialAnnouncement_Movement_8
+	msgbox TrialAnnouncement1_Text_3, MSGBOX_AUTOCLOSE
 # 136 "data/maps/AstralisAcademy/scripts.pory"
-	waitmovement 0
+	applymovement 20, TrialAnnouncement1_Movement_0
 # 137 "data/maps/AstralisAcademy/scripts.pory"
-	special SpawnCameraObject
+	speakername serena
 # 138 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0x7F, TrialAnnouncement1_Movement_1
+	msgbox TrialAnnouncement1_Text_4, MSGBOX_AUTOCLOSE
+# 139 "data/maps/AstralisAcademy/scripts.pory"
+	speakername Xylar1
 # 140 "data/maps/AstralisAcademy/scripts.pory"
-	waitmovement 0
+	msgbox TrialAnnouncement1_Text_5, MSGBOX_AUTOCLOSE
 # 141 "data/maps/AstralisAcademy/scripts.pory"
-	fadenewbgm MUS_CONTEST
+	applymovement 0xFF, TrialAnnouncement_Movement_8
 # 142 "data/maps/AstralisAcademy/scripts.pory"
-	speakername eliasn
+	waitmovement 0
 # 143 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox TrialAnnouncement1_Text_6, MSGBOX_AUTOCLOSE
+	special SpawnCameraObject
 # 144 "data/maps/AstralisAcademy/scripts.pory"
-	waitmessage
-# 145 "data/maps/AstralisAcademy/scripts.pory"
-	playse SE_APPLAUSE
+	applymovement 0x7F, TrialAnnouncement1_Movement_1
 # 146 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 21, TrialAnnouncement_Movement_7
+	waitmovement 0
 # 147 "data/maps/AstralisAcademy/scripts.pory"
-	speakername eliasn
+	fadenewbgm MUS_CONTEST
 # 148 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox TrialAnnouncement1_Text_7, MSGBOX_AUTOCLOSE
+	speakername eliasn
 # 149 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0x7F, TrialAnnouncement1_Movement_2
+	msgbox TrialAnnouncement1_Text_6, MSGBOX_AUTOCLOSE
 # 150 "data/maps/AstralisAcademy/scripts.pory"
-	waitmovement 0
+	waitmessage
 # 151 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0xFF, TrialAnnouncement1_Movement_3
+	playse SE_APPLAUSE
 # 152 "data/maps/AstralisAcademy/scripts.pory"
-	waitmovement 0
+	applymovement 21, TrialAnnouncement_Movement_7
 # 153 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0x7F, TrialAnnouncement1_Movement_3
+	speakername eliasn
 # 154 "data/maps/AstralisAcademy/scripts.pory"
-	waitmovement 0
+	msgbox TrialAnnouncement1_Text_7, MSGBOX_AUTOCLOSE
 # 155 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0x7F, TrialAnnouncement1_Movement_4
+	applymovement 0x7F, TrialAnnouncement1_Movement_2
 # 156 "data/maps/AstralisAcademy/scripts.pory"
 	waitmovement 0
 # 157 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 20, TrialAnnouncement1_Movement_5
-# 159 "data/maps/AstralisAcademy/scripts.pory"
-	speakername serena
-# 160 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox TrialAnnouncement1_Text_8, MSGBOX_AUTOCLOSE
-# 161 "data/maps/AstralisAcademy/scripts.pory"
-	waitmessage
-# 162 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 2, TrialAnnouncement_Movement_9
-# 163 "data/maps/AstralisAcademy/scripts.pory"
-	speakername TrialAnnouncement1_Text_9
-# 164 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox TrialAnnouncement1_Text_10, MSGBOX_AUTOCLOSE
-# 165 "data/maps/AstralisAcademy/scripts.pory"
-	waitmessage
-# 166 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 5, TrialAnnouncement_Movement_2
-# 167 "data/maps/AstralisAcademy/scripts.pory"
-	speakername TrialAnnouncement1_Text_11
-# 168 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox TrialAnnouncement1_Text_12, MSGBOX_AUTOCLOSE
-# 169 "data/maps/AstralisAcademy/scripts.pory"
-	waitmessage
-# 170 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 10, TrialAnnouncement_Movement_2
-# 171 "data/maps/AstralisAcademy/scripts.pory"
-	speakername TrialAnnouncement1_Text_13
-# 172 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox TrialAnnouncement1_Text_14, MSGBOX_AUTOCLOSE
-# 173 "data/maps/AstralisAcademy/scripts.pory"
-	waitmessage
-# 174 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0x7F, TrialAnnouncement1_Movement_6
-# 175 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 0xFF, TrialAnnouncement1_Movement_3
+# 158 "data/maps/AstralisAcademy/scripts.pory"
 	waitmovement 0
+# 159 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 0x7F, TrialAnnouncement1_Movement_3
+# 160 "data/maps/AstralisAcademy/scripts.pory"
+	waitmovement 0
+# 161 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 0x7F, TrialAnnouncement1_Movement_4
+# 162 "data/maps/AstralisAcademy/scripts.pory"
+	waitmovement 0
+# 163 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 20, TrialAnnouncement1_Movement_5
+# 165 "data/maps/AstralisAcademy/scripts.pory"
+	speakername serena
+# 166 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox TrialAnnouncement1_Text_8, MSGBOX_AUTOCLOSE
+# 167 "data/maps/AstralisAcademy/scripts.pory"
+	waitmessage
+# 168 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 2, TrialAnnouncement_Movement_9
+# 169 "data/maps/AstralisAcademy/scripts.pory"
+	speakername TrialAnnouncement1_Text_9
+# 170 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox TrialAnnouncement1_Text_10, MSGBOX_AUTOCLOSE
+# 171 "data/maps/AstralisAcademy/scripts.pory"
+	waitmessage
+# 172 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 5, TrialAnnouncement_Movement_2
+# 173 "data/maps/AstralisAcademy/scripts.pory"
+	speakername TrialAnnouncement1_Text_11
+# 174 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox TrialAnnouncement1_Text_12, MSGBOX_AUTOCLOSE
+# 175 "data/maps/AstralisAcademy/scripts.pory"
+	waitmessage
 # 176 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 21, TrialAnnouncement_Movement_8
+	applymovement 10, TrialAnnouncement_Movement_2
 # 177 "data/maps/AstralisAcademy/scripts.pory"
-	speakername eliasn
+	speakername TrialAnnouncement1_Text_13
 # 178 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox TrialAnnouncement1_Text_15, MSGBOX_AUTOCLOSE
+	msgbox TrialAnnouncement1_Text_14, MSGBOX_AUTOCLOSE
 # 179 "data/maps/AstralisAcademy/scripts.pory"
 	waitmessage
 # 180 "data/maps/AstralisAcademy/scripts.pory"
-	playse SE_APPLAUSE
+	applymovement 0x7F, TrialAnnouncement1_Movement_6
 # 181 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 22, TrialAnnouncement1_Movement_7
+	waitmovement 0
 # 182 "data/maps/AstralisAcademy/scripts.pory"
-	waitmovement 0
+	applymovement 21, TrialAnnouncement_Movement_8
 # 183 "data/maps/AstralisAcademy/scripts.pory"
-	speakername damien
-# 184 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox TrialAnnouncement1_Text_16, MSGBOX_AUTOCLOSE
-# 185 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 21, TrialAnnouncement_Movement_13
-# 186 "data/maps/AstralisAcademy/scripts.pory"
 	speakername eliasn
+# 184 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox TrialAnnouncement1_Text_15, MSGBOX_AUTOCLOSE
+# 185 "data/maps/AstralisAcademy/scripts.pory"
+	waitmessage
+# 186 "data/maps/AstralisAcademy/scripts.pory"
+	playse SE_APPLAUSE
 # 187 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox TrialAnnouncement1_Text_17, MSGBOX_AUTOCLOSE
+	applymovement 22, TrialAnnouncement1_Movement_7
 # 188 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0x7F, TrialAnnouncement1_Movement_8
+	waitmovement 0
 # 189 "data/maps/AstralisAcademy/scripts.pory"
-	waitmovement 0
+	speakername damien
 # 190 "data/maps/AstralisAcademy/scripts.pory"
-	setobjectxyperm 22, 28, 56
+	msgbox TrialAnnouncement1_Text_16, MSGBOX_AUTOCLOSE
 # 191 "data/maps/AstralisAcademy/scripts.pory"
-	special RemoveCameraObject
+	applymovement 21, TrialAnnouncement_Movement_13
 # 192 "data/maps/AstralisAcademy/scripts.pory"
-	trainerbattle_no_intro DAMIEN_VOSS, damienlose
+	speakername eliasn
 # 193 "data/maps/AstralisAcademy/scripts.pory"
-	fadenewbgm MUS_DUMMY
+	msgbox TrialAnnouncement1_Text_17, MSGBOX_AUTOCLOSE
 # 194 "data/maps/AstralisAcademy/scripts.pory"
-	createvobject OBJ_EVENT_GFX_AROMA, 24, 6, 53, 4, DIR_EAST
+	applymovement 0x7F, TrialAnnouncement1_Movement_8
 # 195 "data/maps/AstralisAcademy/scripts.pory"
-	createvobject OBJ_EVENT_GFX_SELENE, 25, 6, 57, 4, DIR_EAST
-# 196 "data/maps/AstralisAcademy/scripts.pory"
-	createvobject OBJ_EVENT_GFX_TENNIS, 26, 4, 55, 4, DIR_EAST
-# 197 "data/maps/AstralisAcademy/scripts.pory"
-	createvobject OBJ_EVENT_GFX_MAN_2, 27, 4, 59, 4, DIR_EAST
-# 198 "data/maps/AstralisAcademy/scripts.pory"
-	special SpawnCameraObject
-# 199 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0x7F, TrialAnnouncement1_Movement_2
-# 200 "data/maps/AstralisAcademy/scripts.pory"
 	waitmovement 0
+# 196 "data/maps/AstralisAcademy/scripts.pory"
+	setobjectxyperm 22, 28, 56
+# 197 "data/maps/AstralisAcademy/scripts.pory"
+	special RemoveCameraObject
+# 198 "data/maps/AstralisAcademy/scripts.pory"
+	trainerbattle_no_intro DAMIEN_VOSS, damienlose
+# 199 "data/maps/AstralisAcademy/scripts.pory"
+	fadenewbgm MUS_DUMMY
+# 200 "data/maps/AstralisAcademy/scripts.pory"
+	createvobject OBJ_EVENT_GFX_AROMA, 24, 6, 53, 4, DIR_EAST
 # 201 "data/maps/AstralisAcademy/scripts.pory"
-	playse SE_PIN
+	createvobject OBJ_EVENT_GFX_SELENE, 25, 6, 57, 4, DIR_EAST
 # 202 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 2, TrialAnnouncement_Movement_9
+	createvobject OBJ_EVENT_GFX_TENNIS, 26, 4, 55, 4, DIR_EAST
 # 203 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 3, TrialAnnouncement_Movement_9
+	createvobject OBJ_EVENT_GFX_MAN_2, 27, 4, 59, 4, DIR_EAST
 # 204 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 5, TrialAnnouncement_Movement_9
+	special SpawnCameraObject
 # 205 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 6, TrialAnnouncement_Movement_9
+	applymovement 0x7F, TrialAnnouncement1_Movement_2
 # 206 "data/maps/AstralisAcademy/scripts.pory"
 	waitmovement 0
 # 207 "data/maps/AstralisAcademy/scripts.pory"
-	speakername TrialAnnouncement1_Text_9
+	playse SE_PIN
 # 208 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox TrialAnnouncement1_Text_18, MSGBOX_AUTOCLOSE
+	applymovement 2, TrialAnnouncement_Movement_9
 # 209 "data/maps/AstralisAcademy/scripts.pory"
-	speakername TrialAnnouncement1_Text_11
+	applymovement 3, TrialAnnouncement_Movement_9
 # 210 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox TrialAnnouncement1_Text_19, MSGBOX_AUTOCLOSE
+	applymovement 5, TrialAnnouncement_Movement_9
 # 211 "data/maps/AstralisAcademy/scripts.pory"
-	waitmessage
+	applymovement 6, TrialAnnouncement_Movement_9
 # 212 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0x7F, TrialAnnouncement1_Movement_6
+	waitmovement 0
 # 213 "data/maps/AstralisAcademy/scripts.pory"
-	waitmovement 0
+	speakername TrialAnnouncement1_Text_9
 # 214 "data/maps/AstralisAcademy/scripts.pory"
-	speakername eliasn
+	msgbox TrialAnnouncement1_Text_18, MSGBOX_AUTOCLOSE
 # 215 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox TrialAnnouncement1_Text_20, MSGBOX_AUTOCLOSE
+	speakername TrialAnnouncement1_Text_11
 # 216 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 22, TrialAnnouncement_Movement_2
+	msgbox TrialAnnouncement1_Text_19, MSGBOX_AUTOCLOSE
 # 217 "data/maps/AstralisAcademy/scripts.pory"
-	waitmovement 0
+	waitmessage
 # 218 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0x7F, TrialAnnouncement1_Movement_9
+	applymovement 0x7F, TrialAnnouncement1_Movement_6
 # 219 "data/maps/AstralisAcademy/scripts.pory"
 	waitmovement 0
 # 220 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0xFF, TrialAnnouncement1_Movement_10
+	speakername eliasn
 # 221 "data/maps/AstralisAcademy/scripts.pory"
-	waitmovement 0
+	msgbox TrialAnnouncement1_Text_20, MSGBOX_AUTOCLOSE
 # 222 "data/maps/AstralisAcademy/scripts.pory"
-	speakername serena
+	applymovement 22, TrialAnnouncement_Movement_2
 # 223 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox TrialAnnouncement1_Text_21, MSGBOX_AUTOCLOSE
+	waitmovement 0
 # 224 "data/maps/AstralisAcademy/scripts.pory"
-	speakername TrialAnnouncement1_Text_22
+	applymovement 0x7F, TrialAnnouncement1_Movement_9
 # 225 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox TrialAnnouncement1_Text_23, MSGBOX_AUTOCLOSE
+	waitmovement 0
 # 226 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0xFF, TrialAnnouncement1_Movement_11
+	applymovement 0xFF, TrialAnnouncement1_Movement_10
 # 227 "data/maps/AstralisAcademy/scripts.pory"
 	waitmovement 0
 # 228 "data/maps/AstralisAcademy/scripts.pory"
 	speakername serena
 # 229 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox TrialAnnouncement1_Text_24, MSGBOX_AUTOCLOSE
+	msgbox TrialAnnouncement1_Text_21, MSGBOX_AUTOCLOSE
 # 230 "data/maps/AstralisAcademy/scripts.pory"
-	resumefakertc
+	speakername TrialAnnouncement1_Text_22
 # 231 "data/maps/AstralisAcademy/scripts.pory"
-	warp MAP_DORMINDOOR1, 4, 7
+	msgbox TrialAnnouncement1_Text_23, MSGBOX_AUTOCLOSE
 # 232 "data/maps/AstralisAcademy/scripts.pory"
-	initclock 23, 53
+	applymovement 0xFF, TrialAnnouncement1_Movement_11
 # 233 "data/maps/AstralisAcademy/scripts.pory"
-	setvar ACADEMY_START, 11
+	waitmovement 0
+# 234 "data/maps/AstralisAcademy/scripts.pory"
+	speakername serena
+# 235 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox TrialAnnouncement1_Text_24, MSGBOX_AUTOCLOSE
+# 236 "data/maps/AstralisAcademy/scripts.pory"
+	resumefakertc
+# 237 "data/maps/AstralisAcademy/scripts.pory"
+	warp MAP_DORMINDOOR1, 4, 7
+# 238 "data/maps/AstralisAcademy/scripts.pory"
+	initclock 23, 53
+# 239 "data/maps/AstralisAcademy/scripts.pory"
+	setvar ACADEMY_START, 10
 	return
 
 
 FracturedMask::
-# 241 "data/maps/AstralisAcademy/scripts.pory"
+# 247 "data/maps/AstralisAcademy/scripts.pory"
 	getplayerxy VAR_0x8000, VAR_0x8001
-# 242 "data/maps/AstralisAcademy/scripts.pory"
+# 248 "data/maps/AstralisAcademy/scripts.pory"
 	compare VAR_0x8000, 31
 	goto_if_eq FracturedMask_15
 FracturedMask_11:
-# 348 "data/maps/AstralisAcademy/scripts.pory"
+# 354 "data/maps/AstralisAcademy/scripts.pory"
 	compare VAR_0x8000, 18
 	goto_if_eq FracturedMask_10
 FracturedMask_6:
-# 356 "data/maps/AstralisAcademy/scripts.pory"
+# 362 "data/maps/AstralisAcademy/scripts.pory"
 	compare VAR_0x8000, 18
 	goto_if_eq FracturedMask_5
 FracturedMask_4:
-# 365 "data/maps/AstralisAcademy/scripts.pory"
+# 371 "data/maps/AstralisAcademy/scripts.pory"
 	lock
-# 366 "data/maps/AstralisAcademy/scripts.pory"
+# 372 "data/maps/AstralisAcademy/scripts.pory"
 	speakername TrialAnnouncement1_Text_22
-# 367 "data/maps/AstralisAcademy/scripts.pory"
+# 373 "data/maps/AstralisAcademy/scripts.pory"
 	msgbox FracturedMask_Text_20, MSGBOX_AUTOCLOSE
-# 368 "data/maps/AstralisAcademy/scripts.pory"
+# 374 "data/maps/AstralisAcademy/scripts.pory"
 	applymovement 0xFF, TrialAnnouncement_Movement_7
-# 369 "data/maps/AstralisAcademy/scripts.pory"
+# 375 "data/maps/AstralisAcademy/scripts.pory"
 	warp MAP_ASTRALIS_ACADEMY_HALLWAY, 14, 45
-# 370 "data/maps/AstralisAcademy/scripts.pory"
+# 376 "data/maps/AstralisAcademy/scripts.pory"
 	release
 	return
 
 FracturedMask_1:
-# 243 "data/maps/AstralisAcademy/scripts.pory"
-	lockall
-# 244 "data/maps/AstralisAcademy/scripts.pory"
-	fadenewbgm MUS_DUMMY
-# 245 "data/maps/AstralisAcademy/scripts.pory"
-	special SpawnCameraObject
-# 246 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0x7F, FracturedMask_Movement_0
-# 247 "data/maps/AstralisAcademy/scripts.pory"
-	waitmovement 0
-# 248 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 9, FracturedMask_Movement_1
 # 249 "data/maps/AstralisAcademy/scripts.pory"
-	waitmovement 0
+	lockall
 # 250 "data/maps/AstralisAcademy/scripts.pory"
-	playse SE_PIN
+	fadenewbgm MUS_DUMMY
 # 251 "data/maps/AstralisAcademy/scripts.pory"
-	waitse
+	special SpawnCameraObject
 # 252 "data/maps/AstralisAcademy/scripts.pory"
-	speakername TrialAnnouncement_Text_3
+	applymovement 0x7F, FracturedMask_Movement_0
 # 253 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox FracturedMask_Text_0, MSGBOX_AUTOCLOSE
+	waitmovement 0
 # 254 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0xFF, FracturedMask_Movement_2
+	applymovement 9, FracturedMask_Movement_1
 # 255 "data/maps/AstralisAcademy/scripts.pory"
 	waitmovement 0
 # 256 "data/maps/AstralisAcademy/scripts.pory"
-	speakername TrialAnnouncement_Text_3
+	playse SE_PIN
 # 257 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox FracturedMask_Text_1, MSGBOX_AUTOCLOSE
+	waitse
 # 258 "data/maps/AstralisAcademy/scripts.pory"
-	speakername TrialAnnouncement1_Text_22
-# 259 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox TrialAnnouncement1_Text_5, MSGBOX_AUTOCLOSE
-# 260 "data/maps/AstralisAcademy/scripts.pory"
 	speakername TrialAnnouncement_Text_3
+# 259 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox FracturedMask_Text_0, MSGBOX_AUTOCLOSE
+# 260 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 0xFF, FracturedMask_Movement_2
 # 261 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox FracturedMask_Text_2, MSGBOX_AUTOCLOSE
+	waitmovement 0
 # 262 "data/maps/AstralisAcademy/scripts.pory"
-	waitmessage
+	speakername TrialAnnouncement_Text_3
 # 263 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 9, TrialAnnouncement_Movement_13
+	msgbox FracturedMask_Text_1, MSGBOX_AUTOCLOSE
 # 264 "data/maps/AstralisAcademy/scripts.pory"
+	speakername TrialAnnouncement1_Text_22
+# 265 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox TrialAnnouncement1_Text_5, MSGBOX_AUTOCLOSE
+# 266 "data/maps/AstralisAcademy/scripts.pory"
+	speakername TrialAnnouncement_Text_3
+# 267 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox FracturedMask_Text_2, MSGBOX_AUTOCLOSE
+# 268 "data/maps/AstralisAcademy/scripts.pory"
+	waitmessage
+# 269 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 9, TrialAnnouncement_Movement_13
+# 270 "data/maps/AstralisAcademy/scripts.pory"
 	compare VAR_0x8001, 9
 	goto_if_eq FracturedMask_21
-# 268 "data/maps/AstralisAcademy/scripts.pory"
+# 274 "data/maps/AstralisAcademy/scripts.pory"
 	applymovement 0xFF, FracturedMask_Movement_4
-# 269 "data/maps/AstralisAcademy/scripts.pory"
+# 275 "data/maps/AstralisAcademy/scripts.pory"
 	applymovement 0x7F, FracturedMask_Movement_3
 FracturedMask_20:
-# 271 "data/maps/AstralisAcademy/scripts.pory"
-	waitmovement 0
-# 272 "data/maps/AstralisAcademy/scripts.pory"
-	speakername TrialAnnouncement_Text_3
-# 273 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox FracturedMask_Text_3, MSGBOX_AUTOCLOSE
-# 274 "data/maps/AstralisAcademy/scripts.pory"
-	waitmessage
-# 275 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0x7F, TrialAnnouncement_Movement_12
-# 276 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 10, TrialAnnouncement_Movement_13
 # 277 "data/maps/AstralisAcademy/scripts.pory"
-	speakername FracturedMask_Text_4
+	waitmovement 0
 # 278 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox FracturedMask_Text_5, MSGBOX_AUTOCLOSE
+	speakername TrialAnnouncement_Text_3
 # 279 "data/maps/AstralisAcademy/scripts.pory"
-	speakername FracturedMask_Text_6
+	msgbox FracturedMask_Text_3, MSGBOX_AUTOCLOSE
 # 280 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox FracturedMask_Text_7, MSGBOX_AUTOCLOSE
+	waitmessage
 # 281 "data/maps/AstralisAcademy/scripts.pory"
-	playse SE_PIN
+	applymovement 0x7F, TrialAnnouncement_Movement_12
 # 282 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 10, TrialAnnouncement_Movement_10
+	applymovement 10, TrialAnnouncement_Movement_13
 # 283 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 8, TrialAnnouncement_Movement_10
-# 284 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0xFF, TrialAnnouncement_Movement_2
-# 285 "data/maps/AstralisAcademy/scripts.pory"
-	waitmovement 0
-# 286 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 10, TrialAnnouncement_Movement_8
-# 287 "data/maps/AstralisAcademy/scripts.pory"
 	speakername FracturedMask_Text_4
+# 284 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox FracturedMask_Text_5, MSGBOX_AUTOCLOSE
+# 285 "data/maps/AstralisAcademy/scripts.pory"
+	speakername FracturedMask_Text_6
+# 286 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox FracturedMask_Text_7, MSGBOX_AUTOCLOSE
+# 287 "data/maps/AstralisAcademy/scripts.pory"
+	playse SE_PIN
 # 288 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox FracturedMask_Text_8, MSGBOX_AUTOCLOSE
+	applymovement 10, TrialAnnouncement_Movement_10
 # 289 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0xFF, FracturedMask_Movement_5
+	applymovement 8, TrialAnnouncement_Movement_10
 # 290 "data/maps/AstralisAcademy/scripts.pory"
-	waitmovement 0
+	applymovement 0xFF, TrialAnnouncement_Movement_2
 # 291 "data/maps/AstralisAcademy/scripts.pory"
-	speakername TrialAnnouncement1_Text_22
+	waitmovement 0
 # 292 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox FracturedMask_Text_9, MSGBOX_AUTOCLOSE
+	applymovement 10, TrialAnnouncement_Movement_8
 # 293 "data/maps/AstralisAcademy/scripts.pory"
 	speakername FracturedMask_Text_4
 # 294 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox FracturedMask_Text_10, MSGBOX_AUTOCLOSE
+	msgbox FracturedMask_Text_8, MSGBOX_AUTOCLOSE
 # 295 "data/maps/AstralisAcademy/scripts.pory"
-	waitmessage
+	applymovement 0xFF, FracturedMask_Movement_5
 # 296 "data/maps/AstralisAcademy/scripts.pory"
-	setobjectxyperm 6, 33, 8
+	waitmovement 0
 # 297 "data/maps/AstralisAcademy/scripts.pory"
-	setobjectxyperm 9, 32, 8
+	speakername TrialAnnouncement1_Text_22
 # 298 "data/maps/AstralisAcademy/scripts.pory"
-	playse SE_PIN
+	msgbox FracturedMask_Text_9, MSGBOX_AUTOCLOSE
 # 299 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0xFF, TrialAnnouncement_Movement_2
+	speakername FracturedMask_Text_4
 # 300 "data/maps/AstralisAcademy/scripts.pory"
-	speakername TrialAnnouncement1_Text_22
+	msgbox FracturedMask_Text_10, MSGBOX_AUTOCLOSE
 # 301 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox FracturedMask_Text_11, MSGBOX_AUTOCLOSE
-# 302 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0xFF, FracturedMask_Movement_6
-# 303 "data/maps/AstralisAcademy/scripts.pory"
-	waitmovement 0
-# 304 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0xFF, FracturedMask_Movement_7
-# 305 "data/maps/AstralisAcademy/scripts.pory"
-	playse SE_M_VICEGRIP
-# 306 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 8, TrialAnnouncement_Movement_9
-# 307 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 10, FracturedMask_Movement_8
-# 308 "data/maps/AstralisAcademy/scripts.pory"
-	waitmovement 0
-# 309 "data/maps/AstralisAcademy/scripts.pory"
-	speakername TrialAnnouncement1_Text_22
-# 310 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox FracturedMask_Text_12, MSGBOX_AUTOCLOSE
-# 311 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0xFF, FracturedMask_Movement_9
-# 312 "data/maps/AstralisAcademy/scripts.pory"
-	waitmovement 0
-# 313 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0xFF, FracturedMask_Movement_7
-# 314 "data/maps/AstralisAcademy/scripts.pory"
-	playse SE_M_VICEGRIP
-# 315 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0xFF, TrialAnnouncement_Movement_2
-# 316 "data/maps/AstralisAcademy/scripts.pory"
-	waitmovement 0
-# 317 "data/maps/AstralisAcademy/scripts.pory"
-	speakername FracturedMask_Text_13
-# 318 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox FracturedMask_Text_14, MSGBOX_AUTOCLOSE
-# 319 "data/maps/AstralisAcademy/scripts.pory"
 	waitmessage
+# 302 "data/maps/AstralisAcademy/scripts.pory"
+	setobjectxyperm 6, 33, 8
+# 303 "data/maps/AstralisAcademy/scripts.pory"
+	setobjectxyperm 9, 32, 8
+# 304 "data/maps/AstralisAcademy/scripts.pory"
+	playse SE_PIN
+# 305 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 0xFF, TrialAnnouncement_Movement_2
+# 306 "data/maps/AstralisAcademy/scripts.pory"
+	speakername TrialAnnouncement1_Text_22
+# 307 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox FracturedMask_Text_11, MSGBOX_AUTOCLOSE
+# 308 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 0xFF, FracturedMask_Movement_6
+# 309 "data/maps/AstralisAcademy/scripts.pory"
+	waitmovement 0
+# 310 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 0xFF, FracturedMask_Movement_7
+# 311 "data/maps/AstralisAcademy/scripts.pory"
+	playse SE_M_VICEGRIP
+# 312 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 8, TrialAnnouncement_Movement_9
+# 313 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 10, FracturedMask_Movement_8
+# 314 "data/maps/AstralisAcademy/scripts.pory"
+	waitmovement 0
+# 315 "data/maps/AstralisAcademy/scripts.pory"
+	speakername TrialAnnouncement1_Text_22
+# 316 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox FracturedMask_Text_12, MSGBOX_AUTOCLOSE
+# 317 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 0xFF, FracturedMask_Movement_9
+# 318 "data/maps/AstralisAcademy/scripts.pory"
+	waitmovement 0
+# 319 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 0xFF, FracturedMask_Movement_7
 # 320 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0x7F, FracturedMask_Movement_10
+	playse SE_M_VICEGRIP
 # 321 "data/maps/AstralisAcademy/scripts.pory"
-	waitmovement 0
+	applymovement 0xFF, TrialAnnouncement_Movement_2
 # 322 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 6, FracturedMask_Movement_11
-# 323 "data/maps/AstralisAcademy/scripts.pory"
 	waitmovement 0
-# 324 "data/maps/AstralisAcademy/scripts.pory"
+# 323 "data/maps/AstralisAcademy/scripts.pory"
 	speakername FracturedMask_Text_13
+# 324 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox FracturedMask_Text_14, MSGBOX_AUTOCLOSE
 # 325 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox FracturedMask_Text_15, MSGBOX_AUTOCLOSE
+	waitmessage
 # 326 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 9, FracturedMask_Movement_12
+	applymovement 0x7F, FracturedMask_Movement_10
 # 327 "data/maps/AstralisAcademy/scripts.pory"
 	waitmovement 0
 # 328 "data/maps/AstralisAcademy/scripts.pory"
-	speakername TrialAnnouncement_Text_3
+	applymovement 6, FracturedMask_Movement_11
 # 329 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox FracturedMask_Text_16, MSGBOX_AUTOCLOSE
+	waitmovement 0
 # 330 "data/maps/AstralisAcademy/scripts.pory"
-	playse SE_PIN
+	speakername FracturedMask_Text_13
 # 331 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 9, FracturedMask_Movement_13
+	msgbox FracturedMask_Text_15, MSGBOX_AUTOCLOSE
 # 332 "data/maps/AstralisAcademy/scripts.pory"
-	waitmovement 0
+	applymovement 9, FracturedMask_Movement_12
 # 333 "data/maps/AstralisAcademy/scripts.pory"
-	applymovement 0xFF, FracturedMask_Movement_14
-# 334 "data/maps/AstralisAcademy/scripts.pory"
 	waitmovement 0
-# 335 "data/maps/AstralisAcademy/scripts.pory"
-	speakername TrialAnnouncement1_Text_22
-# 336 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox FracturedMask_Text_17, MSGBOX_AUTOCLOSE
-# 337 "data/maps/AstralisAcademy/scripts.pory"
-	fadescreen FADE_TO_BLACK
-# 338 "data/maps/AstralisAcademy/scripts.pory"
-	playse SE_M_STRENGTH
-# 339 "data/maps/AstralisAcademy/scripts.pory"
-	waitse
-# 340 "data/maps/AstralisAcademy/scripts.pory"
+# 334 "data/maps/AstralisAcademy/scripts.pory"
 	speakername TrialAnnouncement_Text_3
+# 335 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox FracturedMask_Text_16, MSGBOX_AUTOCLOSE
+# 336 "data/maps/AstralisAcademy/scripts.pory"
+	playse SE_PIN
+# 337 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 9, FracturedMask_Movement_13
+# 338 "data/maps/AstralisAcademy/scripts.pory"
+	waitmovement 0
+# 339 "data/maps/AstralisAcademy/scripts.pory"
+	applymovement 0xFF, FracturedMask_Movement_14
+# 340 "data/maps/AstralisAcademy/scripts.pory"
+	waitmovement 0
 # 341 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox FracturedMask_Text_18, MSGBOX_AUTOCLOSE
+	speakername TrialAnnouncement1_Text_22
 # 342 "data/maps/AstralisAcademy/scripts.pory"
-	msgbox FracturedMask_Text_19, MSGBOX_AUTOCLOSE
+	msgbox FracturedMask_Text_17, MSGBOX_AUTOCLOSE
 # 343 "data/maps/AstralisAcademy/scripts.pory"
-	initclock 14, 43
+	fadescreen FADE_TO_BLACK
 # 344 "data/maps/AstralisAcademy/scripts.pory"
-	resumefakertc
+	playse SE_M_STRENGTH
 # 345 "data/maps/AstralisAcademy/scripts.pory"
-	warpsilent MAP_HEADOFFICE, 7, 8
+	waitse
 # 346 "data/maps/AstralisAcademy/scripts.pory"
-	setvar ACADEMY_START, 13
+	speakername TrialAnnouncement_Text_3
+# 347 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox FracturedMask_Text_18, MSGBOX_AUTOCLOSE
+# 348 "data/maps/AstralisAcademy/scripts.pory"
+	msgbox FracturedMask_Text_19, MSGBOX_AUTOCLOSE
+# 349 "data/maps/AstralisAcademy/scripts.pory"
+	initclock 14, 43
+# 350 "data/maps/AstralisAcademy/scripts.pory"
+	resumefakertc
+# 351 "data/maps/AstralisAcademy/scripts.pory"
+	warpsilent MAP_HEADOFFICE, 7, 8
+# 352 "data/maps/AstralisAcademy/scripts.pory"
+	setvar ACADEMY_START, 12
 	return
 
 FracturedMask_2:
-# 349 "data/maps/AstralisAcademy/scripts.pory"
+# 355 "data/maps/AstralisAcademy/scripts.pory"
 	lock
-# 350 "data/maps/AstralisAcademy/scripts.pory"
+# 356 "data/maps/AstralisAcademy/scripts.pory"
 	speakername TrialAnnouncement1_Text_22
-# 351 "data/maps/AstralisAcademy/scripts.pory"
+# 357 "data/maps/AstralisAcademy/scripts.pory"
 	msgbox FracturedMask_Text_20, MSGBOX_AUTOCLOSE
-# 352 "data/maps/AstralisAcademy/scripts.pory"
+# 358 "data/maps/AstralisAcademy/scripts.pory"
 	applymovement 0xFF, TrialAnnouncement_Movement_8
-# 353 "data/maps/AstralisAcademy/scripts.pory"
+# 359 "data/maps/AstralisAcademy/scripts.pory"
 	warp MAP_ASTRALIS_ACADEMY_HALLWAY, 0, 17
-# 354 "data/maps/AstralisAcademy/scripts.pory"
+# 360 "data/maps/AstralisAcademy/scripts.pory"
 	release
 	return
 
 FracturedMask_3:
-# 357 "data/maps/AstralisAcademy/scripts.pory"
+# 363 "data/maps/AstralisAcademy/scripts.pory"
 	lock
-# 358 "data/maps/AstralisAcademy/scripts.pory"
+# 364 "data/maps/AstralisAcademy/scripts.pory"
 	speakername TrialAnnouncement1_Text_22
-# 359 "data/maps/AstralisAcademy/scripts.pory"
+# 365 "data/maps/AstralisAcademy/scripts.pory"
 	msgbox FracturedMask_Text_20, MSGBOX_AUTOCLOSE
-# 360 "data/maps/AstralisAcademy/scripts.pory"
+# 366 "data/maps/AstralisAcademy/scripts.pory"
 	applymovement 0xFF, TrialAnnouncement_Movement_8
-# 361 "data/maps/AstralisAcademy/scripts.pory"
+# 367 "data/maps/AstralisAcademy/scripts.pory"
 	warp MAP_ASTRALIS_ACADEMY_HALLWAY, 0, 32
-# 362 "data/maps/AstralisAcademy/scripts.pory"
+# 368 "data/maps/AstralisAcademy/scripts.pory"
 	release
 	return
 
 FracturedMask_5:
-# 356 "data/maps/AstralisAcademy/scripts.pory"
+# 362 "data/maps/AstralisAcademy/scripts.pory"
 	compare VAR_0x8001, 32
 	goto_if_gt FracturedMask_7
 	goto FracturedMask_4
 
 FracturedMask_7:
-# 356 "data/maps/AstralisAcademy/scripts.pory"
+# 362 "data/maps/AstralisAcademy/scripts.pory"
 	compare VAR_0x8001, 35
 	goto_if_lt FracturedMask_3
 	goto FracturedMask_4
 
 FracturedMask_10:
-# 348 "data/maps/AstralisAcademy/scripts.pory"
+# 354 "data/maps/AstralisAcademy/scripts.pory"
 	compare VAR_0x8001, 8
 	goto_if_gt FracturedMask_12
 	goto FracturedMask_6
 
 FracturedMask_12:
-# 348 "data/maps/AstralisAcademy/scripts.pory"
+# 354 "data/maps/AstralisAcademy/scripts.pory"
 	compare VAR_0x8001, 11
 	goto_if_lt FracturedMask_2
 	goto FracturedMask_6
 
 FracturedMask_15:
-# 242 "data/maps/AstralisAcademy/scripts.pory"
+# 248 "data/maps/AstralisAcademy/scripts.pory"
 	compare VAR_0x8001, 8
 	goto_if_gt FracturedMask_17
 	goto FracturedMask_11
 
 FracturedMask_17:
-# 242 "data/maps/AstralisAcademy/scripts.pory"
+# 248 "data/maps/AstralisAcademy/scripts.pory"
 	compare VAR_0x8001, 11
 	goto_if_lt FracturedMask_1
 	goto FracturedMask_11
 
 FracturedMask_21:
-# 265 "data/maps/AstralisAcademy/scripts.pory"
+# 271 "data/maps/AstralisAcademy/scripts.pory"
 	applymovement 0xFF, FracturedMask_Movement_3
-# 266 "data/maps/AstralisAcademy/scripts.pory"
+# 272 "data/maps/AstralisAcademy/scripts.pory"
 	applymovement 0x7F, FracturedMask_Movement_3
 	goto FracturedMask_20
 
 
-# 67 "data/maps/AstralisAcademy/scripts.pory"
+# 74 "data/maps/AstralisAcademy/scripts.pory"
 TrialAnnouncement_Movement_0:
-# 67 "data/maps/AstralisAcademy/scripts.pory"
+# 74 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 67 "data/maps/AstralisAcademy/scripts.pory"
+# 74 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 67 "data/maps/AstralisAcademy/scripts.pory"
+# 74 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 67 "data/maps/AstralisAcademy/scripts.pory"
+# 74 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 68 "data/maps/AstralisAcademy/scripts.pory"
+# 75 "data/maps/AstralisAcademy/scripts.pory"
 	face_down
 	step_end
 
-# 71 "data/maps/AstralisAcademy/scripts.pory"
+# 78 "data/maps/AstralisAcademy/scripts.pory"
 TrialAnnouncement_Movement_1:
-# 71 "data/maps/AstralisAcademy/scripts.pory"
+# 78 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 71 "data/maps/AstralisAcademy/scripts.pory"
+# 78 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 71 "data/maps/AstralisAcademy/scripts.pory"
+# 78 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 71 "data/maps/AstralisAcademy/scripts.pory"
+# 78 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 71 "data/maps/AstralisAcademy/scripts.pory"
+# 78 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
 	step_end
 
-# 80 "data/maps/AstralisAcademy/scripts.pory"
+# 87 "data/maps/AstralisAcademy/scripts.pory"
 TrialAnnouncement_Movement_2:
-# 80 "data/maps/AstralisAcademy/scripts.pory"
+# 87 "data/maps/AstralisAcademy/scripts.pory"
 	emote_upset
 	step_end
 
-# 82 "data/maps/AstralisAcademy/scripts.pory"
+# 89 "data/maps/AstralisAcademy/scripts.pory"
 TrialAnnouncement_Movement_3:
-# 82 "data/maps/AstralisAcademy/scripts.pory"
+# 89 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 82 "data/maps/AstralisAcademy/scripts.pory"
+# 89 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 82 "data/maps/AstralisAcademy/scripts.pory"
+# 89 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 82 "data/maps/AstralisAcademy/scripts.pory"
+# 89 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 82 "data/maps/AstralisAcademy/scripts.pory"
+# 89 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 83 "data/maps/AstralisAcademy/scripts.pory"
+# 90 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 83 "data/maps/AstralisAcademy/scripts.pory"
+# 90 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 83 "data/maps/AstralisAcademy/scripts.pory"
+# 90 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 83 "data/maps/AstralisAcademy/scripts.pory"
+# 90 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 83 "data/maps/AstralisAcademy/scripts.pory"
+# 90 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 83 "data/maps/AstralisAcademy/scripts.pory"
+# 90 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 83 "data/maps/AstralisAcademy/scripts.pory"
+# 90 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 83 "data/maps/AstralisAcademy/scripts.pory"
+# 90 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 83 "data/maps/AstralisAcademy/scripts.pory"
+# 90 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 83 "data/maps/AstralisAcademy/scripts.pory"
+# 90 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 83 "data/maps/AstralisAcademy/scripts.pory"
+# 90 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 83 "data/maps/AstralisAcademy/scripts.pory"
+# 90 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 83 "data/maps/AstralisAcademy/scripts.pory"
+# 90 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 83 "data/maps/AstralisAcademy/scripts.pory"
+# 90 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 83 "data/maps/AstralisAcademy/scripts.pory"
+# 90 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 83 "data/maps/AstralisAcademy/scripts.pory"
+# 90 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 83 "data/maps/AstralisAcademy/scripts.pory"
+# 90 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 84 "data/maps/AstralisAcademy/scripts.pory"
+# 91 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 84 "data/maps/AstralisAcademy/scripts.pory"
+# 91 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 84 "data/maps/AstralisAcademy/scripts.pory"
+# 91 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
 	step_end
 
-# 85 "data/maps/AstralisAcademy/scripts.pory"
+# 92 "data/maps/AstralisAcademy/scripts.pory"
 TrialAnnouncement_Movement_4:
-# 85 "data/maps/AstralisAcademy/scripts.pory"
+# 92 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 85 "data/maps/AstralisAcademy/scripts.pory"
+# 92 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 85 "data/maps/AstralisAcademy/scripts.pory"
+# 92 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 85 "data/maps/AstralisAcademy/scripts.pory"
+# 92 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 85 "data/maps/AstralisAcademy/scripts.pory"
+# 92 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 85 "data/maps/AstralisAcademy/scripts.pory"
+# 92 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 86 "data/maps/AstralisAcademy/scripts.pory"
+# 93 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 86 "data/maps/AstralisAcademy/scripts.pory"
+# 93 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 86 "data/maps/AstralisAcademy/scripts.pory"
+# 93 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 86 "data/maps/AstralisAcademy/scripts.pory"
+# 93 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 86 "data/maps/AstralisAcademy/scripts.pory"
+# 93 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 86 "data/maps/AstralisAcademy/scripts.pory"
+# 93 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 86 "data/maps/AstralisAcademy/scripts.pory"
+# 93 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 86 "data/maps/AstralisAcademy/scripts.pory"
+# 93 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 86 "data/maps/AstralisAcademy/scripts.pory"
+# 93 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 86 "data/maps/AstralisAcademy/scripts.pory"
+# 93 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 86 "data/maps/AstralisAcademy/scripts.pory"
+# 93 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 86 "data/maps/AstralisAcademy/scripts.pory"
+# 93 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 86 "data/maps/AstralisAcademy/scripts.pory"
+# 93 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 86 "data/maps/AstralisAcademy/scripts.pory"
+# 93 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 86 "data/maps/AstralisAcademy/scripts.pory"
+# 93 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 86 "data/maps/AstralisAcademy/scripts.pory"
+# 93 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 87 "data/maps/AstralisAcademy/scripts.pory"
+# 94 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 87 "data/maps/AstralisAcademy/scripts.pory"
+# 94 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 87 "data/maps/AstralisAcademy/scripts.pory"
+# 94 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
 	step_end
 
-# 90 "data/maps/AstralisAcademy/scripts.pory"
+# 97 "data/maps/AstralisAcademy/scripts.pory"
 TrialAnnouncement_Movement_5:
-# 90 "data/maps/AstralisAcademy/scripts.pory"
+# 97 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 90 "data/maps/AstralisAcademy/scripts.pory"
+# 97 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 90 "data/maps/AstralisAcademy/scripts.pory"
+# 97 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 90 "data/maps/AstralisAcademy/scripts.pory"
+# 97 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 90 "data/maps/AstralisAcademy/scripts.pory"
+# 97 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 90 "data/maps/AstralisAcademy/scripts.pory"
+# 97 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 90 "data/maps/AstralisAcademy/scripts.pory"
+# 97 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 90 "data/maps/AstralisAcademy/scripts.pory"
+# 97 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 90 "data/maps/AstralisAcademy/scripts.pory"
+# 97 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 90 "data/maps/AstralisAcademy/scripts.pory"
+# 97 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 90 "data/maps/AstralisAcademy/scripts.pory"
+# 97 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 90 "data/maps/AstralisAcademy/scripts.pory"
+# 97 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
 	step_end
 
-# 97 "data/maps/AstralisAcademy/scripts.pory"
+# 104 "data/maps/AstralisAcademy/scripts.pory"
 TrialAnnouncement_Movement_6:
-# 97 "data/maps/AstralisAcademy/scripts.pory"
+# 104 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 97 "data/maps/AstralisAcademy/scripts.pory"
+# 104 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 97 "data/maps/AstralisAcademy/scripts.pory"
+# 104 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 97 "data/maps/AstralisAcademy/scripts.pory"
+# 104 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 97 "data/maps/AstralisAcademy/scripts.pory"
+# 104 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 97 "data/maps/AstralisAcademy/scripts.pory"
+# 104 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 97 "data/maps/AstralisAcademy/scripts.pory"
+# 104 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
 	step_end
 
-# 99 "data/maps/AstralisAcademy/scripts.pory"
+# 106 "data/maps/AstralisAcademy/scripts.pory"
 TrialAnnouncement_Movement_7:
-# 99 "data/maps/AstralisAcademy/scripts.pory"
+# 106 "data/maps/AstralisAcademy/scripts.pory"
 	face_left
 	step_end
 
-# 100 "data/maps/AstralisAcademy/scripts.pory"
+# 107 "data/maps/AstralisAcademy/scripts.pory"
 TrialAnnouncement_Movement_8:
-# 100 "data/maps/AstralisAcademy/scripts.pory"
+# 107 "data/maps/AstralisAcademy/scripts.pory"
 	face_right
 	step_end
 
-# 101 "data/maps/AstralisAcademy/scripts.pory"
+# 108 "data/maps/AstralisAcademy/scripts.pory"
 TrialAnnouncement_Movement_9:
-# 101 "data/maps/AstralisAcademy/scripts.pory"
+# 108 "data/maps/AstralisAcademy/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 102 "data/maps/AstralisAcademy/scripts.pory"
+# 109 "data/maps/AstralisAcademy/scripts.pory"
 TrialAnnouncement_Movement_10:
-# 102 "data/maps/AstralisAcademy/scripts.pory"
+# 109 "data/maps/AstralisAcademy/scripts.pory"
 	emote_happy
 	step_end
 
-# 104 "data/maps/AstralisAcademy/scripts.pory"
+# 111 "data/maps/AstralisAcademy/scripts.pory"
 TrialAnnouncement_Movement_11:
-# 104 "data/maps/AstralisAcademy/scripts.pory"
+# 111 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 104 "data/maps/AstralisAcademy/scripts.pory"
+# 111 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 104 "data/maps/AstralisAcademy/scripts.pory"
+# 111 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 104 "data/maps/AstralisAcademy/scripts.pory"
+# 111 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 104 "data/maps/AstralisAcademy/scripts.pory"
+# 111 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
 	step_end
 
-# 109 "data/maps/AstralisAcademy/scripts.pory"
+# 116 "data/maps/AstralisAcademy/scripts.pory"
 TrialAnnouncement_Movement_12:
-# 109 "data/maps/AstralisAcademy/scripts.pory"
+# 116 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 109 "data/maps/AstralisAcademy/scripts.pory"
+# 116 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 109 "data/maps/AstralisAcademy/scripts.pory"
+# 116 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 109 "data/maps/AstralisAcademy/scripts.pory"
+# 116 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
 	step_end
 
-# 110 "data/maps/AstralisAcademy/scripts.pory"
+# 117 "data/maps/AstralisAcademy/scripts.pory"
 TrialAnnouncement_Movement_13:
-# 110 "data/maps/AstralisAcademy/scripts.pory"
+# 117 "data/maps/AstralisAcademy/scripts.pory"
 	face_down
 	step_end
 
-# 130 "data/maps/AstralisAcademy/scripts.pory"
+# 136 "data/maps/AstralisAcademy/scripts.pory"
 TrialAnnouncement1_Movement_0:
-# 130 "data/maps/AstralisAcademy/scripts.pory"
+# 136 "data/maps/AstralisAcademy/scripts.pory"
 	emote_question_mark
 	step_end
 
-# 138 "data/maps/AstralisAcademy/scripts.pory"
+# 144 "data/maps/AstralisAcademy/scripts.pory"
 TrialAnnouncement1_Movement_1:
-# 138 "data/maps/AstralisAcademy/scripts.pory"
+# 144 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 138 "data/maps/AstralisAcademy/scripts.pory"
+# 144 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 138 "data/maps/AstralisAcademy/scripts.pory"
+# 144 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 138 "data/maps/AstralisAcademy/scripts.pory"
+# 144 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 138 "data/maps/AstralisAcademy/scripts.pory"
+# 144 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 138 "data/maps/AstralisAcademy/scripts.pory"
+# 144 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 138 "data/maps/AstralisAcademy/scripts.pory"
+# 144 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 138 "data/maps/AstralisAcademy/scripts.pory"
+# 144 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 138 "data/maps/AstralisAcademy/scripts.pory"
+# 144 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 138 "data/maps/AstralisAcademy/scripts.pory"
+# 144 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 138 "data/maps/AstralisAcademy/scripts.pory"
+# 144 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 139 "data/maps/AstralisAcademy/scripts.pory"
+# 145 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
 	step_end
 
-# 149 "data/maps/AstralisAcademy/scripts.pory"
+# 155 "data/maps/AstralisAcademy/scripts.pory"
 TrialAnnouncement1_Movement_2:
-# 149 "data/maps/AstralisAcademy/scripts.pory"
+# 155 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 149 "data/maps/AstralisAcademy/scripts.pory"
+# 155 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 149 "data/maps/AstralisAcademy/scripts.pory"
+# 155 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 149 "data/maps/AstralisAcademy/scripts.pory"
+# 155 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 149 "data/maps/AstralisAcademy/scripts.pory"
+# 155 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
 	step_end
 
-# 151 "data/maps/AstralisAcademy/scripts.pory"
+# 157 "data/maps/AstralisAcademy/scripts.pory"
 TrialAnnouncement1_Movement_3:
-# 151 "data/maps/AstralisAcademy/scripts.pory"
+# 157 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 151 "data/maps/AstralisAcademy/scripts.pory"
+# 157 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 151 "data/maps/AstralisAcademy/scripts.pory"
+# 157 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 151 "data/maps/AstralisAcademy/scripts.pory"
+# 157 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 151 "data/maps/AstralisAcademy/scripts.pory"
+# 157 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
 	step_end
 
-# 155 "data/maps/AstralisAcademy/scripts.pory"
+# 161 "data/maps/AstralisAcademy/scripts.pory"
 TrialAnnouncement1_Movement_4:
-# 155 "data/maps/AstralisAcademy/scripts.pory"
+# 161 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 155 "data/maps/AstralisAcademy/scripts.pory"
+# 161 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 155 "data/maps/AstralisAcademy/scripts.pory"
+# 161 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 155 "data/maps/AstralisAcademy/scripts.pory"
+# 161 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 155 "data/maps/AstralisAcademy/scripts.pory"
+# 161 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 155 "data/maps/AstralisAcademy/scripts.pory"
+# 161 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 155 "data/maps/AstralisAcademy/scripts.pory"
+# 161 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 155 "data/maps/AstralisAcademy/scripts.pory"
+# 161 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 155 "data/maps/AstralisAcademy/scripts.pory"
+# 161 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 155 "data/maps/AstralisAcademy/scripts.pory"
+# 161 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 155 "data/maps/AstralisAcademy/scripts.pory"
+# 161 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
 	step_end
 
-# 157 "data/maps/AstralisAcademy/scripts.pory"
+# 163 "data/maps/AstralisAcademy/scripts.pory"
 TrialAnnouncement1_Movement_5:
-# 157 "data/maps/AstralisAcademy/scripts.pory"
+# 163 "data/maps/AstralisAcademy/scripts.pory"
 	face_right
-# 158 "data/maps/AstralisAcademy/scripts.pory"
+# 164 "data/maps/AstralisAcademy/scripts.pory"
 	emote_happy
 	step_end
 
-# 174 "data/maps/AstralisAcademy/scripts.pory"
+# 180 "data/maps/AstralisAcademy/scripts.pory"
 TrialAnnouncement1_Movement_6:
-# 174 "data/maps/AstralisAcademy/scripts.pory"
+# 180 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 174 "data/maps/AstralisAcademy/scripts.pory"
+# 180 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 174 "data/maps/AstralisAcademy/scripts.pory"
+# 180 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 174 "data/maps/AstralisAcademy/scripts.pory"
+# 180 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 174 "data/maps/AstralisAcademy/scripts.pory"
+# 180 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 174 "data/maps/AstralisAcademy/scripts.pory"
+# 180 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 174 "data/maps/AstralisAcademy/scripts.pory"
+# 180 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 174 "data/maps/AstralisAcademy/scripts.pory"
+# 180 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 174 "data/maps/AstralisAcademy/scripts.pory"
+# 180 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 174 "data/maps/AstralisAcademy/scripts.pory"
+# 180 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 174 "data/maps/AstralisAcademy/scripts.pory"
+# 180 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 174 "data/maps/AstralisAcademy/scripts.pory"
+# 180 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
 	step_end
 
-# 181 "data/maps/AstralisAcademy/scripts.pory"
+# 187 "data/maps/AstralisAcademy/scripts.pory"
 TrialAnnouncement1_Movement_7:
-# 181 "data/maps/AstralisAcademy/scripts.pory"
+# 187 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 181 "data/maps/AstralisAcademy/scripts.pory"
+# 187 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
 	step_end
 
-# 188 "data/maps/AstralisAcademy/scripts.pory"
+# 194 "data/maps/AstralisAcademy/scripts.pory"
 TrialAnnouncement1_Movement_8:
-# 188 "data/maps/AstralisAcademy/scripts.pory"
+# 194 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 188 "data/maps/AstralisAcademy/scripts.pory"
+# 194 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 188 "data/maps/AstralisAcademy/scripts.pory"
+# 194 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 188 "data/maps/AstralisAcademy/scripts.pory"
+# 194 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 188 "data/maps/AstralisAcademy/scripts.pory"
+# 194 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 188 "data/maps/AstralisAcademy/scripts.pory"
+# 194 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 188 "data/maps/AstralisAcademy/scripts.pory"
+# 194 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
 	step_end
 
-# 218 "data/maps/AstralisAcademy/scripts.pory"
+# 224 "data/maps/AstralisAcademy/scripts.pory"
 TrialAnnouncement1_Movement_9:
-# 218 "data/maps/AstralisAcademy/scripts.pory"
+# 224 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 218 "data/maps/AstralisAcademy/scripts.pory"
+# 224 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 218 "data/maps/AstralisAcademy/scripts.pory"
+# 224 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 218 "data/maps/AstralisAcademy/scripts.pory"
+# 224 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 218 "data/maps/AstralisAcademy/scripts.pory"
+# 224 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 218 "data/maps/AstralisAcademy/scripts.pory"
+# 224 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 218 "data/maps/AstralisAcademy/scripts.pory"
+# 224 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 218 "data/maps/AstralisAcademy/scripts.pory"
+# 224 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 218 "data/maps/AstralisAcademy/scripts.pory"
+# 224 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 218 "data/maps/AstralisAcademy/scripts.pory"
+# 224 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 218 "data/maps/AstralisAcademy/scripts.pory"
+# 224 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 218 "data/maps/AstralisAcademy/scripts.pory"
+# 224 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
 	step_end
 
-# 220 "data/maps/AstralisAcademy/scripts.pory"
+# 226 "data/maps/AstralisAcademy/scripts.pory"
 TrialAnnouncement1_Movement_10:
-# 220 "data/maps/AstralisAcademy/scripts.pory"
+# 226 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 220 "data/maps/AstralisAcademy/scripts.pory"
+# 226 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 220 "data/maps/AstralisAcademy/scripts.pory"
+# 226 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 220 "data/maps/AstralisAcademy/scripts.pory"
+# 226 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 220 "data/maps/AstralisAcademy/scripts.pory"
+# 226 "data/maps/AstralisAcademy/scripts.pory"
 	walk_left
-# 220 "data/maps/AstralisAcademy/scripts.pory"
+# 226 "data/maps/AstralisAcademy/scripts.pory"
 	face_down
 	step_end
 
-# 226 "data/maps/AstralisAcademy/scripts.pory"
+# 232 "data/maps/AstralisAcademy/scripts.pory"
 TrialAnnouncement1_Movement_11:
-# 226 "data/maps/AstralisAcademy/scripts.pory"
+# 232 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 226 "data/maps/AstralisAcademy/scripts.pory"
+# 232 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 226 "data/maps/AstralisAcademy/scripts.pory"
+# 232 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 226 "data/maps/AstralisAcademy/scripts.pory"
+# 232 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 226 "data/maps/AstralisAcademy/scripts.pory"
+# 232 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 226 "data/maps/AstralisAcademy/scripts.pory"
+# 232 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 226 "data/maps/AstralisAcademy/scripts.pory"
+# 232 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
 	step_end
 
-# 246 "data/maps/AstralisAcademy/scripts.pory"
+# 252 "data/maps/AstralisAcademy/scripts.pory"
 FracturedMask_Movement_0:
-# 246 "data/maps/AstralisAcademy/scripts.pory"
+# 252 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
 	step_end
 
-# 248 "data/maps/AstralisAcademy/scripts.pory"
+# 254 "data/maps/AstralisAcademy/scripts.pory"
 FracturedMask_Movement_1:
-# 248 "data/maps/AstralisAcademy/scripts.pory"
+# 254 "data/maps/AstralisAcademy/scripts.pory"
 	face_left
-# 248 "data/maps/AstralisAcademy/scripts.pory"
+# 254 "data/maps/AstralisAcademy/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 254 "data/maps/AstralisAcademy/scripts.pory"
+# 260 "data/maps/AstralisAcademy/scripts.pory"
 FracturedMask_Movement_2:
-# 254 "data/maps/AstralisAcademy/scripts.pory"
+# 260 "data/maps/AstralisAcademy/scripts.pory"
 	face_up
-# 254 "data/maps/AstralisAcademy/scripts.pory"
+# 260 "data/maps/AstralisAcademy/scripts.pory"
 	emote_upset
 	step_end
 
-# 265 "data/maps/AstralisAcademy/scripts.pory"
+# 271 "data/maps/AstralisAcademy/scripts.pory"
 FracturedMask_Movement_3:
-# 265 "data/maps/AstralisAcademy/scripts.pory"
+# 271 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 265 "data/maps/AstralisAcademy/scripts.pory"
+# 271 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 265 "data/maps/AstralisAcademy/scripts.pory"
+# 271 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 265 "data/maps/AstralisAcademy/scripts.pory"
+# 271 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 265 "data/maps/AstralisAcademy/scripts.pory"
+# 271 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 265 "data/maps/AstralisAcademy/scripts.pory"
+# 271 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 265 "data/maps/AstralisAcademy/scripts.pory"
+# 271 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 265 "data/maps/AstralisAcademy/scripts.pory"
+# 271 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 265 "data/maps/AstralisAcademy/scripts.pory"
+# 271 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 265 "data/maps/AstralisAcademy/scripts.pory"
+# 271 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 265 "data/maps/AstralisAcademy/scripts.pory"
+# 271 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 265 "data/maps/AstralisAcademy/scripts.pory"
+# 271 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 265 "data/maps/AstralisAcademy/scripts.pory"
+# 271 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 265 "data/maps/AstralisAcademy/scripts.pory"
+# 271 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 265 "data/maps/AstralisAcademy/scripts.pory"
+# 271 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 265 "data/maps/AstralisAcademy/scripts.pory"
+# 271 "data/maps/AstralisAcademy/scripts.pory"
 	face_up
 	step_end
 
-# 268 "data/maps/AstralisAcademy/scripts.pory"
+# 274 "data/maps/AstralisAcademy/scripts.pory"
 FracturedMask_Movement_4:
-# 268 "data/maps/AstralisAcademy/scripts.pory"
+# 274 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 268 "data/maps/AstralisAcademy/scripts.pory"
+# 274 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 268 "data/maps/AstralisAcademy/scripts.pory"
+# 274 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 268 "data/maps/AstralisAcademy/scripts.pory"
+# 274 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 268 "data/maps/AstralisAcademy/scripts.pory"
+# 274 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 268 "data/maps/AstralisAcademy/scripts.pory"
+# 274 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 268 "data/maps/AstralisAcademy/scripts.pory"
+# 274 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 268 "data/maps/AstralisAcademy/scripts.pory"
+# 274 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 268 "data/maps/AstralisAcademy/scripts.pory"
+# 274 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 268 "data/maps/AstralisAcademy/scripts.pory"
+# 274 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 268 "data/maps/AstralisAcademy/scripts.pory"
+# 274 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 268 "data/maps/AstralisAcademy/scripts.pory"
+# 274 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 268 "data/maps/AstralisAcademy/scripts.pory"
+# 274 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 268 "data/maps/AstralisAcademy/scripts.pory"
+# 274 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 268 "data/maps/AstralisAcademy/scripts.pory"
+# 274 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 268 "data/maps/AstralisAcademy/scripts.pory"
+# 274 "data/maps/AstralisAcademy/scripts.pory"
 	walk_right
-# 268 "data/maps/AstralisAcademy/scripts.pory"
+# 274 "data/maps/AstralisAcademy/scripts.pory"
 	face_up
 	step_end
 
-# 289 "data/maps/AstralisAcademy/scripts.pory"
+# 295 "data/maps/AstralisAcademy/scripts.pory"
 FracturedMask_Movement_5:
-# 289 "data/maps/AstralisAcademy/scripts.pory"
+# 295 "data/maps/AstralisAcademy/scripts.pory"
 	face_left
-# 289 "data/maps/AstralisAcademy/scripts.pory"
+# 295 "data/maps/AstralisAcademy/scripts.pory"
 	emote_upset
 	step_end
 
-# 302 "data/maps/AstralisAcademy/scripts.pory"
+# 308 "data/maps/AstralisAcademy/scripts.pory"
 FracturedMask_Movement_6:
-# 302 "data/maps/AstralisAcademy/scripts.pory"
+# 308 "data/maps/AstralisAcademy/scripts.pory"
 	walk_fast_left
-# 302 "data/maps/AstralisAcademy/scripts.pory"
+# 308 "data/maps/AstralisAcademy/scripts.pory"
 	walk_fast_left
 	step_end
 
-# 304 "data/maps/AstralisAcademy/scripts.pory"
+# 310 "data/maps/AstralisAcademy/scripts.pory"
 FracturedMask_Movement_7:
-# 304 "data/maps/AstralisAcademy/scripts.pory"
+# 310 "data/maps/AstralisAcademy/scripts.pory"
 	slide_left
-# 304 "data/maps/AstralisAcademy/scripts.pory"
+# 310 "data/maps/AstralisAcademy/scripts.pory"
 	slide_right
-# 304 "data/maps/AstralisAcademy/scripts.pory"
+# 310 "data/maps/AstralisAcademy/scripts.pory"
 	face_left
 	step_end
 
-# 307 "data/maps/AstralisAcademy/scripts.pory"
+# 313 "data/maps/AstralisAcademy/scripts.pory"
 FracturedMask_Movement_8:
-# 307 "data/maps/AstralisAcademy/scripts.pory"
+# 313 "data/maps/AstralisAcademy/scripts.pory"
 	emote_exclamation_mark
-# 307 "data/maps/AstralisAcademy/scripts.pory"
+# 313 "data/maps/AstralisAcademy/scripts.pory"
 	slide_left
-# 307 "data/maps/AstralisAcademy/scripts.pory"
+# 313 "data/maps/AstralisAcademy/scripts.pory"
 	slide_left
-# 307 "data/maps/AstralisAcademy/scripts.pory"
+# 313 "data/maps/AstralisAcademy/scripts.pory"
 	slide_left
-# 307 "data/maps/AstralisAcademy/scripts.pory"
+# 313 "data/maps/AstralisAcademy/scripts.pory"
 	slide_left
 	step_end
 
-# 311 "data/maps/AstralisAcademy/scripts.pory"
+# 317 "data/maps/AstralisAcademy/scripts.pory"
 FracturedMask_Movement_9:
-# 311 "data/maps/AstralisAcademy/scripts.pory"
+# 317 "data/maps/AstralisAcademy/scripts.pory"
 	walk_fast_left
-# 311 "data/maps/AstralisAcademy/scripts.pory"
+# 317 "data/maps/AstralisAcademy/scripts.pory"
 	walk_fast_left
-# 311 "data/maps/AstralisAcademy/scripts.pory"
+# 317 "data/maps/AstralisAcademy/scripts.pory"
 	walk_fast_left
-# 311 "data/maps/AstralisAcademy/scripts.pory"
+# 317 "data/maps/AstralisAcademy/scripts.pory"
 	walk_fast_left
 	step_end
 
-# 320 "data/maps/AstralisAcademy/scripts.pory"
+# 326 "data/maps/AstralisAcademy/scripts.pory"
 FracturedMask_Movement_10:
-# 320 "data/maps/AstralisAcademy/scripts.pory"
+# 326 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 320 "data/maps/AstralisAcademy/scripts.pory"
+# 326 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
-# 320 "data/maps/AstralisAcademy/scripts.pory"
+# 326 "data/maps/AstralisAcademy/scripts.pory"
 	walk_up
 	step_end
 
-# 322 "data/maps/AstralisAcademy/scripts.pory"
+# 328 "data/maps/AstralisAcademy/scripts.pory"
 FracturedMask_Movement_11:
-# 322 "data/maps/AstralisAcademy/scripts.pory"
+# 328 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 322 "data/maps/AstralisAcademy/scripts.pory"
+# 328 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
 	step_end
 
-# 326 "data/maps/AstralisAcademy/scripts.pory"
+# 332 "data/maps/AstralisAcademy/scripts.pory"
 FracturedMask_Movement_12:
-# 326 "data/maps/AstralisAcademy/scripts.pory"
+# 332 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 326 "data/maps/AstralisAcademy/scripts.pory"
+# 332 "data/maps/AstralisAcademy/scripts.pory"
 	walk_down
-# 326 "data/maps/AstralisAcademy/scripts.pory"
+# 332 "data/maps/AstralisAcademy/scripts.pory"
 	delay_16
-# 326 "data/maps/AstralisAcademy/scripts.pory"
+# 332 "data/maps/AstralisAcademy/scripts.pory"
 	face_right
 	step_end
 
-# 331 "data/maps/AstralisAcademy/scripts.pory"
+# 337 "data/maps/AstralisAcademy/scripts.pory"
 FracturedMask_Movement_13:
-# 331 "data/maps/AstralisAcademy/scripts.pory"
+# 337 "data/maps/AstralisAcademy/scripts.pory"
 	face_down
-# 331 "data/maps/AstralisAcademy/scripts.pory"
+# 337 "data/maps/AstralisAcademy/scripts.pory"
 	emote_upset
 	step_end
 
-# 333 "data/maps/AstralisAcademy/scripts.pory"
+# 339 "data/maps/AstralisAcademy/scripts.pory"
 FracturedMask_Movement_14:
-# 333 "data/maps/AstralisAcademy/scripts.pory"
+# 339 "data/maps/AstralisAcademy/scripts.pory"
 	emote_exclamation_mark
-# 333 "data/maps/AstralisAcademy/scripts.pory"
+# 339 "data/maps/AstralisAcademy/scripts.pory"
 	delay_16
-# 333 "data/maps/AstralisAcademy/scripts.pory"
+# 339 "data/maps/AstralisAcademy/scripts.pory"
 	face_up
-# 333 "data/maps/AstralisAcademy/scripts.pory"
+# 339 "data/maps/AstralisAcademy/scripts.pory"
 	delay_16
-# 333 "data/maps/AstralisAcademy/scripts.pory"
+# 339 "data/maps/AstralisAcademy/scripts.pory"
 	delay_16
-# 333 "data/maps/AstralisAcademy/scripts.pory"
+# 339 "data/maps/AstralisAcademy/scripts.pory"
 	face_left
-# 333 "data/maps/AstralisAcademy/scripts.pory"
+# 339 "data/maps/AstralisAcademy/scripts.pory"
 	delay_16
-# 333 "data/maps/AstralisAcademy/scripts.pory"
+# 339 "data/maps/AstralisAcademy/scripts.pory"
 	delay_16
-# 333 "data/maps/AstralisAcademy/scripts.pory"
+# 339 "data/maps/AstralisAcademy/scripts.pory"
 	face_up
 	step_end
 
 TrialAnnouncement_Text_0:
-# 74 "data/maps/AstralisAcademy/scripts.pory"
+# 81 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Hi Xylar!\p"
 	.string "The Headmaster is making an\n"
 	.string "announcement right now.\p"
 	.string "Let's go together.$"
 
 TrialAnnouncement_Text_1:
-# 76 "data/maps/AstralisAcademy/scripts.pory"
+# 83 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Leave me alone.$"
 
 TrialAnnouncement_Text_2:
-# 78 "data/maps/AstralisAcademy/scripts.pory"
+# 85 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Come on, don't be shy.$"
 
 TrialAnnouncement_Text_3:
-# 94 "data/maps/AstralisAcademy/scripts.pory"
+# 101 "data/maps/AstralisAcademy/scripts.pory"
 	.string "Alistair$"
 
 TrialAnnouncement_Text_4:
-# 95 "data/maps/AstralisAcademy/scripts.pory"
+# 102 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}This academy values strength through\n"
 	.string "experience...\p"
 	.string "Before the semester begins, we must\n"
@@ -1446,37 +1460,37 @@ TrialAnnouncement_Text_4:
 	.string "opponent.$"
 
 TrialAnnouncement_Text_5:
-# 107 "data/maps/AstralisAcademy/scripts.pory"
+# 114 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}...$"
 
 TrialAnnouncement1_Text_0:
-# 122 "data/maps/AstralisAcademy/scripts.pory"
+# 128 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Guess that means you're battling.\p"
 	.string "Feeling nervous?$"
 
 TrialAnnouncement1_Text_1:
-# 124 "data/maps/AstralisAcademy/scripts.pory"
+# 130 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't care.$"
 
 TrialAnnouncement1_Text_2:
-# 127 "data/maps/AstralisAcademy/scripts.pory"
+# 133 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}You sure? This is your chance to show\n"
 	.string "everyone what you're made of.$"
 
 TrialAnnouncement1_Text_3:
-# 129 "data/maps/AstralisAcademy/scripts.pory"
+# 135 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}I'm not here for their approval.$"
 
 TrialAnnouncement1_Text_4:
-# 132 "data/maps/AstralisAcademy/scripts.pory"
+# 138 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Then why are you here?$"
 
 TrialAnnouncement1_Text_5:
-# 134 "data/maps/AstralisAcademy/scripts.pory"
+# 140 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}....$"
 
 TrialAnnouncement1_Text_6:
-# 143 "data/maps/AstralisAcademy/scripts.pory"
+# 149 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Attention, all first-year students...\p"
 	.string "The time has come to prove your\n"
 	.string "potential.\p"
@@ -1488,43 +1502,43 @@ TrialAnnouncement1_Text_6:
 	.string "two challengers.$"
 
 TrialAnnouncement1_Text_7:
-# 148 "data/maps/AstralisAcademy/scripts.pory"
+# 154 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Our first challenger,\p"
 	.string "Xylar, step forward.\p"
 	.string "Show us the strength that brought you\n"
 	.string "to this academy.$"
 
 TrialAnnouncement1_Text_8:
-# 160 "data/maps/AstralisAcademy/scripts.pory"
+# 166 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Xylaaar!, You can do it.$"
 
 TrialAnnouncement1_Text_9:
-# 163 "data/maps/AstralisAcademy/scripts.pory"
+# 169 "data/maps/AstralisAcademy/scripts.pory"
 	.string "Student 1$"
 
 TrialAnnouncement1_Text_10:
-# 164 "data/maps/AstralisAcademy/scripts.pory"
+# 170 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}What the..\p"
 	.string "Serena is cheering for him?$"
 
 TrialAnnouncement1_Text_11:
-# 167 "data/maps/AstralisAcademy/scripts.pory"
+# 173 "data/maps/AstralisAcademy/scripts.pory"
 	.string "Student 2$"
 
 TrialAnnouncement1_Text_12:
-# 168 "data/maps/AstralisAcademy/scripts.pory"
+# 174 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}That lucky bastard.$"
 
 TrialAnnouncement1_Text_13:
-# 171 "data/maps/AstralisAcademy/scripts.pory"
+# 177 "data/maps/AstralisAcademy/scripts.pory"
 	.string "Student 3$"
 
 TrialAnnouncement1_Text_14:
-# 172 "data/maps/AstralisAcademy/scripts.pory"
+# 178 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}I'm so jealous of him.$"
 
 TrialAnnouncement1_Text_15:
-# 178 "data/maps/AstralisAcademy/scripts.pory"
+# 184 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}And now, for our second challenger...\p"
 	.string "Damien Voss, who earned the title of\n"
 	.string "the strongest first-year through an\l"
@@ -1532,7 +1546,7 @@ TrialAnnouncement1_Text_15:
 	.string "entrance exam.$"
 
 TrialAnnouncement1_Text_16:
-# 184 "data/maps/AstralisAcademy/scripts.pory"
+# 190 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Hah, so I'm up against you?\p"
 	.string "The mystery student everyone's\n"
 	.string "whispering about?\p"
@@ -1540,139 +1554,139 @@ TrialAnnouncement1_Text_16:
 	.string "challenge.$"
 
 TrialAnnouncement1_Text_17:
-# 187 "data/maps/AstralisAcademy/scripts.pory"
+# 193 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY} Let this battle begin!$"
 
 TrialAnnouncement1_Text_18:
-# 208 "data/maps/AstralisAcademy/scripts.pory"
+# 214 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}That was… precise.$"
 
 TrialAnnouncement1_Text_19:
-# 210 "data/maps/AstralisAcademy/scripts.pory"
+# 216 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}He barely gave any commands… how did he\n"
 	.string "do that?$"
 
 TrialAnnouncement1_Text_20:
-# 215 "data/maps/AstralisAcademy/scripts.pory"
+# 221 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}And that concludes the match!\p"
 	.string "A well fought battle congratulations to\n"
 	.string "the winner!$"
 
 TrialAnnouncement1_Text_21:
-# 223 "data/maps/AstralisAcademy/scripts.pory"
+# 229 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}That was kinda impressive.\p"
 	.string "But you barely spoke to your Torchic.\p"
 	.string "No encouragement, no strategy\n"
 	.string "discussion. What's the deal?$"
 
 TrialAnnouncement1_Text_22:
-# 224 "data/maps/AstralisAcademy/scripts.pory"
+# 230 "data/maps/AstralisAcademy/scripts.pory"
 	.string "Xylar$"
 
 TrialAnnouncement1_Text_23:
-# 225 "data/maps/AstralisAcademy/scripts.pory"
+# 231 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't waste words.$"
 
 TrialAnnouncement1_Text_24:
-# 229 "data/maps/AstralisAcademy/scripts.pory"
+# 235 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}He fights like someone who's used to\n"
 	.string "surviving, not like a student trying to\l"
 	.string "prove himself.\p"
 	.string "Just what has this guy been through?$"
 
 FracturedMask_Text_0:
-# 253 "data/maps/AstralisAcademy/scripts.pory"
+# 259 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar, You're late.$"
 
 FracturedMask_Text_1:
-# 257 "data/maps/AstralisAcademy/scripts.pory"
+# 263 "data/maps/AstralisAcademy/scripts.pory"
 	.string "(Sigh)\p"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Listen Xylar, punctuality is key to\n"
 	.string "success.\p"
 	.string "You should know that.$"
 
 FracturedMask_Text_2:
-# 261 "data/maps/AstralisAcademy/scripts.pory"
+# 267 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Find your seat.$"
 
 FracturedMask_Text_3:
-# 273 "data/maps/AstralisAcademy/scripts.pory"
+# 279 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}So as I was saying.......$"
 
 FracturedMask_Text_4:
-# 277 "data/maps/AstralisAcademy/scripts.pory"
+# 283 "data/maps/AstralisAcademy/scripts.pory"
 	.string "Liam$"
 
 FracturedMask_Text_5:
-# 278 "data/maps/AstralisAcademy/scripts.pory"
+# 284 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Look at this guy. Acts like he's too\n"
 	.string "good to talk to us...$"
 
 FracturedMask_Text_6:
-# 279 "data/maps/AstralisAcademy/scripts.pory"
+# 285 "data/maps/AstralisAcademy/scripts.pory"
 	.string "Nerd$"
 
 FracturedMask_Text_7:
-# 280 "data/maps/AstralisAcademy/scripts.pory"
+# 286 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Yeah, Bet his family's even more messed\n"
 	.string "up.$"
 
 FracturedMask_Text_8:
-# 288 "data/maps/AstralisAcademy/scripts.pory"
+# 294 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}What's wrong, emo boy?\p"
 	.string "Did Daddy never teach you anything\n"
 	.string "about good manners?$"
 
 FracturedMask_Text_9:
-# 292 "data/maps/AstralisAcademy/scripts.pory"
+# 298 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}...What the fuck did you say?$"
 
 FracturedMask_Text_10:
-# 294 "data/maps/AstralisAcademy/scripts.pory"
+# 300 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}You deaf or something?\p"
 	.string "I asked whether your dad ever taught\n"
 	.string "you any manners.$"
 
 FracturedMask_Text_11:
-# 301 "data/maps/AstralisAcademy/scripts.pory"
+# 307 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Don't you dare say anything about my\n"
 	.string "dad with that filthy mouth of yours!$"
 
 FracturedMask_Text_12:
-# 310 "data/maps/AstralisAcademy/scripts.pory"
+# 316 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}You know NOTHING!\p"
 	.string "NOTHING AT ALL.\p"
 	.string "FUCK YOU.$"
 
 FracturedMask_Text_13:
-# 317 "data/maps/AstralisAcademy/scripts.pory"
+# 323 "data/maps/AstralisAcademy/scripts.pory"
 	.string "Prof.Elias$"
 
 FracturedMask_Text_14:
-# 318 "data/maps/AstralisAcademy/scripts.pory"
+# 324 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar, STOP!$"
 
 FracturedMask_Text_15:
-# 325 "data/maps/AstralisAcademy/scripts.pory"
+# 331 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Enough.$"
 
 FracturedMask_Text_16:
-# 329 "data/maps/AstralisAcademy/scripts.pory"
+# 335 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}We should call the nurse.\p"
 	.string "This boy is badly injured.$"
 
 FracturedMask_Text_17:
-# 336 "data/maps/AstralisAcademy/scripts.pory"
+# 342 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}I.......\p"
 	.string "I didn't.......$"
 
 FracturedMask_Text_18:
-# 341 "data/maps/AstralisAcademy/scripts.pory"
+# 347 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar!!\p"
 	.string "Hurry call the nurse.$"
 
 FracturedMask_Text_19:
-# 342 "data/maps/AstralisAcademy/scripts.pory"
+# 348 "data/maps/AstralisAcademy/scripts.pory"
 	.string "Xylar collapsed, throwing the room into\n"
 	.string "chaos.\p"
 	.string "Gasping for air, he hyperventilated,\n"
@@ -1682,13 +1696,13 @@ FracturedMask_Text_19:
 	.string "A few hours later...$"
 
 FracturedMask_Text_20:
-# 351 "data/maps/AstralisAcademy/scripts.pory"
+# 357 "data/maps/AstralisAcademy/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}My class is not here.$"
 
 damien::
-# 115 "data/maps/AstralisAcademy/scripts.pory"
+# 120 "data/maps/AstralisAcademy/scripts.pory"
 	.string "Damien$"
 
 damienlose::
-# 236 "data/maps/AstralisAcademy/scripts.pory"
+# 242 "data/maps/AstralisAcademy/scripts.pory"
 	.string "Tch… you just got lucky.$"

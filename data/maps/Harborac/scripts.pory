@@ -11,20 +11,15 @@ script ONHARBOR1 {
     playbgm(MUS_HG_KIMONO_GIRL_DANCE,FALSE)
     lock
     speakername(oldman)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}There you go, young man.\pI never understood why you chose to travel with this old man when there were better means of transport available.\pYou could've reached your destination on time, but I won't question your intentions.\pYou must've had your reasons."))
-     
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}There you go, young man.\pI never understood why you chose to travel with this old man when there were better means of transport available.\pYou could've reached your destination on time, but I won't question your intentions.\pYou must've had your reasons.")) 
     speakername(Xylar1)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}................."))
-     
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}.................")) 
     speakername(oldman)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Well here it is,\pThe Astralis Academy, the place where normal trainers become legends."))
-     
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Well here it is,\pThe Astralis Academy, the place where normal trainers become legends.")) 
     speakername(Xylar1)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}............."))
-     
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}.............")) 
     speakername(oldman)
-    msgbox(format("(His eyes...They aren't normal.)"),MSGBOX_AUTOCLOSE)
-     
+    msgbox(format("(His eyes...They aren't normal.)"),MSGBOX_AUTOCLOSE) 
     waitmessage
     fadescreen(FADE_TO_BLACK)
     playse(SE_RG_SS_ANNE_HORN)
@@ -35,7 +30,7 @@ script ONHARBOR1 {
     applymovement(0xFF,MOVE2)
     speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Legend?.... Become one?...\pI'm gonna destroy them all."))
-     
+    pausefakertc 
     fadedefaultbgm
     setvar(ACADEMY_START,3)
     release

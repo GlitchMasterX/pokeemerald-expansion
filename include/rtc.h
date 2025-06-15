@@ -6,6 +6,7 @@
 #include "config/overworld.h"
 #include "constants/rtc.h"
 
+
 extern struct Time gLocalTime;
 extern const s32 sNumDaysInMonths[MONTH_COUNT];
 
@@ -45,5 +46,6 @@ u8 GetDay(void);
 enum Weekday GetDayOfWeek(void);
 enum TimeOfDay TryIncrementTimeOfDay(enum TimeOfDay timeOfDay);
 enum TimeOfDay TryDecrementTimeOfDay(enum TimeOfDay timeOfDay);
+void UpdateSeasonOncePerMinute(void);
 
 #endif // GUARD_RTC_UTIL_H

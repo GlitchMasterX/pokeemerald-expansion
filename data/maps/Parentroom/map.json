@@ -11,44 +11,44 @@
   "allow_escaping": false,
   "allow_running": true,
   "show_map_name": false,
-  "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
   "object_events": [],
   "warp_events": [
     {
-      "dest_map": "MAP_LUXURAUPSTAIR",
-      "dest_warp_id": "1",
-      "elevation": 0,
       "x": 5,
-      "y": 9
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_LUXURAUPSTAIR",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [],
   "bg_events": [
     {
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "parent",
       "type": "sign",
       "x": 2,
-      "y": 4
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "parent"
     },
     {
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "parent",
       "type": "sign",
       "x": 2,
-      "y": 3
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "parent"
     },
     {
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "parent",
       "type": "sign",
       "x": 2,
-      "y": 2
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "parent"
     }
-  ]
+  ],
+  "floor_number": 0
 }

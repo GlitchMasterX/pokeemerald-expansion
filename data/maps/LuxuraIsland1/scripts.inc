@@ -47,7 +47,7 @@ forest::
 # 24 "data/maps/LuxuraIsland1/scripts.pory"
 	lock
 # 25 "data/maps/LuxuraIsland1/scripts.pory"
-	applymovement 5, exclam
+	applymovement 5, forest_Movement_0
 # 26 "data/maps/LuxuraIsland1/scripts.pory"
 	waitmovement 0
 # 27 "data/maps/LuxuraIsland1/scripts.pory"
@@ -850,6 +850,14 @@ m2:
 	face_right
 	step_end
 
+# 25 "data/maps/LuxuraIsland1/scripts.pory"
+forest_Movement_0:
+# 25 "data/maps/LuxuraIsland1/scripts.pory"
+	emote_exclamation_mark
+# 25 "data/maps/LuxuraIsland1/scripts.pory"
+	face_down
+	step_end
+
 # 274 "data/maps/LuxuraIsland1/scripts.pory"
 miraded_Movement_0:
 # 274 "data/maps/LuxuraIsland1/scripts.pory"
@@ -1006,7 +1014,7 @@ miraded_Text_21:
 
 miraded_Text_22:
 # 237 "data/maps/LuxuraIsland1/scripts.pory"
-	.string "{COLOR RED}{SHADOW LIGHT_GRAY}YEAH YEAH, make her explode like BOOM!\p"
+	.string "{COLOR RED}{SHADOW LIGHT_GRAY}YEAH YEAH, make her explode!\p"
 	.string "Make her bleed.\p"
 	.string "Make her scream.\p"
 	.string "Oh, I can already hear it.$"
