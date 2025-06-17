@@ -7,12 +7,12 @@ AstralisAcademy_Classroom_MapScripts::
 
 AstralisAcademy_Classroom_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 # 3 "data/maps/AstralisAcademy_Classroom/scripts.pory"
-	map_script_2 ACADEMY_START, 12, trial2
+	map_script_2 ACADEMY_START, 11, trial2
 	.2byte 0
 
 AstralisAcademy_Classroom_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 # 6 "data/maps/AstralisAcademy_Classroom/scripts.pory"
-	map_script_2 ACADEMY_START, 12, FracturedMask
+	map_script_2 ACADEMY_START, 11, FracturedMask
 	.2byte 0
 
 

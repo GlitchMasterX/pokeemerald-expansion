@@ -5,7 +5,6 @@ mapscripts AstralisAcademy_MapScripts {
 ]
 MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
 	ACADEMY_START,9:trial
-    ACADEMY_START,9:trial1
 ]
 }
 script fwdmonth {
@@ -45,6 +44,34 @@ script trial1 {
 }
 
 script trial {
+	clearflag(FLAG_TRIAL_SERENA)
+	addobject(20)
+	addobject(21)
+	addobject(22)
+	addobject(3)
+	addobject(6)
+	addobject(5)
+	addobject(2)
+	addobject(10)
+	setobjectxyperm(20,10,57)
+	setobjectxyperm(2,6,55)
+	setobjectxyperm(3,6,59)
+	setobjectxyperm(5,4,53)
+	setobjectxyperm(10,4,57)
+	setobjectxyperm(6,6,51)
+	setobjectmovementtype(3,MOVEMENT_TYPE_FACE_RIGHT)
+	setobjectmovementtype(5,MOVEMENT_TYPE_FACE_RIGHT)
+	setobjectmovementtype(6,MOVEMENT_TYPE_FACE_RIGHT)
+	setobjectmovementtype(2,MOVEMENT_TYPE_FACE_RIGHT)
+	setobjectmovementtype(10,MOVEMENT_TYPE_FACE_RIGHT)
+	createvobject(OBJ_EVENT_GFX_AROMA,24,6,53,4,DIR_EAST)
+	createvobject(OBJ_EVENT_GFX_SELENE,25,6,57,4,DIR_EAST)
+	createvobject(OBJ_EVENT_GFX_TENNIS,26,4,55,4,DIR_EAST)
+	createvobject(OBJ_EVENT_GFX_MAN_2,27,4,59,4,DIR_EAST)
+}
+
+script TrialAnnouncement {  
+    lock
 	addobject(3)
 	addobject(6)
 	addobject(5)
@@ -65,10 +92,6 @@ script trial {
 	createvobject(OBJ_EVENT_GFX_MAN_2,27,19,22,4,DIR_NORTH)
 	createvobject(OBJ_EVENT_GFX_LASS,28,17,22,4,DIR_NORTH)
 	createvobject(OBJ_EVENT_GFX_NERD,29,22,22,4,DIR_NORTH)
-}
-
-script TrialAnnouncement {  
-    lock
 	clearflag(FLAG_TRIAL_SERENA)
 	addobject(20)
 	applymovement(0xFF,moves(walk_left*4
@@ -115,7 +138,7 @@ script TrialAnnouncement {
     waitmessage
 	applymovement(0xFF,moves(walk_down*4))
 	applymovement(20,moves(face_down))
-	warp_continue_script(MAP_ASTRALIS_ACADEMY,10,56,TrialAnnouncement1,TRUE) 
+	warp_continue_script(MAP_ASTRALIS_ACADEMY,10,45,TrialAnnouncement1,TRUE) 
     }  
 text damien {
 	format("Damien")	
@@ -123,7 +146,9 @@ text damien {
 
 script TrialAnnouncement1 {
 	fadescreen(FADE_FROM_BLACK)
-    playbgm(MUS_HG_LYRA,FALSE)    
+	applymovement(0xFF,moves(walk_down*11))
+	waitmovement(0)
+	playbgm(MUS_HG_LYRA,FALSE)    
     speakername(serena)  
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Guess that means you're battling.\pFeeling nervous?"), MSGBOX_AUTOCLOSE)  
     speakername(Xylar1)  

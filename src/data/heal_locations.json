@@ -5,7 +5,7 @@
       "map": "MAP_DORMINDOOR1",
       "x": 4,
       "y": 2,
-      "respawn_map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
+      "respawn_map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
       "respawn_x": 2,
       "respawn_y": 7,
       "respawn_npc": "LOCALID_PLAYERS_HOUSE_1F_MOM"
@@ -25,8 +25,7 @@
       "map": "MAP_ASTRALIS_ACADEMY",
       "x": 20,
       "y": 17,
-      "respawn_map": "MAP_PETALBURG_CITY_POKEMON_CENTER_1F",
-      "respawn_npc": "LOCALID_PETALBURG_NURSE"
+      "respawn_map": "MAP_ASTRALIS_ACADEMY_POKEMON_CENTER"
     },
     {
       "id": "HEAL_LOCATION_SLATEPORT_CITY",
@@ -97,7 +96,7 @@
       "map": "MAP_LITTLEROOT_TOWN",
       "x": 5,
       "y": 9,
-      "respawn_map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
+      "respawn_map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
       "respawn_x": 2,
       "respawn_y": 7,
       "respawn_npc": "LOCALID_PLAYERS_HOUSE_1F_MOM"
@@ -149,16 +148,14 @@
       "map": "MAP_GRANITE_CAVE_1F",
       "x": 12,
       "y": 10,
-      "respawn_map": "MAP_GRANITE_CAVE_1F",
-      "respawn_npc": "LOCALID_VERDANTURF_NURSE"
+      "respawn_map": "MAP_GRANITE_CAVE_1F"
     },
     {
       "id": "HEAL_LOCATION_LUXURA_ISLAND",
       "map": "MAP_LUXURA_ISLAND",
       "x": 33,
       "y": 18,
-      "respawn_map": "MAP_LUXURA_ISLAND",
-      "respawn_npc": "LOCALID_PACIFIDLOG_NURSE"
+      "respawn_map": "MAP_LUXURA_ISLAND"
     },
     {
       "id": "HEAL_LOCATION_EVER_GRANDE_CITY_POKEMON_LEAGUE",

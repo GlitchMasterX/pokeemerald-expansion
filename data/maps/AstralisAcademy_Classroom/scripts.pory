@@ -1,9 +1,9 @@
 mapscripts AstralisAcademy_Classroom_MapScripts{
 MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
-	ACADEMY_START,12:trial2
+	ACADEMY_START,11:trial2
 ]
 MAP_SCRIPT_ON_FRAME_TABLE[
-	ACADEMY_START,12:FracturedMask
+	ACADEMY_START,11:FracturedMask
 ]
 }
 script trial2 {
