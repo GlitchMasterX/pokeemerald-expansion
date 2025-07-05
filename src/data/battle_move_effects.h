@@ -1255,7 +1255,7 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
 
     [EFFECT_MIRACLE_EYE] =
     {
-        .battleScript = BattleScript_EffectMircleEye,
+        .battleScript = BattleScript_EffectMiracleEye,
         .battleTvScore = 0, // TODO: Assign points
         .encourageEncore = TRUE,
     },
@@ -2210,6 +2210,12 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
     [EFFECT_SMACK_DOWN] =
     {
         .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_LIFE_DEW] =
+    {
+        .battleScript = BattleScript_EffectLifeDew,
         .battleTvScore = 0, // TODO: Assign points
     },
 };
