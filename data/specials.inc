@@ -566,3 +566,4 @@ gSpecials::
     def_special DrawMugshot
     def_special ClearMugshot
 	def_special SetRoofBirds
+	def_special SetHiddenNature
