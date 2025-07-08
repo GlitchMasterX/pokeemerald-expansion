@@ -1651,7 +1651,9 @@ bool32 MapHasNaturalLight(u8 mapType)
          && (mapType == MAP_TYPE_TOWN
           || mapType == MAP_TYPE_CITY
           || mapType == MAP_TYPE_ROUTE
-          || mapType == MAP_TYPE_OCEAN_ROUTE));
+          || mapType == MAP_TYPE_OCEAN_ROUTE
+          || mapType == MAP_TYPE_UNDERGROUND));
+
 }
 
 bool32 CurrentMapHasShadows(void)
@@ -1705,15 +1707,27 @@ void UpdatePalettesWithTime(u32 palettes)
     palettes &= PALETTES_MAP | PALETTES_OBJECTS; // Don't blend UI pals
     if (!palettes)
         return;
-    TimeMixPalettes(palettes, gPlttBufferUnfaded, gPlttBufferFaded, &gTimeBlend.startBlend, &gTimeBlend.endBlend, gTimeBlend.weight);
-}
+    if (gMapHeader.mapType == MAP_TYPE_UNDERGROUND)
+    {
+        TimeMixPalettes(palettes, gPlttBufferUnfaded, gPlttBufferFaded, (struct BlendSettings *)&gTimeOfDayBlend[TIME_NIGHT], (struct BlendSettings *)&gTimeOfDayBlend[TIME_NIGHT], 256);
+        return;
+    }
+        TimeMixPalettes(palettes, gPlttBufferUnfaded, gPlttBufferFaded, &gTimeBlend.startBlend, &gTimeBlend.endBlend, gTimeBlend.weight);}
 
 u8 UpdateSpritePaletteWithTime(u8 paletteNum)
 {
-    if (MapHasNaturalLight(gMapHeader.mapType)
-     && !IS_BLEND_IMMUNE_TAG(GetSpritePaletteTagByPaletteNum(paletteNum)))
-        TimeMixPalettes(1, &gPlttBufferUnfaded[OBJ_PLTT_ID(paletteNum)], &gPlttBufferFaded[OBJ_PLTT_ID(paletteNum)], &gTimeBlend.startBlend, &gTimeBlend.endBlend, gTimeBlend.weight);
-    return paletteNum;
+     if (!IS_BLEND_IMMUNE_TAG(GetSpritePaletteTagByPaletteNum(paletteNum)))
+    {
+        if (gMapHeader.mapType == MAP_TYPE_UNDERGROUND)
+        {
+            TimeMixPalettes(1, &gPlttBufferUnfaded[OBJ_PLTT_ID(paletteNum)], &gPlttBufferFaded[OBJ_PLTT_ID(paletteNum)], (struct BlendSettings *)&gTimeOfDayBlend[TIME_NIGHT], (struct BlendSettings *)&gTimeOfDayBlend[TIME_NIGHT], 256);
+        }
+        else if (MapHasNaturalLight(gMapHeader.mapType))
+        {
+            TimeMixPalettes(1, &gPlttBufferUnfaded[OBJ_PLTT_ID(paletteNum)], &gPlttBufferFaded[OBJ_PLTT_ID(paletteNum)], &gTimeBlend.startBlend, &gTimeBlend.endBlend, gTimeBlend.weight);
+        }   
+    }
+        return paletteNum;
 }
 
 static void OverworldBasic(void)
@@ -1758,6 +1772,8 @@ void CB2_Overworld(void)
     if (fading)
         SetVBlankCallback(NULL);
     OverworldBasic();
+    if (gMapHeader.mapType == MAP_TYPE_UNDERGROUND)
+        UpdatePalettesWithTime(PALETTES_ALL);
     if (fading)
     {
         SetFieldVBlankCallback();

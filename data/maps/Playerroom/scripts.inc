@@ -5,287 +5,357 @@ Playerroom_MapScripts::
 # 3 "data/maps/Playerroom/scripts.pory"
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Playerroom_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 # 4 "data/maps/Playerroom/scripts.pory"
-
+    map_script MAP_SCRIPT_ON_TRANSITION, playerroom
 # 5 "data/maps/Playerroom/scripts.pory"
 	.byte 0
 # 6 "data/maps/Playerroom/scripts.pory"
 	Playerroom_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 # 7 "data/maps/Playerroom/scripts.pory"
-     map_script_2 LUXURA_TRAGEDY, 1, mira
+     map_script_2 LUXURA_TRAGEDY, 0, mira
 # 8 "data/maps/Playerroom/scripts.pory"
 	 map_script_2 LUXURA_TRAGEDY, 5, metdad
 # 9 "data/maps/Playerroom/scripts.pory"
 	.2byte 0
 
-mira::
+playerroom::
 # 12 "data/maps/Playerroom/scripts.pory"
-	lockall
-	fwdmonth 1
+	goto_if_set FLAG_UNUSED_0x0E9, playerroom_1
+	return
+
+playerroom_1:
 # 13 "data/maps/Playerroom/scripts.pory"
-	msgbox mira_Text_0
-# 14 "data/maps/Playerroom/scripts.pory"
-	special SpawnCameraObject
-# 15 "data/maps/Playerroom/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, camera1
-# 16 "data/maps/Playerroom/scripts.pory"
-	applymovement 1, miramove
+	special Overworld_PlaySpecialMapMusic
+	return
+
+
+mira::
 # 17 "data/maps/Playerroom/scripts.pory"
-	waitmovement 0
+	lockall
 # 18 "data/maps/Playerroom/scripts.pory"
-	speakername name4
+	fwdmonth 1
 # 19 "data/maps/Playerroom/scripts.pory"
-	msgbox mira_Text_1
+	playse SE_NOT_EFFECTIVE
 # 20 "data/maps/Playerroom/scripts.pory"
-	removefieldmugshot
+	waitse
 # 21 "data/maps/Playerroom/scripts.pory"
-	closemessage
+	playse SE_NOT_EFFECTIVE
 # 22 "data/maps/Playerroom/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, camera
+	waitse
 # 23 "data/maps/Playerroom/scripts.pory"
-	applymovement 1, miramove1
+	playse SE_NOT_EFFECTIVE
 # 24 "data/maps/Playerroom/scripts.pory"
-	waitmovement 0
+	waitse
 # 25 "data/maps/Playerroom/scripts.pory"
-	special RemoveCameraObject
-# 26 "data/maps/Playerroom/scripts.pory"
-	speakername name4
-# 27 "data/maps/Playerroom/scripts.pory"
-	msgbox mira_Text_2
-# 28 "data/maps/Playerroom/scripts.pory"
-	closemessage
-# 29 "data/maps/Playerroom/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, xylar1
-# 30 "data/maps/Playerroom/scripts.pory"
-	speakername Xylar1
-# 31 "data/maps/Playerroom/scripts.pory"
-	msgbox mira_Text_3
-# 32 "data/maps/Playerroom/scripts.pory"
 	applymovement 0xFF, mira_Movement_0
+# 26 "data/maps/Playerroom/scripts.pory"
+	waitmovement 0
+# 27 "data/maps/Playerroom/scripts.pory"
+	playse SE_NOT_EFFECTIVE
+# 28 "data/maps/Playerroom/scripts.pory"
+	waitse
+# 29 "data/maps/Playerroom/scripts.pory"
+	playse SE_NOT_EFFECTIVE
+# 30 "data/maps/Playerroom/scripts.pory"
+	waitse
+# 31 "data/maps/Playerroom/scripts.pory"
+	playse SE_NOT_EFFECTIVE
+# 32 "data/maps/Playerroom/scripts.pory"
+	waitse
 # 33 "data/maps/Playerroom/scripts.pory"
-	waitbuttonpress
+	special SpawnCameraObject
 # 34 "data/maps/Playerroom/scripts.pory"
-	speakername name4
+	applymovement OBJ_EVENT_ID_CAMERA, camera1
 # 35 "data/maps/Playerroom/scripts.pory"
-	msgbox mira_Text_4
+	applymovement 0xFF, mira_Movement_1
 # 36 "data/maps/Playerroom/scripts.pory"
-	waitmessage
+	waitmovement 0
 # 37 "data/maps/Playerroom/scripts.pory"
-	playse SE_PIN
+	playse SE_DOOR
 # 38 "data/maps/Playerroom/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, xylar
+	waitse
 # 39 "data/maps/Playerroom/scripts.pory"
-	speakername Xylar1
+	applymovement 1, miramove
 # 40 "data/maps/Playerroom/scripts.pory"
-	msgbox mira_Text_5
+	waitmovement 0
 # 41 "data/maps/Playerroom/scripts.pory"
-	removefieldmugshot
+	playbgm MUS_LITTLEROOT, TRUE
 # 42 "data/maps/Playerroom/scripts.pory"
 	speakername name4
 # 43 "data/maps/Playerroom/scripts.pory"
-	msgbox mira_Text_6
+	msgbox mira_Text_0
 # 44 "data/maps/Playerroom/scripts.pory"
-	speakername Xylar1
-# 45 "data/maps/Playerroom/scripts.pory"
-	msgbox mira_Text_7
-# 46 "data/maps/Playerroom/scripts.pory"
 	removefieldmugshot
-# 47 "data/maps/Playerroom/scripts.pory"
+# 45 "data/maps/Playerroom/scripts.pory"
 	closemessage
+# 46 "data/maps/Playerroom/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, camera
+# 47 "data/maps/Playerroom/scripts.pory"
+	applymovement 1, miramove1
 # 48 "data/maps/Playerroom/scripts.pory"
-	applymovement 1, miramove2
-# 49 "data/maps/Playerroom/scripts.pory"
 	waitmovement 0
+# 49 "data/maps/Playerroom/scripts.pory"
+	special RemoveCameraObject
 # 50 "data/maps/Playerroom/scripts.pory"
-	removeobject 1
+	speakername name4
 # 51 "data/maps/Playerroom/scripts.pory"
-	releaseall
+	msgbox mira_Text_1
 # 52 "data/maps/Playerroom/scripts.pory"
-	setflag FLAG_UNUSED_0x0E9
+	closemessage
 # 53 "data/maps/Playerroom/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, xylar1
+# 54 "data/maps/Playerroom/scripts.pory"
+	speakername Xylar1
+# 55 "data/maps/Playerroom/scripts.pory"
+	msgbox mira_Text_2
+# 56 "data/maps/Playerroom/scripts.pory"
+	applymovement 0xFF, mira_Movement_2
+# 57 "data/maps/Playerroom/scripts.pory"
+	waitbuttonpress
+# 58 "data/maps/Playerroom/scripts.pory"
+	speakername name4
+# 59 "data/maps/Playerroom/scripts.pory"
+	msgbox mira_Text_3
+# 60 "data/maps/Playerroom/scripts.pory"
+	waitmessage
+# 61 "data/maps/Playerroom/scripts.pory"
+	playse SE_PIN
+# 62 "data/maps/Playerroom/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, xylar
+# 63 "data/maps/Playerroom/scripts.pory"
+	speakername Xylar1
+# 64 "data/maps/Playerroom/scripts.pory"
+	msgbox mira_Text_4
+# 65 "data/maps/Playerroom/scripts.pory"
+	removefieldmugshot
+# 66 "data/maps/Playerroom/scripts.pory"
+	speakername name4
+# 67 "data/maps/Playerroom/scripts.pory"
+	msgbox mira_Text_5
+# 68 "data/maps/Playerroom/scripts.pory"
+	speakername Xylar1
+# 69 "data/maps/Playerroom/scripts.pory"
+	msgbox mira_Text_6
+# 70 "data/maps/Playerroom/scripts.pory"
+	removefieldmugshot
+# 71 "data/maps/Playerroom/scripts.pory"
+	closemessage
+# 72 "data/maps/Playerroom/scripts.pory"
+	applymovement 1, miramove2
+# 73 "data/maps/Playerroom/scripts.pory"
+	waitmovement 0
+# 74 "data/maps/Playerroom/scripts.pory"
+	removeobject 1
+# 75 "data/maps/Playerroom/scripts.pory"
+	releaseall
+# 76 "data/maps/Playerroom/scripts.pory"
+	setflag FLAG_UNUSED_0x0E9
+# 77 "data/maps/Playerroom/scripts.pory"
 	setvar LUXURA_TRAGEDY, 2
 	return
 
 
-# 56 "data/maps/Playerroom/scripts.pory"
+# 80 "data/maps/Playerroom/scripts.pory"
 miramove:
-# 57 "data/maps/Playerroom/scripts.pory"
+# 81 "data/maps/Playerroom/scripts.pory"
 	face_up
-# 58 "data/maps/Playerroom/scripts.pory"
+# 82 "data/maps/Playerroom/scripts.pory"
 	set_visible
 	step_end
 
-# 61 "data/maps/Playerroom/scripts.pory"
+# 85 "data/maps/Playerroom/scripts.pory"
 miramove2:
-# 62 "data/maps/Playerroom/scripts.pory"
+# 86 "data/maps/Playerroom/scripts.pory"
 	emote_happy
-# 63 "data/maps/Playerroom/scripts.pory"
+# 87 "data/maps/Playerroom/scripts.pory"
 	walk_right
-# 63 "data/maps/Playerroom/scripts.pory"
+# 87 "data/maps/Playerroom/scripts.pory"
 	walk_right
-# 64 "data/maps/Playerroom/scripts.pory"
+# 88 "data/maps/Playerroom/scripts.pory"
 	walk_down
-# 64 "data/maps/Playerroom/scripts.pory"
+# 88 "data/maps/Playerroom/scripts.pory"
 	walk_down
-# 64 "data/maps/Playerroom/scripts.pory"
+# 88 "data/maps/Playerroom/scripts.pory"
 	walk_down
-# 64 "data/maps/Playerroom/scripts.pory"
+# 88 "data/maps/Playerroom/scripts.pory"
 	walk_down
 	step_end
 
-# 67 "data/maps/Playerroom/scripts.pory"
+# 91 "data/maps/Playerroom/scripts.pory"
 miramove1:
-# 68 "data/maps/Playerroom/scripts.pory"
+# 92 "data/maps/Playerroom/scripts.pory"
 	walk_up
-# 68 "data/maps/Playerroom/scripts.pory"
+# 92 "data/maps/Playerroom/scripts.pory"
 	walk_up
-# 68 "data/maps/Playerroom/scripts.pory"
+# 92 "data/maps/Playerroom/scripts.pory"
 	walk_up
-# 68 "data/maps/Playerroom/scripts.pory"
+# 92 "data/maps/Playerroom/scripts.pory"
 	walk_up
-# 69 "data/maps/Playerroom/scripts.pory"
+# 93 "data/maps/Playerroom/scripts.pory"
 	walk_left
-# 69 "data/maps/Playerroom/scripts.pory"
+# 93 "data/maps/Playerroom/scripts.pory"
 	walk_left
-# 70 "data/maps/Playerroom/scripts.pory"
+# 94 "data/maps/Playerroom/scripts.pory"
 	emote_upset
 	step_end
 
-# 72 "data/maps/Playerroom/scripts.pory"
+# 96 "data/maps/Playerroom/scripts.pory"
 xylar:
-# 73 "data/maps/Playerroom/scripts.pory"
+# 97 "data/maps/Playerroom/scripts.pory"
 	emote_exclamation_mark
-# 74 "data/maps/Playerroom/scripts.pory"
+# 98 "data/maps/Playerroom/scripts.pory"
 	face_right
 	step_end
 
-# 76 "data/maps/Playerroom/scripts.pory"
+# 100 "data/maps/Playerroom/scripts.pory"
 xylar1:
-# 77 "data/maps/Playerroom/scripts.pory"
+# 101 "data/maps/Playerroom/scripts.pory"
 	delay_1
-# 78 "data/maps/Playerroom/scripts.pory"
+# 102 "data/maps/Playerroom/scripts.pory"
 	face_left
 	step_end
 
-# 84 "data/maps/Playerroom/scripts.pory"
+# 108 "data/maps/Playerroom/scripts.pory"
 camera1:
-# 85 "data/maps/Playerroom/scripts.pory"
+# 109 "data/maps/Playerroom/scripts.pory"
 	delay_2
-# 86 "data/maps/Playerroom/scripts.pory"
+# 110 "data/maps/Playerroom/scripts.pory"
 	walk_down
-# 86 "data/maps/Playerroom/scripts.pory"
+# 110 "data/maps/Playerroom/scripts.pory"
 	walk_down
-# 86 "data/maps/Playerroom/scripts.pory"
+# 110 "data/maps/Playerroom/scripts.pory"
 	walk_down
-# 86 "data/maps/Playerroom/scripts.pory"
+# 110 "data/maps/Playerroom/scripts.pory"
 	walk_down
 	step_end
 
-# 88 "data/maps/Playerroom/scripts.pory"
+# 112 "data/maps/Playerroom/scripts.pory"
 camera:
-# 89 "data/maps/Playerroom/scripts.pory"
+# 113 "data/maps/Playerroom/scripts.pory"
 	walk_up
-# 89 "data/maps/Playerroom/scripts.pory"
+# 113 "data/maps/Playerroom/scripts.pory"
 	walk_up
-# 89 "data/maps/Playerroom/scripts.pory"
+# 113 "data/maps/Playerroom/scripts.pory"
 	walk_up
-# 89 "data/maps/Playerroom/scripts.pory"
+# 113 "data/maps/Playerroom/scripts.pory"
 	walk_up
 	step_end
 
 clock::
-# 93 "data/maps/Playerroom/scripts.pory"
+# 117 "data/maps/Playerroom/scripts.pory"
 	lockall
-# 94 "data/maps/Playerroom/scripts.pory"
+# 118 "data/maps/Playerroom/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, notp
-# 95 "data/maps/Playerroom/scripts.pory"
+# 119 "data/maps/Playerroom/scripts.pory"
 	msgbox clock_Text_0
-# 96 "data/maps/Playerroom/scripts.pory"
+# 120 "data/maps/Playerroom/scripts.pory"
 	setflag FLAG_UNUSED_0x496
-# 97 "data/maps/Playerroom/scripts.pory"
+# 121 "data/maps/Playerroom/scripts.pory"
 	releaseall
 	return
 
 
-# 99 "data/maps/Playerroom/scripts.pory"
+# 123 "data/maps/Playerroom/scripts.pory"
 notp:
-# 100 "data/maps/Playerroom/scripts.pory"
+# 124 "data/maps/Playerroom/scripts.pory"
 	walk_up
-# 100 "data/maps/Playerroom/scripts.pory"
+# 124 "data/maps/Playerroom/scripts.pory"
 	walk_up
 	step_end
 
 guest::
-# 104 "data/maps/Playerroom/scripts.pory"
+# 128 "data/maps/Playerroom/scripts.pory"
 	lockall
-# 105 "data/maps/Playerroom/scripts.pory"
+# 129 "data/maps/Playerroom/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, not
-# 106 "data/maps/Playerroom/scripts.pory"
+# 130 "data/maps/Playerroom/scripts.pory"
 	msgbox guest_Text_0
-# 107 "data/maps/Playerroom/scripts.pory"
+# 131 "data/maps/Playerroom/scripts.pory"
 	releaseall
 	return
 
 
-# 109 "data/maps/Playerroom/scripts.pory"
+# 133 "data/maps/Playerroom/scripts.pory"
 not:
-# 110 "data/maps/Playerroom/scripts.pory"
+# 134 "data/maps/Playerroom/scripts.pory"
 	walk_right
 	step_end
 
 parent::
-# 114 "data/maps/Playerroom/scripts.pory"
+# 138 "data/maps/Playerroom/scripts.pory"
 	lockall
-# 115 "data/maps/Playerroom/scripts.pory"
+# 139 "data/maps/Playerroom/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, not
-# 116 "data/maps/Playerroom/scripts.pory"
+# 140 "data/maps/Playerroom/scripts.pory"
 	msgbox parent_Text_0
-# 117 "data/maps/Playerroom/scripts.pory"
+# 141 "data/maps/Playerroom/scripts.pory"
 	releaseall
 	return
 
 
 metdad::
-# 120 "data/maps/Playerroom/scripts.pory"
+# 144 "data/maps/Playerroom/scripts.pory"
 	lockall
-# 121 "data/maps/Playerroom/scripts.pory"
+# 145 "data/maps/Playerroom/scripts.pory"
 	msgbox metdad_Text_0
-# 122 "data/maps/Playerroom/scripts.pory"
+# 146 "data/maps/Playerroom/scripts.pory"
 	releaseall
-# 123 "data/maps/Playerroom/scripts.pory"
+# 147 "data/maps/Playerroom/scripts.pory"
 	setvar LUXURA_TRAGEDY, 6
 	return
 
 
-# 32 "data/maps/Playerroom/scripts.pory"
+# 25 "data/maps/Playerroom/scripts.pory"
 mira_Movement_0:
-# 32 "data/maps/Playerroom/scripts.pory"
+# 25 "data/maps/Playerroom/scripts.pory"
+	delay_16
+# 25 "data/maps/Playerroom/scripts.pory"
+	delay_16
+# 25 "data/maps/Playerroom/scripts.pory"
+	delay_16
+# 25 "data/maps/Playerroom/scripts.pory"
+	delay_16
+# 25 "data/maps/Playerroom/scripts.pory"
+	delay_16
+# 25 "data/maps/Playerroom/scripts.pory"
+	delay_16
+	step_end
+
+# 35 "data/maps/Playerroom/scripts.pory"
+mira_Movement_1:
+# 35 "data/maps/Playerroom/scripts.pory"
+	delay_16
+# 35 "data/maps/Playerroom/scripts.pory"
+	delay_16
+# 35 "data/maps/Playerroom/scripts.pory"
+	delay_16
+	step_end
+
+# 56 "data/maps/Playerroom/scripts.pory"
+mira_Movement_2:
+# 56 "data/maps/Playerroom/scripts.pory"
 	delay_16
 	step_end
 
 mira_Text_0:
-# 13 "data/maps/Playerroom/scripts.pory"
-	.string "KNOCK..KNOCK$"
-
-mira_Text_1:
-# 19 "data/maps/Playerroom/scripts.pory"
+# 43 "data/maps/Playerroom/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, good morning. It's time\n"
 	.string "for breakfast. Lord Aurther and Lady\l"
 	.string "Elysia are waiting for you at the table.$"
 
-mira_Text_2:
-# 27 "data/maps/Playerroom/scripts.pory"
+mira_Text_1:
+# 51 "data/maps/Playerroom/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Still in bed, I see? You know you can't\n"
 	.string "stay there all day, young master. Come\l"
 	.string "now, you wouldn't want to keep Lord\l"
 	.string "Aurther and Lady Elysia waiting, would\l"
 	.string "you?$"
 
-mira_Text_3:
-# 31 "data/maps/Playerroom/scripts.pory"
+mira_Text_2:
+# 55 "data/maps/Playerroom/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SPECIAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Umm........$"
 
-mira_Text_4:
-# 35 "data/maps/Playerroom/scripts.pory"
+mira_Text_3:
+# 59 "data/maps/Playerroom/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SMILE}{COLOR RED}{SHADOW LIGHT_GRAY}Up with you, Master Xylar. If you don't\n"
 	.string "get up soon, I'm pulling the covers off\l"
 	.string "myself, don't make me do it.\p"
@@ -293,44 +363,44 @@ mira_Text_4:
 	.string "morning. You don't want them getting\l"
 	.string "cold, do you?$"
 
-mira_Text_5:
-# 40 "data/maps/Playerroom/scripts.pory"
+mira_Text_4:
+# 64 "data/maps/Playerroom/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Pancakes? But I thought Dad said I\n"
 	.string "wasn't allowed… He always forbids it.$"
 
-mira_Text_6:
-# 43 "data/maps/Playerroom/scripts.pory"
+mira_Text_5:
+# 67 "data/maps/Playerroom/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Ah, yes, Lord Aurther did mention that.\n"
 	.string "But Lady Elysia insisted it was alright\l"
 	.string "this morning. She thought it might be\l"
 	.string "just the thing to brighten your day.$"
 
-mira_Text_7:
-# 45 "data/maps/Playerroom/scripts.pory"
+mira_Text_6:
+# 69 "data/maps/Playerroom/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}I'll be there in a sec.$"
 
 clock_Text_0:
-# 95 "data/maps/Playerroom/scripts.pory"
+# 119 "data/maps/Playerroom/scripts.pory"
 	.string "The clock isn't working, i should fix it\n"
 	.string "before going.$"
 
 guest_Text_0:
-# 106 "data/maps/Playerroom/scripts.pory"
+# 130 "data/maps/Playerroom/scripts.pory"
 	.string "I can't sleep here, this bed is for\n"
 	.string "guests not for me.$"
 
 parent_Text_0:
-# 116 "data/maps/Playerroom/scripts.pory"
+# 140 "data/maps/Playerroom/scripts.pory"
 	.string "I can't sleep here, this bed is for Mom\n"
 	.string "and Dad,not me$"
 
 metdad_Text_0:
-# 121 "data/maps/Playerroom/scripts.pory"
+# 145 "data/maps/Playerroom/scripts.pory"
 	.string "I should check on Dad.\p"
 	.string "He's probably busy with his work.\p"
 	.string "(He usually works downstairs, in the\n"
 	.string "first room on the left.)$"
 
 Xylar1::
-# 80 "data/maps/Playerroom/scripts.pory"
+# 104 "data/maps/Playerroom/scripts.pory"
 	.string "Xylar$"

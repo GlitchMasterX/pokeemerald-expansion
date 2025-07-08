@@ -1,0 +1,148 @@
+raw `
+Playerroom_MapScripts::
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Playerroom_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
+    map_script MAP_SCRIPT_ON_TRANSITION, playerroom
+	.byte 0
+	Playerroom_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+     map_script_2 LUXURA_TRAGEDY, 0, mira
+	 map_script_2 LUXURA_TRAGEDY, 5, metdad
+	.2byte 0
+`
+script playerroom {
+	if(flag(FLAG_UNUSED_0x0E9)){
+		special(Overworld_PlaySpecialMapMusic)
+	}
+}
+script mira{
+	lockall
+	fwdmonth(1)
+	playse(SE_NOT_EFFECTIVE)
+	waitse
+	playse(SE_NOT_EFFECTIVE)
+	waitse
+	playse(SE_NOT_EFFECTIVE)
+	waitse
+	applymovement(0xFF,moves(delay_16 delay_16 delay_16 delay_16 delay_16 delay_16))
+	waitmovement(0)
+	playse(SE_NOT_EFFECTIVE)
+	waitse
+	playse(SE_NOT_EFFECTIVE)
+	waitse
+	playse(SE_NOT_EFFECTIVE)
+	waitse
+	special(SpawnCameraObject)
+	applymovement(OBJ_EVENT_ID_CAMERA,camera1)
+	applymovement(0xFF,moves(delay_16 delay_16 delay_16))
+	waitmovement(0)
+	playse(SE_DOOR)
+	waitse
+	applymovement (1,miramove)
+	waitmovement(0)
+	playbgm(MUS_LITTLEROOT,TRUE)
+	speakername (name4)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, good morning. It's time for breakfast. Lord Aurther and Lady Elysia are waiting for you at the table."))
+	removefieldmugshot
+	closemessage
+	applymovement(OBJ_EVENT_ID_CAMERA,camera)
+	applymovement (1,miramove1)
+	waitmovement(0)
+	special(RemoveCameraObject)
+	speakername(name4)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Still in bed, I see? You know you can't stay there all day, young master. Come now, you wouldn't want to keep Lord Aurther and Lady Elysia waiting, would you?"))	 
+	closemessage
+	applymovement(OBJ_EVENT_ID_PLAYER,xylar1)
+	speakername(Xylar1)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SPECIAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Umm........"))
+	applymovement(0xFF,moves(delay_16))
+	waitbuttonpress 
+	speakername (name4)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SMILE}{COLOR RED}{SHADOW LIGHT_GRAY}Up with you, Master Xylar. If you don't get up soon, I'm pulling the covers off myself, don't make me do it.\pAnd I made your favorite pancakes this morning. You don't want them getting cold, do you?"))
+	waitmessage
+	playse(SE_PIN)
+	applymovement(OBJ_EVENT_ID_PLAYER,xylar)
+	speakername(Xylar1)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Pancakes? But I thought Dad said I wasn't allowed… He always forbids it."))  
+	removefieldmugshot
+	speakername(name4)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Ah, yes, Lord Aurther did mention that. But Lady Elysia insisted it was alright this morning. She thought it might be just the thing to brighten your day.")) 
+	speakername(Xylar1)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}I'll be there in a sec."))
+	removefieldmugshot 
+	closemessage
+	applymovement(1,miramove2)
+    waitmovement(0)
+	removeobject (1)
+	releaseall
+	setflag(FLAG_UNUSED_0x0E9)
+	setvar (LUXURA_TRAGEDY,2)
+
+}
+movement miramove{
+	face_up
+	set_visible
+
+}
+movement miramove2{
+	emote_happy
+	walk_right*2
+	walk_down*4
+}
+
+movement miramove1{
+	walk_up*4
+	walk_left*2
+	emote_upset
+}
+movement xylar{
+	emote_exclamation_mark
+	face_right
+}
+movement xylar1{
+	delay_1
+	face_left
+}
+text Xylar1{
+	format("Xylar")
+}
+
+movement camera1{
+	delay_2
+	walk_down*4
+}
+movement camera{
+	walk_up*4
+}
+
+script clock {
+	lockall
+	applymovement(OBJ_EVENT_ID_PLAYER,notp)
+	msgbox(format("The clock isn't working, i should fix it before going."))
+	setflag(FLAG_UNUSED_0x496)
+	releaseall
+}
+movement notp{
+	walk_up*2
+}
+
+script guest {
+	lockall
+	applymovement(OBJ_EVENT_ID_PLAYER,not)
+	msgbox(format("I can't sleep here, this bed is for guests not for me."))
+	releaseall
+}
+movement not {
+	walk_right
+	
+}
+script parent {
+	lockall
+	applymovement(OBJ_EVENT_ID_PLAYER,not)
+	msgbox(format("I can't sleep here, this bed is for Mom and Dad,not me"))
+	releaseall
+}
+script metdad {
+	lockall
+	msgbox(format("I should check on Dad.\pHe's probably busy with his work.\p(He usually works downstairs, in the first room on the left.)"))
+	releaseall
+	setvar(LUXURA_TRAGEDY,6)
+}
