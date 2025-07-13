@@ -33,6 +33,8 @@
 #include "save.h"
 #include "link_rfu.h"
 #include "main.h"
+#include "sound.h"
+#include "constants/songs.h"
 #include "contest.h"
 #include "item_menu.h"
 #include "pokemon_storage_system.h"
