@@ -485,11 +485,13 @@ void Rain_InitVars(void)
     gWeatherPtr->targetColorMapIndex = 3;
     gWeatherPtr->colorMapStepDelay = 20;
     SetRainStrengthFromSoundEffect(SE_RAIN);
-    if (EXPANSION_VERSION_MINOR >= 12 && MapHasPreviewScreen_HandleQLState2(gMapHeader.regionMapSectionId, MPS_TYPE_FADE_IN) == FALSE)
+#if EXPANSION_VERSION_MINOR >= 12
+    if (MapHasPreviewScreen_HandleQLState2(gMapHeader.regionMapSectionId, MPS_TYPE_FADE_IN) == FALSE)
     {
         Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY); // preserve shadow darkness
         gWeatherPtr->noShadows = FALSE;
     }
+#endif
 }
 
 void Rain_InitAll(void)
@@ -783,11 +785,13 @@ void Snow_InitVars(void)
     gWeatherPtr->colorMapStepDelay = 20;
     gWeatherPtr->targetSnowflakeSpriteCount = NUM_SNOWFLAKE_SPRITES;
     gWeatherPtr->snowflakeVisibleCounter = 0;
-    if (EXPANSION_VERSION_MINOR >= 12 && MapHasPreviewScreen_HandleQLState2(gMapHeader.regionMapSectionId, MPS_TYPE_FADE_IN) == FALSE)
+#if EXPANSION_VERSION_MINOR >= 12
+    if (MapHasPreviewScreen_HandleQLState2(gMapHeader.regionMapSectionId, MPS_TYPE_FADE_IN) == FALSE)
     {
         Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY); // preserve shadow darkness
         gWeatherPtr->noShadows = FALSE;
     }
+#endif
 }
 
 void Snow_InitAll(void)
@@ -1035,11 +1039,13 @@ void Thunderstorm_InitVars(void)
     gWeatherPtr->weatherGfxLoaded = FALSE;  // duplicate assignment
     gWeatherPtr->thunderEnqueued = FALSE;
     SetRainStrengthFromSoundEffect(SE_THUNDERSTORM);
-    if (EXPANSION_VERSION_MINOR >= 12 && MapHasPreviewScreen_HandleQLState2(gMapHeader.regionMapSectionId, MPS_TYPE_FADE_IN) == FALSE)
+#if EXPANSION_VERSION_MINOR >= 12
+    if (MapHasPreviewScreen_HandleQLState2(gMapHeader.regionMapSectionId, MPS_TYPE_FADE_IN) == FALSE)
     {
         Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY); // preserve shadow darkness
         gWeatherPtr->noShadows = FALSE;
     }
+#endif
 }
 
 void Thunderstorm_InitAll(void)
@@ -1068,11 +1074,13 @@ void Downpour_InitVars(void)
     gWeatherPtr->colorMapStepDelay = 20;
     gWeatherPtr->weatherGfxLoaded = FALSE;  // duplicate assignment
     SetRainStrengthFromSoundEffect(SE_DOWNPOUR);
-    if (EXPANSION_VERSION_MINOR >= 12 && MapHasPreviewScreen_HandleQLState2(gMapHeader.regionMapSectionId, MPS_TYPE_FADE_IN) == FALSE)
+#if EXPANSION_VERSION_MINOR >= 12
+    if (MapHasPreviewScreen_HandleQLState2(gMapHeader.regionMapSectionId, MPS_TYPE_FADE_IN) == FALSE)
     {
         Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY); // preserve shadow darkness
         gWeatherPtr->noShadows = FALSE;
     }
+#endif
 }
 
 void Downpour_InitAll(void)
@@ -2247,11 +2255,13 @@ void Shade_InitVars(void)
     gWeatherPtr->initStep = 0;
     gWeatherPtr->targetColorMapIndex = 3;
     gWeatherPtr->colorMapStepDelay = 20;
-    if (EXPANSION_VERSION_MINOR >= 12 && MapHasPreviewScreen_HandleQLState2(gMapHeader.regionMapSectionId, MPS_TYPE_FADE_IN) == FALSE)
+#if EXPANSION_VERSION_MINOR >= 12
+    if (MapHasPreviewScreen_HandleQLState2(gMapHeader.regionMapSectionId, MPS_TYPE_FADE_IN) == FALSE)
     {
         Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY); // preserve shadow darkness
         gWeatherPtr->noShadows = FALSE;
     }
+#endif
 }
 
 void Shade_InitAll(void)
