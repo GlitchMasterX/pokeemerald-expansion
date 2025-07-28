@@ -42,6 +42,10 @@ static const u16 sFieldMugshotPal_AurtherQuestion[] = INCBIN_U16("graphics/field
 static const u32 sFieldMugshotGfx_AurtherQuestion[] = INCBIN_U32("graphics/field_mugshots/aurther/question.4bpp.lz");
 static const u16 sFieldMugshotPal_XylarBlush[] = INCBIN_U16("graphics/field_mugshots/xylar/blush.gbapal");
 static const u32 sFieldMugshotGfx_XylarBlush[] = INCBIN_U32("graphics/field_mugshots/xylar/blush.4bpp.lz");
+static const u16 sFieldMugshotPal_XylarJoy[] = INCBIN_U16("graphics/field_mugshots/xylar/joy.gbapal");
+static const u32 sFieldMugshotGfx_XylarJoy[] = INCBIN_U32("graphics/field_mugshots/xylar/joy.4bpp.lz");
+static const u16 sFieldMugshotPal_XylarBlush1[] = INCBIN_U16("graphics/field_mugshots/xylar/blush1.gbapal");
+static const u32 sFieldMugshotGfx_XylarBlush1[] = INCBIN_U32("graphics/field_mugshots/xylar/blush1.4bpp.lz");
 
 static const u16 sFieldMugshotPal_ElysiaShock[] = INCBIN_U16("graphics/field_mugshots/elysia/shock.gbapal");
 static const u32 sFieldMugshotGfx_ElysiaShock[] = INCBIN_U32("graphics/field_mugshots/elysia/shock.4bpp.lz");
@@ -236,6 +240,19 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
             .gfx = sFieldMugshotGfx_XylarBlush,
             .pal = sFieldMugshotPal_XylarBlush,
         },
+
+        [EMOTE_SMILE] =
+        {
+            .gfx = sFieldMugshotGfx_XylarJoy,
+            .pal = sFieldMugshotPal_XylarJoy,
+        },
+
+        [EMOTE_SPECIAL] =
+        {
+            .gfx = sFieldMugshotGfx_XylarBlush1,
+            .pal = sFieldMugshotPal_XylarBlush1,
+        },
+
     },
 
     [MUGSHOT_ELYSIA] =
