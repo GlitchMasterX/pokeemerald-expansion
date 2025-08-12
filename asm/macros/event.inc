@@ -1928,7 +1928,7 @@
 
 	@! Unlocks a locked outfit
 	.macro toggleoutfit outfitId:req, type:req
-	.byte 0xe5
+	.byte SCR_OP_TOGGLEOUTFIT
 	.2byte \outfitId
 	.byte \type
 	.endm
@@ -1937,7 +1937,7 @@
 	@! OUTFIT_CHECK_FLAG is for checking if it's either unlocked/locked
 	@! OUTFIT_CHECK_USED is for checking if it's currently used
 	.macro getoutfitstatus outfitId:req, data:req
-	.byte 0xe6
+	.byte SCR_OP_GETOUTFITSTATUS
 	.2byte \outfitId
 	.byte \data
 	.endm
@@ -1945,7 +1945,7 @@
 	@! Buffers either the name or the description strings of an outfit
 	@! to a str var
 	.macro bufferoutfitstr stringVarId:req, outfitId:req, type:req
-	.byte 0xe7
+	.byte SCR_OP_BUFFEROUTFITSTR
 	stringvar \stringVarId
 	.2byte \outfitId
 	.byte \type
@@ -1954,7 +1954,7 @@
 	@ Opens the Pokemart system, offering the specified outfit products for sale.
 	@ Products should be a list of .2byte item values preceded by an .align 2
 	.macro pokemartoutfit products:req
-	.byte 0xe8
+	.byte SCR_OP_POKEMARTOUTFIT
 	.4byte \products
 	.endm
 

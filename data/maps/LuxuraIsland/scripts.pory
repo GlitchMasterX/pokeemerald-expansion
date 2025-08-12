@@ -155,6 +155,8 @@ script ran{
     removeobject(1)
     removeobject(OBJ_EVENT_ID_PLAYER)
     setflag(FLAG_UNUSED_0x497)
+    unlockoutfit(OUTFIT_USUAL_GREEN)
+    unlockoutfit(OUTFIT_UNUSUAL_RED)
     warp(MAP_LUXURA_INDOOR,14,41)
     releaseall
     setvar(LUXURA_TRAGEDY, 5)
