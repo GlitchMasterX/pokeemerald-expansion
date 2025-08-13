@@ -21,10 +21,10 @@ void DrawMugshot(void); //VAR_0x8000 = mugshot id
 void DrawMugshotAtPos(void); //VAR_0x8000 = mugshot id, VAR_0x8001 = x, VAR_0x8002 = y
 void ClearMugshot(void);
 
-static const u32 sMugshotImg_Family[] = INCBIN_U32("graphics/mugshots/family.4bpp.lz");
+static const u32 sMugshotImg_Family[] = INCBIN_U32("graphics/mugshots/family.4bpp.smol");
 static const u16 sMugshotPal_Family[] = INCBIN_U16("graphics/mugshots/family.gbapal");
 
-static const u32 sMugshotImg_FamilyRequiem[] = INCBIN_U32("graphics/mugshots/family_requiem.4bpp.lz");
+static const u32 sMugshotImg_FamilyRequiem[] = INCBIN_U32("graphics/mugshots/family_requiem.4bpp.smol");
 static const u16 sMugshotPal_FamilyRequiem[] = INCBIN_U16("graphics/mugshots/family.gbapal");
 
 
