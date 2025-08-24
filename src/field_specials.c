@@ -4378,7 +4378,7 @@ void SetRoofBirds(void)
     u32 birdCount = 0;
     if (gMapHeader.events != NULL)
     {
-        if (InBattlePyramid())
+        if (InBattlePyramid_())
            objectEventCount = GetNumBattlePyramidObjectEvents();
         else if (InTrainerHill())
            objectEventCount = HILL_TRAINERS_PER_FLOOR;

@@ -381,6 +381,7 @@ struct BattlePokemon
     /*0x45*/ u32 experience;
     /*0x49*/ u32 personality;
     /*0x4D*/ u32 status1;
+    /*0x4D*/ u32 status2;
     /*0x51*/ struct Volatiles volatiles;
     /*0x5D*/ u32 otId;
     /*0x61*/ u8 metLevel;
