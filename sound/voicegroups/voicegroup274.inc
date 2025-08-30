@@ -1,7 +1,7 @@
 	.align 2
 voicegroup274:: @ 
-    voice_keysplit_all voicegroup001
-    voice_keysplit voicegroup005, KeySplitTable1
+    voice_keysplit_all voicegroup191
+    voice_keysplit voicegroup191, KeySplitTable1
 
     // Strings (Pizzicato Strings for tension, and long notes for dramatic impact)
     voice_directsound 60, 0, DirectSoundWaveData_sc88pro_pizzicato_strings, 255, 216, 0, 165
@@ -16,9 +16,9 @@ voicegroup274:: @
     voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 
     // Voice group split for complex arrangements
-    voice_keysplit voicegroup006, KeySplitTable2
+    voice_keysplit voicegroup196, KeySplitTable2
     voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-    voice_keysplit voicegroup007, KeySplitTable3
+    voice_keysplit voicegroup197, KeySplitTable3
     voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 
     // Creating sweeping string effects (orchestral synth sound)
