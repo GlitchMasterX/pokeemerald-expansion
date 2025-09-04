@@ -92,42 +92,42 @@ elif(var(LUXURA_TRAGEDY)>17){
 
 }
 script mewtwotend {
-	lockall
-	applymovement(OBJ_EVENT_ID_PLAYER,str)
-	speakername(Xylar1)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_TEAR}{COLOR BLUE}{SHADOW LIGHT_GRAY}Why isn't Mira here yet? She said she'd catch up… Did something happen?\pShe's strong, I know she can handle them… right? But how?\pNo… I can't stop now, she told me to run. She'll be okay…\pShe has to be okay."))
-    removefieldmugshot
-	closemessage
-	applymovement(OBJ_EVENT_ID_PLAYER,exclam)
-	special(SpawnCameraObject)
-	applymovement(OBJ_EVENT_ID_CAMERA,mw)
-	waitmovement(0)
-	speakername(Xylar1)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}What the...?\pIs that... a Pokémon?\pWhat happened to you...?"),MSGBOX_AUTOCLOSE)
-	removefieldmugshot 
-	applymovement(OBJ_EVENT_ID_PLAYER,mw)
-	waitmovement(0)
-	special(RemoveCameraObject)
-	speakername("Mewtwo")
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORM}........."),MSGBOX_AUTOCLOSE)
-	playmoncry(SPECIES_MEWTWO,CRY_MODE_FAINT)
-	waitmoncry
-	waitbuttonpress
+    lockall
+    applymovement(OBJ_EVENT_ID_PLAYER,str)
     speakername(Xylar1)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_TEAR}{COLOR BLUE}{SHADOW LIGHT_GRAY}You're hurt... bad. I can't just leave you here."),MSGBOX_AUTOCLOSE)
-	speakername(Xylar1)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't know if you can understand me, but...\pI'll definitely save you. I promise."),MSGBOX_AUTOCLOSE)
-	removefieldmugshot 
-	waitmessage
-	fadescreen(FADE_TO_BLACK)
-	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I've lost too much already.I won't let you die here,too."),MSGBOX_AUTOCLOSE) 
-	waitmessage
-	warp(MAP_GRANITE_CAVE_1F,12,9)
-	fadescreen(FADE_FROM_BLACK)
-	setvar(LUXURA_TRAGEDY,15)
-
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_TEAR}{COLOR BLUE}{SHADOW LIGHT_GRAY}Mira... where are you?\pYou said you'd catch up… Did something happen?\pNo. She's strong. She can handle herself.\p...Right?\pI can't stop now. She told me to run. She'll be fine.\pShe has to be fine."))
+    removefieldmugshot
+    closemessage
+    applymovement(OBJ_EVENT_ID_PLAYER,exclam)
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA,mw)
+    waitmovement(0)
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}What the-?\pThat's… a Pokémon?\pIt's hurt... badly."),MSGBOX_AUTOCLOSE)
+    removefieldmugshot 
+    applymovement(OBJ_EVENT_ID_PLAYER,mw)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    speakername("Mewtwo")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORM}………"),MSGBOX_AUTOCLOSE)
+    playmoncry(SPECIES_MEWTWO,CRY_MODE_FAINT)
+    waitmoncry
+    waitbuttonpress
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_TEAR}{COLOR BLUE}{SHADOW LIGHT_GRAY}You're barely hanging on…\pDon't worry. I won't leave you."),MSGBOX_AUTOCLOSE)
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't know if you understand me, but...\pI'll save you. No matter what."),MSGBOX_AUTOCLOSE)
+    removefieldmugshot 
+    waitmessage
+    fadescreen(FADE_TO_BLACK)
+    speakername(Xylar1)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I've already lost too much…\pI won't let you be another loss."),MSGBOX_AUTOCLOSE) 
+    waitmessage
+    warp(MAP_GRANITE_CAVE_1F,12,9)
+    fadescreen(FADE_FROM_BLACK)
+    setvar(LUXURA_TRAGEDY,15)
 }
+
 script nocave {
 	lock
 	applymovement(OBJ_EVENT_ID_PLAYER,nol)
@@ -203,93 +203,98 @@ script revivalherb {
 }
 
 script revive {
-	if((!flag(FLAG_UNUSED_0x4B0)) && (!flag(FLAG_UNUSED_0x4B1))&& (!flag(FLAG_UNUSED_0x479))){
-	lockall	
-	checkitem(ITEM_REVIVAL_HERB,1)
-	if (var(VAR_RESULT)==TRUE){
-	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I should apply the herb on the wounds."),MSGBOX_AUTOCLOSE)
-	fadescreen(FADE_TO_BLACK)
-	removeitem(ITEM_REVIVAL_HERB,1)
-	playse(MUS_DP_HEAL)
-	waitse
-	fadescreen(FADE_FROM_BLACK)
-    speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}This should help stop the bleeding...\pBut it's not enough. You need water too."),MSGBOX_AUTOCLOSE)
-	applymovement(OBJ_EVENT_ID_PLAYER,str)
-    speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Hang in there, I'll be back in no time."),MSGBOX_AUTOCLOSE)
-	setflag(FLAG_UNUSED_0x4B0)
-	}
-	else{
-	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I should go search for the herbs\pthe wounds look pretty painful."),MSGBOX_AUTOCLOSE)
-	}
-    releaseall
-	}
-	elif((flag(FLAG_UNUSED_0x4B0)) && (!flag(FLAG_UNUSED_0x4B1))&& (!flag(FLAG_UNUSED_0x479))){
-    lockall	
-	checkitem(ITEM_FRESH_WATER,1)
-	if (var(VAR_RESULT)==TRUE){
-	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Hang in there, I've got the water."),MSGBOX_AUTOCLOSE)
-	fadescreen(FADE_TO_BLACK)
-	removeitem(ITEM_FRESH_WATER,1)
-	playse(MUS_DP_HEAL)
-	waitse
-	fadescreen(FADE_FROM_BLACK)
-	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Finally... This should do.\pYou've been through so much... Just a little longer.\pWe'll get through this together."),MSGBOX_AUTOCLOSE)
-	fadescreen(FADE_TO_BLACK)
-	msgbox(format("Xylar continued to take care of the pokemon for a few days hoping it would open it's eyes."),MSGBOX_AUTOCLOSE)
-	msgbox(format("A few days later..."),MSGBOX_AUTOCLOSE)
-	fadescreen(FADE_FROM_BLACK)
-	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I can't... I can't keep going like this. How many days has it been... since I last ate anything real? These plants... they barely keep me standing\p but he looks better than before."),MSGBOX_AUTOCLOSE)
-	setflag(FLAG_UNUSED_0x4B1)
-	}	
-	else{
-    lockall
-	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I have to find some water for him."),MSGBOX_AUTOCLOSE)
-	}
-	releaseall
-}
-elif((flag(FLAG_UNUSED_0x4B0)) && (flag(FLAG_UNUSED_0x4B1))&& (!flag(FLAG_UNUSED_0x479))){
-	lockall
-	speakername(mewtwo)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORM}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}...Who... are you?"),MSGBOX_AUTOCLOSE)
-	speakername(Xylar1)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}(Is this telepathy?)\p{COLOR BLUE}{SHADOW LIGHT_GRAY}I...\pI found you.You were hurt, bleeding...\pI couldn't just leave you there."),MSGBOX_AUTOCLOSE)
-	speakername(mewtwo)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORM}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Why would you help me?\pHumans are nothing but deceivers..."),MSGBOX_AUTOCLOSE)
-	fadescreen(FADE_TO_BLACK)
-	playse(SE_M_PSYBEAM2)
-	waitse
-	msgbox(format("Mewtwo used his psychic powers to read Xylar's mind"),MSGBOX_AUTOCLOSE)
-    fadescreen(FADE_FROM_BLACK)
-    speakername(mewtwo)
-	msgbox(format("(He's... telling the truth. His concern... it's genu...)"),MSGBOX_AUTOCLOSE)
-	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}He fainted.\pMaybe using telepathy strained him, since he hasn't fully recovered yet.\pI should also rest for a bit."),MSGBOX_AUTOCLOSE)
-	fadescreen(FADE_TO_BLACK)
-	playse(MUS_DP_HEAL)
-	msgbox(format("Zzzzzz....."),MSGBOX_AUTOCLOSE)
-	waitse
-	fadescreen(FADE_FROM_BLACK)
-	setflag(FLAG_UNUSED_0x479)
-	releaseall
-	setvar(LUXURA_TRAGEDY,17)
+    # Phase 1: Find herb
+    if((!flag(FLAG_UNUSED_0x4B0)) && (!flag(FLAG_UNUSED_0x4B1)) && (!flag(FLAG_UNUSED_0x479))){
+        lockall
+        checkitem(ITEM_REVIVAL_HERB,1)
+        if (var(VAR_RESULT)==TRUE){
+            speakername(Xylar1)
+            msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}This herb should help stop the bleeding..."),MSGBOX_AUTOCLOSE)
+            fadescreen(FADE_TO_WHITE)
+            removeitem(ITEM_REVIVAL_HERB,1)
+            playse(MUS_DP_HEAL)
+            waitse
+            fadescreen(FADE_FROM_WHITE)
+            speakername(Xylar1)
+            msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}It's working... but not enough.\pYou'll need water too."),MSGBOX_AUTOCLOSE)
+            applymovement(OBJ_EVENT_ID_PLAYER,str)
+            speakername(Xylar1)
+            msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Hang in there. I'll be back soon."),MSGBOX_AUTOCLOSE)
+            setflag(FLAG_UNUSED_0x4B0)
+        }
+        else{
+            speakername(Xylar1)
+            msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}The wound's too deep...\pI need herbs, fast."),MSGBOX_AUTOCLOSE)
+        }
+        releaseall
+    }
 
+    # Phase 2: Bring water
+    elif((flag(FLAG_UNUSED_0x4B0)) && (!flag(FLAG_UNUSED_0x4B1)) && (!flag(FLAG_UNUSED_0x479))){
+        lockall
+        checkitem(ITEM_FRESH_WATER,1)
+        if (var(VAR_RESULT)==TRUE){
+            speakername(Xylar1)
+            msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I found water-hang on."),MSGBOX_AUTOCLOSE)
+            fadescreen(FADE_TO_WHITE)
+            removeitem(ITEM_FRESH_WATER,1)
+            playse(MUS_DP_HEAL)
+            waitse
+            fadescreen(FADE_FROM_WHITE)
+            speakername(Xylar1)
+            msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}There... that should do.\pYou've been through so much... Just a little longer.\pWe'll get through this together."),MSGBOX_AUTOCLOSE)
+            fadescreen(FADE_TO_WHITE)
+            msgbox(format("Xylar continued to tend to the Pokémon for several days, hoping it would open its eyes..."),MSGBOX_AUTOCLOSE)
+            msgbox(format("A few days later..."),MSGBOX_AUTOCLOSE)
+            fadescreen(FADE_FROM_WHITE)
+            speakername(Xylar1)
+            msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I can't... keep going like this.\pHow many days has it been since I last ate?\pThese plants barely keep me standing...\pBut he looks stronger than before."),MSGBOX_AUTOCLOSE)
+            setflag(FLAG_UNUSED_0x4B1)
+        }
+        else{
+            speakername(Xylar1)
+            msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}He needs water... I have to find some."),MSGBOX_AUTOCLOSE)
+        }
+        releaseall
+    }
+
+    # Phase 3: Mewtwo awakens (first telepathy)
+    elif((flag(FLAG_UNUSED_0x4B0)) && (flag(FLAG_UNUSED_0x4B1)) && (!flag(FLAG_UNUSED_0x479))){
+        lockall
+        speakername(mewtwo)
+        msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORM}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}...Who... are you?"),MSGBOX_AUTOCLOSE)
+        speakername(Xylar1)
+        msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}(Telepathy...?)\p{COLOR BLUE}{SHADOW LIGHT_GRAY}I...\pI found you bleeding, barely alive.\pI couldn't just walk away."),MSGBOX_AUTOCLOSE)
+        speakername(mewtwo)
+        msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORM}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Why... would you help me?\pHumans are liars... deceivers..."),MSGBOX_AUTOCLOSE)
+        fadescreen(FADE_TO_WHITE)
+        playse(SE_M_PSYBEAM2)
+        waitse
+        msgbox(format("Mewtwo's psychic power probed Xylar's mind..."),MSGBOX_AUTOCLOSE)
+        fadescreen(FADE_FROM_WHITE)
+        speakername(mewtwo)
+        msgbox(format("(His memories... pain... loss... yet his concern is... real...)"),MSGBOX_AUTOCLOSE)
+        speakername(Xylar1)
+        msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}He fainted again...\pThat must have drained what little strength he had left.\pI should rest too."),MSGBOX_AUTOCLOSE)
+        fadescreen(FADE_TO_WHITE)
+        playse(MUS_DP_HEAL)
+        msgbox(format("Zzzzzz..."),MSGBOX_AUTOCLOSE)
+        waitse
+        fadescreen(FADE_FROM_WHITE)
+        setflag(FLAG_UNUSED_0x479)
+        releaseall
+        setvar(LUXURA_TRAGEDY,17)
+    }
+
+    # Phase 4: Recovery state
+    elif((flag(FLAG_UNUSED_0x4B0)) && (flag(FLAG_UNUSED_0x4B1)) && (flag(FLAG_UNUSED_0x479))){
+        lockall
+        speakername(Xylar1)
+        msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}He's still recovering...\pI'll need more herbs to keep his strength up."),MSGBOX_AUTOCLOSE)
+        releaseall
+    }
 }
-elif((flag(FLAG_UNUSED_0x4B0)) && (flag(FLAG_UNUSED_0x4B1))&& (flag(FLAG_UNUSED_0x479))){
-	lockall
-	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}He's still recovering, I should look for more herbs."),MSGBOX_AUTOCLOSE)
-	 
-	releaseall	
-}
-}
+
 text mewtwo {
 	format("Mewtwo")
 }

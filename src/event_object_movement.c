@@ -11276,6 +11276,11 @@ bool8 MovementAction_EmoteDoubleExclamationMark_Step0(struct ObjectEvent *object
     sprite->sActionFuncId = 1;
     return TRUE;
 }
+bool8 MovementAction_SpyVanish_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    StartSpriteAnimInDirection(objectEvent, sprite, DIR_SOUTH, ANIM_SPY_VANISH);
+    return FALSE;
+}
 
 bool8 PlayerIsUnderWaterfall(struct ObjectEvent *objectEvent)
 {

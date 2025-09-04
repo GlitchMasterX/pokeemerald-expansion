@@ -22,6 +22,8 @@ script playerinvisible1 {
 script ran{
     lock
     clearflag(FLAG_UNUSED_0x496)
+    addobject(21,MAP_LUXURA_ISLAND)
+    applymovement(21,moves(set_invisible))
     special(SpawnCameraObject)
     applymovement(OBJ_EVENT_ID_CAMERA,cam)
     waitmovement(0)
@@ -49,14 +51,12 @@ script ran{
     speakername(name4)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}I'm sorry, Master Xylar! But I couldn't help myself.\pYou should've seen your face-it was priceless! "),MSGBOX_AUTOCLOSE)
     speakername(Xylar1)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Uhhhh!!!"),MSGBOX_AUTOCLOSE)
-     
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Uhhhh!!!"),MSGBOX_AUTOCLOSE) 
     applymovement(1,rum)
     applymovement(OBJ_EVENT_ID_PLAYER,rmu)
     waitmovement(0)
     speakername(Xylar1)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}You're not getting off that easy!"),MSGBOX_AUTOCLOSE)
-     
     waitmessage
     speakername(name4)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Catch me if you can, Master Xylar."),MSGBOX_AUTOCLOSE)
@@ -65,45 +65,76 @@ script ran{
     applymovement(OBJ_EVENT_ID_PLAYER,move2)
     waitmovement(0)
     speakername(name4)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Hahahaha!!"),MSGBOX_AUTOCLOSE)
-    removefieldmugshot 
-    applymovement(1,moves(walk_fast_right))
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Hahahaha!!\p Wait… if Lady Elysia sees you chasing me like this in the cold, she'll ground you, Master Xylar!"),MSGBOX_AUTOCLOSE)
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't care."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    addobject(22,MAP_LUXURA_ISLAND)
+    applymovement(22,moves(set_visible walk_right*3))
+    speakername("Hoopa")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_HOOPA}{EMOTE_NORMAL}......."))
+    removefieldmugshot
+    closemessage
+    special(SpawnCameraObject)
+    applymovement(1,moves(walk_fast_up*1))
     waitmovement(0)
-    applymovement(1,moves(jump_2_right set_invisible))
+    applymovement(21,moves(set_visible))
+    applymovement(1,moves(jump_up))
+    playse(SE_WARP_IN)
     waitmovement(0)
+    applymovement(0xFF,moves(walk_fast_up*2 jump_up))
+    waitmovement(0)
+    applymovement(1,moves(set_invisible))
+    applymovement(0xFF,moves(set_invisible))
+    applymovement(21,moves(set_invisible))
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovement(22,moves(emote_happy))
+    speakername("Hoopa")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_HOOPA}{EMOTE_JOY}......."))
+    removefieldmugshot
+    closemessage
+    applymovement(21,moves(walk_fast_right*5 walk_fast_up*7))
+    applymovement(22,moves(walk_right*5))
+    waitmovement(0)
+    applymovement(0x7F,moves(walk_up*8 walk_right*2))
+    applymovement(22,moves(walk_up*8 walk_right*2))
+    waitmovement(0)
+    playse(SE_WARP_OUT)
+    applymovement(21,visible)
+    applymovement(3,moves(set_visible jump_2_down walk_right face_left))
     playse(SE_M_DIVE)
-    speakername(name4)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SHOCK}{COLOR RED}{SHADOW LIGHT_GRAY}Ahh-Oh no!!"))
-    applymovement(OBJ_EVENT_ID_PLAYER,fall)
-    waitmovement(0)
-    applymovement(3,fallss)
     speakername(name4)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}This definitely wasn't part of the plan..."))
     speakername(Xylar1)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_SMILE}{COLOR BLUE}{SHADOW LIGHT_GRAY}Hahahaha, Serves you right."))
-    speakername(Xylar1)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Looks like I'm the one who has to pull you out now, huh?"))
-    removefieldmugshot
-    applymovement(OBJ_EVENT_ID_PLAYER,falll)
-    waitmovement(0)
-    speakername(Xylar1)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Here, take my hand.")) 
-    speakername(name4)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Thank you, Master Xylar."))
-    removefieldmugshot 
-    applymovement(OBJ_EVENT_ID_PLAYER,fallls)
-    waitmovement(0)
-    playse(SE_M_DIVE)
-    applymovement(3,fal)
-    waitmovement(0)
-    speakername(Xylar1)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}HEY! Mira! What was that?!"))
     removefieldmugshot 
-    applymovement(4,fals)
+    applymovement(4,moves(set_visible jump_2_down face_right))
+    playse(SE_M_DIVE)
     waitmovement(0)
-    speakername(name4)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}You said you wanted to help me, didn't you?\pWell… now we're both in the water!"))
+    applymovement(21,moves(set_invisible))
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Wh-what the-?! The pool?!\pMira!! this is all your fault!"))
     removefieldmugshot 
+    speakername(name4)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Ehh?! Don't blame me!\pI didn't do it!……\pBut you look like a drenched Torchic, Master Xylar!"))
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}A-a Torchic?!\pWhy you-!!\pIf Mom sees us dripping wet, we're both in trouble!")) 
+    playse(SE_PIN)
+    applymovement(3,moves(emote_happy))
+    applymovement(4,moves(face_left emote_upset))
+    applymovement(22,moves(emote_happy))
+    playmoncry(SPECIES_HOOPA,CRY_MODE_HIGH_PITCH)
+    speakername("Hoopa")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_HOOPA}{EMOTE_JOY}......."))
+    removefieldmugshot
+    closemessage
+    applymovement(22,moves(emote_happy walk_fast_left*15))
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Hey!! Come back here, you floating donut!!"))
+    removefieldmugshot
+    applymovement(0x7F,moves( walk_left))
+    waitmovement(0)
     fadescreen(FADE_TO_BLACK)
     fadedefaultbgm
     removeobject(3)
@@ -115,51 +146,53 @@ script ran{
     waitmovement(0)
     fadescreen(FADE_FROM_BLACK)
     speakername(Xylar1)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}I can't believe you pulled me in.\pNow we're both soaked."))
-    speakername(name4)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Totally worth it.\pWe won't have moments like this once you leave for the Academy..."))
-    speakername(Xylar1)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SMILE}{COLOR BLUE}{SHADOW LIGHT_GRAY}Yeah...\pIt feels weird knowing I'll be away from everyone.\pI guess I'm... a little nervous."))
-    speakername(name4)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}You're going to be amazing, Master Xylar.\pWe're all proud of you.\pAnd when you come back-I'll make real pancakes. No tricks this time.."))
-    speakername(Xylar1)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Promise?"))
-    speakername(name4)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Promise."))
-    speakername(Xylar1)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}And... uh, don't talk to the gardener again, okay?"))
-    waitmessage
-    playse(SE_PIN)
-    applymovement(0xFF,moves(emote_upset))
-    speakername(Xylar1)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't like the way he looks at you."))
-    playse(SE_PIN)
-    applymovement(1,moves(emote_happy))
-    speakername(name4)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SMILE}{COLOR RED}{SHADOW LIGHT_GRAY}Oh? Are you getting jealous, Master Xylar?"))
-    speakername(Xylar1)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_SPECIAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}What?! N-No! I just…"))
-    speakername(name4)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}You're cute when you're flustered."))
-    speakername(Xylar1)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Ughh, I hate you."))
-    playse(SE_PIN)
-    applymovement(0xFF,upset)
-    applymovement(1,happy)
-    speakername(name4)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Relax, I was just teasing."))
-    speakername(name4)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Now come on-before we both catch a cold"))
-    removefieldmugshot 
-    fadescreen(FADE_TO_BLACK)
-    removeobject(1)
-    removeobject(OBJ_EVENT_ID_PLAYER)
-    setflag(FLAG_UNUSED_0x497)
-    unlockoutfit(OUTFIT_USUAL_GREEN)
-    unlockoutfit(OUTFIT_UNUSUAL_RED)
-    warp(MAP_LUXURA_INDOOR,14,41)
-    releaseall
-    setvar(LUXURA_TRAGEDY, 5)
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}I can't believe Hoopa did that!\pNow we're both soaked…\pTch-one day, I'm gonna catch that troublemaker!"))
+speakername(name4)
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Pfft-totally worth it!\pBesides… we won't get moments like this once you leave for the Academy."))
+speakername(Xylar1)
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SMILE}{COLOR BLUE}{SHADOW LIGHT_GRAY}Yeah…\pIt feels strange knowing I'll be away from everyone.\pI guess I'm… kinda nervous."))
+
+speakername(name4)
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}You're going to be amazing, Master Xylar.\pWe're all proud of you.\pAnd when you come back-I'll make real pancakes this time.\nNo tricks, I swear."))
+speakername(Xylar1)
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Promise?"))
+speakername(name4)
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Promise."))
+speakername(Xylar1)
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}And… uh… maybe don't talk to that gardener again, okay?"))
+waitmessage
+playse(SE_PIN)
+applymovement(0xFF,moves(emote_upset))
+speakername(Xylar1)
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't like the way he looks at you."))
+playse(SE_PIN)
+applymovement(1,moves(emote_happy))
+speakername(name4)
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SMILE}{COLOR RED}{SHADOW LIGHT_GRAY}Oh? Is Master Xylar jealous?"))
+speakername(Xylar1)
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_SPECIAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Wh-?! N-No! I just-=\pThat's not-!"))
+speakername(name4)
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Haha, you're cute when you're flustered."))
+speakername(Xylar1)
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Ughhh… I hate you."))
+playse(SE_PIN)
+applymovement(0xFF,upset)
+applymovement(1,happy)
+speakername(name4)
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Relax, I'm just teasing."))
+speakername(name4)
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Now come on-before we both catch a cold."))
+removefieldmugshot 
+fadescreen(FADE_TO_BLACK)
+removeobject(1)
+removeobject(OBJ_EVENT_ID_PLAYER)
+setflag(FLAG_UNUSED_0x497)
+unlockoutfit(OUTFIT_USUAL_GREEN)
+unlockoutfit(OUTFIT_UNUSUAL_RED)
+warp(MAP_LUXURA_INDOOR,14,41)
+releaseall
+setvar(LUXURA_TRAGEDY, 5)
+
     
 }
 movement talk{
@@ -178,14 +211,13 @@ movement in {
     face_left
 }
 movement fade2 {
-    walk_left*5
-    walk_up*2
+    walk_right*1
+    walk_up*7
     face_down
     set_visible
 }
 movement fade {
-    walk_left*4
-    walk_up*2
+    walk_up*7
     face_down
     set_visible
 }
@@ -222,14 +254,12 @@ movement fall {
 }
 movement move {
     emote_happy
-    walk_fast_up*20
-    walk_fast_right*2
-    face_left
+    walk_fast_up*13
+    face_down
 }
 movement move2 {
     walk_fast_right*2
-    walk_fast_up*20
-    face_right
+    walk_fast_up*12
 }
 movement run {
     emote_exclamation_mark
@@ -259,14 +289,13 @@ movement rmu {
     
 }
 script trig1 {
-    lock
     applymovement(OBJ_EVENT_ID_PLAYER,player)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Where is she?"))
+    waitmovement(0)
     goto(ran)
 }
 script trig2 {
     applymovement(OBJ_EVENT_ID_PLAYER,tro)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Where is she?"))
+    waitmovement(0)
     goto(ran)
 }
 movement player {

@@ -107,7 +107,7 @@
       "flag": "FLAG_UNUSED_0x49B"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
+      "graphics_id": "OBJ_EVENT_GFX_MIRA",
       "x": 11,
       "y": 9,
       "elevation": 0,
@@ -146,7 +146,7 @@
       "flag": "FLAG_UNUSED_0x4A0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
+      "graphics_id": "OBJ_EVENT_GFX_MIRA",
       "x": 11,
       "y": 9,
       "elevation": 0,
