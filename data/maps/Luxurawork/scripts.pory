@@ -151,15 +151,15 @@ script dad {
 	waitmessage
 	applymovement(4,exclam)
 	speakername(name3)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Oh, Xylar, I almost forgot\pGuests from the academy are coming in a few days."))
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Oh, Xylar, before I forget-\pAn old friend of mine from the academy will be visiting near the end of this month.\pHe's been very curious to meet you."))
 	speakername(Xylar1)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_QUESTION}{COLOR BLUE}{SHADOW LIGHT_GRAY}Guests?\pFrom the academy, You didn't tell me about this."))
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_QUESTION}{COLOR BLUE}{SHADOW LIGHT_GRAY}Friend?\pFrom the academy, You didn't tell me about this."))
 	speakername(name3)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Hahaha I meant to but it slipped my mind.\pThey want to meet you before the start.\pDon't worry they're just here to make sure you're comfortable and ready."))
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Hahaha I meant to but it slipped my mind.\pHe wanted to meet you before the start.\pDon't worry he's just coming to make sure you're comfortable and ready."))
 	speakername(Xylar1)
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Alright, I guess I'd better be on my best behaviour, then."))
 	speakername(name3)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Just be yourself, son. That's all they'll want to see."))
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Just be yourself, son. That's all he'll want to see."))
 	removefieldmugshot
     releaseall
 	setflag(FLAG_UNUSED_0x49D)}
@@ -196,23 +196,27 @@ script trage {
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_UNBOUND}{EMOTE_NORMAL}Hooo...paaa"))
 	waitmessage
 	closemessage
-	applymovement(11,visible)
+	playse(SE_ESCALATOR)
+	applymovement(11,portal_open)
 	waitmovement(0)
-	applymovement(8,invisible)
+	applymovement(8,moves(face_up set_invisible))
 	waitmovement(0)
 	playse(SE_WARP_IN)
 	waitse
-	applymovement(11,invisible)
+	playse(SE_ESCALATOR)
+	applymovement(11,portal_close)
 	waitmovement(0)
 	applymovement(8,finish)
 	applymovement(11,finish)
 	waitmovement(0)
-	applymovement(11,visible)
+	playse(SE_ESCALATOR)
+	applymovement(11,portal_open)
 	waitmovement(0)
 	playse(SE_WARP_OUT)
 	waitse
 	applymovement(8,visible)
 	waitmovement(0)
+	playse(SE_ESCALATOR)
 	applymovement(11,invisible)
     applymovement(8,atk)
 	playse(SE_M_TAKE_DOWN)
@@ -289,7 +293,8 @@ script trage {
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_TEAR}{COLOR RED}{SHADOW LIGHT_GRAY}Listen to me-your power is gone!\pYou can't fight them now… please, run!\pIf they take you, everything he died for is lost!"))
 	waitmessage
 	closemessage
-	applymovement(11,visible)
+	playse(SE_ESCALATOR)
+	applymovement(11,portal_open)
 	waitmovement(0)
 	applymovement(5, moves(walk_fast_left*3 face_up))
 	applymovement(10,moves(walk_up))
@@ -299,7 +304,9 @@ script trage {
 	applymovement(10,invisible)
     waitmovement(0)
 	playse(SE_WARP_OUT)
-	applymovement(11,invisible)
+	waitse
+	playse(SE_ESCALATOR)
+	applymovement(11,portal_close)
 	speakername(surge)
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Tch… ran off like a frightened child.\pNo matter, Aurthur's dead.\pThat's what really mattered."))
 	waitmessage

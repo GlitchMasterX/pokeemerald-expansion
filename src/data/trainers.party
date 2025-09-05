@@ -82,145 +82,250 @@ Music: Male
 Double Battle: No
 
 === SPARK_GRUNT_1 ===
-Name: SAWYER
-Class: Hiker
-Pic: Hiker
-Gender: Male
-Music: Hiker
-Double Battle: No
-AI: Basic Trainer
+Name: Grunt
+Class: Spark Syndicate
+Pic: Spark Grunt M
+Music: Aqua
+Battle Type: Singles
+AI: Basic Trainer / Prefer Status Moves
 
-Geodude
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Shinx
+Level: 5
+Nature: Lonely
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder Wave
+- Spark
+- Quick Attack
+- Tackle
+
+Electrike
+Level: 5
+Nature: Timid
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder Wave
+- Thunder Shock
+- Quick Attack
+- Tackle
+
 
 === SPARK_GRUNT_2 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
-Gender: Male
+Name: Grunt
+Class: Spark Syndicate
+Pic: Spark Grunt M
 Music: Aqua
-Double Battle: No
-AI: Check Bad Move
+Battle Type: Singles
+AI: Basic Trainer / Prefer Status Moves
 
-Poochyena
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Shinx
+Level: 9
+Nature: Lonely
+EVs: 50 Atk / 50 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder Wave
+- Spark
+- Quick Attack
+- Tackle
+
+Electrike
+Level: 9
+Nature: Timid
+EVs: 50 SpA / 50 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder Wave
+- Thunderbolt
+- Quick Attack
+- Tackle
+
 
 === SPARK_GRUNT_3 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
-Gender: Male
+Name: Grunt
+Class: Spark Syndicate
+Pic: Spark Grunt M
 Music: Aqua
-Double Battle: No
-AI: Check Bad Move
+Battle Type: Singles
+AI: Basic Trainer / Prefer Status Moves / Will Suicide
 
-Zubat
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Voltorb
+Level: 9
+Nature: Naive
+EVs: 50 Atk / 50 SpA / 50 SpD / 50 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder Wave
+- Thunder Shock
+- Selfdestruct
+- Sonic Boom
 
-Carvanha
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Pikachu
+Level: 9
+Nature: Timid
+EVs: 50 SpA / 50 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder Wave
+- Thunderbolt
+- Quick Attack
+- Tackle
+
 
 === SPARK_GRUNT_4 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
-Gender: Male
+Name: Grunt
+Class: Spark Syndicate
+Pic: Spark Grunt F
 Music: Aqua
-Double Battle: No
-AI: Check Bad Move
+Battle Type: Singles
+AI: Basic Trainer / Prefer Status Moves / Will Suicide
 
-Zubat
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Magnemite
+Level: 10
+Nature: Modest
+EVs: 50 SpA / 50 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder Wave
+- Thunder Shock
+- Supersonic
+- Screech
+
+Pikachu
+Level: 10
+Nature: Timid
+EVs: 50 SpA / 50 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder Wave
+- Thunderbolt
+- Quick Attack
+- Tackle
+
 
 === SPARK_GRUNT_5 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
-Gender: Male
+Name: Grunt
+Class: Spark Syndicate
+Pic: Spark Grunt F
 Music: Aqua
-Double Battle: No
-AI: Check Bad Move
+Battle Type: Singles
+AI: Basic Trainer / Prefer Status Moves / Will Suicide
 
-Carvanha
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Voltorb
+Level: 11
+Nature: Naive
+EVs: 50 Atk / 50 SpA / 50 SpD / 50 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder Wave
+- Thunder Shock
+- Selfdestruct
+- Sonic Boom
+
+Pikachu @ Light Ball
+Level: 11
+Nature: Timid
+EVs: 50 SpA / 50 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder Wave
+- Thunderbolt
+- Quick Attack
+- Tackle
+
 
 === SPARK_GRUNT_6 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
-Gender: Male
+Name: Grunt
+Class: Spark Syndicate
+Pic: Spark Grunt M
 Music: Aqua
-Double Battle: No
-AI: Check Bad Move
+Battle Type: Singles
+AI: Basic Trainer / Prefer Status Moves / Will Suicide
 
-Poochyena
-Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Magnemite
+Level: 11
+Nature: Naive
+EVs: 50 Atk / 50 SpA / 50 SpD / 50 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder Wave
+- Thunder Shock
+- Supersonic
+- Screech
+
+Blitzle
+Level: 11
+Nature: Jolly
+EVs: 50 Atk / 50 SpA
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder Wave
+- Spark
+- Quick Attack
+- Stomp
+
 
 === SPARK_ADMIN_SURGE ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
-Gender: Male
-Music: Aqua
-Double Battle: No
-AI: Check Bad Move
+Name: Surge
+Class: Spark Admin
+Pic: Surge
+Music: Spark
+Battle Type: Singles
+AI: Basic Trainer / Prefer Status Moves / HP Aware / Ace Pokemon / Smart Switching / Will Suicide
 
-Carvanha
-Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Magneton
+Level: 12
+Nature: Naive
+EVs: 50 Atk / 50 SpA / 50 SpD / 50 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder Wave
+- Thunderbolt
+- Supersonic
+- Screech
+
+Electrode
+Level: 11
+Nature: Naive
+EVs: 50 Atk / 50 SpA / 50 SpD / 50 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder Wave
+- Thunder Shock
+- Selfdestruct
+- Sonic Boom
+
+Raichu @ Life Orb
+Level: 13
+Nature: Timid
+EVs: 50 SpA / 50 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder Wave
+- Thunderbolt
+- Quick Attack
+- Iron Tail
+
 
 === ACADEMY_HEAD ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
-Gender: Male
-Music: Aqua
-Double Battle: No
-AI: Check Bad Move
+Name: Alistair
+Class: Academy Head
+Pic: Alistair
+Music: Elite Four
+Battle Type: Singles
+AI: Smart Trainer
 
-Zubat
-Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Alakazam
+Level: 75
+Nature: Modest
+EVs: 250 SpA / 250 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shadow Ball
+- Energy Ball
+- Psychic
+- Calm Mind
+
 
 === DAMIEN_VOSS ===
-Name: GABRIELLE
-Class: Pkmn Breeder
-Pic: Pokemon Breeder F
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Check Bad Move
+Name: Damien
+Class: Rival
+Pic: Voss
+Music: Intense
+Battle Type: Singles
+AI: Basic Trainer / Prefer Status Moves / Will Suicide
 
-Skitty
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Poochyena
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Zigzagoon
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Lotad
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Seedot
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Taillow
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Shinx (M)
+Level: 5
+Nature: Lonely
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder Wave
+- Growl
+- Charge
 
 === TRAINER_GRUNT_PETALBURG_WOODS ===
 Name: GRUNT

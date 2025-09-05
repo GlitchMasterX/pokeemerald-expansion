@@ -1948,15 +1948,7 @@ const struct SpriteFrameImage gObjectEventPicTable_Surge[] = {
 };
 
 const struct SpriteFrameImage gObjectEventPicTable_Portal[] = {
-    overworld_frame(gObjectEventPic_Portal, 8, 8, 0),
-    overworld_frame(gObjectEventPic_Portal, 8, 8, 1),
-    overworld_frame(gObjectEventPic_Portal, 8, 8, 2),
-    overworld_frame(gObjectEventPic_Portal, 8, 8, 3),
-    overworld_frame(gObjectEventPic_Portal, 8, 8, 0),
-    overworld_frame(gObjectEventPic_Portal, 8, 8, 1),
-    overworld_frame(gObjectEventPic_Portal, 8, 8, 2),
-    overworld_frame(gObjectEventPic_Portal, 8, 8, 3),
-    overworld_frame(gObjectEventPic_Portal, 8, 8, 0),
+    overworld_ascending_frames(gObjectEventPic_Portal, 8, 8),
 };
 
 const struct SpriteFrameImage gObjectEventPicTable_Fire[] = {
