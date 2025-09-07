@@ -1,4 +1,5 @@
 #include "global.h"
+#include "bg.h"
 #include "braille_puzzles.h"
 #include "decompress.h"
 #include "event_data.h"
@@ -6,6 +7,7 @@
 #include "field_effect.h"
 #include "fldeff.h"
 #include "gpu_regs.h"
+#include "map_preview_screen.h"
 #include "main.h"
 #include "overworld.h"
 #include "palette.h"
@@ -15,10 +17,9 @@
 #include "bg.h"
 #include "sprite.h"
 #include "task.h"
+#include "window.h"
 #include "constants/songs.h"
 #include "constants/map_types.h"
-#include "map_preview_screen.h"
-#include "window.h"
 #include "constants/rgb.h"
 
 struct FlashStruct
@@ -170,6 +171,11 @@ static bool8 TryDoMapTransition(void)
         return TRUE;
     }
 
+    if (GetLastUsedWarpMapSectionId() != gMapHeader.regionMapSectionId && (MapHasPreviewScreen_HandleQLState2(gMapHeader.regionMapSectionId, MPS_TYPE_CAVE) == TRUE || MapHasPreviewScreen_HandleQLState2(gMapHeader.regionMapSectionId, MPS_TYPE_BASIC) == TRUE))
+    {
+        RunMapPreviewScreen(gMapHeader.regionMapSectionId);
+        return TRUE;
+    }
     for (i = 0; sTransitionTypes[i].fromType; i++)
     {
         if (sTransitionTypes[i].fromType == fromType && sTransitionTypes[i].toType == toType)

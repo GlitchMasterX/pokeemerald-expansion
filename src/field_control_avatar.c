@@ -24,6 +24,7 @@
 #include "item_menu.h"
 #include "map_preview_screen.h"
 #include "link.h"
+#include "map_preview_screen.h"
 #include "match_call.h"
 #include "metatile_behavior.h"
 #include "overworld.h"

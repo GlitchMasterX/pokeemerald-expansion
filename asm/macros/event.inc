@@ -2813,4 +2813,3 @@
 	callnative Script_MapPopUp
 	.endm
 
-	
