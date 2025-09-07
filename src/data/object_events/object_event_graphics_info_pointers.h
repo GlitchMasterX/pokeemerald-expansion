@@ -307,6 +307,8 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Voss;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kael;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Orson;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Evelyn;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DistortionPortal;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Nihil;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -610,6 +612,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_KAEL] =                      &gObjectEventGraphicsInfo_Kael,
     [OBJ_EVENT_GFX_ORSON] =                      &gObjectEventGraphicsInfo_Orson,
     [OBJ_EVENT_GFX_EVELYN] =                      &gObjectEventGraphicsInfo_Evelyn,
+    [OBJ_EVENT_GFX_DISTORTION_PORTAL] =         &gObjectEventGraphicsInfo_DistortionPortal,
+    [OBJ_EVENT_GFX_NIHIL] =                     &gObjectEventGraphicsInfo_Nihil,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

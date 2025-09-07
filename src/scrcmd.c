@@ -1323,7 +1323,7 @@ bool8 ScrCmd_applymovement(struct ScriptContext *ctx)
     ScriptMovement_StartObjectMovementScript(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, movementScript);
     sMovingNpcId = localId;
     if (localId != OBJ_EVENT_ID_FOLLOWER
-     && !FlagGet(FLAG_SAFE_FOLLOWER_MOVEMENT)
+     && !( OW_FOLLOWERS_SCRIPT_MOVEMENT ==TRUE)
      && (movementScript < Common_Movement_FollowerSafeStart || movementScript > Common_Movement_FollowerSafeEnd))
     {
         ScriptHideFollower();
@@ -1617,7 +1617,7 @@ bool8 ScrCmd_lockall(struct ScriptContext *ctx)
         struct ObjectEvent *followerObj = GetFollowerObject();
         FreezeObjects_WaitForPlayer();
         SetupNativeScript(ctx, IsFreezePlayerFinished);
-        if (FlagGet(FLAG_SAFE_FOLLOWER_MOVEMENT) && followerObj) // Unfreeze follower object (conditionally)
+        if (( OW_FOLLOWERS_SCRIPT_MOVEMENT ==TRUE) && followerObj) // Unfreeze follower object (conditionally)
             UnfreezeObjectEvent(followerObj);
         return TRUE;
     }

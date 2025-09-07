@@ -4535,7 +4535,7 @@
       "id": "LAYOUT_NEWMAP11",
       "name": "Newmap11_Layout",
       "width": 20,
-      "height": 16,
+      "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/Newmap11/border.bin",

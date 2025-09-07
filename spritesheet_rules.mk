@@ -5090,6 +5090,12 @@ $(OBJEVENTGFXDIR)/people/surge.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/portal.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 8 -mheight 8
 
+$(OBJEVENTGFXDIR)/people/distortion.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 8 -mheight 8
+
+$(OBJEVENTGFXDIR)/people/nihil.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4	
+
 $(OBJEVENTGFXDIR)/people/fire.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 

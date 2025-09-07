@@ -1951,6 +1951,15 @@ const struct SpriteFrameImage gObjectEventPicTable_Portal[] = {
     overworld_ascending_frames(gObjectEventPic_Portal, 8, 8),
 };
 
+const struct SpriteFrameImage gObjectEventPicTable_Distortion[] = {
+    overworld_ascending_frames(gObjectEventPic_Distortion, 8, 8),
+};
+
+const struct SpriteFrameImage gObjectEventPicTable_Nihil[] = {
+    overworld_ascending_frames(gObjectEventPic_Nihil, 4, 4),
+};
+
+
 const struct SpriteFrameImage gObjectEventPicTable_Fire[] = {
     overworld_frame(gObjectEventPic_Fire, 4, 4, 0),
     overworld_frame(gObjectEventPic_Fire, 4, 4, 1),

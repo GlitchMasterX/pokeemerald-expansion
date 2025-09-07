@@ -566,6 +566,8 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Xylar,                OBJ_EVENT_PAL_TAG_XYLAR},
     {gObjectEventPal_Fiona,                OBJ_EVENT_PAL_TAG_FIONA},
     {gObjectEventPal_Voss,                OBJ_EVENT_PAL_TAG_VOSS},
+    {gObjectEventPal_Distortion,                OBJ_EVENT_PAL_TAG_DISTORTION_PORTAL},
+    {gObjectEventPal_Nihil,                OBJ_EVENT_PAL_TAG_NIHIL},
 #if OW_FOLLOWERS_POKEBALLS
     {gObjectEventPal_MasterBall,            OBJ_EVENT_PAL_TAG_BALL_MASTER},
     {gObjectEventPal_UltraBall,             OBJ_EVENT_PAL_TAG_BALL_ULTRA},
@@ -6697,7 +6699,7 @@ bool8 ObjectEventSetHeldMovement(struct ObjectEvent *objectEvent, u8 movementAct
     // for any followers via a lookup table
     if (ArePlayerFieldControlsLocked()
      && objectEvent->isPlayer
-     && FlagGet(FLAG_SAFE_FOLLOWER_MOVEMENT))
+     && ( OW_FOLLOWERS_SCRIPT_MOVEMENT ==TRUE))
     {
         objectEvent->playerCopyableMovement = sActionIdToCopyableMovement[objectEvent->movementActionId];
     }
@@ -6730,7 +6732,7 @@ void ObjectEventClearHeldMovement(struct ObjectEvent *objectEvent)
     // for any followers via a lookup table
     if (ArePlayerFieldControlsLocked()
      && objectEvent->isPlayer
-     && FlagGet(FLAG_SAFE_FOLLOWER_MOVEMENT))
+     && ( OW_FOLLOWERS_SCRIPT_MOVEMENT ==TRUE))
     {
         objectEvent->playerCopyableMovement = sActionIdToCopyableMovement[objectEvent->movementActionId];
     }

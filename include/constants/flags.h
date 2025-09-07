@@ -727,7 +727,7 @@
 #define FLAG_UNUSED_0x2A9  0x2A9 // Unused Flag
 #define FLAG_UNUSED_0x2AA  0x2AA // Unused Flag
 #define FLAG_UNUSED_0x2AB  0x2AB // Unused Flag
-#define FLAG_UNUSED_0x2AC  0x2AC // Unused Flag
+#define FLAG_NIHIL_FIRST  0x2AC // Unused Flag
 #define FLAG_NO_WHITEOUT  0x2AD // Unused Flag
 #define FLAG_TRIAL_SERENA  0x2AE // Unused Flag
 #define FLAG_TEMPORARY_PARTY_CHANGE  0x2AF // Unused Flag

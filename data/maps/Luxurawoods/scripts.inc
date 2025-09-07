@@ -1011,64 +1011,148 @@ portal::
 # 490 "data/maps/Luxurawoods/scripts.pory"
 	lockall
 # 491 "data/maps/Luxurawoods/scripts.pory"
-	loopobjectanimation 21, 1, 5
+	applymovement 21, portal_Movement_0
 # 492 "data/maps/Luxurawoods/scripts.pory"
-	waitloop 21, 1
+	msgbox portal_Text_0
 # 493 "data/maps/Luxurawoods/scripts.pory"
-	loopobjectanimation 21, 4, 5
+	playse SE_M_BLIZZARD
 # 494 "data/maps/Luxurawoods/scripts.pory"
-	waitloop 21, 3
+	applymovement 21, portal_Movement_1
 # 495 "data/maps/Luxurawoods/scripts.pory"
-	loopobjectanimation 21, 5, 1
+	msgbox portal_Text_0, MSGBOX_AUTOCLOSE
 # 496 "data/maps/Luxurawoods/scripts.pory"
-	waitloop 21, 1
+	applymovement 0xFF, portal_Movement_2
 # 497 "data/maps/Luxurawoods/scripts.pory"
-	applymovement 21, invisible
-# 498 "data/maps/Luxurawoods/scripts.pory"
 	waitmovement 0
-# 499 "data/maps/Luxurawoods/scripts.pory"
+# 498 "data/maps/Luxurawoods/scripts.pory"
 	release
 	return
 
 
-# 502 "data/maps/Luxurawoods/scripts.pory"
+# 501 "data/maps/Luxurawoods/scripts.pory"
 portal_open:
-# 503 "data/maps/Luxurawoods/scripts.pory"
+# 502 "data/maps/Luxurawoods/scripts.pory"
 	set_visible
+# 503 "data/maps/Luxurawoods/scripts.pory"
+	delay_1
 # 504 "data/maps/Luxurawoods/scripts.pory"
-	delay_16
-# 505 "data/maps/Luxurawoods/scripts.pory"
 	face_up
+# 505 "data/maps/Luxurawoods/scripts.pory"
+	delay_1
 # 506 "data/maps/Luxurawoods/scripts.pory"
-	delay_16
-# 507 "data/maps/Luxurawoods/scripts.pory"
 	face_left
+# 507 "data/maps/Luxurawoods/scripts.pory"
+	delay_1
 # 508 "data/maps/Luxurawoods/scripts.pory"
-	delay_16
+	walk_in_place_fast_down
+# 508 "data/maps/Luxurawoods/scripts.pory"
+	walk_in_place_fast_down
 # 509 "data/maps/Luxurawoods/scripts.pory"
-	face_right
+	delay_1
+# 510 "data/maps/Luxurawoods/scripts.pory"
+	walk_in_place_fast_up
 	step_end
 
-# 512 "data/maps/Luxurawoods/scripts.pory"
-portal_close:
 # 513 "data/maps/Luxurawoods/scripts.pory"
-	face_right
+portal_close:
 # 514 "data/maps/Luxurawoods/scripts.pory"
-	delay_16
+	walk_in_place_fast_up
 # 515 "data/maps/Luxurawoods/scripts.pory"
-	face_left
+	delay_1
 # 516 "data/maps/Luxurawoods/scripts.pory"
-	delay_16
+	walk_in_place_fast_down
+# 516 "data/maps/Luxurawoods/scripts.pory"
+	walk_in_place_fast_down
 # 517 "data/maps/Luxurawoods/scripts.pory"
-	face_up
+	delay_1
 # 518 "data/maps/Luxurawoods/scripts.pory"
-	delay_16
+	face_left
 # 519 "data/maps/Luxurawoods/scripts.pory"
-	face_down
+	delay_1
 # 520 "data/maps/Luxurawoods/scripts.pory"
-	delay_16
+	face_up
 # 521 "data/maps/Luxurawoods/scripts.pory"
+	delay_1
+# 522 "data/maps/Luxurawoods/scripts.pory"
+	face_down
+# 523 "data/maps/Luxurawoods/scripts.pory"
+	delay_1
+# 524 "data/maps/Luxurawoods/scripts.pory"
 	set_invisible
+	step_end
+
+# 491 "data/maps/Luxurawoods/scripts.pory"
+portal_Movement_0:
+# 491 "data/maps/Luxurawoods/scripts.pory"
+	set_visible
+# 491 "data/maps/Luxurawoods/scripts.pory"
+	delay_16
+	step_end
+
+# 494 "data/maps/Luxurawoods/scripts.pory"
+portal_Movement_1:
+# 494 "data/maps/Luxurawoods/scripts.pory"
+	face_down
+# 494 "data/maps/Luxurawoods/scripts.pory"
+	face_up
+# 494 "data/maps/Luxurawoods/scripts.pory"
+	face_left
+# 494 "data/maps/Luxurawoods/scripts.pory"
+	walk_in_place_fast_down
+# 494 "data/maps/Luxurawoods/scripts.pory"
+	walk_in_place_fast_up
+# 494 "data/maps/Luxurawoods/scripts.pory"
+	walk_in_place_fast_left
+# 494 "data/maps/Luxurawoods/scripts.pory"
+	walk_in_place_fast_down
+# 494 "data/maps/Luxurawoods/scripts.pory"
+	walk_in_place_fast_up
+# 494 "data/maps/Luxurawoods/scripts.pory"
+	walk_in_place_fast_left
+# 494 "data/maps/Luxurawoods/scripts.pory"
+	walk_in_place_fast_down
+# 494 "data/maps/Luxurawoods/scripts.pory"
+	walk_in_place_fast_up
+# 494 "data/maps/Luxurawoods/scripts.pory"
+	walk_in_place_fast_left
+# 494 "data/maps/Luxurawoods/scripts.pory"
+	walk_in_place_fast_down
+# 494 "data/maps/Luxurawoods/scripts.pory"
+	walk_in_place_fast_up
+# 494 "data/maps/Luxurawoods/scripts.pory"
+	walk_in_place_fast_left
+# 494 "data/maps/Luxurawoods/scripts.pory"
+	walk_in_place_fast_down
+# 494 "data/maps/Luxurawoods/scripts.pory"
+	walk_in_place_fast_up
+# 494 "data/maps/Luxurawoods/scripts.pory"
+	walk_in_place_fast_left
+# 494 "data/maps/Luxurawoods/scripts.pory"
+	walk_in_place_fast_down
+# 494 "data/maps/Luxurawoods/scripts.pory"
+	walk_in_place_fast_up
+# 494 "data/maps/Luxurawoods/scripts.pory"
+	walk_in_place_fast_left
+	step_end
+
+# 496 "data/maps/Luxurawoods/scripts.pory"
+portal_Movement_2:
+# 496 "data/maps/Luxurawoods/scripts.pory"
+	walk_in_place_faster_down
+# 496 "data/maps/Luxurawoods/scripts.pory"
+	walk_in_place_faster_down
+# 496 "data/maps/Luxurawoods/scripts.pory"
+	walk_in_place_faster_down
+# 496 "data/maps/Luxurawoods/scripts.pory"
+	walk_in_place_faster_down
+# 496 "data/maps/Luxurawoods/scripts.pory"
+	walk_in_place_faster_down
+# 496 "data/maps/Luxurawoods/scripts.pory"
+	walk_in_place_faster_down
+# 496 "data/maps/Luxurawoods/scripts.pory"
+	walk_in_place_faster_down
+# 496 "data/maps/Luxurawoods/scripts.pory"
+	walk_in_place_faster_down
 	step_end
 
 mewtwotend_Text_0:
@@ -1405,6 +1489,10 @@ gruntded_Text_0:
 nio_Text_0:
 # 480 "data/maps/Luxurawoods/scripts.pory"
 	.string "That's not where herbs grow.$"
+
+portal_Text_0:
+# 492 "data/maps/Luxurawoods/scripts.pory"
+	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}working?$"
 
 mewtwo::
 # 298 "data/maps/Luxurawoods/scripts.pory"

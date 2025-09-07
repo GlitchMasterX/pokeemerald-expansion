@@ -1,12 +1,20 @@
 mapscripts Newmap11_MapScripts {
     MAP_SCRIPT_ON_FRAME_TABLE[
-        ACADEMY_START,0: Alistairarrive
+
+        ACADEMY_START,2: Alistairarrive
     ]
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
-	ACADEMY_START,0:alis
+    ACADEMY_START,0:NihilFirstVisit    
+	ACADEMY_START,2:alis
     ACADEMY_START,1:mewtwogone
 ]
     
+}
+script NihilFirstVisit {
+    setweather(WEATHER_FOG_HORIZONTAL)
+    doweather
+    setflag(FLAG_ACADEMY_START)
+    clearflag(FLAG_NIHIL_FIRST)
 }
 script mewtwogone {
     addobject(3,MAP_NEWMAP11)
@@ -18,6 +26,160 @@ script alis {
     hideobjectat(3,MAP_NEWMAP11)
     
 }
+
+script NihilFirstVisit0 {
+    lock
+    applymovement(0xFF,moves(walk_right))
+    waitmovement(0)
+    goto(NihilFirstVisit1)
+}
+
+script NihilFirstVisit1 {
+    lock    
+    setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+    applymovement(0xFF,moves(walk_up*2))    
+    waitmovement(0)
+    speakername("Xylar")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Who are you.....?"))
+    closemessage
+    removefieldmugshot
+    special(SpawnCameraObject)
+    applymovement(0x7F,moves(walk_up*3))
+    waitmovement(0)
+    speakername("Xylar")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}You-!{PAUSE_UNTIL_PRESS} Get away from there!\p Mewtwo!"))
+    closemessage
+    applymovement(0xFE,moves(walk_right walk_up))
+    waitmovement(0)
+    playfirstmoncry
+    speakername("Mewtwo")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_SPECIAL}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}......."))
+    waitmessage
+    closemessage
+    waitbuttonpress
+    playse(SE_PIN)
+    applymovement(0xFE,moves(emote_exclamation_mark))
+    speakername("Mewtwo")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_SHOCK}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Wait.{PLAY_BGM}{MUS_BW12_107}\pSomething about him… is not normal.\pI…… can't sense…… anything from him yet…{PAUSE_UNTIL_PRESS} my instincts are screaming at me to run."))
+    waitmessage
+    closemessage
+    speakername("???")
+    msgbox(format("{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Human life is an illusion. Even at its longest, it is but a hundred fleeting years.\pBeauty withers, strength decays, every embrace turns to dust. Yet still, humans worship appearances, clinging to flesh as though it were eternal.\pThat… is not love…{PAUSE_UNTIL_PRESS} it is obsession."))  
+    waitmessage
+    applymovement(4,moves(walk_slow_down))
+    applymovement(0xFE,moves(walk_fast_up walk_fast_left face_up))
+    waitmovement(0)
+    playmoncry(SPECIES_MEWTWO,CRY_MODE_ROAR_2)
+    speakername("Mewtwo")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_MAD}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}……"))
+    waitmessage
+    closemessage
+    speakername("???")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Tell me…… if the body is so precious, then why does it rot in the earth, while only the soul ascends to heaven?"))  
+    waitmessage
+    closemessage
+    applymovement(4,moves(walk_slow_down))
+    waitmovement(0)
+    speakername("???")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}She died, and the world moved on.\pGraves are not for the dead.\pThey are for the living…{PAUSE_UNTIL_PRESS} to lie to themselves.\pThat is the harsh reality of the world yet…{PAUSE_UNTIL_PRESS} I find it beautiful."))  
+    waitmessage
+    closemessage
+    speakername("Xylar")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{RESET_FONT}{COLOR BLUE}{SHADOW LIGHT_GRAY}Beautiful…?\pYou dare stand over my mother's grave and call her death {COLOR RED}{SHADOW LIGHT_GRAY}beautiful!{COLOR BLUE}{SHADOW LIGHT_GRAY}\pI'll kill you where you stand!!"))
+    closemessage
+    speakername("Mewtwo")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_MAD}(Telepathy)\p{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Xylar! Stop."))
+    waitmessage
+    closemessage
+    speakername("???")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Do not mistake me as your enemy, for you do not interest me in any way."))  
+    waitmessage
+    closemessage
+    applymovement(4,moves(face_up))
+    speakername("???")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}I came only to witness the grave of one who stood against me\pand who, for a fleeting moment,{PAUSE_UNTIL_PRESS} shone brighter than all others.\p But brightness is fragile and so is anger."))  
+    waitmessage
+    closemessage
+    applymovement(4,moves(face_down))
+    speakername("???")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}You cling to anger. That is natural."))  
+    waitmessage
+    closemessage
+    speakername("???")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Live as you wish.\pBurn, break, or build…… it won't matter to me."))  
+    waitmessage
+    closemessage
+    setweather(WEATHER_FOG_DIAGONAL)
+    doweather
+    playse(SE_M_BLIZZARD)
+    applymovement(4,moves(walk_slow_up))
+    applymovement(5,distortionportalopen)
+    speakername("???")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}In the end, all things return to nothing."))  
+    waitmessage
+    closemessage
+    applymovement(4,moves(walk_slow_up*2))
+    removeobject(4)
+    playse(SE_WARP_IN)
+    speakername("???")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}That is the truth I carry."))  
+    waitmessage
+    closemessage
+    playse(SE_M_TELEPORT)
+    applymovement(5,distortionportalclose)
+    waitmovement(0)
+    removeobject(5)
+    applymovement(0x7F,moves(walk_down*3))
+    waitmovement(0)
+    setweather(WEATHER_NONE)
+    doweather
+    fadedefaultbgm
+    special(RemoveCameraObject)
+    setflag(FLAG_NIHIL_FIRST)
+    release
+    setvar(ACADEMY_START,50)
+    
+ }
+movement distortionportalclose {
+    walk_in_place_fast_up
+    walk_in_place_fast_down
+    walk_in_place_fast_left
+    walk_in_place_fast_up
+    walk_in_place_fast_down
+    walk_in_place_fast_left
+    face_left
+    face_up
+    face_down
+    set_invisible
+}
+movement distortionportalopen {
+    set_visible
+    face_down 
+    face_up 
+    face_left 
+    walk_in_place_fast_down 
+    walk_in_place_fast_up 
+    walk_in_place_fast_left 
+    walk_in_place_fast_down 
+    walk_in_place_fast_up 
+    walk_in_place_fast_left 
+    walk_in_place_fast_down 
+    walk_in_place_fast_up 
+    walk_in_place_fast_left 
+    walk_in_place_fast_down 
+    walk_in_place_fast_up 
+    walk_in_place_fast_left 
+    walk_in_place_fast_down 
+    walk_in_place_fast_up 
+    walk_in_place_fast_left 
+    walk_in_place_fast_down 
+    walk_in_place_fast_up 
+    walk_in_place_fast_left
+    walk_in_place_fast_down 
+    walk_in_place_fast_up 
+    walk_in_place_fast_left
+}
+
 script Alistairarrive {
     lockall
     hidefollower

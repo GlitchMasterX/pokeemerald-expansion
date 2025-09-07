@@ -488,29 +488,38 @@ movement csm {
 
 script portal {
 	lockall
-	applymovement(21,moves(face_down delay_16 face_up delay_16 face_left delay_16 face_right))
-	waitmovement(0)
+	applymovement(21,moves(set_visible delay_16))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}working?"))
+    playse(SE_M_BLIZZARD)
+    applymovement(21,moves(face_down face_up face_left walk_in_place_fast_down walk_in_place_fast_up walk_in_place_fast_left walk_in_place_fast_down walk_in_place_fast_up walk_in_place_fast_left walk_in_place_fast_down walk_in_place_fast_up walk_in_place_fast_left walk_in_place_fast_down walk_in_place_fast_up walk_in_place_fast_left walk_in_place_fast_down walk_in_place_fast_up walk_in_place_fast_left walk_in_place_fast_down walk_in_place_fast_up walk_in_place_fast_left))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}working?"),MSGBOX_AUTOCLOSE)
+    applymovement(0xFF,moves(walk_in_place_faster_down*8))
+    waitmovement(0)
 	release
 }
 
 movement portal_open {
 	set_visible
-	delay_16
+	delay_1
 	face_up
-	delay_16
+	delay_1
 	face_left
-	delay_16
-	face_right
+	delay_1 
+	walk_in_place_fast_down*2
+    delay_1
+    walk_in_place_fast_up
 }
 
 movement portal_close {
-	face_right
-	delay_16
+	walk_in_place_fast_up
+    delay_1
+    walk_in_place_fast_down*2
+	delay_1
 	face_left
-	delay_16
+	delay_1
 	face_up
-	delay_16
+	delay_1
 	face_down
-	delay_16
+	delay_1
 	set_invisible	
 }

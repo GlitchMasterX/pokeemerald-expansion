@@ -196,27 +196,27 @@ script trage {
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_UNBOUND}{EMOTE_NORMAL}Hooo...paaa"))
 	waitmessage
 	closemessage
-	playse(SE_ESCALATOR)
+	playse(SE_M_TELEPORT)
 	applymovement(11,portal_open)
 	waitmovement(0)
 	applymovement(8,moves(face_up set_invisible))
 	waitmovement(0)
 	playse(SE_WARP_IN)
 	waitse
-	playse(SE_ESCALATOR)
+	playse(SE_M_TELEPORT)
 	applymovement(11,portal_close)
 	waitmovement(0)
 	applymovement(8,finish)
 	applymovement(11,finish)
 	waitmovement(0)
-	playse(SE_ESCALATOR)
+	playse(SE_M_TELEPORT)
 	applymovement(11,portal_open)
 	waitmovement(0)
 	playse(SE_WARP_OUT)
 	waitse
 	applymovement(8,visible)
 	waitmovement(0)
-	playse(SE_ESCALATOR)
+	playse(SE_M_TELEPORT)
 	applymovement(11,invisible)
     applymovement(8,atk)
 	playse(SE_M_TAKE_DOWN)
@@ -293,7 +293,7 @@ script trage {
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_TEAR}{COLOR RED}{SHADOW LIGHT_GRAY}Listen to me-your power is gone!\pYou can't fight them now… please, run!\pIf they take you, everything he died for is lost!"))
 	waitmessage
 	closemessage
-	playse(SE_ESCALATOR)
+	playse(SE_M_TELEPORT)
 	applymovement(11,portal_open)
 	waitmovement(0)
 	applymovement(5, moves(walk_fast_left*3 face_up))
@@ -305,7 +305,7 @@ script trage {
     waitmovement(0)
 	playse(SE_WARP_OUT)
 	waitse
-	playse(SE_ESCALATOR)
+	playse(SE_M_TELEPORT)
 	applymovement(11,portal_close)
 	speakername(surge)
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Tch… ran off like a frightened child.\pNo matter, Aurthur's dead.\pThat's what really mattered."))

@@ -99,6 +99,8 @@ static const u16 sFieldMugshotPal_HoopaNorm[] = INCBIN_U16("graphics/field_mugsh
 static const u32 sFieldMugshotGfx_HoopaNorm[] = INCBIN_U32("graphics/field_mugshots/hoopa/norm.4bpp.smol");
 static const u16 sFieldMugshotPal_HoopaShock[] = INCBIN_U16("graphics/field_mugshots/hoopa/shock.gbapal");
 static const u32 sFieldMugshotGfx_HoopaShock[] = INCBIN_U32("graphics/field_mugshots/hoopa/shock.4bpp.smol");
+static const u16 sFieldMugshotPal_NihilNormal[] = INCBIN_U16("graphics/field_mugshots/nihil/normal.gbapal");
+static const u32 sFieldMugshotGfx_NihilNormal[] = INCBIN_U32("graphics/field_mugshots/nihil/normal.4bpp.smol");
 
 struct MugshotGfx
 {
@@ -411,6 +413,15 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
         {
             .gfx = sFieldMugshotGfx_UnboundMad,
             .pal = sFieldMugshotPal_UnboundMad,
+        },
+    },
+
+    [MUGSHOT_NIHIL] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_NihilNormal,
+            .pal = sFieldMugshotPal_NihilNormal,
         },
     },
 };

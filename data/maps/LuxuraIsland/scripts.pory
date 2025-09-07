@@ -78,8 +78,9 @@ script ran{
     special(SpawnCameraObject)
     applymovement(1,moves(walk_fast_up*1))
     waitmovement(0)
-    playse(SE_ESCALATOR)
+    playse(SE_M_TELEPORT)
     applymovement(21,portal_open)
+    waitse
     waitmovement(0)
     applymovement(1,moves(jump_up))
     playse(SE_WARP_IN)
@@ -88,8 +89,9 @@ script ran{
     waitmovement(0)
     applymovement(1,moves(set_invisible))
     applymovement(0xFF,moves(set_invisible))
-    playse(SE_ESCALATOR)
+    playse(SE_M_TELEPORT)
     applymovement(21,portal_close)
+    waitse
     waitmovement(0)
     playse(SE_PIN)
     applymovement(22,moves(emote_happy))
@@ -103,11 +105,13 @@ script ran{
     applymovement(0x7F,moves(walk_up*8 walk_right*2))
     applymovement(22,moves(walk_up*8 walk_right*2))
     waitmovement(0)
-    playse(SE_ESCALATOR)
+    playse(SE_M_TELEPORT)
     applymovement(21,portal_open)
+    waitse
     waitmovement(0)
     playse(SE_WARP_OUT)
     applymovement(3,moves(set_visible jump_2_down walk_right face_left))
+    waitse
     playse(SE_M_DIVE)
     speakername(name4)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}This definitely wasn't part of the plan..."))
@@ -118,7 +122,7 @@ script ran{
     playse(SE_M_DIVE)
     waitse
     waitmovement(0)
-    playse(SE_ESCALATOR)
+    playse(SE_M_TELEPORT)
     applymovement(21,portal_close)
     waitmovement(0)
     speakername(Xylar1)

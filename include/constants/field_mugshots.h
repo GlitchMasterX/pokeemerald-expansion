@@ -10,7 +10,8 @@
 #define MUGSHOT_SURGE 6
 #define MUGSHOT_HOOPA  7
 #define MUGSHOT_UNBOUND  8
-#define MUGSHOT_COUNT 9
+#define MUGSHOT_NIHIL  9
+#define MUGSHOT_COUNT 10
 
 #define EMOTE_NORMAL       0
 #define EMOTE_QUESTION     1

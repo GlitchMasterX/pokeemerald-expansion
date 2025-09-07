@@ -399,7 +399,7 @@ trage::
 # 198 "data/maps/Luxurawork/scripts.pory"
 	closemessage
 # 199 "data/maps/Luxurawork/scripts.pory"
-	playse SE_ESCALATOR
+	playse SE_M_TELEPORT
 # 200 "data/maps/Luxurawork/scripts.pory"
 	applymovement 11, portal_open
 # 201 "data/maps/Luxurawork/scripts.pory"
@@ -413,7 +413,7 @@ trage::
 # 205 "data/maps/Luxurawork/scripts.pory"
 	waitse
 # 206 "data/maps/Luxurawork/scripts.pory"
-	playse SE_ESCALATOR
+	playse SE_M_TELEPORT
 # 207 "data/maps/Luxurawork/scripts.pory"
 	applymovement 11, portal_close
 # 208 "data/maps/Luxurawork/scripts.pory"
@@ -425,7 +425,7 @@ trage::
 # 211 "data/maps/Luxurawork/scripts.pory"
 	waitmovement 0
 # 212 "data/maps/Luxurawork/scripts.pory"
-	playse SE_ESCALATOR
+	playse SE_M_TELEPORT
 # 213 "data/maps/Luxurawork/scripts.pory"
 	applymovement 11, portal_open
 # 214 "data/maps/Luxurawork/scripts.pory"
@@ -439,7 +439,7 @@ trage::
 # 218 "data/maps/Luxurawork/scripts.pory"
 	waitmovement 0
 # 219 "data/maps/Luxurawork/scripts.pory"
-	playse SE_ESCALATOR
+	playse SE_M_TELEPORT
 # 220 "data/maps/Luxurawork/scripts.pory"
 	applymovement 11, invisible
 # 221 "data/maps/Luxurawork/scripts.pory"
@@ -593,7 +593,7 @@ trage::
 # 295 "data/maps/Luxurawork/scripts.pory"
 	closemessage
 # 296 "data/maps/Luxurawork/scripts.pory"
-	playse SE_ESCALATOR
+	playse SE_M_TELEPORT
 # 297 "data/maps/Luxurawork/scripts.pory"
 	applymovement 11, portal_open
 # 298 "data/maps/Luxurawork/scripts.pory"
@@ -617,7 +617,7 @@ trage::
 # 307 "data/maps/Luxurawork/scripts.pory"
 	waitse
 # 308 "data/maps/Luxurawork/scripts.pory"
-	playse SE_ESCALATOR
+	playse SE_M_TELEPORT
 # 309 "data/maps/Luxurawork/scripts.pory"
 	applymovement 11, portal_close
 # 310 "data/maps/Luxurawork/scripts.pory"
