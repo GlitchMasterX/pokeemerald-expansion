@@ -36,15 +36,17 @@ script NihilFirstVisit0 {
 
 script NihilFirstVisit1 {
     lock    
-    setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
-    applymovement(0xFF,moves(walk_up*2))    
+    playbgm(MUS_DP_TITLE,FALSE)
+    applymovement(0xFF,moves(walk_up*3))    
     waitmovement(0)
+    playse(SE_PIN)
+    applymovement(0xFF,moves(emote_question_mark))
     speakername("Xylar")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Who are you.....?"))
     closemessage
     removefieldmugshot
     special(SpawnCameraObject)
-    applymovement(0x7F,moves(walk_up*3))
+    applymovement(0x7F,moves(walk_up*2))
     waitmovement(0)
     speakername("Xylar")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}You-!{PAUSE_UNTIL_PRESS} Get away from there!\p Mewtwo!"))
@@ -57,10 +59,17 @@ script NihilFirstVisit1 {
     waitmessage
     closemessage
     waitbuttonpress
+    playmoncry(SPECIES_MEWTWO,CRY_MODE_WEAK)
+    applymovement(0xFE,moves(shake_horizontal*3))
+    waitmovement(0)
     playse(SE_PIN)
     applymovement(0xFE,moves(emote_exclamation_mark))
     speakername("Mewtwo")
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_SHOCK}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Wait.{PLAY_BGM}{MUS_BW12_107}\pSomething about him… is not normal.\pI…… can't sense…… anything from him yet…{PAUSE_UNTIL_PRESS} my instincts are screaming at me to run."))
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_SHOCK}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Wait."))
+    waitmessage
+    closemessage
+    speakername("Mewtwo")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_SHOCK}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}{PLAY_BGM}{MUS_BW12_107}\pSomething about him… is not normal.\pI…… can't sense…… anything from him yet…{PAUSE_UNTIL_PRESS} my instincts are screaming at me to run."))
     waitmessage
     closemessage
     speakername("???")
@@ -73,6 +82,10 @@ script NihilFirstVisit1 {
     speakername("Mewtwo")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_MAD}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}……"))
     waitmessage
+    applymovement(0xFE,moves(shake_horizontal*5))
+    speakername("Mewtwo")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_MAD}(Am I scared?……{PAUSE_UNTIL_PRESS} No, It's not possible.)"))
+    waitmessage
     closemessage
     speakername("???")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Tell me…… if the body is so precious, then why does it rot in the earth, while only the soul ascends to heaven?"))  
@@ -81,28 +94,37 @@ script NihilFirstVisit1 {
     applymovement(4,moves(walk_slow_down))
     waitmovement(0)
     speakername("???")
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}She died, and the world moved on.\pGraves are not for the dead.\pThey are for the living…{PAUSE_UNTIL_PRESS} to lie to themselves.\pThat is the harsh reality of the world yet…{PAUSE_UNTIL_PRESS} I find it beautiful."))  
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}She died, and the world moved on."))  
+    applymovement(4,moves(face_left))
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Graves are not for the dead.\pThey are for the living…{PAUSE_UNTIL_PRESS} to lie to themselves.\pThat is the harsh reality of the world yet…{PAUSE_UNTIL_PRESS} I find it beautiful."))  
     waitmessage
     closemessage
+    playse(SE_PIN)
+    applymovement(0xFF,upset)
     speakername("Xylar")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{RESET_FONT}{COLOR BLUE}{SHADOW LIGHT_GRAY}Beautiful…?\pYou dare stand over my mother's grave and call her death {COLOR RED}{SHADOW LIGHT_GRAY}beautiful!{COLOR BLUE}{SHADOW LIGHT_GRAY}\pI'll kill you where you stand!!"))
     closemessage
+    playse(SE_PIN)
+    applymovement(0xFE,moves(emote_exclamation_mark))
     speakername("Mewtwo")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_MAD}(Telepathy)\p{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Xylar! Stop."))
     waitmessage
     closemessage
+    applymovement(4,moves(face_down delay_8 walk_slow_down))
+    waitmovement(0)
     speakername("???")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Do not mistake me as your enemy, for you do not interest me in any way."))  
     waitmessage
     closemessage
-    applymovement(4,moves(face_up))
+    applymovement(4,moves(delay_8 face_up delay_8 walk_slow_up))
+    waitmovement(0)
     speakername("???")
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}I came only to witness the grave of one who stood against me\pand who, for a fleeting moment,{PAUSE_UNTIL_PRESS} shone brighter than all others.\p But brightness is fragile and so is anger."))  
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}I came only to witness the grave of one who once stood against me\pand who, for a fleeting moment,{PAUSE_UNTIL_PRESS} shone brighter than all others."))  
     waitmessage
     closemessage
     applymovement(4,moves(face_down))
     speakername("???")
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}You cling to anger. That is natural."))  
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}But brightness is fragile and so is anger.\pYou cling to anger.{PAUSE_UNTIL_PRESS} That is natural."))  
     waitmessage
     closemessage
     speakername("???")
@@ -120,20 +142,40 @@ script NihilFirstVisit1 {
     closemessage
     applymovement(4,moves(walk_slow_up*2))
     removeobject(4)
-    playse(SE_WARP_IN)
+    playse(SE_FU_ZAKU)
     speakername("???")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}That is the truth I carry."))  
     waitmessage
     closemessage
+    waitmovement(5)
     playse(SE_M_TELEPORT)
     applymovement(5,distortionportalclose)
     waitmovement(0)
     removeobject(5)
-    applymovement(0x7F,moves(walk_down*3))
-    waitmovement(0)
+    playbgm(MUS_DP_TITLE,FALSE)
     setweather(WEATHER_NONE)
     doweather
-    fadedefaultbgm
+    applymovement(0xFE,moves(shake_vertical*3))
+    playmoncry(SPECIES_MEWTWO,CRY_MODE_WEAK)
+    playse(SE_BREAKABLE_DOOR)
+    waitse
+    playse(SE_PIN)
+    applymovement(0xFF,exclam)
+    speakername("Xylar")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Mewtwo……?!\pWhat happened…?"))
+    closemessage
+    playmoncry(SPECIES_MEWTWO,CRY_MODE_WEAK)
+    speakername("Mewtwo")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORM}\p{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}That person……{PAUSE_UNTIL_PRESS} His presence… was overwhelming…\pHe was neither light nor shadow……{PAUSE_UNTIL_PRESS}Only nothing."))
+    waitmessage
+    closemessage
+    applymovement(0xFE,moves(face_down))
+    speakername("Mewtwo")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORM}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Whoever he was…… we should avoid him until we grow strong."))
+    waitmessage
+    closemessage
+    applymovement(0x7F,moves(walk_down*3))
+    waitmovement(0)
     special(RemoveCameraObject)
     setflag(FLAG_NIHIL_FIRST)
     release
@@ -172,6 +214,12 @@ movement distortionportalopen {
     walk_in_place_fast_down 
     walk_in_place_fast_up 
     walk_in_place_fast_left 
+    walk_in_place_fast_down 
+    walk_in_place_fast_up 
+    walk_in_place_fast_left
+    walk_in_place_fast_down 
+    walk_in_place_fast_up 
+    walk_in_place_fast_left
     walk_in_place_fast_down 
     walk_in_place_fast_up 
     walk_in_place_fast_left
