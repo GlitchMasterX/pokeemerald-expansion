@@ -1,11 +1,11 @@
 mapscripts Newmap11_MapScripts {
     MAP_SCRIPT_ON_FRAME_TABLE[
 
-        ACADEMY_START,2: Alistairarrive
+        ACADEMY_START,51: Alistairarrive
     ]
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
     ACADEMY_START,0:NihilFirstVisit    
-	ACADEMY_START,2:alis
+	ACADEMY_START,51:alis
     ACADEMY_START,1:mewtwogone
 ]
     
@@ -157,8 +157,6 @@ script NihilFirstVisit1 {
     doweather
     applymovement(0xFE,moves(shake_vertical*3))
     playmoncry(SPECIES_MEWTWO,CRY_MODE_WEAK)
-    playse(SE_BREAKABLE_DOOR)
-    waitse
     playse(SE_PIN)
     applymovement(0xFF,exclam)
     speakername("Xylar")
@@ -166,21 +164,54 @@ script NihilFirstVisit1 {
     closemessage
     playmoncry(SPECIES_MEWTWO,CRY_MODE_WEAK)
     speakername("Mewtwo")
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORM}\p{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}That person……{PAUSE_UNTIL_PRESS} His presence… was overwhelming…\pHe was neither light nor shadow……{PAUSE_UNTIL_PRESS}Only nothing."))
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORM}\p{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}That person……{PAUSE_UNTIL_PRESS} His presence was overwhelming…\pIt felt as if vast shadows were moving behind him…\pSilent, watching.…\pSomething……{PAUSE_UNTIL_PRESS}ancient, boundless, and suffocating."))
     waitmessage
     closemessage
     applymovement(0xFE,moves(face_down))
     speakername("Mewtwo")
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORM}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Whoever he was…… we should avoid him until we grow strong."))
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORM}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Whoever he was…… we should avoid him until we grow strong.\pBecause if the presence I felt was truly his……{PAUSE_UNTIL_PRESS} then we stand no chance."))
     waitmessage
     closemessage
-    applymovement(0x7F,moves(walk_down*3))
+    applymovement(0x7F,moves(walk_slow_down*3))
     waitmovement(0)
     special(RemoveCameraObject)
-    setflag(FLAG_NIHIL_FIRST)
-    release
-    setvar(ACADEMY_START,50)
-    
+   applymovement(0xFF,moves(face_down))
+   speakername("Xylar")
+    msgbox(format("Do you think Mewtwo was right? Were there really… shadows?"),MSGBOX_YESNO)
+if(var(VAR_RESULT)==YES){
+    speakername("Xylar")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}I see…… So, you believe Mewtwo's instincts."),MSGBOX_AUTOCLOSE)
+}
+else{
+    speakername("Xylar")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}I see…… So, you don't believe Mewtwo's instincts.\pI think otherwise."),MSGBOX_AUTOCLOSE)
+}
+
+    speakername("Xylar")
+    msgbox(format("Then… what about his words?\pAbout life, beauty, and death… do you believe them?"),MSGBOX_YESNO)
+if(var(VAR_RESULT)==YES){
+    speakername("Xylar")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}You do?……{PAUSE_UNTIL_PRESS} That's unexpected, but I understand."),MSGBOX_AUTOCLOSE)    
+}
+else{
+    speakername("Xylar")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}Hmmm…… I also refuse to consider life as something meaningless."),MSGBOX_AUTOCLOSE)    
+}
+
+    speakername("Xylar")
+    msgbox(format("Do you think he…… was a human?"),MSGBOX_YESNO)
+if(var(VAR_RESULT)==YES){
+    speakername("Xylar")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}Human…?\pMaybe you're right.{PAUSE_UNTIL_PRESS} But if that's true…\pThen what kind of human carries a presence like that?"),MSGBOX_AUTOCLOSE)    
+}
+else{
+    speakername("Xylar")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}No… you're right.\pNo human could stand there and make even Mewtwo hesitate.{PAUSE_UNTIL_PRESS}\pWhatever he is… he's not like us."),MSGBOX_AUTOCLOSE)    
+}
+
+setflag(FLAG_NIHIL_FIRST)
+release
+setvar(ACADEMY_START,50)
  }
 movement distortionportalclose {
     walk_in_place_fast_up
@@ -238,12 +269,15 @@ script Alistairarrive {
     speakername(Xylar1)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}........\p..What....\pWhat should we do now?"))
     waitmessage
+    special(SpawnCameraObject)
     showobjectat(1,MAP_NEWMAP11)
     showobjectat(2,MAP_NEWMAP11)
     applymovement(1,alistai)
     applymovement(2,alistai)
     waitmovement(0)
     applymovement(3,alistairdailogue1)
+    waitmovement(0)
+    applymovement(0x7F,moves(walk_slow_down*3))
     waitmovement(0)
     playbgm(MUS_HG_LIGHTHOUSE,TRUE)
     speakername(Xylar1)
@@ -255,8 +289,7 @@ script Alistairarrive {
     speakername(Xylar1)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}And who are you?\pAnother one of their pawns?\pDid they send you here to finish what they started?"),MSGBOX_AUTOCLOSE) 
     speakername(alistair)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}No, I am not.\pMy name is Alistair Caelum.\nI am the headmaster of the Astralis Academy."),MSGBOX_AUTOCLOSE)
-	 
+	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}No, I am not.\pMy name is Alistair Caelum.\nI am the headmaster of the Astralis Academy."),MSGBOX_AUTOCLOSE) 
     speakername(Xylar1)
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}And what does a headmaster want from me?"),MSGBOX_AUTOCLOSE)
 	 
@@ -374,7 +407,7 @@ movement alistairarrive5 {
      delay_16
     delay_16
     delay_16
-    walk_up*4
+    walk_up*5
 }
 movement mewtwobeside {
     delay_16
@@ -389,7 +422,7 @@ movement mewtwobeside {
     delay_16
     walk_up*3
     walk_right
-    walk_up*2
+    walk_up*3
 }
 movement alistai {
     walk_up*4  
@@ -463,6 +496,29 @@ movement question {
     emote_question_mark
 }
 script grave {
+    if(var(ACADEMY_START)== 50){
+    lock
+    speakername("Xylar")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_TEAR}{COLOR BLUE}{SHADOW LIGHT_GRAY}Mom…… I'm sorry.\pI couldn't save you. I couldn't save anyone.\pI wasn't strong enough.{PAUSE_UNTIL_PRESS} I wasn't anything.\pI ran-like a coward-while they took everything from us."))   
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_TEAR}{COLOR BLUE}{SHADOW LIGHT_GRAY}But I won't let the world forget you.\pI won't let it move on like nothing happened.\pI'll carve your name into this world.\pI'll have my revenge."), MSGBOX_AUTOCLOSE)  
+    applymovement(0xFE,moves(walk_in_place_up))
+    playmoncry(SPECIES_MEWTWO,CRY_MODE_WEAK)
+    speakername("Mewtwo")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORMAL}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Xylar……"))   
+    waitmessage
+    closemessage
+    speakername("Mewtwo")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORMAL}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}You should rest……You haven't slept properly for days."))   
+    waitmessage
+    closemessage
+    applymovement(0xFF,moves(delay_16 delay_16 face_down))
+    speakername("Xylar")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Hmmm……"))   
+    warpsilent(MAP_NEWHOUSE,2,24)
+    clearflag(FLAG_ACADEMY_START)
+    setvar(ACADEMY_START,51)
+    }
+
     if(flag(FLAG_TALK_GRAVE)){
     lock
     speakername(Xylar1)
