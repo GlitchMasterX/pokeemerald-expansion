@@ -686,7 +686,12 @@ script alistairarrive {
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Blood?.....\nNo....What happened here?"),MSGBOX_AUTOCLOSE)
      
     fadescreen(FADE_TO_BLACK)
-    msgbox(format("He rushed inside, looking around the ruined mansion."),MSGBOX_AUTOCLOSE)
+    applymovement(0x7F,moves(walk_faster_right*4 walk_faster_up*18))
+    applymovement(13,moves(walk_faster_right*4 walk_faster_up*18))
+    applymovement(14,moves(walk_faster_right*4 walk_faster_up*17))
+    waitmovement(0)
+    fadescreen(FADE_FROM_BLACK)
+
     release
     setvar(LUXURA_TRAGEDY,22)
     warpsilent(MAP_LUXURA_INDOOR,14,33)

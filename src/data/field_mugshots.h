@@ -101,6 +101,14 @@ static const u16 sFieldMugshotPal_HoopaShock[] = INCBIN_U16("graphics/field_mugs
 static const u32 sFieldMugshotGfx_HoopaShock[] = INCBIN_U32("graphics/field_mugshots/hoopa/shock.4bpp.smol");
 static const u16 sFieldMugshotPal_NihilNormal[] = INCBIN_U16("graphics/field_mugshots/nihil/normal.gbapal");
 static const u32 sFieldMugshotGfx_NihilNormal[] = INCBIN_U32("graphics/field_mugshots/nihil/normal.4bpp.smol");
+static const u16 sFieldMugshotPal_AlistairShock[] = INCBIN_U16("graphics/field_mugshots/alistair/shock.gbapal");
+static const u32 sFieldMugshotGfx_AlistairShock[] = INCBIN_U32("graphics/field_mugshots/alistair/shock.4bpp.smol");
+static const u16 sFieldMugshotPal_AlistairAngry[] = INCBIN_U16("graphics/field_mugshots/alistair/angry.gbapal");
+static const u32 sFieldMugshotGfx_AlistairAngry[] = INCBIN_U32("graphics/field_mugshots/alistair/angry.4bpp.smol");
+static const u16 sFieldMugshotPal_AlistairNormal[] = INCBIN_U16("graphics/field_mugshots/alistair/normal.gbapal");
+static const u32 sFieldMugshotGfx_AlistairNormal[] = INCBIN_U32("graphics/field_mugshots/alistair/normal.4bpp.smol");
+static const u16 sFieldMugshotPal_Alakazam[] = INCBIN_U16("graphics/field_mugshots/alistair/alakazam.gbapal");
+static const u32 sFieldMugshotGfx_Alakazam[] = INCBIN_U32("graphics/field_mugshots/alistair/alakazam.4bpp.smol");
 
 struct MugshotGfx
 {
@@ -422,6 +430,33 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
         {
             .gfx = sFieldMugshotGfx_NihilNormal,
             .pal = sFieldMugshotPal_NihilNormal,
+        },
+    },
+
+    [MUGSHOT_ALISTAIR] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_AlistairNormal,
+            .pal = sFieldMugshotPal_AlistairNormal,
+        },
+
+        [EMOTE_SHOCK] =
+        {
+            .gfx = sFieldMugshotGfx_AlistairShock,
+            .pal = sFieldMugshotPal_AlistairShock
+        },
+
+        [EMOTE_ANGRY] =
+        {
+            .gfx = sFieldMugshotGfx_AlistairAngry,
+            .pal = sFieldMugshotPal_AlistairAngry,
+        },
+
+        [EMOTE_SPECIAL] =
+        {
+            .gfx = sFieldMugshotGfx_Alakazam,
+            .pal = sFieldMugshotPal_Alakazam,
         },
     },
 };
