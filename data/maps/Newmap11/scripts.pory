@@ -486,8 +486,7 @@ script mewtwogone1 {
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}..........\pI won't.\pI'll destroy them Mewtwo.\pAll of them."),MSGBOX_AUTOCLOSE)   
      
     speakername(mewtwo)
-    msgbox(format("{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Good. Keep that fire burning, when we meet again I expect nothing less."),MSGBOX_AUTOCLOSE)
-      
+    msgbox(format("{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Good. Keep that fire burning, when we meet again I expect nothing less."),MSGBOX_AUTOCLOSE) 
     fadescreen(FADE_TO_BLACK)
     playse(SE_M_TELEPORT)
     removeobject(3)

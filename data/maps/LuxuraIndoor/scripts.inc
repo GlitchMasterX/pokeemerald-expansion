@@ -32,7 +32,7 @@ alistairarrive3::
 # 15 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox alistairarrive3_Text_0, MSGBOX_AUTOCLOSE
 # 17 "data/maps/LuxuraIndoor/scripts.pory"
-	applymovement 10, exclam
+	applymovement 7, exclam
 # 18 "data/maps/LuxuraIndoor/scripts.pory"
 	speakername unknown
 # 19 "data/maps/LuxuraIndoor/scripts.pory"
@@ -52,11 +52,11 @@ alistairarrive3::
 # 28 "data/maps/LuxuraIndoor/scripts.pory"
 	waitmessage
 # 29 "data/maps/LuxuraIndoor/scripts.pory"
-	applymovement 11, traces
+	applymovement 8, traces
 # 30 "data/maps/LuxuraIndoor/scripts.pory"
 	waitmovement 0
 # 31 "data/maps/LuxuraIndoor/scripts.pory"
-	applymovement 10, traces1
+	applymovement 7, traces1
 # 32 "data/maps/LuxuraIndoor/scripts.pory"
 	waitmovement 0
 # 33 "data/maps/LuxuraIndoor/scripts.pory"
@@ -403,764 +403,762 @@ tragedy::
 # 239 "data/maps/LuxuraIndoor/scripts.pory"
 	compare LUXURA_TRAGEDY, 9
 	goto_if_lt tragedy_1
-# 248 "data/maps/LuxuraIndoor/scripts.pory"
+# 243 "data/maps/LuxuraIndoor/scripts.pory"
 	compare LUXURA_TRAGEDY, 9
 	goto_if_eq tragedy_2
-# 257 "data/maps/LuxuraIndoor/scripts.pory"
+# 246 "data/maps/LuxuraIndoor/scripts.pory"
 	compare LUXURA_TRAGEDY, 10
 	goto_if_eq tragedy_3
-# 266 "data/maps/LuxuraIndoor/scripts.pory"
+# 249 "data/maps/LuxuraIndoor/scripts.pory"
 	compare LUXURA_TRAGEDY, 11
 	goto_if_eq tragedy_4
-# 326 "data/maps/LuxuraIndoor/scripts.pory"
+# 312 "data/maps/LuxuraIndoor/scripts.pory"
 	compare LUXURA_TRAGEDY, 11
 	goto_if_gt tragedy_14
 tragedy_13:
-# 388 "data/maps/LuxuraIndoor/scripts.pory"
+# 377 "data/maps/LuxuraIndoor/scripts.pory"
 	compare LUXURA_TRAGEDY, 21
 	goto_if_lt tragedy_6
-# 456 "data/maps/LuxuraIndoor/scripts.pory"
+# 448 "data/maps/LuxuraIndoor/scripts.pory"
 	compare LUXURA_TRAGEDY, 21
 	goto_if_eq tragedy_7
-# 527 "data/maps/LuxuraIndoor/scripts.pory"
+# 520 "data/maps/LuxuraIndoor/scripts.pory"
 	compare LUXURA_TRAGEDY, 23
 	goto_if_eq tragedy_8
-# 598 "data/maps/LuxuraIndoor/scripts.pory"
+# 594 "data/maps/LuxuraIndoor/scripts.pory"
 	compare LUXURA_TRAGEDY, 23
 	goto_if_gt tragedy_9
 	return
 
 tragedy_1:
 # 240 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 7
-# 241 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 8
-# 242 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 9
-# 243 "data/maps/LuxuraIndoor/scripts.pory"
 	setflag FLAG_UNUSED_0x4A6
-# 244 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 10
-# 245 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 11
-# 246 "data/maps/LuxuraIndoor/scripts.pory"
+# 241 "data/maps/LuxuraIndoor/scripts.pory"
 	setflag FLAG_ALISTAIR_ARRIVE
 	return
 
 tragedy_2:
-# 249 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 7
-# 250 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 8
-# 251 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 9
-# 252 "data/maps/LuxuraIndoor/scripts.pory"
-	setflag FLAG_UNUSED_0x4A6
-# 253 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 10
-# 254 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 11
-# 255 "data/maps/LuxuraIndoor/scripts.pory"
+# 244 "data/maps/LuxuraIndoor/scripts.pory"
 	setflag FLAG_ALISTAIR_ARRIVE
 	return
 
 tragedy_3:
-# 258 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 7
-# 259 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 8
-# 260 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 9
-# 261 "data/maps/LuxuraIndoor/scripts.pory"
-	setflag FLAG_UNUSED_0x4A6
-# 262 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 10
-# 263 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 11
-# 264 "data/maps/LuxuraIndoor/scripts.pory"
+# 247 "data/maps/LuxuraIndoor/scripts.pory"
 	setflag FLAG_ALISTAIR_ARRIVE
 	return
 
 tragedy_4:
-# 267 "data/maps/LuxuraIndoor/scripts.pory"
-	addobject 7
-# 268 "data/maps/LuxuraIndoor/scripts.pory"
-	addobject 8
-# 269 "data/maps/LuxuraIndoor/scripts.pory"
-	addobject 9
-# 270 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 1
-# 271 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 2
-# 272 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 3
-# 273 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 4
-# 274 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 5
-# 275 "data/maps/LuxuraIndoor/scripts.pory"
+# 250 "data/maps/LuxuraIndoor/scripts.pory"
 	setflag FLAG_UNUSED_0x4A7
-# 276 "data/maps/LuxuraIndoor/scripts.pory"
+# 251 "data/maps/LuxuraIndoor/scripts.pory"
 	setflag FLAG_UNUSED_0x4A8
-# 277 "data/maps/LuxuraIndoor/scripts.pory"
-	clearflag FLAG_UNUSED_0x4A6
-# 278 "data/maps/LuxuraIndoor/scripts.pory"
+# 252 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 6, 26, 0x2A0, 1
-# 279 "data/maps/LuxuraIndoor/scripts.pory"
+# 253 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 7, 26, 0x2A1, 1
-# 280 "data/maps/LuxuraIndoor/scripts.pory"
+# 254 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 6, 27, 0x2A8, 1
-# 281 "data/maps/LuxuraIndoor/scripts.pory"
+# 255 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 7, 27, 0x2A9, 1
-# 282 "data/maps/LuxuraIndoor/scripts.pory"
+# 256 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 18, 20, 0x2A0, 1
-# 283 "data/maps/LuxuraIndoor/scripts.pory"
+# 257 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 19, 20, 0x2A1, 1
-# 284 "data/maps/LuxuraIndoor/scripts.pory"
+# 258 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 18, 21, 0x2A8, 1
-# 285 "data/maps/LuxuraIndoor/scripts.pory"
+# 259 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 19, 21, 0x2A9, 1
-# 286 "data/maps/LuxuraIndoor/scripts.pory"
+# 260 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 22, 30, 0x2B0, 1
-# 287 "data/maps/LuxuraIndoor/scripts.pory"
+# 261 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 23, 30, 0x2B1, 1
-# 288 "data/maps/LuxuraIndoor/scripts.pory"
+# 262 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 22, 31, 0x2B8, 1
-# 289 "data/maps/LuxuraIndoor/scripts.pory"
+# 263 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 23, 31, 0x2B9, 1
-# 290 "data/maps/LuxuraIndoor/scripts.pory"
+# 264 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 10, 38, 0x2B0, 1
-# 291 "data/maps/LuxuraIndoor/scripts.pory"
+# 265 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 11, 38, 0x2B1, 1
-# 292 "data/maps/LuxuraIndoor/scripts.pory"
+# 266 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 10, 39, 0x2B8, 1
-# 293 "data/maps/LuxuraIndoor/scripts.pory"
+# 267 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 11, 39, 0x2B9, 1
-# 294 "data/maps/LuxuraIndoor/scripts.pory"
+# 268 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 26, 6, 0x2B0, 1
-# 295 "data/maps/LuxuraIndoor/scripts.pory"
+# 269 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 27, 6, 0x2B1, 1
-# 296 "data/maps/LuxuraIndoor/scripts.pory"
+# 270 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 26, 7, 0x2B8, 1
-# 297 "data/maps/LuxuraIndoor/scripts.pory"
+# 271 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 27, 7, 0x2B9, 1
-# 298 "data/maps/LuxuraIndoor/scripts.pory"
+# 272 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 0, 6, 0x2A0, 1
-# 299 "data/maps/LuxuraIndoor/scripts.pory"
+# 273 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 1, 6, 0x2A1, 1
-# 300 "data/maps/LuxuraIndoor/scripts.pory"
+# 274 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 0, 7, 0x2A8, 1
-# 301 "data/maps/LuxuraIndoor/scripts.pory"
+# 275 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 1, 7, 0x2A9, 1
-# 302 "data/maps/LuxuraIndoor/scripts.pory"
+# 276 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 4, 15, 0x1E1, 1
-# 303 "data/maps/LuxuraIndoor/scripts.pory"
+# 277 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 5, 15, 0x1E2, 1
-# 304 "data/maps/LuxuraIndoor/scripts.pory"
+# 278 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 4, 16, 0x1E9, 1
-# 305 "data/maps/LuxuraIndoor/scripts.pory"
+# 279 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 5, 16, 0x1EA, 1
-# 306 "data/maps/LuxuraIndoor/scripts.pory"
+# 280 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 14, 6, 0x2A0, 1
-# 307 "data/maps/LuxuraIndoor/scripts.pory"
+# 281 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 15, 6, 0x2A1, 1
-# 308 "data/maps/LuxuraIndoor/scripts.pory"
+# 282 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 14, 7, 0x2A8, 1
-# 309 "data/maps/LuxuraIndoor/scripts.pory"
+# 283 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 15, 7, 0x2A9, 1
-# 310 "data/maps/LuxuraIndoor/scripts.pory"
+# 284 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 22, 6, 0x2A0, 1
-# 311 "data/maps/LuxuraIndoor/scripts.pory"
+# 285 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 23, 6, 0x2A1, 1
-# 312 "data/maps/LuxuraIndoor/scripts.pory"
+# 286 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 22, 7, 0x2A8, 1
-# 313 "data/maps/LuxuraIndoor/scripts.pory"
+# 287 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 23, 7, 0x2A9, 1
-# 314 "data/maps/LuxuraIndoor/scripts.pory"
+# 288 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 9, 3, 0x1E1, 1
-# 315 "data/maps/LuxuraIndoor/scripts.pory"
+# 289 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 10, 3, 0x1E2, 1
-# 316 "data/maps/LuxuraIndoor/scripts.pory"
+# 290 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 9, 4, 0x1E9, 1
-# 317 "data/maps/LuxuraIndoor/scripts.pory"
+# 291 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 10, 4, 0x1EA, 1
-# 318 "data/maps/LuxuraIndoor/scripts.pory"
+# 292 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 12, 10, 0x2B0, 1
-# 319 "data/maps/LuxuraIndoor/scripts.pory"
+# 293 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 13, 10, 0x2B1, 1
-# 320 "data/maps/LuxuraIndoor/scripts.pory"
+# 294 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 12, 11, 0x2B8, 1
-# 321 "data/maps/LuxuraIndoor/scripts.pory"
+# 295 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 13, 11, 0x2B9, 1
-# 322 "data/maps/LuxuraIndoor/scripts.pory"
+# 296 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 24, 22, 0x1E5, 0
+# 297 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 24, 23, 0x1ED, 0
+# 298 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 25, 22, 0x1E6, 0
+# 299 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 25, 23, 0x1EE, 0
+# 300 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 24, 38, 0x1E5, 0
+# 301 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 24, 39, 0x1ED, 0
+# 302 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 25, 38, 0x1E6, 0
+# 303 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 25, 39, 0x1EE, 0
+# 304 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 4, 30, 0x1E5, 0
+# 305 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 4, 31, 0x1ED, 0
+# 306 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 5, 30, 0x1E6, 0
+# 307 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 5, 31, 0x1EE, 0
+# 308 "data/maps/LuxuraIndoor/scripts.pory"
 	removeobject 10
-# 323 "data/maps/LuxuraIndoor/scripts.pory"
+# 309 "data/maps/LuxuraIndoor/scripts.pory"
 	removeobject 11
-# 324 "data/maps/LuxuraIndoor/scripts.pory"
+# 310 "data/maps/LuxuraIndoor/scripts.pory"
 	setflag FLAG_ALISTAIR_ARRIVE
 	return
 
 tragedy_5:
-# 327 "data/maps/LuxuraIndoor/scripts.pory"
-	addobject 7
-# 328 "data/maps/LuxuraIndoor/scripts.pory"
-	addobject 8
-# 329 "data/maps/LuxuraIndoor/scripts.pory"
-	addobject 9
-# 330 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 1
-# 331 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 2
-# 332 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 3
-# 333 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 4
-# 334 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 5
-# 335 "data/maps/LuxuraIndoor/scripts.pory"
+# 313 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 24, 22, 0x1E5, 0
+# 314 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 24, 23, 0x1ED, 0
+# 315 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 25, 22, 0x1E6, 0
+# 316 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 25, 23, 0x1EE, 0
+# 317 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 24, 38, 0x1E5, 0
+# 318 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 24, 39, 0x1ED, 0
+# 319 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 25, 38, 0x1E6, 0
+# 320 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 25, 39, 0x1EE, 0
+# 321 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 4, 30, 0x1E5, 0
+# 322 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 4, 31, 0x1ED, 0
+# 323 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 5, 30, 0x1E6, 0
+# 324 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 5, 31, 0x1EE, 0
+# 325 "data/maps/LuxuraIndoor/scripts.pory"
 	setflag FLAG_UNUSED_0x4A7
-# 336 "data/maps/LuxuraIndoor/scripts.pory"
+# 326 "data/maps/LuxuraIndoor/scripts.pory"
 	setflag FLAG_UNUSED_0x4A8
-# 337 "data/maps/LuxuraIndoor/scripts.pory"
-	clearflag FLAG_UNUSED_0x4A6
-# 338 "data/maps/LuxuraIndoor/scripts.pory"
+# 327 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 7, 5, 0x2CF, 1
-# 339 "data/maps/LuxuraIndoor/scripts.pory"
+# 328 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 6, 26, 0x2A0, 1
-# 340 "data/maps/LuxuraIndoor/scripts.pory"
+# 329 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 7, 26, 0x2A1, 1
-# 341 "data/maps/LuxuraIndoor/scripts.pory"
+# 330 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 6, 27, 0x2A8, 1
-# 342 "data/maps/LuxuraIndoor/scripts.pory"
+# 331 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 7, 27, 0x2A9, 1
-# 343 "data/maps/LuxuraIndoor/scripts.pory"
+# 332 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 18, 20, 0x2A0, 1
-# 344 "data/maps/LuxuraIndoor/scripts.pory"
+# 333 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 19, 20, 0x2A1, 1
-# 345 "data/maps/LuxuraIndoor/scripts.pory"
+# 334 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 18, 21, 0x2A8, 1
-# 346 "data/maps/LuxuraIndoor/scripts.pory"
+# 335 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 19, 21, 0x2A9, 1
-# 347 "data/maps/LuxuraIndoor/scripts.pory"
+# 336 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 22, 30, 0x2B0, 1
-# 348 "data/maps/LuxuraIndoor/scripts.pory"
+# 337 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 23, 30, 0x2B1, 1
-# 349 "data/maps/LuxuraIndoor/scripts.pory"
+# 338 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 22, 31, 0x2B8, 1
-# 350 "data/maps/LuxuraIndoor/scripts.pory"
+# 339 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 23, 31, 0x2B9, 1
-# 351 "data/maps/LuxuraIndoor/scripts.pory"
+# 340 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 10, 38, 0x2B0, 1
-# 352 "data/maps/LuxuraIndoor/scripts.pory"
+# 341 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 11, 38, 0x2B1, 1
-# 353 "data/maps/LuxuraIndoor/scripts.pory"
+# 342 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 10, 39, 0x2B8, 1
-# 354 "data/maps/LuxuraIndoor/scripts.pory"
+# 343 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 11, 39, 0x2B9, 1
-# 355 "data/maps/LuxuraIndoor/scripts.pory"
+# 344 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 26, 6, 0x2B0, 1
-# 356 "data/maps/LuxuraIndoor/scripts.pory"
+# 345 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 27, 6, 0x2B1, 1
-# 357 "data/maps/LuxuraIndoor/scripts.pory"
+# 346 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 26, 7, 0x2B8, 1
-# 358 "data/maps/LuxuraIndoor/scripts.pory"
+# 347 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 27, 7, 0x2B9, 1
-# 359 "data/maps/LuxuraIndoor/scripts.pory"
+# 348 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 0, 6, 0x2A0, 1
-# 360 "data/maps/LuxuraIndoor/scripts.pory"
+# 349 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 1, 6, 0x2A1, 1
-# 361 "data/maps/LuxuraIndoor/scripts.pory"
+# 350 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 0, 7, 0x2A8, 1
-# 362 "data/maps/LuxuraIndoor/scripts.pory"
+# 351 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 1, 7, 0x2A9, 1
-# 363 "data/maps/LuxuraIndoor/scripts.pory"
+# 352 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 4, 15, 0x1E1, 1
-# 364 "data/maps/LuxuraIndoor/scripts.pory"
+# 353 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 5, 15, 0x1E2, 1
-# 365 "data/maps/LuxuraIndoor/scripts.pory"
+# 354 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 4, 16, 0x1E9, 1
-# 366 "data/maps/LuxuraIndoor/scripts.pory"
+# 355 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 5, 16, 0x1EA, 1
-# 367 "data/maps/LuxuraIndoor/scripts.pory"
+# 356 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 14, 6, 0x2A0, 1
-# 368 "data/maps/LuxuraIndoor/scripts.pory"
+# 357 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 15, 6, 0x2A1, 1
-# 369 "data/maps/LuxuraIndoor/scripts.pory"
+# 358 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 14, 7, 0x2A8, 1
-# 370 "data/maps/LuxuraIndoor/scripts.pory"
+# 359 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 15, 7, 0x2A9, 1
-# 371 "data/maps/LuxuraIndoor/scripts.pory"
+# 360 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 22, 6, 0x2A0, 1
-# 372 "data/maps/LuxuraIndoor/scripts.pory"
+# 361 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 23, 6, 0x2A1, 1
-# 373 "data/maps/LuxuraIndoor/scripts.pory"
+# 362 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 22, 7, 0x2A8, 1
-# 374 "data/maps/LuxuraIndoor/scripts.pory"
+# 363 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 23, 7, 0x2A9, 1
-# 375 "data/maps/LuxuraIndoor/scripts.pory"
+# 364 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 9, 3, 0x1E1, 1
-# 376 "data/maps/LuxuraIndoor/scripts.pory"
+# 365 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 10, 3, 0x1E2, 1
-# 377 "data/maps/LuxuraIndoor/scripts.pory"
+# 366 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 9, 4, 0x1E9, 1
-# 378 "data/maps/LuxuraIndoor/scripts.pory"
+# 367 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 10, 4, 0x1EA, 1
-# 379 "data/maps/LuxuraIndoor/scripts.pory"
+# 368 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 12, 10, 0x2B0, 1
-# 380 "data/maps/LuxuraIndoor/scripts.pory"
+# 369 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 13, 10, 0x2B1, 1
-# 381 "data/maps/LuxuraIndoor/scripts.pory"
+# 370 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 12, 11, 0x2B8, 1
-# 382 "data/maps/LuxuraIndoor/scripts.pory"
+# 371 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 13, 11, 0x2B9, 1
-# 383 "data/maps/LuxuraIndoor/scripts.pory"
+# 372 "data/maps/LuxuraIndoor/scripts.pory"
 	removeobject 10
-# 384 "data/maps/LuxuraIndoor/scripts.pory"
+# 373 "data/maps/LuxuraIndoor/scripts.pory"
 	removeobject 11
-# 385 "data/maps/LuxuraIndoor/scripts.pory"
+# 374 "data/maps/LuxuraIndoor/scripts.pory"
 	setflag FLAG_ALISTAIR_ARRIVE
 	return
 
 tragedy_6:
-# 389 "data/maps/LuxuraIndoor/scripts.pory"
-	addobject 7
-# 390 "data/maps/LuxuraIndoor/scripts.pory"
-	addobject 8
-# 391 "data/maps/LuxuraIndoor/scripts.pory"
-	addobject 9
-# 392 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 1
-# 393 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 2
-# 394 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 3
-# 395 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 4
-# 396 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 5
-# 397 "data/maps/LuxuraIndoor/scripts.pory"
+# 378 "data/maps/LuxuraIndoor/scripts.pory"
 	setflag FLAG_UNUSED_0x4A7
-# 398 "data/maps/LuxuraIndoor/scripts.pory"
+# 379 "data/maps/LuxuraIndoor/scripts.pory"
 	setflag FLAG_UNUSED_0x4A8
-# 399 "data/maps/LuxuraIndoor/scripts.pory"
-	clearflag FLAG_UNUSED_0x4A6
-# 400 "data/maps/LuxuraIndoor/scripts.pory"
+# 380 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 24, 22, 0x1E5, 0
+# 381 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 24, 23, 0x1ED, 0
+# 382 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 25, 22, 0x1E6, 0
+# 383 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 25, 23, 0x1EE, 0
+# 384 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 24, 38, 0x1E5, 0
+# 385 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 24, 39, 0x1ED, 0
+# 386 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 25, 38, 0x1E6, 0
+# 387 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 25, 39, 0x1EE, 0
+# 388 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 4, 30, 0x1E5, 0
+# 389 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 4, 31, 0x1ED, 0
+# 390 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 5, 30, 0x1E6, 0
+# 391 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 5, 31, 0x1EE, 0
+# 392 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 7, 5, 0x2CF, 1
-# 401 "data/maps/LuxuraIndoor/scripts.pory"
+# 393 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 6, 26, 0x2A0, 1
-# 402 "data/maps/LuxuraIndoor/scripts.pory"
+# 394 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 7, 26, 0x2A1, 1
-# 403 "data/maps/LuxuraIndoor/scripts.pory"
+# 395 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 6, 27, 0x2A8, 1
-# 404 "data/maps/LuxuraIndoor/scripts.pory"
+# 396 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 7, 27, 0x2A9, 1
-# 405 "data/maps/LuxuraIndoor/scripts.pory"
+# 397 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 18, 20, 0x2A0, 1
-# 406 "data/maps/LuxuraIndoor/scripts.pory"
+# 398 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 19, 20, 0x2A1, 1
-# 407 "data/maps/LuxuraIndoor/scripts.pory"
+# 399 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 18, 21, 0x2A8, 1
-# 408 "data/maps/LuxuraIndoor/scripts.pory"
+# 400 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 19, 21, 0x2A9, 1
-# 409 "data/maps/LuxuraIndoor/scripts.pory"
+# 401 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 22, 30, 0x2B0, 1
-# 410 "data/maps/LuxuraIndoor/scripts.pory"
+# 402 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 23, 30, 0x2B1, 1
-# 411 "data/maps/LuxuraIndoor/scripts.pory"
+# 403 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 22, 31, 0x2B8, 1
-# 412 "data/maps/LuxuraIndoor/scripts.pory"
+# 404 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 23, 31, 0x2B9, 1
-# 413 "data/maps/LuxuraIndoor/scripts.pory"
+# 405 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 10, 38, 0x2B0, 1
-# 414 "data/maps/LuxuraIndoor/scripts.pory"
+# 406 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 11, 38, 0x2B1, 1
-# 415 "data/maps/LuxuraIndoor/scripts.pory"
+# 407 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 10, 39, 0x2B8, 1
-# 416 "data/maps/LuxuraIndoor/scripts.pory"
+# 408 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 11, 39, 0x2B9, 1
-# 417 "data/maps/LuxuraIndoor/scripts.pory"
+# 409 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 26, 6, 0x2B0, 1
-# 418 "data/maps/LuxuraIndoor/scripts.pory"
+# 410 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 27, 6, 0x2B1, 1
-# 419 "data/maps/LuxuraIndoor/scripts.pory"
+# 411 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 26, 7, 0x2B8, 1
-# 420 "data/maps/LuxuraIndoor/scripts.pory"
+# 412 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 27, 7, 0x2B9, 1
-# 421 "data/maps/LuxuraIndoor/scripts.pory"
+# 413 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 0, 6, 0x2A0, 1
-# 422 "data/maps/LuxuraIndoor/scripts.pory"
+# 414 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 1, 6, 0x2A1, 1
-# 423 "data/maps/LuxuraIndoor/scripts.pory"
+# 415 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 0, 7, 0x2A8, 1
-# 424 "data/maps/LuxuraIndoor/scripts.pory"
+# 416 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 1, 7, 0x2A9, 1
-# 425 "data/maps/LuxuraIndoor/scripts.pory"
+# 417 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 4, 15, 0x1E1, 1
-# 426 "data/maps/LuxuraIndoor/scripts.pory"
+# 418 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 5, 15, 0x1E2, 1
-# 427 "data/maps/LuxuraIndoor/scripts.pory"
+# 419 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 4, 16, 0x1E9, 1
-# 428 "data/maps/LuxuraIndoor/scripts.pory"
+# 420 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 5, 16, 0x1EA, 1
-# 429 "data/maps/LuxuraIndoor/scripts.pory"
+# 421 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 14, 6, 0x2A0, 1
-# 430 "data/maps/LuxuraIndoor/scripts.pory"
+# 422 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 15, 6, 0x2A1, 1
-# 431 "data/maps/LuxuraIndoor/scripts.pory"
+# 423 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 14, 7, 0x2A8, 1
-# 432 "data/maps/LuxuraIndoor/scripts.pory"
+# 424 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 15, 7, 0x2A9, 1
-# 433 "data/maps/LuxuraIndoor/scripts.pory"
+# 425 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 22, 6, 0x2A0, 1
-# 434 "data/maps/LuxuraIndoor/scripts.pory"
+# 426 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 23, 6, 0x2A1, 1
-# 435 "data/maps/LuxuraIndoor/scripts.pory"
+# 427 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 22, 7, 0x2A8, 1
-# 436 "data/maps/LuxuraIndoor/scripts.pory"
+# 428 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 23, 7, 0x2A9, 1
-# 437 "data/maps/LuxuraIndoor/scripts.pory"
+# 429 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 9, 3, 0x1E1, 1
-# 438 "data/maps/LuxuraIndoor/scripts.pory"
+# 430 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 10, 3, 0x1E2, 1
-# 439 "data/maps/LuxuraIndoor/scripts.pory"
+# 431 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 9, 4, 0x1E9, 1
-# 440 "data/maps/LuxuraIndoor/scripts.pory"
+# 432 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 10, 4, 0x1EA, 1
-# 441 "data/maps/LuxuraIndoor/scripts.pory"
+# 433 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 12, 10, 0x2B0, 1
-# 442 "data/maps/LuxuraIndoor/scripts.pory"
+# 434 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 13, 10, 0x2B1, 1
-# 443 "data/maps/LuxuraIndoor/scripts.pory"
+# 435 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 12, 11, 0x2B8, 1
-# 444 "data/maps/LuxuraIndoor/scripts.pory"
+# 436 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 13, 11, 0x2B9, 1
-# 445 "data/maps/LuxuraIndoor/scripts.pory"
+# 437 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 6, 6, 0x2B0, 1
-# 446 "data/maps/LuxuraIndoor/scripts.pory"
+# 438 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 7, 6, 0x2B1, 1
-# 447 "data/maps/LuxuraIndoor/scripts.pory"
+# 439 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 6, 7, 0x2B8, 1
-# 448 "data/maps/LuxuraIndoor/scripts.pory"
+# 440 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 7, 7, 0x2B9, 1
-# 449 "data/maps/LuxuraIndoor/scripts.pory"
+# 441 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 0, 36, 0x0E0, 1
-# 450 "data/maps/LuxuraIndoor/scripts.pory"
+# 442 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 1, 36, 0x0E1, 1
-# 451 "data/maps/LuxuraIndoor/scripts.pory"
+# 443 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 0, 37, 0x0E8, 1
-# 452 "data/maps/LuxuraIndoor/scripts.pory"
+# 444 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 1, 37, 0x0E9, 1
-# 453 "data/maps/LuxuraIndoor/scripts.pory"
+# 445 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 2, 36, 0x340, 0
-# 454 "data/maps/LuxuraIndoor/scripts.pory"
+# 446 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 2, 37, 0x348, 0
 	return
 
 tragedy_7:
-# 457 "data/maps/LuxuraIndoor/scripts.pory"
-	addobject 7
-# 458 "data/maps/LuxuraIndoor/scripts.pory"
-	addobject 8
-# 459 "data/maps/LuxuraIndoor/scripts.pory"
-	addobject 9
-# 460 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 1
-# 461 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 2
-# 462 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 3
-# 463 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 4
-# 464 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 5
-# 465 "data/maps/LuxuraIndoor/scripts.pory"
+# 449 "data/maps/LuxuraIndoor/scripts.pory"
 	setflag FLAG_UNUSED_0x4A7
-# 466 "data/maps/LuxuraIndoor/scripts.pory"
+# 450 "data/maps/LuxuraIndoor/scripts.pory"
 	setflag FLAG_UNUSED_0x4A8
-# 467 "data/maps/LuxuraIndoor/scripts.pory"
-	clearflag FLAG_UNUSED_0x4A6
-# 468 "data/maps/LuxuraIndoor/scripts.pory"
-	addobject 10
-# 469 "data/maps/LuxuraIndoor/scripts.pory"
-	addobject 11
-# 470 "data/maps/LuxuraIndoor/scripts.pory"
+# 451 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 24, 22, 0x1E5, 0
+# 452 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 24, 23, 0x1ED, 0
+# 453 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 25, 22, 0x1E6, 0
+# 454 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 25, 23, 0x1EE, 0
+# 455 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 24, 38, 0x1E5, 0
+# 456 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 24, 39, 0x1ED, 0
+# 457 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 25, 38, 0x1E6, 0
+# 458 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 25, 39, 0x1EE, 0
+# 459 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 4, 30, 0x1E5, 0
+# 460 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 4, 31, 0x1ED, 0
+# 461 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 5, 30, 0x1E6, 0
+# 462 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 5, 31, 0x1EE, 0
+# 463 "data/maps/LuxuraIndoor/scripts.pory"
 	clearflag FLAG_ALISTAIR_ARRIVE
-# 471 "data/maps/LuxuraIndoor/scripts.pory"
+# 464 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 7, 5, 0x2CF, 1
-# 472 "data/maps/LuxuraIndoor/scripts.pory"
+# 465 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 6, 26, 0x2A0, 1
-# 473 "data/maps/LuxuraIndoor/scripts.pory"
+# 466 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 7, 26, 0x2A1, 1
-# 474 "data/maps/LuxuraIndoor/scripts.pory"
+# 467 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 6, 27, 0x2A8, 1
-# 475 "data/maps/LuxuraIndoor/scripts.pory"
+# 468 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 7, 27, 0x2A9, 1
-# 476 "data/maps/LuxuraIndoor/scripts.pory"
+# 469 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 18, 20, 0x2A0, 1
-# 477 "data/maps/LuxuraIndoor/scripts.pory"
+# 470 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 19, 20, 0x2A1, 1
-# 478 "data/maps/LuxuraIndoor/scripts.pory"
+# 471 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 18, 21, 0x2A8, 1
-# 479 "data/maps/LuxuraIndoor/scripts.pory"
+# 472 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 19, 21, 0x2A9, 1
-# 480 "data/maps/LuxuraIndoor/scripts.pory"
+# 473 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 22, 30, 0x2B0, 1
-# 481 "data/maps/LuxuraIndoor/scripts.pory"
+# 474 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 23, 30, 0x2B1, 1
-# 482 "data/maps/LuxuraIndoor/scripts.pory"
+# 475 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 22, 31, 0x2B8, 1
-# 483 "data/maps/LuxuraIndoor/scripts.pory"
+# 476 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 23, 31, 0x2B9, 1
-# 484 "data/maps/LuxuraIndoor/scripts.pory"
+# 477 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 10, 38, 0x2B0, 1
-# 485 "data/maps/LuxuraIndoor/scripts.pory"
+# 478 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 11, 38, 0x2B1, 1
-# 486 "data/maps/LuxuraIndoor/scripts.pory"
+# 479 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 10, 39, 0x2B8, 1
-# 487 "data/maps/LuxuraIndoor/scripts.pory"
+# 480 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 11, 39, 0x2B9, 1
-# 488 "data/maps/LuxuraIndoor/scripts.pory"
+# 481 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 26, 6, 0x2B0, 1
-# 489 "data/maps/LuxuraIndoor/scripts.pory"
+# 482 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 27, 6, 0x2B1, 1
-# 490 "data/maps/LuxuraIndoor/scripts.pory"
+# 483 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 26, 7, 0x2B8, 1
-# 491 "data/maps/LuxuraIndoor/scripts.pory"
+# 484 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 27, 7, 0x2B9, 1
-# 492 "data/maps/LuxuraIndoor/scripts.pory"
+# 485 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 0, 6, 0x2A0, 1
-# 493 "data/maps/LuxuraIndoor/scripts.pory"
+# 486 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 1, 6, 0x2A1, 1
-# 494 "data/maps/LuxuraIndoor/scripts.pory"
+# 487 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 0, 7, 0x2A8, 1
-# 495 "data/maps/LuxuraIndoor/scripts.pory"
+# 488 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 1, 7, 0x2A9, 1
-# 496 "data/maps/LuxuraIndoor/scripts.pory"
+# 489 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 4, 15, 0x1E1, 1
-# 497 "data/maps/LuxuraIndoor/scripts.pory"
+# 490 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 5, 15, 0x1E2, 1
-# 498 "data/maps/LuxuraIndoor/scripts.pory"
+# 491 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 4, 16, 0x1E9, 1
-# 499 "data/maps/LuxuraIndoor/scripts.pory"
+# 492 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 5, 16, 0x1EA, 1
-# 500 "data/maps/LuxuraIndoor/scripts.pory"
+# 493 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 14, 6, 0x2A0, 1
-# 501 "data/maps/LuxuraIndoor/scripts.pory"
+# 494 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 15, 6, 0x2A1, 1
-# 502 "data/maps/LuxuraIndoor/scripts.pory"
+# 495 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 14, 7, 0x2A8, 1
-# 503 "data/maps/LuxuraIndoor/scripts.pory"
+# 496 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 15, 7, 0x2A9, 1
-# 504 "data/maps/LuxuraIndoor/scripts.pory"
+# 497 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 22, 6, 0x2A0, 1
-# 505 "data/maps/LuxuraIndoor/scripts.pory"
+# 498 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 23, 6, 0x2A1, 1
-# 506 "data/maps/LuxuraIndoor/scripts.pory"
+# 499 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 22, 7, 0x2A8, 1
-# 507 "data/maps/LuxuraIndoor/scripts.pory"
+# 500 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 23, 7, 0x2A9, 1
-# 508 "data/maps/LuxuraIndoor/scripts.pory"
+# 501 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 9, 3, 0x1E1, 1
-# 509 "data/maps/LuxuraIndoor/scripts.pory"
+# 502 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 10, 3, 0x1E2, 1
-# 510 "data/maps/LuxuraIndoor/scripts.pory"
+# 503 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 9, 4, 0x1E9, 1
-# 511 "data/maps/LuxuraIndoor/scripts.pory"
+# 504 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 10, 4, 0x1EA, 1
-# 512 "data/maps/LuxuraIndoor/scripts.pory"
+# 505 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 12, 10, 0x2B0, 1
-# 513 "data/maps/LuxuraIndoor/scripts.pory"
+# 506 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 13, 10, 0x2B1, 1
-# 514 "data/maps/LuxuraIndoor/scripts.pory"
+# 507 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 12, 11, 0x2B8, 1
-# 515 "data/maps/LuxuraIndoor/scripts.pory"
+# 508 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 13, 11, 0x2B9, 1
-# 516 "data/maps/LuxuraIndoor/scripts.pory"
+# 509 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 6, 6, 0x2B0, 1
-# 517 "data/maps/LuxuraIndoor/scripts.pory"
+# 510 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 7, 6, 0x2B1, 1
-# 518 "data/maps/LuxuraIndoor/scripts.pory"
+# 511 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 6, 7, 0x2B8, 1
-# 519 "data/maps/LuxuraIndoor/scripts.pory"
+# 512 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 7, 7, 0x2B9, 1
-# 520 "data/maps/LuxuraIndoor/scripts.pory"
+# 513 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 0, 36, 0x0E0, 1
-# 521 "data/maps/LuxuraIndoor/scripts.pory"
+# 514 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 1, 36, 0x0E1, 1
-# 522 "data/maps/LuxuraIndoor/scripts.pory"
+# 515 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 0, 37, 0x0E8, 1
-# 523 "data/maps/LuxuraIndoor/scripts.pory"
+# 516 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 1, 37, 0x0E9, 1
-# 524 "data/maps/LuxuraIndoor/scripts.pory"
+# 517 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 2, 36, 0x340, 0
-# 525 "data/maps/LuxuraIndoor/scripts.pory"
+# 518 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 2, 37, 0x348, 0
 	return
 
 tragedy_8:
-# 528 "data/maps/LuxuraIndoor/scripts.pory"
-	addobject 7
-# 529 "data/maps/LuxuraIndoor/scripts.pory"
-	addobject 8
-# 530 "data/maps/LuxuraIndoor/scripts.pory"
-	addobject 9
-# 531 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 1
-# 532 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 2
-# 533 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 3
-# 534 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 4
-# 535 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 5
-# 536 "data/maps/LuxuraIndoor/scripts.pory"
+# 521 "data/maps/LuxuraIndoor/scripts.pory"
 	setflag FLAG_UNUSED_0x4A7
-# 537 "data/maps/LuxuraIndoor/scripts.pory"
+# 522 "data/maps/LuxuraIndoor/scripts.pory"
 	setflag FLAG_UNUSED_0x4A8
-# 538 "data/maps/LuxuraIndoor/scripts.pory"
-	clearflag FLAG_UNUSED_0x4A6
-# 539 "data/maps/LuxuraIndoor/scripts.pory"
+# 523 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 24, 22, 0x1E5, 0
+# 524 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 24, 23, 0x1ED, 0
+# 525 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 25, 22, 0x1E6, 0
+# 526 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 25, 23, 0x1EE, 0
+# 527 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 24, 38, 0x1E5, 0
+# 528 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 24, 39, 0x1ED, 0
+# 529 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 25, 38, 0x1E6, 0
+# 530 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 25, 39, 0x1EE, 0
+# 531 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 4, 30, 0x1E5, 0
+# 532 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 4, 31, 0x1ED, 0
+# 533 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 5, 30, 0x1E6, 0
+# 534 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 5, 31, 0x1EE, 0
+# 535 "data/maps/LuxuraIndoor/scripts.pory"
 	addobject 10
-# 540 "data/maps/LuxuraIndoor/scripts.pory"
+# 536 "data/maps/LuxuraIndoor/scripts.pory"
 	addobject 11
-# 541 "data/maps/LuxuraIndoor/scripts.pory"
+# 537 "data/maps/LuxuraIndoor/scripts.pory"
 	clearflag FLAG_ALISTAIR_ARRIVE
-# 542 "data/maps/LuxuraIndoor/scripts.pory"
+# 538 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 7, 5, 0x2CF, 1
-# 543 "data/maps/LuxuraIndoor/scripts.pory"
+# 539 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 6, 26, 0x2A0, 1
-# 544 "data/maps/LuxuraIndoor/scripts.pory"
+# 540 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 7, 26, 0x2A1, 1
-# 545 "data/maps/LuxuraIndoor/scripts.pory"
+# 541 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 6, 27, 0x2A8, 1
-# 546 "data/maps/LuxuraIndoor/scripts.pory"
+# 542 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 7, 27, 0x2A9, 1
-# 547 "data/maps/LuxuraIndoor/scripts.pory"
+# 543 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 18, 20, 0x2A0, 1
-# 548 "data/maps/LuxuraIndoor/scripts.pory"
+# 544 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 19, 20, 0x2A1, 1
-# 549 "data/maps/LuxuraIndoor/scripts.pory"
+# 545 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 18, 21, 0x2A8, 1
-# 550 "data/maps/LuxuraIndoor/scripts.pory"
+# 546 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 19, 21, 0x2A9, 1
-# 551 "data/maps/LuxuraIndoor/scripts.pory"
+# 547 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 22, 30, 0x2B0, 1
-# 552 "data/maps/LuxuraIndoor/scripts.pory"
+# 548 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 23, 30, 0x2B1, 1
-# 553 "data/maps/LuxuraIndoor/scripts.pory"
+# 549 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 22, 31, 0x2B8, 1
-# 554 "data/maps/LuxuraIndoor/scripts.pory"
+# 550 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 23, 31, 0x2B9, 1
-# 555 "data/maps/LuxuraIndoor/scripts.pory"
+# 551 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 10, 38, 0x2B0, 1
-# 556 "data/maps/LuxuraIndoor/scripts.pory"
+# 552 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 11, 38, 0x2B1, 1
-# 557 "data/maps/LuxuraIndoor/scripts.pory"
+# 553 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 10, 39, 0x2B8, 1
-# 558 "data/maps/LuxuraIndoor/scripts.pory"
+# 554 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 11, 39, 0x2B9, 1
-# 559 "data/maps/LuxuraIndoor/scripts.pory"
+# 555 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 26, 6, 0x2B0, 1
-# 560 "data/maps/LuxuraIndoor/scripts.pory"
+# 556 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 27, 6, 0x2B1, 1
-# 561 "data/maps/LuxuraIndoor/scripts.pory"
+# 557 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 26, 7, 0x2B8, 1
-# 562 "data/maps/LuxuraIndoor/scripts.pory"
+# 558 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 27, 7, 0x2B9, 1
-# 563 "data/maps/LuxuraIndoor/scripts.pory"
+# 559 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 0, 6, 0x2A0, 1
-# 564 "data/maps/LuxuraIndoor/scripts.pory"
+# 560 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 1, 6, 0x2A1, 1
-# 565 "data/maps/LuxuraIndoor/scripts.pory"
+# 561 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 0, 7, 0x2A8, 1
-# 566 "data/maps/LuxuraIndoor/scripts.pory"
+# 562 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 1, 7, 0x2A9, 1
-# 567 "data/maps/LuxuraIndoor/scripts.pory"
+# 563 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 4, 15, 0x1E1, 1
-# 568 "data/maps/LuxuraIndoor/scripts.pory"
+# 564 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 5, 15, 0x1E2, 1
-# 569 "data/maps/LuxuraIndoor/scripts.pory"
+# 565 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 4, 16, 0x1E9, 1
-# 570 "data/maps/LuxuraIndoor/scripts.pory"
+# 566 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 5, 16, 0x1EA, 1
-# 571 "data/maps/LuxuraIndoor/scripts.pory"
+# 567 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 14, 6, 0x2A0, 1
-# 572 "data/maps/LuxuraIndoor/scripts.pory"
+# 568 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 15, 6, 0x2A1, 1
-# 573 "data/maps/LuxuraIndoor/scripts.pory"
+# 569 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 14, 7, 0x2A8, 1
-# 574 "data/maps/LuxuraIndoor/scripts.pory"
+# 570 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 15, 7, 0x2A9, 1
-# 575 "data/maps/LuxuraIndoor/scripts.pory"
+# 571 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 22, 6, 0x2A0, 1
-# 576 "data/maps/LuxuraIndoor/scripts.pory"
+# 572 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 23, 6, 0x2A1, 1
-# 577 "data/maps/LuxuraIndoor/scripts.pory"
+# 573 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 22, 7, 0x2A8, 1
-# 578 "data/maps/LuxuraIndoor/scripts.pory"
+# 574 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 23, 7, 0x2A9, 1
-# 579 "data/maps/LuxuraIndoor/scripts.pory"
+# 575 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 9, 3, 0x1E1, 1
-# 580 "data/maps/LuxuraIndoor/scripts.pory"
+# 576 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 10, 3, 0x1E2, 1
-# 581 "data/maps/LuxuraIndoor/scripts.pory"
+# 577 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 9, 4, 0x1E9, 1
-# 582 "data/maps/LuxuraIndoor/scripts.pory"
+# 578 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 10, 4, 0x1EA, 1
-# 583 "data/maps/LuxuraIndoor/scripts.pory"
+# 579 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 12, 10, 0x2B0, 1
-# 584 "data/maps/LuxuraIndoor/scripts.pory"
+# 580 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 13, 10, 0x2B1, 1
-# 585 "data/maps/LuxuraIndoor/scripts.pory"
+# 581 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 12, 11, 0x2B8, 1
-# 586 "data/maps/LuxuraIndoor/scripts.pory"
+# 582 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 13, 11, 0x2B9, 1
-# 587 "data/maps/LuxuraIndoor/scripts.pory"
+# 583 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 6, 6, 0x2B0, 1
-# 588 "data/maps/LuxuraIndoor/scripts.pory"
+# 584 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 7, 6, 0x2B1, 1
-# 589 "data/maps/LuxuraIndoor/scripts.pory"
+# 585 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 6, 7, 0x2B8, 1
-# 590 "data/maps/LuxuraIndoor/scripts.pory"
+# 586 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 7, 7, 0x2B9, 1
-# 591 "data/maps/LuxuraIndoor/scripts.pory"
+# 587 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 0, 36, 0x0E0, 1
-# 592 "data/maps/LuxuraIndoor/scripts.pory"
+# 588 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 1, 36, 0x0E1, 1
-# 593 "data/maps/LuxuraIndoor/scripts.pory"
+# 589 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 0, 37, 0x0E8, 1
-# 594 "data/maps/LuxuraIndoor/scripts.pory"
+# 590 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 1, 37, 0x0E9, 1
-# 595 "data/maps/LuxuraIndoor/scripts.pory"
+# 591 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 2, 36, 0x340, 0
-# 596 "data/maps/LuxuraIndoor/scripts.pory"
+# 592 "data/maps/LuxuraIndoor/scripts.pory"
 	setmetatile 2, 37, 0x348, 0
 	return
 
 tragedy_9:
-# 599 "data/maps/LuxuraIndoor/scripts.pory"
-	addobject 7
-# 600 "data/maps/LuxuraIndoor/scripts.pory"
-	addobject 8
-# 601 "data/maps/LuxuraIndoor/scripts.pory"
-	addobject 9
-# 602 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 1
-# 603 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 2
-# 604 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 3
-# 605 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 4
-# 606 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 5
-# 607 "data/maps/LuxuraIndoor/scripts.pory"
+# 596 "data/maps/LuxuraIndoor/scripts.pory"
 	setflag FLAG_UNUSED_0x4A7
-# 608 "data/maps/LuxuraIndoor/scripts.pory"
+# 597 "data/maps/LuxuraIndoor/scripts.pory"
 	setflag FLAG_UNUSED_0x4A8
+# 598 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 24, 22, 0x1E5, 0
+# 599 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 24, 23, 0x1ED, 0
+# 600 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 25, 22, 0x1E6, 0
+# 601 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 25, 23, 0x1EE, 0
+# 602 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 24, 38, 0x1E5, 0
+# 603 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 24, 39, 0x1ED, 0
+# 604 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 25, 38, 0x1E6, 0
+# 605 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 25, 39, 0x1EE, 0
+# 606 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 4, 30, 0x1E5, 0
+# 607 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 4, 31, 0x1ED, 0
+# 608 "data/maps/LuxuraIndoor/scripts.pory"
+	setmetatile 5, 30, 0x1E6, 0
 # 609 "data/maps/LuxuraIndoor/scripts.pory"
-	clearflag FLAG_UNUSED_0x4A6
+	setmetatile 5, 31, 0x1EE, 0
 # 610 "data/maps/LuxuraIndoor/scripts.pory"
 	removeobject 10
 # 611 "data/maps/LuxuraIndoor/scripts.pory"
@@ -1280,7 +1278,7 @@ tragedy_9:
 	return
 
 tragedy_14:
-# 326 "data/maps/LuxuraIndoor/scripts.pory"
+# 312 "data/maps/LuxuraIndoor/scripts.pory"
 	compare LUXURA_TRAGEDY, 19
 	goto_if_lt tragedy_5
 	goto tragedy_13
@@ -1344,13 +1342,13 @@ alistairarrive4::
 # 706 "data/maps/LuxuraIndoor/scripts.pory"
 	waitmessage
 # 707 "data/maps/LuxuraIndoor/scripts.pory"
-	applymovement 11, exclam
+	applymovement 8, exclam
 # 708 "data/maps/LuxuraIndoor/scripts.pory"
-	applymovement 10, traces1
+	applymovement 7, traces1
 # 709 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox alistairarrive4_Text_1, MSGBOX_AUTOCLOSE
 # 710 "data/maps/LuxuraIndoor/scripts.pory"
-	applymovement 10, exclam
+	applymovement 7, exclam
 # 711 "data/maps/LuxuraIndoor/scripts.pory"
 	speakername unknown
 # 712 "data/maps/LuxuraIndoor/scripts.pory"
@@ -1358,15 +1356,15 @@ alistairarrive4::
 # 714 "data/maps/LuxuraIndoor/scripts.pory"
 	applymovement 0xFF, alistairgone3
 # 715 "data/maps/LuxuraIndoor/scripts.pory"
-	applymovement 10, alistairgone
+	applymovement 7, alistairgone
 # 716 "data/maps/LuxuraIndoor/scripts.pory"
-	applymovement 11, alistairgone1
+	applymovement 8, alistairgone1
 # 717 "data/maps/LuxuraIndoor/scripts.pory"
 	waitmovement 0
 # 718 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 10
+	removeobject 7
 # 719 "data/maps/LuxuraIndoor/scripts.pory"
-	removeobject 11
+	removeobject 8
 # 720 "data/maps/LuxuraIndoor/scripts.pory"
 	setflag FLAG_ALISTAIR_ARRIVE
 # 721 "data/maps/LuxuraIndoor/scripts.pory"

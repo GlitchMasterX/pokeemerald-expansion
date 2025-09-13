@@ -1959,6 +1959,26 @@
 	.4byte \products
 	.endm
 
+
+    @ Copy/Set a metatile from a source map into the current map.
+@ Arguments:
+@   mapGroup, mapNum      - source map
+@   srcX, srcY            - tile coordinates on source map
+@   dstX, dstY            - destination coordinates on current map
+@   metatileId            - 0xFFFF = use source map tile, otherwise override
+@   impassable            - 0 = normal, 1 = impassable
+.macro copymetatileex mapGroup:req, mapNum:req, srcX:req, srcY:req, dstX:req, dstY:req, metatileId:req, impassable:req
+    .byte SCR_OP_COPYMETATILEEX
+    .2byte \mapGroup
+    .2byte \mapNum
+    .2byte \srcX
+    .2byte \srcY
+    .2byte \dstX
+    .2byte \dstY
+    .2byte \metatileId
+    .2byte \impassable
+.endm
+
 @ Supplementary
 
 	.macro goto_if_unset flag:req, dest:req

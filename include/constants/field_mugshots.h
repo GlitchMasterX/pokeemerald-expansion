@@ -23,7 +23,11 @@
 #define EMOTE_SHOCK        6
 #define EMOTE_JOY          7
 #define EMOTE_TEAR         8
-#define EMOTE_SPECIAL      9       
-#define EMOTE_COUNT        10
+#define EMOTE_SPECIAL      9     
+#define EMOTE_BLUSH        10
+#define EMOTE_INSANE        11
+#define EMOTE_REALIZE        12
+
+#define EMOTE_COUNT        13
 
 #endif // GUARD_CONSTANTS_FIELD_MUGSHOTS_H

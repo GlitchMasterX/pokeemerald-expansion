@@ -86,71 +86,6 @@
       "flag": "FLAG_UNUSED_0x4AD"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BLOOD",
-      "x": 35,
-      "y": 10,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "blood",
-      "flag": "FLAG_UNUSED_0x4AC"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BLOOD",
-      "x": 39,
-      "y": 16,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "blood",
-      "flag": "FLAG_UNUSED_0x4AC"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BLOOD",
-      "x": 31,
-      "y": 17,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "blood",
-      "flag": "FLAG_UNUSED_0x4AC"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BLOOD",
-      "x": 42,
-      "y": 24,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "blood",
-      "flag": "FLAG_UNUSED_0x4AC"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BLOOD",
-      "x": 34,
-      "y": 10,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_UNUSED_0x4AC"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_SPARK_M",
       "x": 33,
       "y": 12,
@@ -188,19 +123,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_UNUSED_0x4AE"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BLOOD",
-      "x": 34,
-      "y": 24,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "blood",
-      "flag": "FLAG_UNUSED_0x4AC"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPARK_M",

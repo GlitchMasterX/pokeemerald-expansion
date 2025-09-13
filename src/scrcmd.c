@@ -2754,6 +2754,38 @@ bool8 ScrCmd_waitmoncry(struct ScriptContext *ctx)
     return TRUE;
 }
 
+bool8 ScrCmd_copymetatileex(struct ScriptContext *ctx)
+{
+    u16 mapGroup   = VarGet(ScriptReadHalfword(ctx));
+    u16 mapNum     = VarGet(ScriptReadHalfword(ctx));
+    u16 srcX       = VarGet(ScriptReadHalfword(ctx));
+    u16 srcY       = VarGet(ScriptReadHalfword(ctx));
+    u16 dstX       = VarGet(ScriptReadHalfword(ctx));
+    u16 dstY       = VarGet(ScriptReadHalfword(ctx));
+    u16 metatileId = VarGet(ScriptReadHalfword(ctx));
+    bool16 impass  = VarGet(ScriptReadHalfword(ctx));
+
+    const struct MapLayout *layout = Overworld_GetMapHeaderByGroupAndId(mapGroup, mapNum)->mapLayout;
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+    srcX += MAP_OFFSET;
+    srcY += MAP_OFFSET;
+    dstX += MAP_OFFSET;
+    dstY += MAP_OFFSET;
+
+    // If metatileId == 0xFFFF, fetch from source map
+    if (metatileId == 0xFFFF)
+        metatileId = layout->map[(srcX - MAP_OFFSET) + layout->width * (srcY - MAP_OFFSET)];
+
+    if (!impass)
+        MapGridSetMetatileIdAt(dstX, dstY, metatileId);
+    else
+        MapGridSetMetatileIdAt(dstX, dstY, metatileId | MAPGRID_IMPASSABLE);
+
+    return FALSE;
+}
+
 bool8 ScrCmd_setmetatile(struct ScriptContext *ctx)
 {
     u16 x = VarGet(ScriptReadHalfword(ctx));

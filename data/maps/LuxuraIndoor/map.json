@@ -68,7 +68,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
-      "x": 25,
+      "x": 24,
       "y": 38,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
@@ -91,45 +91,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "gone",
       "flag": "FLAG_UNUSED_0x496"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BLOOD",
-      "x": 4,
-      "y": 31,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "blood",
-      "flag": "FLAG_UNUSED_0x4A6"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BLOOD",
-      "x": 25,
-      "y": 23,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "blood",
-      "flag": "FLAG_UNUSED_0x4A6"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BLOOD",
-      "x": 25,
-      "y": 38,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "blood",
-      "flag": "FLAG_UNUSED_0x4A6"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ALISTAIR",

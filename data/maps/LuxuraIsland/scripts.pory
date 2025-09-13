@@ -22,8 +22,8 @@ script playerinvisible1 {
 script ran{
     lock
     clearflag(FLAG_UNUSED_0x496)
-    addobject(21,MAP_LUXURA_ISLAND)
-    applymovement(21,moves(set_invisible))
+    addobject(20,MAP_LUXURA_ISLAND)
+    applymovement(20,moves(set_invisible))
     special(SpawnCameraObject)
     applymovement(OBJ_EVENT_ID_CAMERA,cam)
     waitmovement(0)
@@ -69,8 +69,8 @@ script ran{
     speakername(Xylar1)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't care."),MSGBOX_AUTOCLOSE)
     waitmessage
-    addobject(22,MAP_LUXURA_ISLAND)
-    applymovement(22,moves(set_visible walk_right*3))
+    addobject(21,MAP_LUXURA_ISLAND)
+    applymovement(21,moves(set_visible walk_right*3))
     speakername("Hoopa")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_HOOPA}{EMOTE_NORMAL}......."))
     removefieldmugshot
@@ -79,7 +79,7 @@ script ran{
     applymovement(1,moves(walk_fast_up*1))
     waitmovement(0)
     playse(SE_M_TELEPORT)
-    applymovement(21,portal_open)
+    applymovement(20,portal_open)
     waitse
     waitmovement(0)
     applymovement(1,moves(jump_up))
@@ -90,23 +90,23 @@ script ran{
     applymovement(1,moves(set_invisible))
     applymovement(0xFF,moves(set_invisible))
     playse(SE_M_TELEPORT)
-    applymovement(21,portal_close)
+    applymovement(20,portal_close)
     waitse
     waitmovement(0)
     playse(SE_PIN)
-    applymovement(22,moves(emote_happy))
+    applymovement(21,moves(emote_happy))
     speakername("Hoopa")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_HOOPA}{EMOTE_JOY}......."))
     removefieldmugshot
     closemessage
-    applymovement(21,moves(walk_fast_right*5 walk_fast_up*7))
-    applymovement(22,moves(walk_right*5))
+    applymovement(20,moves(walk_fast_right*5 walk_fast_up*7))
+    applymovement(21,moves(walk_right*5))
     waitmovement(0)
     applymovement(0x7F,moves(walk_up*8 walk_right*2))
-    applymovement(22,moves(walk_up*8 walk_right*2))
+    applymovement(21,moves(walk_up*8 walk_right*2))
     waitmovement(0)
     playse(SE_M_TELEPORT)
-    applymovement(21,portal_open)
+    applymovement(20,portal_open)
     waitse
     waitmovement(0)
     playse(SE_WARP_OUT)
@@ -123,7 +123,7 @@ script ran{
     waitse
     waitmovement(0)
     playse(SE_M_TELEPORT)
-    applymovement(21,portal_close)
+    applymovement(20,portal_close)
     waitmovement(0)
     speakername(Xylar1)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Wh-what the-?! The pool?!\pMira!! this is all your fault!"))
@@ -135,13 +135,13 @@ script ran{
     playse(SE_PIN)
     applymovement(3,moves(emote_happy))
     applymovement(4,moves(face_left emote_upset))
-    applymovement(22,moves(emote_happy))
+    applymovement(21,moves(emote_happy))
     playmoncry(SPECIES_HOOPA,CRY_MODE_HIGH_PITCH)
     speakername("Hoopa")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_HOOPA}{EMOTE_JOY}......."))
     removefieldmugshot
     closemessage
-    applymovement(22,moves(emote_happy walk_fast_left*15))
+    applymovement(21,moves(emote_happy walk_fast_left*15))
     speakername(Xylar1)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Hey!! Come back here, you floating donut!!"))
     removefieldmugshot
@@ -419,8 +419,8 @@ script LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD {
         setflag(FLAG_UNUSED_0x4EF)
         removeobject(6)
         setflag(FLAG_UNUSED_0x4A5)
+        removeobject(12)
         removeobject(13)
-        removeobject(14)
         setflag(FLAG_ALISTAIR_ARRIVE)
     }
      elif(var(LUXURA_TRAGEDY)==9){
@@ -428,16 +428,16 @@ script LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD {
         clearflag(FLAG_UNUSED_0x4EF)
         removeobject(6)
         setflag(FLAG_UNUSED_0x4A5)
+        removeobject(12)
         removeobject(13)
-        removeobject(14)
         setflag(FLAG_ALISTAIR_ARRIVE)
     }
     elif(var(LUXURA_TRAGEDY)==10){
         setflag(FLAG_UNUSED_0x4EF)
         removeobject(6)
         setflag(FLAG_UNUSED_0x4A5)
+        removeobject(12)
         removeobject(13)
-        removeobject(14)
         setflag(FLAG_ALISTAIR_ARRIVE)
     }
     elif(var(LUXURA_TRAGEDY)==11){
@@ -445,9 +445,12 @@ script LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD {
         setflag(FLAG_UNUSED_0x4A4)
         addobject(6)
         clearflag(FLAG_UNUSED_0x4A5)
-        setmetatile(6,28,0x001,1)
+        setmetatile(6,28,0x30D,0)
+        setmetatile(6,29,0x315,0)
+        setmetatile(5,29,0x314,0)
+        setmetatile(5,28,0x30C,0)
+        removeobject(12)
         removeobject(13)
-        removeobject(14)
         setflag(FLAG_ALISTAIR_ARRIVE)
     }
     elif(var(LUXURA_TRAGEDY)>11 && var(LUXURA_TRAGEDY)<14){
@@ -455,9 +458,12 @@ script LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD {
         setflag(FLAG_UNUSED_0x4A4)
         addobject(6)
         clearflag(FLAG_UNUSED_0x4A5)
-        setmetatile(6,28,0x001,1)
+        setmetatile(6,28,0x30D,0)
+        setmetatile(6,29,0x315,0)
+        setmetatile(5,29,0x314,0)
+        setmetatile(5,28,0x30C,0)
         removeobject(13)
-        removeobject(14)
+        removeobject(12)
         setflag(FLAG_ALISTAIR_ARRIVE)
     }
     elif(var(LUXURA_TRAGEDY)>13 && var(LUXURA_TRAGEDY)<19){
@@ -467,9 +473,12 @@ script LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD {
         setflag(FLAG_UNUSED_0x4A4)
         addobject(6)
         clearflag(FLAG_UNUSED_0x4A5)
-        setmetatile(6,28,0x001,1)   
+        setmetatile(6,28,0x30D,0)
+        setmetatile(6,29,0x315,0)
+        setmetatile(5,29,0x314,0)
+        setmetatile(5,28,0x30C,0)
         removeobject(13)
-        removeobject(14)
+        removeobject(12)
         setflag(FLAG_ALISTAIR_ARRIVE)
 }
   elif(var(LUXURA_TRAGEDY)==19 && var(LUXURA_TRAGEDY)==20){
@@ -479,7 +488,11 @@ script LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD {
         setflag(FLAG_UNUSED_0x4A4)
         addobject(6)
         clearflag(FLAG_UNUSED_0x4A5)
-        setmetatile(6,28,0x001,1)    
+        setmetatile(6,28,0x30D,0)
+        setmetatile(6,29,0x315,0)
+        setmetatile(5,29,0x314,0)
+        setmetatile(5,28,0x30C,0)
+            
 }
   elif(var(LUXURA_TRAGEDY) == 21){
         removeobject(5)
@@ -488,9 +501,12 @@ script LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD {
         setflag(FLAG_UNUSED_0x4A4)
         addobject(6)
         clearflag(FLAG_UNUSED_0x4A5)
-        setmetatile(6,28,0x001,1)
+        setmetatile(6,28,0x30D,0)
+        setmetatile(6,29,0x315,0)
+        setmetatile(5,29,0x314,0)
+        setmetatile(5,28,0x30C,0)
         addobject(13)
-        addobject(14)
+        addobject(12)
         clearflag(FLAG_ALISTAIR_ARRIVE)
 
 }
@@ -501,9 +517,12 @@ script LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD {
         setflag(FLAG_UNUSED_0x4A4)
         addobject(6)
         clearflag(FLAG_UNUSED_0x4A5)
-        setmetatile(6,28,0x001,1)
+        setmetatile(6,28,0x30D,0)
+        setmetatile(6,29,0x315,0)
+        setmetatile(5,29,0x314,0)
+        setmetatile(5,28,0x30C,0)
         removeobject(13)
-        removeobject(14)
+        removeobject(12)
         setflag(FLAG_ALISTAIR_ARRIVE)
 
  }
@@ -550,6 +569,7 @@ script blood{
 
 script bloodsee {
     lock
+    playse(SE_PIN)
     applymovement(OBJ_EVENT_ID_PLAYER,exclam)
     applymovement(0xFD,exclam)
     speakername("Xylar")
@@ -667,31 +687,43 @@ script alistairarrive {
     applymovement(0x7F,cameramovementalistair)
     waitmovement(0)
     speakername(unknown)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Aurther's family mansion.\nHe always spoke so highly of this place. It's been years since I've visited."),MSGBOX_AUTOCLOSE)
-     
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Aurther's family mansion.\nHe always spoke so highly of this place. It's been years since I've visited."),MSGBOX_AUTOCLOSE)
     waitmessage
+    closemessage 
+    applymovement(12,alistairarrive1)
     applymovement(13,alistairarrive1)
-    applymovement(14,alistairarrive1)
     waitmovement(0)
     playbgm(MUS_PL_TITLE,FALSE)
     speakername(unknown)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Wait....Something's not right."),MSGBOX_AUTOCLOSE)
-     
-    applymovement(13,exclam)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Wait....Something's not right."))
+    closemessage
+    playse(SE_PIN)
+    applymovement(12,exclam)
     applymovement(0x7F,alistairarrive1)
     waitmovement(0)
+    applymovement(12,alistairarrive2)
     applymovement(13,alistairarrive2)
-    applymovement(14,alistairarrive2)
     speakername(unknown)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Blood?.....\nNo....What happened here?"),MSGBOX_AUTOCLOSE)
-     
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Blood?.....\nNo....What happened here?"))  
+    closemessage   
     fadescreen(FADE_TO_BLACK)
     applymovement(0x7F,moves(walk_faster_right*4 walk_faster_up*18))
-    applymovement(13,moves(walk_faster_right*4 walk_faster_up*18))
-    applymovement(14,moves(walk_faster_right*4 walk_faster_up*17))
+    applymovement(12,moves(walk_faster_right*4 walk_faster_up*18))
+    applymovement(13,moves(walk_faster_right*3 walk_faster_up*17))
     waitmovement(0)
     fadescreen(FADE_FROM_BLACK)
-
+    speakername(unknown)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Aurther...Elysia...Please be safe."))
+    closemessage
+    applymovement(12,moves(walk_up))
+    removeobject(12)
+    playse(SE_EXIT)
+    waitse
+    applymovement(13,moves(walk_up*2))
+    waitmovement(0)
+    removeobject(13)
+    playse(SE_EXIT)
+    waitse
     release
     setvar(LUXURA_TRAGEDY,22)
     warpsilent(MAP_LUXURA_INDOOR,14,33)

@@ -401,7 +401,7 @@ mira_Text_7:
 
 mira_Text_8:
 # 74 "data/maps/Playerroom/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_NORM}............\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_BLUSH}............\p"
 	.string "She's kind, smart, a little sneaky… and,\n"
 	.string "well-yeah.\p"
 	.string "I.......\p"

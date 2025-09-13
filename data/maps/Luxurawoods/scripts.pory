@@ -8,26 +8,23 @@ if(var(LUXURA_TRAGEDY)==14){
 	removeobject(2)
 	setflag(FLAG_ITEM_ROUTE_102_POTION)
 	removeobject(4)
-	removeobject(10)
 	removeobject(5)
 	removeobject(6)
 	setflag(FLAG_UNUSED_0x4B2)
 	removeobject(7)
 	removeobject(8)
 	removeobject(9)
-	setflag(FLAG_UNUSED_0x4B3)
-	}	
+	setmetatile(25,3,0x332,0)
+	setmetatile(26,3,0x332,0)
+	setmetatile(27,3,0x332,0)
+	setmetatile(25,4,0x332,0)
+	setmetatile(25,5,0x332,0)
+	setmetatile(26,4,0x332,0)
+	setmetatile(27,4,0x332,0)
+	setmetatile(26,5,0x332,0)
+	setmetatile(27,5,0x332,0)
+    }	
 	elif(var(LUXURA_TRAGEDY)==16){
-	removeobject(1)
-	addobject(2)
-	removeobject(4)
-	removeobject(10)
-	removeobject(5)
-	removeobject(6)
-	removeobject(7)
-	removeobject(8)
-	removeobject(9)
-	setflag(FLAG_UNUSED_0x4B3)
 	setflag(FLAG_UNUSED_0x4B2)
 	clearflag(FLAG_ITEM_ROUTE_102_POTION)
 	setflag(FLAG_UNUSED_0x4AF)
@@ -42,18 +39,8 @@ if(var(LUXURA_TRAGEDY)==14){
 	setmetatile(27,5,0x332,0)
 }
 elif(var(LUXURA_TRAGEDY)==17){
-	removeobject(1)
-	removeobject(2)
 	setflag(FLAG_ITEM_ROUTE_102_POTION)
-	addobject(4)
-	addobject(5)
-	addobject(6)
-	addobject(10)
 	clearflag(FLAG_UNUSED_0x4B2)
-	addobject(7)
-	addobject(8)
-	addobject(9)
-	clearflag(FLAG_UNUSED_0x4B3)
 	setflag(FLAG_UNUSED_0x4AF)
 	setmetatile(25,3,0x332,0)
 	setmetatile(26,3,0x332,0)
@@ -66,18 +53,8 @@ elif(var(LUXURA_TRAGEDY)==17){
 	setmetatile(27,5,0x332,0)
 }
 elif(var(LUXURA_TRAGEDY)>17){
-	removeobject(1)
-	removeobject(2)
 	setflag(FLAG_ITEM_ROUTE_102_POTION)
-	removeobject(4)
-	removeobject(5)
-	removeobject(6)
-	removeobject(10)
 	setflag(FLAG_UNUSED_0x4B2)
-	addobject(7)
-	addobject(8)
-	addobject(9)
-	clearflag(FLAG_UNUSED_0x4B3)
 	setflag(FLAG_UNUSED_0x4AF)
 	setmetatile(25,3,0x332,0)
 	setmetatile(26,3,0x332,0)
@@ -88,6 +65,15 @@ elif(var(LUXURA_TRAGEDY)>17){
 	setmetatile(27,4,0x332,0)
 	setmetatile(26,5,0x332,0)
 	setmetatile(27,5,0x332,0)
+    setmetatile(40,1,0x371,0)
+    setmetatile(40,2,0x379,0)
+    setmetatile(40,3,0x381,0)
+	setmetatile(41,1,0x372,0)
+    setmetatile(41,2,0x37A,0)
+    setmetatile(41,3,0x382,0)
+    setmetatile(42,1,0x373,0)
+    setmetatile(42,2,0x37B,0)
+    setmetatile(42,3,0x383,0)
 }
 
 }
@@ -303,9 +289,6 @@ script gruntsded {
     lockall
     applymovement(6,invisible)
     applymovement(7,invisible)
-    applymovement(8,invisible)
-    applymovement(9,invisible)
-    applymovement(10,invisible)
     applymovement(OBJ_EVENT_ID_PLAYER,dd)
     # Xylar's hope before the fall
     speakername(Xylar1)
@@ -334,7 +317,7 @@ script gruntsded {
     speakername(Xylar1)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}STOP LYING!"),MSGBOX_AUTOCLOSE)
     removefieldmugshot
-	applymovement(10,dds)
+	applymovement(7,dds)
 	waitmovement(0)
     speakername("Grunt F")
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Lie? Oh no...\pHer last look said it all.\pShe realized you'd never save her.\pJust like the others."),MSGBOX_AUTOCLOSE)
@@ -364,15 +347,27 @@ script gruntsded {
     waitmoncry
     # Xylar’s breakdown
     speakername(Xylar1)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}HAHAHAHAHAHA!"),MSGBOX_AUTOCLOSE)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_REALIZE}{FONT_SMALL}If Mira is dead,……{PAUSE_UNTIL_PRESS} then there is no reason to remain kind.\pYeah I'll just kill all of them or die trying.\pNothing better will happen even if I stay kind.\pI'll kill you both…… I'll kill you…… I'll kill you."),MSGBOX_AUTOCLOSE)
+    closemessage
+    playse(SE_PIN)
+    applymovement(4,moves(emote_question_mark))
+    speakername("Grunt F")
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}What are you whispering?"),MSGBOX_AUTOCLOSE)
+    applymovement(0xFF,moves(walk_slow_up))
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_REALIZE}{FONT_SMALL}Kill……{PAUSE_UNTIL_PRESS} Kill…… "),MSGBOX_AUTOCLOSE)
+    closemessage
+    playse(SE_PIN)
     applymovement(4,exclam)
     applymovement(5,exclam)
+    applymovement(0xFF,moves(walk_slow_up))
     waitmovement(0)
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_REALIZE}{FONT_SMALL}Kill…… all{PAUSE_UNTIL_PRESS}…… then I'll die myself……"),MSGBOX_AUTOCLOSE)
+    closemessage
     playbgm(MUS_DUMMY,FALSE)
     speakername("Grunt M")
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}What... what's wrong with him?!"),MSGBOX_AUTOCLOSE)
-    speakername(Xylar1)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}You think I'm weak?!\pYou think I can't save anyone?!\pI'LL RIP THIS WORLD APART!\pI'LL KILL EVERY LAST ONE OF YOU!\pYOU'LL FEEL EVERYTHING I'VE FELT!"),MSGBOX_AUTOCLOSE)
     speakername("Grunt F")
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}He's... completely broken."),MSGBOX_AUTOCLOSE)
     # Mewtwo arrives
@@ -381,12 +376,12 @@ script gruntsded {
     playbgm(MUS_PL_GIRATINA_APPEARS_1,TRUE)
     fadescreen(FADE_TO_BLACK)
     waitbuttonpress
-    applymovement(10,visible)
+    applymovement(7,visible)
     fadescreen(FADE_FROM_BLACK)
     speakername("Grunt M")
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}What the-?!\pElectrode, blow them both apart!"),MSGBOX_AUTOCLOSE)
     playmoncry(SPECIES_ELECTRODE,CRY_MODE_WEAK)
-    waitmoncry
+    applymovement(6,moves(shake_horizontal*3))
     playse(SE_M_COSMIC_POWER)
     waitse
     msgbox(format("Electrode froze in place, trembling under psychic power..."),MSGBOX_AUTOCLOSE)
@@ -394,8 +389,11 @@ script gruntsded {
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}What are you waiting for?! DO IT!"),MSGBOX_AUTOCLOSE)
     speakername(mewtwo) 
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_SPECIAL}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}You know what to do."),MSGBOX_AUTOCLOSE) 
-	applymovement(6,ee) 
-	applymovement(4,exclam) 
+	playmoncry(SPECIES_ELECTRODE,CRY_MODE_WEAK)
+    waitmoncry
+    applymovement(6,ee) 
+	playse(SE_PIN)
+    applymovement(4,exclam) 
 	applymovement(5,exclam) 
 	waitmovement(0) 
 	speakername("Grunt M") 
@@ -411,14 +409,21 @@ script gruntsded {
     removeobject(4)
     removeobject(5)
     removeobject(6)
-    applymovement(7,visible)
-    applymovement(8,visible)
-    applymovement(9,visible)
+    setmetatile(40,1,0x371,0)
+    setmetatile(40,2,0x379,0)
+    setmetatile(40,3,0x381,0)
+	setmetatile(41,1,0x372,0)
+    setmetatile(41,2,0x37A,0)
+    setmetatile(41,3,0x382,0)
+    setmetatile(42,1,0x373,0)
+    setmetatile(42,2,0x37B,0)
+    setmetatile(42,3,0x383,0)
+    special(DrawWholeMapView)
     fadescreen(FADE_FROM_BLACK)
     # Aftermath
     applymovement(OBJ_EVENT_ID_CAMERA,strp)
     special(RemoveCameraObject)
-    applymovement(10,sss)
+    applymovement(7,sss)
     applymovement(0xFF,exclam)
     waitmovement(0)
     speakername(mewtwo)
@@ -437,7 +442,7 @@ movement sss {
 	
 }
 movement dds {
-	walk_down*4
+	walk_down*2
 	walk_left*2
 	face_up
 }

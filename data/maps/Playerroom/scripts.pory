@@ -71,7 +71,7 @@ script mira{
 	speakername(Xylar1)
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}…You know, Mira's not just our maid. She's actually the adopted daughter of my parents.\pThey took her in a few years before my birth, but she insisted on working as a maid to repay them-no matter how many times they told her she didn't have to.\pThat's just the kind of person she is."))
 	speakername(Xylar1)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_NORM}............\pShe's kind, smart, a little sneaky… and, well-yeah.\pI.......\pI've had a bit of a crush on her for a while now."))
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_BLUSH}............\pShe's kind, smart, a little sneaky… and, well-yeah.\pI.......\pI've had a bit of a crush on her for a while now."))
 	speakername(Xylar1)
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}But I'm not going to tell her. Not yet.\pNot until I've become the strongest Trainer in the world.\pNot until I'm someone worthy of her."))
 	releaseall

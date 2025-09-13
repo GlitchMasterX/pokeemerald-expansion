@@ -918,113 +918,113 @@ mewtwogone1::
 	speakername mewtwo
 # 489 "data/maps/Newmap11/scripts.pory"
 	msgbox mewtwogone1_Text_12, MSGBOX_AUTOCLOSE
-# 491 "data/maps/Newmap11/scripts.pory"
+# 490 "data/maps/Newmap11/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 492 "data/maps/Newmap11/scripts.pory"
+# 491 "data/maps/Newmap11/scripts.pory"
 	playse SE_M_TELEPORT
-# 493 "data/maps/Newmap11/scripts.pory"
+# 492 "data/maps/Newmap11/scripts.pory"
 	removeobject 3
-# 494 "data/maps/Newmap11/scripts.pory"
+# 493 "data/maps/Newmap11/scripts.pory"
 	setvar ACADEMY_START, 2
-# 495 "data/maps/Newmap11/scripts.pory"
+# 494 "data/maps/Newmap11/scripts.pory"
 	fadedefaultbgm
-# 496 "data/maps/Newmap11/scripts.pory"
+# 495 "data/maps/Newmap11/scripts.pory"
 	fadescreen FADE_FROM_BLACK
-# 497 "data/maps/Newmap11/scripts.pory"
+# 496 "data/maps/Newmap11/scripts.pory"
 	applymovement 0xFF, pay
-# 498 "data/maps/Newmap11/scripts.pory"
+# 497 "data/maps/Newmap11/scripts.pory"
 	speakername Xylar1
-# 499 "data/maps/Newmap11/scripts.pory"
+# 498 "data/maps/Newmap11/scripts.pory"
 	msgbox mewtwogone1_Text_13, MSGBOX_AUTOCLOSE
-# 501 "data/maps/Newmap11/scripts.pory"
+# 500 "data/maps/Newmap11/scripts.pory"
 	setflag FLAG_TALK_GRAVE
-# 502 "data/maps/Newmap11/scripts.pory"
+# 501 "data/maps/Newmap11/scripts.pory"
 	release
 	return
 
 
-# 504 "data/maps/Newmap11/scripts.pory"
+# 503 "data/maps/Newmap11/scripts.pory"
 pay:
-# 505 "data/maps/Newmap11/scripts.pory"
+# 504 "data/maps/Newmap11/scripts.pory"
 	walk_up
 	step_end
 
-# 507 "data/maps/Newmap11/scripts.pory"
+# 506 "data/maps/Newmap11/scripts.pory"
 question:
-# 508 "data/maps/Newmap11/scripts.pory"
+# 507 "data/maps/Newmap11/scripts.pory"
 	emote_question_mark
 	step_end
 
 grave::
-# 511 "data/maps/Newmap11/scripts.pory"
+# 510 "data/maps/Newmap11/scripts.pory"
 	compare ACADEMY_START, 50
 	goto_if_eq grave_2
 grave_1:
-# 534 "data/maps/Newmap11/scripts.pory"
+# 533 "data/maps/Newmap11/scripts.pory"
 	goto_if_set FLAG_TALK_GRAVE, grave_4
-# 546 "data/maps/Newmap11/scripts.pory"
+# 545 "data/maps/Newmap11/scripts.pory"
 	goto EventScript_M_Grave
 	return
 
 grave_2:
-# 512 "data/maps/Newmap11/scripts.pory"
+# 511 "data/maps/Newmap11/scripts.pory"
 	lock
+# 512 "data/maps/Newmap11/scripts.pory"
+	speakername NihilFirstVisit1_Text_0
 # 513 "data/maps/Newmap11/scripts.pory"
-	speakername NihilFirstVisit1_Text_0
-# 514 "data/maps/Newmap11/scripts.pory"
 	msgbox grave_Text_0
-# 515 "data/maps/Newmap11/scripts.pory"
+# 514 "data/maps/Newmap11/scripts.pory"
 	msgbox grave_Text_1, MSGBOX_AUTOCLOSE
-# 516 "data/maps/Newmap11/scripts.pory"
+# 515 "data/maps/Newmap11/scripts.pory"
 	applymovement 0xFE, grave_Movement_0
-# 517 "data/maps/Newmap11/scripts.pory"
+# 516 "data/maps/Newmap11/scripts.pory"
 	playmoncry SPECIES_MEWTWO, CRY_MODE_WEAK
+# 517 "data/maps/Newmap11/scripts.pory"
+	speakername NihilFirstVisit1_Text_3
 # 518 "data/maps/Newmap11/scripts.pory"
-	speakername NihilFirstVisit1_Text_3
-# 519 "data/maps/Newmap11/scripts.pory"
 	msgbox grave_Text_2
+# 519 "data/maps/Newmap11/scripts.pory"
+	waitmessage
 # 520 "data/maps/Newmap11/scripts.pory"
-	waitmessage
+	closemessage
 # 521 "data/maps/Newmap11/scripts.pory"
-	closemessage
-# 522 "data/maps/Newmap11/scripts.pory"
 	speakername NihilFirstVisit1_Text_3
-# 523 "data/maps/Newmap11/scripts.pory"
+# 522 "data/maps/Newmap11/scripts.pory"
 	msgbox grave_Text_3
-# 524 "data/maps/Newmap11/scripts.pory"
+# 523 "data/maps/Newmap11/scripts.pory"
 	waitmessage
-# 525 "data/maps/Newmap11/scripts.pory"
+# 524 "data/maps/Newmap11/scripts.pory"
 	closemessage
-# 526 "data/maps/Newmap11/scripts.pory"
+# 525 "data/maps/Newmap11/scripts.pory"
 	applymovement 0xFF, grave_Movement_1
-# 527 "data/maps/Newmap11/scripts.pory"
+# 526 "data/maps/Newmap11/scripts.pory"
 	speakername NihilFirstVisit1_Text_0
-# 528 "data/maps/Newmap11/scripts.pory"
+# 527 "data/maps/Newmap11/scripts.pory"
 	msgbox grave_Text_4
-# 529 "data/maps/Newmap11/scripts.pory"
+# 528 "data/maps/Newmap11/scripts.pory"
 	warpsilent MAP_NEWHOUSE, 2, 24
-# 530 "data/maps/Newmap11/scripts.pory"
+# 529 "data/maps/Newmap11/scripts.pory"
 	clearflag FLAG_ACADEMY_START
-# 531 "data/maps/Newmap11/scripts.pory"
+# 530 "data/maps/Newmap11/scripts.pory"
 	setvar ACADEMY_START, 51
 	goto grave_1
 
 grave_4:
-# 535 "data/maps/Newmap11/scripts.pory"
+# 534 "data/maps/Newmap11/scripts.pory"
 	lock
-# 536 "data/maps/Newmap11/scripts.pory"
+# 535 "data/maps/Newmap11/scripts.pory"
 	speakername Xylar1
-# 537 "data/maps/Newmap11/scripts.pory"
+# 536 "data/maps/Newmap11/scripts.pory"
 	msgbox grave_Text_5, MSGBOX_AUTOCLOSE
-# 539 "data/maps/Newmap11/scripts.pory"
+# 538 "data/maps/Newmap11/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 540 "data/maps/Newmap11/scripts.pory"
+# 539 "data/maps/Newmap11/scripts.pory"
 	clearflag FLAG_TALK_GRAVE
-# 541 "data/maps/Newmap11/scripts.pory"
+# 540 "data/maps/Newmap11/scripts.pory"
 	initclock 10, 10
-# 542 "data/maps/Newmap11/scripts.pory"
+# 541 "data/maps/Newmap11/scripts.pory"
 	fwdmonth 3
-# 543 "data/maps/Newmap11/scripts.pory"
+# 542 "data/maps/Newmap11/scripts.pory"
 	warpsilent MAP_HARBORAC, 22, 27
 	return
 
@@ -1211,19 +1211,19 @@ Alistairarrive_Movement_3:
 	emote_upset
 	step_end
 
-# 516 "data/maps/Newmap11/scripts.pory"
+# 515 "data/maps/Newmap11/scripts.pory"
 grave_Movement_0:
-# 516 "data/maps/Newmap11/scripts.pory"
+# 515 "data/maps/Newmap11/scripts.pory"
 	walk_in_place_up
 	step_end
 
-# 526 "data/maps/Newmap11/scripts.pory"
+# 525 "data/maps/Newmap11/scripts.pory"
 grave_Movement_1:
-# 526 "data/maps/Newmap11/scripts.pory"
+# 525 "data/maps/Newmap11/scripts.pory"
 	delay_16
-# 526 "data/maps/Newmap11/scripts.pory"
+# 525 "data/maps/Newmap11/scripts.pory"
 	delay_16
-# 526 "data/maps/Newmap11/scripts.pory"
+# 525 "data/maps/Newmap11/scripts.pory"
 	face_down
 	step_end
 
@@ -1441,7 +1441,7 @@ Alistairarrive_Text_3:
 
 Alistairarrive_Text_4:
 # 298 "data/maps/Newmap11/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}And who are you?\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}And who are you?\p"
 	.string "Another pawn sent to finish me off?$"
 
 Alistairarrive_Text_5:
@@ -1521,7 +1521,7 @@ Alistairarrive_Text_16:
 
 Alistairarrive_Text_17:
 # 342 "data/maps/Newmap11/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}(He's just as stubborn as Aurther…)\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}(He's just as stubborn as Aurther…)\p"
 	.string "Strength isn't about one victory.\p"
 	.string "It's about enduring every battle that\n"
 	.string "follows.$"
@@ -1682,11 +1682,11 @@ mewtwogone1_Text_12:
 	.string "meet again I expect nothing less.$"
 
 mewtwogone1_Text_13:
-# 499 "data/maps/Newmap11/scripts.pory"
+# 498 "data/maps/Newmap11/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}I should talk to mom before leaving.$"
 
 grave_Text_0:
-# 514 "data/maps/Newmap11/scripts.pory"
+# 513 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_TEAR}{COLOR BLUE}{SHADOW LIGHT_GRAY}Mom…… I'm sorry.\p"
 	.string "I couldn't save you. I couldn't save\n"
 	.string "anyone.\p"
@@ -1696,7 +1696,7 @@ grave_Text_0:
 	.string "everything from us.$"
 
 grave_Text_1:
-# 515 "data/maps/Newmap11/scripts.pory"
+# 514 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_TEAR}{COLOR BLUE}{SHADOW LIGHT_GRAY}But I won't let the world forget you.\p"
 	.string "I won't let it move on like nothing\n"
 	.string "happened.\p"
@@ -1704,20 +1704,20 @@ grave_Text_1:
 	.string "I'll have my revenge.$"
 
 grave_Text_2:
-# 519 "data/maps/Newmap11/scripts.pory"
+# 518 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORMAL}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Xylar……$"
 
 grave_Text_3:
-# 523 "data/maps/Newmap11/scripts.pory"
+# 522 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORMAL}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}You should rest……You haven't slept\n"
 	.string "properly for days.$"
 
 grave_Text_4:
-# 528 "data/maps/Newmap11/scripts.pory"
+# 527 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Hmmm……$"
 
 grave_Text_5:
-# 537 "data/maps/Newmap11/scripts.pory"
+# 536 "data/maps/Newmap11/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Mom, I'll be leaving for the academy\n"
 	.string "now.....\p"
 	.string "They think it's a place to learn and\n"

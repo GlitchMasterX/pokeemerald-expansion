@@ -33,6 +33,10 @@ static const u16 sFieldMugshotPal_XylarNorm[] = INCBIN_U16("graphics/field_mugsh
 static const u16 sFieldMugshotPal_XylarShock[] = INCBIN_U16("graphics/field_mugshots/xylar/shock.gbapal");
 static const u16 sFieldMugshotPal_XylarSleep[] = INCBIN_U16("graphics/field_mugshots/xylar/sleep.gbapal");
 static const u32 sFieldMugshotGfx_XylarSleep[] = INCBIN_U32("graphics/field_mugshots/xylar/sleep.4bpp.smol");
+static const u16 sFieldMugshotPal_XylarRealize[] = INCBIN_U16("graphics/field_mugshots/xylar/realize.gbapal");
+static const u32 sFieldMugshotGfx_XylarRealize[] = INCBIN_U32("graphics/field_mugshots/xylar/realize.4bpp.smol");
+static const u16 sFieldMugshotPal_XylarInsane[] = INCBIN_U16("graphics/field_mugshots/xylar/insane.gbapal");
+static const u32 sFieldMugshotGfx_XylarInsane[] = INCBIN_U32("graphics/field_mugshots/xylar/insane.4bpp.smol");
 
 static const u16 sFieldMugshotPal_AurtherNormal[] = INCBIN_U16("graphics/field_mugshots/aurther/normal.gbapal");
 static const u32 sFieldMugshotGfx_AurtherNormal[] = INCBIN_U32("graphics/field_mugshots/aurther/normal.4bpp.smol");
@@ -224,6 +228,32 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
             .gfx = sFieldMugshotGfx_XylarTear,
             .pal = sFieldMugshotPal_XylarTear,
         },
+
+        [EMOTE_BLUSH] =
+        {
+            .gfx = sFieldMugshotGfx_XylarBlush,
+            .pal = sFieldMugshotPal_XylarBlush,
+        },
+
+        [EMOTE_JOY] =
+        {
+            .gfx = sFieldMugshotGfx_XylarJoy,
+            .pal = sFieldMugshotPal_XylarJoy,
+        },
+
+        [EMOTE_REALIZE] =
+        {
+            .gfx = sFieldMugshotGfx_XylarRealize,
+            .pal = sFieldMugshotPal_XylarRealize,
+        },
+        
+        [EMOTE_INSANE] =
+        {
+            .gfx = sFieldMugshotGfx_XylarInsane,
+            .pal = sFieldMugshotPal_XylarInsane,
+        },
+        
+
     },
     [MUGSHOT_AURTHER] =
     {
@@ -243,18 +273,6 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
         {
             .gfx = sFieldMugshotGfx_AurtherJoy,
             .pal = sFieldMugshotPal_AurtherJoy,
-        },
-
-        [EMOTE_NORM] =
-        {
-            .gfx = sFieldMugshotGfx_XylarBlush,
-            .pal = sFieldMugshotPal_XylarBlush,
-        },
-
-        [EMOTE_SMILE] =
-        {
-            .gfx = sFieldMugshotGfx_XylarJoy,
-            .pal = sFieldMugshotPal_XylarJoy,
         },
 
         [EMOTE_SPECIAL] =

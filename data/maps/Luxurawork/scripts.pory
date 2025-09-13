@@ -8,55 +8,79 @@ map_script_2 LUXURA_TRAGEDY, 11, trage
 map_script_2 LUXURA_TRAGEDY, 22, trageflash
 .2byte 0
 `
+
 script trageflash {
 	lockall
-	addobject(14)
+	special(SpawnCameraObject)
+	playse(SE_PIN)
 	applymovement(7,exclam)
 	waitmovement(0)
-	special(SpawnCameraObject)
-    applymovement(OBJ_EVENT_ID_CAMERA,mo)
+    applymovement(0x7F,mo)
 	waitmovement(0)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Looks like I'm down to my last one…"))
+	speakername(surge)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Looks like I'm down to my last one…"))
 	waitmessage
 	closemessage
-	msgbox("{COLOR BLUE}{SHADOW LIGHT_GRAY}Hoopa!\pFinish this.")
-	applymovement(11,visible)
+	speakername(name3)
+	msgbox("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Hoopa…\pFinish it.")
+	waitmessage
+	closemessage
+	playmoncry(SPECIES_HOOPA_UNBOUND,CRY_MODE_ROAR_1)
+	speakername("Hoopa")
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_UNBOUND}{EMOTE_NORMAL}Hooo...paaa!"))
+	waitmessage
+	closemessage
+	playse(SE_M_TELEPORT)
+	applymovement(11,portal_open)
 	waitmovement(0)
-	applymovement(8,invisible)
+	applymovement(8,moves(face_up set_invisible))
 	waitmovement(0)
 	playse(SE_WARP_IN)
 	waitse
-	applymovement(11,invisible)
+	playse(SE_M_TELEPORT)
+	applymovement(11,portal_close)
 	waitmovement(0)
 	applymovement(8,finish)
 	applymovement(11,finish)
 	waitmovement(0)
-	applymovement(11,visible)
+	playse(SE_M_TELEPORT)
+	applymovement(11,portal_open)
 	waitmovement(0)
 	playse(SE_WARP_OUT)
 	waitse
 	applymovement(8,visible)
 	waitmovement(0)
+	playse(SE_M_TELEPORT)
 	applymovement(11,invisible)
     applymovement(8,atk)
 	playse(SE_M_TAKE_DOWN)
-	applymovement(OBJ_EVENT_ID_CAMERA,moq)	
 	applymovement(9,faint)
 	waitmovement(0)
 	playmoncry(SPECIES_RAICHU,CRY_MODE_FAINT)
-	applymovement(OBJ_EVENT_ID_CAMERA,notal)
+	waitbuttonpress
+	speakername(surge)
+	msgbox("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}You're strong… stronger than I expected.")
+	closemessage
+	speakername(name3)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_QUESTION}{COLOR BLUE}{SHADOW LIGHT_GRAY}You call that strength?"))
+	removefieldmugshot
+	speakername(name3)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}You're pitiful, Surge.\pThis is where it ends."))
+	waitmessage
+    closemessage
+	playse(SE_PIN)
+	applymovement(14,moves(emote_exclamation_mark))
 	waitmovement(0)
-	msgbox("{COLOR BLUE}{SHADOW LIGHT_GRAY}You're strong… stronger than I expected.")
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You call that strength?\pYou're pitiful, Surge.\pThis is where it ends"),MSGBOX_AUTOCLOSE)
 	playse(SE_M_DOUBLE_TEAM)
 	applymovement(12,moves(spy_vanish set_visible spy_vanish face_down))
-	waitmovement(0)
+	waitmovement(12)
 	playse(SE_M_BITE)
 	waitse
 	applymovement(8,run)
 	playbgm(MUS_HG_ENCOUNTER_SAGE,TRUE)
 	fadescreen(FADE_TO_BLACK)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You spoke too soon,\nAurther."),MSGBOX_AUTOCLOSE)
+	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You spoke too soon,\nAurther."))
+	closemessage
 	applymovement(13,visible)
 	applymovement(14,invisible)
     fadescreen(FADE_FROM_BLACK)
@@ -179,6 +203,7 @@ movement exclam {
 script trage {
 	lockall
 	special(SpawnCameraObject)
+	playse(SE_PIN)
 	applymovement(7,exclam)
 	waitmovement(0)
     applymovement(0x7F,mo)
@@ -193,7 +218,7 @@ script trage {
 	closemessage
 	playmoncry(SPECIES_HOOPA_UNBOUND,CRY_MODE_ROAR_1)
 	speakername("Hoopa")
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_UNBOUND}{EMOTE_NORMAL}Hooo...paaa"))
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_UNBOUND}{EMOTE_NORMAL}Hooo...paaa!"))
 	waitmessage
 	closemessage
 	playse(SE_M_TELEPORT)
@@ -514,9 +539,9 @@ script escape {
 	removefieldmugshot
 	applymovement(15,moves(walk_left face_up))
 	waitmovement(0)
-	playse(SE_WARP_IN)
+	playse(SE_M_TELEPORT)
 	waitse
-    applymovement(16,visible)
+    applymovement(16,portal_open)
 	playse(SE_PIN)
 	applymovement(0xFF,exclam)
     applymovement(0xFD,exclam)
@@ -557,8 +582,8 @@ script escape {
 	waitse
 	removeobject(0xFF)
 	removeobject(0xFD)
-	playse(SE_WARP_OUT)
-	applymovement(16,invisible)
+	playse(SE_M_TELEPORT)
+	applymovement(16,portal_close)
     waitse
 	warpsilent(MAP_LUXURA_ISLAND,11,11) 
 	release
