@@ -1907,13 +1907,7 @@
 	.4byte \name
 	.2byte \id
 	.endm
-    
-    @ Sets the text of the name box in the next-shown message box.
-	.macro speakername text:req
-	.byte  SCR_OP_SPEAKERNAME
-	.4byte \text
-	.endm
-    
+	
 		@ Warps to a map, and plays the script passed to it
 	.macro warp_continue_script map:req, X:req, Y:req, script:req, startBlack=TRUE
 	.byte SCR_OP_WARPCONTINUESCRIPT
@@ -2833,3 +2827,10 @@
 	callnative Script_MapPopUp
 	.endm
 
+	@ Manually buffer a string as the speaker's name for namebox.
+	@ The next shown message/msgbox will include a namebox, if the provided string is not NULL.
+	@ An SP_NAME_* constant can also be used, it'll take the name from gSpeakerNamesTable instead.
+	.macro speakername name:req
+	callnative SetSpeaker
+	.4byte \name
+	.endm

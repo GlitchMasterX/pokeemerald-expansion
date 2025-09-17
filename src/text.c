@@ -13,6 +13,8 @@
 #include "dynamic_placeholder_text_util.h"
 #include "fonts.h"
 #include "field_mugshot.h"
+#include "field_name_box.h"
+#include "constants/speaker_names.h"
 
 static u16 RenderText(struct TextPrinter *);
 static u32 RenderFont(struct TextPrinter *);
@@ -1258,7 +1260,7 @@ static u16 RenderText(struct TextPrinter *textPrinter)
                     }
                 }
                 return RENDER_REPEAT;
-            case EXT_CTRL_CODE_MIN_LETTER_SPACING:
+                case EXT_CTRL_CODE_MIN_LETTER_SPACING:
                 textPrinter->minLetterSpacing = *textPrinter->printerTemplate.currentChar++;
                 return RENDER_REPEAT;
             case EXT_CTRL_CODE_JPN:
@@ -1267,7 +1269,14 @@ static u16 RenderText(struct TextPrinter *textPrinter)
             case EXT_CTRL_CODE_ENG:
                 textPrinter->japanese = FALSE;
                 return RENDER_REPEAT;
-                 case EXT_CTRL_CODE_CREATE_MUGSHOT:
+            case EXT_CTRL_CODE_SPEAKER:
+                {
+                    enum SpeakerNames name = *textPrinter->printerTemplate.currentChar++;
+                    TrySpawnAndShowNamebox(gSpeakerNamesTable[name]);
+
+                    return RENDER_REPEAT;
+                }
+                case EXT_CTRL_CODE_CREATE_MUGSHOT:
             {
                 u32 id, emote;
                 id = *textPrinter->printerTemplate.currentChar;
@@ -1474,6 +1483,7 @@ static u32 UNUSED GetStringWidthFixedWidthFont(const u8 *str, u8 fontId, u8 lett
             case EXT_CTRL_CODE_SKIP:
             case EXT_CTRL_CODE_CLEAR_TO:
             case EXT_CTRL_CODE_MIN_LETTER_SPACING:
+            case EXT_CTRL_CODE_SPEAKER:
                 ++strPos;
                 break;
             case EXT_CTRL_CODE_RESET_FONT:
@@ -1624,6 +1634,7 @@ s32 GetStringWidth(u8 fontId, const u8 *str, s16 letterSpacing)
             case EXT_CTRL_CODE_ESCAPE:
             case EXT_CTRL_CODE_SHIFT_RIGHT:
             case EXT_CTRL_CODE_SHIFT_DOWN:
+            case EXT_CTRL_CODE_SPEAKER:
                 ++str;
                 break;
             case EXT_CTRL_CODE_FONT:
@@ -1793,6 +1804,7 @@ u8 RenderTextHandleBold(u8 *pixels, u8 fontId, u8 *str)
             case EXT_CTRL_CODE_SKIP:
             case EXT_CTRL_CODE_CLEAR_TO:
             case EXT_CTRL_CODE_MIN_LETTER_SPACING:
+            case EXT_CTRL_CODE_SPEAKER:
                 ++strPos;
                 break;
             case EXT_CTRL_CODE_RESET_FONT:
