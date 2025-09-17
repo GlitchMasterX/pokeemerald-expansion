@@ -14,15 +14,6 @@ if(var(LUXURA_TRAGEDY)==14){
 	removeobject(7)
 	removeobject(8)
 	removeobject(9)
-	setmetatile(25,3,0x332,0)
-	setmetatile(26,3,0x332,0)
-	setmetatile(27,3,0x332,0)
-	setmetatile(25,4,0x332,0)
-	setmetatile(25,5,0x332,0)
-	setmetatile(26,4,0x332,0)
-	setmetatile(27,4,0x332,0)
-	setmetatile(26,5,0x332,0)
-	setmetatile(27,5,0x332,0)
     }	
 	elif(var(LUXURA_TRAGEDY)==16){
 	setflag(FLAG_UNUSED_0x4B2)
@@ -345,9 +336,10 @@ script gruntsded {
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}End this!\pElectrode, EXPLODE!"),MSGBOX_AUTOCLOSE)
     playmoncry(SPECIES_ELECTRODE,CRY_MODE_ENCOUNTER)
     waitmoncry
+    playbgm(MUS_DUMMY,FALSE)
     # Xylar’s breakdown
     speakername(Xylar1)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_REALIZE}{FONT_SMALL}If Mira is dead,……{PAUSE_UNTIL_PRESS} then there is no reason to remain kind.\pYeah I'll just kill all of them or die trying.\pNothing better will happen even if I stay kind.\pI'll kill you both…… I'll kill you…… I'll kill you."),MSGBOX_AUTOCLOSE)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_REALIZE}{FONT_SMALL}If Mira died too,……{PAUSE_UNTIL_PRESS} then there is no reason to remain kind.\pYeah I'll just kill all of them or die trying.\pNothing better will happen even if I stay kind.\pI'll kill you both…… I'll kill you…… I'll kill you."),MSGBOX_AUTOCLOSE)
     closemessage
     playse(SE_PIN)
     applymovement(4,moves(emote_question_mark))
@@ -363,9 +355,8 @@ script gruntsded {
     applymovement(0xFF,moves(walk_slow_up))
     waitmovement(0)
     speakername(Xylar1)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_REALIZE}{FONT_SMALL}Kill…… all{PAUSE_UNTIL_PRESS}…… then I'll die myself……"),MSGBOX_AUTOCLOSE)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_REALIZE}{FONT_SMALL}I'll Kill…… you all{PAUSE_UNTIL_PRESS}…… then I'll die myself……"),MSGBOX_AUTOCLOSE)
     closemessage
-    playbgm(MUS_DUMMY,FALSE)
     speakername("Grunt M")
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}What... what's wrong with him?!"),MSGBOX_AUTOCLOSE)
     speakername("Grunt F")
@@ -375,6 +366,7 @@ script gruntsded {
     msgbox(format("{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Enough!"),MSGBOX_AUTOCLOSE)
     playbgm(MUS_PL_GIRATINA_APPEARS_1,TRUE)
     fadescreen(FADE_TO_BLACK)
+    delay(180)
     waitbuttonpress
     applymovement(7,visible)
     fadescreen(FADE_FROM_BLACK)

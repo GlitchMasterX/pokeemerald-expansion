@@ -1301,31 +1301,31 @@ bloodsee::
 	getplayerxy VAR_0x8000, VAR_0x8001
 # 579 "data/maps/LuxuraIsland/scripts.pory"
 	compare VAR_0x8001, 29
-	goto_if_eq bloodsee_9
-bloodsee_8:
-# 582 "data/maps/LuxuraIsland/scripts.pory"
-	compare VAR_0x8001, 27
+	goto_if_eq bloodsee_2
+# 583 "data/maps/LuxuraIsland/scripts.pory"
+	compare VAR_0x8001, 28
 	goto_if_eq bloodsee_3
-# 585 "data/maps/LuxuraIsland/scripts.pory"
-	compare VAR_0x8001, 26
+# 587 "data/maps/LuxuraIsland/scripts.pory"
+	compare VAR_0x8001, 27
 	goto_if_eq bloodsee_4
-# 588 "data/maps/LuxuraIsland/scripts.pory"
-	compare VAR_0x8001, 25
-	goto_if_eq bloodsee_5
-bloodsee_1:
 # 591 "data/maps/LuxuraIsland/scripts.pory"
-	waitmovement 0
-# 592 "data/maps/LuxuraIsland/scripts.pory"
-	facefollowernpc
-# 593 "data/maps/LuxuraIsland/scripts.pory"
-	speakername name4
-# 594 "data/maps/LuxuraIsland/scripts.pory"
-	msgbox bloodsee_Text_2
+	compare VAR_0x8001, 26
+	goto_if_eq bloodsee_5
 # 595 "data/maps/LuxuraIsland/scripts.pory"
+	compare VAR_0x8001, 25
+	goto_if_eq bloodsee_6
+bloodsee_1:
+# 599 "data/maps/LuxuraIsland/scripts.pory"
+	facefollowernpc
+# 600 "data/maps/LuxuraIsland/scripts.pory"
+	speakername name4
+# 601 "data/maps/LuxuraIsland/scripts.pory"
+	msgbox bloodsee_Text_2
+# 602 "data/maps/LuxuraIsland/scripts.pory"
 	removefieldmugshot
-# 596 "data/maps/LuxuraIsland/scripts.pory"
+# 603 "data/maps/LuxuraIsland/scripts.pory"
 	releaseall
-# 597 "data/maps/LuxuraIsland/scripts.pory"
+# 604 "data/maps/LuxuraIsland/scripts.pory"
 	setvar VAR_ROUTE103_STATE, 4
 	return
 
@@ -1334,362 +1334,377 @@ bloodsee_2:
 	applymovement 0xFF, bloodsee_Movement_0
 # 581 "data/maps/LuxuraIsland/scripts.pory"
 	applymovement 0xFD, bloodsee_Movement_0
+# 582 "data/maps/LuxuraIsland/scripts.pory"
+	waitmovement 0
 	goto bloodsee_1
 
 bloodsee_3:
-# 583 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement 0xFF, bloodsee_Movement_1
 # 584 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement 0xFD, bloodsee_Movement_2
+	applymovement 0xFF, bloodsee_Movement_0
+# 585 "data/maps/LuxuraIsland/scripts.pory"
+	applymovement 0xFD, bloodsee_Movement_0
+# 586 "data/maps/LuxuraIsland/scripts.pory"
+	waitmovement 0
 	goto bloodsee_1
 
 bloodsee_4:
-# 586 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement 0xFF, bloodsee_Movement_3
-# 587 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement 0xFD, bloodsee_Movement_3
+# 588 "data/maps/LuxuraIsland/scripts.pory"
+	applymovement 0xFF, bloodsee_Movement_1
+# 589 "data/maps/LuxuraIsland/scripts.pory"
+	applymovement 0xFD, bloodsee_Movement_2
+# 590 "data/maps/LuxuraIsland/scripts.pory"
+	waitmovement 0
 	goto bloodsee_1
 
 bloodsee_5:
-# 589 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement 0xFF, bloodsee_Movement_4
-# 590 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement 0xFD, bloodsee_Movement_4
+# 592 "data/maps/LuxuraIsland/scripts.pory"
+	applymovement 0xFF, bloodsee_Movement_3
+# 593 "data/maps/LuxuraIsland/scripts.pory"
+	applymovement 0xFD, bloodsee_Movement_3
+# 594 "data/maps/LuxuraIsland/scripts.pory"
+	waitmovement 0
 	goto bloodsee_1
 
-bloodsee_9:
-# 579 "data/maps/LuxuraIsland/scripts.pory"
-	compare VAR_0x8001, 28
-	goto_if_eq bloodsee_2
-	goto bloodsee_8
+bloodsee_6:
+# 596 "data/maps/LuxuraIsland/scripts.pory"
+	applymovement 0xFF, bloodsee_Movement_4
+# 597 "data/maps/LuxuraIsland/scripts.pory"
+	applymovement 0xFD, bloodsee_Movement_4
+# 598 "data/maps/LuxuraIsland/scripts.pory"
+	waitmovement 0
+	goto bloodsee_1
 
 
 blo::
-# 601 "data/maps/LuxuraIsland/scripts.pory"
+# 608 "data/maps/LuxuraIsland/scripts.pory"
 	lock
-# 602 "data/maps/LuxuraIsland/scripts.pory"
+# 609 "data/maps/LuxuraIsland/scripts.pory"
 	facefollowernpc
-# 603 "data/maps/LuxuraIsland/scripts.pory"
+# 610 "data/maps/LuxuraIsland/scripts.pory"
 	speakername name4
-# 604 "data/maps/LuxuraIsland/scripts.pory"
+# 611 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox bloodsee_Text_2
-# 605 "data/maps/LuxuraIsland/scripts.pory"
+# 612 "data/maps/LuxuraIsland/scripts.pory"
 	releaseall
 	return
 
 
 musicchange::
-# 610 "data/maps/LuxuraIsland/scripts.pory"
+# 617 "data/maps/LuxuraIsland/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x4AA, musicchange_1
 	return
 
 musicchange_1:
-# 611 "data/maps/LuxuraIsland/scripts.pory"
+# 618 "data/maps/LuxuraIsland/scripts.pory"
 	setweather WEATHER_RAIN_THUNDERSTORM
-# 612 "data/maps/LuxuraIsland/scripts.pory"
+# 619 "data/maps/LuxuraIsland/scripts.pory"
 	doweather
-# 613 "data/maps/LuxuraIsland/scripts.pory"
+# 620 "data/maps/LuxuraIsland/scripts.pory"
 	playbgm MUS_DUMMY, TRUE
 	return
 
 
 strollll::
-# 619 "data/maps/LuxuraIsland/scripts.pory"
+# 626 "data/maps/LuxuraIsland/scripts.pory"
 	lock
-# 620 "data/maps/LuxuraIsland/scripts.pory"
+# 627 "data/maps/LuxuraIsland/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, strp
-# 621 "data/maps/LuxuraIsland/scripts.pory"
+# 628 "data/maps/LuxuraIsland/scripts.pory"
 	applymovement 0xFD, strp
-# 622 "data/maps/LuxuraIsland/scripts.pory"
+# 629 "data/maps/LuxuraIsland/scripts.pory"
 	speakername Xylar1
-# 623 "data/maps/LuxuraIsland/scripts.pory"
+# 630 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox strollll_Text_0
-# 625 "data/maps/LuxuraIsland/scripts.pory"
+# 632 "data/maps/LuxuraIsland/scripts.pory"
 	releaseall
 	return
 
 
 signluxura::
-# 628 "data/maps/LuxuraIsland/scripts.pory"
+# 635 "data/maps/LuxuraIsland/scripts.pory"
 	lock
-# 629 "data/maps/LuxuraIsland/scripts.pory"
+# 636 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox signluxura_Text_0, MSGBOX_SIGN
-# 630 "data/maps/LuxuraIsland/scripts.pory"
+# 637 "data/maps/LuxuraIsland/scripts.pory"
 	release
 	return
 
 
 signlmansion::
-# 633 "data/maps/LuxuraIsland/scripts.pory"
+# 640 "data/maps/LuxuraIsland/scripts.pory"
 	lock
-# 634 "data/maps/LuxuraIsland/scripts.pory"
+# 641 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox signlmansion_Text_0, MSGBOX_SIGN
-# 635 "data/maps/LuxuraIsland/scripts.pory"
+# 642 "data/maps/LuxuraIsland/scripts.pory"
 	release
 	return
 
 
 signforest::
-# 638 "data/maps/LuxuraIsland/scripts.pory"
+# 645 "data/maps/LuxuraIsland/scripts.pory"
 	lock
-# 639 "data/maps/LuxuraIsland/scripts.pory"
+# 646 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox signforest_Text_0, MSGBOX_SIGN
-# 640 "data/maps/LuxuraIsland/scripts.pory"
+# 647 "data/maps/LuxuraIsland/scripts.pory"
 	release
 	return
 
 
 signservantquarter::
-# 644 "data/maps/LuxuraIsland/scripts.pory"
+# 651 "data/maps/LuxuraIsland/scripts.pory"
 	lock
-# 645 "data/maps/LuxuraIsland/scripts.pory"
+# 652 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox signservantquarter_Text_0, MSGBOX_SIGN
-# 646 "data/maps/LuxuraIsland/scripts.pory"
+# 653 "data/maps/LuxuraIsland/scripts.pory"
 	release
 	return
 
 
 signluxuraharbor::
-# 650 "data/maps/LuxuraIsland/scripts.pory"
+# 657 "data/maps/LuxuraIsland/scripts.pory"
 	lock
-# 651 "data/maps/LuxuraIsland/scripts.pory"
+# 658 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox signluxuraharbor_Text_0, MSGBOX_SIGN
-# 652 "data/maps/LuxuraIsland/scripts.pory"
+# 659 "data/maps/LuxuraIsland/scripts.pory"
 	release
 	return
 
 
 signend::
-# 656 "data/maps/LuxuraIsland/scripts.pory"
+# 663 "data/maps/LuxuraIsland/scripts.pory"
 	lock
-# 657 "data/maps/LuxuraIsland/scripts.pory"
+# 664 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox signend_Text_0
-# 658 "data/maps/LuxuraIsland/scripts.pory"
+# 665 "data/maps/LuxuraIsland/scripts.pory"
 	release
 	return
 
 
 strolllll::
-# 662 "data/maps/LuxuraIsland/scripts.pory"
+# 669 "data/maps/LuxuraIsland/scripts.pory"
 	lock
-# 663 "data/maps/LuxuraIsland/scripts.pory"
+# 670 "data/maps/LuxuraIsland/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, strrp
-# 664 "data/maps/LuxuraIsland/scripts.pory"
+# 671 "data/maps/LuxuraIsland/scripts.pory"
 	applymovement 0xFD, strrp
-# 665 "data/maps/LuxuraIsland/scripts.pory"
+# 672 "data/maps/LuxuraIsland/scripts.pory"
 	speakername Xylar1
-# 666 "data/maps/LuxuraIsland/scripts.pory"
+# 673 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox strollll_Text_0
-# 668 "data/maps/LuxuraIsland/scripts.pory"
+# 675 "data/maps/LuxuraIsland/scripts.pory"
 	release
 	return
 
 
-# 671 "data/maps/LuxuraIsland/scripts.pory"
+# 678 "data/maps/LuxuraIsland/scripts.pory"
 strrp:
-# 672 "data/maps/LuxuraIsland/scripts.pory"
+# 679 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
 	step_end
 
 stded::
-# 675 "data/maps/LuxuraIsland/scripts.pory"
+# 682 "data/maps/LuxuraIsland/scripts.pory"
 	lock
-# 676 "data/maps/LuxuraIsland/scripts.pory"
+# 683 "data/maps/LuxuraIsland/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, strrp
-# 677 "data/maps/LuxuraIsland/scripts.pory"
+# 684 "data/maps/LuxuraIsland/scripts.pory"
 	applymovement 0xFD, strrp
-# 678 "data/maps/LuxuraIsland/scripts.pory"
+# 685 "data/maps/LuxuraIsland/scripts.pory"
 	speakername name4
-# 679 "data/maps/LuxuraIsland/scripts.pory"
+# 686 "data/maps/LuxuraIsland/scripts.pory"
 	msgbox stded_Text_0
-# 681 "data/maps/LuxuraIsland/scripts.pory"
+# 688 "data/maps/LuxuraIsland/scripts.pory"
 	release
 	return
 
 
 alistairarrive::
-# 685 "data/maps/LuxuraIsland/scripts.pory"
-	lock
-# 686 "data/maps/LuxuraIsland/scripts.pory"
-	special SpawnCameraObject
-# 687 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement 0x7F, cameramovementalistair
-# 688 "data/maps/LuxuraIsland/scripts.pory"
-	waitmovement 0
-# 689 "data/maps/LuxuraIsland/scripts.pory"
-	speakername unknown
-# 690 "data/maps/LuxuraIsland/scripts.pory"
-	msgbox alistairarrive_Text_0, MSGBOX_AUTOCLOSE
-# 691 "data/maps/LuxuraIsland/scripts.pory"
-	waitmessage
 # 692 "data/maps/LuxuraIsland/scripts.pory"
-	closemessage
+	lock
 # 693 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement 12, alistairarrive1
+	special SpawnCameraObject
 # 694 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement 13, alistairarrive1
+	applymovement 0x7F, cameramovementalistair
 # 695 "data/maps/LuxuraIsland/scripts.pory"
 	waitmovement 0
 # 696 "data/maps/LuxuraIsland/scripts.pory"
-	playbgm MUS_PL_TITLE, FALSE
-# 697 "data/maps/LuxuraIsland/scripts.pory"
 	speakername unknown
+# 697 "data/maps/LuxuraIsland/scripts.pory"
+	msgbox alistairarrive_Text_0, MSGBOX_AUTOCLOSE
 # 698 "data/maps/LuxuraIsland/scripts.pory"
-	msgbox alistairarrive_Text_1
+	waitmessage
 # 699 "data/maps/LuxuraIsland/scripts.pory"
 	closemessage
 # 700 "data/maps/LuxuraIsland/scripts.pory"
-	playse SE_PIN
+	applymovement 12, alistairarrive1
 # 701 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement 12, exclam
+	applymovement 13, alistairarrive1
 # 702 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement 0x7F, alistairarrive1
+	waitmovement 0
 # 703 "data/maps/LuxuraIsland/scripts.pory"
-	waitmovement 0
+	playbgm MUS_PL_TITLE, FALSE
 # 704 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement 12, alistairarrive2
+	speakername unknown
 # 705 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement 13, alistairarrive2
+	msgbox alistairarrive_Text_1
 # 706 "data/maps/LuxuraIsland/scripts.pory"
-	speakername unknown
+	closemessage
 # 707 "data/maps/LuxuraIsland/scripts.pory"
-	msgbox alistairarrive_Text_2
+	playse SE_PIN
 # 708 "data/maps/LuxuraIsland/scripts.pory"
-	closemessage
+	applymovement 12, exclam
 # 709 "data/maps/LuxuraIsland/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	applymovement 0x7F, alistairarrive1
 # 710 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement 0x7F, alistairarrive_Movement_0
+	waitmovement 0
 # 711 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement 12, alistairarrive_Movement_0
+	applymovement 12, alistairarrive2
 # 712 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement 13, alistairarrive_Movement_1
+	applymovement 13, alistairarrive2
 # 713 "data/maps/LuxuraIsland/scripts.pory"
-	waitmovement 0
-# 714 "data/maps/LuxuraIsland/scripts.pory"
-	fadescreen FADE_FROM_BLACK
-# 715 "data/maps/LuxuraIsland/scripts.pory"
 	speakername unknown
-# 716 "data/maps/LuxuraIsland/scripts.pory"
-	msgbox alistairarrive_Text_3
-# 717 "data/maps/LuxuraIsland/scripts.pory"
+# 714 "data/maps/LuxuraIsland/scripts.pory"
+	msgbox alistairarrive_Text_2
+# 715 "data/maps/LuxuraIsland/scripts.pory"
 	closemessage
+# 716 "data/maps/LuxuraIsland/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 717 "data/maps/LuxuraIsland/scripts.pory"
+	applymovement 0x7F, alistairarrive_Movement_0
 # 718 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement 12, alistairarrive_Movement_2
+	applymovement 12, alistairarrive_Movement_0
 # 719 "data/maps/LuxuraIsland/scripts.pory"
-	playse SE_EXIT
+	applymovement 13, alistairarrive_Movement_1
 # 720 "data/maps/LuxuraIsland/scripts.pory"
-	waitse
-# 721 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement 13, alistairarrive_Movement_3
-# 722 "data/maps/LuxuraIsland/scripts.pory"
 	waitmovement 0
+# 721 "data/maps/LuxuraIsland/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 722 "data/maps/LuxuraIsland/scripts.pory"
+	speakername unknown
 # 723 "data/maps/LuxuraIsland/scripts.pory"
-	playse SE_EXIT
+	msgbox alistairarrive_Text_3
 # 724 "data/maps/LuxuraIsland/scripts.pory"
-	waitse
+	closemessage
 # 725 "data/maps/LuxuraIsland/scripts.pory"
-	release
+	applymovement 12, alistairarrive_Movement_2
 # 726 "data/maps/LuxuraIsland/scripts.pory"
-	setvar LUXURA_TRAGEDY, 22
+	removeobject 12
 # 727 "data/maps/LuxuraIsland/scripts.pory"
+	playse SE_EXIT
+# 728 "data/maps/LuxuraIsland/scripts.pory"
+	waitse
+# 729 "data/maps/LuxuraIsland/scripts.pory"
+	applymovement 13, alistairarrive_Movement_3
+# 730 "data/maps/LuxuraIsland/scripts.pory"
+	waitmovement 0
+# 731 "data/maps/LuxuraIsland/scripts.pory"
+	removeobject 13
+# 732 "data/maps/LuxuraIsland/scripts.pory"
+	playse SE_EXIT
+# 733 "data/maps/LuxuraIsland/scripts.pory"
+	waitse
+# 734 "data/maps/LuxuraIsland/scripts.pory"
+	release
+# 735 "data/maps/LuxuraIsland/scripts.pory"
+	setvar LUXURA_TRAGEDY, 22
+# 736 "data/maps/LuxuraIsland/scripts.pory"
 	warpsilent MAP_LUXURA_INDOOR, 14, 33
 	return
 
 
-# 730 "data/maps/LuxuraIsland/scripts.pory"
+# 739 "data/maps/LuxuraIsland/scripts.pory"
 alistairarrive2:
-# 731 "data/maps/LuxuraIsland/scripts.pory"
+# 740 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 731 "data/maps/LuxuraIsland/scripts.pory"
+# 740 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 731 "data/maps/LuxuraIsland/scripts.pory"
+# 740 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 731 "data/maps/LuxuraIsland/scripts.pory"
+# 740 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 731 "data/maps/LuxuraIsland/scripts.pory"
+# 740 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 731 "data/maps/LuxuraIsland/scripts.pory"
+# 740 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
 	step_end
 
-# 733 "data/maps/LuxuraIsland/scripts.pory"
+# 742 "data/maps/LuxuraIsland/scripts.pory"
 cameramovementalistair:
-# 734 "data/maps/LuxuraIsland/scripts.pory"
+# 743 "data/maps/LuxuraIsland/scripts.pory"
 	walk_down
-# 734 "data/maps/LuxuraIsland/scripts.pory"
+# 743 "data/maps/LuxuraIsland/scripts.pory"
 	walk_down
-# 734 "data/maps/LuxuraIsland/scripts.pory"
+# 743 "data/maps/LuxuraIsland/scripts.pory"
 	walk_down
-# 734 "data/maps/LuxuraIsland/scripts.pory"
+# 743 "data/maps/LuxuraIsland/scripts.pory"
 	walk_down
-# 734 "data/maps/LuxuraIsland/scripts.pory"
+# 743 "data/maps/LuxuraIsland/scripts.pory"
 	walk_down
-# 734 "data/maps/LuxuraIsland/scripts.pory"
+# 743 "data/maps/LuxuraIsland/scripts.pory"
 	walk_down
-# 734 "data/maps/LuxuraIsland/scripts.pory"
+# 743 "data/maps/LuxuraIsland/scripts.pory"
 	walk_down
-# 734 "data/maps/LuxuraIsland/scripts.pory"
+# 743 "data/maps/LuxuraIsland/scripts.pory"
 	walk_down
-# 734 "data/maps/LuxuraIsland/scripts.pory"
+# 743 "data/maps/LuxuraIsland/scripts.pory"
 	walk_down
-# 734 "data/maps/LuxuraIsland/scripts.pory"
+# 743 "data/maps/LuxuraIsland/scripts.pory"
 	walk_down
-# 734 "data/maps/LuxuraIsland/scripts.pory"
+# 743 "data/maps/LuxuraIsland/scripts.pory"
 	walk_down
-# 734 "data/maps/LuxuraIsland/scripts.pory"
+# 743 "data/maps/LuxuraIsland/scripts.pory"
 	walk_down
-# 734 "data/maps/LuxuraIsland/scripts.pory"
+# 743 "data/maps/LuxuraIsland/scripts.pory"
 	walk_down
-# 734 "data/maps/LuxuraIsland/scripts.pory"
+# 743 "data/maps/LuxuraIsland/scripts.pory"
 	walk_down
-# 734 "data/maps/LuxuraIsland/scripts.pory"
+# 743 "data/maps/LuxuraIsland/scripts.pory"
 	walk_down
-# 734 "data/maps/LuxuraIsland/scripts.pory"
+# 743 "data/maps/LuxuraIsland/scripts.pory"
 	walk_down
-# 734 "data/maps/LuxuraIsland/scripts.pory"
+# 743 "data/maps/LuxuraIsland/scripts.pory"
 	walk_down
-# 734 "data/maps/LuxuraIsland/scripts.pory"
+# 743 "data/maps/LuxuraIsland/scripts.pory"
 	walk_down
-# 734 "data/maps/LuxuraIsland/scripts.pory"
+# 743 "data/maps/LuxuraIsland/scripts.pory"
 	walk_down
-# 734 "data/maps/LuxuraIsland/scripts.pory"
+# 743 "data/maps/LuxuraIsland/scripts.pory"
 	walk_down
-# 735 "data/maps/LuxuraIsland/scripts.pory"
+# 744 "data/maps/LuxuraIsland/scripts.pory"
 	walk_right
-# 735 "data/maps/LuxuraIsland/scripts.pory"
+# 744 "data/maps/LuxuraIsland/scripts.pory"
 	walk_right
-# 735 "data/maps/LuxuraIsland/scripts.pory"
+# 744 "data/maps/LuxuraIsland/scripts.pory"
 	walk_right
-# 735 "data/maps/LuxuraIsland/scripts.pory"
+# 744 "data/maps/LuxuraIsland/scripts.pory"
 	walk_right
-# 735 "data/maps/LuxuraIsland/scripts.pory"
+# 744 "data/maps/LuxuraIsland/scripts.pory"
 	walk_right
-# 735 "data/maps/LuxuraIsland/scripts.pory"
+# 744 "data/maps/LuxuraIsland/scripts.pory"
 	walk_right
 	step_end
 
-# 737 "data/maps/LuxuraIsland/scripts.pory"
+# 746 "data/maps/LuxuraIsland/scripts.pory"
 alistairarrive1:
-# 738 "data/maps/LuxuraIsland/scripts.pory"
+# 747 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 738 "data/maps/LuxuraIsland/scripts.pory"
+# 747 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 738 "data/maps/LuxuraIsland/scripts.pory"
+# 747 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 738 "data/maps/LuxuraIsland/scripts.pory"
+# 747 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 738 "data/maps/LuxuraIsland/scripts.pory"
+# 747 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 738 "data/maps/LuxuraIsland/scripts.pory"
+# 747 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 738 "data/maps/LuxuraIsland/scripts.pory"
+# 747 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 738 "data/maps/LuxuraIsland/scripts.pory"
+# 747 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 738 "data/maps/LuxuraIsland/scripts.pory"
+# 747 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 738 "data/maps/LuxuraIsland/scripts.pory"
+# 747 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
 	step_end
 
@@ -1933,191 +1948,189 @@ bloodsee_Movement_0:
 	walk_left
 	step_end
 
-# 583 "data/maps/LuxuraIsland/scripts.pory"
+# 588 "data/maps/LuxuraIsland/scripts.pory"
 bloodsee_Movement_1:
-# 583 "data/maps/LuxuraIsland/scripts.pory"
+# 588 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 583 "data/maps/LuxuraIsland/scripts.pory"
+# 588 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 583 "data/maps/LuxuraIsland/scripts.pory"
+# 588 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 583 "data/maps/LuxuraIsland/scripts.pory"
+# 588 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 583 "data/maps/LuxuraIsland/scripts.pory"
+# 588 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 583 "data/maps/LuxuraIsland/scripts.pory"
+# 588 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 583 "data/maps/LuxuraIsland/scripts.pory"
+# 588 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 583 "data/maps/LuxuraIsland/scripts.pory"
+# 588 "data/maps/LuxuraIsland/scripts.pory"
 	face_down
 	step_end
 
-# 584 "data/maps/LuxuraIsland/scripts.pory"
+# 589 "data/maps/LuxuraIsland/scripts.pory"
 bloodsee_Movement_2:
-# 584 "data/maps/LuxuraIsland/scripts.pory"
+# 589 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 584 "data/maps/LuxuraIsland/scripts.pory"
+# 589 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 584 "data/maps/LuxuraIsland/scripts.pory"
+# 589 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 584 "data/maps/LuxuraIsland/scripts.pory"
+# 589 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 584 "data/maps/LuxuraIsland/scripts.pory"
+# 589 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 584 "data/maps/LuxuraIsland/scripts.pory"
+# 589 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 584 "data/maps/LuxuraIsland/scripts.pory"
+# 589 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
 	step_end
 
-# 586 "data/maps/LuxuraIsland/scripts.pory"
+# 592 "data/maps/LuxuraIsland/scripts.pory"
 bloodsee_Movement_3:
-# 586 "data/maps/LuxuraIsland/scripts.pory"
+# 592 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 586 "data/maps/LuxuraIsland/scripts.pory"
+# 592 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 586 "data/maps/LuxuraIsland/scripts.pory"
+# 592 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 586 "data/maps/LuxuraIsland/scripts.pory"
+# 592 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 586 "data/maps/LuxuraIsland/scripts.pory"
+# 592 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 586 "data/maps/LuxuraIsland/scripts.pory"
+# 592 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 586 "data/maps/LuxuraIsland/scripts.pory"
+# 592 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 586 "data/maps/LuxuraIsland/scripts.pory"
+# 592 "data/maps/LuxuraIsland/scripts.pory"
 	walk_down
 	step_end
 
-# 589 "data/maps/LuxuraIsland/scripts.pory"
+# 596 "data/maps/LuxuraIsland/scripts.pory"
 bloodsee_Movement_4:
-# 589 "data/maps/LuxuraIsland/scripts.pory"
+# 596 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 589 "data/maps/LuxuraIsland/scripts.pory"
+# 596 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 589 "data/maps/LuxuraIsland/scripts.pory"
+# 596 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 589 "data/maps/LuxuraIsland/scripts.pory"
+# 596 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 589 "data/maps/LuxuraIsland/scripts.pory"
+# 596 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 589 "data/maps/LuxuraIsland/scripts.pory"
+# 596 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 589 "data/maps/LuxuraIsland/scripts.pory"
+# 596 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 589 "data/maps/LuxuraIsland/scripts.pory"
+# 596 "data/maps/LuxuraIsland/scripts.pory"
 	walk_down
-# 589 "data/maps/LuxuraIsland/scripts.pory"
+# 596 "data/maps/LuxuraIsland/scripts.pory"
 	walk_down
 	step_end
 
-# 710 "data/maps/LuxuraIsland/scripts.pory"
+# 717 "data/maps/LuxuraIsland/scripts.pory"
 alistairarrive_Movement_0:
-# 710 "data/maps/LuxuraIsland/scripts.pory"
+# 717 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_right
-# 710 "data/maps/LuxuraIsland/scripts.pory"
+# 717 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_right
-# 710 "data/maps/LuxuraIsland/scripts.pory"
+# 717 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_right
-# 710 "data/maps/LuxuraIsland/scripts.pory"
+# 717 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_right
-# 710 "data/maps/LuxuraIsland/scripts.pory"
+# 717 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 710 "data/maps/LuxuraIsland/scripts.pory"
+# 717 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 710 "data/maps/LuxuraIsland/scripts.pory"
+# 717 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 710 "data/maps/LuxuraIsland/scripts.pory"
+# 717 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 710 "data/maps/LuxuraIsland/scripts.pory"
+# 717 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 710 "data/maps/LuxuraIsland/scripts.pory"
+# 717 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 710 "data/maps/LuxuraIsland/scripts.pory"
+# 717 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 710 "data/maps/LuxuraIsland/scripts.pory"
+# 717 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 710 "data/maps/LuxuraIsland/scripts.pory"
+# 717 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 710 "data/maps/LuxuraIsland/scripts.pory"
+# 717 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 710 "data/maps/LuxuraIsland/scripts.pory"
+# 717 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 710 "data/maps/LuxuraIsland/scripts.pory"
+# 717 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 710 "data/maps/LuxuraIsland/scripts.pory"
+# 717 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 710 "data/maps/LuxuraIsland/scripts.pory"
+# 717 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 710 "data/maps/LuxuraIsland/scripts.pory"
+# 717 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 710 "data/maps/LuxuraIsland/scripts.pory"
+# 717 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 710 "data/maps/LuxuraIsland/scripts.pory"
+# 717 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 710 "data/maps/LuxuraIsland/scripts.pory"
+# 717 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
 	step_end
 
-# 712 "data/maps/LuxuraIsland/scripts.pory"
+# 719 "data/maps/LuxuraIsland/scripts.pory"
 alistairarrive_Movement_1:
-# 712 "data/maps/LuxuraIsland/scripts.pory"
+# 719 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_right
-# 712 "data/maps/LuxuraIsland/scripts.pory"
+# 719 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_right
-# 712 "data/maps/LuxuraIsland/scripts.pory"
+# 719 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_right
-# 712 "data/maps/LuxuraIsland/scripts.pory"
-	walk_faster_right
-# 712 "data/maps/LuxuraIsland/scripts.pory"
+# 719 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 712 "data/maps/LuxuraIsland/scripts.pory"
+# 719 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 712 "data/maps/LuxuraIsland/scripts.pory"
+# 719 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 712 "data/maps/LuxuraIsland/scripts.pory"
+# 719 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 712 "data/maps/LuxuraIsland/scripts.pory"
+# 719 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 712 "data/maps/LuxuraIsland/scripts.pory"
+# 719 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 712 "data/maps/LuxuraIsland/scripts.pory"
+# 719 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 712 "data/maps/LuxuraIsland/scripts.pory"
+# 719 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 712 "data/maps/LuxuraIsland/scripts.pory"
+# 719 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 712 "data/maps/LuxuraIsland/scripts.pory"
+# 719 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 712 "data/maps/LuxuraIsland/scripts.pory"
+# 719 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 712 "data/maps/LuxuraIsland/scripts.pory"
+# 719 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 712 "data/maps/LuxuraIsland/scripts.pory"
+# 719 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 712 "data/maps/LuxuraIsland/scripts.pory"
+# 719 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 712 "data/maps/LuxuraIsland/scripts.pory"
+# 719 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 712 "data/maps/LuxuraIsland/scripts.pory"
+# 719 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
-# 712 "data/maps/LuxuraIsland/scripts.pory"
+# 719 "data/maps/LuxuraIsland/scripts.pory"
 	walk_faster_up
 	step_end
 
-# 718 "data/maps/LuxuraIsland/scripts.pory"
+# 725 "data/maps/LuxuraIsland/scripts.pory"
 alistairarrive_Movement_2:
-# 718 "data/maps/LuxuraIsland/scripts.pory"
+# 725 "data/maps/LuxuraIsland/scripts.pory"
 	walk_up
 	step_end
 
-# 721 "data/maps/LuxuraIsland/scripts.pory"
+# 729 "data/maps/LuxuraIsland/scripts.pory"
 alistairarrive_Movement_3:
-# 721 "data/maps/LuxuraIsland/scripts.pory"
+# 729 "data/maps/LuxuraIsland/scripts.pory"
 	walk_up
-# 721 "data/maps/LuxuraIsland/scripts.pory"
+# 729 "data/maps/LuxuraIsland/scripts.pory"
 	walk_up
 	step_end
 
@@ -2275,7 +2288,7 @@ ran_Text_28:
 
 ran_Text_29:
 # 185 "data/maps/LuxuraIsland/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_SPECIAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Wh-?! N-No! I just-=\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_SPECIAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Wh-?! N-No! I just-\p"
 	.string "That's not-!$"
 
 ran_Text_30:
@@ -2376,73 +2389,73 @@ bloodsee_Text_1:
 	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}What's that?$"
 
 bloodsee_Text_2:
-# 594 "data/maps/LuxuraIsland/scripts.pory"
+# 601 "data/maps/LuxuraIsland/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SHOCK}{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, Don't look at it. You're\n"
 	.string "too young to see something like this...\l"
 	.string "Please, just trust me and let's go back\l"
 	.string "inside.$"
 
 strollll_Text_0:
-# 623 "data/maps/LuxuraIsland/scripts.pory"
+# 630 "data/maps/LuxuraIsland/scripts.pory"
 	.string "I should go to mansion.\p"
 	.string "I'm worried about Mom and Dad.$"
 
 signluxura_Text_0:
-# 629 "data/maps/LuxuraIsland/scripts.pory"
+# 636 "data/maps/LuxuraIsland/scripts.pory"
 	.string "Luxura Island\p"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}A serene haven where beauty and\n"
 	.string "mystery intertwine beneath tranquil\l"
 	.string "skies.$"
 
 signlmansion_Text_0:
-# 634 "data/maps/LuxuraIsland/scripts.pory"
+# 641 "data/maps/LuxuraIsland/scripts.pory"
 	.string "Luxura Mansion\p"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}A magnificent estate, home to wealth,\n"
 	.string "power, and a legacy of prestige.$"
 
 signforest_Text_0:
-# 639 "data/maps/LuxuraIsland/scripts.pory"
+# 646 "data/maps/LuxuraIsland/scripts.pory"
 	.string "Luxura Veilwood\p"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}A dense, ancient forest where secrets\n"
 	.string "are whispered among the trees and\l"
 	.string "shadows linger at every turn.$"
 
 signservantquarter_Text_0:
-# 645 "data/maps/LuxuraIsland/scripts.pory"
+# 652 "data/maps/LuxuraIsland/scripts.pory"
 	.string "Servant's Quarter$"
 
 signluxuraharbor_Text_0:
-# 651 "data/maps/LuxuraIsland/scripts.pory"
+# 658 "data/maps/LuxuraIsland/scripts.pory"
 	.string "Harbor Haven\p"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}The central gathering place for sailors\n"
 	.string "on Luxura Island, where voyages are\l"
 	.string "planned and tales are shared.$"
 
 signend_Text_0:
-# 657 "data/maps/LuxuraIsland/scripts.pory"
+# 664 "data/maps/LuxuraIsland/scripts.pory"
 	.string "End of Beta 1.$"
 
 stded_Text_0:
-# 679 "data/maps/LuxuraIsland/scripts.pory"
+# 686 "data/maps/LuxuraIsland/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}That's not the way,Master Xylar.$"
 
 alistairarrive_Text_0:
-# 690 "data/maps/LuxuraIsland/scripts.pory"
+# 697 "data/maps/LuxuraIsland/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Aurther's family mansion.\n"
 	.string "He always spoke so highly of this place.\l"
 	.string "It's been years since I've visited.$"
 
 alistairarrive_Text_1:
-# 698 "data/maps/LuxuraIsland/scripts.pory"
+# 705 "data/maps/LuxuraIsland/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Wait....Something's not right.$"
 
 alistairarrive_Text_2:
-# 707 "data/maps/LuxuraIsland/scripts.pory"
+# 714 "data/maps/LuxuraIsland/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Blood?.....\n"
 	.string "No....What happened here?$"
 
 alistairarrive_Text_3:
-# 716 "data/maps/LuxuraIsland/scripts.pory"
+# 723 "data/maps/LuxuraIsland/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Aurther...Elysia...Please be safe.$"
 
 gardener::

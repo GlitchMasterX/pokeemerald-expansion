@@ -22,9 +22,12 @@ EWRAM_DATA static u8 sCurrentAbnormalWeather = 0;
 
 const u16 gCloudsWeatherPalette[] = INCBIN_U16("graphics/weather/cloud.gbapal");
 const u16 gSandstormWeatherPalette[] = INCBIN_U16("graphics/weather/sandstorm.gbapal");
+const u16 gCherryWeatherPalette[] = INCBIN_U16("graphics/weather/cherry0.gbapal");
 const u8 gWeatherFogDiagonalTiles[] = INCBIN_U8("graphics/weather/fog_diagonal.4bpp");
 const u8 gWeatherFogHorizontalTiles[] = INCBIN_U8("graphics/weather/fog_horizontal.4bpp");
 const u8 gWeatherCloudTiles[] = INCBIN_U8("graphics/weather/cloud.4bpp");
+const u8 gWeatherCherry1Tiles[] = INCBIN_U8("graphics/weather/cherry0.4bpp");
+const u8 gWeatherCherry2Tiles[] = INCBIN_U8("graphics/weather/cherry1.4bpp");
 const u8 gWeatherSnow1Tiles[] = INCBIN_U8("graphics/weather/snow0.4bpp");
 const u8 gWeatherSnow2Tiles[] = INCBIN_U8("graphics/weather/snow1.4bpp");
 const u8 gWeatherBubbleTiles[] = INCBIN_U8("graphics/weather/bubble.4bpp");
@@ -772,6 +775,217 @@ static void DestroyRainSprites(void)
 #undef tActive
 #undef tWaiting
 
+
+//------------------------------------------------------------------------------
+// Spring
+//------------------------------------------------------------------------------
+
+static void UpdateCherrySprite(struct Sprite *);
+static bool8 UpdateVisibleCherrySprites(void);
+static bool8 CreateCherrySprite(void);
+static void InitCherrySpriteMovement(struct Sprite *);
+
+
+const struct SpritePalette gCherryWeatherSpritePalette = {
+    .data = gCherryWeatherPalette,
+    .tag = PALTAG_WEATHER_2,
+};
+
+void Cherry_InitVars(void)
+{
+    gWeatherPtr->initStep = 0;
+    gWeatherPtr->weatherGfxLoaded = FALSE;
+    gWeatherPtr->targetColorMapIndex = 0;
+    gWeatherPtr->colorMapStepDelay = 20;
+    gWeatherPtr->targetCherrySpriteCount = 6;
+    gWeatherPtr->CherryVisibleCounter = 0;
+#if EXPANSION_VERSION_MINOR >= 12
+    if (MapHasPreviewScreen_HandleQLState2(gMapHeader.regionMapSectionId, MPS_TYPE_FADE_IN) == FALSE)
+    {
+        Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY); // preserve shadow darkness
+        gWeatherPtr->noShadows = FALSE;
+    }
+#endif
+}
+
+void Cherry_InitAll(void)
+{
+    u16 i;
+    Cherry_InitVars();
+    while (gWeatherPtr->weatherGfxLoaded == FALSE)
+    {
+        Cherry_Main();
+        for (i = 0; i < gWeatherPtr->CherrySpriteCount; i++)
+            UpdateCherrySprite(gWeatherPtr->sprites.s1.CherrySprites[i]);
+    }
+}
+
+void Cherry_Main(void)
+{
+    if (gWeatherPtr->initStep == 0 && !UpdateVisibleCherrySprites())
+    {
+        gWeatherPtr->weatherGfxLoaded = TRUE;
+        gWeatherPtr->initStep++;
+    }
+}
+
+bool8 Cherry_Finish(void)
+{
+    switch (gWeatherPtr->finishStep)
+    {
+    case 0:
+        gWeatherPtr->targetCherrySpriteCount = 0;
+        gWeatherPtr->CherryVisibleCounter = 0;
+        gWeatherPtr->finishStep++;
+        // fall through
+    case 1:
+        if (!UpdateVisibleCherrySprites())
+        {
+            gWeatherPtr->finishStep++;
+            return FALSE;
+        }
+        return TRUE;
+    }
+
+    return FALSE;
+}
+static bool8 UpdateVisibleCherrySprites(void)
+{   
+    while (gWeatherPtr->CherrySpriteCount < gWeatherPtr->targetCherrySpriteCount)
+        CreateCherrySprite();
+
+    return FALSE;  // done
+}
+
+
+static const struct OamData sCherrySpriteOamData =
+{
+    .y = 0,
+    .affineMode = ST_OAM_AFFINE_OFF,
+    .objMode = ST_OAM_OBJ_NORMAL,
+    .mosaic = FALSE,
+    .bpp = ST_OAM_4BPP,
+    .shape = SPRITE_SHAPE(8x8),
+    .x = 0,
+    .matrixNum = 0,
+    .size = SPRITE_SIZE(8x8),
+    .tileNum = 0,
+    .priority = 1,
+    .paletteNum = 0,
+    .affineParam = 0,
+};
+
+static const struct SpriteFrameImage sCherrySpriteImages[] =
+{
+    {gWeatherCherry1Tiles, sizeof(gWeatherCherry1Tiles)},
+    {gWeatherCherry2Tiles, sizeof(gWeatherCherry2Tiles)},
+};
+
+static const union AnimCmd sCherryAnimCmd0[] =
+{
+    ANIMCMD_FRAME(0, 16),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sCherryAnimCmd1[] =
+{
+    ANIMCMD_FRAME(1, 16),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd *const sCherryAnimCmds[] =
+{
+    sCherryAnimCmd0,
+    sCherryAnimCmd1,
+};
+
+static const struct SpriteTemplate sCherrySpriteTemplate =
+{
+    .tileTag = TAG_NONE,
+    .paletteTag = PALTAG_WEATHER_2,
+    .oam = &sCherrySpriteOamData,
+    .anims = sCherryAnimCmds,
+    .images = sCherrySpriteImages,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = UpdateCherrySprite,
+};
+
+#define tCherryId  data[0]
+#define tPosY         data[1]
+#define tDeltaY       data[2]
+#define tDeltaY2      data[3]
+#define tWaveIndex    data[4]
+#define tWaveDelta    data[5]
+#define tDeltaX       data[6]  // reuse this slot
+#define tFallDuration data[7]  // keep if you want, or remove
+
+
+static bool8 CreateCherrySprite(void)
+{
+    LoadSpritePalette(&gCherryWeatherSpritePalette);
+    u8 spriteId = CreateSpriteAtEnd(&sCherrySpriteTemplate, 0, 0, 78);
+    if (spriteId == MAX_SPRITES)
+        return FALSE;
+
+    struct Sprite *sprite = &gSprites[spriteId];
+    sprite->tCherryId = gWeatherPtr->CherrySpriteCount;
+    InitCherrySpriteMovement(sprite);
+    sprite->coordOffsetEnabled = FALSE;
+    // 🌸 Randomly pick which cherry tile to use
+    if (Random() & 1)
+        StartSpriteAnim(sprite, 0); // Cherry1
+    else
+        StartSpriteAnim(sprite, 1); // Cherry2
+     gWeatherPtr->sprites.s1.CherrySprites[gWeatherPtr->CherrySpriteCount++] = sprite;
+    return TRUE;
+}
+
+static void InitCherrySpriteMovement(struct Sprite *sprite)
+{// Random spawn position
+    sprite->x = Random() % DISPLAY_WIDTH;
+    sprite->y = Random() % DISPLAY_HEIGHT;
+    sprite->x2 = 0;
+    sprite->y2 = 0;
+
+    // Gentle diagonal drift
+    sprite->tDeltaX = -((Random() % 3) + 1);   // -1 to -3 px/frame (always left)
+    sprite->tDeltaY =  (Random() % 2) + 1;     //  1 or 2 px/frame (downward)
+
+    // Small wave offset for flutter effect
+    sprite->tWaveIndex = Random() % 256;
+    sprite->tWaveDelta = (Random() % 3) + 1;
+}
+
+static void UpdateCherrySprite(struct Sprite *sprite)
+{ // Base diagonal drift
+    sprite->x2 += sprite->tDeltaX;
+    sprite->y2 += sprite->tDeltaY;
+
+    // Add horizontal flutter using sine wave
+    sprite->tWaveIndex = (sprite->tWaveIndex + sprite->tWaveDelta) & 0xFF;
+    sprite->x2 += gSineTable[sprite->tWaveIndex] >> 7; // small sway (-1..+1)
+
+    // Wrap horizontally
+    if (sprite->x + sprite->x2 < -16)
+        sprite->x2 = DISPLAY_WIDTH - sprite->x;
+
+    // Wrap vertically
+    if (sprite->y + sprite->y2 > DISPLAY_HEIGHT + 16)
+        sprite->y2 = -sprite->y;
+}
+
+
+
+
+#undef tPosY
+#undef tDeltaY
+#undef tWaveDelta
+#undef tWaveIndex
+#undef tCherryId
+#undef tFallCounter
+#undef tFallDuration
+#undef tDeltaY2
+
 //------------------------------------------------------------------------------
 // Snow
 //------------------------------------------------------------------------------
@@ -841,7 +1055,6 @@ bool8 Snow_Finish(void)
 
     return FALSE;
 }
-
 static bool8 UpdateVisibleSnowflakeSprites(void)
 {
     if (gWeatherPtr->snowflakeSpriteCount == gWeatherPtr->targetSnowflakeSpriteCount)
@@ -857,7 +1070,9 @@ static bool8 UpdateVisibleSnowflakeSprites(void)
     }
 
     return gWeatherPtr->snowflakeSpriteCount != gWeatherPtr->targetSnowflakeSpriteCount;
+
 }
+
 
 static const struct OamData sSnowflakeSpriteOamData =
 {
@@ -925,7 +1140,6 @@ static bool8 CreateSnowflakeSprite(void)
     u8 spriteId = CreateSpriteAtEnd(&sSnowflakeSpriteTemplate, 0, 0, 78);
     if (spriteId == MAX_SPRITES)
         return FALSE;
-
     gSprites[spriteId].tSnowflakeId = gWeatherPtr->snowflakeSpriteCount;
     InitSnowflakeSpriteMovement(&gSprites[spriteId]);
     gSprites[spriteId].coordOffsetEnabled = TRUE;
@@ -943,7 +1157,6 @@ static bool8 DestroySnowflakeSprite(void)
 
     return FALSE;
 }
-
 static void InitSnowflakeSpriteMovement(struct Sprite *sprite)
 {
     u16 rand;
@@ -969,31 +1182,41 @@ static void UNUSED WaitSnowflakeSprite(struct Sprite *sprite)
     {
         sprite->invisible = FALSE;
         sprite->callback = UpdateSnowflakeSprite;
-        sprite->y = 250 - (gSpriteCoordOffsetY + sprite->centerToCornerVecY);
-        sprite->tPosY = sprite->y * 128;
+
+        // Spawn anywhere on screen with diagonal drift
+        sprite->x = Random() % DISPLAY_WIDTH;
+        sprite->y = Random() % DISPLAY_HEIGHT;
+        sprite->x2 = 0;
+        sprite->y2 = 0;
+
+        // Assign gentle drift speeds
+        sprite->tDeltaX = -(1 + (Random() % 2));   // -1 or -2 px/frame
+        sprite->tDeltaY =  1 + (Random() % 2);     //  1 or 2 px/frame
+
         gWeatherPtr->snowflakeTimer = 0;
     }
 }
 
+
 static void UpdateSnowflakeSprite(struct Sprite *sprite)
 {
     s16 x;
-
     sprite->tPosY += sprite->tDeltaY;
     sprite->y = sprite->tPosY >> 7;
     sprite->tWaveIndex += sprite->tWaveDelta;
     sprite->tWaveIndex &= 0xFF;
     sprite->x2 = gSineTable[sprite->tWaveIndex] / 64;
-
-    x = (sprite->x + sprite->centerToCornerVecX + gSpriteCoordOffsetX) & 0x1FF;
+     x = (sprite->x + sprite->centerToCornerVecX + gSpriteCoordOffsetX) & 0x1FF;
     if (x & 0x100)
         x |= -0x100;
-
     if (x < -3)
         sprite->x = 242 - (gSpriteCoordOffsetX + sprite->centerToCornerVecX);
     else if (x > 242)
         sprite->x = -3 - (gSpriteCoordOffsetX + sprite->centerToCornerVecX);
 }
+
+
+
 
 #undef tPosY
 #undef tDeltaY
@@ -2661,6 +2884,7 @@ static u8 TranslateWeatherNum(u8 weather)
     case WEATHER_ABNORMAL:           return WEATHER_ABNORMAL;
     case WEATHER_ROUTE119_CYCLE:     return sWeatherCycleRoute119[gSaveBlock1Ptr->weatherCycleStage];
     case WEATHER_ROUTE123_CYCLE:     return sWeatherCycleRoute123[gSaveBlock1Ptr->weatherCycleStage];
+    case WEATHER_SPRING:               return WEATHER_SPRING;
     default:                         return WEATHER_NONE;
     }
 }

@@ -182,7 +182,7 @@ applymovement(1,moves(emote_happy))
 speakername(name4)
 msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SMILE}{COLOR RED}{SHADOW LIGHT_GRAY}Oh? Is Master Xylar jealous?"))
 speakername(Xylar1)
-msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_SPECIAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Wh-?! N-No! I just-=\pThat's not-!"))
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_SPECIAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Wh-?! N-No! I just-\pThat's not-!"))
 speakername(name4)
 msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Haha, you're cute when you're flustered."))
 speakername(Xylar1)
@@ -576,19 +576,26 @@ script bloodsee {
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}What's that?"),MSGBOX_SIGN)
     removefieldmugshot
     getplayerxy(VAR_0x8000,VAR_0x8001)
-    if((var(VAR_0x8001)== 29) && (var(VAR_0x8001)== 28)){
+    if((var(VAR_0x8001)== 29)){
     applymovement(0xFF,moves(walk_left*6))
-    applymovement(0xFD,moves(walk_left*6))}
+    applymovement(0xFD,moves(walk_left*6))
+    waitmovement(0)}
+    elif((var(VAR_0x8001)== 28)){
+    applymovement(0xFF,moves(walk_left*6))
+    applymovement(0xFD,moves(walk_left*6))
+    waitmovement(0)}
     elif((var(VAR_0x8001)== 27)){
     applymovement(0xFF,moves(walk_left*7 face_down))
-    applymovement(0xFD,moves(walk_left*7))}
+    applymovement(0xFD,moves(walk_left*7))
+    waitmovement(0)}
     elif((var(VAR_0x8001)== 26)){
     applymovement(0xFF,moves(walk_left*7 walk_down))
-    applymovement(0xFD,moves(walk_left*7 walk_down))}
+    applymovement(0xFD,moves(walk_left*7 walk_down))
+    waitmovement(0)}
     elif((var(VAR_0x8001)== 25)){
     applymovement(0xFF,moves(walk_left*7 walk_down*2))
-    applymovement(0xFD,moves(walk_left*7 walk_down*2))}
-    waitmovement(0)
+    applymovement(0xFD,moves(walk_left*7 walk_down*2))
+    waitmovement(0)}
     facefollowernpc
     speakername(name4)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SHOCK}{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, Don't look at it. You're too young to see something like this... Please, just trust me and let's go back inside."))

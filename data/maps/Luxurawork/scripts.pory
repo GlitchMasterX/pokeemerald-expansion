@@ -173,6 +173,7 @@ script dad {
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}That's all I ask, son.")) 
     removefieldmugshot
 	waitmessage
+	playse(SE_PIN)
 	applymovement(4,exclam)
 	speakername(name3)
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Oh, Xylar, before I forget-\pAn old friend of mine from the academy will be visiting near the end of this month.\pHe's been very curious to meet you."))

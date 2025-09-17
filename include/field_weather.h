@@ -13,6 +13,7 @@ enum {
     GFXTAG_SANDSTORM,
     GFXTAG_BUBBLE,
     GFXTAG_RAIN,
+    GFXTAG_SPRING,
 };
 enum {
     PALTAG_WEATHER = TAG_WEATHER_START,
@@ -29,6 +30,7 @@ struct Weather
         {
             struct Sprite *rainSprites[MAX_RAIN_SPRITES];
             struct Sprite *snowflakeSprites[101];
+            struct Sprite *CherrySprites[101];
             struct Sprite *cloudSprites[NUM_CLOUD_SPRITES];
         } s1;
         struct
@@ -131,6 +133,11 @@ struct Weather
     s16 droughtState;
     u8 loadDroughtPalsIndex;
     u8 loadDroughtPalsOffset;
+    //Spring
+    u16 CherryVisibleCounter;
+    u16 CherryTimer;
+    u8 CherrySpriteCount;
+    u8 targetCherrySpriteCount;
 };
 
 // field_weather.c
@@ -189,6 +196,10 @@ void Snow_InitVars(void);
 void Snow_Main(void);
 void Snow_InitAll(void);
 bool8 Snow_Finish(void);
+void Cherry_InitVars(void);
+void Cherry_Main(void);
+void Cherry_InitAll(void);
+bool8 Cherry_Finish(void);
 void Thunderstorm_InitVars(void);
 void Thunderstorm_Main(void);
 void Thunderstorm_InitAll(void);
