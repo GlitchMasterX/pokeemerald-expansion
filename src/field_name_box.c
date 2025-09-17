@@ -44,7 +44,7 @@ void TrySpawnNamebox(void)
 
     StringExpandPlaceholders(strbuf, gSpeakerName);
 
-    u32 fontId = FONT_SMALL;
+    u32 fontId = FONT_SMALL_NARROW ;
     u32 winWidth = OW_NAME_BOX_DEFAULT_WIDTH;
 
     if (OW_NAME_BOX_USE_DYNAMIC_WIDTH)
