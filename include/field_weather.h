@@ -31,6 +31,7 @@ struct Weather
             struct Sprite *rainSprites[MAX_RAIN_SPRITES];
             struct Sprite *snowflakeSprites[101];
             struct Sprite *CherrySprites[101];
+            struct Sprite *AutumnSprites[101];
             struct Sprite *cloudSprites[NUM_CLOUD_SPRITES];
         } s1;
         struct
@@ -102,6 +103,8 @@ struct Weather
     u16 sandstormPosY;
     u16 sandstormWaveIndex;
     u16 sandstormWaveCounter;
+    u8 sandstormActive;
+    u8 sandstormSoundCounter;
     u8 sandstormSpritesCreated;
     u8 sandstormSwirlSpritesCreated;
     // Diagonal fog
@@ -138,6 +141,12 @@ struct Weather
     u16 CherryTimer;
     u8 CherrySpriteCount;
     u8 targetCherrySpriteCount;
+    //Autumn
+    u16 AutumnVisibleCounter;
+    u16 AutumnTimer;
+    u8 AutumnSpriteCount;
+    u8 targetAutumnSpriteCount;
+
 };
 
 // field_weather.c
@@ -200,6 +209,10 @@ void Cherry_InitVars(void);
 void Cherry_Main(void);
 void Cherry_InitAll(void);
 bool8 Cherry_Finish(void);
+void Autumn_InitVars(void);
+void Autumn_Main(void);
+void Autumn_InitAll(void);
+bool8 Autumn_Finish(void);
 void Thunderstorm_InitVars(void);
 void Thunderstorm_Main(void);
 void Thunderstorm_InitAll(void);

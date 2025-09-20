@@ -146,6 +146,8 @@ static const struct WeatherCallbacks sWeatherFuncs[] =
     [WEATHER_DOWNPOUR]           = {Downpour_InitVars,      Thunderstorm_Main,  Downpour_InitAll,      Thunderstorm_Finish},
     [WEATHER_UNDERWATER_BUBBLES] = {Bubbles_InitVars,       Bubbles_Main,       Bubbles_InitAll,       Bubbles_Finish},
     [WEATHER_SPRING]               = {Cherry_InitVars,          Cherry_Main,          Cherry_InitAll,          Cherry_Finish},
+    [WEATHER_AUTUMN]               = {Autumn_InitVars,          Autumn_Main,          Autumn_InitAll,          Autumn_Finish},
+
 };
 
 void (*const gWeatherPalStateFuncs[])(void) =
@@ -397,6 +399,7 @@ static void FadeInScreenWithWeather(void)
             gWeatherPtr->palProcessingState = WEATHER_PAL_STATE_IDLE;
         }
         break;
+    case WEATHER_AUTUMN:    
     case WEATHER_SPRING:
     case WEATHER_SNOW:
     case WEATHER_VOLCANIC_ASH:
@@ -1221,6 +1224,7 @@ static const u8 sWeatherNames[WEATHER_COUNT][24] = {
     [WEATHER_ROUTE123_CYCLE]     = _("ROUTE123 CYCLE"),
     [WEATHER_FOG]                = _("FOG"),
     [WEATHER_SPRING]                = _("SPRING"),
+    [WEATHER_AUTUMN]                = _("AUTUMN"),
 };
 
 static const u8 sDebugText_WeatherNotDefined[] = _("NOT DEFINED!!!");

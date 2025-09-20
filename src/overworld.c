@@ -843,6 +843,37 @@ bool8 SetDiveWarpDive(u16 x, u16 y)
     return SetDiveWarp(CONNECTION_DIVE, x, y);
 }
 
+void TryApplySeasonalWeather(void)
+{
+    u8 season = getCurrentSeason();
+    u8 maptype = gMapHeader.mapType;
+
+    if (gMapHeader.weather == WEATHER_NONE
+     && (maptype == MAP_TYPE_CITY
+      || maptype == MAP_TYPE_TOWN
+      || maptype == MAP_TYPE_ROUTE
+      || maptype == MAP_TYPE_OCEAN_ROUTE))
+    {
+        switch (season)
+        {
+        case SEASON_SPRING:
+            SetWeather(WEATHER_SPRING);
+            break;
+        case SEASON_AUTUMN:
+            SetWeather(WEATHER_AUTUMN);
+            break;
+        case SEASON_WINTER:
+            SetWeather(WEATHER_SNOW);
+            break;
+        case SEASON_SUMMER:
+        default:
+            SetWeather(WEATHER_SUNNY);
+            break;
+        }
+    }
+}
+
+
 void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 {
     SetWarpDestination(mapGroup, mapNum, WARP_ID_NONE, -1, -1);
@@ -868,6 +899,7 @@ if (I_VS_SEEKER_CHARGING != 0)
 
     DoTimeBasedEvents();
     SetSavedWeatherFromCurrMapHeader();
+    TryApplySeasonalWeather();
     ChooseAmbientCrySpecies();
     SetDefaultFlashLevel();
     Overworld_ClearSavedMusic();
@@ -935,6 +967,7 @@ if (I_VS_SEEKER_CHARGING != 0)
     if (a1 != TRUE)
         DoTimeBasedEvents();
     SetSavedWeatherFromCurrMapHeader();
+    TryApplySeasonalWeather();
     ChooseAmbientCrySpecies();
     if (isOutdoors)
         FlagClear(FLAG_SYS_USE_FLASH);

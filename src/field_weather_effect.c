@@ -23,11 +23,14 @@ EWRAM_DATA static u8 sCurrentAbnormalWeather = 0;
 const u16 gCloudsWeatherPalette[] = INCBIN_U16("graphics/weather/cloud.gbapal");
 const u16 gSandstormWeatherPalette[] = INCBIN_U16("graphics/weather/sandstorm.gbapal");
 const u16 gCherryWeatherPalette[] = INCBIN_U16("graphics/weather/cherry0.gbapal");
+const u16 gAutumnWeatherPalette[] = INCBIN_U16("graphics/weather/autumn0.gbapal");
 const u8 gWeatherFogDiagonalTiles[] = INCBIN_U8("graphics/weather/fog_diagonal.4bpp");
 const u8 gWeatherFogHorizontalTiles[] = INCBIN_U8("graphics/weather/fog_horizontal.4bpp");
 const u8 gWeatherCloudTiles[] = INCBIN_U8("graphics/weather/cloud.4bpp");
 const u8 gWeatherCherry1Tiles[] = INCBIN_U8("graphics/weather/cherry0.4bpp");
 const u8 gWeatherCherry2Tiles[] = INCBIN_U8("graphics/weather/cherry1.4bpp");
+const u8 gWeatherAutumn0Tiles[] = INCBIN_U8("graphics/weather/autumn0.4bpp");
+const u8 gWeatherAutumn3Tiles[] = INCBIN_U8("graphics/weather/autumn1.4bpp");
 const u8 gWeatherSnow1Tiles[] = INCBIN_U8("graphics/weather/snow0.4bpp");
 const u8 gWeatherSnow2Tiles[] = INCBIN_U8("graphics/weather/snow1.4bpp");
 const u8 gWeatherBubbleTiles[] = INCBIN_U8("graphics/weather/bubble.4bpp");
@@ -784,7 +787,7 @@ static void UpdateCherrySprite(struct Sprite *);
 static bool8 UpdateVisibleCherrySprites(void);
 static bool8 CreateCherrySprite(void);
 static void InitCherrySpriteMovement(struct Sprite *);
-
+static bool8 DestroyCherrySprite(void);
 
 const struct SpritePalette gCherryWeatherSpritePalette = {
     .data = gCherryWeatherPalette,
@@ -793,12 +796,22 @@ const struct SpritePalette gCherryWeatherSpritePalette = {
 
 void Cherry_InitVars(void)
 {
+    FreeSpritePaletteByTag(PALTAG_WEATHER_2);
+    LoadSpritePalette(&gCherryWeatherSpritePalette);
     gWeatherPtr->initStep = 0;
     gWeatherPtr->weatherGfxLoaded = FALSE;
     gWeatherPtr->targetColorMapIndex = 0;
     gWeatherPtr->colorMapStepDelay = 20;
     gWeatherPtr->targetCherrySpriteCount = 6;
     gWeatherPtr->CherryVisibleCounter = 0;
+
+    // Reset/clear any previous state so re-entry works
+    gWeatherPtr->CherrySpriteCount = 0;
+    memset(gWeatherPtr->sprites.s1.CherrySprites, 0, sizeof(gWeatherPtr->sprites.s1.CherrySprites));
+
+    // Load the palette once for the weather (not per-sprite)
+    LoadSpritePalette(&gCherryWeatherSpritePalette);
+
 #if EXPANSION_VERSION_MINOR >= 12
     if (MapHasPreviewScreen_HandleQLState2(gMapHeader.regionMapSectionId, MPS_TYPE_FADE_IN) == FALSE)
     {
@@ -807,6 +820,7 @@ void Cherry_InitVars(void)
     }
 #endif
 }
+
 
 void Cherry_InitAll(void)
 {
@@ -818,7 +832,7 @@ void Cherry_InitAll(void)
         for (i = 0; i < gWeatherPtr->CherrySpriteCount; i++)
             UpdateCherrySprite(gWeatherPtr->sprites.s1.CherrySprites[i]);
     }
-}
+    }
 
 void Cherry_Main(void)
 {
@@ -849,12 +863,23 @@ bool8 Cherry_Finish(void)
 
     return FALSE;
 }
-static bool8 UpdateVisibleCherrySprites(void)
-{   
-    while (gWeatherPtr->CherrySpriteCount < gWeatherPtr->targetCherrySpriteCount)
-        CreateCherrySprite();
 
-    return FALSE;  // done
+static bool8 UpdateVisibleCherrySprites(void)
+{
+        if (gWeatherPtr->CherrySpriteCount == gWeatherPtr->targetCherrySpriteCount)
+        return FALSE;
+
+    if (++gWeatherPtr->CherryVisibleCounter > 36)
+    {
+        gWeatherPtr->CherryVisibleCounter = 0;
+        if (gWeatherPtr->CherrySpriteCount < gWeatherPtr->targetCherrySpriteCount)
+            CreateCherrySprite();
+        else
+            DestroyCherrySprite();
+    }
+
+    return gWeatherPtr->CherrySpriteCount != gWeatherPtr->targetCherrySpriteCount;
+
 }
 
 
@@ -922,7 +947,8 @@ static const struct SpriteTemplate sCherrySpriteTemplate =
 
 static bool8 CreateCherrySprite(void)
 {
-    LoadSpritePalette(&gCherryWeatherSpritePalette);
+    // LoadSpritePalette(&gCherryWeatherSpritePalette);  <-- REMOVE this line
+
     u8 spriteId = CreateSpriteAtEnd(&sCherrySpriteTemplate, 0, 0, 78);
     if (spriteId == MAX_SPRITES)
         return FALSE;
@@ -931,13 +957,25 @@ static bool8 CreateCherrySprite(void)
     sprite->tCherryId = gWeatherPtr->CherrySpriteCount;
     InitCherrySpriteMovement(sprite);
     sprite->coordOffsetEnabled = FALSE;
-    // 🌸 Randomly pick which cherry tile to use
+
     if (Random() & 1)
         StartSpriteAnim(sprite, 0); // Cherry1
     else
         StartSpriteAnim(sprite, 1); // Cherry2
-     gWeatherPtr->sprites.s1.CherrySprites[gWeatherPtr->CherrySpriteCount++] = sprite;
+
+    gWeatherPtr->sprites.s1.CherrySprites[gWeatherPtr->CherrySpriteCount++] = sprite;
     return TRUE;
+}
+
+static bool8 DestroyCherrySprite(void)
+{
+    if (gWeatherPtr->CherrySpriteCount)
+    {
+        DestroySprite(gWeatherPtr->sprites.s1.CherrySprites[--gWeatherPtr->CherrySpriteCount]);
+        return TRUE;
+    }
+
+    return FALSE;
 }
 
 static void InitCherrySpriteMovement(struct Sprite *sprite)
@@ -982,6 +1020,252 @@ static void UpdateCherrySprite(struct Sprite *sprite)
 #undef tWaveDelta
 #undef tWaveIndex
 #undef tCherryId
+#undef tFallCounter
+#undef tFallDuration
+#undef tDeltaY2
+
+
+//------------------------------------------------------------------------------
+// Autumn
+//------------------------------------------------------------------------------
+
+static void UpdateAutumnSprite(struct Sprite *);
+static bool8 UpdateVisibleAutumnSprites(void);
+static bool8 CreateAutumnSprite(void);
+static void InitAutumnSpriteMovement(struct Sprite *);
+static bool8 DestroyAutumnSprite(void);
+
+const struct SpritePalette gAutumnWeatherSpritePalette = {
+    .data = gAutumnWeatherPalette,
+    .tag = PALTAG_WEATHER_2,
+};
+
+void Autumn_InitVars(void)
+{
+    FreeSpritePaletteByTag(PALTAG_WEATHER_2);
+    LoadSpritePalette(&gAutumnWeatherSpritePalette);
+    gWeatherPtr->initStep = 0;
+    gWeatherPtr->weatherGfxLoaded = FALSE;
+    gWeatherPtr->targetColorMapIndex = 0;
+    gWeatherPtr->colorMapStepDelay = 20;
+    gWeatherPtr->targetAutumnSpriteCount = 6;
+    gWeatherPtr->AutumnVisibleCounter = 0;
+
+    // Reset/clear any previous state so re-entry works
+    gWeatherPtr->AutumnSpriteCount = 0;
+    memset(gWeatherPtr->sprites.s1.AutumnSprites, 0, sizeof(gWeatherPtr->sprites.s1.AutumnSprites));
+
+    // Load the palette once for the weather (not per-sprite)
+    LoadSpritePalette(&gAutumnWeatherSpritePalette);
+
+#if EXPANSION_VERSION_MINOR >= 12
+    if (MapHasPreviewScreen_HandleQLState2(gMapHeader.regionMapSectionId, MPS_TYPE_FADE_IN) == FALSE)
+    {
+        Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY); // preserve shadow darkness
+        gWeatherPtr->noShadows = FALSE;
+    }
+#endif
+}
+
+
+void Autumn_InitAll(void)
+{
+    u16 i;
+    Autumn_InitVars();
+    while (gWeatherPtr->weatherGfxLoaded == FALSE)
+    {
+        Autumn_Main();
+        for (i = 0; i < gWeatherPtr->AutumnSpriteCount; i++)
+            UpdateAutumnSprite(gWeatherPtr->sprites.s1.AutumnSprites[i]);
+    }
+    }
+
+void Autumn_Main(void)
+{
+    if (gWeatherPtr->initStep == 0 && !UpdateVisibleAutumnSprites())
+    {
+        gWeatherPtr->weatherGfxLoaded = TRUE;
+        gWeatherPtr->initStep++;
+    }
+}
+
+bool8 Autumn_Finish(void)
+{
+    switch (gWeatherPtr->finishStep)
+    {
+    case 0:
+        gWeatherPtr->targetAutumnSpriteCount = 0;
+        gWeatherPtr->AutumnVisibleCounter = 0;
+        gWeatherPtr->finishStep++;
+        // fall through
+    case 1:
+        if (!UpdateVisibleAutumnSprites())
+        {
+            gWeatherPtr->finishStep++;
+            return FALSE;
+        }
+        return TRUE;
+    }
+    FreeSpritePaletteByTag(PALTAG_WEATHER_2);
+    return FALSE;
+}
+
+static bool8 UpdateVisibleAutumnSprites(void)
+{
+        if (gWeatherPtr->AutumnSpriteCount == gWeatherPtr->targetAutumnSpriteCount)
+        return FALSE;
+
+    if (++gWeatherPtr->AutumnVisibleCounter > 36)
+    {
+        gWeatherPtr->AutumnVisibleCounter = 0;
+        if (gWeatherPtr->AutumnSpriteCount < gWeatherPtr->targetAutumnSpriteCount)
+            CreateAutumnSprite();
+        else
+            DestroyAutumnSprite();
+    }
+
+    return gWeatherPtr->AutumnSpriteCount != gWeatherPtr->targetAutumnSpriteCount;
+
+}
+
+
+static const struct OamData sAutumnSpriteOamData =
+{
+    .y = 0,
+    .affineMode = ST_OAM_AFFINE_OFF,
+    .objMode = ST_OAM_OBJ_NORMAL,
+    .mosaic = FALSE,
+    .bpp = ST_OAM_4BPP,
+    .shape = SPRITE_SHAPE(8x8),
+    .x = 0,
+    .matrixNum = 0,
+    .size = SPRITE_SIZE(8x8),
+    .tileNum = 0,
+    .priority = 1,
+    .paletteNum = 0,
+    .affineParam = 0,
+};
+
+static const struct SpriteFrameImage sAutumnSpriteImages[] =
+{
+    {gWeatherAutumn0Tiles, sizeof(gWeatherAutumn0Tiles)},
+    {gWeatherAutumn3Tiles, sizeof(gWeatherAutumn3Tiles)},
+};
+
+static const union AnimCmd sAutumnAnimCmd0[] =
+{
+    ANIMCMD_FRAME(0, 16),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAutumnAnimCmd1[] =
+{
+    ANIMCMD_FRAME(1, 16),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd *const sAutumnAnimCmds[] =
+{
+    sAutumnAnimCmd0,
+    sAutumnAnimCmd1,
+};
+
+static const struct SpriteTemplate sAutumnSpriteTemplate =
+{
+    .tileTag = TAG_NONE,
+    .paletteTag = PALTAG_WEATHER_2,
+    .oam = &sAutumnSpriteOamData,
+    .anims = sAutumnAnimCmds,
+    .images = sAutumnSpriteImages,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = UpdateAutumnSprite,
+};
+
+#define tAutumnId  data[0]
+#define tPosY         data[1]
+#define tDeltaY       data[2]
+#define tDeltaY2      data[3]
+#define tWaveIndex    data[4]
+#define tWaveDelta    data[5]
+#define tDeltaX       data[6]  // reuse this slot
+#define tFallDuration data[7]  // keep if you want, or remove
+
+
+static bool8 CreateAutumnSprite(void)
+{
+    // LoadSpritePalette(&gAutumnWeatherSpritePalette);  <-- REMOVE this line
+
+    u8 spriteId = CreateSpriteAtEnd(&sAutumnSpriteTemplate, 0, 0, 78);
+    if (spriteId == MAX_SPRITES)
+        return FALSE;
+
+    struct Sprite *sprite = &gSprites[spriteId];
+    sprite->tAutumnId = gWeatherPtr->AutumnSpriteCount;
+    InitAutumnSpriteMovement(sprite);
+    sprite->coordOffsetEnabled = FALSE;
+
+    if (Random() & 1)
+        StartSpriteAnim(sprite, 0); // Autumn1
+    else
+        StartSpriteAnim(sprite, 1); // Autumn2
+
+    gWeatherPtr->sprites.s1.AutumnSprites[gWeatherPtr->AutumnSpriteCount++] = sprite;
+    return TRUE;
+}
+
+static bool8 DestroyAutumnSprite(void)
+{
+    if (gWeatherPtr->AutumnSpriteCount)
+    {
+        DestroySprite(gWeatherPtr->sprites.s1.AutumnSprites[--gWeatherPtr->AutumnSpriteCount]);
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
+static void InitAutumnSpriteMovement(struct Sprite *sprite)
+{// Random spawn position
+    sprite->x = Random() % DISPLAY_WIDTH;
+    sprite->y = Random() % DISPLAY_HEIGHT;
+    sprite->x2 = 0;
+    sprite->y2 = 0;
+
+    // Gentle diagonal drift
+    sprite->tDeltaX = -((Random() % 3) + 1);   // -1 to -3 px/frame (always left)
+    sprite->tDeltaY =  (Random() % 2) + 1;     //  1 or 2 px/frame (downward)
+
+    // Small wave offset for flutter effect
+    sprite->tWaveIndex = Random() % 256;
+    sprite->tWaveDelta = (Random() % 3) + 1;
+}
+
+static void UpdateAutumnSprite(struct Sprite *sprite)
+{ // Base diagonal drift
+    sprite->x2 += sprite->tDeltaX;
+    sprite->y2 += sprite->tDeltaY;
+
+    // Add horizontal flutter using sine wave
+    sprite->tWaveIndex = (sprite->tWaveIndex + sprite->tWaveDelta) & 0xFF;
+    sprite->x2 += gSineTable[sprite->tWaveIndex] >> 7; // small sway (-1..+1)
+
+    // Wrap horizontally
+    if (sprite->x + sprite->x2 < -16)
+        sprite->x2 = DISPLAY_WIDTH - sprite->x;
+
+    // Wrap vertically
+    if (sprite->y + sprite->y2 > DISPLAY_HEIGHT + 16)
+        sprite->y2 = -sprite->y;
+}
+
+
+
+
+#undef tPosY
+#undef tDeltaY
+#undef tWaveDelta
+#undef tWaveIndex
+#undef tAutumnId
 #undef tFallCounter
 #undef tFallDuration
 #undef tDeltaY2
@@ -2214,18 +2498,24 @@ void Sandstorm_InitVars(void)
     gWeatherPtr->weatherGfxLoaded = 0;
     gWeatherPtr->targetColorMapIndex = 0;
     gWeatherPtr->colorMapStepDelay = 20;
+
     if (!gWeatherPtr->sandstormSpritesCreated)
     {
         gWeatherPtr->sandstormXOffset = gWeatherPtr->sandstormYOffset = 0;
         gWeatherPtr->sandstormWaveIndex = 8;
         gWeatherPtr->sandstormWaveCounter = 0;
-        // Dead code. How does the compiler not optimize this out?
+
         if (gWeatherPtr->sandstormWaveIndex >= 0x80 - MIN_SANDSTORM_WAVE_INDEX)
             gWeatherPtr->sandstormWaveIndex = 0x80 - gWeatherPtr->sandstormWaveIndex;
 
         Weather_SetBlendCoeffs(0, 16);
     }
+
     gWeatherPtr->noShadows = FALSE;
+
+    // 🔊 initialize looping SE state
+    gWeatherPtr->sandstormActive = TRUE;
+    gWeatherPtr->sandstormSoundCounter = 0;
 }
 
 void Sandstorm_InitAll(void)
@@ -2237,6 +2527,15 @@ void Sandstorm_InitAll(void)
 
 void Sandstorm_Main(void)
 {
+    if (gWeatherPtr->sandstormActive)
+    {
+        // increment timer
+        if (++gWeatherPtr->sandstormSoundCounter > 90) // ~1.5s at 60fps
+        {
+            gWeatherPtr->sandstormSoundCounter = 0;
+            PlaySE(SE_M_SAND_TOMB);
+        }
+    }
     UpdateSandstormMovement();
     UpdateSandstormWaveIndex();
     if (gWeatherPtr->sandstormWaveIndex >= 0x80 - MIN_SANDSTORM_WAVE_INDEX)
@@ -2885,6 +3184,7 @@ static u8 TranslateWeatherNum(u8 weather)
     case WEATHER_ROUTE119_CYCLE:     return sWeatherCycleRoute119[gSaveBlock1Ptr->weatherCycleStage];
     case WEATHER_ROUTE123_CYCLE:     return sWeatherCycleRoute123[gSaveBlock1Ptr->weatherCycleStage];
     case WEATHER_SPRING:               return WEATHER_SPRING;
+    case WEATHER_AUTUMN:               return WEATHER_AUTUMN;
     default:                         return WEATHER_NONE;
     }
 }
