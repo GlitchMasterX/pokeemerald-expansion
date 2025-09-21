@@ -481,7 +481,7 @@ script LuxuraIsland_MapScripts_MAP_SCRIPT_ON_LOAD {
         removeobject(12)
         setflag(FLAG_ALISTAIR_ARRIVE)
 }
-  elif(var(LUXURA_TRAGEDY)==19 && var(LUXURA_TRAGEDY)==20){
+  elif(var(LUXURA_TRAGEDY)>18 && var(LUXURA_TRAGEDY)<21){
         removeobject(5)
         setflag(FLAG_UNUSED_0x4EF)
         removeobject(2)
@@ -693,7 +693,7 @@ script alistairarrive {
     special(SpawnCameraObject)
     applymovement(0x7F,cameramovementalistair)
     waitmovement(0)
-    speakername(unknown)
+    speakername("???")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Aurther's family mansion.\nHe always spoke so highly of this place. It's been years since I've visited."),MSGBOX_AUTOCLOSE)
     waitmessage
     closemessage 
@@ -701,7 +701,7 @@ script alistairarrive {
     applymovement(13,alistairarrive1)
     waitmovement(0)
     playbgm(MUS_PL_TITLE,FALSE)
-    speakername(unknown)
+    speakername("???")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Wait....Something's not right."))
     closemessage
     playse(SE_PIN)
@@ -710,7 +710,7 @@ script alistairarrive {
     waitmovement(0)
     applymovement(12,alistairarrive2)
     applymovement(13,alistairarrive2)
-    speakername(unknown)
+    speakername("???")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Blood?.....\nNo....What happened here?"))  
     closemessage   
     fadescreen(FADE_TO_BLACK)
@@ -719,7 +719,7 @@ script alistairarrive {
     applymovement(13,moves(walk_faster_right*3 walk_faster_up*17))
     waitmovement(0)
     fadescreen(FADE_FROM_BLACK)
-    speakername(unknown)
+    speakername("???")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Aurther...Elysia...Please be safe."))
     closemessage
     applymovement(12,moves(walk_up))
@@ -734,7 +734,6 @@ script alistairarrive {
     release
     setvar(LUXURA_TRAGEDY,22)
     warpsilent(MAP_LUXURA_INDOOR,14,33)
-
 }
 movement alistairarrive2 {
     walk_left*6

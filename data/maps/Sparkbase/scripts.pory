@@ -118,11 +118,11 @@ script Surgebattle {
     applymovement(10,camera4)
     waitmovement(0)
     speakername(surge)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}So it's true...\pThe brat survived. Aurther's son, standing here before me."),MSGBOX_AUTOCLOSE)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}So it's true...\pThe brat survived.\pAurther's son, standing here before me."),MSGBOX_AUTOCLOSE)
     speakername(Xylar1)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Where is my Mom?!"),MSGBOX_AUTOCLOSE) 
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Where is my Mother?!"),MSGBOX_AUTOCLOSE) 
     speakername(surge)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_SMILE}{COLOR BLUE}{SHADOW LIGHT_GRAY}Heh... 'Mom'?\pYou mean the woman we tested. She lasted longer than most."),MSGBOX_AUTOCLOSE) 
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_SMILE}{COLOR BLUE}{SHADOW LIGHT_GRAY}Heh... Mother?\pYou mean that thing.\pShe lasted longer than most."),MSGBOX_AUTOCLOSE) 
     waitmessage
     removefieldmugshot
     applymovement(6,surde)
@@ -134,13 +134,18 @@ script Surgebattle {
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_SMILE}{COLOR BLUE}{SHADOW LIGHT_GRAY}No one's ever survived a fusion with a Poison-type before.\pBut she did.\pEven broken and screaming, she clung to life.\pShe even tried to fight back against us.\p...So we put her down.\pThat stubborn bitch never knew when to give up."),MSGBOX_AUTOCLOSE) 
     speakername(Xylar1)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}WHAT did you just call her?!"),MSGBOX_AUTOCLOSE)
-    applymovement(6,moves(walk_down delay_16 delay_16 walk_right))
+    applymovement(6,moves(walk_down delay_16 delay_16))
     speakername(surge)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_SMILE}{COLOR BLUE}{SHADOW LIGHT_GRAY}Struck a nerve, did I?\pGood.\pShe was strong, but in the end she was flawed.\pAll of you are.\pAnd that's why your father had to die too."),MSGBOX_AUTOCLOSE)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_SMILE}{COLOR BLUE}{SHADOW LIGHT_GRAY}Struck a nerve, did I?\pGood."),MSGBOX_AUTOCLOSE)
+    applymovement(6,moves(walk_right delay_16 delay_16 delay_16 face_up))
+    speakername(surge)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_SMILE}{COLOR BLUE}{SHADOW LIGHT_GRAY}She was strong, but in the end she was flawed.\pAll of you are.\pAnd that's why your father had to die too."),MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovement(0xFF,moves(emote_exclamation_mark))
     speakername(Xylar1)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}My father?!\pWhy would you kill the man who saved this region?! He fought for justice-he fought for everyone!"),MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(6,moves(walk_left face_down))
+    applymovement(6,moves(face_down walk_left face_down))
     speakername(surge)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Justice...\pEquality...\pNaive dreams.\pYour father was the strongest trainer alive, leading the mightiest force in this world.\pBut he wasted it all clinging to weakness.\pHe believed flaws make us human.\pThat imperfection had value.\pHe could never see what we see."),MSGBOX_AUTOCLOSE)
     waitmessage
@@ -172,6 +177,7 @@ script Surgebattle {
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}There won't be a next time..."),MSGBOX_AUTOCLOSE)
     waitmessage
     removefieldmugshot
+    playse(SE_PIN)
     applymovement(6,exclam)
     speakername(surge)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}What the-?!"),MSGBOX_AUTOCLOSE)
@@ -216,6 +222,8 @@ script Surgebattle {
     fadescreen(FADE_TO_BLACK)
     msgbox(format("A few days later........"),MSGBOX_AUTOCLOSE)
     destroyfollowernpc
+    initclock(10,20)
+    pausefakertc
     warpsilent(MAP_LUXURA_ISLAND,11,10)
     fadescreen(FADE_FROM_BLACK)   
     setvar(LUXURA_TRAGEDY,21)

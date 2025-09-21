@@ -583,9 +583,9 @@ trage::
 # 291 "data/maps/Luxurawork/scripts.pory"
 	waitmovement 0
 # 292 "data/maps/Luxurawork/scripts.pory"
-	speakername unknown
+	speakername trage_Text_2
 # 293 "data/maps/Luxurawork/scripts.pory"
-	msgbox trage_Text_2
+	msgbox trage_Text_3
 # 294 "data/maps/Luxurawork/scripts.pory"
 	waitmessage
 # 295 "data/maps/Luxurawork/scripts.pory"
@@ -597,7 +597,7 @@ trage::
 # 298 "data/maps/Luxurawork/scripts.pory"
 	speakername surge
 # 299 "data/maps/Luxurawork/scripts.pory"
-	msgbox trage_Text_3
+	msgbox trage_Text_4
 # 300 "data/maps/Luxurawork/scripts.pory"
 	waitmessage
 # 301 "data/maps/Luxurawork/scripts.pory"
@@ -613,7 +613,7 @@ trage::
 # 306 "data/maps/Luxurawork/scripts.pory"
 	speakername trageflash_Text_2
 # 307 "data/maps/Luxurawork/scripts.pory"
-	msgbox trage_Text_4
+	msgbox trage_Text_5
 # 308 "data/maps/Luxurawork/scripts.pory"
 	waitmessage
 # 309 "data/maps/Luxurawork/scripts.pory"
@@ -623,7 +623,7 @@ trage::
 # 311 "data/maps/Luxurawork/scripts.pory"
 	speakername surge
 # 312 "data/maps/Luxurawork/scripts.pory"
-	msgbox trage_Text_5
+	msgbox trage_Text_6
 # 313 "data/maps/Luxurawork/scripts.pory"
 	waitmessage
 # 314 "data/maps/Luxurawork/scripts.pory"
@@ -631,13 +631,13 @@ trage::
 # 315 "data/maps/Luxurawork/scripts.pory"
 	speakername name2
 # 316 "data/maps/Luxurawork/scripts.pory"
-	msgbox trage_Text_6
+	msgbox trage_Text_7
 # 317 "data/maps/Luxurawork/scripts.pory"
 	closemessage
 # 318 "data/maps/Luxurawork/scripts.pory"
 	applymovement 10, trage_Movement_2
 # 319 "data/maps/Luxurawork/scripts.pory"
-	msgbox trage_Text_7
+	msgbox trage_Text_8
 # 320 "data/maps/Luxurawork/scripts.pory"
 	waitmessage
 # 321 "data/maps/Luxurawork/scripts.pory"
@@ -673,15 +673,15 @@ trage::
 # 336 "data/maps/Luxurawork/scripts.pory"
 	speakername surge
 # 337 "data/maps/Luxurawork/scripts.pory"
-	msgbox trage_Text_8
+	msgbox trage_Text_9
 # 338 "data/maps/Luxurawork/scripts.pory"
 	waitmessage
 # 339 "data/maps/Luxurawork/scripts.pory"
 	closemessage
 # 340 "data/maps/Luxurawork/scripts.pory"
-	speakername unknown
+	speakername trage_Text_2
 # 341 "data/maps/Luxurawork/scripts.pory"
-	msgbox trage_Text_9
+	msgbox trage_Text_10
 # 342 "data/maps/Luxurawork/scripts.pory"
 	waitmessage
 # 343 "data/maps/Luxurawork/scripts.pory"
@@ -701,7 +701,7 @@ trage::
 # 350 "data/maps/Luxurawork/scripts.pory"
 	speakername Xylar1
 # 351 "data/maps/Luxurawork/scripts.pory"
-	msgbox trage_Text_10, MSGBOX_AUTOCLOSE
+	msgbox trage_Text_11, MSGBOX_AUTOCLOSE
 # 352 "data/maps/Luxurawork/scripts.pory"
 	removefieldmugshot
 # 353 "data/maps/Luxurawork/scripts.pory"
@@ -713,13 +713,13 @@ trage::
 # 356 "data/maps/Luxurawork/scripts.pory"
 	waitmovement 0
 # 357 "data/maps/Luxurawork/scripts.pory"
-	msgbox trage_Text_11, MSGBOX_AUTOCLOSE
+	msgbox trage_Text_12, MSGBOX_AUTOCLOSE
 # 358 "data/maps/Luxurawork/scripts.pory"
 	waitmessage
 # 359 "data/maps/Luxurawork/scripts.pory"
 	speakername Xylar1
 # 360 "data/maps/Luxurawork/scripts.pory"
-	msgbox trage_Text_12, MSGBOX_AUTOCLOSE
+	msgbox trage_Text_13, MSGBOX_AUTOCLOSE
 # 361 "data/maps/Luxurawork/scripts.pory"
 	removefieldmugshot
 # 362 "data/maps/Luxurawork/scripts.pory"
@@ -729,11 +729,11 @@ trage::
 # 364 "data/maps/Luxurawork/scripts.pory"
 	speakername surge
 # 365 "data/maps/Luxurawork/scripts.pory"
-	msgbox trage_Text_13, MSGBOX_AUTOCLOSE
+	msgbox trage_Text_14, MSGBOX_AUTOCLOSE
 # 366 "data/maps/Luxurawork/scripts.pory"
 	removefieldmugshot
 # 367 "data/maps/Luxurawork/scripts.pory"
-	msgbox trage_Text_14, MSGBOX_AUTOCLOSE
+	msgbox trage_Text_15, MSGBOX_AUTOCLOSE
 # 368 "data/maps/Luxurawork/scripts.pory"
 	applymovement 7, trageflash_Movement_1
 # 369 "data/maps/Luxurawork/scripts.pory"
@@ -741,7 +741,7 @@ trage::
 # 370 "data/maps/Luxurawork/scripts.pory"
 	speakername name2
 # 371 "data/maps/Luxurawork/scripts.pory"
-	msgbox trage_Text_15, MSGBOX_AUTOCLOSE
+	msgbox trage_Text_16, MSGBOX_AUTOCLOSE
 # 372 "data/maps/Luxurawork/scripts.pory"
 	removefieldmugshot
 # 373 "data/maps/Luxurawork/scripts.pory"
@@ -749,23 +749,23 @@ trage::
 # 374 "data/maps/Luxurawork/scripts.pory"
 	speakername name2
 # 375 "data/maps/Luxurawork/scripts.pory"
-	msgbox trage_Text_16, MSGBOX_AUTOCLOSE
+	msgbox trage_Text_17, MSGBOX_AUTOCLOSE
 # 376 "data/maps/Luxurawork/scripts.pory"
 	waitmessage
 # 377 "data/maps/Luxurawork/scripts.pory"
 	applymovement 5, trage_Movement_7
 # 378 "data/maps/Luxurawork/scripts.pory"
-	speakername trage_Text_17
+	speakername trage_Text_18
 # 379 "data/maps/Luxurawork/scripts.pory"
-	msgbox trage_Text_18, MSGBOX_AUTOCLOSE
-# 380 "data/maps/Luxurawork/scripts.pory"
-	speakername trage_Text_17
-# 381 "data/maps/Luxurawork/scripts.pory"
 	msgbox trage_Text_19, MSGBOX_AUTOCLOSE
-# 382 "data/maps/Luxurawork/scripts.pory"
-	speakername trage_Text_17
-# 383 "data/maps/Luxurawork/scripts.pory"
+# 380 "data/maps/Luxurawork/scripts.pory"
+	speakername trage_Text_18
+# 381 "data/maps/Luxurawork/scripts.pory"
 	msgbox trage_Text_20, MSGBOX_AUTOCLOSE
+# 382 "data/maps/Luxurawork/scripts.pory"
+	speakername trage_Text_18
+# 383 "data/maps/Luxurawork/scripts.pory"
+	msgbox trage_Text_21, MSGBOX_AUTOCLOSE
 # 384 "data/maps/Luxurawork/scripts.pory"
 	removefieldmugshot
 # 385 "data/maps/Luxurawork/scripts.pory"
@@ -1565,23 +1565,27 @@ trage_Text_1:
 	.string "{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_SHOCK}{COLOR RED}{SHADOW LIGHT_GRAY}Aurthur-!! No… no, please!!$"
 
 trage_Text_2:
+# 292 "data/maps/Luxurawork/scripts.pory"
+	.string "???$"
+
+trage_Text_3:
 # 293 "data/maps/Luxurawork/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}I warned you. This man crushed the\n"
 	.string "Nexus Order single-handedly.\p"
 	.string "He was called the strongest trainer\n"
 	.string "alive…$"
 
-trage_Text_3:
+trage_Text_4:
 # 299 "data/maps/Luxurawork/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_SMILE}{COLOR BLUE}{SHADOW LIGHT_GRAY}So this is the mighty Aurthur… laid low\n"
 	.string "like any other man.\p"
 	.string "Even legends die, don't they?$"
 
-trage_Text_4:
+trage_Text_5:
 # 307 "data/maps/Luxurawork/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_HOOPA}{EMOTE_TEAR}..........$"
 
-trage_Text_5:
+trage_Text_6:
 # 312 "data/maps/Luxurawork/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_SMILE}{COLOR BLUE}{SHADOW LIGHT_GRAY}Hah… so it's true.\p"
 	.string "When Aurthur dies, the mighty Hoopa\n"
@@ -1589,84 +1593,84 @@ trage_Text_5:
 	.string "child.\p"
 	.string "How convenient.$"
 
-trage_Text_6:
+trage_Text_7:
 # 316 "data/maps/Luxurawork/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_TEAR}{COLOR RED}{SHADOW LIGHT_GRAY}Hoopa!$"
 
-trage_Text_7:
+trage_Text_8:
 # 319 "data/maps/Luxurawork/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_TEAR}{COLOR RED}{SHADOW LIGHT_GRAY}Listen to me-your power is gone!\p"
 	.string "You can't fight them now… please, run!\p"
 	.string "If they take you, everything he died\n"
 	.string "for is lost!$"
 
-trage_Text_8:
+trage_Text_9:
 # 337 "data/maps/Luxurawork/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Tch… ran off like a frightened child.\p"
 	.string "No matter, Aurthur's dead.\p"
 	.string "That's what really mattered.$"
 
-trage_Text_9:
+trage_Text_10:
 # 341 "data/maps/Luxurawork/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}My work here is done.\p"
 	.string "I'll go report everything to boss.$"
 
-trage_Text_10:
+trage_Text_11:
 # 351 "data/maps/Luxurawork/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_TEAR}{COLOR BLUE}{SHADOW LIGHT_GRAY}No… no, this isn't real.\p"
 	.string "Dad… get up… please get up!$"
 
-trage_Text_11:
+trage_Text_12:
 # 357 "data/maps/Luxurawork/scripts.pory"
 	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}(Xylar stares at his father's lifeless\n"
 	.string "body, blood soaking the ground. His\l"
 	.string "heart pounds in his chest, unable to\l"
 	.string "fully grasp the horror in front of him.)$"
 
-trage_Text_12:
+trage_Text_13:
 # 360 "data/maps/Luxurawork/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_TEAR}{COLOR BLUE}{SHADOW LIGHT_GRAY}Dad?… DAD!!!!$"
 
-trage_Text_13:
+trage_Text_14:
 # 365 "data/maps/Luxurawork/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_SMILE}{COLOR BLUE}{SHADOW LIGHT_GRAY}Well, well… what do we have here?\p"
 	.string "Grunts! Seize them.\p"
 	.string "They'll make fine test subjects.$"
 
-trage_Text_14:
+trage_Text_15:
 # 367 "data/maps/Luxurawork/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Yes, Sir!$"
 
-trage_Text_15:
+trage_Text_16:
 # 371 "data/maps/Luxurawork/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_TEAR}{COLOR RED}{SHADOW LIGHT_GRAY}Mira! Take Xylar and run!\p"
 	.string "Now, hurry!!$"
 
-trage_Text_16:
+trage_Text_17:
 # 375 "data/maps/Luxurawork/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_TEAR}{COLOR RED}{SHADOW LIGHT_GRAY}Please…\p"
 	.string "Spare them.\p"
 	.string "Take me instead-just, leave the\n"
 	.string "children out of this.$"
 
-trage_Text_17:
+trage_Text_18:
 # 378 "data/maps/Luxurawork/scripts.pory"
 	.string "Surge$"
 
-trage_Text_18:
+trage_Text_19:
 # 379 "data/maps/Luxurawork/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_SMILE}{COLOR BLUE}{SHADOW LIGHT_GRAY}Hah… Begging, Lady Elysia?\p"
 	.string "How pathetic.\p"
 	.string "I almost expected more from you.$"
 
-trage_Text_19:
+trage_Text_20:
 # 381 "data/maps/Luxurawork/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}You say you'd do anything?\p"
 	.string "No-you WILL do what I decide.\p"
 	.string "And as for your precious brats… they're\n"
 	.string "coming with me.$"
 
-trage_Text_20:
+trage_Text_21:
 # 383 "data/maps/Luxurawork/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_SMILE}{COLOR BLUE}{SHADOW LIGHT_GRAY}Trust me.\p"
 	.string "You won't like what happens next.$"

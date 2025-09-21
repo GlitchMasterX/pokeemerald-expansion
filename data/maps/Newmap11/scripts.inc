@@ -553,7 +553,7 @@ Alistairarrive::
 # 292 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_2
 # 294 "data/maps/Newmap11/scripts.pory"
-	speakername unknown
+	speakername NihilFirstVisit1_Text_7
 # 295 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_3
 # 296 "data/maps/Newmap11/scripts.pory"
@@ -563,25 +563,25 @@ Alistairarrive::
 # 298 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_4
 # 300 "data/maps/Newmap11/scripts.pory"
-	speakername alistair
+	speakername Alistairarrive_Text_5
 # 301 "data/maps/Newmap11/scripts.pory"
-	msgbox Alistairarrive_Text_5
+	msgbox Alistairarrive_Text_6
 # 303 "data/maps/Newmap11/scripts.pory"
 	speakername Xylar1
 # 304 "data/maps/Newmap11/scripts.pory"
-	msgbox Alistairarrive_Text_6
-# 306 "data/maps/Newmap11/scripts.pory"
-	speakername alistair
-# 307 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_7
+# 306 "data/maps/Newmap11/scripts.pory"
+	speakername Alistairarrive_Text_5
+# 307 "data/maps/Newmap11/scripts.pory"
+	msgbox Alistairarrive_Text_8
 # 309 "data/maps/Newmap11/scripts.pory"
 	speakername Xylar1
 # 310 "data/maps/Newmap11/scripts.pory"
-	msgbox Alistairarrive_Text_8
-# 312 "data/maps/Newmap11/scripts.pory"
-	speakername alistair
-# 313 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_9
+# 312 "data/maps/Newmap11/scripts.pory"
+	speakername Alistairarrive_Text_5
+# 313 "data/maps/Newmap11/scripts.pory"
+	msgbox Alistairarrive_Text_10
 # 315 "data/maps/Newmap11/scripts.pory"
 	playse SE_PIN
 # 316 "data/maps/Newmap11/scripts.pory"
@@ -589,25 +589,25 @@ Alistairarrive::
 # 318 "data/maps/Newmap11/scripts.pory"
 	speakername Xylar1
 # 319 "data/maps/Newmap11/scripts.pory"
-	msgbox Alistairarrive_Text_10
+	msgbox Alistairarrive_Text_11
 # 321 "data/maps/Newmap11/scripts.pory"
 	playse SE_PIN
 # 322 "data/maps/Newmap11/scripts.pory"
 	applymovement 1, NihilFirstVisit1_Movement_5
 # 323 "data/maps/Newmap11/scripts.pory"
-	speakername alistair
+	speakername Alistairarrive_Text_5
 # 324 "data/maps/Newmap11/scripts.pory"
-	msgbox Alistairarrive_Text_11
+	msgbox Alistairarrive_Text_12
 # 326 "data/maps/Newmap11/scripts.pory"
 	applymovement 0xFF, Alistairarrive_Movement_0
 # 327 "data/maps/Newmap11/scripts.pory"
 	speakername Xylar1
 # 328 "data/maps/Newmap11/scripts.pory"
-	msgbox Alistairarrive_Text_12
-# 330 "data/maps/Newmap11/scripts.pory"
-	speakername alistair
-# 331 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_13
+# 330 "data/maps/Newmap11/scripts.pory"
+	speakername Alistairarrive_Text_5
+# 331 "data/maps/Newmap11/scripts.pory"
+	msgbox Alistairarrive_Text_14
 # 332 "data/maps/Newmap11/scripts.pory"
 	waitmessage
 # 333 "data/maps/Newmap11/scripts.pory"
@@ -617,31 +617,31 @@ Alistairarrive::
 # 335 "data/maps/Newmap11/scripts.pory"
 	speakername Xylar1
 # 336 "data/maps/Newmap11/scripts.pory"
-	msgbox Alistairarrive_Text_14
-# 337 "data/maps/Newmap11/scripts.pory"
-	speakername alistair
-# 338 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_15
+# 337 "data/maps/Newmap11/scripts.pory"
+	speakername Alistairarrive_Text_5
+# 338 "data/maps/Newmap11/scripts.pory"
+	msgbox Alistairarrive_Text_16
 # 339 "data/maps/Newmap11/scripts.pory"
 	speakername Xylar1
 # 340 "data/maps/Newmap11/scripts.pory"
-	msgbox Alistairarrive_Text_16
-# 341 "data/maps/Newmap11/scripts.pory"
-	speakername alistair
-# 342 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_17
+# 341 "data/maps/Newmap11/scripts.pory"
+	speakername Alistairarrive_Text_5
+# 342 "data/maps/Newmap11/scripts.pory"
+	msgbox Alistairarrive_Text_18
 # 343 "data/maps/Newmap11/scripts.pory"
 	speakername Xylar1
 # 344 "data/maps/Newmap11/scripts.pory"
-	msgbox Alistairarrive_Text_18
-# 345 "data/maps/Newmap11/scripts.pory"
-	speakername alistair
-# 346 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_19
+# 345 "data/maps/Newmap11/scripts.pory"
+	speakername Alistairarrive_Text_5
+# 346 "data/maps/Newmap11/scripts.pory"
+	msgbox Alistairarrive_Text_20
 # 347 "data/maps/Newmap11/scripts.pory"
 	speakername Xylar1
 # 348 "data/maps/Newmap11/scripts.pory"
-	msgbox Alistairarrive_Text_20
+	msgbox Alistairarrive_Text_21
 # 349 "data/maps/Newmap11/scripts.pory"
 	setflag FLAG_NO_WHITEOUT
 # 350 "data/maps/Newmap11/scripts.pory"
@@ -653,9 +653,9 @@ Alistairarrive::
 # 353 "data/maps/Newmap11/scripts.pory"
 	applymovement 2, alisbattle2
 # 354 "data/maps/Newmap11/scripts.pory"
-	speakername alistair
+	speakername Alistairarrive_Text_5
 # 355 "data/maps/Newmap11/scripts.pory"
-	msgbox Alistairarrive_Text_21, MSGBOX_AUTOCLOSE
+	msgbox Alistairarrive_Text_22, MSGBOX_AUTOCLOSE
 # 356 "data/maps/Newmap11/scripts.pory"
 	playmoncry SPECIES_MEWTWO, CRY_MODE_ENCOUNTER
 # 357 "data/maps/Newmap11/scripts.pory"
@@ -667,9 +667,9 @@ Alistairarrive::
 # 360 "data/maps/Newmap11/scripts.pory"
 	playmoncry SPECIES_ALAKAZAM, CRY_MODE_ENCOUNTER
 # 361 "data/maps/Newmap11/scripts.pory"
-	speakername Alistairarrive_Text_22
+	speakername Alistairarrive_Text_23
 # 362 "data/maps/Newmap11/scripts.pory"
-	msgbox Alistairarrive_Text_23
+	msgbox Alistairarrive_Text_24
 # 363 "data/maps/Newmap11/scripts.pory"
 	closemessage
 # 364 "data/maps/Newmap11/scripts.pory"
@@ -683,7 +683,7 @@ Alistairarrive::
 # 368 "data/maps/Newmap11/scripts.pory"
 	speakername NihilFirstVisit1_Text_3
 # 369 "data/maps/Newmap11/scripts.pory"
-	msgbox Alistairarrive_Text_24
+	msgbox Alistairarrive_Text_25
 # 370 "data/maps/Newmap11/scripts.pory"
 	waitmessage
 # 371 "data/maps/Newmap11/scripts.pory"
@@ -697,19 +697,19 @@ Alistairarrive::
 # 375 "data/maps/Newmap11/scripts.pory"
 	speakername Xylar1
 # 376 "data/maps/Newmap11/scripts.pory"
-	msgbox Alistairarrive_Text_25, MSGBOX_AUTOCLOSE
-# 378 "data/maps/Newmap11/scripts.pory"
-	speakername alistair
-# 379 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_26, MSGBOX_AUTOCLOSE
+# 378 "data/maps/Newmap11/scripts.pory"
+	speakername Alistairarrive_Text_5
+# 379 "data/maps/Newmap11/scripts.pory"
+	msgbox Alistairarrive_Text_27, MSGBOX_AUTOCLOSE
 # 381 "data/maps/Newmap11/scripts.pory"
 	speakername Xylar1
 # 382 "data/maps/Newmap11/scripts.pory"
-	msgbox Alistairarrive_Text_27, MSGBOX_AUTOCLOSE
-# 384 "data/maps/Newmap11/scripts.pory"
-	speakername alistair
-# 385 "data/maps/Newmap11/scripts.pory"
 	msgbox Alistairarrive_Text_28, MSGBOX_AUTOCLOSE
+# 384 "data/maps/Newmap11/scripts.pory"
+	speakername Alistairarrive_Text_5
+# 385 "data/maps/Newmap11/scripts.pory"
+	msgbox Alistairarrive_Text_29, MSGBOX_AUTOCLOSE
 # 387 "data/maps/Newmap11/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 388 "data/maps/Newmap11/scripts.pory"
@@ -731,7 +731,7 @@ Alistairarrive::
 # 396 "data/maps/Newmap11/scripts.pory"
 	speakername Xylar1
 # 397 "data/maps/Newmap11/scripts.pory"
-	msgbox Alistairarrive_Text_29, MSGBOX_AUTOCLOSE
+	msgbox Alistairarrive_Text_30, MSGBOX_AUTOCLOSE
 # 398 "data/maps/Newmap11/scripts.pory"
 	special HealPlayerParty
 # 399 "data/maps/Newmap11/scripts.pory"
@@ -1445,29 +1445,33 @@ Alistairarrive_Text_4:
 	.string "Another pawn sent to finish me off?$"
 
 Alistairarrive_Text_5:
+# 300 "data/maps/Newmap11/scripts.pory"
+	.string "Alistair$"
+
+Alistairarrive_Text_6:
 # 301 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}No.\p"
 	.string "My name is Alistair Caelum.\n"
 	.string "Headmaster of the Astralis Academy.$"
 
-Alistairarrive_Text_6:
+Alistairarrive_Text_7:
 # 304 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}A headmaster?\p"
 	.string "What could you possibly want from me?$"
 
-Alistairarrive_Text_7:
+Alistairarrive_Text_8:
 # 307 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}I came because I know what happened\n"
 	.string "here.\p"
 	.string "Your family… your home.$"
 
-Alistairarrive_Text_8:
+Alistairarrive_Text_9:
 # 310 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}So what?\p"
 	.string "You here to preach about moving on?\p"
 	.string "Save your pity.$"
 
-Alistairarrive_Text_9:
+Alistairarrive_Text_10:
 # 313 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Not pity.\n"
 	.string "Concern.\p"
@@ -1477,41 +1481,41 @@ Alistairarrive_Text_9:
 	.string "academy began.\p"
 	.string "So I am to fulfill my promise.$"
 
-Alistairarrive_Text_10:
+Alistairarrive_Text_11:
 # 319 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Closest friend?\p"
 	.string "Then where were you when he needed you\n"
 	.string "most?!$"
 
-Alistairarrive_Text_11:
+Alistairarrive_Text_12:
 # 324 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}………$"
 
-Alistairarrive_Text_12:
+Alistairarrive_Text_13:
 # 328 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Leave me alone.\p"
 	.string "I don't need your academy.\n"
 	.string "I'll get stronger on my own.\p"
 	.string "Strong enough to wipe them all out.$"
 
-Alistairarrive_Text_13:
+Alistairarrive_Text_14:
 # 331 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Revenge won't bring them back.\p"
 	.string "It won't heal you.$"
 
-Alistairarrive_Text_14:
+Alistairarrive_Text_15:
 # 336 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Don't talk like you understand!\p"
 	.string "You don't know what I've been through!$"
 
-Alistairarrive_Text_15:
+Alistairarrive_Text_16:
 # 338 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}No, I don't.\p"
 	.string "But I do know where your path ends.\p"
 	.string "Revenge blinds. It consumes. And it\n"
 	.string "destroys.$"
 
-Alistairarrive_Text_16:
+Alistairarrive_Text_17:
 # 340 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Enough preaching!\p"
 	.string "I've already crushed one of their\n"
@@ -1519,19 +1523,19 @@ Alistairarrive_Text_16:
 	.string "If you think words can stop me-you're\n"
 	.string "wasting breath.$"
 
-Alistairarrive_Text_17:
+Alistairarrive_Text_18:
 # 342 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}(He's just as stubborn as Aurther…)\p"
 	.string "Strength isn't about one victory.\p"
 	.string "It's about enduring every battle that\n"
 	.string "follows.$"
 
-Alistairarrive_Text_18:
+Alistairarrive_Text_19:
 # 344 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Then prove it.\p"
 	.string "If you think you're so wise-show me!$"
 
-Alistairarrive_Text_19:
+Alistairarrive_Text_20:
 # 346 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Very well.\p"
 	.string "If you win, I'll leave and never bother\n"
@@ -1539,51 +1543,51 @@ Alistairarrive_Text_19:
 	.string "But if I win-you come to the academy.\p"
 	.string "For two years.$"
 
-Alistairarrive_Text_20:
+Alistairarrive_Text_21:
 # 348 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Two years?\p"
 	.string "Fine. But don't cry when I crush you.$"
 
-Alistairarrive_Text_21:
+Alistairarrive_Text_22:
 # 355 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}I wouldn't dream of it.\p"
 	.string "Let's see if your strength matches your\n"
 	.string "confidence.$"
 
-Alistairarrive_Text_22:
+Alistairarrive_Text_23:
 # 361 "data/maps/Newmap11/scripts.pory"
 	.string "Alakazam$"
 
-Alistairarrive_Text_23:
+Alistairarrive_Text_24:
 # 362 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_SPECIAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}………$"
 
-Alistairarrive_Text_24:
+Alistairarrive_Text_25:
 # 369 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}………$"
 
-Alistairarrive_Text_25:
+Alistairarrive_Text_26:
 # 376 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}I....I lost?$"
 
-Alistairarrive_Text_26:
+Alistairarrive_Text_27:
 # 379 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}You're strong, Xylar but you don't know\n"
 	.string "the meaning of true strength and to\l"
 	.string "learn that the academy is the best\l"
 	.string "place to be.$"
 
-Alistairarrive_Text_27:
+Alistairarrive_Text_28:
 # 382 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}It doesn't change anything, one battle\n"
 	.string "doesn't change who I am.$"
 
-Alistairarrive_Text_28:
+Alistairarrive_Text_29:
 # 385 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}No it doesn't but it's a start.\p"
 	.string "I'll see you at the academy.$"
 
-Alistairarrive_Text_29:
+Alistairarrive_Text_30:
 # 397 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Damn it!$"
 

@@ -289,7 +289,7 @@ script trage {
 	waitmessage
 	applymovement(12,moves(walk_left*2 walk_down*2 walk_right*2 walk_down*3))
 	waitmovement(0)
-	speakername(unknown)
+	speakername("???")
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I warned you. This man crushed the Nexus Order single-handedly.\pHe was called the strongest trainer alive…"))
 	waitmessage
 	closemessage
@@ -337,7 +337,7 @@ script trage {
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Tch… ran off like a frightened child.\pNo matter, Aurthur's dead.\pThat's what really mattered."))
 	waitmessage
     closemessage
-	speakername(unknown)
+	speakername("???")
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}My work here is done.\pI'll go report everything to boss."))
 	waitmessage
 	closemessage

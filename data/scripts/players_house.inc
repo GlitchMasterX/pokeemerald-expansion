@@ -64,7 +64,7 @@ PlayersHouse_2F_EventScript_WallClock::
 	end
 
 PlayersHouse_2F_EventScript_MomComesUpstairsMale::
-	setvar VAR_0x8008, LOCALID_PLAYERS_HOUSE_2F_MOM
+	setvar VAR_0x8008, LOCALID_PLAYERS_HOUSE_1F_MOM
 	addobject VAR_0x8008
 	applymovement VAR_0x8008, PlayersHouse_2F_Movement_MomEntersMale
 	waitmovement 0
@@ -77,7 +77,7 @@ PlayersHouse_2F_EventScript_MomComesUpstairsMale::
 	return
 
 PlayersHouse_2F_EventScript_MomComesUpstairsFemale::
-	setvar VAR_0x8008, LOCALID_PLAYERS_HOUSE_2F_MOM
+	setvar VAR_0x8008, LOCALID_PLAYERS_HOUSE_1F_MOM
 	addobject VAR_0x8008
 	applymovement VAR_0x8008, PlayersHouse_2F_Movement_MomEntersFemale
 	waitmovement 0

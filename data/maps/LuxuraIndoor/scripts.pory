@@ -11,28 +11,16 @@ MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
 }
 script alistairarrive3 {
 	lock
-	speakername(unknown)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Aurther.....Elysia....where are you?"),MSGBOX_AUTOCLOSE)
-     
-	applymovement(7,exclam)
-	speakername(unknown)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}What's that?"))
-     
-	setvar(VAR_0x8000,0)
-	special(DrawMugshot)
-	waitbuttonpress
-	special(ClearMugshot)
-	speakername(unknown)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Aurther.......Xylar...."))
-     
-	waitmessage
+	speakername("???")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Aurther.....Elysia...Xylar...where are you?"),MSGBOX_AUTOCLOSE)
 	applymovement(8,traces)
 	waitmovement(0)
 	applymovement(7,traces1)
 	waitmovement(0)
-    msgbox(format("(Telepathy)\p{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}This place is filled with grief and violence.\pThere are faint traces of memories lingering here.\pShall I show you?"))
-	speakername(unknown)
-    msgbox(format("(Nods)"),MSGBOX_AUTOCLOSE)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_SPECIAL}(Telepathy)\p{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}This place is filled with grief and violence.\pThere are faint traces of memories lingering here.\pShall I show you?"))
+	applymovement(7,moves(walk_in_place_down))
+	speakername("???")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}...."),MSGBOX_AUTOCLOSE)
      
 	waitmessage
 	fadescreenspeed(FADE_TO_WHITE,4)
@@ -700,21 +688,22 @@ movement rope {
 script alistairarrive4 {
 	lock
 	special(HealPlayerParty)
-	speakername(unknown)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}No...This wasn't supposed to happen.\pAurther, Elysia.......How could this......!\p"),MSGBOX_AUTOCLOSE)
-     
+	speakername("???")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}No...This wasn't supposed to happen.\pAurther, Elysia.......How could this......!\p"),MSGBOX_AUTOCLOSE)
     waitmessage
+	playse(SE_PIN)
 	applymovement(8,exclam)
 	applymovement(7,traces1)
-	msgbox(format("{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}The boy......he escaped. His emotions are vivid, almost overwhelming.\pRage, sorrow, despair.\nI can sense where he went."),MSGBOX_AUTOCLOSE)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_SPECIAL}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}The boy......he escaped. His emotions are vivid, almost overwhelming.\pRage, sorrow, despair and an unknown presence.\nI can sense where he went."),MSGBOX_AUTOCLOSE)
+	playse(SE_PIN)
 	applymovement(7,exclam)
-	speakername(unknown)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar survived?\pThat's all that matters now.\nIf he is out there I'll find him no matter what happens!\pLet's go!"),MSGBOX_AUTOCLOSE)
-     
-	applymovement(0xFF,alistairgone3)
+	speakername("???")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar survived?\pThat's all that matters now.\nIf he is out there I'll find him no matter what happens!\pLet's go!"),MSGBOX_AUTOCLOSE)
+    applymovement(0xFF,alistairgone3)
 	applymovement(7,alistairgone)
     applymovement(8,alistairgone1)
 	waitmovement(0)
+	playse(SE_EXIT)
 	removeobject(7)
 	removeobject(8)
 	setflag(FLAG_ALISTAIR_ARRIVE)
@@ -730,6 +719,9 @@ script alistairarrive4 {
 	special(DrawMugshot)
     waitbuttonpress
 	special(ClearMugshot)
+	resumefakertc
+	initclock(0,10)
+	pausefakertc
 	setvar(LUXURA_TRAGEDY,24)
 	clearflag(FLAG_AFTERTRAGEDY_MUSIC)
 	warpsilent(MAP_NEWHOUSE,2,24)

@@ -291,25 +291,25 @@ script Alistairarrive {
     speakername(Xylar1)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}You're wasting your time.\pWhoever you are-I don't need company."))
 
-    speakername(unknown)
+    speakername("???")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}I expected as much.\nXylar, isn't it?"))
     applymovement(0xFF,moves(face_down))
     speakername(Xylar1)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}And who are you?\pAnother pawn sent to finish me off?"))
 
-    speakername(alistair)
+    speakername("Alistair")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}No.\pMy name is Alistair Caelum.\nHeadmaster of the Astralis Academy."))
 
     speakername(Xylar1)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}A headmaster?\pWhat could you possibly want from me?"))
 
-    speakername(alistair)
+    speakername("Alistair")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}I came because I know what happened here.\pYour family… your home."))
 
     speakername(Xylar1)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}So what?\pYou here to preach about moving on?\pSave your pity."))
 
-    speakername(alistair)
+    speakername("Alistair")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Not pity.\nConcern.\pYour father-Aurther-was my closest friend.\pHe wanted me to look after you once the academy began.\pSo I am to fulfill my promise."))
 
     playse(SE_PIN)
@@ -320,29 +320,29 @@ script Alistairarrive {
 
     playse(SE_PIN)
     applymovement(1,moves(emote_exclamation_mark))
-    speakername(alistair)
+    speakername("Alistair")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}………"))
 
     applymovement(0xFF, moves(face_up))
     speakername(Xylar1)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Leave me alone.\pI don't need your academy.\nI'll get stronger on my own.\pStrong enough to wipe them all out."))
 
-    speakername(alistair)
+    speakername("Alistair")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Revenge won't bring them back.\pIt won't heal you."))
     waitmessage
     playse(SE_PIN)
     applymovement(0xFF,moves(emote_upset face_down))
     speakername(Xylar1)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Don't talk like you understand!\pYou don't know what I've been through!"))
-    speakername(alistair)
+    speakername("Alistair")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}No, I don't.\pBut I do know where your path ends.\pRevenge blinds. It consumes. And it destroys."))
     speakername(Xylar1)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Enough preaching!\pI've already crushed one of their strongest.\pIf you think words can stop me-you're wasting breath."))
-    speakername(alistair)
+    speakername("Alistair")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}(He's just as stubborn as Aurther…)\pStrength isn't about one victory.\pIt's about enduring every battle that follows."))
     speakername(Xylar1)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Then prove it.\pIf you think you're so wise-show me!"))
-    speakername(alistair)
+    speakername("Alistair")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Very well.\pIf you win, I'll leave and never bother you again.\pBut if I win-you come to the academy.\pFor two years."))
     speakername(Xylar1)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Two years?\pFine. But don't cry when I crush you."))
@@ -351,7 +351,7 @@ script Alistairarrive {
     waitmovement(0)
     applymovement(1,alisbattle1)
     applymovement(2,alisbattle2)
-    speakername(alistair)
+    speakername("Alistair")
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}I wouldn't dream of it.\pLet's see if your strength matches your confidence."),MSGBOX_AUTOCLOSE) 
     playmoncry(SPECIES_MEWTWO,CRY_MODE_ENCOUNTER)
     speakername("Mewtwo")
@@ -375,13 +375,13 @@ script Alistairarrive {
     speakername(Xylar1)
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}I....I lost?"),MSGBOX_AUTOCLOSE)
 	 
-    speakername(alistair)
+    speakername("Alistair")
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}You're strong, Xylar but you don't know the meaning of true strength and to learn that the academy is the best place to be."),MSGBOX_AUTOCLOSE)
 	 
     speakername(Xylar1)
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}It doesn't change anything, one battle doesn't change who I am."),MSGBOX_AUTOCLOSE)
 	 
-    speakername(alistair)
+    speakername("Alistair")
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}No it doesn't but it's a start.\pI'll see you at the academy."),MSGBOX_AUTOCLOSE)
 	 
     fadescreen(FADE_TO_BLACK)
