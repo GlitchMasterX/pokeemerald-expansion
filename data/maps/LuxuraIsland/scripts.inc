@@ -1586,125 +1586,127 @@ alistairarrive::
 # 724 "data/maps/LuxuraIsland/scripts.pory"
 	closemessage
 # 725 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement 12, alistairarrive_Movement_2
+	waitmessage
 # 726 "data/maps/LuxuraIsland/scripts.pory"
-	removeobject 12
+	applymovement 12, alistairarrive_Movement_2
 # 727 "data/maps/LuxuraIsland/scripts.pory"
-	playse SE_EXIT
+	removeobject 12
 # 728 "data/maps/LuxuraIsland/scripts.pory"
-	waitse
-# 729 "data/maps/LuxuraIsland/scripts.pory"
-	applymovement 13, alistairarrive_Movement_3
-# 730 "data/maps/LuxuraIsland/scripts.pory"
-	waitmovement 0
-# 731 "data/maps/LuxuraIsland/scripts.pory"
-	removeobject 13
-# 732 "data/maps/LuxuraIsland/scripts.pory"
 	playse SE_EXIT
-# 733 "data/maps/LuxuraIsland/scripts.pory"
+# 729 "data/maps/LuxuraIsland/scripts.pory"
 	waitse
+# 730 "data/maps/LuxuraIsland/scripts.pory"
+	applymovement 13, alistairarrive_Movement_3
+# 731 "data/maps/LuxuraIsland/scripts.pory"
+	waitmovement 0
+# 732 "data/maps/LuxuraIsland/scripts.pory"
+	removeobject 13
+# 733 "data/maps/LuxuraIsland/scripts.pory"
+	playse SE_EXIT
 # 734 "data/maps/LuxuraIsland/scripts.pory"
-	release
+	waitse
 # 735 "data/maps/LuxuraIsland/scripts.pory"
-	setvar LUXURA_TRAGEDY, 22
+	release
 # 736 "data/maps/LuxuraIsland/scripts.pory"
+	setvar LUXURA_TRAGEDY, 22
+# 737 "data/maps/LuxuraIsland/scripts.pory"
 	warpsilent MAP_LUXURA_INDOOR, 14, 33
 	return
 
 
-# 738 "data/maps/LuxuraIsland/scripts.pory"
+# 739 "data/maps/LuxuraIsland/scripts.pory"
 alistairarrive2:
-# 739 "data/maps/LuxuraIsland/scripts.pory"
+# 740 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 739 "data/maps/LuxuraIsland/scripts.pory"
+# 740 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 739 "data/maps/LuxuraIsland/scripts.pory"
+# 740 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 739 "data/maps/LuxuraIsland/scripts.pory"
+# 740 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 739 "data/maps/LuxuraIsland/scripts.pory"
+# 740 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 739 "data/maps/LuxuraIsland/scripts.pory"
+# 740 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
 	step_end
 
-# 741 "data/maps/LuxuraIsland/scripts.pory"
+# 742 "data/maps/LuxuraIsland/scripts.pory"
 cameramovementalistair:
-# 742 "data/maps/LuxuraIsland/scripts.pory"
-	walk_down
-# 742 "data/maps/LuxuraIsland/scripts.pory"
-	walk_down
-# 742 "data/maps/LuxuraIsland/scripts.pory"
-	walk_down
-# 742 "data/maps/LuxuraIsland/scripts.pory"
-	walk_down
-# 742 "data/maps/LuxuraIsland/scripts.pory"
-	walk_down
-# 742 "data/maps/LuxuraIsland/scripts.pory"
-	walk_down
-# 742 "data/maps/LuxuraIsland/scripts.pory"
-	walk_down
-# 742 "data/maps/LuxuraIsland/scripts.pory"
-	walk_down
-# 742 "data/maps/LuxuraIsland/scripts.pory"
-	walk_down
-# 742 "data/maps/LuxuraIsland/scripts.pory"
-	walk_down
-# 742 "data/maps/LuxuraIsland/scripts.pory"
-	walk_down
-# 742 "data/maps/LuxuraIsland/scripts.pory"
-	walk_down
-# 742 "data/maps/LuxuraIsland/scripts.pory"
-	walk_down
-# 742 "data/maps/LuxuraIsland/scripts.pory"
-	walk_down
-# 742 "data/maps/LuxuraIsland/scripts.pory"
-	walk_down
-# 742 "data/maps/LuxuraIsland/scripts.pory"
-	walk_down
-# 742 "data/maps/LuxuraIsland/scripts.pory"
-	walk_down
-# 742 "data/maps/LuxuraIsland/scripts.pory"
-	walk_down
-# 742 "data/maps/LuxuraIsland/scripts.pory"
-	walk_down
-# 742 "data/maps/LuxuraIsland/scripts.pory"
+# 743 "data/maps/LuxuraIsland/scripts.pory"
 	walk_down
 # 743 "data/maps/LuxuraIsland/scripts.pory"
+	walk_down
+# 743 "data/maps/LuxuraIsland/scripts.pory"
+	walk_down
+# 743 "data/maps/LuxuraIsland/scripts.pory"
+	walk_down
+# 743 "data/maps/LuxuraIsland/scripts.pory"
+	walk_down
+# 743 "data/maps/LuxuraIsland/scripts.pory"
+	walk_down
+# 743 "data/maps/LuxuraIsland/scripts.pory"
+	walk_down
+# 743 "data/maps/LuxuraIsland/scripts.pory"
+	walk_down
+# 743 "data/maps/LuxuraIsland/scripts.pory"
+	walk_down
+# 743 "data/maps/LuxuraIsland/scripts.pory"
+	walk_down
+# 743 "data/maps/LuxuraIsland/scripts.pory"
+	walk_down
+# 743 "data/maps/LuxuraIsland/scripts.pory"
+	walk_down
+# 743 "data/maps/LuxuraIsland/scripts.pory"
+	walk_down
+# 743 "data/maps/LuxuraIsland/scripts.pory"
+	walk_down
+# 743 "data/maps/LuxuraIsland/scripts.pory"
+	walk_down
+# 743 "data/maps/LuxuraIsland/scripts.pory"
+	walk_down
+# 743 "data/maps/LuxuraIsland/scripts.pory"
+	walk_down
+# 743 "data/maps/LuxuraIsland/scripts.pory"
+	walk_down
+# 743 "data/maps/LuxuraIsland/scripts.pory"
+	walk_down
+# 743 "data/maps/LuxuraIsland/scripts.pory"
+	walk_down
+# 744 "data/maps/LuxuraIsland/scripts.pory"
 	walk_right
-# 743 "data/maps/LuxuraIsland/scripts.pory"
+# 744 "data/maps/LuxuraIsland/scripts.pory"
 	walk_right
-# 743 "data/maps/LuxuraIsland/scripts.pory"
+# 744 "data/maps/LuxuraIsland/scripts.pory"
 	walk_right
-# 743 "data/maps/LuxuraIsland/scripts.pory"
+# 744 "data/maps/LuxuraIsland/scripts.pory"
 	walk_right
-# 743 "data/maps/LuxuraIsland/scripts.pory"
+# 744 "data/maps/LuxuraIsland/scripts.pory"
 	walk_right
-# 743 "data/maps/LuxuraIsland/scripts.pory"
+# 744 "data/maps/LuxuraIsland/scripts.pory"
 	walk_right
 	step_end
 
-# 745 "data/maps/LuxuraIsland/scripts.pory"
+# 746 "data/maps/LuxuraIsland/scripts.pory"
 alistairarrive1:
-# 746 "data/maps/LuxuraIsland/scripts.pory"
+# 747 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 746 "data/maps/LuxuraIsland/scripts.pory"
+# 747 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 746 "data/maps/LuxuraIsland/scripts.pory"
+# 747 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 746 "data/maps/LuxuraIsland/scripts.pory"
+# 747 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 746 "data/maps/LuxuraIsland/scripts.pory"
+# 747 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 746 "data/maps/LuxuraIsland/scripts.pory"
+# 747 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 746 "data/maps/LuxuraIsland/scripts.pory"
+# 747 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 746 "data/maps/LuxuraIsland/scripts.pory"
+# 747 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 746 "data/maps/LuxuraIsland/scripts.pory"
+# 747 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
-# 746 "data/maps/LuxuraIsland/scripts.pory"
+# 747 "data/maps/LuxuraIsland/scripts.pory"
 	walk_left
 	step_end
 
@@ -2120,17 +2122,17 @@ alistairarrive_Movement_1:
 	walk_faster_up
 	step_end
 
-# 725 "data/maps/LuxuraIsland/scripts.pory"
+# 726 "data/maps/LuxuraIsland/scripts.pory"
 alistairarrive_Movement_2:
-# 725 "data/maps/LuxuraIsland/scripts.pory"
+# 726 "data/maps/LuxuraIsland/scripts.pory"
 	walk_up
 	step_end
 
-# 729 "data/maps/LuxuraIsland/scripts.pory"
+# 730 "data/maps/LuxuraIsland/scripts.pory"
 alistairarrive_Movement_3:
-# 729 "data/maps/LuxuraIsland/scripts.pory"
+# 730 "data/maps/LuxuraIsland/scripts.pory"
 	walk_up
-# 729 "data/maps/LuxuraIsland/scripts.pory"
+# 730 "data/maps/LuxuraIsland/scripts.pory"
 	walk_up
 	step_end
 

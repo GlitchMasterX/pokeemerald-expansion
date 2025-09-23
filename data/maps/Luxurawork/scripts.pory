@@ -12,22 +12,19 @@ map_script_2 LUXURA_TRAGEDY, 22, trageflash
 script trageflash {
 	lockall
 	special(SpawnCameraObject)
-	playse(SE_PIN)
-	applymovement(7,exclam)
-	waitmovement(0)
     applymovement(0x7F,mo)
 	waitmovement(0)
 	speakername(surge)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Looks like I'm down to my last one…"))
+	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Looks like I'm down to my last one…"))
 	waitmessage
 	closemessage
 	speakername(name3)
-	msgbox("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Hoopa…\pFinish it.")
+	msgbox("{COLOR BLUE}{SHADOW LIGHT_GRAY}Hoopa…\pFinish it.")
 	waitmessage
 	closemessage
 	playmoncry(SPECIES_HOOPA_UNBOUND,CRY_MODE_ROAR_1)
 	speakername("Hoopa")
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_UNBOUND}{EMOTE_NORMAL}Hooo...paaa!"))
+	msgbox(format("Hooo...paaa!"))
 	waitmessage
 	closemessage
 	playse(SE_M_TELEPORT)
@@ -59,13 +56,13 @@ script trageflash {
 	playmoncry(SPECIES_RAICHU,CRY_MODE_FAINT)
 	waitbuttonpress
 	speakername(surge)
-	msgbox("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}You're strong… stronger than I expected.")
+	msgbox("{COLOR BLUE}{SHADOW LIGHT_GRAY}You're strong… stronger than I expected.")
 	closemessage
 	speakername(name3)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_QUESTION}{COLOR BLUE}{SHADOW LIGHT_GRAY}You call that strength?"))
+	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You call that strength?"))
 	removefieldmugshot
 	speakername(name3)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}You're pitiful, Surge.\pThis is where it ends."))
+	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You're pitiful, Surge.\pThis is where it ends."))
 	waitmessage
     closemessage
 	playse(SE_PIN)

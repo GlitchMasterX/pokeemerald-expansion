@@ -21,8 +21,8 @@ script alistairarrive3 {
 	applymovement(7,moves(walk_in_place_down))
 	speakername("???")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}...."),MSGBOX_AUTOCLOSE)
-     
-	waitmessage
+    waitmessage
+	closemessage
 	fadescreenspeed(FADE_TO_WHITE,4)
 	fadescreenspeed(FADE_FROM_WHITE,4)
 	fadescreenspeed(FADE_TO_WHITE,4)
@@ -433,7 +433,7 @@ script tragedy{
 		setmetatile(2,36,0x340,0)
 		setmetatile(2,37,0x348,0)
 }
-	elif(var(LUXURA_TRAGEDY)==21){
+	elif(var(LUXURA_TRAGEDY)==22){
         setflag(FLAG_UNUSED_0x4A7)
 		setflag(FLAG_UNUSED_0x4A8)
 		setmetatile(24,22,0x1E5,0)
@@ -721,6 +721,7 @@ script alistairarrive4 {
 	special(ClearMugshot)
 	resumefakertc
 	initclock(0,10)
+	fwdweekday(6)
 	pausefakertc
 	setvar(LUXURA_TRAGEDY,24)
 	clearflag(FLAG_AFTERTRAGEDY_MUSIC)

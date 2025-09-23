@@ -722,6 +722,7 @@ script alistairarrive {
     speakername("???")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Aurther...Elysia...Please be safe."))
     closemessage
+    waitmessage
     applymovement(12,moves(walk_up))
     removeobject(12)
     playse(SE_EXIT)
