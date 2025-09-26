@@ -1,5 +1,4 @@
 mapscripts AstralisAcademy_Floor1_MapScripts {
-	MAP_SCRIPT_ON_LOAD:DAYNIGHT_NPC
 }
   script Fionanight {
 	if(!flag(FLAG_FIONA_NIGHT)&&(!flag(FLAG_FIONA_NIGHT_1))&&(!flag(FLAG_FIONA_NIGHT_2))){

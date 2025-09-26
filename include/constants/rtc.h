@@ -72,12 +72,12 @@
     #define MORNING_HOUR_END   10
 
     #define DAY_HOUR_BEGIN     10
-    #define DAY_HOUR_END       19
+    #define DAY_HOUR_END       16
 
-    #define EVENING_HOUR_BEGIN 19
-    #define EVENING_HOUR_END   20
+    #define EVENING_HOUR_BEGIN 16
+    #define EVENING_HOUR_END   19
 
-    #define NIGHT_HOUR_BEGIN   20
+    #define NIGHT_HOUR_BEGIN   19
     #define NIGHT_HOUR_END     6
 #endif
 
@@ -91,6 +91,11 @@ enum TimeOfDay
     TIMES_OF_DAY_COUNT,
 };
 
-#define TIME_OF_DAY_DEFAULT    0
+#define TIME_OF_DAY_DEFAULT    TIME_MORNING
+
+#define TIME_MORNING_FLAG      (1 << 0)
+#define TIME_DAY_FLAG          (1 << 1)
+#define TIME_EVENING_FLAG      (1 << 2)
+#define TIME_NIGHT_FLAG        (1 << 3)
 
 #endif // GUARD_CONSTANTS_RTC_H

@@ -5,7 +5,7 @@ mapscripts Harborac_MapScripts {
 MAP_SCRIPT_ON_FRAME_TABLE[
 	ACADEMY_START,2:ONHARBOR1
 ]
-MAP_SCRIPT_ON_LOAD:DAYNIGHT_NPC
+ 
 }
 script ONHARBOR1 {
     playbgm(MUS_HG_KIMONO_GIRL_DANCE,FALSE)
@@ -456,7 +456,7 @@ script AcademyNpc9 {
     if(!flag(FLAG_AFTER_OUTBURST)){
     lock
     faceplayer
-    speakername(serena)
+    speakername("Leaf")
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Everyone here has potential.\pIt's up to them to decide how they use it. "))
      
     release   
@@ -464,7 +464,7 @@ script AcademyNpc9 {
 else{
     lock
     faceplayer
-    speakername(serena)
+    speakername("Leaf")
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Xylar....\pI don't know what to say.\pThat wasn't just anger.\pThat was something else."))
      
     release
@@ -540,13 +540,13 @@ script AcademyNpc13 {
 }
 
 script AcademyNpc14 {
-    if(!flag(FLAG_SERENAMET)&& !flag(FLAG_AFTER_OUTBURST))
+    if(!flag(FLAG_LEAFMET)&& !flag(FLAG_AFTER_OUTBURST))
 {    lock
     faceplayer
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Welcome to Astralis Academy.\pIf you have any questions feel free to ask."))
     release   
 }
-elif(flag(FLAG_SERENAMET)&& !flag(FLAG_AFTER_OUTBURST))
+elif(flag(FLAG_LEAFMET)&& !flag(FLAG_AFTER_OUTBURST))
 {
     lock
     faceplayer
@@ -556,10 +556,10 @@ elif(flag(FLAG_SERENAMET)&& !flag(FLAG_AFTER_OUTBURST))
     msgbox(format("Recieved room key."))
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}It's the room  on the left side at the end."))
     release
-    clearflag(FLAG_SERENAMET)
+    clearflag(FLAG_LEAFMET)
     setvar(ACADEMY_START,8)
 }
-elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))&&(!flag(FLAG_SERENAMET))){
+elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))&&(!flag(FLAG_LEAFMET))){
      lock
     faceplayer
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}.....Xylar, what happened there?\pYou looked completely different...."))

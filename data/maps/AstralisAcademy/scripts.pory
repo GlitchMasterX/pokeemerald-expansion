@@ -1,5 +1,4 @@
 mapscripts AstralisAcademy_MapScripts {
-	MAP_SCRIPT_ON_LOAD:DAYNIGHT_NPC
 	MAP_SCRIPT_ON_FRAME_TABLE[
 	ACADEMY_START,9:TrialAnnouncement
 ]
@@ -100,11 +99,11 @@ script TrialAnnouncement {
 	playbgm(MUS_HG_LYRA,FALSE)
 	applymovement(20,moves(walk_up*5))
 	waitmovement(0)
-	speakername(serena)  
+	speakername("Leaf")  
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Hi Xylar!\pThe Headmaster is making an announcement right now.\pLet's go together."), MSGBOX_AUTOCLOSE)        
 	speakername(Xylar1)  
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Leave me alone."), MSGBOX_AUTOCLOSE) // Silent internal monologue  
-	speakername(serena)  
+	speakername("Leaf")  
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Come on, don't be shy."), MSGBOX_AUTOCLOSE)        
 	waitmessage
 	applymovement(0xFF,moves(emote_upset))
@@ -149,17 +148,17 @@ script TrialAnnouncement1 {
 	applymovement(0xFF,moves(walk_down*11))
 	waitmovement(0)
 	playbgm(MUS_HG_LYRA,FALSE)    
-    speakername(serena)  
+    speakername("Leaf")  
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Guess that means you're battling.\pFeeling nervous?"), MSGBOX_AUTOCLOSE)  
     speakername(Xylar1)  
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't care."), MSGBOX_AUTOCLOSE)        
     applymovement(20, moves(emote_exclamation_mark)) // Serena tilts head  
-    speakername(serena)  
+    speakername("Leaf")  
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}You sure? This is your chance to show everyone what you're made of."), MSGBOX_AUTOCLOSE)         
     speakername(Xylar1)  
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I'm not here for their approval."), MSGBOX_AUTOCLOSE)     
     applymovement(20, moves(emote_question_mark)) // Serena grows serious  
-    speakername(serena)  
+    speakername("Leaf")  
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Then why are you here?"), MSGBOX_AUTOCLOSE)  
     speakername(Xylar1)  
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}...."), MSGBOX_AUTOCLOSE)        
@@ -187,12 +186,12 @@ script TrialAnnouncement1 {
 	waitmovement(0)
 	applymovement(20,moves(face_right
 	emote_happy))
-	speakername(serena)
+	speakername("Leaf")
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Xylaaar!, You can do it."), MSGBOX_AUTOCLOSE)
 	waitmessage    
 	applymovement(2,moves(emote_exclamation_mark))       
     speakername("Student 1")
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}What the..\pSerena is cheering for him?"), MSGBOX_AUTOCLOSE)
+	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}What the..\pLeaf is cheering for him?"), MSGBOX_AUTOCLOSE)
 	waitmessage
 	applymovement(5,moves(emote_upset))
 	speakername("Student 2")
@@ -250,13 +249,13 @@ script TrialAnnouncement1 {
 	waitmovement(0)
 	applymovement(0xFF,moves(walk_left*5 face_down))
 	waitmovement(0)
-    speakername(serena)
+    speakername("Leaf")
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}That was kinda impressive.\pBut you barely spoke to your Torchic.\pNo encouragement, no strategy discussion. What's the deal?"), MSGBOX_AUTOCLOSE)
 	speakername("Xylar")
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't waste words."),MSGBOX_AUTOCLOSE)	
 	applymovement(0xFF,moves(walk_up*7 ))
 	waitmovement(0)
-	speakername(serena)
+	speakername("Leaf")
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}He fights like someone who's used to surviving, not like a student trying to prove himself.\pJust what has this guy been through?"), MSGBOX_AUTOCLOSE)
 	resumefakertc
 	warp(MAP_DORMINDOOR1,4,7)

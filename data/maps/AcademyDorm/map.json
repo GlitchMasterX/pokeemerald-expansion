@@ -26,6 +26,7 @@
   ],
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_OFFICER",
       "x": 28,
       "y": 25,
@@ -39,6 +40,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ACE_F",
       "x": 28,
       "y": 6,
@@ -52,6 +54,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_GIRL_1",
       "x": 31,
       "y": 14,
@@ -65,6 +68,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_NERD",
       "x": 14,
       "y": 6,
@@ -75,9 +79,14 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "AcademyNpc37",
-      "flag": "FLAG_NIGHT_NPC"
+      "flag": "0",
+      "day": "0",
+      "evening": "1",
+      "morning": "0",
+      "night": "1"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ACE_M",
       "x": 18,
       "y": 16,
@@ -88,9 +97,14 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "AcademyNpc38",
-      "flag": "FLAG_NIGHT_NPC"
+      "flag": "0",
+      "day": "0",
+      "evening": "1",
+      "morning": "0",
+      "night": "1"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
       "x": 25,
       "y": 39,
@@ -101,7 +115,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "AcademyNpc36",
-      "flag": "FLAG_DAY_NPC"
+      "flag": "0",
+      "day": "1",
+      "evening": "0",
+      "morning": "1",
+      "night": "0"
     }
   ],
   "warp_events": [

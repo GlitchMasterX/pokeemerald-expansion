@@ -1,8 +1,6 @@
 headoffice_MapScripts::
 # 7 "data/maps/headoffice/scripts.pory"
 	map_script MAP_SCRIPT_ON_RESUME, HEADMET1
-# 12 "data/maps/headoffice/scripts.pory"
-	map_script MAP_SCRIPT_ON_LOAD, DAYNIGHT_NPC
 # 2 "data/maps/headoffice/scripts.pory"
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, headoffice_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
 # 8 "data/maps/headoffice/scripts.pory"
@@ -374,7 +372,7 @@ serenaextend::
 # 211 "data/maps/headoffice/scripts.pory"
 	destroyfollowernpc
 # 212 "data/maps/headoffice/scripts.pory"
-	setflag FLAG_SERENAMET
+	setflag FLAG_LEAFMET
 # 213 "data/maps/headoffice/scripts.pory"
 	setvar ACADEMY_START, 7
 # 214 "data/maps/headoffice/scripts.pory"

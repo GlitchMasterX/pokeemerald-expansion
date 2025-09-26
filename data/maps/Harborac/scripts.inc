@@ -1,6 +1,4 @@
 Harborac_MapScripts::
-# 8 "data/maps/Harborac/scripts.pory"
-	map_script MAP_SCRIPT_ON_LOAD, DAYNIGHT_NPC
 # 2 "data/maps/Harborac/scripts.pory"
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, Harborac_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
 # 5 "data/maps/Harborac/scripts.pory"
@@ -1055,10 +1053,10 @@ AcademyNpc13::
 
 AcademyNpc14::
 # 543 "data/maps/Harborac/scripts.pory"
-	goto_if_unset FLAG_SERENAMET, AcademyNpc14_13
+	goto_if_unset FLAG_LEAFMET, AcademyNpc14_13
 AcademyNpc14_11:
 # 549 "data/maps/Harborac/scripts.pory"
-	goto_if_set FLAG_SERENAMET, AcademyNpc14_10
+	goto_if_set FLAG_LEAFMET, AcademyNpc14_10
 AcademyNpc14_6:
 # 562 "data/maps/Harborac/scripts.pory"
 	goto_if_set FLAG_AFTER_OUTBURST, AcademyNpc14_5
@@ -1102,7 +1100,7 @@ AcademyNpc14_2:
 # 558 "data/maps/Harborac/scripts.pory"
 	release
 # 559 "data/maps/Harborac/scripts.pory"
-	clearflag FLAG_SERENAMET
+	clearflag FLAG_LEAFMET
 # 560 "data/maps/Harborac/scripts.pory"
 	setvar ACADEMY_START, 8
 	return
@@ -1125,7 +1123,7 @@ AcademyNpc14_5:
 
 AcademyNpc14_7:
 # 562 "data/maps/Harborac/scripts.pory"
-	goto_if_unset FLAG_SERENAMET, AcademyNpc14_3
+	goto_if_unset FLAG_LEAFMET, AcademyNpc14_3
 	goto AcademyNpc14_4
 
 AcademyNpc14_10:

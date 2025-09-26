@@ -742,7 +742,7 @@
 #define FLAG_NIGHT_NPC  0x2B8 // Unused Flag
 #define FLAG_DAY_NPC  0x2B9 // Unused Flag
 #define FLAG_FIONA  0x2BA // Unused Flag
-#define FLAG_SERENAMET  0x2BB // Unused Flag
+#define FLAG_LEAFMET  0x2BB // Unused Flag
 
 // Event Flags
 #define FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG                      0x2BC

@@ -26,6 +26,7 @@
   ],
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_FIONA",
       "x": 40,
       "y": 19,
@@ -36,9 +37,14 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Fionanight",
-      "flag": "FLAG_FIONA"
+      "flag": "FLAG_FIONA",
+      "day": "0",
+      "evening": "0",
+      "morning": "0",
+      "night": "1"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_NORMAL_M",
       "x": 54,
       "y": 7,
@@ -49,9 +55,14 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "AcademyNpc28",
-      "flag": "FLAG_NORMAL_OUTFOREST"
+      "flag": "FLAG_NORMAL_OUTFOREST",
+      "day": "0",
+      "evening": "0",
+      "morning": "0",
+      "night": "1"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_OFFICER",
       "x": 75,
       "y": 7,

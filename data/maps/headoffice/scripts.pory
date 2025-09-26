@@ -9,7 +9,7 @@ MAP_SCRIPT_ON_FRAME_TABLE[
 	ACADEMY_START,4:Head
     ACADEMY_START,12:FracturedMask1
 ]
-MAP_SCRIPT_ON_LOAD:DAYNIGHT_NPC
+ 
 }
 script HEADMET1 {
 if(var(ACADEMY_START)== 4){
@@ -91,8 +91,8 @@ script serenamet {
     playbgm(MUS_HG_LYRA,FALSE)
     applymovement(1,serenametmov1)
     waitmovement(0)
-    speakername(serena)
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}There you are!\pI'm Serena, your assigned mentor.\pLucky you, right?"))
+    speakername("Leaf")
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}There you are!\pI'm Leaf, your assigned mentor.\pLucky you, right?"))
      
     applymovement(1,serenametmov2)
     applymovement(0xFF,serenametmov3)
@@ -100,7 +100,7 @@ script serenamet {
     speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't need a mentor."))
      
-    speakername(serena)
+    speakername("Leaf")
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Well, that's too bad.\pRules are rules.\pYou're stuck with me, like it or not."))
      
     waitmessage
@@ -112,26 +112,26 @@ script serenamet {
     applymovement(1,serenametmov4)
     waitmovement(0)
     applymovement(0xFF,mov1)
-    speakername(serena)
+    speakername("Leaf")
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}You've got quite the attitude.\pLook, I don't care if you think you don't need help.\pI'm here to make sure you don't blow something up."))
      
     speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Do what you like.\pJust don't get in my way."))
      
-    speakername(serena)
+    speakername("Leaf")
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Deal.\pYou might be all broody, but I bet you'll come around eventually.\pI'm pretty good at breaking through tough shells."))
      
     speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Don't count on it."))
      
-    speakername(serena)
+    speakername("Leaf")
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Now that you have accepted my help, let me show you around."))
      
     applymovement(0xFF,exclam)
     speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Huh?\pI never di.."),MSGBOX_AUTOCLOSE)
      
-    speakername(serena)
+    speakername("Leaf")
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Let's gooo!"))
      
     applymovement(0xFF,upset)
@@ -152,7 +152,7 @@ script serenafollow {
     lock
     facefollowernpc
     applymovement(0xFD,happy)
-    speakername(serena)
+    speakername("Leaf")
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Let's gooo!"))
      
     release
@@ -172,9 +172,7 @@ movement serenametmov4 {
     walk_down*3
     face_left
 }
-text serena {
-    format("Serena")   
-}
+
 script serenaextend {
     lock
     applymovement(0xFD,serenametmov5)
@@ -182,19 +180,19 @@ script serenaextend {
     waitmovement(0)
     special(SpawnCameraObject)
     applymovement(0x7F,backes)
-    speakername(serena)
+    speakername("Leaf")
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}This is where real fun happens.\pYou'll get plenty of chances to show your skills here.\pOR.....\pDo you think you're too good for practice?"),MSGBOX_AUTOCLOSE)
      
     speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Results are all that matter and I don't care how I get them."),MSGBOX_AUTOCLOSE)
      
-    speakername(serena)
+    speakername("Leaf")
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Results come from experience, you know.\pLet me guess, you think you can handle everything on your own."),MSGBOX_AUTOCLOSE)
      
     speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}..................."))
      
-    speakername(serena)
+    speakername("Leaf")
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Look, I get it.\pYou've got your walls up but you'll see doing it alone doesn't always work.\pMaybe Torchic will teach you that."),MSGBOX_AUTOCLOSE)
      
     speakername(Xylar1)
@@ -203,13 +201,13 @@ script serenaextend {
     applymovement(0x7F,serenametmov7)
     waitmovement(0)
     special(RemoveCameraObject)
-    speakername(serena)
+    speakername("Leaf")
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}You should head to the reception to pick up your dorm room keys.\pI'll be going now."),MSGBOX_AUTOCLOSE)
      
     applymovement(0xFD,serenametmov7)
     waitmovement(0)
     destroyfollowernpc
-    setflag(FLAG_SERENAMET)
+    setflag(FLAG_LEAFMET)
     setvar(ACADEMY_START,7)
     release
 

@@ -3,32 +3,7 @@ mapscripts Dormindoor1_MapScripts {
 	ACADEMY_START,8:Kaelmet
     ACADEMY_START,10:Nightstroll
 ]
-MAP_SCRIPT_ON_LOAD:DAYNIGHT_NPC
 }
-script DAYNIGHT_NPC {
-    gettimeofday
-    if(var(VAR_0x8000)<2){
-    setflag(FLAG_NIGHT_NPC)
-    setflag(FLAG_ACDAEMY_MURKROW)
-    clearflag(FLAG_DAY_NPC)
-    setflag(FLAG_NORMAL_OUTFOREST)
-    setflag(FLAG_TRIAL_SERENA)
-    }
-    elif((var(VAR_0x8000)>2) && (var(ACADEMY_START)>12)){
-    setflag(FLAG_DAY_NPC)
-    clearflag(FLAG_NIGHT_NPC)
-    setflag(FLAG_ACDAEMY_MURKROW)
-    clearflag(FLAG_NORMAL_OUTFOREST)
-    setflag(FLAG_TRIAL_SERENA)
-    }
-    else{
-    setflag(FLAG_DAY_NPC)
-    clearflag(FLAG_NIGHT_NPC)
-    clearflag(FLAG_ACDAEMY_MURKROW)
-    clearflag(FLAG_NORMAL_OUTFOREST)
-    setflag(FLAG_TRIAL_SERENA)
-    }
-    }
 script Kaelmet {
     lock
     fadenewbgm(MUS_DUMMY)
