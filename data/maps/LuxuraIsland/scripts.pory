@@ -61,6 +61,7 @@ script ran{
     speakername(name4)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Catch me if you can, Master Xylar."),MSGBOX_AUTOCLOSE)
     removefieldmugshot 
+    playse(SE_PIN)
     applymovement(1,move)
     applymovement(OBJ_EVENT_ID_PLAYER,move2)
     waitmovement(0)
@@ -539,7 +540,7 @@ script strolll{
 script Sailor {
     lock
     faceplayer
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Master Xylar, I have to tell you, your father is one of the bravest men I've ever known.\pThe way he stood up against the Dark Force to protect us all,I've never seen courage like that.\pWithout him, who knows what would have happened?\pHe's a true hero, and it's an honor to serve him."))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Master Xylar, I have to tell you, your father is one of the bravest men I've ever known.\pThe way he stood up against the Dark Force to protect us all, I've never seen courage like that.\pWithout him, who knows what would have happened?\pHe's a true hero, and it's an honor to serve him."))
     releaseall
 }
 

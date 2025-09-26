@@ -10,75 +10,83 @@ Playerroom_MapScripts::
 script mira{
 	lockall
 	fwdmonth(1)
+	// Knock on the door (3 knocks instead of spam)
 	playse(SE_NOT_EFFECTIVE)
 	waitse
 	playse(SE_NOT_EFFECTIVE)
 	waitse
 	playse(SE_NOT_EFFECTIVE)
 	waitse
-	applymovement(0xFF,moves(delay_16 delay_16 delay_16 delay_16 delay_16 delay_16))
-	waitmovement(0)
-	playse(SE_NOT_EFFECTIVE)
-	waitse
-	playse(SE_NOT_EFFECTIVE)
-	waitse
-	playse(SE_NOT_EFFECTIVE)
-	waitse
+	// Small pause before Mira enters
+    delay(120)
+	// Camera & entrance
 	special(SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_CAMERA,camera1)
-	applymovement(0xFF,moves(delay_16 delay_16 delay_16))
+	applymovement(0xFF,moves(delay_16))
 	waitmovement(0)
 	playse(SE_DOOR)
 	waitse
-	applymovement (1,miramove)
+	applymovement(1,miramove)
 	waitmovement(0)
-	speakername (name4)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, good morning! Time to get up. Breakfast is waiting, and Lord Aurther and Lady Elysia are already at the table."))
+	// Mira greets
+	speakername(name4)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, good morning! Breakfast is waiting. Lord Aurther and Lady Elysia are already at the table."))
 	removefieldmugshot
 	closemessage
+	// Camera back + Mira approaches
 	applymovement(OBJ_EVENT_ID_CAMERA,camera)
-	applymovement (1,miramove1)
+	applymovement(1,miramove1)
 	waitmovement(0)
 	special(RemoveCameraObject)
+	// Mira teases
 	speakername(name4)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Still in bed? Honestly… you can't hide under those blankets forever.\pYou don't want to keep your parents waiting, do you?"))	 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Still in bed? You can't hide under those blankets forever.\pCome on now, young master."))
 	closemessage
+	// Xylar interrupts sooner
 	applymovement(OBJ_EVENT_ID_PLAYER,xylar1)
 	speakername(Xylar1)
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SPECIAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Mmm... five more minutes..."))
-	applymovement(0xFF,moves(delay_16))
-	waitbuttonpress 
-	speakername (name4)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SMILE}{COLOR RED}{SHADOW LIGHT_GRAY}Up with you, young master. Or I will yank those covers off myself.\pOh-and I may have made your favorite pancakes this morning…"))
+	delay(60)
+	waitbuttonpress
+	// Mira’s playful threat + pancakes
+	speakername(name4)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SMILE}{COLOR RED}{SHADOW LIGHT_GRAY}Up with you, or I'll yank those covers off myself.\pOh-and I may have made your favorite pancakes this morning…"))
 	waitmessage
 	playse(SE_PIN)
+	// Xylar reacts
 	applymovement(OBJ_EVENT_ID_PLAYER,xylar)
 	speakername(Xylar1)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Wait! pancakes? But Dad said I wasn't allowed! He always says no."))  
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Wait! Pancakes? But Dad said I wasn't allowed! He always says no."))
 	removefieldmugshot
+	// Mira’s cover story (subtle, not rebellious)
 	speakername(name4)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Well… technically, he did.\nBut Lady Elysia might have looked the other way this once. She said it might cheer you up.\pBut if you stay in bed too long, I'll just give your pancakes to Hoopa.")) 
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Technically, yes… but Lady Elysia may have convinced him this once.\pShe thought it might cheer you up.\pBut if you stay in bed too long, I'll just give your pancakes to Hoopa."))
+	closemessage
+	// Xylar gives in
 	speakername(Xylar1)
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Alright, alright! I'm up!"))
-	removefieldmugshot 
+	removefieldmugshot
 	closemessage
+	// Mira leaves
 	applymovement(1,miramove2)
-    waitmovement(0)
+	waitmovement(0)
 	playse(SE_EXIT)
-	removeobject (1)
-	applymovement(0xFf,moves(face_down))
+	removeobject(1)
+	applymovement(0xFF,moves(face_down))
 	waitmovement(0)
 	speakername(Xylar1)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}…You know, Mira's not just our maid. She's actually the adopted daughter of my parents.\pThey took her in a few years before my birth, but she insisted on working as a maid to repay them-no matter how many times they told her she didn't have to.\pThat's just the kind of person she is."))
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}…Mira's not just our maid. My parents adopted her before I was born, so she's been family all my life.\pShe still insists on working, even though they've told her countless times she doesn't need to."))
 	speakername(Xylar1)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_BLUSH}............\pShe's kind, smart, a little sneaky… and, well-yeah.\pI.......\pI've had a bit of a crush on her for a while now."))
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SMILE}……\pShe's kind, smart, a little sneaky… and honestly, she's always felt like the big sister I never asked for, but I'm glad I have."))
 	speakername(Xylar1)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}But I'm not going to tell her. Not yet.\pNot until I've become the strongest Trainer in the world.\pNot until I'm someone worthy of her."))
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}I want to become strong-not just for myself, but so I can protect her too.\pThat's what a brother should do."))
+	closemessage
+
 	releaseall
 	setflag(FLAG_UNUSED_0x0E9)
-	setvar (LUXURA_TRAGEDY,2)
-
+	setvar(LUXURA_TRAGEDY,2)
 }
+
 movement miramove{
 	face_up
 	set_visible

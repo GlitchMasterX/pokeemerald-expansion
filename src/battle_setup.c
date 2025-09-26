@@ -792,9 +792,9 @@ u8 GetTrainerBattleTransition(void)
         || trainerClass == TRAINER_CLASS_AQUA_LEADER
         || trainerClass == TRAINER_CLASS_AQUA_ADMIN)
         return B_TRANSITION_AQUA;
-    if (trainerClass == TRAINER_CLASS_SPARK_SYNDICATE
-        || trainerClass == TRAINER_CLASS_SPARK_LEADER
-        || trainerClass == TRAINER_CLASS_SPARK_ADMIN)
+    if (trainerClass == TRAINER_CLASS_TEMPEST_SPARK
+        || trainerClass == TRAINER_CLASS_TEMPEST_LEADER
+        || trainerClass == TRAINER_CLASS_TEMPEST_ADMIN)
         return B_TRANSITION_SPARK;
 
     switch (GetTrainerBattleType(trainerId))

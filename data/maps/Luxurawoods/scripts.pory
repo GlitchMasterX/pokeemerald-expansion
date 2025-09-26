@@ -328,39 +328,54 @@ script gruntsded {
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}I SAID SHUT UP!"),MSGBOX_AUTOCLOSE)
     removefieldmugshot
     # Battle trigger
-    speakername("Grunt F")
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}They died because of you.\pNow... join them.\pElectrode!"),MSGBOX_AUTOCLOSE)
+        speakername("Grunt F")
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}They died because of you.\pNow... join them.\pElectrode!"), MSGBOX_AUTOCLOSE)
     playse(SE_BALL_THROW)
     applymovement(6,visible)
+
     speakername("Grunt M")
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}End this!\pElectrode, EXPLODE!"),MSGBOX_AUTOCLOSE)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}End this!\pElectrode, EXPLODE!"), MSGBOX_AUTOCLOSE)
     playmoncry(SPECIES_ELECTRODE,CRY_MODE_ENCOUNTER)
     waitmoncry
-    playbgm(MUS_DUMMY,FALSE)
-    # Xylar’s breakdown
+    playbgm(MUS_DUMMY, FALSE)
+
+    # Xylar — the whisper, creeping forward
     speakername(Xylar1)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_REALIZE}{FONT_SMALL}If Mira died too,……{PAUSE_UNTIL_PRESS} then there is no reason to remain kind.\pYeah I'll just kill all of them or die trying.\pNothing better will happen even if I stay kind.\pI'll kill you both…… I'll kill you…… I'll kill you."),MSGBOX_AUTOCLOSE)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_REALIZE}{FONT_SMALL}If Mira... {PAUSE_UNTIL_PRESS} if Mira's gone..."))
+    waitbuttonpress
     closemessage
-    playse(SE_PIN)
-    applymovement(4,moves(emote_question_mark))
-    speakername("Grunt F")
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}What are you whispering?"),MSGBOX_AUTOCLOSE)
-    applymovement(0xFF,moves(walk_slow_up))
-    speakername(Xylar1)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_REALIZE}{FONT_SMALL}Kill……{PAUSE_UNTIL_PRESS} Kill…… "),MSGBOX_AUTOCLOSE)
-    closemessage
-    playse(SE_PIN)
-    applymovement(4,exclam)
-    applymovement(5,exclam)
-    applymovement(0xFF,moves(walk_slow_up))
+
+    # Small sound, slow step forward — grunts react
+    playse(SE_BRIDGE_WALK)
+    applymovement(0xFF, moves(walk_slow_up))
     waitmovement(0)
-    speakername(Xylar1)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_REALIZE}{FONT_SMALL}I'll Kill…… you all{PAUSE_UNTIL_PRESS}…… then I'll die myself……"),MSGBOX_AUTOCLOSE)
-    closemessage
-    speakername("Grunt M")
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}What... what's wrong with him?!"),MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovement(4, moves(emote_question_mark))
     speakername("Grunt F")
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}He's... completely broken."),MSGBOX_AUTOCLOSE)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}What are you whispering?"), MSGBOX_AUTOCLOSE)
+
+    # Quiet, controlled escalation — Xylar closer now
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_REALIZE}{FONT_SMALL}No reason to run anymore...{PAUSE_UNTIL_PRESS}I'll kill you..."))
+    waitbuttonpress
+    closemessage
+
+    # Single blunt threat, louder — final step
+    playse(SE_BRIDGE_WALK)
+    applymovement(0xFF, moves(walk_slow_up))   // continue progressing toward them
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_REALIZE}{FONT_SMALL}I'll kill you... all of you."))
+    waitbuttonpress
+    closemessage
+
+    # Grunts panic
+    playse(SE_FALL)    // or an alert SFX
+    applymovement(4, exclam)
+    applymovement(5, exclam)
+    speakername("Grunt M")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}What... what's wrong with him?!"), MSGBOX_AUTOCLOSE)
+    speakername("Grunt F")
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}He's... completely broken."), MSGBOX_AUTOCLOSE)
     # Mewtwo arrives
     speakername("???")
     msgbox(format("{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Enough!"),MSGBOX_AUTOCLOSE)

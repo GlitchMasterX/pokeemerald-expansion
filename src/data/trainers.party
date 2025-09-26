@@ -83,7 +83,7 @@ Double Battle: No
 
 === SPARK_GRUNT_1 ===
 Name: Grunt
-Class: Spark Syndicate
+Class: Tempest Spark 
 Pic: Spark Grunt M
 Music: Aqua
 Battle Type: Singles
@@ -110,7 +110,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === SPARK_GRUNT_2 ===
 Name: Grunt
-Class: Spark Syndicate
+Class: Tempest Spark
 Pic: Spark Grunt M
 Music: Aqua
 Battle Type: Singles
@@ -139,7 +139,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === SPARK_GRUNT_3 ===
 Name: Grunt
-Class: Spark Syndicate
+Class: Tempest Spark
 Pic: Spark Grunt M
 Music: Aqua
 Battle Type: Singles
@@ -168,7 +168,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === SPARK_GRUNT_4 ===
 Name: Grunt
-Class: Spark Syndicate
+Class: Tempest Spark
 Pic: Spark Grunt F
 Music: Aqua
 Battle Type: Singles
@@ -197,7 +197,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === SPARK_GRUNT_5 ===
 Name: Grunt
-Class: Spark Syndicate
+Class: Tempest Spark
 Pic: Spark Grunt F
 Music: Aqua
 Battle Type: Singles
@@ -226,7 +226,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === SPARK_GRUNT_6 ===
 Name: Grunt
-Class: Spark Syndicate
+Class: Tempest Spark
 Pic: Spark Grunt M
 Music: Aqua
 Battle Type: Singles
@@ -255,13 +255,13 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === SPARK_ADMIN_SURGE ===
 Name: Surge
-Class: Spark Admin
+Class: Tempest Admin
 Pic: Surge
 Music: Spark
 Battle Type: Singles
 AI: Basic Trainer / Prefer Status Moves / HP Aware / Ace Pokemon / Smart Switching / Will Suicide
 
-Magneton
+Magneton (M)
 Level: 12
 Nature: Naive
 EVs: 50 Atk / 50 SpA / 50 SpD / 50 Spe
@@ -271,7 +271,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Supersonic
 - Screech
 
-Electrode
+Electrode (M)
 Level: 11
 Nature: Naive
 EVs: 50 Atk / 50 SpA / 50 SpD / 50 Spe
@@ -281,7 +281,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Selfdestruct
 - Sonic Boom
 
-Raichu @ Life Orb
+Raichu (M) @ Life Orb
 Level: 13
 Nature: Timid
 EVs: 50 SpA / 50 SpD

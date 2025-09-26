@@ -22,6 +22,7 @@ script officer {
 
 script forest {
     lock
+	playse(SE_PIN)
     applymovement(5,moves(emote_exclamation_mark face_down))
 	waitmovement(0)
 	applymovement(OBJ_EVENT_ID_PLAYER,run)
@@ -158,7 +159,7 @@ script miraded {
 	speakername("Grunt M")
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Looks like the Shadow Slayers already did the dirty work."),MSGBOX_AUTOCLOSE)
     speakername("Grunt F")
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Not a soul left breathing. This island belongs to Team Spark now."),MSGBOX_AUTOCLOSE)
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Not a soul left breathing. This island belongs to us now."),MSGBOX_AUTOCLOSE)
 	waitmessage
 	applymovement(6,players)
 	applymovement(7,players)

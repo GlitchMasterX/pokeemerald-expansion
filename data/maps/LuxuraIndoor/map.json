@@ -15,6 +15,7 @@
   "connections": null,
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
       "x": 4,
       "y": 31,
@@ -28,6 +29,7 @@
       "flag": "FLAG_UNUSED_0x4A7"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
       "x": 25,
       "y": 23,
@@ -41,6 +43,7 @@
       "flag": "FLAG_UNUSED_0x4A7"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(MINCCINO)",
       "x": 22,
       "y": 20,
@@ -54,6 +57,7 @@
       "flag": "FLAG_UNUSED_0x4A8"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(MINCCINO)",
       "x": 4,
       "y": 25,
@@ -67,6 +71,7 @@
       "flag": "FLAG_UNUSED_0x4A8"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
       "x": 24,
       "y": 38,
@@ -80,6 +85,7 @@
       "flag": "FLAG_UNUSED_0x4A7"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MIRA",
       "x": 15,
       "y": 41,
@@ -93,6 +99,7 @@
       "flag": "FLAG_UNUSED_0x496"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ALISTAIR",
       "x": 15,
       "y": 33,
@@ -106,6 +113,7 @@
       "flag": "FLAG_ALISTAIR_ARRIVE"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(ALAKAZAM)",
       "x": 15,
       "y": 34,
@@ -247,33 +255,6 @@
       "var": "LUXURA_TRAGEDY",
       "var_value": "13",
       "script": "strolll"
-    },
-    {
-      "type": "trigger",
-      "x": 8,
-      "y": 6,
-      "elevation": 0,
-      "var": "LUXURA_TRAGEDY",
-      "var_value": "12",
-      "script": "caprun"
-    },
-    {
-      "type": "trigger",
-      "x": 7,
-      "y": 7,
-      "elevation": 0,
-      "var": "LUXURA_TRAGEDY",
-      "var_value": "12",
-      "script": "caprun"
-    },
-    {
-      "type": "trigger",
-      "x": 6,
-      "y": 6,
-      "elevation": 0,
-      "var": "LUXURA_TRAGEDY",
-      "var_value": "12",
-      "script": "caprun"
     }
   ],
   "bg_events": [],

@@ -31,7 +31,7 @@
 #line 85
         .trainerName = _("Grunt"),
 #line 86
-        .trainerClass = TRAINER_CLASS_SPARK_SYNDICATE,
+        .trainerClass = TRAINER_CLASS_TEMPEST_SPARK,
 #line 87
         .trainerPic = TRAINER_PIC_SPARK_GRUNT_M,
         .encounterMusic_gender =
@@ -92,7 +92,7 @@
 #line 112
         .trainerName = _("Grunt"),
 #line 113
-        .trainerClass = TRAINER_CLASS_SPARK_SYNDICATE,
+        .trainerClass = TRAINER_CLASS_TEMPEST_SPARK,
 #line 114
         .trainerPic = TRAINER_PIC_SPARK_GRUNT_M,
         .encounterMusic_gender =
@@ -157,7 +157,7 @@
 #line 141
         .trainerName = _("Grunt"),
 #line 142
-        .trainerClass = TRAINER_CLASS_SPARK_SYNDICATE,
+        .trainerClass = TRAINER_CLASS_TEMPEST_SPARK,
 #line 143
         .trainerPic = TRAINER_PIC_SPARK_GRUNT_M,
         .encounterMusic_gender =
@@ -222,7 +222,7 @@
 #line 170
         .trainerName = _("Grunt"),
 #line 171
-        .trainerClass = TRAINER_CLASS_SPARK_SYNDICATE,
+        .trainerClass = TRAINER_CLASS_TEMPEST_SPARK,
 #line 172
         .trainerPic = TRAINER_PIC_SPARK_GRUNT_F,
         .encounterMusic_gender =
@@ -287,7 +287,7 @@
 #line 199
         .trainerName = _("Grunt"),
 #line 200
-        .trainerClass = TRAINER_CLASS_SPARK_SYNDICATE,
+        .trainerClass = TRAINER_CLASS_TEMPEST_SPARK,
 #line 201
         .trainerPic = TRAINER_PIC_SPARK_GRUNT_F,
         .encounterMusic_gender =
@@ -354,7 +354,7 @@
 #line 228
         .trainerName = _("Grunt"),
 #line 229
-        .trainerClass = TRAINER_CLASS_SPARK_SYNDICATE,
+        .trainerClass = TRAINER_CLASS_TEMPEST_SPARK,
 #line 230
         .trainerPic = TRAINER_PIC_SPARK_GRUNT_M,
         .encounterMusic_gender =
@@ -419,7 +419,7 @@
 #line 257
         .trainerName = _("Surge"),
 #line 258
-        .trainerClass = TRAINER_CLASS_SPARK_ADMIN,
+        .trainerClass = TRAINER_CLASS_TEMPEST_ADMIN,
 #line 259
         .trainerPic = TRAINER_PIC_SURGE,
         .encounterMusic_gender =
@@ -437,7 +437,8 @@
             {
 #line 264
             .species = SPECIES_MAGNETON,
-            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 264
+            .gender = TRAINER_MON_MALE,
 #line 267
             .ev = TRAINER_PARTY_EVS(0, 50, 0, 50, 50, 50),
 #line 268
@@ -458,7 +459,8 @@
             {
 #line 274
             .species = SPECIES_ELECTRODE,
-            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 274
+            .gender = TRAINER_MON_MALE,
 #line 277
             .ev = TRAINER_PARTY_EVS(0, 50, 0, 50, 50, 50),
 #line 278
@@ -479,7 +481,8 @@
             {
 #line 284
             .species = SPECIES_RAICHU,
-            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 284
+            .gender = TRAINER_MON_MALE,
 #line 284
             .heldItem = ITEM_LIFE_ORB,
 #line 287

@@ -55,27 +55,26 @@ script MaidZ{
 	lock
 	faceplayer
 	speakername ("Maid")
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} Young master, please let me know if you need anything."))
-	 
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} Young master, please let me know if you need anything."))	 
 	release}
 	else{
 	lock
 	faceplayer
 	speakername ("Maid")
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} Young master, please let me know if you need anything."))
-	 
+	playse(SE_PIN) 
 	applymovement(1,exclam)
 	speakername ("Maid")
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Your shoes?\pI'll go get it right away."))
-	 
 	fadescreen(FADE_TO_BLACK)
+	delay(120)
 	fadescreen(FADE_FROM_BLACK)
 	speakername ("Maid")
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Here you go!"))
 	 
 	setflag(FLAG_SYS_B_DASH)
 	playfanfare(FANFARE_OBTAIN_ITEM)
-	msgbox(format("Recieved {COLOR BLUE}{SHADOW LIGHT_GRAY}RUNNING SHOES"))
+	msgbox(format("Recieved {COLOR BLUE}{SHADOW LIGHT_GRAY}RUNNING SHOES."))
 	waitfanfare
 	setvar(LUXURA_TRAGEDY,8)
 	clearflag(FLAG_UNUSED_0x4A2)
@@ -87,7 +86,7 @@ script Maid{
 	lock
 	faceplayer
 	speakername ("Maid")
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} Young master, please let me know if you need anything."))
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Young master, please let me know if you need anything."))
 	 
 	release
 }
@@ -96,7 +95,7 @@ script MaidG{
 	lock
 	faceplayer
 	speakername ("Maid")
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} Grumpig helps us by using its psychic powers to precisely measure and mix the ingredients, ensuring perfect results every time."))
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Grumpig helps us by using its psychic powers to precisely measure and mix the ingredients, ensuring perfect results every time."))
 	 
 	release
 }
@@ -105,7 +104,7 @@ script MaidD{
 	lock
 	faceplayer
 	speakername ("Maid")
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} I'm just finishing up the dishes and will have everything cleaned and put away shortly."))
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I'm just finishing up the dishes and will have everything cleaned and put away shortly."))
 	 
 	release
 }
@@ -114,7 +113,7 @@ script MaidB{
 	lock
 	faceplayer
 	speakername ("Maid")
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} Having Blissey in the kitchen ensures that every dish is prepared with care and has a touch of healing energy, making meals not only delicious but also comforting."))
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Having Blissey in the kitchen ensures that every dish is prepared with care and has a touch of healing energy, making meals not only delicious but also comforting."))
 	 
 	release
 }
@@ -123,7 +122,7 @@ script MaidM{
 	lock
 	faceplayer
 	speakername ("Maid")
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} With Minccino around, cleaning is a breeze, its Swift Swipes keep everything spotless and organized in no time."))
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}With Minccino around, cleaning is a breeze, its Swift Swipes keep everything spotless and organized in no time."))
 	 
 	release
 }
@@ -133,20 +132,20 @@ script MaidE{
 	lock
 	faceplayer
 	speakername ("Maid")
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} Lady Elysia is so considerate, she knows I love reading, so she's given me a break in the library to enjoy my book."))
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Lady Elysia is so considerate, she knows I love reading, so she's given me a break in the library to enjoy my book."))
 	 
 	release
 	}
 	else{lock
 	faceplayer
 	speakername ("Maid")
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} Lady Elysia is so considerate, she knows I love reading, so she's given me a break in the library to enjoy my book."))
-	 
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Lady Elysia is so considerate, she knows I love reading, so she's given me a break in the library to enjoy my book."))
+	playse(SE_PIN) 
 	applymovement(2,exclam)
 	speakername (felicia)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}What? Lady Elysia is asking for me?\pI'll be on my way."))
-	 
 	waitmessage
+	closemessage
 	fadescreen(FADE_TO_BLACK)
 	removeobject(2)
 	setflag(FLAG_UNUSED_0x49F)
@@ -161,7 +160,7 @@ script MaidC{
 	lock
 	faceplayer
 	speakername ("Maid")
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} I'm just dusting the shelves in the library to keep everything neat."))
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I'm just dusting the shelves in the library to keep everything neat."))
 	 
 	release
 }
@@ -655,27 +654,7 @@ elif(var(LUXURA_TRAGEDY)>23){
 		setmetatile(2,37,0x348,0)
 }
 }
-script caprun {
-	lock
-	facefollowernpc
-	speakername(name4)
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Come on, Master Xylar we have to go quickly."))
-	 
-	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}But what about Mom? and Dad, he's hurt! I can't leave them behind."))
-	 
-	speakername(name4)
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}We don't have time Master Xylar.\pYour Mom and Dad...\pthey're strong.They'll be okay.\pBut you need to live! For them!"))
-	 
-	speakername(Xylar1)
-	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}No! I can't leave Mom and Dad. I can't.."),MSGBOX_AUTOCLOSE)
-	 
-	speakername(name4)
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Please, Master Xylar, for your parents....run!"))
-	 
-	release
-	setvar(LUXURA_TRAGEDY,13)
-}
+
 movement rop {
 	walk_down
 	walk_right
@@ -743,6 +722,6 @@ movement alistairgone1 {
 	set_invisible
 }
 movement alistairgone2 {
-	walk_up*35
+	walk_up*33
 	walk_down*24
 }

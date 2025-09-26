@@ -33,9 +33,11 @@ script Youwake {
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Did you sleep well, sweetheart?"),MSGBOX_AUTOCLOSE) 
 	speakername(Xylar1)
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Yeah, I slept fine."),MSGBOX_AUTOCLOSE)	 
+	playse(SE_PIN)
 	applymovement(OBJ_EVENT_ID_PLAYER,mlq)
 	speakername(Xylar1)
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_QUESTION}{COLOR BLUE}{SHADOW LIGHT_GRAY}Hey… where are the pancakes Mira promised?"),MSGBOX_AUTOCLOSE)
+	playse(SE_PIN)
 	applymovement(1,mlo)
     speakername(name3)
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_QUESTION}{COLOR BLUE}{SHADOW LIGHT_GRAY}Pancakes? Pretty sure I said no sweets this week."),MSGBOX_AUTOCLOSE)
@@ -55,6 +57,7 @@ script Youwake {
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}You got tricked, love. Mira was just trying to get you out of bed."))
 	speakername(Xylar1)
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}…I can't believe I fell for that."),MSGBOX_AUTOCLOSE)
+	playse(SE_PIN)
 	applymovement(OBJ_EVENT_ID_PLAYER,upset)
 	waitmovement(0)
     speakername(name3)
@@ -95,6 +98,7 @@ script Youwake {
 	speakername(name2)
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}She's out in the garden helping the groundskeeper.\pYou can go find her if you're still feeling betrayed.")) 
 	removefieldmugshot
+	closemessage
 	applymovement(OBJ_EVENT_ID_CAMERA,camera5)
 	waitmovement(0)
 	special(RemoveCameraObject)
