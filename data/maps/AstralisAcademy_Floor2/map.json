@@ -26,7 +26,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "AcademyNpc9",
-      "flag": "0",
+      "flag": "FLAG_LEAF_FOLLOW",
       "day": "1",
       "evening": "0",
       "morning": "1",
@@ -149,16 +149,7 @@
       "elevation": 0,
       "var": "ACADEMY_START",
       "var_value": "5",
-      "script": "serenamet"
-    },
-    {
-      "type": "trigger",
-      "x": 13,
-      "y": 2,
-      "elevation": 0,
-      "var": "ACADEMY_START",
-      "var_value": "5",
-      "script": "NULL"
+      "script": "Leafmet1"
     }
   ],
   "bg_events": [],

@@ -86,14 +86,14 @@ script Head1 {
     warp(MAP_ASTRALIS_ACADEMY_FLOOR2,12,1)   
 }
 
-script serenamet {
+script Leafmet1 {
     lockall
     playbgm(MUS_HG_LYRA,FALSE)
     applymovement(1,serenametmov1)
     waitmovement(0)
     speakername("Leaf")
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}There you are!\pI'm Leaf, your assigned mentor.\pLucky you, right?"))
-     
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}There you are!\pI'm Leaf, your assigned mentor.\pLucky you, right?")) 
+    playse(SE_PIN)
     applymovement(1,serenametmov2)
     applymovement(0xFF,serenametmov3)
     waitmovement(0)
@@ -120,37 +120,39 @@ script serenamet {
      
     speakername("Leaf")
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Deal.\pYou might be all broody, but I bet you'll come around eventually.\pI'm pretty good at breaking through tough shells."))
-     
+    closemessage
     speakername(Xylar1)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Don't count on it."))
-     
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Don't count on it.")) 
+    closemessage
     speakername("Leaf")
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Now that you have accepted my help, let me show you around."))
-     
+    playse(SE_PIN) 
     applymovement(0xFF,exclam)
     speakername(Xylar1)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Huh?\pI never di.."),MSGBOX_AUTOCLOSE)
-     
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Huh?\pI never di.."),MSGBOX_AUTOCLOSE) 
     speakername("Leaf")
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Let's gooo!"))
-     
+    closemessage
+    playse(SE_PIN) 
     applymovement(0xFF,upset)
     speakername(Xylar1)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Ugh!"),MSGBOX_AUTOCLOSE)
-     
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Ugh!"),MSGBOX_AUTOCLOSE) 
     playse(MUS_DP_LETS_GO_TOGETHER)
     msgbox(format("Serena decided to join you!"))
+    closemessage
     waitse
     setflag(FLAG_PAUSE_TIME)
-    fwdmonth(3)
     setfollowernpc(1,FNPC_LEAVE_ROUTE,serenafollow)
+    setflag(FLAG_LEAF_FOLLOW)
     fadedefaultbgm
     setvar(ACADEMY_START,6)
     releaseall
 }
+
 script serenafollow {
     lock
     facefollowernpc
+    playse(SE_PIN)
     applymovement(0xFD,happy)
     speakername("Leaf")
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Let's gooo!"))

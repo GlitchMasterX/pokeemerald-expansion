@@ -691,6 +691,9 @@ script alistairarrive4 {
 	special(SpawnCameraObject)
 	applymovement(0x7F,alistairgone2)
 	waitmovement(0)
+	delay(120)
+	applymovement(0x7F,moves(walk_down*24))
+	waitmovement(0)
 	setvar(VAR_0x8000,0)
 	special(DrawMugshot)
 	waitbuttonpress
@@ -722,6 +725,5 @@ movement alistairgone1 {
 	set_invisible
 }
 movement alistairgone2 {
-	walk_up*33
-	walk_down*24
+	walk_up*30
 }

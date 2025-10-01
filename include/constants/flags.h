@@ -1264,7 +1264,7 @@
 #define FLAG_TALK_GRAVE                                           0x4BB // Unused Flag
 #define FLAG_FIONAMET                                           0x4BC // Unused Flag
 #define FLAG_ELIASMET                                           0x4BD // Unused Flag
-#define FLAG_UNUSED_0x4BE                                           0x4BE // Unused Flag
+#define FLAG_LEAF_FOLLOW                                           0x4BE // Unused Flag
 #define FLAG_UNUSED_0x4BF                                           0x4BF // Unused Flag
 #define FLAG_UNUSED_0x4C0                                           0x4C0 // Unused Flag
 #define FLAG_UNUSED_0x4C1                                           0x4C1 // Unused Flag

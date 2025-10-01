@@ -40,6 +40,7 @@ script NihilFirstVisit1 {
     applymovement(0xFF,moves(walk_up*3))    
     waitmovement(0)
     playse(SE_PIN)
+
     applymovement(0xFF,moves(emote_question_mark))
     speakername("Xylar")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Who are you.....?"))
@@ -88,7 +89,7 @@ script NihilFirstVisit1 {
     waitmessage
     closemessage
     speakername("???")
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Tell me…… if the body is so precious, then why does it rot in the earth, while only the soul ascends to heaven?"))  
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}The world does not keep her, nor does heaven.\pShe exists only in your memory… and when you die,{PAUSE} not even that will remain."))
     waitmessage
     closemessage
     applymovement(4,moves(walk_slow_down))
@@ -113,13 +114,13 @@ script NihilFirstVisit1 {
     applymovement(4,moves(face_down delay_8 walk_slow_down))
     waitmovement(0)
     speakername("???")
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Do not mistake me as your enemy, for you do not interest me in any way."))  
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Do not mistake me for your enemy.\pYou do not interest me."))  
     waitmessage
     closemessage
     applymovement(4,moves(delay_8 face_up delay_8 walk_slow_up))
     waitmovement(0)
     speakername("???")
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}I came only to witness the grave of one who once stood against me\pand who, for a fleeting moment,{PAUSE_UNTIL_PRESS} shone brighter than all others."))  
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}I came only to witness the grave of one who once stood against me\pand who, for a fleeting moment, shone brighter than all others."))  
     waitmessage
     closemessage
     applymovement(4,moves(face_down))
@@ -289,34 +290,20 @@ script Alistairarrive {
     playbgm(MUS_HG_LIGHTHOUSE,TRUE)
 
     speakername(Xylar1)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}You're wasting your time.\pWhoever you are-I don't need company."))
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Who are you?\pAnother one here to finish me off?"))
 
     speakername("???")
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}I expected as much.\nXylar, isn't it?"))
-    applymovement(0xFF,moves(face_down))
-    speakername(Xylar1)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}And who are you?\pAnother pawn sent to finish me off?"))
-
-    speakername("Alistair")
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}No.\pMy name is Alistair Caelum.\nHeadmaster of the Astralis Academy."))
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}No.\nMy name is Alistair Caelum.\pHeadmaster of Astralis Academy."))
 
     speakername(Xylar1)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}A headmaster?\pWhat could you possibly want from me?"))
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Headmaster?\pThen leave. I don't need you."))
 
     speakername("Alistair")
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}I came because I know what happened here.\pYour family… your home."))
-
-    speakername(Xylar1)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}So what?\pYou here to preach about moving on?\pSave your pity."))
-
-    speakername("Alistair")
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Not pity.\nConcern.\pYour father-Aurther-was my closest friend.\pHe wanted me to look after you once the academy began.\pSo I am to fulfill my promise."))
-
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}I knew your father.\nAurther was my closest friend.\pI promised to watch over you once you joined the Academy."))
     playse(SE_PIN)
     applymovement(0xFF,exclam)
-
     speakername(Xylar1)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Closest friend?\pThen where were you when he needed you most?!"))
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Friend?\pThen where were you when he died?!"))
 
     playse(SE_PIN)
     applymovement(1,moves(emote_exclamation_mark))
@@ -325,7 +312,7 @@ script Alistairarrive {
 
     applymovement(0xFF, moves(face_up))
     speakername(Xylar1)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Leave me alone.\pI don't need your academy.\nI'll get stronger on my own.\pStrong enough to wipe them all out."))
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Leave me.\pI'll get stronger on my own.\pStrong enough to kill them all."))
 
     speakername("Alistair")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Revenge won't bring them back.\pIt won't heal you."))
@@ -339,13 +326,13 @@ script Alistairarrive {
     speakername(Xylar1)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Enough preaching!\pI've already crushed one of their strongest.\pIf you think words can stop me-you're wasting breath."))
     speakername("Alistair")
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}(He's just as stubborn as Aurther…)\pStrength isn't about one victory.\pIt's about enduring every battle that follows."))
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}(He's just as stubborn as Aurther…)\p{COLOR BLUE}{SHADOW LIGHT_GRAY}Strength isn't about one victory.\pIt's about enduring every battle that follows."))
     speakername(Xylar1)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Then prove it.\pIf you think you're so wise-show me!"))
     speakername("Alistair")
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Very well.\pIf you win, I'll leave and never bother you again.\pBut if I win-you come to the academy.\pFor two years."))
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Very well.\pIf you win, I'll leave and never bother you again.\pBut if I win-you come to the academy."))
     speakername(Xylar1)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Two years?\pFine. But don't cry when I crush you."))
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Academy?\pFine. But don't cry when I crush you."))
     setflag(FLAG_NO_WHITEOUT) 
     applymovement(3,alisbattle)
     waitmovement(0)
@@ -355,11 +342,11 @@ script Alistairarrive {
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}I wouldn't dream of it.\pLet's see if your strength matches your confidence."),MSGBOX_AUTOCLOSE) 
     playmoncry(SPECIES_MEWTWO,CRY_MODE_ENCOUNTER)
     speakername("Mewtwo")
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}………"))
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}……"))
 	closemessage
     playmoncry(SPECIES_ALAKAZAM,CRY_MODE_ENCOUNTER)
     speakername("Alakazam")
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_SPECIAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}………"))
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_SPECIAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}……"))
 	closemessage
     settotemboost(B_SIDE_OPPONENT,0,0,2,2,0,0,0)
     trainerbattle_no_intro(ACADEMY_HEAD,alislose)
@@ -449,44 +436,44 @@ script mewtwogone1 {
     playbgm(MUS_B_ARENA,FALSE) 
     faceplayer
     speakername(mewtwo)
-    msgbox(format("{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}You feel it, don't you?\pThe sting of failure....the bitterness of knowing you're not strong enough."),MSGBOX_AUTOCLOSE)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORMAL}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}You feel it, don't you?\pThe sting of failure....the bitterness of knowing you're not strong enough."),MSGBOX_AUTOCLOSE)
       
     speakername(Xylar1)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't need you reminding me of it.\pI know what happened.\pI wasn't ready.....but I will be."),MSGBOX_AUTOCLOSE)   
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't need you reminding me of it.\pI know what happened.\pI wasn't ready.....but I will be."),MSGBOX_AUTOCLOSE)   
      
     speakername(mewtwo)
-    msgbox(format("{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}You were not ready because you never had to be.\pNot until now.\pThat man......\nHe showed us both just how far we still have to go."),MSGBOX_AUTOCLOSE)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORMAL}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}You were not ready because you never had to be.\pNot until now.\pThat man......\nHe showed us both just how far we still have to go."),MSGBOX_AUTOCLOSE)
       
     speakername(Xylar1)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't care how far it is.\pI'll go to the ends of this world if it means I can destroy them.\pAll of them."),MSGBOX_AUTOCLOSE)   
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't care how far it is.\pI'll go to the ends of this world if it means I can destroy them.\pAll of them."),MSGBOX_AUTOCLOSE)   
      
     speakername(mewtwo)
-    msgbox(format("{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Good, Hold onto this hatred, it's the only thing that will keep you moving.\pBut don't mistake your rage for power.\pThat man....Alistair....He didn't beat us because he's stronger.\pHe beat us beacause he has discipline and control.\pYou have neither."),MSGBOX_AUTOCLOSE)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORMAL}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Good, Hold onto this hatred, it's the only thing that will keep you moving.\pBut don't mistake your rage for power.\pThat man....Alistair....He didn't beat us because he's stronger.\pHe beat us beacause he has discipline and control.\pYou have neither."),MSGBOX_AUTOCLOSE)
       
     speakername(Xylar1)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't need this control. I'll burn everything in my way if I have to!"),MSGBOX_AUTOCLOSE)   
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't need this control. I'll burn everything in my way if I have to!"),MSGBOX_AUTOCLOSE)   
      
     speakername(mewtwo)
-    msgbox(format("{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}And that's why you'll fail again.\pBlind rage can only take you so far.\pYou need to sharpen your hatred into a weapon, not let it consume you."),MSGBOX_AUTOCLOSE)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORMAL}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}And that's why you'll fail again.\pBlind rage can only take you so far.\pYou need to sharpen your hatred into a weapon, not let it consume you."),MSGBOX_AUTOCLOSE)
       
     speakername(Xylar1)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Fine.\pBut what about you?\pWhat are you going to do while I'll be wasting my time at some academy?"),MSGBOX_AUTOCLOSE)   
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_REALIZE}{COLOR BLUE}{SHADOW LIGHT_GRAY}Fine.\pBut what about you?\pWhat are you going to do while I'll be wasting my time at some academy?"),MSGBOX_AUTOCLOSE)   
      
     speakername(mewtwo)
-    msgbox(format("{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}I'll find my own path.\pThis place.....the academy...it won't make me stronger.\pBut it will make you stronger.\pAnd when the time comes, we'll finish what we started together."),MSGBOX_AUTOCLOSE)
-      
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORMAL}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}I'll find my own path.\pThis place.....the academy...it won't make me stronger.\pBut it will make you stronger.\pAnd when the time comes, we'll finish what we started together."),MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)  
     applymovement(0xFF,question)
     speakername(Xylar1)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You're...going to leave me?"),MSGBOX_AUTOCLOSE)   
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}You're...going to leave me?"),MSGBOX_AUTOCLOSE)   
      
     speakername(mewtwo)
-    msgbox(format("{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Not leaving. Preparing.\nThe next time we face them, it won't end like this.\pYou'll become stronger here, and I'll find my own way to grow.\pWe'll both be ready.\pUntil then.....Don't forget why we started this."),MSGBOX_AUTOCLOSE)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORMAL}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Not leaving. Preparing.\nThe next time we face them, it won't end like this.\pYou'll become stronger here, and I'll find my own way to grow.\pWe'll both be ready.\pUntil then.....Don't forget why we started this."),MSGBOX_AUTOCLOSE)
       
     speakername(Xylar1)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}..........\pI won't.\pI'll destroy them Mewtwo.\pAll of them."),MSGBOX_AUTOCLOSE)   
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_REALIZE}{COLOR BLUE}{SHADOW LIGHT_GRAY}..........\pI won't.\pI'll destroy them Mewtwo.\pAll of them."),MSGBOX_AUTOCLOSE)   
      
     speakername(mewtwo)
-    msgbox(format("{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Good. Keep that fire burning, when we meet again I expect nothing less."),MSGBOX_AUTOCLOSE) 
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_SMILE}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Good. Keep that fire burning, when we meet again I expect nothing less."),MSGBOX_AUTOCLOSE) 
     fadescreen(FADE_TO_BLACK)
     playse(SE_M_TELEPORT)
     removeobject(3)
@@ -495,13 +482,12 @@ script mewtwogone1 {
     fadescreen(FADE_FROM_BLACK)
     applymovement(0xFF,pay)
     speakername(Xylar1)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I should talk to mom before leaving."),MSGBOX_AUTOCLOSE)   
-     
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}I should talk to mom before leaving."),MSGBOX_AUTOCLOSE)    
     setflag(FLAG_TALK_GRAVE)
     release
 }
 movement pay {
-    walk_up    
+    face_up    
 }
 movement question {
     emote_question_mark
@@ -525,18 +511,21 @@ script grave {
     applymovement(0xFF,moves(delay_16 delay_16 face_down))
     speakername("Xylar")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Hmmm……"))   
+    closemessage
     warpsilent(MAP_NEWHOUSE,2,24)
     clearflag(FLAG_ACADEMY_START)
+    resumefakertc
+    fwdtime(21,21)
     setvar(ACADEMY_START,51)
     }
 
     if(flag(FLAG_TALK_GRAVE)){
     lock
     speakername(Xylar1)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Mom, I'll be leaving for the academy now.....\pThey think it's a place to learn and grow but all I'll find there will be the strength to avenge you.\pI won't forget why I'm doing this.\pI'll make sure your death isn't forgotten.\p..........\pI'll make them all pay."),MSGBOX_AUTOCLOSE)   
-     
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Mom, I'll be leaving for the academy now.....\pThey think it's a place to learn and grow but all I'll find there will be the strength to avenge you.\pI won't forget why I'm doing this.\pI'll make sure your death isn't forgotten.\p..........\pI'll make them all pay."),MSGBOX_AUTOCLOSE)    
     fadescreen(FADE_TO_BLACK)
     clearflag(FLAG_TALK_GRAVE)
+    setflag(FLAG_TRIAL_SERENA)
     initclock(10,10)
     fwdmonth(3)
     warpsilent(MAP_HARBORAC,22,27)

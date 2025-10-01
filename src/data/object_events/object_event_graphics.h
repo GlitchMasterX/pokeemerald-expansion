@@ -488,6 +488,7 @@ const u16 gObjectEventPal_AListair[] = INCBIN_U16("graphics/object_events/palett
 const u32 gObjectEventPic_Xylar[] = INCBIN_U32("graphics/object_events/pics/people/xylar.4bpp");
 const u16 gObjectEventPal_Xylar[] = INCBIN_U16("graphics/object_events/palettes/xylar.gbapal");
 const u32 gObjectEventPic_Fiona[] = INCBIN_U32("graphics/object_events/pics/people/fiona.4bpp");
+const u32 gObjectEventPic_Fiona1[] = INCBIN_U32("graphics/object_events/pics/people/fiona1.4bpp");
 const u16 gObjectEventPal_Fiona[] = INCBIN_U16("graphics/object_events/palettes/fiona.gbapal");
 const u32 gObjectEventPic_Voss[] = INCBIN_U32("graphics/object_events/pics/people/voss.4bpp");
 const u32 gObjectEventPic_Kael[] = INCBIN_U32("graphics/object_events/pics/people/kael.4bpp");

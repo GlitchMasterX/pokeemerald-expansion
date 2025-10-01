@@ -1344,228 +1344,232 @@ alistairarrive4::
 # 693 "data/maps/LuxuraIndoor/scripts.pory"
 	waitmovement 0
 # 694 "data/maps/LuxuraIndoor/scripts.pory"
-	setvar VAR_0x8000, 0
+	delay 120
 # 695 "data/maps/LuxuraIndoor/scripts.pory"
-	special DrawMugshot
+	applymovement 0x7F, alistairarrive4_Movement_0
 # 696 "data/maps/LuxuraIndoor/scripts.pory"
-	waitbuttonpress
+	waitmovement 0
 # 697 "data/maps/LuxuraIndoor/scripts.pory"
-	setvar VAR_0x8000, 1
+	setvar VAR_0x8000, 0
 # 698 "data/maps/LuxuraIndoor/scripts.pory"
 	special DrawMugshot
 # 699 "data/maps/LuxuraIndoor/scripts.pory"
 	waitbuttonpress
 # 700 "data/maps/LuxuraIndoor/scripts.pory"
-	special ClearMugshot
+	setvar VAR_0x8000, 1
 # 701 "data/maps/LuxuraIndoor/scripts.pory"
-	resumefakertc
+	special DrawMugshot
 # 702 "data/maps/LuxuraIndoor/scripts.pory"
-	initclock 0, 10
+	waitbuttonpress
 # 703 "data/maps/LuxuraIndoor/scripts.pory"
-	fwdweekday 6
+	special ClearMugshot
 # 704 "data/maps/LuxuraIndoor/scripts.pory"
-	pausefakertc
+	resumefakertc
 # 705 "data/maps/LuxuraIndoor/scripts.pory"
-	setvar LUXURA_TRAGEDY, 24
+	initclock 0, 10
 # 706 "data/maps/LuxuraIndoor/scripts.pory"
-	clearflag FLAG_AFTERTRAGEDY_MUSIC
+	fwdweekday 6
 # 707 "data/maps/LuxuraIndoor/scripts.pory"
+	pausefakertc
+# 708 "data/maps/LuxuraIndoor/scripts.pory"
+	setvar LUXURA_TRAGEDY, 24
+# 709 "data/maps/LuxuraIndoor/scripts.pory"
+	clearflag FLAG_AFTERTRAGEDY_MUSIC
+# 710 "data/maps/LuxuraIndoor/scripts.pory"
 	warpsilent MAP_NEWHOUSE, 2, 24
 	return
 
 
-# 709 "data/maps/LuxuraIndoor/scripts.pory"
+# 712 "data/maps/LuxuraIndoor/scripts.pory"
 alistairgone3:
-# 710 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-# 710 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-# 710 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-# 710 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-# 710 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-# 710 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-# 710 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-# 710 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-	step_end
-
 # 713 "data/maps/LuxuraIndoor/scripts.pory"
-alistairgone:
-# 714 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_left
-# 715 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_down
-# 715 "data/maps/LuxuraIndoor/scripts.pory"
+# 713 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_down
-# 715 "data/maps/LuxuraIndoor/scripts.pory"
+# 713 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_down
-# 715 "data/maps/LuxuraIndoor/scripts.pory"
+# 713 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_down
-# 715 "data/maps/LuxuraIndoor/scripts.pory"
+# 713 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_down
-# 715 "data/maps/LuxuraIndoor/scripts.pory"
+# 713 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_down
-# 715 "data/maps/LuxuraIndoor/scripts.pory"
+# 713 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_down
-# 715 "data/maps/LuxuraIndoor/scripts.pory"
+# 713 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_down
+	step_end
+
 # 716 "data/maps/LuxuraIndoor/scripts.pory"
-	set_invisible
-	step_end
-
-# 718 "data/maps/LuxuraIndoor/scripts.pory"
-alistairgone1:
-# 719 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_up
-# 720 "data/maps/LuxuraIndoor/scripts.pory"
+alistairgone:
+# 717 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_left
-# 721 "data/maps/LuxuraIndoor/scripts.pory"
+# 718 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_down
-# 721 "data/maps/LuxuraIndoor/scripts.pory"
+# 718 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_down
-# 721 "data/maps/LuxuraIndoor/scripts.pory"
+# 718 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_down
-# 721 "data/maps/LuxuraIndoor/scripts.pory"
+# 718 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_down
-# 721 "data/maps/LuxuraIndoor/scripts.pory"
+# 718 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_down
-# 721 "data/maps/LuxuraIndoor/scripts.pory"
+# 718 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_down
-# 721 "data/maps/LuxuraIndoor/scripts.pory"
+# 718 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_down
-# 721 "data/maps/LuxuraIndoor/scripts.pory"
+# 718 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_down
-# 722 "data/maps/LuxuraIndoor/scripts.pory"
+# 719 "data/maps/LuxuraIndoor/scripts.pory"
 	set_invisible
 	step_end
 
+# 721 "data/maps/LuxuraIndoor/scripts.pory"
+alistairgone1:
+# 722 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_up
+# 723 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_left
 # 724 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 724 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 724 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 724 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 724 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 724 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 724 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 724 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 725 "data/maps/LuxuraIndoor/scripts.pory"
+	set_invisible
+	step_end
+
+# 727 "data/maps/LuxuraIndoor/scripts.pory"
 alistairgone2:
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
+# 728 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
+# 728 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
+# 728 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
+# 728 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
+# 728 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
+# 728 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
+# 728 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
+# 728 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
+# 728 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
+# 728 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
+# 728 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
+# 728 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
+# 728 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
+# 728 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
+# 728 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
+# 728 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
+# 728 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
+# 728 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
+# 728 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
+# 728 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
+# 728 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
+# 728 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
+# 728 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
+# 728 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
+# 728 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
+# 728 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
+# 728 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
+# 728 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
+# 728 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
+# 728 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_up
-# 725 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_up
-# 726 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-# 726 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-# 726 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-# 726 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-# 726 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-# 726 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-# 726 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-# 726 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-# 726 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-# 726 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-# 726 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-# 726 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-# 726 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-# 726 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-# 726 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-# 726 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-# 726 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-# 726 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-# 726 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-# 726 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-# 726 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-# 726 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-# 726 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
-# 726 "data/maps/LuxuraIndoor/scripts.pory"
-	walk_down
 	step_end
 
 # 21 "data/maps/LuxuraIndoor/scripts.pory"
 alistairarrive3_Movement_0:
 # 21 "data/maps/LuxuraIndoor/scripts.pory"
 	walk_in_place_down
+	step_end
+
+# 695 "data/maps/LuxuraIndoor/scripts.pory"
+alistairarrive4_Movement_0:
+# 695 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 695 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 695 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 695 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 695 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 695 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 695 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 695 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 695 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 695 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 695 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 695 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 695 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 695 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 695 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 695 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 695 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 695 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 695 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 695 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 695 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 695 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 695 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
+# 695 "data/maps/LuxuraIndoor/scripts.pory"
+	walk_down
 	step_end
 
 alistairarrive3_Text_0:

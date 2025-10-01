@@ -1,10 +1,10 @@
 mapscripts AstralisAcademy_Floor2_MapScripts {
 	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
-	ACADEMY_START,5:Serenamet
-]
+	ACADEMY_START,5:Leafmet
+	]
 	
 }
-script Serenamet {
+script Leafmet {
 	addobject(1,MAP_ASTRALIS_ACADEMY_FLOOR2)
 	setobjectxy(1,12,10)
 }

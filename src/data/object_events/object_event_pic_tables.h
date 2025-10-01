@@ -2006,6 +2006,11 @@ const struct SpriteFrameImage gObjectEventPicTable_Fiona[] = {
     overworld_frame(gObjectEventPic_Fiona, 4, 4, 7),
     overworld_frame(gObjectEventPic_Fiona, 4, 4, 8),
 };
+
+const struct SpriteFrameImage gObjectEventPicTable_Fiona1[] = {
+    overworld_ascending_frames(gObjectEventPic_Fiona1, 4, 4),
+};
+
 const struct SpriteFrameImage gObjectEventPicTable_Voss[] = {
     overworld_frame(gObjectEventPic_Voss, 4, 4, 0),
     overworld_frame(gObjectEventPic_Voss, 4, 4, 1),

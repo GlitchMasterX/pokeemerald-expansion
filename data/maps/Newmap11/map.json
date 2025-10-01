@@ -15,6 +15,7 @@
   "connections": null,
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ALISTAIR",
       "x": 11,
       "y": 11,
@@ -28,6 +29,7 @@
       "flag": "FLAG_ACADEMY_START"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(ALAKAZAM)",
       "x": 11,
       "y": 12,
@@ -41,6 +43,7 @@
       "flag": "FLAG_ACADEMY_START"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MEWTWO)",
       "x": 7,
       "y": 12,
@@ -54,6 +57,7 @@
       "flag": "FLAG_ACADEMY_START"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_NIHIL",
       "x": 11,
       "y": 4,
@@ -67,6 +71,7 @@
       "flag": "FLAG_NIHIL_FIRST"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_DISTORTION_PORTAL",
       "x": 11,
       "y": 5,
@@ -80,6 +85,7 @@
       "flag": "FLAG_NIHIL_FIRST"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
       "x": 13,
       "y": 5,
@@ -93,6 +99,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
       "x": 9,
       "y": 5,
@@ -106,6 +113,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
       "x": 13,
       "y": 2,
@@ -119,6 +127,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
       "x": 9,
       "y": 2,

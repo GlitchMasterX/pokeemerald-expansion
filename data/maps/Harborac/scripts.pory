@@ -10,16 +10,16 @@ MAP_SCRIPT_ON_FRAME_TABLE[
 script ONHARBOR1 {
     playbgm(MUS_HG_KIMONO_GIRL_DANCE,FALSE)
     lock
+
     speakername(oldman)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}There you go, young man.\pI never understood why you chose to travel with this old man when there were better means of transport available.\pYou could've reached your destination on time, but I won't question your intentions.\pYou must've had your reasons.")) 
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Here we are, young man.\pThe Astralis Academy-the place where ordinary trainers become legends.")) 
+
     speakername(Xylar1)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}.................")) 
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_REALIZE}{COLOR BLUE}{SHADOW LIGHT_GRAY}………")) 
+
     speakername(oldman)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Well here it is,\pThe Astralis Academy, the place where normal trainers become legends.")) 
-    speakername(Xylar1)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}.............")) 
-    speakername(oldman)
-    msgbox(format("(His eyes...They aren't normal.)"),MSGBOX_AUTOCLOSE) 
+    msgbox(format("(His eyes... are not normal.)"),MSGBOX_AUTOCLOSE) 
+
     waitmessage
     fadescreen(FADE_TO_BLACK)
     playse(SE_RG_SS_ANNE_HORN)
@@ -27,14 +27,17 @@ script ONHARBOR1 {
     removeobject(11)
     setflag(FLAG_OLDMAN_GONE)
     fadescreen(FADE_FROM_BLACK)
+
     applymovement(0xFF,MOVE2)
     speakername(Xylar1)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Legend?.... Become one?...\pI'm gonna destroy them all."))
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Legends don't matter to the dead."))
+
     pausefakertc 
     fadedefaultbgm
     setvar(ACADEMY_START,3)
     release
 }
+
 text oldman{
     format("Oldman")
 }
@@ -62,28 +65,41 @@ script Fionamet {
     special(SpawnCameraObject)
     playbgm(MUS_DUMMY,FALSE)
     applymovement(0x7F, MOVE6)
-    applymovement(12,MOVE4)
     applymovement(OBJ_EVENT_ID_PLAYER,MOVE3)
+    applymovement(12,moves(walk_left*3))
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovement(12,moves(emote_exclamation_mark))
+    waitmovement(0)
+    playse(SE_LEDGE)
+    applymovement(12,moves( jump_up face_down face_right))
     waitmovement(0)
     speakername(unknown)
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}My apologies...."))
-     
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}My apologies……"))
+    closemessage 
     applymovement(13,MOVE5)
+    speakername("Maid")
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Are you alright, my lady?"))
+    closemessage
     waitmovement(0)
+    playse(SE_PIN)
     applymovement(13,mov1)
+    speakername("Maid")
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}How rude of him, he didn't even stop to apologize."))
     waitmessage
-    applymovement(13,MOVE1)
+    applymovement(13,moves(face_down))
     speakername(unknown)
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}........."))
-     
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}……"))
+    closemessage
+    playse(SE_PIN)
+    applymovement(13,moves(emote_question_mark))
+    speakername("Maid") 
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}What happened?"))
     waitmessage
-    applymovement(12,mov1)
+    closemessage
+    applymovement(12,moves(delay_16 face_left))
     speakername(unknown)
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}...........\pNothing.\pLet's go."),MSGBOX_AUTOCLOSE)
-     
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}……\pNothing.\pLet's go."),MSGBOX_AUTOCLOSE)
     fadescreen(FADE_TO_BLACK)
     removeobject(12)
     removeobject(13)
@@ -93,6 +109,7 @@ script Fionamet {
 }
 
 movement mov1 {
+    emote_upset
     face_right
 }
 movement MOVE6 {
@@ -110,6 +127,7 @@ movement MOVE4 {
 }
 movement MOVE5 {
     walk_fast_left*5
+    face_down
 }
 script Fionamet1 {
     applymovement(OBJ_EVENT_ID_PLAYER,mov3)
@@ -203,14 +221,11 @@ script elias{
     faceplayer
     applymovement(1,exclam)
     speakername(unknown)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You're late Xylar.\pMy name is David Elias.\pI'm a professor and the headmaster made it clear that i was to ensure your arrival.\pCome with me, the headmaster is waiting for you."))
-     
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You're late Xylar.\pMy name is Elias.\pI'm a professor and the headmaster made it clear that I was to ensure your arrival.\pCome with me, the headmaster is waiting for you."))
     speakername(Xylar1)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't need an escort.\pJust tell me where I have to go."))
-     
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't need an escort.\pJust tell me where I have to go.")) 
     speakername(eliasn)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You'll soon find that attitude won't get you far here.\pRespect is earned, young man.\nNow follow me."))
-     
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You'll soon find that attitude won't get you far here.\pRespect is earned, young man.\nNow follow me.")) 
     applymovement(1,goin)
     playse(SE_WARP_IN)
     waitse

@@ -303,6 +303,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Fire;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Alistair;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Xylar;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Fiona;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Fiona1;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Voss;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kael;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Orson;
@@ -614,6 +615,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_EVELYN] =                      &gObjectEventGraphicsInfo_Evelyn,
     [OBJ_EVENT_GFX_DISTORTION_PORTAL] =         &gObjectEventGraphicsInfo_DistortionPortal,
     [OBJ_EVENT_GFX_NIHIL] =                     &gObjectEventGraphicsInfo_Nihil,
+    [OBJ_EVENT_GFX_FIONA_1] =                      &gObjectEventGraphicsInfo_Fiona1,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

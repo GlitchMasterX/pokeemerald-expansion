@@ -150,7 +150,7 @@ Head1::
 	return
 
 
-serenamet::
+Leafmet1::
 # 90 "data/maps/headoffice/scripts.pory"
 	lockall
 # 91 "data/maps/headoffice/scripts.pory"
@@ -160,9 +160,11 @@ serenamet::
 # 93 "data/maps/headoffice/scripts.pory"
 	waitmovement 0
 # 94 "data/maps/headoffice/scripts.pory"
-	speakername serena
+	speakername Leafmet1_Text_0
 # 95 "data/maps/headoffice/scripts.pory"
-	msgbox serenamet_Text_0
+	msgbox Leafmet1_Text_1
+# 96 "data/maps/headoffice/scripts.pory"
+	playse SE_PIN
 # 97 "data/maps/headoffice/scripts.pory"
 	applymovement 1, serenametmov2
 # 98 "data/maps/headoffice/scripts.pory"
@@ -172,11 +174,11 @@ serenamet::
 # 100 "data/maps/headoffice/scripts.pory"
 	speakername Xylar1
 # 101 "data/maps/headoffice/scripts.pory"
-	msgbox serenamet_Text_1
+	msgbox Leafmet1_Text_2
 # 103 "data/maps/headoffice/scripts.pory"
-	speakername serena
+	speakername Leafmet1_Text_0
 # 104 "data/maps/headoffice/scripts.pory"
-	msgbox serenamet_Text_2
+	msgbox Leafmet1_Text_3
 # 106 "data/maps/headoffice/scripts.pory"
 	waitmessage
 # 107 "data/maps/headoffice/scripts.pory"
@@ -184,7 +186,7 @@ serenamet::
 # 108 "data/maps/headoffice/scripts.pory"
 	speakername Xylar1
 # 109 "data/maps/headoffice/scripts.pory"
-	msgbox serenamet_Text_3
+	msgbox Leafmet1_Text_4
 # 111 "data/maps/headoffice/scripts.pory"
 	waitmessage
 # 112 "data/maps/headoffice/scripts.pory"
@@ -194,53 +196,65 @@ serenamet::
 # 114 "data/maps/headoffice/scripts.pory"
 	applymovement 0xFF, mov1
 # 115 "data/maps/headoffice/scripts.pory"
-	speakername serena
+	speakername Leafmet1_Text_0
 # 116 "data/maps/headoffice/scripts.pory"
-	msgbox serenamet_Text_4
+	msgbox Leafmet1_Text_5
 # 118 "data/maps/headoffice/scripts.pory"
 	speakername Xylar1
 # 119 "data/maps/headoffice/scripts.pory"
-	msgbox serenamet_Text_5
+	msgbox Leafmet1_Text_6
 # 121 "data/maps/headoffice/scripts.pory"
-	speakername serena
+	speakername Leafmet1_Text_0
 # 122 "data/maps/headoffice/scripts.pory"
-	msgbox serenamet_Text_6
+	msgbox Leafmet1_Text_7
+# 123 "data/maps/headoffice/scripts.pory"
+	closemessage
 # 124 "data/maps/headoffice/scripts.pory"
 	speakername Xylar1
 # 125 "data/maps/headoffice/scripts.pory"
-	msgbox serenamet_Text_7
+	msgbox Leafmet1_Text_8
+# 126 "data/maps/headoffice/scripts.pory"
+	closemessage
 # 127 "data/maps/headoffice/scripts.pory"
-	speakername serena
+	speakername Leafmet1_Text_0
 # 128 "data/maps/headoffice/scripts.pory"
-	msgbox serenamet_Text_8
+	msgbox Leafmet1_Text_9
+# 129 "data/maps/headoffice/scripts.pory"
+	playse SE_PIN
 # 130 "data/maps/headoffice/scripts.pory"
 	applymovement 0xFF, exclam
 # 131 "data/maps/headoffice/scripts.pory"
 	speakername Xylar1
 # 132 "data/maps/headoffice/scripts.pory"
-	msgbox serenamet_Text_9, MSGBOX_AUTOCLOSE
+	msgbox Leafmet1_Text_10, MSGBOX_AUTOCLOSE
+# 133 "data/maps/headoffice/scripts.pory"
+	speakername Leafmet1_Text_0
 # 134 "data/maps/headoffice/scripts.pory"
-	speakername serena
+	msgbox Leafmet1_Text_11
 # 135 "data/maps/headoffice/scripts.pory"
-	msgbox serenamet_Text_10
+	closemessage
+# 136 "data/maps/headoffice/scripts.pory"
+	playse SE_PIN
 # 137 "data/maps/headoffice/scripts.pory"
 	applymovement 0xFF, upset
 # 138 "data/maps/headoffice/scripts.pory"
 	speakername Xylar1
 # 139 "data/maps/headoffice/scripts.pory"
-	msgbox serenamet_Text_11, MSGBOX_AUTOCLOSE
-# 141 "data/maps/headoffice/scripts.pory"
+	msgbox Leafmet1_Text_12, MSGBOX_AUTOCLOSE
+# 140 "data/maps/headoffice/scripts.pory"
 	playse MUS_DP_LETS_GO_TOGETHER
+# 141 "data/maps/headoffice/scripts.pory"
+	msgbox Leafmet1_Text_13
 # 142 "data/maps/headoffice/scripts.pory"
-	msgbox serenamet_Text_12
+	closemessage
 # 143 "data/maps/headoffice/scripts.pory"
 	waitse
 # 144 "data/maps/headoffice/scripts.pory"
 	setflag FLAG_PAUSE_TIME
 # 145 "data/maps/headoffice/scripts.pory"
-	fwdmonth 3
-# 146 "data/maps/headoffice/scripts.pory"
 	setfollowernpc 1, FNPC_LEAVE_ROUTE, serenafollow
+# 146 "data/maps/headoffice/scripts.pory"
+	setflag FLAG_LEAF_FOLLOW
 # 147 "data/maps/headoffice/scripts.pory"
 	fadedefaultbgm
 # 148 "data/maps/headoffice/scripts.pory"
@@ -251,70 +265,72 @@ serenamet::
 
 
 serenafollow::
-# 152 "data/maps/headoffice/scripts.pory"
-	lock
 # 153 "data/maps/headoffice/scripts.pory"
-	facefollowernpc
+	lock
 # 154 "data/maps/headoffice/scripts.pory"
-	applymovement 0xFD, happy
+	facefollowernpc
 # 155 "data/maps/headoffice/scripts.pory"
-	speakername serena
+	playse SE_PIN
 # 156 "data/maps/headoffice/scripts.pory"
-	msgbox serenamet_Text_10
+	applymovement 0xFD, happy
+# 157 "data/maps/headoffice/scripts.pory"
+	speakername Leafmet1_Text_0
 # 158 "data/maps/headoffice/scripts.pory"
+	msgbox Leafmet1_Text_11
+# 160 "data/maps/headoffice/scripts.pory"
 	release
 	return
 
 
-# 160 "data/maps/headoffice/scripts.pory"
+# 162 "data/maps/headoffice/scripts.pory"
 serenametmov1:
-# 161 "data/maps/headoffice/scripts.pory"
+# 163 "data/maps/headoffice/scripts.pory"
 	walk_fast_up
-# 161 "data/maps/headoffice/scripts.pory"
+# 163 "data/maps/headoffice/scripts.pory"
 	walk_fast_up
-# 161 "data/maps/headoffice/scripts.pory"
+# 163 "data/maps/headoffice/scripts.pory"
 	walk_fast_up
-# 161 "data/maps/headoffice/scripts.pory"
+# 163 "data/maps/headoffice/scripts.pory"
 	walk_fast_up
-# 161 "data/maps/headoffice/scripts.pory"
+# 163 "data/maps/headoffice/scripts.pory"
 	walk_fast_up
-# 161 "data/maps/headoffice/scripts.pory"
+# 163 "data/maps/headoffice/scripts.pory"
 	walk_fast_up
-# 161 "data/maps/headoffice/scripts.pory"
+# 163 "data/maps/headoffice/scripts.pory"
 	walk_fast_up
 	step_end
 
-# 163 "data/maps/headoffice/scripts.pory"
-serenametmov2:
-# 164 "data/maps/headoffice/scripts.pory"
-	walk_right
 # 165 "data/maps/headoffice/scripts.pory"
-	emote_exclamation_mark
+serenametmov2:
 # 166 "data/maps/headoffice/scripts.pory"
+	walk_right
+# 167 "data/maps/headoffice/scripts.pory"
+	emote_exclamation_mark
+# 168 "data/maps/headoffice/scripts.pory"
 	face_down
 	step_end
 
-# 168 "data/maps/headoffice/scripts.pory"
+# 170 "data/maps/headoffice/scripts.pory"
 serenametmov3:
-# 169 "data/maps/headoffice/scripts.pory"
+# 171 "data/maps/headoffice/scripts.pory"
 	walk_down
-# 169 "data/maps/headoffice/scripts.pory"
+# 171 "data/maps/headoffice/scripts.pory"
 	walk_down
-# 169 "data/maps/headoffice/scripts.pory"
+# 171 "data/maps/headoffice/scripts.pory"
 	walk_down
-# 169 "data/maps/headoffice/scripts.pory"
+# 171 "data/maps/headoffice/scripts.pory"
 	walk_down
 	step_end
 
-# 171 "data/maps/headoffice/scripts.pory"
-serenametmov4:
-# 172 "data/maps/headoffice/scripts.pory"
-	walk_down
-# 172 "data/maps/headoffice/scripts.pory"
-	walk_down
-# 172 "data/maps/headoffice/scripts.pory"
-	walk_down
 # 173 "data/maps/headoffice/scripts.pory"
+serenametmov4:
+# 174 "data/maps/headoffice/scripts.pory"
+	walk_down
+# 174 "data/maps/headoffice/scripts.pory"
+	walk_down
+# 174 "data/maps/headoffice/scripts.pory"
+	walk_down
+# 175 "data/maps/headoffice/scripts.pory"
 	face_left
 	step_end
 
@@ -332,7 +348,7 @@ serenaextend::
 # 184 "data/maps/headoffice/scripts.pory"
 	applymovement 0x7F, backes
 # 185 "data/maps/headoffice/scripts.pory"
-	speakername serena
+	speakername Leafmet1_Text_0
 # 186 "data/maps/headoffice/scripts.pory"
 	msgbox serenaextend_Text_0, MSGBOX_AUTOCLOSE
 # 188 "data/maps/headoffice/scripts.pory"
@@ -340,7 +356,7 @@ serenaextend::
 # 189 "data/maps/headoffice/scripts.pory"
 	msgbox serenaextend_Text_1, MSGBOX_AUTOCLOSE
 # 191 "data/maps/headoffice/scripts.pory"
-	speakername serena
+	speakername Leafmet1_Text_0
 # 192 "data/maps/headoffice/scripts.pory"
 	msgbox serenaextend_Text_2, MSGBOX_AUTOCLOSE
 # 194 "data/maps/headoffice/scripts.pory"
@@ -348,7 +364,7 @@ serenaextend::
 # 195 "data/maps/headoffice/scripts.pory"
 	msgbox serenaextend_Text_3
 # 197 "data/maps/headoffice/scripts.pory"
-	speakername serena
+	speakername Leafmet1_Text_0
 # 198 "data/maps/headoffice/scripts.pory"
 	msgbox serenaextend_Text_4, MSGBOX_AUTOCLOSE
 # 200 "data/maps/headoffice/scripts.pory"
@@ -362,7 +378,7 @@ serenaextend::
 # 205 "data/maps/headoffice/scripts.pory"
 	special RemoveCameraObject
 # 206 "data/maps/headoffice/scripts.pory"
-	speakername serena
+	speakername Leafmet1_Text_0
 # 207 "data/maps/headoffice/scripts.pory"
 	msgbox serenaextend_Text_5, MSGBOX_AUTOCLOSE
 # 209 "data/maps/headoffice/scripts.pory"
@@ -579,29 +595,33 @@ Head1_Text_1:
 	.string "Give it time.\n"
 	.string "Torchic may surprise you.$"
 
-serenamet_Text_0:
+Leafmet1_Text_0:
+# 94 "data/maps/headoffice/scripts.pory"
+	.string "Leaf$"
+
+Leafmet1_Text_1:
 # 95 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}There you are!\p"
-	.string "I'm Serena, your assigned mentor.\p"
+	.string "I'm Leaf, your assigned mentor.\p"
 	.string "Lucky you, right?$"
 
-serenamet_Text_1:
+Leafmet1_Text_2:
 # 101 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't need a mentor.$"
 
-serenamet_Text_2:
+Leafmet1_Text_3:
 # 104 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Well, that's too bad.\p"
 	.string "Rules are rules.\p"
 	.string "You're stuck with me, like it or not.$"
 
-serenamet_Text_3:
+Leafmet1_Text_4:
 # 109 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}If you're expecting me to follow your\n"
 	.string "lead then do yourself a favor.\p"
 	.string "Find someone else.$"
 
-serenamet_Text_4:
+Leafmet1_Text_5:
 # 116 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}You've got quite the attitude.\p"
 	.string "Look, I don't care if you think you don't\n"
@@ -609,12 +629,12 @@ serenamet_Text_4:
 	.string "I'm here to make sure you don't blow\n"
 	.string "something up.$"
 
-serenamet_Text_5:
+Leafmet1_Text_6:
 # 119 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Do what you like.\p"
 	.string "Just don't get in my way.$"
 
-serenamet_Text_6:
+Leafmet1_Text_7:
 # 122 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Deal.\p"
 	.string "You might be all broody, but I bet you'll\n"
@@ -622,30 +642,30 @@ serenamet_Text_6:
 	.string "I'm pretty good at breaking through\n"
 	.string "tough shells.$"
 
-serenamet_Text_7:
+Leafmet1_Text_8:
 # 125 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Don't count on it.$"
 
-serenamet_Text_8:
+Leafmet1_Text_9:
 # 128 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Now that you have accepted my help, let\n"
 	.string "me show you around.$"
 
-serenamet_Text_9:
+Leafmet1_Text_10:
 # 132 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Huh?\p"
 	.string "I never di..$"
 
-serenamet_Text_10:
-# 135 "data/maps/headoffice/scripts.pory"
+Leafmet1_Text_11:
+# 134 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Let's gooo!$"
 
-serenamet_Text_11:
+Leafmet1_Text_12:
 # 139 "data/maps/headoffice/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Ugh!$"
 
-serenamet_Text_12:
-# 142 "data/maps/headoffice/scripts.pory"
+Leafmet1_Text_13:
+# 141 "data/maps/headoffice/scripts.pory"
 	.string "Serena decided to join you!$"
 
 serenaextend_Text_0:
@@ -738,7 +758,3 @@ FracturedMask1_Text_9:
 	.string "After this incident, the students\n"
 	.string "began to fear Xylar, treating him as an\l"
 	.string "outcast.$"
-
-serena::
-# 175 "data/maps/headoffice/scripts.pory"
-	.string "Serena$"
