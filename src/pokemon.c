@@ -38,6 +38,7 @@
 #include "pokemon_storage_system.h"
 #include "random.h"
 #include "recorded_battle.h"
+#include "regions.h"
 #include "rtc.h"
 #include "sound.h"
 #include "string_util.h"
@@ -3392,7 +3393,7 @@ u8 GetMonsStateToDoubles_2(void)
     return (aliveCount > 1) ? PLAYER_HAS_TWO_USABLE_MONS : PLAYER_HAS_ONE_USABLE_MON;
 }
 
-u16 GetAbilityBySpecies(u16 species, u8 abilityNum)
+enum Ability GetAbilityBySpecies(u16 species, u8 abilityNum)
 {
     int i;
 
@@ -3417,7 +3418,7 @@ u16 GetAbilityBySpecies(u16 species, u8 abilityNum)
     return gLastUsedAbility;
 }
 
-u16 GetMonAbility(struct Pokemon *mon)
+enum Ability GetMonAbility(struct Pokemon *mon)
 {
     u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
     u8 abilityNum = GetMonData(mon, MON_DATA_ABILITY_NUM, NULL);
@@ -3533,7 +3534,7 @@ u32 GetSpeciesType(u16 species, u8 slot)
     return gSpeciesInfo[SanitizeSpeciesId(species)].types[slot];
 }
 
-u32 GetSpeciesAbility(u16 species, u8 slot)
+enum Ability GetSpeciesAbility(u16 species, u8 slot)
 {
     return gSpeciesInfo[SanitizeSpeciesId(species)].abilities[slot];
 }
@@ -4482,7 +4483,7 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
         {
         // Gen 2
         case IF_GENDER:
-            if (gender == GetMonGender(mon))
+            if (gender == params[i].arg1)
                 currentCondition = TRUE;
             break;
         case IF_MIN_FRIENDSHIP:
@@ -4726,6 +4727,14 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
                 if (canStopEvo != NULL)
                     *canStopEvo = FALSE;
             }
+            break;
+        case IF_REGION:
+            if (GetCurrentRegion() == params[i].arg1)
+                currentCondition = TRUE;
+            break;
+        case IF_NOT_REGION:
+            if (GetCurrentRegion() != params[i].arg1)
+                currentCondition = TRUE;
             break;
         case CONDITIONS_END:
             break;
@@ -6066,7 +6075,7 @@ static s32 GetWildMonTableIdInAlteringCave(u16 species)
 
 static inline bool32 CanFirstMonBoostHeldItemRarity(void)
 {
-    u32 ability;
+    enum Ability ability;
     if (GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
         return FALSE;
 
@@ -6614,7 +6623,7 @@ u32 GetFormChangeTargetSpeciesBoxMon(struct BoxPokemon *boxMon, enum FormChanges
     u32 targetSpecies = species;
     const struct FormChange *formChanges = GetSpeciesFormChanges(species);
     u16 heldItem;
-    u32 ability;
+    enum Ability ability;
 
     if (formChanges != NULL)
     {

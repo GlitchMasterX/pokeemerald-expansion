@@ -1012,7 +1012,7 @@ void TrainerBattleLoadArgsSecondTrainer(const u8 *data)
 
 void SetMapVarsToTrainerA(void)
 {
-    if (TRAINER_BATTLE_PARAM.objEventLocalIdA != 0)
+    if (TRAINER_BATTLE_PARAM.objEventLocalIdA != LOCALID_NONE)
     {
         gSpeakerName = GetTrainerNameFromId(TRAINER_BATTLE_PARAM.opponentA);
         gSpecialVar_LastTalked = TRAINER_BATTLE_PARAM.objEventLocalIdA;
