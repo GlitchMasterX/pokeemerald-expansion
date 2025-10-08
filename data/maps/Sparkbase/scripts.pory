@@ -107,7 +107,6 @@ script Surgebattle {
     waitmovement(0)
     special(HealPlayerParty)
     hidefollower
-    setflag(FLAG_UNUSED_0x267)
     special(SpawnCameraObject)
     playbgm(MUS_DP_GALACTIC_HQ_BASEMENT,TRUE)
     applymovement(OBJ_EVENT_ID_CAMERA,camera4)
