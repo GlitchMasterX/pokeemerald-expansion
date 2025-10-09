@@ -98,26 +98,21 @@ script Leafmet1 {
     applymovement(0xFF,serenametmov3)
     waitmovement(0)
     speakername(Xylar1)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't need a mentor."))
-     
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't need a mentor.")) 
     speakername("Leaf")
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Well, that's too bad.\pRules are rules.\pYou're stuck with me, like it or not."))
-     
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Well, that's too bad.\pRules are rules.\pYou're stuck with me, like it or not.")) 
     waitmessage
     applymovement(0xFF,traces2)
     speakername(Xylar1)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}If you're expecting me to follow your lead then do yourself a favor.\pFind someone else."))
-     
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}If you're expecting me to follow your lead then do yourself a favor.\pFind someone else.")) 
     waitmessage
     applymovement(1,serenametmov4)
     waitmovement(0)
     applymovement(0xFF,mov1)
     speakername("Leaf")
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}You've got quite the attitude.\pLook, I don't care if you think you don't need help.\pI'm here to make sure you don't blow something up."))
-     
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}You've got quite the attitude.\pLook, I don't care if you think you don't need help.\pI'm here to make sure you don't blow something up.")) 
     speakername(Xylar1)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Do what you like.\pJust don't get in my way."))
-     
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Do what you like.\pJust don't get in my way.")) 
     speakername("Leaf")
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Deal.\pYou might be all broody, but I bet you'll come around eventually.\pI'm pretty good at breaking through tough shells."))
     closemessage
@@ -138,7 +133,7 @@ script Leafmet1 {
     speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Ugh!"),MSGBOX_AUTOCLOSE) 
     playse(MUS_DP_LETS_GO_TOGETHER)
-    msgbox(format("Serena decided to join you!"))
+    msgbox(format("Leaf decided to join you!"))
     closemessage
     waitse
     setflag(FLAG_PAUSE_TIME)

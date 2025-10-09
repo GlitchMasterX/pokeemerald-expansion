@@ -1,5 +1,6 @@
 #include "global.h"
 #include "bike.h"
+#include "data.h"
 #include "event_object_movement.h"
 #include "field_player_avatar.h"
 #include "fieldmap.h"
@@ -977,6 +978,12 @@ bool8 IsBikingDisallowedByPlayer(void)
 
     if (!(gPlayerAvatar.flags & (PLAYER_AVATAR_FLAG_SURFING | PLAYER_AVATAR_FLAG_UNDERWATER)))
     {
+        if (gOutfits[gSaveBlock2Ptr->currOutfitId].canBike == FALSE){
+        return TRUE;
+    }
+    else{
+        return FALSE;
+    }
         PlayerGetDestCoords(&x, &y);
         tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
         if (!IsRunningDisallowedByMetatile(tileBehavior))

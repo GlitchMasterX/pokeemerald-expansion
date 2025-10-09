@@ -316,6 +316,8 @@ static inline const u64 GetTrainerAIFlagsFromId(u16 trainerId)
 struct Outfit
 {
     u8 isHidden:1; //! Will not shows up in the menu if locked.
+    u8 hasRunAnims:1;
+    u8 canBike: 1;
     u32 prices[GENDER_COUNT]; //! heh
     const u8 *name;
     const u8 *desc;
@@ -331,5 +333,6 @@ extern const struct Outfit gOutfits[OUTFIT_COUNT];
 
 #define GFX 0
 #define PAL 1
+
 
 #endif // GUARD_DATA_H
