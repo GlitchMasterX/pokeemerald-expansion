@@ -15,7 +15,7 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPARK_M",
+      "graphics_id": "OBJ_EVENT_GFX_S_EQUINO_M",
       "x": 42,
       "y": 9,
       "elevation": 0,
@@ -41,7 +41,7 @@
       "flag": "FLAG_ITEM_ROUTE_105_IRON"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPARK_F",
+      "graphics_id": "OBJ_EVENT_GFX_S_EQUINO_F",
       "x": 69,
       "y": 6,
       "elevation": 0,
@@ -67,7 +67,7 @@
       "flag": "FLAG_ITEM_ROUTE_104_PP_UP"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPARK_M",
+      "graphics_id": "OBJ_EVENT_GFX_S_EQUINO_M",
       "x": 75,
       "y": 4,
       "elevation": 0,
@@ -106,7 +106,7 @@
       "flag": "FLAG_UNUSED_0x4B8"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPARK_F",
+      "graphics_id": "OBJ_EVENT_GFX_S_EQUINO_F",
       "x": 11,
       "y": 15,
       "elevation": 0,
@@ -119,7 +119,7 @@
       "flag": "FLAG_UNUSED_0x4B8"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPARK_M",
+      "graphics_id": "OBJ_EVENT_GFX_S_EQUINO_M",
       "x": 7,
       "y": 15,
       "elevation": 0,
@@ -223,7 +223,7 @@
       "flag": "FLAG_TRIAL_SERENA"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPARK_M",
+      "graphics_id": "OBJ_EVENT_GFX_S_EQUINO_M",
       "x": 98,
       "y": 4,
       "elevation": 0,

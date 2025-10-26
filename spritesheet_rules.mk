@@ -5065,16 +5065,16 @@ $(OBJEVENTGFXDIR)/people/tennisplayer.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/violinist.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/sparkadmin.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/equino/admin.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/sparkm.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/equino/sm.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/sparkf.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/equino/sf.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/sparkleader.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/equino/leader.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/blood.4bpp: %.4bpp: %.png

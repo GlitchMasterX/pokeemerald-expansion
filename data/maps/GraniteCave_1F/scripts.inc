@@ -241,7 +241,7 @@ newheal::
 
 spark1::
 # 127 "data/maps/GraniteCave_1F/scripts.pory"
-	trainerbattle_single SPARK_GRUNT_1, Grunt1_Intro, Grunt1_Outro
+	trainerbattle_single EQUINO_GRUNT_1, Grunt1_Intro, Grunt1_Outro
 # 128 "data/maps/GraniteCave_1F/scripts.pory"
 	msgbox PostBattle_Grunt1, MSGBOX_AUTOCLOSE
 # 129 "data/maps/GraniteCave_1F/scripts.pory"

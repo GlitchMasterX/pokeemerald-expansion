@@ -81,10 +81,10 @@ Gender: Male
 Music: Male
 Double Battle: No
 
-=== SPARK_GRUNT_1 ===
+=== EQUINO_GRUNT_1 ===
 Name: Grunt
-Class: Tempest Spark 
-Pic: Spark Grunt M
+Class: Equino 
+Pic: S Equino Grunt M
 Music: Aqua
 Battle Type: Singles
 AI: Basic Trainer / Prefer Status Moves
@@ -108,10 +108,10 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tackle
 
 
-=== SPARK_GRUNT_2 ===
+=== EQUINO_GRUNT_2 ===
 Name: Grunt
-Class: Tempest Spark
-Pic: Spark Grunt M
+Class: Equino
+Pic: S Equino Grunt M
 Music: Aqua
 Battle Type: Singles
 AI: Basic Trainer / Prefer Status Moves
@@ -137,10 +137,10 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tackle
 
 
-=== SPARK_GRUNT_3 ===
+=== EQUINO_GRUNT_3 ===
 Name: Grunt
-Class: Tempest Spark
-Pic: Spark Grunt M
+Class: Equino
+Pic: S Equino Grunt M
 Music: Aqua
 Battle Type: Singles
 AI: Basic Trainer / Prefer Status Moves / Will Suicide
@@ -166,10 +166,10 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tackle
 
 
-=== SPARK_GRUNT_4 ===
+=== EQUINO_GRUNT_4 ===
 Name: Grunt
-Class: Tempest Spark
-Pic: Spark Grunt F
+Class: Equino
+Pic: S Equino Grunt F
 Music: Aqua
 Battle Type: Singles
 AI: Basic Trainer / Prefer Status Moves / Will Suicide
@@ -195,10 +195,10 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tackle
 
 
-=== SPARK_GRUNT_5 ===
+=== EQUINO_GRUNT_5 ===
 Name: Grunt
-Class: Tempest Spark
-Pic: Spark Grunt F
+Class: Equino
+Pic: S Equino Grunt F
 Music: Aqua
 Battle Type: Singles
 AI: Basic Trainer / Prefer Status Moves / Will Suicide
@@ -224,10 +224,10 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tackle
 
 
-=== SPARK_GRUNT_6 ===
+=== EQUINO_GRUNT_6 ===
 Name: Grunt
-Class: Tempest Spark
-Pic: Spark Grunt M
+Class: Equino
+Pic: S Equino Grunt M
 Music: Aqua
 Battle Type: Singles
 AI: Basic Trainer / Prefer Status Moves / Will Suicide
@@ -255,7 +255,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === SPARK_ADMIN_SURGE ===
 Name: Surge
-Class: Tempest Admin
+Class: Equino Admin
 Pic: Surge
 Music: Spark
 Battle Type: Singles

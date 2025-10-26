@@ -18,7 +18,7 @@ script Ruins {
 }
 }
 script spark2 {
-    trainerbattle_single(SPARK_GRUNT_2, Grunt2_Intro, Grunt2_Outro)
+    trainerbattle_single(EQUINO_GRUNT_2, Grunt2_Intro, Grunt2_Outro)
 	msgbox(PostBattle_Grunt2, MSGBOX_AUTOCLOSE) 
 	waitmessage
     end
@@ -31,7 +31,7 @@ text Grunt2_Outro {
     format("Wha..?! You're tougher than I thought... but this isn't over!")    
 }
 script spark3 {
-    trainerbattle_single(SPARK_GRUNT_3, Grunt3_Intro, Grunt3_Outro)
+    trainerbattle_single(EQUINO_GRUNT_3, Grunt3_Intro, Grunt3_Outro)
 	msgbox(PostBattle_Grunt3, MSGBOX_AUTOCLOSE) 
 	waitmessage
     end
@@ -44,7 +44,7 @@ text Grunt3_Outro {
     format("Ugh, I can't believe this! You're just lucky. Next time, you won't be so fortunate!\pXylar: There won't e any next time.")    
 }
 script spark4 {
-    trainerbattle_single(SPARK_GRUNT_4, Grunt4_Intro, Grunt4_Outro)
+    trainerbattle_single(EQUINO_GRUNT_4, Grunt4_Intro, Grunt4_Outro)
 	msgbox(PostBattle_Grunt4, MSGBOX_AUTOCLOSE) 
 	waitmessage
     end
@@ -66,7 +66,7 @@ text PostBattle_Grunt2 {
     format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Our general will defeat you.")
 }
 script spark5 {
-    trainerbattle_single(SPARK_GRUNT_5, Grunt5_Intro, Grunt5_Outro)
+    trainerbattle_single(EQUINO_GRUNT_5, Grunt5_Intro, Grunt5_Outro)
 	msgbox(PostBattle_Grunt5, MSGBOX_AUTOCLOSE) 
 	waitmessage
     end
@@ -82,7 +82,7 @@ text PostBattle_Grunt5 {
     format("{COLOR RED}{SHADOW LIGHT_GRAY}Our general will defeat you.")
 }
 script spark6 {
-    trainerbattle_single(SPARK_GRUNT_6, Grunt6_Intro, Grunt6_Outro,surgeb)
+    trainerbattle_single(EQUINO_GRUNT_6, Grunt6_Intro, Grunt6_Outro,surgeb)
 	msgbox(PostBattle_Grunt6, MSGBOX_AUTOCLOSE) 
 	waitmessage
     setvar(LUXURA_TRAGEDY,21)

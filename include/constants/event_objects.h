@@ -287,8 +287,8 @@
 #define OBJ_EVENT_GFX_TENNIS                     280
 #define OBJ_EVENT_GFX_VIOLINIST                  281
 #define OBJ_EVENT_GFX_NERD                       282
-#define OBJ_EVENT_GFX_SPARK_M                    283
-#define OBJ_EVENT_GFX_SPARK_F                    284
+#define OBJ_EVENT_GFX_S_EQUINO_M                    283
+#define OBJ_EVENT_GFX_S_EQUINO_F                    284
 #define OBJ_EVENT_GFX_SPARK_ADMIN                285
 #define OBJ_EVENT_GFX_SPARK_LEADER               286
 #define OBJ_EVENT_GFX_BLOOD                      287

@@ -40,7 +40,7 @@ Ruins_1:
 
 spark2::
 # 21 "data/maps/Sparkbase/scripts.pory"
-	trainerbattle_single SPARK_GRUNT_2, Grunt2_Intro, Grunt2_Outro
+	trainerbattle_single EQUINO_GRUNT_2, Grunt2_Intro, Grunt2_Outro
 # 22 "data/maps/Sparkbase/scripts.pory"
 	msgbox PostBattle_Grunt2, MSGBOX_AUTOCLOSE
 # 23 "data/maps/Sparkbase/scripts.pory"
@@ -50,7 +50,7 @@ spark2::
 
 spark3::
 # 34 "data/maps/Sparkbase/scripts.pory"
-	trainerbattle_single SPARK_GRUNT_3, Grunt3_Intro, Grunt3_Outro
+	trainerbattle_single EQUINO_GRUNT_3, Grunt3_Intro, Grunt3_Outro
 # 35 "data/maps/Sparkbase/scripts.pory"
 	msgbox PostBattle_Grunt3, MSGBOX_AUTOCLOSE
 # 36 "data/maps/Sparkbase/scripts.pory"
@@ -60,7 +60,7 @@ spark3::
 
 spark4::
 # 47 "data/maps/Sparkbase/scripts.pory"
-	trainerbattle_single SPARK_GRUNT_4, Grunt4_Intro, Grunt4_Outro
+	trainerbattle_single EQUINO_GRUNT_4, Grunt4_Intro, Grunt4_Outro
 # 48 "data/maps/Sparkbase/scripts.pory"
 	msgbox PostBattle_Grunt4, MSGBOX_AUTOCLOSE
 # 49 "data/maps/Sparkbase/scripts.pory"
@@ -70,7 +70,7 @@ spark4::
 
 spark5::
 # 69 "data/maps/Sparkbase/scripts.pory"
-	trainerbattle_single SPARK_GRUNT_5, Grunt5_Intro, Grunt5_Outro
+	trainerbattle_single EQUINO_GRUNT_5, Grunt5_Intro, Grunt5_Outro
 # 70 "data/maps/Sparkbase/scripts.pory"
 	msgbox PostBattle_Grunt5, MSGBOX_AUTOCLOSE
 # 71 "data/maps/Sparkbase/scripts.pory"
@@ -80,7 +80,7 @@ spark5::
 
 spark6::
 # 85 "data/maps/Sparkbase/scripts.pory"
-	trainerbattle_single SPARK_GRUNT_6, Grunt6_Intro, Grunt6_Outro, surgeb
+	trainerbattle_single EQUINO_GRUNT_6, Grunt6_Intro, Grunt6_Outro, surgeb
 # 86 "data/maps/Sparkbase/scripts.pory"
 	msgbox PostBattle_Grunt6, MSGBOX_AUTOCLOSE
 # 87 "data/maps/Sparkbase/scripts.pory"

@@ -155,7 +155,7 @@ Converts trainer data (for `convert_trainer_parties.py`) and partner data (for `
 
 #### [src/data/trainers.party](..src/data/trainers.party)
 ```diff
-+=== SPARK_GRUNT_1 ===
++=== EQUINO_GRUNT_1 ===
 +Name: SAWYER
 +Class: Hiker
 +Pic: Hiker

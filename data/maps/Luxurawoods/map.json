@@ -54,7 +54,7 @@
       "flag": "FLAG_ITEM_ROUTE_116_X_SPECIAL"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPARK_F",
+      "graphics_id": "OBJ_EVENT_GFX_S_EQUINO_F",
       "x": 40,
       "y": 2,
       "elevation": 0,
@@ -67,7 +67,7 @@
       "flag": "FLAG_UNUSED_0x4B2"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPARK_M",
+      "graphics_id": "OBJ_EVENT_GFX_S_EQUINO_M",
       "x": 42,
       "y": 2,
       "elevation": 0,

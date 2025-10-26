@@ -4,12 +4,12 @@
 #include "constants/battle_partner.h"
 
 #define TRAINER_NONE                          0
-#define SPARK_GRUNT_1                      1
-#define SPARK_GRUNT_2          2
-#define SPARK_GRUNT_3          3
-#define SPARK_GRUNT_4          4
-#define SPARK_GRUNT_5          5
-#define SPARK_GRUNT_6       6
+#define EQUINO_GRUNT_1                      1
+#define EQUINO_GRUNT_2          2
+#define EQUINO_GRUNT_3          3
+#define EQUINO_GRUNT_4          4
+#define EQUINO_GRUNT_5          5
+#define EQUINO_GRUNT_6       6
 #define SPARK_ADMIN_SURGE       7
 #define ACADEMY_HEAD       8
 #define DAMIEN_VOSS                   9

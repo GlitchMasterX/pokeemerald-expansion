@@ -124,7 +124,7 @@ script newheal {
 }
 
 script spark1 {
-	trainerbattle_single(SPARK_GRUNT_1, Grunt1_Intro, Grunt1_Outro)
+	trainerbattle_single(EQUINO_GRUNT_1, Grunt1_Intro, Grunt1_Outro)
 	msgbox(PostBattle_Grunt1, MSGBOX_AUTOCLOSE) 
 	waitmessage
     end

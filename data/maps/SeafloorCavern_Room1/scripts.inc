@@ -2,7 +2,7 @@ SeafloorCavern_Room1_MapScripts::
 	.byte 0
 
 SeafloorCavern_Room1_EventScript_Grunt1::
-	trainerbattle_single SPARK_GRUNT_6, SeafloorCavern_Room1_Text_Grunt1Intro, SeafloorCavern_Room1_Text_Grunt1Defeat
+	trainerbattle_single EQUINO_GRUNT_6, SeafloorCavern_Room1_Text_Grunt1Intro, SeafloorCavern_Room1_Text_Grunt1Defeat
 	msgbox SeafloorCavern_Room1_Text_Grunt1PostBattle, MSGBOX_AUTOCLOSE
 	end
 

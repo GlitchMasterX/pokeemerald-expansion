@@ -26,14 +26,14 @@
         },
     },
 #line 84
-    [DIFFICULTY_NORMAL][SPARK_GRUNT_1] =
+    [DIFFICULTY_NORMAL][EQUINO_GRUNT_1] =
     {
 #line 85
         .trainerName = _("Grunt"),
 #line 86
-        .trainerClass = TRAINER_CLASS_TEMPEST_SPARK,
+        .trainerClass = TRAINER_CLASS_EQUINO,
 #line 87
-        .trainerPic = TRAINER_PIC_SPARK_GRUNT_M,
+        .trainerPic = TRAINER_PIC_S_EQUINO_GRUNT_M,
         .encounterMusic_gender =
 #line 88
             TRAINER_ENCOUNTER_MUSIC_AQUA,
@@ -42,7 +42,7 @@
 #line 90
         .aiFlags = AI_FLAG_BASIC_TRAINER | AI_FLAG_PREFER_STATUS_MOVES,
 #line 0
-        .trainerBackPic = TRAINER_PIC_SPARK_GRUNT_M,
+        .trainerBackPic = TRAINER_PIC_S_EQUINO_GRUNT_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -87,14 +87,14 @@
         },
     },
 #line 111
-    [DIFFICULTY_NORMAL][SPARK_GRUNT_2] =
+    [DIFFICULTY_NORMAL][EQUINO_GRUNT_2] =
     {
 #line 112
         .trainerName = _("Grunt"),
 #line 113
-        .trainerClass = TRAINER_CLASS_TEMPEST_SPARK,
+        .trainerClass = TRAINER_CLASS_EQUINO,
 #line 114
-        .trainerPic = TRAINER_PIC_SPARK_GRUNT_M,
+        .trainerPic = TRAINER_PIC_S_EQUINO_GRUNT_M,
         .encounterMusic_gender =
 #line 115
             TRAINER_ENCOUNTER_MUSIC_AQUA,
@@ -103,7 +103,7 @@
 #line 117
         .aiFlags = AI_FLAG_BASIC_TRAINER | AI_FLAG_PREFER_STATUS_MOVES,
 #line 0
-        .trainerBackPic = TRAINER_PIC_SPARK_GRUNT_M,
+        .trainerBackPic = TRAINER_PIC_S_EQUINO_GRUNT_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -152,14 +152,14 @@
         },
     },
 #line 140
-    [DIFFICULTY_NORMAL][SPARK_GRUNT_3] =
+    [DIFFICULTY_NORMAL][EQUINO_GRUNT_3] =
     {
 #line 141
         .trainerName = _("Grunt"),
 #line 142
-        .trainerClass = TRAINER_CLASS_TEMPEST_SPARK,
+        .trainerClass = TRAINER_CLASS_EQUINO,
 #line 143
-        .trainerPic = TRAINER_PIC_SPARK_GRUNT_M,
+        .trainerPic = TRAINER_PIC_S_EQUINO_GRUNT_M,
         .encounterMusic_gender =
 #line 144
             TRAINER_ENCOUNTER_MUSIC_AQUA,
@@ -168,7 +168,7 @@
 #line 146
         .aiFlags = AI_FLAG_BASIC_TRAINER | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_WILL_SUICIDE,
 #line 0
-        .trainerBackPic = TRAINER_PIC_SPARK_GRUNT_M,
+        .trainerBackPic = TRAINER_PIC_S_EQUINO_GRUNT_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -217,14 +217,14 @@
         },
     },
 #line 169
-    [DIFFICULTY_NORMAL][SPARK_GRUNT_4] =
+    [DIFFICULTY_NORMAL][EQUINO_GRUNT_4] =
     {
 #line 170
         .trainerName = _("Grunt"),
 #line 171
-        .trainerClass = TRAINER_CLASS_TEMPEST_SPARK,
+        .trainerClass = TRAINER_CLASS_EQUINO,
 #line 172
-        .trainerPic = TRAINER_PIC_SPARK_GRUNT_F,
+        .trainerPic = TRAINER_PIC_S_EQUINO_GRUNT_F,
         .encounterMusic_gender =
 #line 173
             TRAINER_ENCOUNTER_MUSIC_AQUA,
@@ -233,7 +233,7 @@
 #line 175
         .aiFlags = AI_FLAG_BASIC_TRAINER | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_WILL_SUICIDE,
 #line 0
-        .trainerBackPic = TRAINER_PIC_SPARK_GRUNT_F,
+        .trainerBackPic = TRAINER_PIC_S_EQUINO_GRUNT_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -282,14 +282,14 @@
         },
     },
 #line 198
-    [DIFFICULTY_NORMAL][SPARK_GRUNT_5] =
+    [DIFFICULTY_NORMAL][EQUINO_GRUNT_5] =
     {
 #line 199
         .trainerName = _("Grunt"),
 #line 200
-        .trainerClass = TRAINER_CLASS_TEMPEST_SPARK,
+        .trainerClass = TRAINER_CLASS_EQUINO,
 #line 201
-        .trainerPic = TRAINER_PIC_SPARK_GRUNT_F,
+        .trainerPic = TRAINER_PIC_S_EQUINO_GRUNT_F,
         .encounterMusic_gender =
 #line 202
             TRAINER_ENCOUNTER_MUSIC_AQUA,
@@ -298,7 +298,7 @@
 #line 204
         .aiFlags = AI_FLAG_BASIC_TRAINER | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_WILL_SUICIDE,
 #line 0
-        .trainerBackPic = TRAINER_PIC_SPARK_GRUNT_F,
+        .trainerBackPic = TRAINER_PIC_S_EQUINO_GRUNT_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -349,14 +349,14 @@
         },
     },
 #line 227
-    [DIFFICULTY_NORMAL][SPARK_GRUNT_6] =
+    [DIFFICULTY_NORMAL][EQUINO_GRUNT_6] =
     {
 #line 228
         .trainerName = _("Grunt"),
 #line 229
-        .trainerClass = TRAINER_CLASS_TEMPEST_SPARK,
+        .trainerClass = TRAINER_CLASS_EQUINO,
 #line 230
-        .trainerPic = TRAINER_PIC_SPARK_GRUNT_M,
+        .trainerPic = TRAINER_PIC_S_EQUINO_GRUNT_M,
         .encounterMusic_gender =
 #line 231
             TRAINER_ENCOUNTER_MUSIC_AQUA,
@@ -365,7 +365,7 @@
 #line 233
         .aiFlags = AI_FLAG_BASIC_TRAINER | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_WILL_SUICIDE,
 #line 0
-        .trainerBackPic = TRAINER_PIC_SPARK_GRUNT_M,
+        .trainerBackPic = TRAINER_PIC_S_EQUINO_GRUNT_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -419,7 +419,7 @@
 #line 257
         .trainerName = _("Surge"),
 #line 258
-        .trainerClass = TRAINER_CLASS_TEMPEST_ADMIN,
+        .trainerClass = TRAINER_CLASS_EQUINO_ADMIN,
 #line 259
         .trainerPic = TRAINER_PIC_SURGE,
         .encounterMusic_gender =

@@ -277,17 +277,17 @@ const u16 gTrainerPalette_Leaf[] = INCBIN_U16("graphics/trainers/front_pics/leaf
 const u32 gTrainerFrontPic_Silas[] = INCBIN_U32("graphics/trainers/front_pics/silas.4bpp.smol");
 const u16 gTrainerPalette_Silas[] = INCBIN_U16("graphics/trainers/front_pics/silas.gbapal");
 
-const u32 gTrainerFrontPic_SparkGruntM[] = INCBIN_U32("graphics/trainers/front_pics/spark_grunt_m.4bpp.smol");
-const u16 gTrainerPalette_SparkGruntM[] = INCBIN_U16("graphics/trainers/front_pics/spark_grunt_m.gbapal");
+const u32 gTrainerFrontPic_SparkGruntM[] = INCBIN_U32("graphics/trainers/front_pics/s_equino_grunt_m.4bpp.smol");
+const u16 gTrainerPalette_SparkGruntM[] = INCBIN_U16("graphics/trainers/front_pics/s_equino_grunt_m.gbapal");
 
-const u32 gTrainerFrontPic_SparkGruntF[] = INCBIN_U32("graphics/trainers/front_pics/spark_grunt_f.4bpp.smol");
-const u16 gTrainerPalette_SparkGruntF[] = INCBIN_U16("graphics/trainers/front_pics/spark_grunt_f.gbapal");
+const u32 gTrainerFrontPic_SparkGruntF[] = INCBIN_U32("graphics/trainers/front_pics/s_equino_grunt_f.4bpp.smol");
+const u16 gTrainerPalette_SparkGruntF[] = INCBIN_U16("graphics/trainers/front_pics/s_equino_grunt_f.gbapal");
 
-const u32 gTrainerFrontPic_SparkAdmin[] = INCBIN_U32("graphics/trainers/front_pics/spark_admin.4bpp.smol");
-const u16 gTrainerPalette_SparkAdmin[] = INCBIN_U16("graphics/trainers/front_pics/spark_admin.gbapal");
+const u32 gTrainerFrontPic_SparkAdmin[] = INCBIN_U32("graphics/trainers/front_pics/equino_admin.4bpp.smol");
+const u16 gTrainerPalette_SparkAdmin[] = INCBIN_U16("graphics/trainers/front_pics/equino_admin.gbapal");
 
-const u32 gTrainerFrontPic_SparkLeader[] = INCBIN_U32("graphics/trainers/front_pics/spark_leader.4bpp.smol");
-const u16 gTrainerPalette_SparkLeader[] = INCBIN_U16("graphics/trainers/front_pics/spark_leader.gbapal");
+const u32 gTrainerFrontPic_SparkLeader[] = INCBIN_U32("graphics/trainers/front_pics/equino_leader.4bpp.smol");
+const u16 gTrainerPalette_SparkLeader[] = INCBIN_U16("graphics/trainers/front_pics/equino_leader.gbapal");
 
 const u32 gTrainerFrontPic_Surge[] = INCBIN_U32("graphics/trainers/front_pics/surge.4bpp.smol");
 const u16 gTrainerPalette_Surge[] = INCBIN_U16("graphics/trainers/front_pics/surge.gbapal");
@@ -440,10 +440,10 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_LEAF, gTrainerFrontPic_Leaf, gTrainerPalette_Leaf),
     TRAINER_SPRITE(TRAINER_PIC_RS_BRENDAN, gTrainerFrontPic_RubySapphireBrendan, gTrainerPalette_RubySapphireBrendan),
     TRAINER_SPRITE(TRAINER_PIC_RS_MAY, gTrainerFrontPic_RubySapphireMay, gTrainerPalette_RubySapphireMay),
-    TRAINER_SPRITE(TRAINER_PIC_SPARK_ADMIN, gTrainerFrontPic_SparkAdmin, gTrainerPalette_SparkAdmin),
-    TRAINER_SPRITE(TRAINER_PIC_SPARK_LEADER, gTrainerFrontPic_SparkLeader, gTrainerPalette_SparkLeader),
-    TRAINER_SPRITE(TRAINER_PIC_SPARK_GRUNT_M, gTrainerFrontPic_SparkGruntM, gTrainerPalette_SparkGruntM),
-    TRAINER_SPRITE(TRAINER_PIC_SPARK_GRUNT_F, gTrainerFrontPic_SparkGruntF, gTrainerPalette_SparkGruntF),
+    TRAINER_SPRITE(TRAINER_PIC_EQUINO_ADMIN, gTrainerFrontPic_SparkAdmin, gTrainerPalette_SparkAdmin),
+    TRAINER_SPRITE(TRAINER_PIC_EQUINO_LEADER, gTrainerFrontPic_SparkLeader, gTrainerPalette_SparkLeader),
+    TRAINER_SPRITE(TRAINER_PIC_S_EQUINO_GRUNT_M, gTrainerFrontPic_SparkGruntM, gTrainerPalette_SparkGruntM),
+    TRAINER_SPRITE(TRAINER_PIC_S_EQUINO_GRUNT_F, gTrainerFrontPic_SparkGruntF, gTrainerPalette_SparkGruntF),
     TRAINER_SPRITE(TRAINER_PIC_SPY, gTrainerFrontPic_Spy, gTrainerPalette_Spy),
     TRAINER_SPRITE(TRAINER_PIC_SURGE, gTrainerFrontPic_Surge, gTrainerPalette_Surge),
     TRAINER_SPRITE(TRAINER_PIC_ALISTAIR, gTrainerFrontPic_Alistair, gTrainerPalette_Alistair),
