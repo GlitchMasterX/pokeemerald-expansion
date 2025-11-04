@@ -4604,8 +4604,8 @@
     {
       "id": "LAYOUT_HARBORAC",
       "name": "Harborac_Layout",
-      "width": 80,
-      "height": 40,
+      "width": 44,
+      "height": 47,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Slateport",
       "border_filepath": "data/layouts/Harborac/border.bin",
