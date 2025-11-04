@@ -1179,3 +1179,4 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Harborac/scripts.inc"
 
 	.include "data/maps/LunarGrove/scripts.inc"
+	.include "data/scripts/battle_frontier.inc"
