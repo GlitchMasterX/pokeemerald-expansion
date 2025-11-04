@@ -70,6 +70,7 @@ extern bool8 gUnusedBikeCameraAheadPanback;
 void MovePlayerOnBike(u8 direction, u16 newKeys, u16 heldKeys);
 void Bike_TryAcroBikeHistoryUpdate(u16 newKeys, u16 heldKeys);
 bool8 RS_IsRunningDisallowed(u8 tile);
+void GetOnOffBike(u8 transitionFlags);
 bool8 IsBikingDisallowedByPlayer(void);
 bool8 IsPlayerNotUsingAcroBikeOnBumpySlope(void);
 void BikeClearState(int newDirHistory, int newAbStartHistory);
