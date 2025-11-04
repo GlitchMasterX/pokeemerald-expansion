@@ -324,9 +324,7 @@ LittlerootTown_EventScript_GoInsideWithMom::
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE
 # 163 "data/maps/LittlerootTown/scripts.pory"
 	setvar VAR_LITTLEROOT_INTRO_STATE, 3
-# 164 "data/maps/LittlerootTown/scripts.pory"
-	hideobjectat OBJ_EVENT_ID_PLAYER, 0
-# 165 "data/maps/LittlerootTown/scripts.pory"
+	hideplayer
 	closedoor VAR_0x8004, VAR_0x8005
 # 166 "data/maps/LittlerootTown/scripts.pory"
 	waitdooranim
