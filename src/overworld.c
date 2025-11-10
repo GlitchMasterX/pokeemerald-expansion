@@ -77,6 +77,16 @@ struct CableClubPlayer
     u16 metatileBehavior;
 };
 
+struct OverlayState
+{
+    bool8 active;   
+    u8 eva;      
+    u8 evb;
+    u8 targetEVA;
+    u8 targetEVB;
+    u8 fadeDelay;
+};
+
 #define PLAYER_LINK_STATE_IDLE 0x80
 #define PLAYER_LINK_STATE_BUSY 0x81
 #define PLAYER_LINK_STATE_READY 0x82
@@ -170,6 +180,11 @@ static void TransitionMapMusic(void);
 static u8 GetAdjustedInitialTransitionFlags(struct InitialPlayerAvatarState *, u16, u8);
 static u8 GetAdjustedInitialDirection(struct InitialPlayerAvatarState *, u8, u16, u8);
 static u16 GetCenterScreenMetatileBehavior(void);
+static void InitBlend(void);
+static void UpdateBlend(void);
+static void SetOverlayAlpha(u8 eva, u8 evb);
+static void SetOverlayEnabled(bool8 active);
+static void UNUSED FadeOverlay(u8 eva, u8 evb);
 
 static void *sUnusedOverworldCallback;
 static u8 sPlayerLinkStates[MAX_LINK_PLAYERS];
@@ -199,6 +214,7 @@ EWRAM_DATA static struct InitialPlayerAvatarState sInitialPlayerAvatarState = {0
 EWRAM_DATA static u16 sAmbientCrySpecies = 0;
 EWRAM_DATA static bool8 sIsAmbientCryWaterMon = FALSE;
 EWRAM_DATA struct LinkPlayerObjectEvent gLinkPlayerObjectEvents[4] = {0};
+EWRAM_DATA struct OverlayState sOverlayState = {0};
 
 static const struct WarpData sDummyWarpData =
 {
@@ -784,6 +800,7 @@ bool8 SetDiveWarpDive(u16 x, u16 y)
 void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 {
     s32 paletteIndex;
+    bool8 previousMapUsedOverlay = gMapHeader.overlay != NULL;
 
     SetWarpDestination(mapGroup, mapNum, WARP_ID_NONE, -1, -1);
 
@@ -822,6 +839,15 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
     if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER
      || gMapHeader.regionMapSectionId != sLastMapSectionId)
         ShowMapNamePopup();
+
+    // When switching between overlay/non-overlay maps redraw the tiles to ensure they end up on the right background
+    // When entering an overlay map, from any map, draw any overriden tiles on the border
+    if (previousMapUsedOverlay != (gMapHeader.overlay != NULL) || gMapHeader.overlay)
+    {
+        DrawWholeMapView();
+    }
+
+    InitBlend();
 }
 
 static void LoadMapFromWarp(bool32 a1)
@@ -872,6 +898,8 @@ static void LoadMapFromWarp(bool32 a1)
         UpdateTVScreensOnMap(gBackupMapLayout.width, gBackupMapLayout.height);
         InitSecretBaseAppearance(TRUE);
     }
+
+    InitBlend();
 }
 
 void ResetInitialPlayerAvatarState(void)
@@ -1472,6 +1500,7 @@ static void OverworldBasic(void)
     BuildOamBuffer();
     UpdatePaletteFade();
     UpdateTilesetAnimations();
+    UpdateBlend();
     DoScheduledBgTilemapCopiesToVram();
 }
 
@@ -2098,15 +2127,13 @@ static void InitOverworldGraphicsRegisters(void)
     ClearScheduledBgCopiesToVram();
     ResetTempTileDataBuffers();
     SetGpuReg(REG_OFFSET_MOSAIC, 0);
-    SetGpuReg(REG_OFFSET_WININ, WININ_WIN0_BG_ALL | WININ_WIN0_OBJ | WININ_WIN1_BG_ALL | WININ_WIN1_OBJ);
     SetGpuReg(REG_OFFSET_WINOUT, WINOUT_WIN01_BG0 | WINOUT_WINOBJ_BG0);
     SetGpuReg(REG_OFFSET_WIN0H, 0xFF);
     SetGpuReg(REG_OFFSET_WIN0V, 0xFF);
     SetGpuReg(REG_OFFSET_WIN1H, 0xFFFF);
     SetGpuReg(REG_OFFSET_WIN1V, 0xFFFF);
-    SetGpuReg(REG_OFFSET_BLDCNT, gOverworldBackgroundLayerFlags[1] | gOverworldBackgroundLayerFlags[2] | gOverworldBackgroundLayerFlags[3]
-                               | BLDCNT_TGT2_OBJ | BLDCNT_EFFECT_BLEND);
-    SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(13, 7));
+
+    InitBlend();
     InitOverworldBgs();
     ScheduleBgCopyTilemapToVram(1);
     ScheduleBgCopyTilemapToVram(2);
@@ -2149,6 +2176,7 @@ static void ResumeMap(bool32 a1)
         SetUpFieldTasks();
     RunOnResumeMapScript();
     TryStartMirageTowerPulseBlendEffect();
+    InitBlend();
 }
 
 static void InitObjectEventsLink(void)
@@ -3223,4 +3251,89 @@ static void SpriteCB_LinkPlayer(struct Sprite *sprite)
         sprite->invisible = ((sprite->data[7] & 4) >> 2);
         sprite->data[7]++;
     }
+}
+
+#define OVERLAY_FADE_IN_DELAY 6
+
+void SetOverlayAlpha(u8 eva, u8 evb)
+{
+    sOverlayState.eva = eva;
+    sOverlayState.evb = evb;
+    sOverlayState.targetEVA = eva;
+    sOverlayState.targetEVB = evb;
+}
+
+static void UNUSED FadeOverlay(u8 eva, u8 evb)
+{
+    sOverlayState.targetEVA = eva;
+    sOverlayState.targetEVB = evb;
+    sOverlayState.fadeDelay = OVERLAY_FADE_IN_DELAY;
+}
+
+void SetOverlayEnabled(bool8 active)
+{
+    sOverlayState.active = active;
+
+    if (active) 
+    {
+        UpdateBlend();
+        // FlagSet(FLAG_TRANSPARENT_OVERLAY_ENABLED);
+    } 
+    else
+    {
+        SetGpuReg(REG_OFFSET_WININ, WININ_WIN0_BG_ALL | WININ_WIN0_OBJ | WININ_WIN1_BG_ALL | WININ_WIN1_OBJ);
+        SetGpuReg(REG_OFFSET_BLDCNT, gOverworldBackgroundLayerFlags[1] | gOverworldBackgroundLayerFlags[2] | gOverworldBackgroundLayerFlags[3]
+                                | BLDCNT_TGT2_OBJ | BLDCNT_EFFECT_BLEND);
+        SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(13, 7));
+        // FlagClear(FLAG_TRANSPARENT_OVERLAY_ENABLED);
+    } 
+}
+
+static void InitBlend()
+{
+    if (gMapHeader.overlay == NULL) // ||  !FlagGet(FLAG_TRANSPARENT_OVERLAY_ENABLED) 
+    {
+        SetOverlayAlpha(13, 7);
+        SetOverlayEnabled(FALSE);
+    }
+    else 
+    {
+        SetOverlayAlpha(gMapHeader.overlay->initialEVA, gMapHeader.overlay->initialEVB);
+        SetOverlayEnabled(TRUE);
+    }
+}
+
+static void UpdateBlend(void)
+{
+    if (!sOverlayState.active)
+        return;
+
+    if (sOverlayState.eva != sOverlayState.targetEVA || sOverlayState.evb != sOverlayState.targetEVB)
+    {
+        if (sOverlayState.fadeDelay > 0)
+        {
+            sOverlayState.fadeDelay--;
+        }
+        else
+        {
+            sOverlayState.fadeDelay = 0;
+
+            if (sOverlayState.eva < sOverlayState.targetEVA)
+                sOverlayState.eva++;
+            else if (sOverlayState.eva > sOverlayState.targetEVA)
+                sOverlayState.eva--;
+
+            if (sOverlayState.evb < sOverlayState.targetEVB)
+                sOverlayState.evb++;
+            else if (sOverlayState.evb > sOverlayState.targetEVB)
+                sOverlayState.evb--;
+
+            sOverlayState.fadeDelay = OVERLAY_FADE_IN_DELAY;
+        }
+    }
+
+    SetGpuReg(REG_OFFSET_WININ, WININ_WIN0_BG_ALL | WININ_WIN0_OBJ | WININ_WIN1_BG_ALL | WININ_WIN1_OBJ | WININ_WIN0_CLR);
+    SetGpuReg(REG_OFFSET_BLDCNT, gOverworldBackgroundLayerFlags[1] | gOverworldBackgroundLayerFlags[2] | gOverworldBackgroundLayerFlags[3]
+                            | BLDCNT_TGT2_OBJ | BLDCNT_EFFECT_BLEND | BLDCNT_TGT1_BG1);
+    SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(sOverlayState.eva , sOverlayState.evb));
 }
