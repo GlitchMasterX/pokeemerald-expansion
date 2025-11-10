@@ -101,15 +101,15 @@ const struct Tileset gTileset_Fallarbor =
  
 };
 
-const struct Tileset gTileset_Fortree =
+const struct Tileset gTileset_Astraveil =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_Fortree,
-    .palettes = gTilesetPalettes_Fortree,
-    .metatiles = gMetatiles_Fortree,
-    .metatileAttributes = gMetatileAttributes_Fortree,
-    .callback = InitTilesetAnim_Fortree,
+    .tiles = gTilesetTiles_Astraveil,
+    .palettes = gTilesetPalettes_Astraveil,
+    .metatiles = gMetatiles_Astraveil,
+    .metatileAttributes = gMetatileAttributes_Astraveil,
+    .callback = InitTilesetAnim_Astraveil,
  
 };
 

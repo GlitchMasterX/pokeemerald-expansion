@@ -2558,14 +2558,14 @@ void GetFollowerAction(struct ScriptContext *ctx) // Essentially a big switch fo
     {
         switch (gMapHeader.regionMapSectionId)
         {
-        case MAPSEC_RUSTBORO_CITY:
+        case MAPSEC_EMBERVALE_CITY:
         case MAPSEC_PEWTER_CITY:
             multi = TYPE_ROCK;
             break;
-        case MAPSEC_SPARK:
+        case MAPSEC_IRONHEARTH_CITY:
             multi = TYPE_FIGHTING;
             break;
-        case MAPSEC_MAUVILLE_CITY:
+        case MAPSEC_SHIMMER_CITY:
         case MAPSEC_VERMILION_CITY:
             multi = TYPE_ELECTRIC;
             break;
@@ -2576,14 +2576,14 @@ void GetFollowerAction(struct ScriptContext *ctx) // Essentially a big switch fo
         case MAPSEC_ASTRALIS_ACADEMY:
             multi = TYPE_NORMAL;
             break;
-        case MAPSEC_FORTREE_CITY:
+        case MAPSEC_ASTRAVEIL_CITY:
             multi = TYPE_FLYING;
             break;
-        case MAPSEC_MOSSDEEP_CITY:
+        case MAPSEC_WILLOWMERE_VILLAGE:
         case MAPSEC_SAFFRON_CITY:
             multi = TYPE_PSYCHIC;
             break;
-        case MAPSEC_SOOTOPOLIS_CITY:
+        case MAPSEC_CINDERBROOK_TOWN:
         case MAPSEC_CERULEAN_CITY:
             multi = TYPE_WATER;
             break;

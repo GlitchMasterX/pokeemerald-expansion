@@ -163,23 +163,6 @@
 // gTileset_Forest
 #define METATILE_Forest_Door  0x3A4
 
-// gTileset_Fortree
-#define METATILE_Fortree_BridgeOverGrass_Lowered           0x24F
-#define METATILE_Fortree_BridgeOverGrass_Raised            0x24E
-#define METATILE_Fortree_BridgeOverTrees_Lowered           0x257
-#define METATILE_Fortree_BridgeOverTrees_Raised            0x256
-#define METATILE_Fortree_LongGrass_Root                    0x208
-#define METATILE_Fortree_SecretBase_LongGrass_BottomLeft   0x281
-#define METATILE_Fortree_SecretBase_LongGrass_BottomMid    0x282
-#define METATILE_Fortree_SecretBase_LongGrass_BottomRight  0x283
-#define METATILE_Fortree_SecretBase_LongGrass_TopLeft      0x279
-#define METATILE_Fortree_SecretBase_LongGrass_TopMid       0x27A
-#define METATILE_Fortree_SecretBase_LongGrass_TopRight     0x27B
-#define METATILE_Fortree_SecretBase_Shrub                  0x271
-#define METATILE_Fortree_SecretBase_ShrubOpen              0x278
-#define METATILE_Fortree_WoodBridge1_Bottom                0x29F
-#define METATILE_Fortree_WoodBridge1_Top                   0x297
-
 // gTileset_General
 #define METATILE_General_BlueCaveIndent        0x1B0
 #define METATILE_General_BlueCaveOpen          0x1B1
@@ -756,30 +739,45 @@
 #define METATILE_Underwater_RockWall     0x21E
 
 // Other
-#define METATILE_BattleArena_Door                       0x21B
-#define METATILE_BattleDome_Door_Corridor               0x25E
-#define METATILE_BattleDome_Door_Lobby                  0x209
-#define METATILE_BattleDome_Door_PreBattleRoom          0x20A
-#define METATILE_Dewford_Door                           0x225
-#define METATILE_Dewford_Door_BattleTower               0x25D
-#define METATILE_Facility_DataPad                       0x3E4
-#define METATILE_Facility_NewMauvilleDoor_Closed_Tile0  0x314
-#define METATILE_Facility_NewMauvilleDoor_Closed_Tile1  0x315
-#define METATILE_Facility_NewMauvilleDoor_Closed_Tile2  0x316
-#define METATILE_Facility_NewMauvilleDoor_Closed_Tile3  0x31C
-#define METATILE_Facility_NewMauvilleDoor_Closed_Tile4  0x31D
-#define METATILE_Facility_NewMauvilleDoor_Closed_Tile5  0x31E
-#define METATILE_Facility_NewMauvilleDoor_Open_Tile0    0x2C3
-#define METATILE_Facility_NewMauvilleDoor_Open_Tile1    0x2C4
-#define METATILE_Facility_NewMauvilleDoor_Open_Tile2    0x2C5
-#define METATILE_Facility_NewMauvilleDoor_Open_Tile3    0x2CB
-#define METATILE_Facility_NewMauvilleDoor_Open_Tile4    0x2CC
-#define METATILE_Facility_NewMauvilleDoor_Open_Tile5    0x2CD
-#define METATILE_RSMossdeepGym_RedArrow_Down            0x205
-#define METATILE_RSMossdeepGym_RedArrow_Left            0x20C
-#define METATILE_RSMossdeepGym_RedArrow_Right           0x204
-#define METATILE_RSMossdeepGym_RedArrow_Up              0x20D
-#define METATILE_RSMossdeepGym_Switch_Down              0x239
-#define METATILE_RSMossdeepGym_Switch_Up                0x238
+#define METATILE_BattleArena_Door                          0x21B
+#define METATILE_BattleDome_Door_Corridor                  0x25E
+#define METATILE_BattleDome_Door_Lobby                     0x209
+#define METATILE_BattleDome_Door_PreBattleRoom             0x20A
+#define METATILE_Dewford_Door                              0x225
+#define METATILE_Dewford_Door_BattleTower                  0x25D
+#define METATILE_Facility_DataPad                          0x3E4
+#define METATILE_Facility_NewMauvilleDoor_Closed_Tile0     0x314
+#define METATILE_Facility_NewMauvilleDoor_Closed_Tile1     0x315
+#define METATILE_Facility_NewMauvilleDoor_Closed_Tile2     0x316
+#define METATILE_Facility_NewMauvilleDoor_Closed_Tile3     0x31C
+#define METATILE_Facility_NewMauvilleDoor_Closed_Tile4     0x31D
+#define METATILE_Facility_NewMauvilleDoor_Closed_Tile5     0x31E
+#define METATILE_Facility_NewMauvilleDoor_Open_Tile0       0x2C3
+#define METATILE_Facility_NewMauvilleDoor_Open_Tile1       0x2C4
+#define METATILE_Facility_NewMauvilleDoor_Open_Tile2       0x2C5
+#define METATILE_Facility_NewMauvilleDoor_Open_Tile3       0x2CB
+#define METATILE_Facility_NewMauvilleDoor_Open_Tile4       0x2CC
+#define METATILE_Facility_NewMauvilleDoor_Open_Tile5       0x2CD
+#define METATILE_Fortree_BridgeOverGrass_Lowered           0x24F
+#define METATILE_Fortree_BridgeOverGrass_Raised            0x24E
+#define METATILE_Fortree_BridgeOverTrees_Lowered           0x257
+#define METATILE_Fortree_BridgeOverTrees_Raised            0x256
+#define METATILE_Fortree_LongGrass_Root                    0x208
+#define METATILE_Fortree_SecretBase_LongGrass_BottomLeft   0x281
+#define METATILE_Fortree_SecretBase_LongGrass_BottomMid    0x282
+#define METATILE_Fortree_SecretBase_LongGrass_BottomRight  0x283
+#define METATILE_Fortree_SecretBase_LongGrass_TopLeft      0x279
+#define METATILE_Fortree_SecretBase_LongGrass_TopMid       0x27A
+#define METATILE_Fortree_SecretBase_LongGrass_TopRight     0x27B
+#define METATILE_Fortree_SecretBase_Shrub                  0x271
+#define METATILE_Fortree_SecretBase_ShrubOpen              0x278
+#define METATILE_Fortree_WoodBridge1_Bottom                0x29F
+#define METATILE_Fortree_WoodBridge1_Top                   0x297
+#define METATILE_RSMossdeepGym_RedArrow_Down               0x205
+#define METATILE_RSMossdeepGym_RedArrow_Left               0x20C
+#define METATILE_RSMossdeepGym_RedArrow_Right              0x204
+#define METATILE_RSMossdeepGym_RedArrow_Up                 0x20D
+#define METATILE_RSMossdeepGym_Switch_Down                 0x239
+#define METATILE_RSMossdeepGym_Switch_Up                   0x238
 
 #endif // GUARD_METATILE_LABELS_H

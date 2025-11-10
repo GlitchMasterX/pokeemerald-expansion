@@ -42,14 +42,14 @@
       "blockdata_filepath": "data/layouts/RustboroCity/map.bin"
     },
     {
-      "id": "LAYOUT_FORTREE_CITY",
-      "name": "FortreeCity_Layout",
-      "width": 40,
-      "height": 20,
+      "id": "LAYOUT_ASTRAVEIL_CITY",
+      "name": "AstraveilCity_Layout",
+      "width": 62,
+      "height": 67,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Fortree",
-      "border_filepath": "data/layouts/FortreeCity/border.bin",
-      "blockdata_filepath": "data/layouts/FortreeCity/map.bin"
+      "secondary_tileset": "gTileset_Astraveil",
+      "border_filepath": "data/layouts/AstraveilCity/border.bin",
+      "blockdata_filepath": "data/layouts/AstraveilCity/map.bin"
     },
     {
       "id": "LAYOUT_LILYCOVE_CITY",
@@ -327,7 +327,7 @@
       "width": 40,
       "height": 140,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Fortree",
+      "secondary_tileset": "gTileset_Astraveil",
       "border_filepath": "data/layouts/Route119/border.bin",
       "blockdata_filepath": "data/layouts/Route119/map.bin"
     },
@@ -337,7 +337,7 @@
       "width": 40,
       "height": 100,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Fortree",
+      "secondary_tileset": "gTileset_Astraveil",
       "border_filepath": "data/layouts/Route120/border.bin",
       "blockdata_filepath": "data/layouts/Route120/map.bin"
     },
@@ -944,12 +944,12 @@
     {
       "id": "LAYOUT_FORTREE_CITY_GYM",
       "name": "FortreeCity_Gym_Layout",
-      "width": 20,
-      "height": 25,
+      "width": 8,
+      "height": 6,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_FortreeGym",
-      "border_filepath": "data/layouts/FortreeCity_Gym/border.bin",
-      "blockdata_filepath": "data/layouts/FortreeCity_Gym/map.bin"
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/FortreeCity_House1/border.bin",
+      "blockdata_filepath": "data/layouts/FortreeCity_House1/map.bin"
     },
     {
       "id": "LAYOUT_FORTREE_CITY_HOUSE2",
@@ -3977,7 +3977,7 @@
       "width": 29,
       "height": 26,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Fortree",
+      "secondary_tileset": "gTileset_Astraveil",
       "border_filepath": "data/layouts/FarawayIsland_Interior/border.bin",
       "blockdata_filepath": "data/layouts/FarawayIsland_Interior/map.bin"
     },

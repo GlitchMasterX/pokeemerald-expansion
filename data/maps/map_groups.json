@@ -12,7 +12,7 @@
     "gMapGroup_IndoorSlateport",
     "gMapGroup_IndoorMauville",
     "gMapGroup_IndoorRustboro",
-    "gMapGroup_IndoorFortree",
+    "gMapGroup_IndoorAstraveil",
     "gMapGroup_IndoorLilycove",
     "gMapGroup_IndoorMossdeep",
     "gMapGroup_IndoorSootopolis",
@@ -40,7 +40,7 @@
     "SlateportCity",
     "MauvilleCity",
     "RustboroCity",
-    "FortreeCity",
+    "AstraveilCity",
     "LilycoveCity",
     "MossdeepCity",
     "SootopolisCity",
@@ -213,7 +213,7 @@
     "RustboroCity_Flat2_3F",
     "RustboroCity_House3"
   ],
-  "gMapGroup_IndoorFortree": [
+  "gMapGroup_IndoorAstraveil": [
     "FortreeCity_House1",
     "FortreeCity_Gym",
     "FortreeCity_PokemonCenter_1F",

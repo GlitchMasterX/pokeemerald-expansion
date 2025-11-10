@@ -2,343 +2,343 @@
   "map_sections": [
     {
       "id": "MAPSEC_LUXURA_ISLAND",
-      "name": "LUXURA ISLAND",
-      "x": 4,
-      "y": 11,
+      "name": "Luxura Island",
+      "x": 24,
+      "y": 10,
       "width": 1,
       "height": 1
     },
     {
       "id": "MAPSEC_LUXURA_MANSION",
-      "name": "LUXURA MANSION",
+      "name": "Luxura Mansion",
       "x": 4,
       "y": 9,
       "width": 1,
       "height": 1
     },
     {
-      "id": "MAPSEC_SPARK",
-      "name": "SPARK'S BASE",
-      "x": 2,
-      "y": 14,
+      "id": "MAPSEC_IRONHEARTH_CITY",
+      "name": "Ironhearth City",
+      "x": 1,
+      "y": 6,
       "width": 1,
       "height": 1
     },
     {
       "id": "MAPSEC_LUXURA_VEILWOOD",
-      "name": "LUXURA VEILWOOD",
-      "x": 5,
-      "y": 3,
+      "name": "Luxura Veilwood",
+      "x": 25,
+      "y": 10,
       "width": 1,
       "height": 1
     },
     {
       "id": "MAPSEC_MT_CINDER",
-      "name": "MT. CINDER",
-      "x": 3,
-      "y": 0,
+      "name": "Mt. Cinder",
+      "x": 8,
+      "y": 3,
       "width": 1,
       "height": 1
     },
     {
-      "id": "MAPSEC_VERDANTURF_TOWN",
-      "name": "VERDANTURF TOWN",
-      "x": 4,
-      "y": 6,
+      "id": "MAPSEC_LUMINAE_CITY",
+      "name": "Luminae City",
+      "x": 9,
+      "y": 12,
       "width": 1,
       "height": 1
     },
     {
-      "id": "MAPSEC_PACIFIDLOG_TOWN",
-      "name": "PACIFIDLOG TOWN",
-      "x": 17,
-      "y": 10,
-      "width": 1,
-      "height": 1
-    },
-    {
-      "id": "MAPSEC_ASTRALIS_ACADEMY",
-      "name": "ASTRALIS ACADEMY",
-      "x": 1,
+      "id": "MAPSEC_VERDANTIA_TOWN",
+      "name": "Verdantia Town",
+      "x": 15,
       "y": 9,
       "width": 1,
       "height": 1
     },
     {
-      "id": "MAPSEC_SLATEPORT_CITY",
-      "name": "SLATEPORT CITY",
-      "x": 8,
+      "id": "MAPSEC_ASTRALIS_ACADEMY",
+      "name": "Astralis Academy",
+      "x": 20,
+      "y": 6,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_VOLTHAVEN_CITY",
+      "name": "Volthaven City",
+      "x": 6,
+      "y": 3,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_SHIMMER_CITY",
+      "name": "Shimmer City",
+      "x": 4,
       "y": 10,
       "width": 1,
-      "height": 2
-    },
-    {
-      "id": "MAPSEC_MAUVILLE_CITY",
-      "name": "MAUVILLE CITY",
-      "x": 8,
-      "y": 6,
-      "width": 2,
       "height": 1
     },
     {
-      "id": "MAPSEC_RUSTBORO_CITY",
-      "name": "RUSTBORO CITY",
-      "x": 0,
-      "y": 5,
-      "width": 1,
-      "height": 2
-    },
-    {
-      "id": "MAPSEC_FORTREE_CITY",
-      "name": "FORTREE CITY",
-      "x": 12,
-      "y": 0,
+      "id": "MAPSEC_EMBERVALE_CITY",
+      "name": "Embervale City",
+      "x": 11,
+      "y": 2,
       "width": 1,
       "height": 1
     },
     {
-      "id": "MAPSEC_LILYCOVE_CITY",
-      "name": "LILYCOVE CITY",
-      "x": 18,
+      "id": "MAPSEC_ASTRAVEIL_CITY",
+      "name": "Astraveil City",
+      "x": 9,
+      "y": 8,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_NOCTURNE_CITY",
+      "name": "Nocturne City",
+      "x": 14,
+      "y": 1,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_WILLOWMERE_VILLAGE",
+      "name": "Willowmere Village",
+      "x": 11,
+      "y": 10,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_CINDERBROOK_TOWN",
+      "name": "Cinderbrook Town",
+      "x": 17,
+      "y": 12,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_FROSTPEAK_VILLAGE",
+      "name": "Frostpeak Village",
+      "x": 16,
       "y": 3,
-      "width": 2,
+      "width": 1,
       "height": 1
     },
     {
-      "id": "MAPSEC_MOSSDEEP_CITY",
-      "name": "MOSSDEEP CITY",
-      "x": 24,
-      "y": 5,
-      "width": 2,
-      "height": 1
-    },
-    {
-      "id": "MAPSEC_SOOTOPOLIS_CITY",
-      "name": "SOOTOPOLIS CITY",
+      "id": "MAPSEC_LUNAR_GROVE",
+      "name": "Lunar Grove",
       "x": 21,
       "y": 7,
       "width": 1,
       "height": 1
     },
     {
-      "id": "MAPSEC_EVER_GRANDE_CITY",
-      "name": "EVER GRANDE CITY",
-      "x": 27,
-      "y": 8,
+      "id": "MAPSEC_ASHVEIL_TOWN",
+      "name": "Ashveil Town",
+      "x": 9,
+      "y": 4,
       "width": 1,
-      "height": 2
+      "height": 1
     },
     {
-      "id": "MAPSEC_LUNAR_GROVE",
-      "name": "LUNAR GROVE",
-      "x": 4,
+      "id": "MAPSEC_THORNVALE_VILLAGE",
+      "name": "Thornvale Village",
+      "x": 19,
       "y": 10,
       "width": 1,
       "height": 1
     },
     {
-      "id": "MAPSEC_ROUTE_102",
-      "name": "ROUTE 102",
-      "x": 2,
-      "y": 9,
-      "width": 2,
-      "height": 1
-    },
-    {
-      "id": "MAPSEC_ROUTE_103",
-      "name": "ROUTE 103",
-      "x": 4,
+      "id": "MAPSEC_MYSTRAL_TOWN",
+      "name": "Mystral Town",
+      "x": 13,
       "y": 8,
-      "width": 4,
+      "width": 1,
       "height": 1
     },
     {
-      "id": "MAPSEC_ROUTE_104",
-      "name": "ROUTE 104",
-      "x": 0,
-      "y": 7,
+      "id": "MAPSEC_DUSKHOLLOW_VILLAGE",
+      "name": "Duskhollow Village",
+      "x": 6,
+      "y": 14,
       "width": 1,
-      "height": 3
-    },
-    {
-      "id": "MAPSEC_ROUTE_105",
-      "name": "ROUTE 105",
-      "x": 0,
-      "y": 10,
-      "width": 1,
-      "height": 3
-    },
-    {
-      "id": "MAPSEC_ROUTE_106",
-      "name": "ROUTE 106",
-      "x": 0,
-      "y": 13,
-      "width": 2,
       "height": 1
     },
     {
-      "id": "MAPSEC_ROUTE_107",
-      "name": "ROUTE 107",
+      "id": "MAPSEC_SEASIDE_HAVEN",
+      "name": "Seaside Haven",
+      "x": 13,
+      "y": 14,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_WHISPERING_WOODS",
+      "name": "Whispering Woods",
       "x": 3,
       "y": 14,
       "width": 3,
       "height": 1
     },
     {
-      "id": "MAPSEC_ROUTE_108",
-      "name": "ROUTE 108",
+      "id": "MAPSEC_SHAYMIN_VILLAGE",
+      "name": "Shaymin Village",
       "x": 6,
       "y": 14,
       "width": 2,
       "height": 1
     },
     {
-      "id": "MAPSEC_ROUTE_109",
-      "name": "ROUTE 109",
+      "id": "MAPSEC_CRYSTALLINE_CAVERNS",
+      "name": "Crystalline Caverns",
       "x": 8,
       "y": 12,
       "width": 1,
       "height": 3
     },
     {
-      "id": "MAPSEC_ROUTE_110",
-      "name": "ROUTE 110",
-      "x": 8,
-      "y": 7,
+      "id": "MAPSEC_SCORCHED_WASTES",
+      "name": "Scorched Wastes",
+      "x": 4,
+      "y": 8,
       "width": 1,
-      "height": 3
+      "height": 1
     },
     {
-      "id": "MAPSEC_ROUTE_111",
-      "name": "ROUTE 111",
+      "id": "MAPSEC_FROSTVEIL_PEAK",
+      "name": "Frostveil Peaks",
       "x": 8,
       "y": 0,
       "width": 1,
       "height": 6
     },
     {
-      "id": "MAPSEC_ROUTE_112",
-      "name": "ROUTE 112",
+      "id": "MAPSEC_ABYSSAL_TRENCH",
+      "name": "Abyssal Trench",
       "x": 6,
       "y": 3,
       "width": 2,
       "height": 1
     },
     {
-      "id": "MAPSEC_ROUTE_113",
-      "name": "ROUTE 113",
+      "id": "MAPSEC_NETHERVEIL_CITY",
+      "name": "Netherveil City",
       "x": 4,
       "y": 0,
       "width": 4,
       "height": 1
     },
     {
-      "id": "MAPSEC_ROUTE_114",
-      "name": "ROUTE 114",
+      "id": "MAPSEC_POINT_ALPHA",
+      "name": "Point Alpha",
       "x": 1,
       "y": 0,
       "width": 2,
       "height": 3
     },
     {
-      "id": "MAPSEC_ROUTE_115",
-      "name": "ROUTE 115",
+      "id": "MAPSEC_POINT_BETA",
+      "name": "Point Beta",
       "x": 0,
       "y": 2,
       "width": 1,
       "height": 3
     },
     {
-      "id": "MAPSEC_ROUTE_116",
-      "name": "ROUTE 116",
+      "id": "MAPSEC_POINT_GAMMA",
+      "name": "Point Gamma",
       "x": 1,
       "y": 5,
       "width": 4,
       "height": 1
     },
     {
-      "id": "MAPSEC_ROUTE_117",
-      "name": "ROUTE 117",
+      "id": "MAPSEC_POINT_DELTA",
+      "name": "Point Delta",
       "x": 5,
       "y": 6,
       "width": 3,
       "height": 1
     },
     {
-      "id": "MAPSEC_ROUTE_118",
-      "name": "ROUTE 118",
+      "id": "MAPSEC_POINT_EPSILON",
+      "name": "Point Epsilon",
       "x": 10,
       "y": 6,
       "width": 2,
       "height": 1
     },
     {
-      "id": "MAPSEC_ROUTE_119",
-      "name": "ROUTE 119",
-      "x": 11,
-      "y": 0,
+      "id": "MAPSEC_LAKE_SERENITY",
+      "name": "Lake Serenity",
+      "x": 20,
+      "y": 8,
       "width": 1,
-      "height": 6
-    },
-    {
-      "id": "MAPSEC_ROUTE_120",
-      "name": "ROUTE 120",
-      "x": 13,
-      "y": 0,
-      "width": 1,
-      "height": 4
-    },
-    {
-      "id": "MAPSEC_ROUTE_121",
-      "name": "ROUTE 121",
-      "x": 14,
-      "y": 3,
-      "width": 4,
       "height": 1
     },
     {
-      "id": "MAPSEC_ROUTE_122",
-      "name": "ROUTE 122",
-      "x": 16,
+      "id": "MAPSEC_REDEMPTION_ISLE",
+      "name": "Redemption Isle",
+      "x": 0,
+      "y": 14,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_ROYAL_CAPITAL",
+      "name": "Royal Capital",
+      "x": 24,
       "y": 4,
       "width": 1,
-      "height": 2
-    },
-    {
-      "id": "MAPSEC_ROUTE_123",
-      "name": "ROUTE 123",
-      "x": 12,
-      "y": 6,
-      "width": 5,
       "height": 1
     },
     {
-      "id": "MAPSEC_ROUTE_124",
-      "name": "ROUTE 124",
-      "x": 20,
-      "y": 3,
-      "width": 4,
-      "height": 3
+      "id": "MAPSEC_SILVERPINE_VILLAGE",
+      "name": "Silverpine Village",
+      "x": 26,
+      "y": 7,
+      "width": 1,
+      "height": 1
     },
     {
-      "id": "MAPSEC_ROUTE_125",
-      "name": "ROUTE 125",
+      "id": "MAPSEC_CRYSTALSHORE_TOWN",
+      "name": "Crystalshore Town",
       "x": 24,
-      "y": 3,
-      "width": 2,
-      "height": 2
-    },
-    {
-      "id": "MAPSEC_ROUTE_126",
-      "name": "ROUTE 126",
-      "x": 20,
       "y": 6,
-      "width": 3,
-      "height": 3
+      "width": 1,
+      "height": 1
     },
     {
-      "id": "MAPSEC_ROUTE_127",
-      "name": "ROUTE 127",
+      "id": "MAPSEC_HIGHPEAK_MONESTERY",
+      "name": "Highpeak Monastery",
+      "x": 26,
+      "y": 2,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_EMBERWATCH_FORT",
+      "name": "Emberwatch Fort",
+      "x": 23,
+      "y": 2,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_STARFALL_PLAINS",
+      "name": "Starfall Plains",
+      "x": 27,
+      "y": 4,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_FORGOTTEN_WOODS",
+      "name": "Forgotten Woods",
       "x": 23,
       "y": 6,
       "width": 3,
@@ -889,7 +889,11 @@
     },
     {
       "id": "MAPSEC_POKEMON_LEAGUE",
-      "name": "POKéMON LEAGUE"
+      "name": "POKéMON LEAGUE",
+      "x": 21,
+      "y": 2,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_ROCK_TUNNEL",
