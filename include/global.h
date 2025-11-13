@@ -578,6 +578,7 @@ struct SaveBlock2
     /*0x11*/ u8 playTimeSeconds;
     /*0x12*/ u8 playTimeVBlanks;
              u16 optionsInstantTextOff:1; // whether instant text is disabled
+             u16 optionsTextSpeed:3;
              u8 optionsButtonMode;  // OPTIONS_BUTTON_MODE_[NORMAL/LR/L_EQUALS_A]
              u16 optionsWindowFrameType:5; // Specifies one of the 20 decorative borders for text boxes
              u16 optionsFollowersOff:1; // whether ow followers are disabled
@@ -1082,6 +1083,9 @@ struct SaveBlock1
     /*0x2E*/ u8 weather;
     /*0x2F*/ u8 weatherCycleStage;
     /*0x30*/ u8 flashLevel;
+             bool8 isPlayerTransformed;
+             u16 transformedSpecies;
+             bool8 transformedIsShiny;
     /*0x31*/ //u8 padding1;
     /*0x32*/ u16 mapLayoutId;
     /*0x34*/ u16 mapView[0x100];

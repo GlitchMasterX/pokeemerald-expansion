@@ -611,6 +611,12 @@ luspark:
 	walk_left
 	step_end
 
+Undotransform::
+# 243 "data/maps/Luxuradining/scripts.pory"
+	revertplayer
+	return
+
+
 # 68 "data/maps/Luxuradining/scripts.pory"
 Youwake_Movement_0:
 # 68 "data/maps/Luxuradining/scripts.pory"

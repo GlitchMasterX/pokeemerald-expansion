@@ -1615,7 +1615,7 @@
 #define FLAG_NEW_FLAG47                             (SYSTEM_FLAGS + 0xEE) // Unused Flag
 #define FLAG_NEW_FLAG48                             (SYSTEM_FLAGS + 0xEF) // Unused Flag
 
-#define FLAG_MORE_NEW_FLAG1                              (FLAG_NEW_FLAG48 + 0x0) // Unused Flag
+#define FLAG_DISABLE_FOLLOWERS                              (FLAG_NEW_FLAG48 + 0x0) // Unused Flag
 #define FLAG_MORE_NEW_FLAG2                              (FLAG_NEW_FLAG48 + 0x1) // Unused Flag
 #define FLAG_MORE_NEW_FLAG3                              (FLAG_NEW_FLAG48 + 0x2) // Unused Flag
 #define FLAG_MORE_NEW_FLAG4                              (FLAG_NEW_FLAG48 + 0x3) // Unused Flag

@@ -48,6 +48,9 @@
 #include "oras_dowse.h"
 #include "palette.h"
 #include "play_time.h"
+#include "party_menu.h"
+#include "sprite.h"
+#include "pokemon.h"
 #include "random.h"
 #include "roamer.h"
 #include "rotating_gate.h"
@@ -79,6 +82,7 @@
 #include "constants/songs.h"
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
+#include "constants/party_menu.h"
 #include "battle_pike.h"
 #include "battle_pyramid_bag.h"
 #include "ui_startmenu_full.h"
@@ -1751,6 +1755,40 @@ u8 UpdateSpritePaletteWithTime(u8 paletteNum)
     return paletteNum;
 }
 
+void ApplyPlayerTransformationIfNeeded(void)
+{
+    if (!gSaveBlock1Ptr->isPlayerTransformed)
+        return;
+
+    struct ObjectEvent *playerObj = &gObjectEvents[gPlayerAvatar.objectEventId];
+    struct Sprite *sprite = &gSprites[playerObj->spriteId];
+
+    u8 slot = VarGet(VAR_0x8004); // optional: keep track of last chosen slot
+    struct Pokemon *mon = &gPlayerParty[slot];
+
+    u16 species = gSaveBlock1Ptr->transformedSpecies;
+    bool8 shiny = gSaveBlock1Ptr->transformedIsShiny;
+
+    // Set the graphics for the transformed Pokémon
+    u16 gfxId = species + OBJ_EVENT_MON;
+    ObjectEventSetGraphicsId(playerObj, gfxId);
+
+    // Load correct palette
+    struct SpritePalette spritePalette;
+    spritePalette.data = shiny ? gSpeciesInfo[species].overworldShinyPalette
+                               : gSpeciesInfo[species].overworldPalette;
+    spritePalette.tag = gfxId;
+    sprite->oam.paletteNum = LoadSpritePalette(&spritePalette);
+
+    // Ensure sprite size/shape matches player avatar
+    sprite->oam.shape = gSprites[gPlayerAvatar.spriteId].oam.shape;
+    sprite->oam.size = gSprites[gPlayerAvatar.spriteId].oam.size;
+
+    // Sync facing direction
+    PlayerFaceDirection(GetPlayerFacingDirection());
+}
+
+
 static void OverworldBasic(void)
 {
     ScriptContext_RunScript();
@@ -1789,6 +1827,7 @@ void CB2_OverworldBasic(void)
 void CB2_Overworld(void)
 {
     bool32 fading = (gPaletteFade.active != 0);
+    ApplyPlayerTransformationIfNeeded();
     if (fading)
         SetVBlankCallback(NULL);
     OverworldBasic();
@@ -2496,6 +2535,9 @@ static void InitObjectEventsLink(void)
     TryRunOnWarpIntoMapScript();
 }
 
+
+
+
 static void InitObjectEventsLocal(void)
 {
     u16 x, y;
@@ -2509,6 +2551,7 @@ static void InitObjectEventsLocal(void)
     InitPlayerAvatar(x, y, player->direction);
     SetPlayerAvatarTransitionFlags(player->transitionFlags);
     ResetInitialPlayerAvatarState();
+    ApplyPlayerTransformationIfNeeded();
     TrySpawnObjectEvents(0, 0, TRUE);
     FollowerNPC_HandleSprite();
     UpdateFollowingPokemon();
@@ -3796,6 +3839,6 @@ void CB2_ReturnToFullScreenStartMenu(void)
         SetMainCallback2(CB2_ReturnToFullScreenStartMenu);
         return;
     }
-
+    ApplyPlayerTransformationIfNeeded();
 	StartMenuFull_Init(CB2_ReturnToField);
 }

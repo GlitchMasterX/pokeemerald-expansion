@@ -1968,27 +1968,15 @@
 	.byte SCR_OP_POKEMARTOUTFIT
 	.4byte \products
 	.endm
+    
+	@wear the chosen outfit
+	.macro wearoutfit outfitId:req
+	.byte SCR_OP_WEAROUTFIT
+	.2byte \outfitId
+	.endm
 
 
-    @ Copy/Set a metatile from a source map into the current map.
-@ Arguments:
-@   mapGroup, mapNum      - source map
-@   srcX, srcY            - tile coordinates on source map
-@   dstX, dstY            - destination coordinates on current map
-@   metatileId            - 0xFFFF = use source map tile, otherwise override
-@   impassable            - 0 = normal, 1 = impassable
-.macro copymetatileex mapGroup:req, mapNum:req, srcX:req, srcY:req, dstX:req, dstY:req, metatileId:req, impassable:req
-    .byte SCR_OP_COPYMETATILEEX
-    .2byte \mapGroup
-    .2byte \mapNum
-    .2byte \srcX
-    .2byte \srcY
-    .2byte \dstX
-    .2byte \dstY
-    .2byte \metatileId
-    .2byte \impassable
-.endm
-
+     
 @ Supplementary
 
 	.macro goto_if_unset flag:req, dest:req
@@ -2305,6 +2293,8 @@
 	.macro unlockoutfit outfitId:req
 	toggleoutfit \outfitId, OUTFIT_TOGGLE_UNLOCK
 	.endm
+     
+    
 
 	.macro lockoutfit outfitId:req
 	toggleoutfit \outfitId, OUTFIT_TOGGLE_LOCK
@@ -2630,6 +2620,18 @@
 
 	.macro checkspecies_choose speciesId:req
 	checkspecies \speciesId, OPEN_PARTY_SCREEN
+	.endm
+
+   @ Transform into pokemon
+	.macro species_transform 
+		special ChoosePartyMon
+		waitstate
+		callnative ScrCmd_TransformPlayerToChosenPokemon
+	.endm
+
+    @revert
+	.macro revertplayer
+	callnative ScrCmd_RevertPlayerToHuman
 	.endm
 
 	@ Gets the facing direction of a given event object and stores it in the variable dest.

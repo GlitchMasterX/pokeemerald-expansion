@@ -800,6 +800,12 @@ m2:
 	face_right
 	step_end
 
+Transform::
+# 373 "data/maps/LuxuraIsland1/scripts.pory"
+	species_transform
+	return
+
+
 # 26 "data/maps/LuxuraIsland1/scripts.pory"
 forest_Movement_0:
 # 26 "data/maps/LuxuraIsland1/scripts.pory"

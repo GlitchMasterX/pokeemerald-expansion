@@ -368,3 +368,7 @@ movement m2 {
  	walk_up
 	face_right
 }
+
+script Transform{
+	species_transform
+}

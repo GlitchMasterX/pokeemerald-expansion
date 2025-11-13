@@ -238,3 +238,7 @@ script atkspark {
 movement luspark {
 	walk_left
 }
+
+script Undotransform {
+	revertplayer
+}

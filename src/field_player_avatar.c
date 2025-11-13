@@ -1068,8 +1068,10 @@ static void PlayerAvatarTransition_ReturnToField(struct ObjectEvent *objEvent)
     gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_CONTROLLABLE;
 }
 
+
 void UpdatePlayerAvatarTransitionState(void)
 {
+    
     gPlayerAvatar.tileTransitionState = T_NOT_MOVING;
     if (PlayerIsAnimActive())
     {
@@ -1182,9 +1184,9 @@ void PlayerWalkFaster(u8 direction)
 
 static void PlayerRun(u8 direction)
 {
-    if(gOutfits[gSaveBlock2Ptr->currOutfitId].hasRunAnims==FALSE){
+    if ((gOutfits[gSaveBlock2Ptr->currOutfitId].hasRunAnims == FALSE) || (gSaveBlock1Ptr->isPlayerTransformed == TRUE)) {
     PlayerSetAnimId(GetWalkFastMovementAction(direction), COPY_MOVE_WALK);
-    }
+}
     else{
     PlayerSetAnimId(GetPlayerRunMovementAction(direction), COPY_MOVE_WALK);
 }
