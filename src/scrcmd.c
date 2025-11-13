@@ -35,6 +35,7 @@
 #include "menu.h"
 #include "money.h"
 #include "move.h"
+#include "move_relearner.h"
 #include "mystery_event_script.h"
 #include "outfit_menu.h"
 #include "palette.h"
@@ -3128,6 +3129,19 @@ bool8 ScrCmd_toggleoutfit(struct ScriptContext *ctx)
     return TRUE;
 }
 
+void ScrCmd_WearOutfit(void)
+{
+    u32 outfitId = gSpecialVar_0x8004, gfxId;
+    struct ObjectEvent *player = &gObjectEvents[gPlayerAvatar.objectEventId];
+
+    gSaveBlock2Ptr->currOutfitId = outfitId;
+    gfxId = GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(gSaveBlock2Ptr->currOutfitId,
+                                                              PLAYER_AVATAR_STATE_NORMAL,
+                                                              gSaveBlock2Ptr->playerGender);
+    ObjectEventSetGraphicsId(player, gfxId);
+    ObjectEventTurn(player, player->movementDirection);
+}
+
 bool8 ScrCmd_getoutfitstatus(struct ScriptContext *ctx)
 {
     u16 outfitId = VarGet(ScriptReadHalfword(ctx));
@@ -3261,6 +3275,68 @@ bool8 Scrcmd_checkspecies_choose(struct ScriptContext *ctx)
 
     gSpecialVar_Result = (GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES) == givenSpecies);
 
+    return FALSE;
+}
+
+bool8 ScrCmd_TransformPlayerToChosenPokemon(struct ScriptContext *ctx)
+{
+    u8 slot = VarGet(VAR_0x8004);
+    if (slot >= PARTY_SIZE)
+        return FALSE;
+
+    struct Pokemon *mon = &gPlayerParty[slot];
+    u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+    bool8 isShiny = GetMonData(mon, MON_DATA_IS_SHINY, NULL);
+
+    struct ObjectEvent *playerObj = &gObjectEvents[gPlayerAvatar.objectEventId];
+    struct Sprite *sprite = &gSprites[playerObj->spriteId];
+
+    gSaveBlock1Ptr->isPlayerTransformed = TRUE;
+    gSaveBlock1Ptr->transformedSpecies = species;
+    gSaveBlock1Ptr->transformedIsShiny = isShiny;
+    FlagSet(FLAG_DISABLE_FOLLOWERS);
+
+    u16 gfxId = species + OBJ_EVENT_MON;
+    ObjectEventSetGraphicsId(playerObj, gfxId);
+
+    struct SpritePalette spritePalette;
+    spritePalette.data = isShiny ? gSpeciesInfo[species].overworldShinyPalette
+                                 : gSpeciesInfo[species].overworldPalette;
+    spritePalette.tag = gfxId;
+    sprite->oam.paletteNum = LoadSpritePalette(&spritePalette);
+
+    // --- Smoothness fix ---
+    // Reapply movement type logic to make animation smooth and natural
+    playerObj->movementType = MOVEMENT_TYPE_FOLLOW_PLAYER; // or MOVEMENT_TYPE_FOLLOW_PLAYER if you want bobbing
+    playerObj->singleMovementActive = FALSE;
+    playerObj->facingDirectionLocked = FALSE;
+    sprite->data[3] = 0;
+    sprite->data[5] = 0;
+    sprite->y2 = 0;
+
+    // Sync facing & idle animation
+    PlayerFaceDirection(GetPlayerFacingDirection());
+    StartSpriteAnim(sprite, GetFaceDirectionAnimNum(GetPlayerFacingDirection()));
+
+    ResetInitialPlayerAvatarState();
+    RemoveFollowingPokemon();
+
+    return FALSE;
+}
+
+
+bool8 ScrCmd_RevertPlayerToHuman(struct ScriptContext *ctx)
+{
+    struct ObjectEvent *playerObj = &gObjectEvents[gPlayerAvatar.objectEventId];
+
+    gSaveBlock1Ptr->isPlayerTransformed = FALSE;
+    FlagClear(FLAG_DISABLE_FOLLOWERS);
+
+    // Restore default player graphics
+    ObjectEventSetGraphicsId(playerObj, OBJ_EVENT_GFX_BRENDAN_NORMAL);
+    ResetInitialPlayerAvatarState();
+    PlayerFaceDirection(GetPlayerFacingDirection());
+    
     return FALSE;
 }
 
@@ -3464,4 +3540,38 @@ bool8 ScrCmd_warp_continue_script(struct ScriptContext *ctx)
     WarpIntoMap();
     SetMainCallback2(CB2_LoadMap);
     return TRUE;
+}
+bool8 ScrCmd_setmoverelearnerstate(struct ScriptContext *ctx)
+{
+    enum MoveRelearnerStates state = VarGet(ScriptReadHalfword(ctx));
+
+    Script_RequestEffects(SCREFF_V1);
+
+    gMoveRelearnerState = state;
+    return FALSE;
+}
+
+bool8 ScrCmd_getmoverelearnerstate(struct ScriptContext *ctx)
+{
+    u32 varId = ScriptReadHalfword(ctx);
+
+    Script_RequestEffects(SCREFF_V1);
+    Script_RequestWriteVar(varId);
+
+    u16 *varPointer = GetVarPointer(varId);
+    *varPointer = gMoveRelearnerState;
+    return FALSE;
+}
+
+bool8 ScrCmd_istmrelearneractive(struct ScriptContext *ctx)
+{
+    const u8 *ptr = (const u8 *)ScriptReadWord(ctx);
+
+    Script_RequestEffects(SCREFF_V1);
+
+    if ((P_TM_MOVES_RELEARNER || P_ENABLE_MOVE_RELEARNERS)
+     && (P_ENABLE_ALL_TM_MOVES || IsBagPocketNonEmpty(POCKET_TM_HM)))
+        ScriptCall(ctx, ptr);
+
+    return FALSE;
 }

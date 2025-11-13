@@ -1,8 +1,8 @@
 #include "global.h"
 #include "main.h"
-#include "window.h"
 #include "text.h"
 #include "sound.h"
+#include "window.h"
 
 // This file handles the braille font.
 // For printing braille messages, see ScrCmd_braillemessage
@@ -17,6 +17,7 @@ u16 FontFunc_Braille(struct TextPrinter *textPrinter)
     u16 char_;
     struct TextPrinterSubStruct *subStruct;
     subStruct = (struct TextPrinterSubStruct *)(&textPrinter->subStructFields);
+    u32 scrollSpeed = GetPlayerTextScrollSpeed();
 
     switch (textPrinter->state)
     {
@@ -159,15 +160,15 @@ u16 FontFunc_Braille(struct TextPrinter *textPrinter)
     case RENDER_STATE_SCROLL:
         if (textPrinter->scrollDistance)
         {
-            if (textPrinter->scrollDistance < 4)
+            if (textPrinter->scrollDistance < scrollSpeed)
             {
                 ScrollWindow(textPrinter->printerTemplate.windowId, 0, textPrinter->scrollDistance, PIXEL_FILL(textPrinter->printerTemplate.bgColor));
                 textPrinter->scrollDistance = 0;
             }
             else
             {
-                ScrollWindow(textPrinter->printerTemplate.windowId, 0, 4, PIXEL_FILL(textPrinter->printerTemplate.bgColor));
-                textPrinter->scrollDistance -= 4;
+                ScrollWindow(textPrinter->printerTemplate.windowId, 0, scrollSpeed, PIXEL_FILL(textPrinter->printerTemplate.bgColor));
+                textPrinter->scrollDistance -= scrollSpeed;
             }
             CopyWindowToVram(textPrinter->printerTemplate.windowId, COPYWIN_GFX);
         }

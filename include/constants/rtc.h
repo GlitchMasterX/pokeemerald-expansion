@@ -81,7 +81,7 @@
     #define NIGHT_HOUR_END     6
 #endif
 
-// TIMES_OF_DAY_COUNT must be last
+// TIMES_OF_DAY_COUNT must be last or things will break
 enum TimeOfDay
 {
     TIME_MORNING,
@@ -97,5 +97,10 @@ enum TimeOfDay
 #define TIME_DAY_FLAG          (1 << 1)
 #define TIME_EVENING_FLAG      (1 << 2)
 #define TIME_NIGHT_FLAG        (1 << 3)
+
+// for incrementing/decrementing
+#define TIME_FIRST 0
+#define TIME_LAST (TIMES_OF_DAY_COUNT - 1)
+
 
 #endif // GUARD_CONSTANTS_RTC_H
