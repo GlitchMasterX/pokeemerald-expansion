@@ -3,6 +3,7 @@
 #include "config/item.h"
 #include "constants/global.h"
 #include "constants/apprentice.h"
+#include "constants/apricorn_tree.h"
 #include "constants/battle.h"
 #include "constants/battle_arena.h"
 #include "constants/battle_dome.h"
@@ -1103,9 +1104,6 @@ EventScript_VsSeekerChargingDone::
 	.include "data/scripts/cable_club.inc"
 	.include "data/text/cable_club.inc"
 	.include "data/scripts/contest_hall.inc"
-	.include "data/text/contest_strings.inc"
-	.include "data/text/contest_link.inc"
-	.include "data/text/contest_painting.inc"
 	.include "data/scripts/tv.inc"
 	.include "data/text/tv.inc"
 	.include "data/scripts/interview.inc"
@@ -1183,3 +1181,4 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/LunarGrove/scripts.inc"
 	.include "data/scripts/battle_frontier.inc"
+	.include "data/scripts/apricorn_tree.inc"

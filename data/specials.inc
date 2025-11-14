@@ -568,3 +568,5 @@ gSpecials::
 	def_special SetRoofBirds
 	def_special SetHiddenNature
 	def_special SetAbility
+	def_special ObjectEventInteractionGetApricornTreeData
+	def_special ObjectEventInteractionPickApricornTree

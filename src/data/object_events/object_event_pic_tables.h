@@ -2058,3 +2058,6 @@ const struct SpriteFrameImage gObjectEventPicTable_Evelyn[] = {
     overworld_frame(gObjectEventPic_Evelyn, 4, 4, 7),
     overworld_frame(gObjectEventPic_Evelyn, 4, 4, 8),
 };
+static const struct SpriteFrameImage sPicTable_ApricornTree[] = {
+    overworld_frame(gObjectEventPic_ApricornTree, 2, 2, 0),
+};

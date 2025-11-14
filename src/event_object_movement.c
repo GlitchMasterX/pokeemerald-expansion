@@ -11748,4 +11748,8 @@ bool8 MovementAction_ShakeVertical_Step1(struct ObjectEvent *objectEvent, struct
         sprite->sActionFuncId = 2;
     }
     return FALSE;
+    }
+u8 GetObjectEventApricornTreeId(u8 objectEventId)
+{
+    return gObjectEvents[objectEventId].trainerRange_berryTreeId;
 }
