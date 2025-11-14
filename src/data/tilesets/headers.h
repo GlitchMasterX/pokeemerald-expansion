@@ -12,7 +12,7 @@ const struct Tileset gTileset_General =
     .metatiles = gMetatiles_General,
     .metatileAttributes = gMetatileAttributes_General,
     .callback = InitTilesetAnim_General,
-    .palettes_summer = gTilesetPalettes_General_Summer,
+    .palettes_spring = gTilesetPalettes_General_Spring,
     .palettes_autumn = gTilesetPalettes_General_Autumn,
     .palettes_winter = gTilesetPalettes_General_Winter,
 };
@@ -45,11 +45,11 @@ const struct Tileset gTileset_SeaportCity =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_Dewford,
-    .palettes = gTilesetPalettes_Dewford,
-    .metatiles = gMetatiles_Dewford,
+    .tiles = gTilesetTiles_Seaport_City,
+    .palettes = gTilesetPalettes_Seaport_City,
+    .metatiles = gMetatiles_Seaport,
     .metatileAttributes = gMetatileAttributes_Dewford,
-    .callback = InitTilesetAnim_Dewford,
+    .callback = NULL,
  
 };
 

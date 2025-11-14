@@ -36,6 +36,7 @@
   ],
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M",
       "x": 35,
       "y": 33,
@@ -49,6 +50,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F",
       "x": 78,
       "y": 24,
@@ -63,6 +65,7 @@
     },
     {
       "local_id": "LOCALID_ROUTE128_STEVEN",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_STEVEN",
       "x": 40,
       "y": 22,
@@ -77,6 +80,7 @@
     },
     {
       "local_id": "LOCALID_ROUTE128_ARCHIE",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ARCHIE",
       "x": 37,
       "y": 22,
@@ -91,6 +95,7 @@
     },
     {
       "local_id": "LOCALID_ROUTE128_MAXIE",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MAXIE",
       "x": 38,
       "y": 21,
@@ -104,6 +109,7 @@
       "flag": "FLAG_HIDE_ROUTE_128_MAXIE"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
       "x": 63,
       "y": 28,
@@ -117,6 +123,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MAN_3",
       "x": 47,
       "y": 9,
@@ -130,6 +137,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
       "x": 24,
       "y": 8,
@@ -143,6 +151,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F",
       "x": 101,
       "y": 29,
@@ -156,6 +165,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M",
       "x": 101,
       "y": 22,

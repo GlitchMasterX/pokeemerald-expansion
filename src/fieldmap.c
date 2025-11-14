@@ -896,8 +896,8 @@ static void LoadTilesetPalette(struct Tileset const *tileset, u16 destOffset, u1
         // Choose seasonal primary palette
         switch (season)
         {
-        case SEASON_SUMMER:
-            palette = tileset->palettes_summer ? tileset->palettes_summer[0] : tileset->palettes[0];
+        case SEASON_SPRING:
+            palette = tileset->palettes_spring ? tileset->palettes_spring[0] : tileset->palettes[0];
             break;
         case SEASON_AUTUMN:
             palette = tileset->palettes_autumn ? tileset->palettes_autumn[0] : tileset->palettes[0];
@@ -905,7 +905,7 @@ static void LoadTilesetPalette(struct Tileset const *tileset, u16 destOffset, u1
         case SEASON_WINTER:
             palette = tileset->palettes_winter ? tileset->palettes_winter[0] : tileset->palettes[0];
             break;
-        case SEASON_SPRING:
+        case SEASON_SUMMER:
         default:
             palette = tileset->palettes[0];
             break;
@@ -930,8 +930,8 @@ static void LoadTilesetPalette(struct Tileset const *tileset, u16 destOffset, u1
         // Choose seasonal secondary palette
         switch (season)
         {
-        case SEASON_SUMMER:
-            palette = tileset->palettes_summer ? tileset->palettes_summer[NUM_PALS_IN_PRIMARY] : tileset->palettes[NUM_PALS_IN_PRIMARY];
+        case SEASON_SPRING:
+            palette = tileset->palettes_spring ? tileset->palettes_spring[NUM_PALS_IN_PRIMARY] : tileset->palettes[NUM_PALS_IN_PRIMARY];
             break;
         case SEASON_AUTUMN:
             palette = tileset->palettes_autumn ? tileset->palettes_autumn[NUM_PALS_IN_PRIMARY] : tileset->palettes[NUM_PALS_IN_PRIMARY];
@@ -939,7 +939,7 @@ static void LoadTilesetPalette(struct Tileset const *tileset, u16 destOffset, u1
         case SEASON_WINTER:
             palette = tileset->palettes_winter ? tileset->palettes_winter[NUM_PALS_IN_PRIMARY] : tileset->palettes[NUM_PALS_IN_PRIMARY];
             break;
-        case SEASON_SPRING:
+        case SEASON_SUMMER:
         default:
             palette = tileset->palettes[NUM_PALS_IN_PRIMARY];
             break;
@@ -959,8 +959,8 @@ static void LoadTilesetPalette(struct Tileset const *tileset, u16 destOffset, u1
 
         switch (season)
         {
-        case SEASON_SUMMER:
-            compressedPalette = tileset->palettes_summer ? (const u16 *)tileset->palettes_summer : (const u16 *)tileset->palettes;
+        case SEASON_SPRING:
+            compressedPalette = tileset->palettes_spring ? (const u16 *)tileset->palettes_spring : (const u16 *)tileset->palettes;
             break;
         case SEASON_AUTUMN:
             compressedPalette = tileset->palettes_autumn ? (const u16 *)tileset->palettes_autumn : (const u16 *)tileset->palettes;
@@ -968,7 +968,7 @@ static void LoadTilesetPalette(struct Tileset const *tileset, u16 destOffset, u1
         case SEASON_WINTER:
             compressedPalette = tileset->palettes_winter ? (const u16 *)tileset->palettes_winter : (const u16 *)tileset->palettes;
             break;
-        case SEASON_SPRING:
+        case SEASON_SUMMER:
         default:
             compressedPalette = (const u16 *)tileset->palettes;
             break;

@@ -21,6 +21,7 @@
   ],
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MIRA",
       "x": 9,
       "y": 29,
@@ -34,6 +35,7 @@
       "flag": "FLAG_UNUSED_0x497"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BREEDER",
       "x": 6,
       "y": 29,
@@ -47,6 +49,7 @@
       "flag": "FLAG_UNUSED_0x4A4"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F",
       "x": 32,
       "y": 7,
@@ -60,6 +63,7 @@
       "flag": "FLAG_UNUSED_0x495"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M",
       "x": 32,
       "y": 7,
@@ -73,6 +77,7 @@
       "flag": "FLAG_UNUSED_0x495"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MIRA",
       "x": 11,
       "y": 17,
@@ -86,6 +91,7 @@
       "flag": "FLAG_UNUSED_0x4EF"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(PIDGEY)",
       "x": 34,
       "y": 14,
@@ -99,6 +105,7 @@
       "flag": "FLAG_TEMP_2"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(STARLY)",
       "x": 32,
       "y": 14,
@@ -112,6 +119,7 @@
       "flag": "FLAG_TEMP_5"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(TAILLOW)",
       "x": 29,
       "y": 28,
@@ -125,6 +133,7 @@
       "flag": "FLAG_TEMP_4"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(SPEAROW)",
       "x": 33,
       "y": 15,
@@ -138,6 +147,7 @@
       "flag": "FLAG_TEMP_3"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(TAILLOW)",
       "x": 12,
       "y": 4,
@@ -151,6 +161,7 @@
       "flag": "FLAG_TEMP_2"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(PIDGEY)",
       "x": 5,
       "y": 21,
@@ -164,6 +175,7 @@
       "flag": "FLAG_TEMP_4"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ALISTAIR",
       "x": 23,
       "y": 29,
@@ -177,6 +189,7 @@
       "flag": "FLAG_ALISTAIR_ARRIVE"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(ALAKAZAM)",
       "x": 24,
       "y": 29,
@@ -190,6 +203,7 @@
       "flag": "FLAG_ALISTAIR_ARRIVE"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
       "x": 23,
       "y": 12,
@@ -203,6 +217,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
       "x": 29,
       "y": 3,
@@ -216,6 +231,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
       "x": 23,
       "y": 3,
@@ -229,6 +245,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
       "x": 29,
       "y": 12,
@@ -242,6 +259,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
       "x": 22,
       "y": 23,
@@ -255,6 +273,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
       "x": 35,
       "y": 23,
@@ -268,6 +287,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_PORTAL",
       "x": 27,
       "y": 15,
@@ -281,6 +301,7 @@
       "flag": "FLAG_UNUSED_0x494"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(HOOPA_CONFINED)",
       "x": 19,
       "y": 17,

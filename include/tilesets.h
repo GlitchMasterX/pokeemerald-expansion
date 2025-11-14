@@ -3,7 +3,7 @@
 
 extern const u32 gTilesetTiles_General[];
 extern const u16 gTilesetPalettes_General[][16];
-extern const u16 gTilesetPalettes_General_Summer[][16];
+extern const u16 gTilesetPalettes_General_Spring[][16];
 extern const u16 gTilesetPalettes_General_Autumn[][16];
 extern const u16 gTilesetPalettes_General_Winter[][16];
 

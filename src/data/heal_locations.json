@@ -22,8 +22,8 @@
     {
       "id": "HEAL_LOCATION_PETALBURG_CITY",
       "map": "MAP_ASTRALIS_ACADEMY",
-      "x": 20,
-      "y": 17,
+      "x": 17,
+      "y": 6,
       "respawn_map": "MAP_ASTRALIS_ACADEMY_POKEMON_CENTER"
     },
     {

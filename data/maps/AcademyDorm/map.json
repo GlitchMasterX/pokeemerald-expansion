@@ -15,13 +15,13 @@
   "connections": [
     {
       "map": "MAP_ASTRALIS_ACADEMY",
-      "offset": 31,
+      "offset": 21,
       "direction": "left"
     },
     {
-      "map": "MAP_ASTRALIS_ACADEMY",
-      "offset": 32,
-      "direction": "left"
+      "map": "MAP_ACADEMY_VIEW",
+      "offset": 12,
+      "direction": "down"
     }
   ],
   "object_events": [

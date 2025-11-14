@@ -15,6 +15,7 @@
   "connections": null,
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
       "x": 24,
       "y": 18,
@@ -32,6 +33,7 @@
       "night": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
       "x": 20,
       "y": 29,
@@ -45,6 +47,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LASS",
       "x": 29,
       "y": 27,
@@ -62,6 +65,7 @@
       "night": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_OFFICER",
       "x": 11,
       "y": 25,
@@ -75,6 +79,7 @@
       "flag": "FLAG_LIB_OFFICER"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MAN_2",
       "x": 13,
       "y": 18,

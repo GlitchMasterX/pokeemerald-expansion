@@ -2,7 +2,7 @@
   "id": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
   "name": "LittlerootTown_MaysHouse_1F",
   "layout": "LAYOUT_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
-  "music": "MUS_DP_ETERNA_FOREST",
+  "music": "MUS_DP_OREBURGH_GATE",
   "region_map_section": "MAPSEC_LUNAR_GROVE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

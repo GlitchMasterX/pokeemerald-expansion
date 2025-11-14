@@ -14,42 +14,19 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ASTRALIS_ACADEMY",
-      "offset": 18,
+      "map": "MAP_ACADEMY_DORM",
+      "offset": -12,
       "direction": "up"
-    },
-    {
-      "map": "MAP_ACADEMY_LIGHTHOUSE",
-      "offset": 2,
-      "direction": "left"
     }
   ],
   "object_events": [
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_FIONA_1",
-      "x": 40,
-      "y": 19,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Fionanight",
-      "flag": "FLAG_FIONA",
-      "day": "0",
-      "evening": "0",
-      "morning": "0",
-      "night": "1"
-    },
-    {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_NORMAL_M",
-      "x": 54,
-      "y": 7,
+      "x": 26,
+      "y": 10,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -64,8 +41,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_OFFICER",
-      "x": 75,
-      "y": 7,
+      "x": 34,
+      "y": 11,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -78,22 +55,22 @@
   ],
   "warp_events": [
     {
-      "x": 79,
-      "y": 7,
+      "x": 39,
+      "y": 11,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
       "dest_warp_id": "0"
     },
     {
-      "x": 79,
-      "y": 8,
+      "x": 39,
+      "y": 12,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
       "dest_warp_id": "1"
     },
     {
-      "x": 79,
-      "y": 9,
+      "x": 39,
+      "y": 13,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
       "dest_warp_id": "2"
@@ -102,8 +79,8 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 75,
-      "y": 9,
+      "x": 34,
+      "y": 12,
       "elevation": 0,
       "var": "VAR_LUNAR_GROVE",
       "var_value": "0",
@@ -111,8 +88,17 @@
     },
     {
       "type": "trigger",
-      "x": 75,
-      "y": 8,
+      "x": 34,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_LUNAR_GROVE",
+      "var_value": "0",
+      "script": "lunarofficer"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 14,
       "elevation": 0,
       "var": "VAR_LUNAR_GROVE",
       "var_value": "0",
