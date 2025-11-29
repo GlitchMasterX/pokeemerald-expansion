@@ -15,8 +15,8 @@
   "connections": [
     {
       "map": "MAP_ASTRALIS_ACADEMY",
-      "offset": -9,
-      "direction": "down"
+      "offset": 0,
+      "direction": "right"
     }
   ],
   "object_events": [

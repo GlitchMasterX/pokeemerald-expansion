@@ -15,6 +15,40 @@ script fwdmonth1 {
 script fwdmonth3 {
 	fwdmonth(11)
 }
+
+script AcademyNpc39 {
+	playmoncry(SPECIES_CATERPIE,CRY_MODE_ENCOUNTER)
+    waitmoncry
+}
+
+script AcademyNpc40 {
+	playmoncry(SPECIES_STARAVIA,CRY_MODE_ENCOUNTER)
+    waitmoncry
+}
+
+script AcademyNpc41 {
+    lock
+    faceplayer
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}One day he'll see... my Bug Pokémon aren't weak. I'll battle him every day until I prove it!"))
+    closemessage
+    applymovement(20,moves(face_right walk_in_place_right))
+    waitmovement(0)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Minty, let's show him what we've got!"))
+    closemessage
+    release
+}
+
+script AcademyNpc42 {
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}This kid really believes Bug Pokémon can hold their own in a tournament.\pI'll knock her down now so she can stand taller later.\pThat's what a mentor does."))
+    closemessage
+    applymovement(21,moves(face_left walk_in_place_left))
+    waitmovement(0)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Staravia, let's wrap this up!"))
+    closemessage
+    release
+}
 script trial1 {
 	clearflag(FLAG_TRIAL_SERENA)
 	setobjectxyperm(20,10,57)

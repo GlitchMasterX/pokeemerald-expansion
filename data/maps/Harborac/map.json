@@ -27,37 +27,27 @@
   "object_events": [
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_SS_TIDAL",
-      "x": -13,
-      "y": 0,
+      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
+      "x": 22,
+      "y": 15,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "nerd",
+      "flag": "0",
+      "day": "1",
+      "evening": "0",
+      "morning": "1",
+      "night": "0"
     },
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SS_TIDAL",
       "x": -13,
       "y": 6,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_SS_TIDAL",
-      "x": -13,
-      "y": 12,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -178,34 +168,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_OLDMAN_GONE"
-    },
-    {
-      "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_FIONA_1",
-      "x": 18,
-      "y": 10,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_FIONAMET"
-    },
-    {
-      "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
-      "x": 22,
-      "y": 10,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_FIONAMET"
     }
   ],
   "warp_events": [
@@ -224,44 +186,7 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [
-    {
-      "type": "trigger",
-      "x": 10,
-      "y": 9,
-      "elevation": 0,
-      "var": "ACADEMY_START",
-      "var_value": "3",
-      "script": "Fionamet1"
-    },
-    {
-      "type": "trigger",
-      "x": 10,
-      "y": 10,
-      "elevation": 0,
-      "var": "ACADEMY_START",
-      "var_value": "3",
-      "script": "Fionamet"
-    },
-    {
-      "type": "trigger",
-      "x": 10,
-      "y": 11,
-      "elevation": 0,
-      "var": "ACADEMY_START",
-      "var_value": "3",
-      "script": "Fionamet2"
-    },
-    {
-      "type": "trigger",
-      "x": 10,
-      "y": 8,
-      "elevation": 0,
-      "var": "ACADEMY_START",
-      "var_value": "3",
-      "script": "Fionamet3"
-    }
-  ],
+  "coord_events": [],
   "bg_events": [],
   "floor_number": 0
 }

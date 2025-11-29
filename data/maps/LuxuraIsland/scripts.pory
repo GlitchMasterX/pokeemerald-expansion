@@ -200,8 +200,6 @@ fadescreen(FADE_TO_BLACK)
 removeobject(1)
 removeobject(OBJ_EVENT_ID_PLAYER)
 setflag(FLAG_UNUSED_0x497)
-unlockoutfit(OUTFIT_USUAL_GREEN)
-unlockoutfit(OUTFIT_UNUSUAL_RED)
 warp(MAP_LUXURA_INDOOR,14,41)
 releaseall
 setvar(LUXURA_TRAGEDY, 5)
@@ -333,7 +331,7 @@ script indoor {
     applymovement(6,in)
     waitmovement(0)
     speakername(name4)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, You should take a bath and get changed before Lady Elysia sees you like this."))     
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, You should take a bath and get changed before mother sees you like this."))     
     speakername(Xylar1)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Yeah. I'll do that."))     
     removefieldmugshot

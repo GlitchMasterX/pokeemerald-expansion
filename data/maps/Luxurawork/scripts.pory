@@ -177,7 +177,7 @@ script dad {
 	speakername(Xylar1)
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_QUESTION}{COLOR BLUE}{SHADOW LIGHT_GRAY}Friend?\pFrom the academy, You didn't tell me about this."))
 	speakername(name3)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Hahaha I meant to but it slipped my mind.\pHe wanted to meet you before the start.\pDon't worry he's just coming to make sure you're comfortable and ready."))
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Hahaha! I meant to but it slipped my mind.\pHe wanted to meet you before the start.\pDon't worry he's just coming to make sure you're comfortable and ready."))
 	speakername(Xylar1)
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Alright, I guess I'd better be on my best behaviour, then."))
 	speakername(name3)

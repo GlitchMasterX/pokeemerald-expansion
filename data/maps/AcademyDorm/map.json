@@ -14,21 +14,21 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ASTRALIS_ACADEMY",
-      "offset": 21,
-      "direction": "left"
-    },
-    {
       "map": "MAP_ACADEMY_VIEW",
       "offset": 12,
       "direction": "down"
+    },
+    {
+      "map": "MAP_ASTRALIS_ACADEMY",
+      "offset": 19,
+      "direction": "left"
     }
   ],
   "object_events": [
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_OFFICER",
-      "x": 28,
+      "x": 46,
       "y": 25,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -42,7 +42,7 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ACE_F",
-      "x": 28,
+      "x": 40,
       "y": 6,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -56,8 +56,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_GIRL_1",
-      "x": 31,
-      "y": 14,
+      "x": 44,
+      "y": 15,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,
@@ -70,7 +70,7 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_NERD",
-      "x": 14,
+      "x": 26,
       "y": 6,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -88,8 +88,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ACE_M",
-      "x": 18,
-      "y": 16,
+      "x": 29,
+      "y": 17,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,
@@ -106,8 +106,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
-      "x": 25,
-      "y": 39,
+      "x": 37,
+      "y": 41,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
       "movement_range_x": 0,
@@ -124,21 +124,7 @@
   ],
   "warp_events": [
     {
-      "x": 0,
-      "y": 55,
-      "elevation": 0,
-      "dest_map": "MAP_ASTRALIS_ACADEMY",
-      "dest_warp_id": "1"
-    },
-    {
-      "x": 0,
-      "y": 54,
-      "elevation": 0,
-      "dest_map": "MAP_ASTRALIS_ACADEMY",
-      "dest_warp_id": "1"
-    },
-    {
-      "x": 7,
+      "x": 19,
       "y": 13,
       "elevation": 0,
       "dest_map": "MAP_DORM_INDOOR",
@@ -148,7 +134,7 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 28,
+      "x": 46,
       "y": 26,
       "elevation": 0,
       "var": "VAR_GIRLSHOSTEL",
@@ -157,7 +143,7 @@
     },
     {
       "type": "trigger",
-      "x": 28,
+      "x": 46,
       "y": 27,
       "elevation": 0,
       "var": "VAR_GIRLSHOSTEL",
@@ -166,7 +152,7 @@
     },
     {
       "type": "trigger",
-      "x": 28,
+      "x": 46,
       "y": 29,
       "elevation": 0,
       "var": "VAR_GIRLSHOSTEL",
@@ -175,12 +161,39 @@
     },
     {
       "type": "trigger",
-      "x": 28,
+      "x": 46,
       "y": 28,
       "elevation": 0,
       "var": "VAR_GIRLSHOSTEL",
       "var_value": "0",
       "script": "girlsdorm"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 45,
+      "elevation": 0,
+      "var": "ACADEMY_START",
+      "var_value": "7",
+      "script": "notnowdorm"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 45,
+      "elevation": 0,
+      "var": "ACADEMY_START",
+      "var_value": "6",
+      "script": "notnowdorm"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 45,
+      "elevation": 0,
+      "var": "ACADEMY_START",
+      "var_value": "4",
+      "script": "notnowdorm"
     }
   ],
   "bg_events": [],

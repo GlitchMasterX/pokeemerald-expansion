@@ -66,51 +66,52 @@ script Fionamet {
     playbgm(MUS_DUMMY,FALSE)
     applymovement(0x7F, MOVE6)
     applymovement(OBJ_EVENT_ID_PLAYER,MOVE3)
-    applymovement(12,moves(walk_left*3))
+    applymovement(3,moves(walk_down*3))
     waitmovement(0)
     playse(SE_PIN)
-    applymovement(12,moves(emote_exclamation_mark))
+    applymovement(3,moves(emote_exclamation_mark))
     waitmovement(0)
     playse(SE_LEDGE)
-    applymovement(12,moves( jump_up face_down face_right))
+    applymovement(3,moves( jump_right face_left face_up))
     waitmovement(0)
     speakername(unknown)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}My apologies……"))
     closemessage 
-    applymovement(13,MOVE5)
+    applymovement(4,MOVE5)
     speakername("Maid")
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Are you alright, my lady?"))
     closemessage
     waitmovement(0)
     playse(SE_PIN)
-    applymovement(13,mov1)
+    applymovement(4,mov1)
     speakername("Maid")
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}How rude of him, he didn't even stop to apologize."))
     waitmessage
-    applymovement(13,moves(face_down))
+    applymovement(4,moves(face_right))
     speakername(unknown)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}……"))
     closemessage
     playse(SE_PIN)
-    applymovement(13,moves(emote_question_mark))
+    applymovement(4,moves(emote_question_mark))
     speakername("Maid") 
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}What happened?"))
     waitmessage
     closemessage
-    applymovement(12,moves(delay_16 face_left))
+    delay(110)
+    applymovement(3,moves(face_down))
     speakername(unknown)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}……\pNothing.\pLet's go."),MSGBOX_AUTOCLOSE)
     fadescreen(FADE_TO_BLACK)
-    removeobject(12)
-    removeobject(13)
+    removeobject(3)
+    removeobject(4)
     setflag(FLAG_FIONAMET)
-    warpsilent(MAP_ASTRALIS_ACADEMY,1,21)
+    warpsilent(MAP_HARBORAC,22,28)
     setvar(ACADEMY_START,4)
 }
 
 movement mov1 {
     emote_upset
-    face_right
+    face_up
 }
 movement MOVE6 {
     walk_right*2
@@ -126,16 +127,11 @@ movement MOVE4 {
     face_right
 }
 movement MOVE5 {
-    walk_fast_left*5
-    face_down
+    walk_fast_down*5
+    face_right
 }
 script Fionamet1 {
-    applymovement(OBJ_EVENT_ID_PLAYER,mov3)
-    waitmovement(0)
-    goto(Fionamet)
-}
-script Fionamet2 {
-    applymovement(OBJ_EVENT_ID_PLAYER,mov4)
+    applymovement(OBJ_EVENT_ID_PLAYER,moves(walk_left face_up))
     waitmovement(0)
     goto(Fionamet)
 }
@@ -212,7 +208,13 @@ script aceac{
 script scinerd{
     lock
     faceplayer
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Hmm...If a Pokemon's base stats correlate with EV training efficiency, then theoratically a properly optimized held item could......\pOh! A new variable! What if nature modifiers...No that would require more feild testing...\pUgh, I need more data."))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Hmm...If a Pokemon's base stats correlate with EV training efficiency, then theoratically a properly optimized held item could..."))
+    playse(SE_PIN)
+    applymovement(8,moves(emote_exclamation_mark))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Oh! A new variable! What if nature modifiers...No that would require more feild testing...\pUgh, I need more data."))
+    playse(SE_PIN)
+    applymovement(8,moves(emote_upset))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Ugh, I need more data."))
     release
 }
 
@@ -243,7 +245,7 @@ movement goin {
     set_invisible
 }
 text eliasn{
-    format("Prof.Elias")
+    format("Prof. Elias")
 }
 script notnowdorm {
     applymovement(0xFF,mov5)
@@ -351,8 +353,9 @@ if (!flag(FLAG_AFTER_OUTBURST)){
 elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
     lock
     faceplayer
-    applymovement(2,moves(emote_exclamation_mark))
-    msgbox(format("(Flinches when Xylar approaches)\p{COLOR RED}{SHADOW LIGHT_GRAY}…I-I shouldn't talk to you."))
+    applymovement(2,moves(emote_exclamation_mark shake_horizontal*2))
+    waitmovement(0)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}…I-I shouldn't talk to you."))
     release
 }
 else{
@@ -392,7 +395,7 @@ else{
 
 }
 text maribel{
-    format("Prof.Dorne")
+    format("Prof. Dorne")
 }
 script AcademyNpc6 {
     if(!flag(FLAG_AFTER_OUTBURST)){
@@ -443,7 +446,7 @@ else{
 
 }
 text orson{
-    format("Prof.Orson")
+    format("Prof. Orson")
 }
 script AcademyNpc8 {
 if (!flag(FLAG_AFTER_OUTBURST)){
@@ -532,8 +535,19 @@ script AcademyNpc12 {
     if(!flag(FLAG_AFTER_OUTBURST)){
     lock
     faceplayer
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Have you ever heard of the legend of the Jewel of Life?"))
-    release   
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Have you ever heard the legend of the Jewel of Life?"), MSGBOX_YESNO)
+
+if (var(VAR_RESULT) == YES) {
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Greed is the reason for our region's separation."))
+    closemessage
+    release
+}
+else {
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}They say Arceus once gifted the Jewel of Life to the King of Velanthis, so our region could flourish through its deep spirituality.\pBut when the king passed away, his two sons fought over it.\pThe elder wanted to use its power to advance technology, even if it meant destroying ancient shrines and abandoning tradition.\pThe younger wished to preserve our spirituality and protect the old ways.\pTheir conflict sparked the First Great Velanthis War.\pWith advanced machines, the elder nearly won, until Arceus grew furious at how the sacred gift was misused.\pArceus reclaimed the Jewel of Life and sealed it away, somewhere no mortal has ever found.\pThe elder son was punished... and Velanthis was split forever.")) 
+    closemessage
+    release 
+}
+
 }
 elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
     lock
@@ -618,7 +632,7 @@ else{
 script AcademyNpc16 {
     lock
     faceplayer
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Nobody's allowed to enter unless they reach the semi-finals of the tournament."))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Nobody's allowed to enter until the tournament."))
     release   
 }
 

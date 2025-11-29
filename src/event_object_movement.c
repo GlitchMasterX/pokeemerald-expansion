@@ -9888,10 +9888,10 @@ static void SetObjectEventSpriteOamTableForLongGrass(struct ObjectEvent *objEven
     if (objEvent->disableCoveringGroundEffects)
         return;
 
-    if (!MetatileBehavior_IsLongGrass(objEvent->currentMetatileBehavior))
+    if (!IsCoveredTile(objEvent->currentMetatileBehavior))
         return;
 
-    if (!MetatileBehavior_IsLongGrass(objEvent->previousMetatileBehavior))
+    if (!IsCoveredTile(objEvent->previousMetatileBehavior))
         return;
 
     sprite->subspriteTableNum = 4;
@@ -9904,12 +9904,13 @@ bool8 IsElevationMismatchAt(u8 elevation, s16 x, s16 y)
 {
     u8 mapElevation;
 
-    if (elevation == 0)
+    if(gMapHeader.overlay!=NULL){
+    if (elevation == 0 || elevation == 2)  // Treat elevation 2 like normal ground
         return FALSE;
-
+    
     mapElevation = MapGridGetElevationAt(x, y);
 
-    if (mapElevation == 0 || mapElevation == 15)
+    if (mapElevation == 0 || mapElevation == 2 || mapElevation == 15)  // Also treat target elevation 2 as normal
         return FALSE;
 
     if (mapElevation != elevation)
@@ -9917,7 +9918,22 @@ bool8 IsElevationMismatchAt(u8 elevation, s16 x, s16 y)
 
     return FALSE;
 }
+    else{
+    if (elevation == 0)
+        return FALSE;
+    
+    mapElevation = MapGridGetElevationAt(x, y);
 
+    if (mapElevation == 0 || mapElevation == 15)  // Also treat target elevation 2 as normal
+        return FALSE;
+
+    if (mapElevation != elevation)
+        return TRUE;
+
+    return FALSE;
+
+    }
+}
 static const u8 sElevationToSubpriority[] = {
     115, 115, 83, 115, 83, 115, 83, 115, 83, 115, 83, 115, 83, 0, 0, 115
 };

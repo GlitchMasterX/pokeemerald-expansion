@@ -53,5 +53,26 @@
   ],
   "coord_events": [],
   "bg_events": [],
-  "floor_number": 0
+  "floor_number": 0,
+  "overlay": {
+    "initial_eva": 15,
+    "initial_evb": 4,
+    "tiles": [
+      {
+        "top_tile_id": 575,
+        "x": 5,
+        "y": 7
+      },
+      {
+        "top_tile_id": 575,
+        "x": 5,
+        "y": 8
+      },
+      {
+        "top_tile_id": 575,
+        "x": 5,
+        "y": 9
+      }
+    ]
+  }
 }

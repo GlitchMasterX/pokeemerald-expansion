@@ -20,16 +20,26 @@
     },
     {
       "map": "MAP_ACADEMY_LIGHTHOUSE",
+      "offset": 0,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
       "offset": 9,
       "direction": "up"
+    },
+    {
+      "map": "MAP_ACADEMY_DORM",
+      "offset": -19,
+      "direction": "right"
     }
   ],
   "object_events": [
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_PROF_ELIAS",
-      "x": 23,
-      "y": -7,
+      "x": 24,
+      "y": 35,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -41,27 +51,9 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
-      "x": 14,
-      "y": 7,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "nerd",
-      "flag": "0",
-      "day": "1",
-      "evening": "0",
-      "morning": "1",
-      "night": "0"
-    },
-    {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
-      "x": 31,
-      "y": 4,
+      "x": 17,
+      "y": 39,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -77,27 +69,9 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_1",
-      "x": 37,
-      "y": -11,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "girlar",
-      "flag": "0",
-      "day": "1",
-      "evening": "0",
-      "morning": "1",
-      "night": "0"
-    },
-    {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ACE_M",
-      "x": 8,
-      "y": 12,
+      "x": 14,
+      "y": 3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -150,8 +124,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_TENNIS",
-      "x": 6,
-      "y": 29,
+      "x": 20,
+      "y": 60,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -168,8 +142,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_STRIKER",
-      "x": 9,
-      "y": 42,
+      "x": 29,
+      "y": 60,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -186,8 +160,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_NERD",
-      "x": 30,
-      "y": 16,
+      "x": 35,
+      "y": 44,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
       "movement_range_x": 0,
@@ -222,8 +196,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_HEX_MANIAC",
-      "x": 33,
-      "y": 21,
+      "x": 5,
+      "y": 44,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,
@@ -240,8 +214,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MAN_1",
-      "x": 15,
-      "y": 16,
+      "x": 10,
+      "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -258,8 +232,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(MURKROW)",
-      "x": 9,
-      "y": 15,
+      "x": 6,
+      "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,
@@ -276,8 +250,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(MURKROW)",
-      "x": 11,
-      "y": 14,
+      "x": 7,
+      "y": 6,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,
@@ -294,8 +268,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(MURKROW)",
-      "x": 11,
-      "y": 17,
+      "x": 5,
+      "y": 7,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,
@@ -311,27 +285,9 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_AROMA",
-      "x": 36,
-      "y": -11,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "AcademyNpc25",
-      "flag": "0",
-      "day": "0",
-      "evening": "1",
-      "morning": "0",
-      "night": "1"
-    },
-    {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_OFFICER",
-      "x": 22,
-      "y": 8,
+      "x": 24,
+      "y": 42,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,
@@ -348,8 +304,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SELENE",
-      "x": 31,
-      "y": 8,
+      "x": 29,
+      "y": 12,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,
@@ -379,75 +335,84 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_PROF_ELIAS",
-      "x": 7,
-      "y": 32,
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(CATERPIE)",
+      "x": 32,
+      "y": 67,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_TRIAL_SERENA"
+      "script": "AcademyNpc39",
+      "flag": "0",
+      "day": "1",
+      "evening": "0",
+      "morning": "1",
+      "night": "0"
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_VOSS",
-      "x": 8,
-      "y": 35,
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(STARAVIA)",
+      "x": 37,
+      "y": 67,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AcademyNpc40",
+      "flag": "0",
+      "day": "1",
+      "evening": "0",
+      "morning": "1",
+      "night": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
+      "x": 29,
+      "y": 67,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AcademyNpc41",
+      "flag": "0",
+      "day": "1",
+      "evening": "0",
+      "morning": "1",
+      "night": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
+      "x": 40,
+      "y": 67,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_TRIAL_SERENA"
+      "script": "AcademyNpc42",
+      "flag": "0",
+      "day": "1",
+      "evening": "0",
+      "morning": "1",
+      "night": "0"
     }
   ],
   "warp_events": [
-    {
-      "x": 44,
-      "y": 2,
-      "elevation": 0,
-      "dest_map": "MAP_ACADEMY_DORM",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 44,
-      "y": 1,
-      "elevation": 0,
-      "dest_map": "MAP_ACADEMY_DORM",
-      "dest_warp_id": "1"
-    },
     {
       "x": 24,
       "y": 34,
       "elevation": 0,
       "dest_map": "MAP_ASTRALIS_ACADEMY_FLOOR1",
       "dest_warp_id": "0"
-    },
-    {
-      "x": 24,
-      "y": 32,
-      "elevation": 0,
-      "dest_map": "MAP_ASTRALIS_ACADEMY_FLOOR2",
-      "dest_warp_id": "6"
-    },
-    {
-      "x": 21,
-      "y": 0,
-      "elevation": 0,
-      "dest_map": "MAP_HARBORAC",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 22,
-      "y": 3,
-      "elevation": 0,
-      "dest_map": "MAP_HARBORAC",
-      "dest_warp_id": "1"
     }
   ],
   "coord_events": [
@@ -486,60 +451,6 @@
       "var": "ACADEMY_START",
       "var_value": "6",
       "script": "serenaextend"
-    },
-    {
-      "type": "trigger",
-      "x": 44,
-      "y": 1,
-      "elevation": 0,
-      "var": "ACADEMY_START",
-      "var_value": "4",
-      "script": "notnowdorm"
-    },
-    {
-      "type": "trigger",
-      "x": 44,
-      "y": 2,
-      "elevation": 0,
-      "var": "ACADEMY_START",
-      "var_value": "4",
-      "script": "notnowdorm"
-    },
-    {
-      "type": "trigger",
-      "x": 44,
-      "y": 1,
-      "elevation": 0,
-      "var": "ACADEMY_START",
-      "var_value": "6",
-      "script": "notnowdorm"
-    },
-    {
-      "type": "trigger",
-      "x": 44,
-      "y": 2,
-      "elevation": 0,
-      "var": "ACADEMY_START",
-      "var_value": "6",
-      "script": "notnowdorm"
-    },
-    {
-      "type": "trigger",
-      "x": 44,
-      "y": 2,
-      "elevation": 0,
-      "var": "ACADEMY_START",
-      "var_value": "7",
-      "script": "notnowdorm"
-    },
-    {
-      "type": "trigger",
-      "x": 44,
-      "y": 1,
-      "elevation": 0,
-      "var": "ACADEMY_START",
-      "var_value": "7",
-      "script": "notnowdorm"
     }
   ],
   "bg_events": [
@@ -553,16 +464,16 @@
     },
     {
       "type": "sign",
-      "x": 22,
-      "y": 12,
+      "x": 21,
+      "y": 14,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "fwdmonth1"
     },
     {
       "type": "sign",
-      "x": 19,
-      "y": 12,
+      "x": 20,
+      "y": 4,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "fwdmonth3"

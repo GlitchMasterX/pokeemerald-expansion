@@ -1529,7 +1529,7 @@ dad_Text_6:
 
 dad_Text_7:
 # 180 "data/maps/Luxurawork/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Hahaha I meant to but it slipped my\n"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Hahaha! I meant to but it slipped my\n"
 	.string "mind.\p"
 	.string "He wanted to meet you before the start.\p"
 	.string "Don't worry he's just coming to make\n"
