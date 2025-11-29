@@ -1030,9 +1030,8 @@ miraded_Text_35:
 
 miraded_Text_36:
 # 275 "data/maps/LuxuraIsland1/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Heh… Did you see that smile? Even at\n"
-	.string "the end, she defied us. It makes me\l"
-	.string "sick.$"
+	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Heh… Did you see that smile? She looked\n"
+	.string "satisfied. It makes me sick.$"
 
 Mira_Text_0:
 # 307 "data/maps/LuxuraIsland1/scripts.pory"
