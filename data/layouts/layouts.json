@@ -567,7 +567,7 @@
       "width": 27,
       "height": 40,
       "primary_tileset": "gTileset_Academy",
-      "secondary_tileset": "gTileset_Academy_lib",
+      "secondary_tileset": "gTileset_AcademyIndoor",
       "border_filepath": "data/layouts/House1/border.bin",
       "blockdata_filepath": "data/layouts/House1/map.bin"
     },

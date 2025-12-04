@@ -5092,8 +5092,7 @@ $(OBJEVENTGFXDIR)/people/blood.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/ashes.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-
-$(OBJEVENTGFXDIR)/people/surge.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/equino/surge.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/portal.4bpp: %.4bpp: %.png
