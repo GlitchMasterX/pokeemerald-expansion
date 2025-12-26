@@ -96,8 +96,6 @@ static const struct SpriteTemplate sCloudSpriteTemplate =
     .paletteTag = PALTAG_WEATHER_2,
     .oam = &sCloudSpriteOamData,
     .anims = sCloudSpriteAnimCmds,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = UpdateCloudSprite,
 };
 
@@ -457,8 +455,6 @@ static const struct SpriteTemplate sRainSpriteTemplate =
     .paletteTag = PALTAG_WEATHER,
     .oam = &sRainSpriteOamData,
     .anims = sRainSpriteAnimCmds,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = UpdateRainSprite,
 };
 
@@ -1406,7 +1402,6 @@ static const struct SpriteTemplate sSnowflakeSpriteTemplate =
     .oam = &sSnowflakeSpriteOamData,
     .anims = sSnowflakeAnimCmds,
     .images = sSnowflakeSpriteImages,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = UpdateSnowflakeSprite,
 };
 
@@ -1876,7 +1871,6 @@ static const struct SpriteTemplate sFogHorizontalSpriteTemplate =
     .paletteTag = PALTAG_WEATHER,
     .oam = &sOamData_FogH,
     .anims = sAnims_FogH,
-    .images = NULL,
     .affineAnims = sAffineAnims_FogH,
     .callback = FogHorizontalSpriteCallback,
 };
@@ -2189,8 +2183,6 @@ static const struct SpriteTemplate sAshSpriteTemplate =
     .paletteTag = PALTAG_WEATHER,
     .oam = &sAshSpriteOamData,
     .anims = sAshSpriteAnimCmds,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = UpdateAshSprite,
 };
 
@@ -2407,8 +2399,6 @@ static const struct SpriteTemplate sFogDiagonalSpriteTemplate =
     .paletteTag = PALTAG_WEATHER,
     .oam = &sFogDiagonalSpriteOamData,
     .anims = sFogDiagonalSpriteAnimCmds,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = UpdateFogDiagonalSprite,
 };
 
@@ -2674,8 +2664,6 @@ static const struct SpriteTemplate sSandstormSpriteTemplate =
     .paletteTag = PALTAG_WEATHER_2,
     .oam = &sSandstormSpriteOamData,
     .anims = sSandstormSpriteAnimCmds,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = UpdateSandstormSprite,
 };
 
@@ -2937,8 +2925,6 @@ static const struct SpriteTemplate sBubbleSpriteTemplate =
     .paletteTag = PALTAG_WEATHER,
     .oam = &gOamData_AffineOff_ObjNormal_8x8,
     .anims = sBubbleSpriteAnimCmds,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = UpdateBubbleSprite,
 };
 

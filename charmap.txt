@@ -435,10 +435,10 @@ DYNAMIC  =   F7
 
 @ more text functions
 
-COLOR = FC 01 @ use a color listed below right after
-HIGHLIGHT = FC 02 @ same as fc 01
-SHADOW = FC 03 @ same as fc 01
-COLOR_HIGHLIGHT_SHADOW = FC 04 @ takes 3 bytes
+COLOR = FC 01 @ use a color listed below right after. sets base text color
+HIGHLIGHT = FC 02 @ same as fc 01. sets background and accent color
+SHADOW = FC 03 @ same as fc 01. sets shadow color
+COLOR_HIGHLIGHT_SHADOW = FC 04 @ takes 3 colors
 PALETTE = FC 05 @ used in credits
 FONT = FC 06 @ Given a font id, or use font constants below instead
 RESET_FONT = FC 07
@@ -462,6 +462,9 @@ RESUME_MUSIC = FC 18
 CREATE_MUGSHOT = FC 19
 DESTROY_MUGSHOT = FC 1A
 SPEAKER = FC 1B
+ACCENT = FC 1C @ same as FC 01. sets accent color
+BACKGROUND = FC 1D @ same as FC 01. sets background color
+TEXT_COLORS = FC 1E @ takes 3 colors: text base color, shadow and accent
 
 @ Speaker names, the order must be matching with include/constants/speaker_names.h
 NAME_NONE = 00
@@ -484,6 +487,8 @@ MUGSHOT_HOOPA = 07
 MUGSHOT_UNBOUND = 08
 MUGSHOT_NIHIL = 09
 MUGSHOT_ALISTAIR = 0A
+MUGSHOT_LEAF = 0B
+MUGSHOT_KAEL = 0C
 
 @ emote stuff begins
 
@@ -491,7 +496,7 @@ EMOTE_NORMAL = 00
 EMOTE_QUESTION = 01
 EMOTE_ANGRY = 02
 EMOTE_MAD = 03
-EMOTE_NORM = 04
+EMOTE_SAD= 04
 EMOTE_SMILE = 05
 EMOTE_SHOCK = 06
 EMOTE_JOY = 07
@@ -500,6 +505,8 @@ EMOTE_SPECIAL = 09
 EMOTE_BLUSH = 0A
 EMOTE_INSANE = 0B
 EMOTE_REALIZE = 0C
+EMOTE_NORM = 0D
+
 
 @ mugshot stuff ends
 @ fonts
