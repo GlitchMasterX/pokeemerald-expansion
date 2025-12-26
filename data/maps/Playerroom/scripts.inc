@@ -297,9 +297,9 @@ mira_Movement_1:
 
 mira_Text_0:
 # 32 "data/maps/Playerroom/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, good morning!Breakfast is\n"
-	.string "waiting. Father and Mother are already\l"
-	.string "at the table.$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, good morning!\p"
+	.string "Breakfast is waiting. Father and Mother\n"
+	.string "are already at the table.$"
 
 mira_Text_1:
 # 42 "data/maps/Playerroom/scripts.pory"

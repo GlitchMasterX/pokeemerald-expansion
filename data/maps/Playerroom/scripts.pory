@@ -29,7 +29,7 @@ script mira{
 	waitmovement(0)
 	// Mira greets
 	speakername(name4)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, good morning!Breakfast is waiting. Father and Mother are already at the table."))
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, good morning!\pBreakfast is waiting. Father and Mother are already at the table."))
 	removefieldmugshot
 	closemessage
 	// Camera back + Mira approaches

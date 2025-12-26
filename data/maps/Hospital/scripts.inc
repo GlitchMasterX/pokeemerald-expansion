@@ -687,7 +687,7 @@ Luxura_Text_3:
 # 344 "data/maps/Hospital/scripts.pory"
 # 30 "data/maps/Hospital/scripts.pory"
 # 345 "data/maps/Hospital/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_NORM}Baby: Wahh...Wahh$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_SAD}Baby: Wahh...Wahh$"
 # 346 "data/maps/Hospital/scripts.pory"
 
 # 347 "data/maps/Hospital/scripts.pory"
@@ -719,7 +719,7 @@ Luxura_Text_6:
 # 360 "data/maps/Hospital/scripts.pory"
 # 35 "data/maps/Hospital/scripts.pory"
 # 361 "data/maps/Hospital/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_NORM}Baby:Hehh...Hehh$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_SAD}Baby:Hehh...Hehh$"
 # 362 "data/maps/Hospital/scripts.pory"
 
 # 363 "data/maps/Hospital/scripts.pory"
@@ -749,7 +749,7 @@ Luxura_Text_9:
 # 375 "data/maps/Hospital/scripts.pory"
 # 41 "data/maps/Hospital/scripts.pory"
 # 376 "data/maps/Hospital/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_NORM}Baby:Goo...Gahh$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_SAD}Baby:Goo...Gahh$"
 # 377 "data/maps/Hospital/scripts.pory"
 
 # 378 "data/maps/Hospital/scripts.pory"

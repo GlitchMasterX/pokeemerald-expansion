@@ -12,13 +12,15 @@
 #define MUGSHOT_UNBOUND  8
 #define MUGSHOT_NIHIL  9
 #define MUGSHOT_ALISTAIR  10
-#define MUGSHOT_COUNT 11
+#define MUGSHOT_LEAF  11
+#define MUGSHOT_KAEL  12
+#define MUGSHOT_COUNT 13
 
 #define EMOTE_NORMAL       0
 #define EMOTE_QUESTION     1
 #define EMOTE_ANGRY        2
 #define EMOTE_MAD          3
-#define EMOTE_NORM         4
+#define EMOTE_SAD        4
 #define EMOTE_SMILE        5
 #define EMOTE_SHOCK        6
 #define EMOTE_JOY          7
@@ -27,7 +29,8 @@
 #define EMOTE_BLUSH        10
 #define EMOTE_INSANE        11
 #define EMOTE_REALIZE        12
+#define EMOTE_NORM        13
 
-#define EMOTE_COUNT        13
+#define EMOTE_COUNT        14
 
 #endif // GUARD_CONSTANTS_FIELD_MUGSHOTS_H

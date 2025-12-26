@@ -532,7 +532,7 @@ script escape {
 	removefieldmugshot
 	playmoncry(SPECIES_HOOPA,CRY_MODE_WEAK)
 	speakername("Hoopa")
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_HOOPA}{EMOTE_NORM}{COLOR RED}{SHADOW LIGHT_GRAY}Hooo....paaa."),MSGBOX_AUTOCLOSE)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_HOOPA}{EMOTE_SAD}{COLOR RED}{SHADOW LIGHT_GRAY}Hooo....paaa."),MSGBOX_AUTOCLOSE)
 	waitmessage
 	removefieldmugshot
 	applymovement(15,moves(walk_left face_up))

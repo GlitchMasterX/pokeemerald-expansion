@@ -2290,7 +2290,7 @@ ran_Text_28:
 
 ran_Text_29:
 # 186 "data/maps/LuxuraIsland/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_SPECIAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Wh-?! N-No! I just-\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_BLUSH}{COLOR BLUE}{SHADOW LIGHT_GRAY}Wh-?! N-No! I just-\p"
 	.string "That's not-!$"
 
 ran_Text_30:

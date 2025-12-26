@@ -1,15 +1,6 @@
 {
   "heal_locations": [
     {
-      "id": "HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
-      "map": "MAP_DORMINDOOR1",
-      "x": 4,
-      "y": 2,
-      "respawn_map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
-      "respawn_x": 2,
-      "respawn_y": 7
-    },
-    {
       "id": "HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE_2F",
       "map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_2F",
       "x": 4,
@@ -181,6 +172,15 @@
       "y": 52,
       "respawn_map": "MAP_BATTLE_FRONTIER_POKEMON_CENTER_1F",
       "respawn_npc": "LOCALID_FRONTIER_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_DORM",
+      "map": "MAP_DORMINDOOR1",
+      "x": 1,
+      "y": 5,
+      "respawn_map": "MAP_DORMINDOOR1",
+      "respawn_x": 1,
+      "respawn_y": 5
     }
   ]
 }

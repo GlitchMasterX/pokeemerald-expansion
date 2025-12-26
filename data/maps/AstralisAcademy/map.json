@@ -30,7 +30,7 @@
     },
     {
       "map": "MAP_ACADEMY_DORM",
-      "offset": -19,
+      "offset": -21,
       "direction": "right"
     }
   ],
@@ -197,7 +197,7 @@
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_HEX_MANIAC",
       "x": 5,
-      "y": 44,
+      "y": 43,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,

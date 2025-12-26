@@ -208,14 +208,6 @@
 #define METATILE_GenericBuilding_TrickHouse_Door_Closed  0x21B
 #define METATILE_GenericBuilding_TrickHouse_Stairs_Down  0x219
 
-// gTileset_InsideOfTruck
-#define METATILE_InsideOfTruck_DoorClosedFloor_Bottom  0x21D
-#define METATILE_InsideOfTruck_DoorClosedFloor_Mid     0x215
-#define METATILE_InsideOfTruck_DoorClosedFloor_Top     0x20D
-#define METATILE_InsideOfTruck_ExitLight_Bottom        0x218
-#define METATILE_InsideOfTruck_ExitLight_Mid           0x210
-#define METATILE_InsideOfTruck_ExitLight_Top           0x208
-
 // gTileset_InsideShip
 #define METATILE_InsideShip_DoorIndent_Locked           0x234
 #define METATILE_InsideShip_DoorIndent_Unlocked         0x21A
@@ -773,6 +765,12 @@
 #define METATILE_Fortree_SecretBase_ShrubOpen              0x278
 #define METATILE_Fortree_WoodBridge1_Bottom                0x29F
 #define METATILE_Fortree_WoodBridge1_Top                   0x297
+#define METATILE_InsideOfTruck_DoorClosedFloor_Bottom      0x21D
+#define METATILE_InsideOfTruck_DoorClosedFloor_Mid         0x215
+#define METATILE_InsideOfTruck_DoorClosedFloor_Top         0x20D
+#define METATILE_InsideOfTruck_ExitLight_Bottom            0x218
+#define METATILE_InsideOfTruck_ExitLight_Mid               0x210
+#define METATILE_InsideOfTruck_ExitLight_Top               0x208
 #define METATILE_RSMossdeepGym_RedArrow_Down               0x205
 #define METATILE_RSMossdeepGym_RedArrow_Left               0x20C
 #define METATILE_RSMossdeepGym_RedArrow_Right              0x204

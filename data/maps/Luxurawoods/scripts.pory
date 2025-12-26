@@ -86,7 +86,7 @@ script mewtwotend {
     waitmovement(0)
     special(RemoveCameraObject)
     speakername("Mewtwo")
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORM}………"),MSGBOX_AUTOCLOSE)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_SAD}………"),MSGBOX_AUTOCLOSE)
     playmoncry(SPECIES_MEWTWO,CRY_MODE_FAINT)
     waitmoncry
     waitbuttonpress
@@ -239,11 +239,11 @@ script revive {
     elif((flag(FLAG_UNUSED_0x4B0)) && (flag(FLAG_UNUSED_0x4B1)) && (!flag(FLAG_UNUSED_0x479))){
         lockall
         speakername(mewtwo)
-        msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORM}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}...Who... are you?"),MSGBOX_AUTOCLOSE)
+        msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_SAD}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}...Who... are you?"),MSGBOX_AUTOCLOSE)
         speakername(Xylar1)
         msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}(Telepathy...?)\p{COLOR BLUE}{SHADOW LIGHT_GRAY}I...\pI found you bleeding, barely alive.\pI couldn't just walk away."),MSGBOX_AUTOCLOSE)
         speakername(mewtwo)
-        msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORM}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Why... would you help me?\pHumans are liars... deceivers..."),MSGBOX_AUTOCLOSE)
+        msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_SAD}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Why... would you help me?\pHumans are liars... deceivers..."),MSGBOX_AUTOCLOSE)
         fadescreen(FADE_TO_BLACK)
         playse(SE_M_PSYBEAM2)
         waitse

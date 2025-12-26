@@ -17,8 +17,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_KAEL",
-      "x": 13,
-      "y": 7,
+      "x": 5,
+      "y": 5,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -26,19 +26,100 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_KAEL_DORM"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_MOVING_BOX",
+      "x": 6,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_DORM_BOXES"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_MOVING_BOX",
+      "x": 5,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_DORM_BOXES"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_MOVING_BOX",
+      "x": 2,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_DORM_BOXES"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_MOVING_BOX",
+      "x": 1,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_DORM_BOXES"
     }
   ],
   "warp_events": [
     {
       "x": 8,
-      "y": 14,
+      "y": 13,
       "elevation": 0,
       "dest_map": "MAP_DORM_INDOOR",
       "dest_warp_id": "0"
     }
   ],
   "coord_events": [],
-  "bg_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "LittlerootTown_BrendansHouse_2F_EventScript_WallClock"
+    },
+    {
+      "type": "sign",
+      "x": 0,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Academy_Lighthouse_EventScript_PC"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PlayersHouse_2F_EventScript_GameCube"
+    }
+  ],
   "floor_number": 0
 }

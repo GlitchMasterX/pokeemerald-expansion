@@ -66,7 +66,7 @@
 // This config unlocks the ability to switch between 24-hours clock and
 // 12-hours clock.
 // User need to set this toggle with an unused scripting flag such as
-// FLAG_UNUSED_0x020 replacing the 0 to be able to use the clock modes.
+// FLAG_DORM_BOXES replacing the 0 to be able to use the clock modes.
 #define FLAG_CLOCK_MODE 0
 
 struct StartMenuResources

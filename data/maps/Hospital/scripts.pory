@@ -342,7 +342,7 @@ Luxura_Text_nurse:
 
 Luxura_Text_3:
 # 30 "data/maps/Hospital/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_NORM}Baby: Wahh...Wahh$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_SAD}Baby: Wahh...Wahh$"
 
 Luxura_Text_4:
 # 32 "data/maps/Hospital/scripts.pory"
@@ -358,7 +358,7 @@ Luxura_Text_5:
 
 Luxura_Text_6:
 # 35 "data/maps/Hospital/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_NORM}Baby:Hehh...Hehh$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_SAD}Baby:Hehh...Hehh$"
 
 Luxura_Text_7:
 # 39 "data/maps/Hospital/scripts.pory"
@@ -373,7 +373,7 @@ Luxura_Text_8:
 
 Luxura_Text_9:
 # 41 "data/maps/Hospital/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_NORM}Baby:Goo...Gahh$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_SAD}Baby:Goo...Gahh$"
 
 Luxura_Text_10:
 # 42 "data/maps/Hospital/scripts.pory"

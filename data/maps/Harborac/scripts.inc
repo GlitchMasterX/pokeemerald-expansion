@@ -2172,7 +2172,7 @@ ONHARBOR1_Text_2:
 
 ONHARBOR1_Text_3:
 # 33 "data/maps/Harborac/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Legends don't matter to the dead.$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Legends don't matter to the dead.$"
 
 Fionamet_Text_0:
 # 78 "data/maps/Harborac/scripts.pory"

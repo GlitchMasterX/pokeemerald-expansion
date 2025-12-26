@@ -1781,7 +1781,7 @@ escape_Text_6:
 
 escape_Text_7:
 # 535 "data/maps/Luxurawork/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_HOOPA}{EMOTE_NORM}{COLOR RED}{SHADOW LIGHT_GRAY}Hooo....paaa.$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_HOOPA}{EMOTE_SAD}{COLOR RED}{SHADOW LIGHT_GRAY}Hooo....paaa.$"
 
 escape_Text_8:
 # 548 "data/maps/Luxurawork/scripts.pory"

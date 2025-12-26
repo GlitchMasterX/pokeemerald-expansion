@@ -3,8 +3,9 @@ mapscripts AstralisAcademy_Floor2_MapScripts {
 	ACADEMY_START,5:Leafmet
 	]
 	
+	
 }
 script Leafmet {
 	addobject(1,MAP_ASTRALIS_ACADEMY_FLOOR2)
-	setobjectxy(1,12,10)
+	setobjectxy(1,26,21)
 }

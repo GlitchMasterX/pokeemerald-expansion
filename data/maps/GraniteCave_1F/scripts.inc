@@ -251,7 +251,7 @@ spark1::
 
 herb_Text_0:
 # 51 "data/maps/GraniteCave_1F/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}These cuts... they're deep.\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}These cuts... they're deep.\p"
 	.string "I don't know how to fix this!$"
 
 herb_Text_1:
@@ -263,18 +263,18 @@ herb_Text_1:
 
 herb_Text_2:
 # 57 "data/maps/GraniteCave_1F/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Hang in there. I'll find something.\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Hang in there. I'll find something.\p"
 	.string "Mira always knew which ones to pick…\n"
 	.string "I just have to remember.$"
 
 herb_Text_3:
 # 60 "data/maps/GraniteCave_1F/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}I won't let you down, not like this.\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}I won't let you down, not like this.\p"
 	.string "You'll make it. You have to.$"
 
 mewrt_Text_0:
 # 92 "data/maps/GraniteCave_1F/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Why?$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Why?$"
 
 mewrt_Text_1:
 # 94 "data/maps/GraniteCave_1F/scripts.pory"
@@ -283,7 +283,7 @@ mewrt_Text_1:
 
 mewrt_Text_2:
 # 96 "data/maps/GraniteCave_1F/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}I didn't do much.\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}I didn't do much.\p"
 	.string "I just didn't want to lose someone\n"
 	.string "else... like I lost my family.$"
 
@@ -295,7 +295,7 @@ mewrt_Text_3:
 
 mewrt_Text_4:
 # 100 "data/maps/GraniteCave_1F/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Does that mean... you'll trust me?$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Does that mean... you'll trust me?$"
 
 mewrt_Text_5:
 # 102 "data/maps/GraniteCave_1F/scripts.pory"

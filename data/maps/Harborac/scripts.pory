@@ -30,7 +30,7 @@ script ONHARBOR1 {
 
     applymovement(0xFF,MOVE2)
     speakername(Xylar1)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Legends don't matter to the dead."))
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Legends don't matter to the dead."))
 
     pausefakertc 
     fadedefaultbgm

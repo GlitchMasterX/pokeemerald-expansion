@@ -5535,7 +5535,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Voss = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kael = { 
     .tileTag = 0xFFFF,
-    .paletteTag = OBJ_EVENT_PAL_TAG_ACTORM,
+    .paletteTag = OBJ_EVENT_PAL_TAG_FIREBREATHER,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,

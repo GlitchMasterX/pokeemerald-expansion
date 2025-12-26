@@ -1201,7 +1201,7 @@ mewtwotend_Text_2:
 
 mewtwotend_Text_3:
 # 89 "data/maps/Luxurawoods/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORM}………$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_SAD}………$"
 
 mewtwotend_Text_4:
 # 94 "data/maps/Luxurawoods/scripts.pory"
@@ -1298,7 +1298,7 @@ revive_Text_9:
 
 revive_Text_10:
 # 242 "data/maps/Luxurawoods/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORM}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}...Who... are you?$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_SAD}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}...Who... are you?$"
 
 revive_Text_11:
 # 244 "data/maps/Luxurawoods/scripts.pory"
@@ -1309,7 +1309,7 @@ revive_Text_11:
 
 revive_Text_12:
 # 246 "data/maps/Luxurawoods/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORM}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Why... would you help me?\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_SAD}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Why... would you help me?\p"
 	.string "Humans are liars... deceivers...$"
 
 revive_Text_13:

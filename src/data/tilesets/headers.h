@@ -461,14 +461,14 @@ const struct Tileset gTileset_SecretBaseRedCave =
  
 };
 
-const struct Tileset gTileset_InsideOfTruck =
+const struct Tileset gTileset_DojoInterior =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_InsideOfTruck,
-    .palettes = gTilesetPalettes_InsideOfTruck,
-    .metatiles = gMetatiles_InsideOfTruck,
-    .metatileAttributes = gMetatileAttributes_InsideOfTruck,
+    .tiles = gTilesetTiles_DojoInterior,
+    .palettes = gTilesetPalettes_DojoInterior,
+    .metatiles = gMetatiles_DojoInterior,
+    .metatileAttributes = gMetatileAttributes_DojoInterior,
     .callback = NULL,
  
 };

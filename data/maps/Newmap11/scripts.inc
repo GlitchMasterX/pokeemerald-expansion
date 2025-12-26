@@ -1284,7 +1284,9 @@ NihilFirstVisit1_Text_11:
 
 NihilFirstVisit1_Text_12:
 # 98 "data/maps/Newmap11/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}She died, and the world moved on.$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}She died, and the world moved on. That's\n"
+	.string "just how the world is.\p"
+	.string "It doesn't mourn for anyone.$"
 
 NihilFirstVisit1_Text_13:
 # 100 "data/maps/Newmap11/scripts.pory"
@@ -1313,8 +1315,8 @@ NihilFirstVisit1_Text_16:
 
 NihilFirstVisit1_Text_17:
 # 123 "data/maps/Newmap11/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}I came only to witness the grave of one\n"
-	.string "who once stood against me\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}I came only as a sign of respect to\n"
+	.string "someone who once stood against me\p"
 	.string "and who, for a fleeting moment, shone\n"
 	.string "brighter than all others.$"
 
@@ -1346,7 +1348,7 @@ NihilFirstVisit1_Text_22:
 
 NihilFirstVisit1_Text_23:
 # 168 "data/maps/Newmap11/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORM}\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_SAD}\p"
 	.string "{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}That person……{PAUSE_UNTIL_PRESS} His presence was\n"
 	.string "overwhelming…\p"
 	.string "It felt as if vast shadows were moving\n"
@@ -1357,7 +1359,7 @@ NihilFirstVisit1_Text_23:
 
 NihilFirstVisit1_Text_24:
 # 173 "data/maps/Newmap11/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORM}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Whoever he was…… we should avoid him\n"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_SAD}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Whoever he was…… we should avoid him\n"
 	.string "until we grow strong.\p"
 	.string "Because if the presence I felt was\n"
 	.string "truly his……{PAUSE_UNTIL_PRESS} then we stand no chance.$"
@@ -1369,12 +1371,12 @@ NihilFirstVisit1_Text_25:
 
 NihilFirstVisit1_Text_26:
 # 184 "data/maps/Newmap11/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}I see…… So, you believe Mewtwo's\n"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}I see…… So, you believe Mewtwo's\n"
 	.string "instincts.$"
 
 NihilFirstVisit1_Text_27:
 # 188 "data/maps/Newmap11/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}I see…… So, you don't believe Mewtwo's\n"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}I see…… So, you don't believe Mewtwo's\n"
 	.string "instincts.\p"
 	.string "I think otherwise.$"
 
@@ -1391,7 +1393,7 @@ NihilFirstVisit1_Text_29:
 
 NihilFirstVisit1_Text_30:
 # 199 "data/maps/Newmap11/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}Hmmm…… I also refuse to consider life\n"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}Hmmm…… I also refuse to consider life\n"
 	.string "as something meaningless.$"
 
 NihilFirstVisit1_Text_31:
@@ -1407,14 +1409,14 @@ NihilFirstVisit1_Text_32:
 
 NihilFirstVisit1_Text_33:
 # 210 "data/maps/Newmap11/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}No… you're right.\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}No… you're right.\p"
 	.string "No human could stand there and make\n"
 	.string "even Mewtwo hesitate.{PAUSE_UNTIL_PRESS}\p"
 	.string "Whatever he is… he's not like us.$"
 
 Alistairarrive_Text_0:
 # 272 "data/maps/Newmap11/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}……\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}……\p"
 	.string "…What now?\p"
 	.string "{PAUSE_UNTIL_PRESS}What am I supposed to do?$"
 
@@ -1424,7 +1426,7 @@ Alistairarrive_Text_1:
 
 Alistairarrive_Text_2:
 # 293 "data/maps/Newmap11/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Who are you?\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Who are you?\p"
 	.string "Another one here to finish me off?$"
 
 Alistairarrive_Text_3:
@@ -1435,7 +1437,7 @@ Alistairarrive_Text_3:
 
 Alistairarrive_Text_4:
 # 299 "data/maps/Newmap11/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Headmaster?\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Headmaster?\p"
 	.string "Then leave. I don't need you.$"
 
 Alistairarrive_Text_5:
@@ -1533,7 +1535,7 @@ Alistairarrive_Text_21:
 
 Alistairarrive_Text_22:
 # 356 "data/maps/Newmap11/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}………$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_SAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}………$"
 
 Alistairarrive_Text_23:
 # 363 "data/maps/Newmap11/scripts.pory"
@@ -1568,7 +1570,7 @@ mewtwogone1_Text_0:
 
 mewtwogone1_Text_1:
 # 442 "data/maps/Newmap11/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't need you reminding me of it.\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't need you reminding me of it.\p"
 	.string "I know what happened.\p"
 	.string "I wasn't ready.....but I will be.$"
 
@@ -1656,7 +1658,7 @@ mewtwogone1_Text_12:
 
 mewtwogone1_Text_13:
 # 485 "data/maps/Newmap11/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}I should talk to mom before leaving.$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}I should talk to mom before leaving.$"
 
 grave_Text_0:
 # 499 "data/maps/Newmap11/scripts.pory"
@@ -1687,7 +1689,7 @@ grave_Text_3:
 
 grave_Text_4:
 # 513 "data/maps/Newmap11/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Hmmm……$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Hmmm……$"
 
 grave_Text_5:
 # 525 "data/maps/Newmap11/scripts.pory"

@@ -10,9 +10,9 @@ AstralisAcademy_Floor2_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 
 
 Leafmet::
-# 8 "data/maps/AstralisAcademy_Floor2/scripts.pory"
-	addobject 1, MAP_ASTRALIS_ACADEMY_FLOOR2
 # 9 "data/maps/AstralisAcademy_Floor2/scripts.pory"
-	setobjectxy 1, 12, 10
+	addobject 1, MAP_ASTRALIS_ACADEMY_FLOOR2
+# 10 "data/maps/AstralisAcademy_Floor2/scripts.pory"
+	setobjectxy 1, 26, 21
 	return
 

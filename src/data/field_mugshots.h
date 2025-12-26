@@ -48,8 +48,8 @@ static const u16 sFieldMugshotPal_XylarBlush[] = INCBIN_U16("graphics/field_mugs
 static const u32 sFieldMugshotGfx_XylarBlush[] = INCBIN_U32("graphics/field_mugshots/xylar/blush.4bpp.smol");
 static const u16 sFieldMugshotPal_XylarJoy[] = INCBIN_U16("graphics/field_mugshots/xylar/joy.gbapal");
 static const u32 sFieldMugshotGfx_XylarJoy[] = INCBIN_U32("graphics/field_mugshots/xylar/joy.4bpp.smol");
-static const u16 sFieldMugshotPal_XylarBlush1[] = INCBIN_U16("graphics/field_mugshots/xylar/blush1.gbapal");
-static const u32 sFieldMugshotGfx_XylarBlush1[] = INCBIN_U32("graphics/field_mugshots/xylar/blush1.4bpp.smol");
+static const u16 sFieldMugshotPal_XylarSad[] = INCBIN_U16("graphics/field_mugshots/xylar/sad.gbapal");
+static const u32 sFieldMugshotGfx_XylarSad[] = INCBIN_U32("graphics/field_mugshots/xylar/sad.4bpp.smol");
 
 static const u16 sFieldMugshotPal_ElysiaShock[] = INCBIN_U16("graphics/field_mugshots/elysia/shock.gbapal");
 static const u32 sFieldMugshotGfx_ElysiaShock[] = INCBIN_U32("graphics/field_mugshots/elysia/shock.4bpp.smol");
@@ -99,8 +99,8 @@ static const u16 sFieldMugshotPal_HoopaMad[] = INCBIN_U16("graphics/field_mugsho
 static const u32 sFieldMugshotGfx_HoopaMad[] = INCBIN_U32("graphics/field_mugshots/hoopa/mad.4bpp.smol");
 static const u16 sFieldMugshotPal_HoopaAngry[] = INCBIN_U16("graphics/field_mugshots/hoopa/angry.gbapal");
 static const u32 sFieldMugshotGfx_HoopaAngry[] = INCBIN_U32("graphics/field_mugshots/hoopa/angry.4bpp.smol");
-static const u16 sFieldMugshotPal_HoopaNorm[] = INCBIN_U16("graphics/field_mugshots/hoopa/norm.gbapal");
-static const u32 sFieldMugshotGfx_HoopaNorm[] = INCBIN_U32("graphics/field_mugshots/hoopa/norm.4bpp.smol");
+static const u16 sFieldMugshotPal_HoopaSad[] = INCBIN_U16("graphics/field_mugshots/hoopa/sad.gbapal");
+static const u32 sFieldMugshotGfx_HoopaSad[] = INCBIN_U32("graphics/field_mugshots/hoopa/sad.4bpp.smol");
 static const u16 sFieldMugshotPal_HoopaShock[] = INCBIN_U16("graphics/field_mugshots/hoopa/shock.gbapal");
 static const u32 sFieldMugshotGfx_HoopaShock[] = INCBIN_U32("graphics/field_mugshots/hoopa/shock.4bpp.smol");
 static const u16 sFieldMugshotPal_NihilNormal[] = INCBIN_U16("graphics/field_mugshots/nihil/normal.gbapal");
@@ -113,6 +113,29 @@ static const u16 sFieldMugshotPal_AlistairNormal[] = INCBIN_U16("graphics/field_
 static const u32 sFieldMugshotGfx_AlistairNormal[] = INCBIN_U32("graphics/field_mugshots/alistair/normal.4bpp.smol");
 static const u16 sFieldMugshotPal_Alakazam[] = INCBIN_U16("graphics/field_mugshots/alistair/alakazam.gbapal");
 static const u32 sFieldMugshotGfx_Alakazam[] = INCBIN_U32("graphics/field_mugshots/alistair/alakazam.4bpp.smol");
+
+static const u16 sFieldMugshotPal_LeafNormal[] = INCBIN_U16("graphics/field_mugshots/leaf/normal.gbapal");
+static const u32 sFieldMugshotGfx_LeafNormal[] = INCBIN_U32("graphics/field_mugshots/leaf/normal.4bpp.smol");
+static const u16 sFieldMugshotPal_LeafJoy[] = INCBIN_U16("graphics/field_mugshots/leaf/joy.gbapal");
+static const u32 sFieldMugshotGfx_LeafJoy[] = INCBIN_U32("graphics/field_mugshots/leaf/joy.4bpp.smol");
+static const u16 sFieldMugshotPal_LeafQuestion[] = INCBIN_U16("graphics/field_mugshots/leaf/question.gbapal");
+static const u32 sFieldMugshotGfx_LeafQuestion[] = INCBIN_U32("graphics/field_mugshots/leaf/question.4bpp.smol");
+static const u16 sFieldMugshotPal_LeafShock[] = INCBIN_U16("graphics/field_mugshots/leaf/shock.gbapal");
+static const u32 sFieldMugshotGfx_LeafShock[] = INCBIN_U32("graphics/field_mugshots/leaf/shock.4bpp.smol");
+static const u16 sFieldMugshotPal_LeafAngry[] = INCBIN_U16("graphics/field_mugshots/leaf/angry.gbapal");
+static const u32 sFieldMugshotGfx_LeafAngry[] = INCBIN_U32("graphics/field_mugshots/leaf/angry.4bpp.smol");
+
+static const u16 sFieldMugshotPal_KaelNormal[] = INCBIN_U16("graphics/field_mugshots/kael/normal.gbapal");
+static const u32 sFieldMugshotGfx_KaelNormal[] = INCBIN_U32("graphics/field_mugshots/kael/normal.4bpp.smol");
+static const u16 sFieldMugshotPal_KaelJoy[] = INCBIN_U16("graphics/field_mugshots/kael/joy.gbapal");
+static const u32 sFieldMugshotGfx_KaelJoy[] = INCBIN_U32("graphics/field_mugshots/kael/joy.4bpp.smol");
+static const u16 sFieldMugshotPal_KaelQuestion[] = INCBIN_U16("graphics/field_mugshots/kael/question.gbapal");
+static const u32 sFieldMugshotGfx_KaelQuestion[] = INCBIN_U32("graphics/field_mugshots/kael/question.4bpp.smol");
+static const u16 sFieldMugshotPal_KaelShock[] = INCBIN_U16("graphics/field_mugshots/kael/shock.gbapal");
+static const u32 sFieldMugshotGfx_KaelShock[] = INCBIN_U32("graphics/field_mugshots/kael/shock.4bpp.smol");
+static const u16 sFieldMugshotPal_KaelAngry[] = INCBIN_U16("graphics/field_mugshots/kael/angry.gbapal");
+static const u32 sFieldMugshotGfx_KaelAngry[] = INCBIN_U32("graphics/field_mugshots/kael/angry.4bpp.smol");
+
 
 struct MugshotGfx
 {
@@ -253,6 +276,11 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
             .pal = sFieldMugshotPal_XylarInsane,
         },
         
+        [EMOTE_SAD] =
+        {
+            .gfx = sFieldMugshotGfx_XylarSad,
+            .pal = sFieldMugshotPal_XylarSad,
+        },
 
     },
     [MUGSHOT_AURTHER] =
@@ -273,12 +301,6 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
         {
             .gfx = sFieldMugshotGfx_AurtherJoy,
             .pal = sFieldMugshotPal_AurtherJoy,
-        },
-
-        [EMOTE_SPECIAL] =
-        {
-            .gfx = sFieldMugshotGfx_XylarBlush1,
-            .pal = sFieldMugshotPal_XylarBlush1,
         },
 
     },
@@ -390,10 +412,10 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
             .pal = sFieldMugshotPal_HoopaJoy,
         },
 
-        [EMOTE_NORM] =
+        [EMOTE_SAD] =
         {
-            .gfx = sFieldMugshotGfx_HoopaNorm,
-            .pal = sFieldMugshotPal_HoopaNorm,
+            .gfx = sFieldMugshotGfx_HoopaSad,
+            .pal = sFieldMugshotPal_HoopaSad,
         },
 
         [EMOTE_MAD] =
@@ -477,4 +499,69 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
             .pal = sFieldMugshotPal_Alakazam,
         },
     },
-};
+    [MUGSHOT_LEAF] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_LeafNormal,
+            .pal = sFieldMugshotPal_LeafNormal,
+        },
+
+        [EMOTE_SHOCK] =
+        {
+            .gfx = sFieldMugshotGfx_LeafShock,
+            .pal = sFieldMugshotPal_LeafShock,
+        },
+
+        [EMOTE_ANGRY] =
+        {
+            .gfx = sFieldMugshotGfx_LeafAngry,
+            .pal = sFieldMugshotPal_LeafAngry,
+        },
+
+        [EMOTE_JOY] =
+        {
+            .gfx = sFieldMugshotGfx_LeafJoy,
+            .pal = sFieldMugshotPal_LeafJoy,
+        },
+
+        [EMOTE_QUESTION] =
+        {
+            .gfx = sFieldMugshotGfx_LeafQuestion,
+            .pal = sFieldMugshotPal_LeafQuestion,
+        },
+    },
+
+    [MUGSHOT_KAEL] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_KaelNormal,
+            .pal = sFieldMugshotPal_KaelNormal,
+        },
+
+        [EMOTE_SHOCK] =
+        {
+            .gfx = sFieldMugshotGfx_KaelShock,
+            .pal = sFieldMugshotPal_KaelShock,
+        },
+
+        [EMOTE_ANGRY] =
+        {
+            .gfx = sFieldMugshotGfx_KaelAngry,
+            .pal = sFieldMugshotPal_KaelAngry,
+        },
+
+        [EMOTE_JOY] =
+        {
+            .gfx = sFieldMugshotGfx_KaelJoy,
+            .pal = sFieldMugshotPal_KaelJoy,
+        },
+
+        [EMOTE_QUESTION] =
+        {
+            .gfx = sFieldMugshotGfx_KaelQuestion,
+            .pal = sFieldMugshotPal_KaelQuestion,
+        },
+    },
+    };
