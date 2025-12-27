@@ -248,7 +248,7 @@ text eliasn{
     format("Prof. Elias")
 }
 script notnowdorm {
-    applymovement(0xFF,mov5)
+    applymovement(0xFF,moves(walk_left))
     waitmovement(0)
     msgbox(format("Not now."))
     release

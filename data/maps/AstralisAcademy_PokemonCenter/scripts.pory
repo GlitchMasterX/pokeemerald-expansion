@@ -1,6 +1,38 @@
-raw `
-AstralisAcademy_PokemonCenter_MapScripts::
-map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
-	.byte 0
+mapscripts AstralisAcademy_PokemonCenter_MapScripts {
+	MAP_SCRIPT_ON_FRAME_TABLE[
+	ACADEMY_START,6:LeaftourPokecentre
+	]
+	MAP_SCRIPT_ON_RESUME: CableClub_OnResume
+	
+}
 
-`
+script LeaftourPokecentre {
+	lock
+    special(SpawnCameraObject)
+    applymovement(0x7F, moves(walk_up*10))
+    waitmovement(0)
+    speakername("Leaf")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Pokémon Center.\pDon't skip this.\pEven the strongest teams break if you don't care for them."))
+    closemessage
+    applymovement(0x7F, moves(walk_right*8))
+    waitmovement(0)
+	speakername("Leaf")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}PokéMart.\pStock up when you can.\pRunning out of items mid-battle is the worst feeling."))
+    closemessage
+    applymovement(0x7F, moves(walk_down*6))
+    waitmovement(0)
+	speakername("Leaf")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Nursing wing.\pFor trainer injuries and major cases.\pI hope you don't end up there."))
+    closemessage
+	waitmessage
+	applymovement(0x7F, moves(walk_left*8 walk_down*4))
+    waitmovement(0)
+	speakername("Leaf")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Let's go."))
+    closemessage
+	warp(MAP_ASTRALIS_ACADEMY_FLOOR1,26,15)
+    waitmovement(0)   
+    special(RemoveCameraObject)
+    release
+	
+}

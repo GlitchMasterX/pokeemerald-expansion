@@ -30,7 +30,17 @@
       "dest_warp_id": "6"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 16,
+      "elevation": 0,
+      "var": "ACADEMY_START",
+      "var_value": "6",
+      "script": "Leaftourdojo"
+    }
+  ],
   "bg_events": [],
   "floor_number": 0
 }

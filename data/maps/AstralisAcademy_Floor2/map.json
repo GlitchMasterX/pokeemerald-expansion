@@ -308,6 +308,96 @@
       "var": "ACADEMY_START",
       "var_value": "5",
       "script": "Leafmet1"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 9,
+      "elevation": 0,
+      "var": "ACADEMY_START",
+      "var_value": "6",
+      "script": "Leaftourbattlestrategy"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 9,
+      "elevation": 0,
+      "var": "ACADEMY_START",
+      "var_value": "6",
+      "script": "LeaftourItemstrategy"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 33,
+      "elevation": 0,
+      "var": "ACADEMY_START",
+      "var_value": "6",
+      "script": "LeaftourArt"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 33,
+      "elevation": 0,
+      "var": "ACADEMY_START",
+      "var_value": "6",
+      "script": "LeaftourArt"
+    },
+    {
+      "type": "trigger",
+      "x": 41,
+      "y": 33,
+      "elevation": 0,
+      "var": "ACADEMY_START",
+      "var_value": "6",
+      "script": "LeaftourLab"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 33,
+      "elevation": 0,
+      "var": "ACADEMY_START",
+      "var_value": "6",
+      "script": "LeaftourLab"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 64,
+      "elevation": 0,
+      "var": "ACADEMY_START",
+      "var_value": "6",
+      "script": "LeaftourItemTheory"
+    },
+    {
+      "type": "trigger",
+      "x": 43,
+      "y": 64,
+      "elevation": 0,
+      "var": "ACADEMY_START",
+      "var_value": "6",
+      "script": "LeaftourItemTheory"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 64,
+      "elevation": 0,
+      "var": "ACADEMY_START",
+      "var_value": "6",
+      "script": "LeaftourBattleTheory"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 64,
+      "elevation": 0,
+      "var": "ACADEMY_START",
+      "var_value": "6",
+      "script": "LeaftourBattleTheory"
     }
   ],
   "bg_events": [],

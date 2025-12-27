@@ -1,6 +1,7 @@
 mapscripts AstralisAcademy_MapScripts {
 	MAP_SCRIPT_ON_FRAME_TABLE[
 	ACADEMY_START,9:TrialAnnouncement
+	
 ]
 MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
 	ACADEMY_START,9:trial

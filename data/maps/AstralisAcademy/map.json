@@ -418,39 +418,12 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 21,
-      "y": 25,
-      "elevation": 0,
-      "var": "ACADEMY_START",
-      "var_value": "6",
-      "script": "serenaextend1"
-    },
-    {
-      "type": "trigger",
-      "x": 22,
-      "y": 25,
-      "elevation": 0,
-      "var": "ACADEMY_START",
-      "var_value": "6",
-      "script": "serenaextend"
-    },
-    {
-      "type": "trigger",
       "x": 24,
-      "y": 25,
+      "y": 35,
       "elevation": 0,
       "var": "ACADEMY_START",
       "var_value": "6",
-      "script": "serenaextend2"
-    },
-    {
-      "type": "trigger",
-      "x": 23,
-      "y": 25,
-      "elevation": 0,
-      "var": "ACADEMY_START",
-      "var_value": "6",
-      "script": "serenaextend"
+      "script": "Leaftourend"
     }
   ],
   "bg_events": [

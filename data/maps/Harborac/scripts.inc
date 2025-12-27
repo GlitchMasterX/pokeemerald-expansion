@@ -499,7 +499,7 @@ goin:
 
 notnowdorm::
 # 251 "data/maps/Harborac/scripts.pory"
-	applymovement 0xFF, mov5
+	applymovement 0xFF, notnowdorm_Movement_0
 # 252 "data/maps/Harborac/scripts.pory"
 	waitmovement 0
 # 253 "data/maps/Harborac/scripts.pory"
@@ -2138,6 +2138,12 @@ Fionamet1_Movement_0:
 scinerd_Movement_0:
 # 216 "data/maps/Harborac/scripts.pory"
 	emote_upset
+	step_end
+
+# 251 "data/maps/Harborac/scripts.pory"
+notnowdorm_Movement_0:
+# 251 "data/maps/Harborac/scripts.pory"
+	walk_left
 	step_end
 
 # 356 "data/maps/Harborac/scripts.pory"
