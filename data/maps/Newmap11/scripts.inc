@@ -1017,7 +1017,7 @@ grave_4:
 # 530 "data/maps/Newmap11/scripts.pory"
 	fwdmonth 3
 # 531 "data/maps/Newmap11/scripts.pory"
-	warpsilent MAP_HARBORAC, 22, 27
+	warpsilent MAP_ROUTE109, 21, 43
 	return
 
 

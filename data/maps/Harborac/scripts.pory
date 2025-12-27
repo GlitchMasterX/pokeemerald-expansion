@@ -1,71 +1,13 @@
 mapscripts Harborac_MapScripts {
-      MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
-	ACADEMY_START,2:ONHARBOR
-]
-MAP_SCRIPT_ON_FRAME_TABLE[
-	ACADEMY_START,2:ONHARBOR1
-]
  
 }
-script ONHARBOR1 {
-    playbgm(MUS_HG_KIMONO_GIRL_DANCE,FALSE)
-    lock
 
-    speakername(oldman)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Here we are, young man.\pThe Astralis Academy-the place where ordinary trainers become legends.")) 
-
-    speakername(Xylar1)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_REALIZE}{COLOR BLUE}{SHADOW LIGHT_GRAY}………")) 
-
-    speakername(oldman)
-    msgbox(format("(His eyes... are not normal.)"),MSGBOX_AUTOCLOSE) 
-
-    waitmessage
-    fadescreen(FADE_TO_BLACK)
-    playse(SE_RG_SS_ANNE_HORN)
-    removeobject(4)
-    removeobject(11)
-    setflag(FLAG_OLDMAN_GONE)
-    fadescreen(FADE_FROM_BLACK)
-
-    applymovement(0xFF,MOVE2)
-    speakername(Xylar1)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Legends don't matter to the dead."))
-
-    pausefakertc 
-    fadedefaultbgm
-    setvar(ACADEMY_START,3)
-    release
-}
-
-text oldman{
-    format("Oldman")
-}
-script ONHARBOR {
-    applymovement(0xFF,MOVE1)
-    
-}
-movement MOVE1 {
-    face_left
-}
-movement MOVE2 {
-    walk_right
-}
-script Fionamet3{
-    applymovement(OBJ_EVENT_ID_PLAYER,mov5)
-    waitmovement(0)
-    goto(Fionamet)
-}
-movement mov5 {
-    walk_down*2
-    
-}
 script Fionamet {
     lock
     special(SpawnCameraObject)
-    playbgm(MUS_DUMMY,FALSE)
+    addobject(3)
     applymovement(0x7F, MOVE6)
-    applymovement(OBJ_EVENT_ID_PLAYER,MOVE3)
+    applymovement(OBJ_EVENT_ID_PLAYER,moves(walk_up*12))
     applymovement(3,moves(walk_down*3))
     waitmovement(0)
     playse(SE_PIN)
@@ -78,13 +20,11 @@ script Fionamet {
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}My apologies……"))
     closemessage 
     applymovement(4,MOVE5)
-    speakername("Maid")
+    waitmovement(0)
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Are you alright, my lady?"))
     closemessage
-    waitmovement(0)
     playse(SE_PIN)
     applymovement(4,mov1)
-    speakername("Maid")
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}How rude of him, he didn't even stop to apologize."))
     waitmessage
     applymovement(4,moves(face_right))
@@ -93,7 +33,6 @@ script Fionamet {
     closemessage
     playse(SE_PIN)
     applymovement(4,moves(emote_question_mark))
-    speakername("Maid") 
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}What happened?"))
     waitmessage
     closemessage
@@ -114,7 +53,7 @@ movement mov1 {
     face_up
 }
 movement MOVE6 {
-    walk_right*2
+    walk_up*4
 }
 movement MOVE3 {
     walk_right*12

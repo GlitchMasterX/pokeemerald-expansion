@@ -528,7 +528,7 @@ script grave {
     setflag(FLAG_TRIAL_SERENA)
     initclock(10,10)
     fwdmonth(3)
-    warpsilent(MAP_HARBORAC,22,27)
+    warpsilent(MAP_ROUTE109,21,43)
     }
     else{
         goto(EventScript_M_Grave)

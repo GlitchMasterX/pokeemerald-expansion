@@ -1,1 +1,32 @@
-mapscripts Route109_MapScripts {}
+mapscripts Route109_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE[
+	ACADEMY_START,2:ONHARBOR1
+]
+}
+
+script ONHARBOR1 {
+    playbgm(MUS_HG_KIMONO_GIRL_DANCE,FALSE)
+    lock
+    speakername("Oldman")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Here we are, young man.\pThe Astralis Academy-the place where ordinary trainers become legends.")) 
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_REALIZE}{COLOR BLUE}{SHADOW LIGHT_GRAY}………")) 
+    speakername("Oldman")
+    msgbox(format("(His eyes... are not normal.)")) 
+    closemessage
+    waitmessage
+    fadescreen(FADE_TO_BLACK)
+    playse(SE_RG_SS_ANNE_HORN)
+    removeobject(2)
+    removeobject(1)
+    setflag(FLAG_OLDMAN_GONE)
+    fadescreen(FADE_FROM_BLACK)
+    applymovement(0xFF,moves(walk_up))
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Legends don't matter to the dead."))
+    closemessage
+    pausefakertc 
+    fadedefaultbgm
+    setvar(ACADEMY_START,3)
+    release
+}
