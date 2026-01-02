@@ -177,7 +177,7 @@ script elias{
     waitmovement(0)
     removeobject(1)
     setflag(FLAG_ELIASMET)
-    warp(MAP_HEADOFFICE,7,12)
+    warp(MAP_HEADOFFICE,7,10)
 }
 movement goin {
     walk_up

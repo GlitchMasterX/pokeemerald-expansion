@@ -77,7 +77,7 @@ Route104_EventScript_PlayRivalMusic::
 	return
 
 Route104_EventScript_PlayMayMusic::
-	playbgm MUS_ENCOUNTER_MAY, TRUE
+	playbgm MUS_DP_RIVAL, TRUE
 	return
 
 Route104_EventScript_PlayBrendanMusic::

@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE112",
   "name": "Route112",
   "layout": "LAYOUT_ROUTE112",
-  "music": "MUS_ROUTE110",
+  "music": "MUS_PETALBURG",
   "region_map_section": "MAPSEC_ABYSSAL_TRENCH",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",

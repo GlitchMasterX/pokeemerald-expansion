@@ -4472,7 +4472,7 @@ static void Task_DoLearnedBoxMonMoveFanfareAfterText(u8 taskId)
 {
     if (IsTextPrinterActive(0) != TRUE)
     {
-        PlayFanfare(MUS_LEVEL_UP);
+        PlayFanfare(MUS_DP_LEVEL_UP);
         gSpecialVar_Result = CAN_LEARN_MOVE;
         DestroyTask(taskId);
         ScriptContext_Enable();

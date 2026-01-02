@@ -298,14 +298,16 @@ static void DebugAction_Party_ClearParty(u8 taskId);
 static void DebugAction_Party_SetParty(u8 taskId);
 static void DebugAction_Party_BattleSingle(u8 taskId);
 
+
 static void DebugAction_Trainers_ChooseFromMap(u8 taskId);
 static void DebugAction_Trainers_ChooseTrainer(u8 taskId, u32 selection);
 static void DebugAction_Trainers_SwitchDoublesFlag(u8 taskId);
 static void DebugAction_Trainers_SetRematch(u8 taskId);
-static void DebugAction_Trainers_SetRematchReadiness(u8 taskId);
 static void DebugAction_Trainers_TryBattle(u8 taskId);
+#if FREE_MATCH_CALL == FALSE
+static void DebugAction_Trainers_SetRematchReadiness(u8 taskId);
 static void DebugAction_Trainers_RechargeVsSeeker(u8 taskId);
-
+#endif
 static void DebugAction_FlagsVars_Flags(u8 taskId);
 static void DebugAction_FlagsVars_FlagsSelect(u8 taskId);
 static void DebugAction_FlagsVars_Vars(u8 taskId);
@@ -671,9 +673,11 @@ static const struct DebugMenuOption sDebugMenu_Actions_Trainers[] =
     { COMPOUND_STRING("Partner: {STR_VAR_1}"), DebugAction_Trainers_ChooseTrainer,  (void *)TRAINERS_DEBUG_SELECTION_PARTNER},
     { COMPOUND_STRING("Double Battle: {STR_VAR_1}"), DebugAction_ToggleFlag, DebugAction_Trainers_SwitchDoublesFlag },
     { COMPOUND_STRING("Matches {STR_VAR_1}/{STR_VAR_2}"), DebugAction_ToggleFlag, DebugAction_Trainers_SetRematch },
-    { COMPOUND_STRING("Rematch Ready {STR_VAR_1}"), DebugAction_ToggleFlag, DebugAction_Trainers_SetRematchReadiness },
     { COMPOUND_STRING("Try Battle"), DebugAction_Trainers_TryBattle },
+    #if FREE_MATCH_CALL == FALSE
+    { COMPOUND_STRING("Rematch Ready {STR_VAR_1}"), DebugAction_ToggleFlag, DebugAction_Trainers_SetRematchReadiness },
     { COMPOUND_STRING("Recharge VS Seeker"), DebugAction_Trainers_RechargeVsSeeker },
+    #endif
     { NULL }
 };
 
@@ -1086,6 +1090,7 @@ static u8 Debug_GenerateListTrainerMenu(void)
             }
             break;
         case 6:
+        #if FREE_MATCH_CALL == FALSE
             if (I_VS_SEEKER_CHARGING || !isRealFight || rematchTableId == -1)
             {
                 noDraw = TRUE;
@@ -1096,6 +1101,7 @@ static u8 Debug_GenerateListTrainerMenu(void)
             else
                 StringCopy(gStringVar1, COMPOUND_STRING("{COLOR RED} FALSE"));
             break;
+            #endif
         case 8:
             if (I_VS_SEEKER_CHARGING == 0)
                 noDraw = TRUE;
@@ -2109,6 +2115,7 @@ static void DebugAction_Trainers_SetRematch(u8 taskId)
     }
 }
 
+#if FREE_MATCH_CALL == FALSE
 static void DebugAction_Trainers_SetRematchReadiness(u8 taskId)
 {
     if (gSaveBlock1Ptr->trainerRematches[sDebugMenuListData->data[1]] == -1)
@@ -2118,6 +2125,7 @@ static void DebugAction_Trainers_SetRematchReadiness(u8 taskId)
     else
         gSaveBlock1Ptr->trainerRematches[sDebugMenuListData->data[1]] = TRUE;
 }
+#endif
 
 static void DebugAction_Trainers_TryBattle(u8 taskId)
 {
@@ -2160,7 +2168,7 @@ static void DebugAction_Trainers_TryBattle(u8 taskId)
     BattleSetup_StartTrainerBattle_Debug();
     Debug_DestroyMenu_Full(taskId);
 }
-
+#if FREE_MATCH_CALL == FALSE
 static void DebugAction_Trainers_RechargeVsSeeker(u8 taskId)
 {
     gSaveBlock1Ptr->trainerRematchStepCounter = VSSEEKER_RECHARGE_STEPS;
@@ -2168,7 +2176,7 @@ static void DebugAction_Trainers_RechargeVsSeeker(u8 taskId)
     ScriptContext_SetupScript(EventScript_VsSeekerChargingDone);
     Debug_DestroyMenu_Full(taskId);
 }
-
+#endif
 // *******************************
 // Actions Flags and Vars
 static void Debug_Display_FlagInfo(u32 flag, u32 digit, u8 windowId)
@@ -2715,7 +2723,7 @@ static void DebugAction_Give_Item_SelectQuantity(u8 taskId)
     {
         DestroyItemIcon(taskId);
 
-        PlaySE(MUS_LEVEL_UP);
+        PlaySE(MUS_DP_LEVEL_UP);
         AddBagItem(itemId, gTasks[taskId].tInput);
         DebugAction_DestroyExtraWindow(taskId);
     }
@@ -2988,7 +2996,7 @@ static void DebugAction_Give_Pokemon_SelectLevel(u8 taskId)
         FreeAndDestroyMonIconSprite(&gSprites[gTasks[taskId].tSpriteId]);
         if (gTasks[taskId].tIsComplex == FALSE)
         {
-            PlaySE(MUS_LEVEL_UP);
+            PlaySE(MUS_DP_LEVEL_UP);
             ScriptGiveMon(sDebugMonData->species, gTasks[taskId].tInput, ITEM_NONE);
             // Set flag for user convenience
             FlagSet(FLAG_SYS_POKEMON_GET);
@@ -3438,7 +3446,7 @@ static void DebugAction_Give_Pokemon_Move(u8 taskId)
             gTasks[taskId].tInput = 0;
             gTasks[taskId].tDigit = 0;
 
-            PlaySE(MUS_LEVEL_UP);
+            PlaySE(MUS_DP_LEVEL_UP);
             gTasks[taskId].func = DebugAction_Give_Pokemon_ComplexCreateMon;
         }
     }
@@ -3646,7 +3654,7 @@ static void DebugAction_Give_Decoration_SelectId(u8 taskId)
     {
         DestroyItemIcon(taskId);
 
-        PlaySE(MUS_LEVEL_UP);
+        PlaySE(MUS_DP_LEVEL_UP);
         DecorationAdd(gTasks[taskId].tInput);
         DebugAction_DestroyExtraWindow(taskId);
     }
@@ -3865,7 +3873,7 @@ static void DebugAction_PCBag_Fill_PocketKeyItems(u8 taskId)
 
 static void DebugAction_PCBag_ClearBag(u8 taskId)
 {
-    PlaySE(MUS_LEVEL_UP);
+    PlaySE(MUS_DP_LEVEL_UP);
     ClearBag();
 }
 
@@ -4055,83 +4063,35 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
 
 
 #define SOUND_LIST_BGM              \
-    X(MUS_LITTLEROOT_TEST)          \
-    X(MUS_GSC_ROUTE38)              \
-    X(MUS_CAUGHT)                   \
-    X(MUS_VICTORY_WILD)             \
-    X(MUS_VICTORY_GYM_LEADER)       \
-    X(MUS_VICTORY_LEAGUE)           \
-    X(MUS_C_COMM_CENTER)            \
-    X(MUS_GSC_PEWTER)               \
-    X(MUS_C_VS_LEGEND_BEAST)        \
-    X(MUS_ROUTE101)                 \
-    X(MUS_ROUTE110)                 \
-    X(MUS_ROUTE120)                 \
     X(MUS_PETALBURG)                \
     X(MUS_OLDALE)                   \
-    X(MUS_GYM)                      \
-    X(MUS_SURF)                     \
     X(MUS_PETALBURG_WOODS)          \
-    X(MUS_LEVEL_UP)                 \
-    X(MUS_HEAL)                     \
-    X(MUS_OBTAIN_BADGE)             \
-    X(MUS_OBTAIN_ITEM)              \
-    X(MUS_EVOLVED)                  \
-    X(MUS_OBTAIN_TMHM)              \
     X(MUS_LILYCOVE_MUSEUM)          \
     X(MUS_ROUTE122)                 \
     X(MUS_OCEANIC_MUSEUM)           \
-    X(MUS_EVOLUTION_INTRO)          \
-    X(MUS_EVOLUTION)                \
-    X(MUS_MOVE_DELETED)             \
-    X(MUS_ENCOUNTER_GIRL)           \
-    X(MUS_ENCOUNTER_MALE)           \
     X(MUS_ABANDONED_SHIP)           \
     X(MUS_FORTREE)                  \
     X(MUS_BIRCH_LAB)                \
-    X(MUS_B_TOWER_RS)               \
-    X(MUS_ENCOUNTER_SWIMMER)        \
     X(MUS_CAVE_OF_ORIGIN)           \
     X(MUS_OBTAIN_BERRY)             \
     X(MUS_AWAKEN_LEGEND)            \
-    X(MUS_SLOTS_JACKPOT)            \
-    X(MUS_SLOTS_WIN)                \
     X(MUS_TOO_BAD)                  \
     X(MUS_ROULETTE)                 \
-    X(MUS_LINK_CONTEST_P1)          \
-    X(MUS_LINK_CONTEST_P2)          \
-    X(MUS_LINK_CONTEST_P3)          \
-    X(MUS_LINK_CONTEST_P4)          \
-    X(MUS_ENCOUNTER_RICH)           \
     X(MUS_VERDANTURF)               \
     X(MUS_RUSTBORO)                 \
-    X(MUS_POKE_CENTER)              \
-    X(MUS_ROUTE104)                 \
-    X(MUS_ROUTE119)                 \
-    X(MUS_CYCLING)                  \
-    X(MUS_POKE_MART)                \
     X(MUS_LITTLEROOT)               \
     X(MUS_MT_CHIMNEY)               \
-    X(MUS_ENCOUNTER_FEMALE)         \
-    X(MUS_LILYCOVE)                 \
     X(MUS_DESERT)                   \
     X(MUS_HELP)                     \
     X(MUS_UNDERWATER)               \
-    X(MUS_VICTORY_TRAINER)          \
     X(MUS_TITLE)                    \
     X(MUS_INTRO)                    \
-    X(MUS_ENCOUNTER_MAY)            \
-    X(MUS_ENCOUNTER_INTENSE)        \
-    X(MUS_ENCOUNTER_COOL)           \
-    X(MUS_ROUTE113)                 \
     X(MUS_ENCOUNTER_AQUA)           \
-    X(MUS_FOLLOW_ME)                \
     X(MUS_ENCOUNTER_BRENDAN)        \
     X(MUS_EVER_GRANDE)              \
     X(MUS_ENCOUNTER_SUSPICIOUS)     \
     X(MUS_VICTORY_AQUA_MAGMA)       \
     X(MUS_CABLE_CAR)                \
-    X(MUS_GAME_CORNER)              \
     X(MUS_DEWFORD)                  \
     X(MUS_SAFARI_ZONE)              \
     X(MUS_VICTORY_ROAD)             \
@@ -4151,20 +4111,12 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_ABNORMAL_WEATHER)         \
     X(MUS_WEATHER_GROUDON)          \
     X(MUS_SOOTOPOLIS)               \
-    X(MUS_CONTEST_RESULTS)          \
     X(MUS_HALL_OF_FAME_ROOM)        \
     X(MUS_TRICK_HOUSE)              \
-    X(MUS_ENCOUNTER_TWINS)          \
-    X(MUS_ENCOUNTER_ELITE_FOUR)     \
-    X(MUS_ENCOUNTER_HIKER)          \
-    X(MUS_CONTEST_LOBBY)            \
-    X(MUS_ENCOUNTER_INTERVIEWER)    \
-    X(MUS_ENCOUNTER_CHAMPION)       \
     X(MUS_CREDITS)                  \
     X(MUS_END)                      \
     X(MUS_B_FRONTIER)               \
     X(MUS_B_ARENA)                  \
-    X(MUS_OBTAIN_B_POINTS)          \
     X(MUS_REGISTER_MATCH_CALL)      \
     X(MUS_B_PYRAMID)                \
     X(MUS_B_PYRAMID_TOP)            \
@@ -4332,7 +4284,7 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_DP_OREBURGH_MINE) \
     X(MUS_DP_INSIDE_POKEMON_LEAGUE) \
     X(MUS_DP_HALL_OF_FAME_ROOM) \
-    X(MUS_DP_POKE_CENTER_DAY) \
+    X(MUS_DP_POKE_CENTER) \
     X(MUS_DP_POKE_CENTER_NIGHT) \
     X(MUS_DP_GYM) \
     X(MUS_DP_ROWAN_LAB) \

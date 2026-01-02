@@ -2,7 +2,7 @@
   "id": "MAP_ASTRALIS_ACADEMY_POKEMON_CENTER",
   "name": "AstralisAcademy_PokemonCenter",
   "layout": "LAYOUT_POKEMON_CENTER_2F",
-  "music": "MUS_DP_POKE_CENTER_DAY",
+  "music": "MUS_DP_POKE_CENTER",
   "region_map_section": "MAPSEC_ASTRALIS_ACADEMY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

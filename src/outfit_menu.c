@@ -1024,6 +1024,7 @@ bool8 IsPlayerWearingOutfit(u16 id)
     return FALSE;
 }
 
+
 u32 GetOutfitPrice(u16 id)
 {
     return gOutfits[id].prices[gSaveBlock2Ptr->playerGender];

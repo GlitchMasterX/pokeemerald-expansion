@@ -385,7 +385,7 @@ elias::
 # 179 "data/maps/Harborac/scripts.pory"
 	setflag FLAG_ELIASMET
 # 180 "data/maps/Harborac/scripts.pory"
-	warp MAP_HEADOFFICE, 7, 12
+	warp MAP_HEADOFFICE, 7, 10
 	return
 
 

@@ -1,25 +1,161 @@
 mapscripts AstralisAcademy_Classroom_MapScripts{
 MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
-	ACADEMY_START,11:trial2
+	ACADEMY_START,9:trial2
 ]
-MAP_SCRIPT_ON_FRAME_TABLE[
-	ACADEMY_START,11:FracturedMask
-]
+
 }
 script trial2 {
 	clearflag(FLAG_TRIAL_SERENA)
-	setobjectxyperm(4,41,11)
-	setobjectxyperm(2,44,11)
-	setobjectxyperm(8,35,14)
-	setobjectmovementtype(6,MOVEMENT_TYPE_FACE_DOWN)
-	addobject(9)
-	addobject(6)
-	addobject(10)
-	addobject(8)
+	setobjectxyperm(3,2,8)
+	setobjectxyperm(5,4,9)
+    setobjectmovementtype(3,MOVEMENT_TYPE_FACE_RIGHT)	
+	setobjectmovementtype(5,MOVEMENT_TYPE_FACE_RIGHT)
+	addobject(3)
 	addobject(4)
+	addobject(5)
+	createvobject(OBJ_EVENT_GFX_SELENE,24,4,7,3,DIR_EAST)
+	createvobject(OBJ_EVENT_GFX_FIONA_1,25,2,5,3,DIR_EAST)
+	createvobject(OBJ_EVENT_GFX_GIRL_1,26,19,10,3,DIR_WEST)
+	createvobject(OBJ_EVENT_GFX_GAMEBOY_KID,23,19,8,3,DIR_WEST)
+}
+
+script Trialbattle {
+	applymovement(0xFF,moves(walk_up*3 walk_left*6 walk_up*3))
+	applymovement(0xFD,moves(walk_up*4 walk_left*6 walk_up*2 face_left))
+	waitmovement(0)
+	facefollowernpc
+	playse(SE_PIN)
+	applymovement(0xFD,moves(face_up emote_happy))
+	speakername("Leaf")  
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Lucky... The first row is empty.\pLet's sit here."), MSGBOX_AUTOCLOSE)  
+    closemessage
+	applymovement(0xFF,moves(walk_left face_right ))
+	applymovement(0xFD,moves(walk_left face_right))
+	waitmovement(0)
+	special(SpawnCameraObject)  
+	applymovement(0x7F,moves(walk_right*7))
+	waitmovement(0)
+	fadenewbgm(MUS_CONTEST)
+	applymovement(1,moves(face_down))
+	speakername(eliasn)  
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Attention, all first-year students...\pThe time has come to prove your potential.\pIn the spirit of growth and mastery, each of you will engage in a one-on-one Pokémon battle.\pThis will serve as your first trial.\pLet us begin by calling forth the first two challengers."), MSGBOX_AUTOCLOSE)  
+    waitmessage
+	applymovement(1, moves(face_left))  
+    speakername(eliasn)  
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Our first challenger,\pXylar, step forward.\pShow us the strength that brought you to this academy."))
+	waitbuttonpress
+	closemessage  
+    applymovement(0x7F,moves(walk_left*5))
+	waitmovement(0)
+	playbgm(MUS_HG_LYRA,FALSE)    
+    playse(SE_PIN)
+	applymovement(0xFD,moves(face_up emote_happy))
+	speakername("Leaf")  
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Guess that means you're battling.\pFeeling nervous?"))  
+    speakername(Xylar1)  
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't care."))        
+    playse(SE_PIN)
+	applymovement(0xFD, moves(emote_exclamation_mark)) 
+    speakername("Leaf")  
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_SHOCK}{COLOR RED}{SHADOW LIGHT_GRAY}You sure? This is your chance to show everyone what you're made of."))         
+    waitmessage
+	closemessage
+	applymovement(0xFF,moves(walk_right))
+	speakername(Xylar1)  
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}I'm not here for their approval."), MSGBOX_AUTOCLOSE)     
+    playse(SE_PIN)
+	applymovement(0xFD, moves(emote_question_mark))   
+    speakername("Leaf")  
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_QUESTION}{COLOR RED}{SHADOW LIGHT_GRAY}Then why are you here?"), MSGBOX_AUTOCLOSE)  
+    speakername(Xylar1)  
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_REALIZE}{COLOR BLUE}{SHADOW LIGHT_GRAY}...."), MSGBOX_AUTOCLOSE)        
+	applymovement(0xFF,moves(walk_right*2)) 
+    waitmovement(0)
+	playse(SE_PIN)
+	applymovement(0xFD,moves(face_right emote_happy))
+	speakername("Leaf")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Xylaaar!, You can do it."), MSGBOX_AUTOCLOSE)
+	waitmessage
+	playse(SE_PIN)    
+	applymovement(3,moves(emote_exclamation_mark))       
+    speakername("Student 1")
+	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}What the..\pLeaf is cheering for him?"), MSGBOX_AUTOCLOSE)
+	waitmessage
+	playse(SE_PIN)
+	applymovement(5,moves(emote_upset))
+	speakername("Student 2")
+	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}That lucky bastard."), MSGBOX_AUTOCLOSE)  
+	waitmessage
+	playse(SE_PIN)
+	applymovement(4,moves(emote_upset))
+	speakername("Student 3")
+	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I'm so jealous of him."), MSGBOX_AUTOCLOSE)
+	waitmessage
+	applymovement(0x7F,moves(walk_right*5)) 
+    waitmovement(0)
+	applymovement(1, moves(face_right))
+	speakername(eliasn)  
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}And now, for our second challenger...\pDamien Voss, who earned the title of the strongest first-year through an exceptional performance in the entrance exam."), MSGBOX_AUTOCLOSE)  
+	waitmessage
+	playse(SE_APPLAUSE)
 	addobject(2)
-	createvobject(OBJ_EVENT_GFX_ACE_F,24,35,8,3,DIR_NORTH)
-	createvobject(OBJ_EVENT_GFX_GIRL_2,25,38,8,3,DIR_NORTH)
-	createvobject(OBJ_EVENT_GFX_GIRL_1,26,41,8,3,DIR_NORTH)
-	createvobject(OBJ_EVENT_GFX_GAMEBOY_KID,23,44,8,3,DIR_NORTH)
+	applymovement(2,moves(walk_left*4))
+	waitmovement(0)
+	speakername(damien)  
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_DAMIEN}{EMOTE_SMILE}{COLOR RED}{SHADOW LIGHT_GRAY}Hah, so I'm up against you?\pThe mystery student everyone's whispering about?\pToo bad. I was hoping for a real challenge."), MSGBOX_AUTOCLOSE)  
+    applymovement(1, moves(face_down))
+	speakername(eliasn)  
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY} Let this battle begin!"), MSGBOX_AUTOCLOSE)
+	special(RemoveCameraObject)
+	setobjectxyperm(2,16,9)
+	trainerbattle_no_intro(DAMIEN_VOSS,damienlose)  
+	special(SpawnCameraObject)  
+    fadenewbgm(MUS_DUMMY)
+	createvobject(OBJ_EVENT_GFX_SELENE,24,4,7,3,DIR_EAST)
+	createvobject(OBJ_EVENT_GFX_FIONA_1,25,2,5,3,DIR_EAST)
+	createvobject(OBJ_EVENT_GFX_GIRL_1,26,19,10,3,DIR_WEST)
+	createvobject(OBJ_EVENT_GFX_GAMEBOY_KID,23,19,8,3,DIR_WEST)
+	speakername(eliasn)  
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}And that concludes the match!\pA well fought battle congratulations to the winner!"), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+	applymovement(2,moves(emote_upset))
+	waitmovement(0)
+	applymovement(0x7F,moves(walk_left*5))
+	waitmovement(0)
+	playse(SE_PIN)
+	applymovement(3,moves(emote_exclamation_mark))       
+	applymovement(4,moves(emote_exclamation_mark))
+	applymovement(5,moves(emote_exclamation_mark))
+	applymovement(0xFD,moves(emote_exclamation_mark))
+	waitmovement(0)
+	speakername("Student 1")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}That was… precise."), MSGBOX_AUTOCLOSE)
+	speakername("Student 2")
+	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}He barely gave any commands… how did he do that?"), MSGBOX_AUTOCLOSE)
+	waitmessage
+	applymovement(0xFF,moves(walk_left*2 face_down))
+	applymovement(0xFD,moves(walk_right face_up ))
+	waitmovement(0)
+    speakername("Leaf")
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_SHOCK}{COLOR RED}{SHADOW LIGHT_GRAY}That was kinda impressive.\pBut you barely spoke to your Torchic.\pNo encouragement, no strategy discussion. What's the deal?"), MSGBOX_AUTOCLOSE)
+	speakername("Xylar")
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}It doesn't matter as long as I win."))
+	closemessage	
+	playse(SE_PIN)
+	applymovement(0xFD,moves(emote_exclamation_mark face_right face_down))
+	applymovement(0xFF,moves(walk_right walk_down*3 walk_right*6 walk_down*5))
+	waitmovement(0)
+	speakername("Leaf")
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_ANGRY}{COLOR RED}{SHADOW LIGHT_GRAY}He fights like someone who's surviving, not like a student trying to prove himself."))
+	closemessage
+	resumefakertc
+	warp(MAP_ASTRALIS_ACADEMY_HALLWAY,2,36)
+	destroyfollowernpc
+	initclock(13,53)
+	setflag(FLAG_TRIAL_SERENA)
+	setvar(ACADEMY_START,10)
+	
+}
+text damienlose{
+	format("Tch… you just got lucky.")
 }

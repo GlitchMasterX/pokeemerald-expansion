@@ -1208,7 +1208,7 @@ static void PokeballGlowEffect_TryPlaySe(struct Sprite *sprite)
         sprite->data[3] = 0;
         if (sprite->sPlayHealSe)
         {
-            PlayFanfare(MUS_HEAL);
+            PlayFanfare(MUS_DP_HEAL);
         }
     }
 }
@@ -3245,7 +3245,7 @@ u8 FldEff_UseSurf(void)
     if (gSaveBlock2Ptr->optionsBikeMusicOff == FALSE)
     {
         Overworld_ClearSavedMusic();
-        Overworld_ChangeMusicTo(MUS_SURF);
+        Overworld_ChangeMusicTo(MUS_DP_SURF);
     }
     return FALSE;
 }

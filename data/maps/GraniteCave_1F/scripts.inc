@@ -215,9 +215,9 @@ mewrt::
 # 109 "data/maps/GraniteCave_1F/scripts.pory"
 	setflag FLAG_UNUSED_0x4B5
 # 110 "data/maps/GraniteCave_1F/scripts.pory"
-	givemon SPECIES_MEWTWO, 5, ITEM_NONE, ITEM_POKE_BALL, NATURE_HASTY, 0, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_PSYBEAM, MOVE_FIRE_BLAST, MOVE_RECOVER, MOVE_HYPNOSIS
+	givemon SPECIES_MEWTWO, 5, ITEM_NONE, ITEM_POKE_BALL, NATURE_HASTY, 0, MON_GENDERLESS, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_PSYBEAM, MOVE_FIRE_BLAST, MOVE_RECOVER, MOVE_HYPNOSIS
 # 111 "data/maps/GraniteCave_1F/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
+	playfanfare MUS_DP_OBTAIN_ITEM
 # 112 "data/maps/GraniteCave_1F/scripts.pory"
 	msgbox mewrt_Text_8
 # 113 "data/maps/GraniteCave_1F/scripts.pory"

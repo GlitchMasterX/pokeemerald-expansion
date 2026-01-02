@@ -375,7 +375,7 @@ LittlerootTown_MaysHouse_1F_EventScript_MeetRival::
 # 188 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	call_if_ne VAR_0x8008, 1, LittlerootTown_MaysHouse_1F_EventScript_PlayerFaceMay
 # 189 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	playbgm MUS_ENCOUNTER_MAY, TRUE
+	playbgm MUS_DP_RIVAL, TRUE
 # 190 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	call_if_eq VAR_0x8008, 0, LittlerootTown_MaysHouse_1F_EventScript_MayApproachPlayer0
 # 191 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"

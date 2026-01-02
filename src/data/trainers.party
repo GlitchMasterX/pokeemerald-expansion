@@ -319,13 +319,12 @@ Music: Intense
 Battle Type: Singles
 AI: Basic Trainer / Prefer Status Moves / Will Suicide
 
-Shinx (M)
+Absol (M)
 Level: 5
-Nature: Lonely
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder Wave
-- Growl
-- Charge
+Nature: Naive
+IVs: 31 HP / 31 Atk / 0 Def / 31 SpA / 0 SpD / 31 Spe
+- Scratch
+- Double Team
 
 === TRAINER_GRUNT_PETALBURG_WOODS ===
 Name: GRUNT

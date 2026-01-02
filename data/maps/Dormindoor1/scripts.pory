@@ -5,6 +5,7 @@ mapscripts Dormindoor1_MapScripts {
 ]
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
     ACADEMY_START,8:KaelPos
+    ACADEMY_START,9:trialloss
         
     ]
 }
@@ -17,6 +18,10 @@ script KaelPos {
     addobject(1,MAP_DORMINDOOR1)
     addobject(5,MAP_DORMINDOOR1)
     addobject(4,MAP_DORMINDOOR1)
+}
+
+script trialloss {
+    destroyfollowernpc
 }
 
 script Kaelmet {
@@ -193,7 +198,11 @@ applymovement(1,moves(walk_fast_down*8))
 waitmovement(0)
 playse(SE_EXIT)
 removeobject(1)
+fwdweekday(1)
+initclock(9,25)
+pausefakertc
 setflag(FLAG_KAEL_DORM)
+clearflag(FLAG_TRIAL_SERENA)
 setrespawn(HEAL_LOCATION_DORM)
 release
 

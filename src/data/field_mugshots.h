@@ -75,6 +75,12 @@ static const u32 sFieldMugshotGfx_MiraSmile[] = INCBIN_U32("graphics/field_mugsh
 static const u16 sFieldMugshotPal_MiraTear[] = INCBIN_U16("graphics/field_mugshots/mira/tear.gbapal");
 static const u32 sFieldMugshotGfx_MiraTear[] = INCBIN_U32("graphics/field_mugshots/mira/tear.4bpp.smol");
 
+static const u16 sFieldMugshotPal_DamienNormal[] = INCBIN_U16("graphics/field_mugshots/damien/normal.gbapal");
+static const u32 sFieldMugshotGfx_DamienNormal[] = INCBIN_U32("graphics/field_mugshots/damien/normal.4bpp.smol");
+static const u16 sFieldMugshotPal_DamienSmile[] = INCBIN_U16("graphics/field_mugshots/damien/smile.gbapal");
+static const u32 sFieldMugshotGfx_DamienSmile[] = INCBIN_U32("graphics/field_mugshots/damien/smile.4bpp.smol");
+
+
 static const u16 sFieldMugshotPal_SurgeNormal[] = INCBIN_U16("graphics/field_mugshots/surge/normal.gbapal");
 static const u32 sFieldMugshotGfx_SurgeNormal[] = INCBIN_U32("graphics/field_mugshots/surge/normal.4bpp.smol");
 static const u16 sFieldMugshotPal_SurgeShock[] = INCBIN_U16("graphics/field_mugshots/surge/shock.gbapal");
@@ -563,5 +569,21 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
             .gfx = sFieldMugshotGfx_KaelQuestion,
             .pal = sFieldMugshotPal_KaelQuestion,
         },
+    },
+
+    [MUGSHOT_DAMIEN] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_DamienNormal,
+            .pal = sFieldMugshotPal_DamienNormal,
+        },
+
+        [EMOTE_SMILE] =
+        {
+            .gfx = sFieldMugshotGfx_DamienSmile,
+            .pal = sFieldMugshotPal_DamienSmile,
+        },
+
     },
     };

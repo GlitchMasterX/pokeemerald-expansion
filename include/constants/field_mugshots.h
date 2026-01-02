@@ -14,7 +14,8 @@
 #define MUGSHOT_ALISTAIR  10
 #define MUGSHOT_LEAF  11
 #define MUGSHOT_KAEL  12
-#define MUGSHOT_COUNT 13
+#define MUGSHOT_DAMIEN  13
+#define MUGSHOT_COUNT 14
 
 #define EMOTE_NORMAL       0
 #define EMOTE_QUESTION     1

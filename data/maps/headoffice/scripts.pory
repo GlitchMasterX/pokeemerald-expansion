@@ -14,15 +14,15 @@ MAP_SCRIPT_ON_FRAME_TABLE[
 script HEADMET1 {
 if(var(ACADEMY_START)== 4){
     applymovement(0xFF,traces2)
-    createvobject(OBJ_EVENT_GFX_PROF_ELIAS,2,8,13,3,DIR_NORTH)
+    createvobject(OBJ_EVENT_GFX_PROF_ELIAS,2,8,11,3,DIR_NORTH)
 }
 
 }
 script HEADMET {
     addobject(1)
-    setobjectxy(1,7,9)
+    setobjectxy(1,7,6)
     applymovement(0xFF,traces2)
-    createvobject(OBJ_EVENT_GFX_PROF_ELIAS,2,8,13,3,DIR_NORTH)
+    createvobject(OBJ_EVENT_GFX_PROF_ELIAS,2,8,11,3,DIR_NORTH)
 }
 script HEADMET2 {
     applymovement(0xFF,traces2)
@@ -31,6 +31,7 @@ script HEADMET2 {
 
 script Head {
     lock
+    playse(SE_PIN)
     applymovement(1,exclam)
     speakername(alistair)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar, I trust your journey here was uneventful.\pI understand this is all new for you, but it's time to start fresh."))

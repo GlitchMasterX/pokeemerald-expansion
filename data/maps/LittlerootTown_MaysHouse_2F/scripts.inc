@@ -205,7 +205,7 @@ LittlerootTown_MaysHouse_2F_EventScript_MeetMay::
 # 103 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
 	delay 10
 # 104 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
-	playbgm MUS_ENCOUNTER_MAY, TRUE
+	playbgm MUS_DP_RIVAL, TRUE
 # 105 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
 	call_if_eq VAR_FACING, DIR_NORTH, LittlerootTown_MaysHouse_2F_EventScript_MeetMayNorth
 # 106 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"

@@ -305,7 +305,7 @@ MoveTutor_ForgetMove::
 
 MoveTutor_MoveDeletersHouse_EventScript_TryForgetMove::	
 	special MoveDeleterForgetMove
-	playfanfare MUS_MOVE_DELETED
+	playfanfare MUS_DP_MOVE_DELETED
 	waitfanfare
 	msgbox LilycoveCity_MoveDeletersHouse_Text_MonHasForgottenMove, MSGBOX_DEFAULT
 	waitstate

@@ -137,10 +137,9 @@ struct Weather
     u8 loadDroughtPalsIndex;
     u8 loadDroughtPalsOffset;
     //Spring
-    u16 CherryVisibleCounter;
-    u16 CherryTimer;
-    u8 CherrySpriteCount;
-    u8 targetCherrySpriteCount;
+    u8 targetPinkLeafSpriteCount;
+    u8 pinkLeafVisibleCounter;
+    u8 pinkLeafSpriteCount;
     //Autumn
     u16 AutumnVisibleCounter;
     u16 AutumnTimer;
@@ -205,10 +204,10 @@ void Snow_InitVars(void);
 void Snow_Main(void);
 void Snow_InitAll(void);
 bool8 Snow_Finish(void);
-void Cherry_InitVars(void);
-void Cherry_Main(void);
-void Cherry_InitAll(void);
-bool8 Cherry_Finish(void);
+void PinkLeaves_InitVars(void);
+void PinkLeaves_Main(void);
+void PinkLeaves_InitAll(void);
+bool8 PinkLeaves_Finish(void);
 void Autumn_InitVars(void);
 void Autumn_Main(void);
 void Autumn_InitAll(void);

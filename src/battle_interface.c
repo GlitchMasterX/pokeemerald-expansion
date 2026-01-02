@@ -338,7 +338,7 @@ static const struct Subsprite sHealthBar_Subsprites_Player[] =
 static const struct Subsprite sHealthBar_Subsprites_Opponent[] =
 {
     {
-        .x = -16,
+        .x = -17,
         .y = 0,
         .shape = SPRITE_SHAPE(32x8),
         .size = SPRITE_SIZE(32x8),
@@ -346,7 +346,7 @@ static const struct Subsprite sHealthBar_Subsprites_Opponent[] =
         .priority = 1
     },
     {
-        .x = 16,
+        .x = 15,
         .y = 0,
         .shape = SPRITE_SHAPE(32x8),
         .size = SPRITE_SIZE(32x8),

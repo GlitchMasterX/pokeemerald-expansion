@@ -2,7 +2,7 @@
   "id": "MAP_HOSPITAL",
   "name": "Hospital",
   "layout": "LAYOUT_HOSPITAL",
-  "music": "MUS_DP_POKE_CENTER_DAY",
+  "music": "MUS_DP_POKE_CENTER",
   "region_map_section": "MAPSEC_ASTRALIS_ACADEMY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

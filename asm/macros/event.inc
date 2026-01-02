@@ -1972,12 +1972,6 @@
 	.byte SCR_OP_POKEMARTOUTFIT
 	.4byte \products
 	.endm
-    
-	@wear the chosen outfit
-	.macro wearoutfit outfitId:req
-	.byte SCR_OP_WEAROUTFIT
-	.2byte \outfitId
-	.endm
 
 
      

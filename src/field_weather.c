@@ -145,8 +145,8 @@ static const struct WeatherCallbacks sWeatherFuncs[] =
     [WEATHER_DROUGHT]            = {Drought_InitVars,       Drought_Main,       Drought_InitAll,       Drought_Finish},
     [WEATHER_DOWNPOUR]           = {Downpour_InitVars,      Thunderstorm_Main,  Downpour_InitAll,      Thunderstorm_Finish},
     [WEATHER_UNDERWATER_BUBBLES] = {Bubbles_InitVars,       Bubbles_Main,       Bubbles_InitAll,       Bubbles_Finish},
-    [WEATHER_SPRING]               = {Cherry_InitVars,          Cherry_Main,          Cherry_InitAll,          Cherry_Finish},
-    [WEATHER_AUTUMN]               = {Autumn_InitVars,          Autumn_Main,          Autumn_InitAll,          Autumn_Finish},
+    [WEATHER_SPRING]               = {PinkLeaves_InitVars,    PinkLeaves_Main,    PinkLeaves_InitAll,    PinkLeaves_Finish},
+    [WEATHER_AUTUMN]               = {PinkLeaves_InitVars,    PinkLeaves_Main,    PinkLeaves_InitAll,    PinkLeaves_Finish},
 
 };
 
@@ -222,6 +222,8 @@ void StartWeather(void)
         gWeatherPtr->sandstormSwirlSpritesCreated = 0;
         gWeatherPtr->bubblesSpritesCreated = 0;
         gWeatherPtr->lightenedFogSpritePalsCount = 0;
+        gWeatherPtr->pinkLeafVisibleCounter = 0;
+        gWeatherPtr->pinkLeafSpriteCount = 0;
         Weather_SetBlendCoeffs(16, 0);
         gWeatherPtr->currWeather = 0;
         gWeatherPtr->palProcessingState = WEATHER_PAL_STATE_IDLE;

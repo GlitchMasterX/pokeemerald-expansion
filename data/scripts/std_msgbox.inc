@@ -31,7 +31,7 @@ Std_MsgboxYesNo:
 
 Std_MsgboxGetPoints:
 	message NULL
-	playfanfare MUS_OBTAIN_B_POINTS
+	playfanfare MUS_PL_OBTAIN_B_POINTS
 	waitfanfare
 	waitmessage
 	return

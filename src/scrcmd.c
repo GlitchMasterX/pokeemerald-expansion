@@ -3194,19 +3194,6 @@ bool8 ScrCmd_toggleoutfit(struct ScriptContext *ctx)
     return TRUE;
 }
 
-void ScrCmd_WearOutfit(void)
-{
-    u32 outfitId = gSpecialVar_0x8004, gfxId;
-    struct ObjectEvent *player = &gObjectEvents[gPlayerAvatar.objectEventId];
-
-    gSaveBlock2Ptr->currOutfitId = outfitId;
-    gfxId = GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(gSaveBlock2Ptr->currOutfitId,
-                                                              PLAYER_AVATAR_STATE_NORMAL,
-                                                              gSaveBlock2Ptr->playerGender);
-    ObjectEventSetGraphicsId(player, gfxId);
-    ObjectEventTurn(player, player->movementDirection);
-}
-
 bool8 ScrCmd_getoutfitstatus(struct ScriptContext *ctx)
 {
     u16 outfitId = VarGet(ScriptReadHalfword(ctx));
