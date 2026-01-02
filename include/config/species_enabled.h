@@ -359,7 +359,7 @@
 #define P_FAMILY_LITWICK                 P_GEN_5_POKEMON
 #define P_FAMILY_AXEW                    P_GEN_5_POKEMON
 #define P_FAMILY_CUBCHOO                 P_GEN_5_POKEMON
-#define P_FAMILY_CRYOGONAL               P_GEN_5_POKEMON
+#define P_FAMILY_CRYOGONAL               FALSE
 #define P_FAMILY_SHELMET                 FALSE
 #define P_FAMILY_STUNFISK                P_GEN_5_POKEMON
 #define P_FAMILY_MIENFOO                 P_GEN_5_POKEMON
@@ -370,7 +370,7 @@
 #define P_FAMILY_RUFFLET                 P_GEN_5_POKEMON
 #define P_FAMILY_VULLABY                 P_GEN_5_POKEMON
 #define P_FAMILY_HEATMOR                 FALSE
-#define P_FAMILY_DURANT                  P_GEN_5_POKEMON
+#define P_FAMILY_DURANT                  FALSE
 #define P_FAMILY_DEINO                   P_GEN_5_POKEMON
 #define P_FAMILY_LARVESTA                P_GEN_5_POKEMON
 #define P_FAMILY_COBALION                FALSE
@@ -464,7 +464,7 @@
 #define P_FAMILY_TAPU_BULU               FALSE
 #define P_FAMILY_TAPU_FINI               FALSE
 #define P_FAMILY_COSMOG                  FALSE
-#define P_FAMILY_NIHILEGO                FALSE
+#define P_FAMILY_NIHILEGO                P_GEN_7_POKEMON
 #define P_FAMILY_BUZZWOLE                P_GEN_7_POKEMON
 #define P_FAMILY_PHEROMOSA               FALSE
 #define P_FAMILY_XURKITREE               FALSE
