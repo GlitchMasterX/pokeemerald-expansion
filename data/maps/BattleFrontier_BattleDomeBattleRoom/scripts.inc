@@ -445,10 +445,8 @@ BattleFrontier_BattleDomeBattleRoom_EventScript_TuckerDraw::
 BattleFrontier_BattleDomeBattleRoom_EventScript_DoDomeBattle::
 	frontier_set FRONTIER_DATA_RECORD_DISABLED, FALSE
 	special HealPlayerParty
-	setvar VAR_0x8004, SPECIAL_BATTLE_DOME
-	setvar VAR_0x8005, 0
 	setvar VAR_TEMP_9, 1
-	special DoSpecialTrainerBattle
+	dofacilitytrainerbattle FACILITY_BATTLE_DOME
 	waitstate
 	setvar VAR_TEMP_9, 0
 	dome_restorehelditems
@@ -505,7 +503,7 @@ BattleFrontier_BattleDomeBattleRoom_EventScript_AddRound2Audience::
 	createvobject OBJ_EVENT_GFX_NINJA_BOY, 6, 8, 0
 	createvobject OBJ_EVENT_GFX_LITTLE_GIRL, 9, 11, 0
 	createvobject OBJ_EVENT_GFX_SCIENTIST_1, 11, 13, 0
-	createvobject OBJ_EVENT_GFX_MAN_5, 13, 15, 0
+	createvobject OBJ_EVENT_GFX_NORMAL_M, 13, 15, 0
 	createvobject OBJ_EVENT_GFX_BEAUTY, 19, 7, 1
 	createvobject OBJ_EVENT_GFX_WOMAN_5, 22, 11, 1
 	createvobject OBJ_EVENT_GFX_LITTLE_BOY, 25, 15, 1
@@ -521,7 +519,7 @@ BattleFrontier_BattleDomeBattleRoom_EventScript_AddSemifinalAudience::
 	createvobject OBJ_EVENT_GFX_LITTLE_GIRL, 9, 11, 0
 	createvobject OBJ_EVENT_GFX_LASS, 10, 12, 0
 	createvobject OBJ_EVENT_GFX_SCIENTIST_1, 11, 13, 0
-	createvobject OBJ_EVENT_GFX_MAN_5, 13, 15, 0
+	createvobject OBJ_EVENT_GFX_NORMAL_M, 13, 15, 0
 	createvobject OBJ_EVENT_GFX_GENTLEMAN, 15, 2, 1
 	createvobject OBJ_EVENT_GFX_NINJA_BOY, 16, 3, 1
 	createvobject OBJ_EVENT_GFX_WOMAN_2, 17, 4, 1
@@ -541,7 +539,7 @@ BattleFrontier_BattleDomeBattleRoom_EventScript_AddFinalAudience::
 	createvobject OBJ_EVENT_GFX_NINJA_BOY, 0, 2, 0
 	createvobject OBJ_EVENT_GFX_SCIENTIST_1, 1, 3, 0
 	createvobject OBJ_EVENT_GFX_BEAUTY, 2, 15, 0
-	createvobject OBJ_EVENT_GFX_MAN_5, 3, 5, 0
+	createvobject OBJ_EVENT_GFX_NORMAL_M, 3, 5, 0
 	createvobject OBJ_EVENT_GFX_EXPERT_F, 4, 6, 0
 	createvobject OBJ_EVENT_GFX_SCIENTIST_1, 5, 7, 0
 	createvobject OBJ_EVENT_GFX_NINJA_BOY, 6, 8, 0
@@ -551,7 +549,7 @@ BattleFrontier_BattleDomeBattleRoom_EventScript_AddFinalAudience::
 	createvobject OBJ_EVENT_GFX_LASS, 10, 12, 0
 	createvobject OBJ_EVENT_GFX_SCIENTIST_1, 11, 13, 0
 	createvobject OBJ_EVENT_GFX_BEAUTY, 12, 14, 0
-	createvobject OBJ_EVENT_GFX_MAN_5, 13, 15, 2
+	createvobject OBJ_EVENT_GFX_NORMAL_M, 13, 15, 2
 	createvobject OBJ_EVENT_GFX_HIKER, 14, 12, 2
 	createvobject OBJ_EVENT_GFX_GENTLEMAN, 15, 2, 1
 	createvobject OBJ_EVENT_GFX_NINJA_BOY, 16, 3, 1

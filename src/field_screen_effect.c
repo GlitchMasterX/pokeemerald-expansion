@@ -14,12 +14,14 @@
 #include "field_weather.h"
 #include "follower_npc.h"
 #include "gpu_regs.h"
+#include "map_preview_screen.h"
 #include "heal_location.h"
 #include "io_reg.h"
 #include "link.h"
 #include "link_rfu.h"
 #include "load_save.h"
 #include "main.h"
+#include "map_preview_screen.h"
 #include "menu.h"
 #include "mirage_tower.h"
 #include "metatile_behavior.h"
@@ -42,6 +44,12 @@
 #include "trainer_hill.h"
 #include "fldeff.h"
 #include "battle.h"
+#include "ui_startmenu_full.h"
+#include "battle_pike.h"
+#include "battle_pyramid.h"
+#include "battle_pyramid_bag.h"
+#include "safari_zone.h"
+#include "field_specials.h"
 
 static void Task_ExitNonAnimDoor(u8);
 static void Task_ExitNonDoor(u8);
@@ -121,7 +129,10 @@ void WarpFadeOutScreen(void)
         FadeScreen(FADE_TO_BLACK, 0);
         break;
     case 1:
-        FadeScreen(FADE_TO_WHITE, 0);
+        if (MapHasPreviewScreen_HandleQLState2(GetDestinationWarpMapSectionId(), MPS_TYPE_CAVE))
+            FadeScreen(FADE_TO_BLACK, 0);
+        else
+            FadeScreen(FADE_TO_WHITE, 0);
     }
 }
 
@@ -457,7 +468,10 @@ static void Task_WaitForFadeShowStartMenu(u8 taskId)
     if (WaitForWeatherFadeIn() == TRUE)
     {
         DestroyTask(taskId);
-        CreateTask(Task_ShowStartMenu, 80);
+        if (GetSafariZoneFlag() || InBattlePyramid_() || InBattlePike() || InUnionRoom() || InMultiPartnerRoom())
+            CreateTask(Task_ShowStartMenu, 80);
+        else        
+            CreateTask(Task_OpenStartMenuFullScreen, 80);
     }
 }
 

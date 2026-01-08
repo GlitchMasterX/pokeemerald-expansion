@@ -1,3 +1,12 @@
+//CREDITS
+//TheXaman:             https://github.com/TheXaman/pokeemerald/tree/tx_debug_system
+//CODE USED FROM:
+//ketsuban:             https://github.com/pret/pokeemerald/wiki/Add-a-debug-menu
+//Pyredrid:             https://github.com/Pyredrid/pokeemerald/tree/debugmenu
+//AsparagusEduardo:     https://github.com/AsparagusEduardo/pokeemerald/tree/InfusedEmerald_v2
+//Ghoulslash:           https://github.com/ghoulslash/pokeemerald
+//Jaizu:                https://jaizu.moe/
+//AND OTHER RHH POKEEMERALD-EXPANSION CONTRIBUTORS
 #include "global.h"
 #include "battle.h"
 #include "battle_setup.h"
@@ -61,6 +70,7 @@
 #include "constants/items.h"
 #include "constants/map_groups.h"
 #include "constants/rgb.h"
+#include "constants/script_commands.h"
 #include "constants/songs.h"
 #include "constants/species.h"
 #include "constants/weather.h"
@@ -68,6 +78,9 @@
 #include "rtc.h"
 #include "fake_rtc.h"
 #include "save.h"
+#include "vs_seeker.h"
+#include "load_save.h"
+#include "battle_partner.h"
 
 enum FollowerNPCCreateDebugMenu
 {
@@ -148,6 +161,13 @@ enum DebugBattleEnvironment
     DEBUG_BATTLE_2_MENU_ITEM_ENVIRONMENT_9,
 };
 
+enum DebugTrainerSelection
+{
+    TRAINERS_DEBUG_SELECTION_TRAINER1,
+    TRAINERS_DEBUG_SELECTION_TRAINER2,
+    TRAINERS_DEBUG_SELECTION_PARTNER,
+};
+
 // *******************************
 // Constants
 #define DEBUG_MENU_FONT FONT_NORMAL
@@ -172,6 +192,8 @@ enum DebugBattleEnvironment
 #define DEBUG_NUMBER_DIGITS_VARIABLE_VALUE 5
 #define DEBUG_NUMBER_DIGITS_ITEMS 4
 #define DEBUG_NUMBER_DIGITS_ITEM_QUANTITY 3
+#define DEBUG_NUMBER_DIGITS_LOCALID 2
+#define DEBUG_NUMBER_DIGITS_TRAINERS MAX_DIGITS(TRAINERS_COUNT)
 
 #define DEBUG_NUMBER_ICON_X 210
 #define DEBUG_NUMBER_ICON_Y 50
@@ -213,6 +235,7 @@ struct DebugMenuListData
     struct ListMenuItem listItems[DEBUG_MAX_MENU_ITEMS + 1];
     u8 itemNames[DEBUG_MAX_MENU_ITEMS + 1][26];
     u8 listId;
+    s16 data[8];
 };
 
 // EWRAM
@@ -224,6 +247,7 @@ EWRAM_DATA u64 gDebugAIFlags = 0;
 // *******************************
 // Define functions
 static void Debug_ShowMenu(DebugFunc HandleInput, const struct DebugMenuOption *items);
+static u8  Debug_GenerateListTrainerMenu(void);
 static u8 Debug_GenerateListMenuNames(void);
 static void Debug_DestroyMenu(u8 taskId);
 static void DebugAction_Cancel(u8 taskId);
@@ -233,6 +257,7 @@ static u8 DebugNativeStep_CreateDebugWindow(void);
 static void DebugNativeStep_CloseDebugWindow(u8 taskId);
 
 static void DebugAction_OpenSubMenu(u8 taskId, const struct DebugMenuOption *items);
+static void DebugAction_OpenSubMenuTrainers(u8 taskId, const struct DebugMenuOption *items);
 static void DebugAction_OpenSubMenuFlagsVars(u8 taskId, const struct DebugMenuOption *items);
 static void DebugAction_OpenSubMenuFakeRTC(u8 taskId, const struct DebugMenuOption *items);
 static void DebugAction_OpenSubMenuCreateFollowerNPC(u8 taskId, const struct DebugMenuOption *items);
@@ -273,6 +298,16 @@ static void DebugAction_Party_ClearParty(u8 taskId);
 static void DebugAction_Party_SetParty(u8 taskId);
 static void DebugAction_Party_BattleSingle(u8 taskId);
 
+
+static void DebugAction_Trainers_ChooseFromMap(u8 taskId);
+static void DebugAction_Trainers_ChooseTrainer(u8 taskId, u32 selection);
+static void DebugAction_Trainers_SwitchDoublesFlag(u8 taskId);
+static void DebugAction_Trainers_SetRematch(u8 taskId);
+static void DebugAction_Trainers_TryBattle(u8 taskId);
+#if FREE_MATCH_CALL == FALSE
+static void DebugAction_Trainers_SetRematchReadiness(u8 taskId);
+static void DebugAction_Trainers_RechargeVsSeeker(u8 taskId);
+#endif
 static void DebugAction_FlagsVars_Flags(u8 taskId);
 static void DebugAction_FlagsVars_FlagsSelect(u8 taskId);
 static void DebugAction_FlagsVars_Vars(u8 taskId);
@@ -300,6 +335,7 @@ static void DebugAction_Give_Item_SelectId(u8 taskId);
 static void DebugAction_Give_Item_SelectQuantity(u8 taskId);
 static void DebugAction_Give_PokemonSimple(u8 taskId);
 static void DebugAction_Give_PokemonComplex(u8 taskId);
+static void DebugAction_Give_NewEgg(u8 taskId);
 static void DebugAction_Give_Pokemon_SelectId(u8 taskId);
 static void DebugAction_Give_Pokemon_SelectLevel(u8 taskId);
 static void DebugAction_Give_Pokemon_SelectShiny(u8 taskId);
@@ -342,6 +378,7 @@ extern const u8 Debug_EventScript_FontTest[];
 extern const u8 Debug_EventScript_CheckEVs[];
 extern const u8 Debug_EventScript_CheckIVs[];
 extern const u8 Debug_EventScript_InflictStatus1[];
+extern const u8 Debug_EventScript_KoPokemon[];
 extern const u8 Debug_EventScript_SetHiddenNature[];
 extern const u8 Debug_EventScript_SetAbility[];
 extern const u8 Debug_EventScript_SetFriendship[];
@@ -370,6 +407,7 @@ extern const u8 Debug_EventScript_EWRAMCounters[];
 extern const u8 Debug_Follower_NPC_Event_Script[];
 extern const u8 Debug_Follower_NPC_Not_Enabled[];
 extern const u8 Debug_EventScript_Steven_Multi[];
+extern const u8 Debug_EventScript_WallyTutorial[];
 extern const u8 Debug_EventScript_PrintTimeOfDay[];
 extern const u8 Debug_EventScript_TellTheTime[];
 extern const u8 Debug_EventScript_FakeRTCNotEnabled[];
@@ -400,15 +438,16 @@ static const u8 sDebugText_Util_Weather_ID[] =               _("Weather ID: {STR
 
 //Time Menu
 
-static const u8 *const gDayNameStringsTable[WEEKDAY_COUNT] = {
-    COMPOUND_STRING("Sunday"),
-    COMPOUND_STRING("Monday"),
-    COMPOUND_STRING("Tuesday"),
-    COMPOUND_STRING("Wednesday"),
-    COMPOUND_STRING("Thursday"),
-    COMPOUND_STRING("Friday"),
-    COMPOUND_STRING("Saturday"),
+const u8 *const gDayNameStringsTable[WEEKDAY_COUNT] = {
+    COMPOUND_STRING("Sun."),
+    COMPOUND_STRING("Mon."),
+    COMPOUND_STRING("Tues."),
+    COMPOUND_STRING("Wed."),
+    COMPOUND_STRING("Thurs."),
+    COMPOUND_STRING("Fri."),
+    COMPOUND_STRING("Sat."),
 };
+
 
 static const u8 *const gTimeOfDayStringsTable[TIMES_OF_DAY_COUNT] = {
     COMPOUND_STRING("Morning"),
@@ -540,6 +579,7 @@ static const struct DebugMenuOption sDebugMenu_Actions_Utilities[] =
     { COMPOUND_STRING("Berry Functions…"),  DebugAction_OpenSubMenu, sDebugMenu_Actions_BerryFunctions },
     { COMPOUND_STRING("EWRAM Counters…"),   DebugAction_ExecuteScript, Debug_EventScript_EWRAMCounters },
     { COMPOUND_STRING("Follower NPC…"),     DebugAction_OpenSubMenu, sDebugMenu_Actions_FollowerNPCMenu },
+    { COMPOUND_STRING("Wally Tutorial"),    DebugAction_ExecuteScript, Debug_EventScript_WallyTutorial },
     { COMPOUND_STRING("Steven Multi"),      DebugAction_ExecuteScript, Debug_EventScript_Steven_Multi },
     { NULL }
 };
@@ -566,15 +606,22 @@ static const struct DebugMenuOption sDebugMenu_Actions_PCBag[] =
     { NULL }
 };
 
+static const struct DebugMenuOption sDebugMenu_Actions_EditPokemon[] =
+{
+    { COMPOUND_STRING("Inflict Status1"),    DebugAction_ExecuteScript, Debug_EventScript_InflictStatus1 },
+    { COMPOUND_STRING("Faint Pokemon"),      DebugAction_ExecuteScript, Debug_EventScript_KoPokemon },
+    { COMPOUND_STRING("Set Hidden Nature"),  DebugAction_ExecuteScript, Debug_EventScript_SetHiddenNature },
+    { COMPOUND_STRING("Set Friendship"),     DebugAction_ExecuteScript, Debug_EventScript_SetFriendship },
+    { COMPOUND_STRING("Set Ability"),        DebugAction_ExecuteScript, Debug_EventScript_SetAbility },
+    { NULL }
+};
+
 static const struct DebugMenuOption sDebugMenu_Actions_Party[] =
 {
     { COMPOUND_STRING("Move Relearner"),     DebugAction_ExecuteScript, Common_EventScript_MoveRelearner },
     { COMPOUND_STRING("Hatch an Egg"),       DebugAction_ExecuteScript, Debug_HatchAnEgg },
     { COMPOUND_STRING("Heal party"),         DebugAction_Party_HealParty },
-    { COMPOUND_STRING("Inflict Status1"),    DebugAction_ExecuteScript, Debug_EventScript_InflictStatus1 },
-    { COMPOUND_STRING("Set Hidden Nature"),  DebugAction_ExecuteScript, Debug_EventScript_SetHiddenNature },
-    { COMPOUND_STRING("Set Friendship"),     DebugAction_ExecuteScript, Debug_EventScript_SetFriendship },
-    { COMPOUND_STRING("Set Ability"),        DebugAction_ExecuteScript, Debug_EventScript_SetAbility },
+    { COMPOUND_STRING("Edit Pokemon"),       DebugAction_OpenSubMenu, sDebugMenu_Actions_EditPokemon },
     { COMPOUND_STRING("Check EVs"),          DebugAction_ExecuteScript, Debug_EventScript_CheckEVs },
     { COMPOUND_STRING("Check IVs"),          DebugAction_ExecuteScript, Debug_EventScript_CheckIVs },
     { COMPOUND_STRING("Clear Party"),        DebugAction_Party_ClearParty },
@@ -588,6 +635,7 @@ static const struct DebugMenuOption sDebugMenu_Actions_Give[] =
     { COMPOUND_STRING("Give item XYZ…"),    DebugAction_Give_Item },
     { COMPOUND_STRING("Pokémon (Basic)"),   DebugAction_Give_PokemonSimple },
     { COMPOUND_STRING("Pokémon (Complex)"), DebugAction_Give_PokemonComplex },
+    { COMPOUND_STRING("Give Egg"),          DebugAction_Give_NewEgg },
     { COMPOUND_STRING("Give Decoration…"),  DebugAction_Give_Decoration },
     { COMPOUND_STRING("Max Money"),         DebugAction_Give_MaxMoney },
     { COMPOUND_STRING("Max Coins"),         DebugAction_Give_MaxCoins },
@@ -614,6 +662,22 @@ static const struct DebugMenuOption sDebugMenu_Actions_Scripts[] =
     { COMPOUND_STRING("Script 6"), DebugAction_ExecuteScript, Debug_EventScript_Script_6 },
     { COMPOUND_STRING("Script 7"), DebugAction_ExecuteScript, Debug_EventScript_Script_7 },
     { COMPOUND_STRING("Script 8"), DebugAction_ExecuteScript, Debug_EventScript_Script_8 },
+    { NULL }
+};
+
+static const struct DebugMenuOption sDebugMenu_Actions_Trainers[] =
+{
+    { COMPOUND_STRING("Choose trainer from map"), DebugAction_Trainers_ChooseFromMap },
+    { COMPOUND_STRING("Trainer 1: {STR_VAR_1}"), DebugAction_Trainers_ChooseTrainer, (void *)TRAINERS_DEBUG_SELECTION_TRAINER1},
+    { COMPOUND_STRING("Trainer 2: {STR_VAR_1}"), DebugAction_Trainers_ChooseTrainer, (void *)TRAINERS_DEBUG_SELECTION_TRAINER2},
+    { COMPOUND_STRING("Partner: {STR_VAR_1}"), DebugAction_Trainers_ChooseTrainer,  (void *)TRAINERS_DEBUG_SELECTION_PARTNER},
+    { COMPOUND_STRING("Double Battle: {STR_VAR_1}"), DebugAction_ToggleFlag, DebugAction_Trainers_SwitchDoublesFlag },
+    { COMPOUND_STRING("Matches {STR_VAR_1}/{STR_VAR_2}"), DebugAction_ToggleFlag, DebugAction_Trainers_SetRematch },
+    { COMPOUND_STRING("Try Battle"), DebugAction_Trainers_TryBattle },
+    #if FREE_MATCH_CALL == FALSE
+    { COMPOUND_STRING("Rematch Ready {STR_VAR_1}"), DebugAction_ToggleFlag, DebugAction_Trainers_SetRematchReadiness },
+    { COMPOUND_STRING("Recharge VS Seeker"), DebugAction_Trainers_RechargeVsSeeker },
+    #endif
     { NULL }
 };
 
@@ -670,6 +734,7 @@ static const struct DebugMenuOption sDebugMenu_Actions_Main[] =
     { COMPOUND_STRING("Give X…"),       DebugAction_OpenSubMenu, sDebugMenu_Actions_Give, },
     { COMPOUND_STRING("Player…"),       DebugAction_OpenSubMenu, sDebugMenu_Actions_Player, },
     { COMPOUND_STRING("Scripts…"),      DebugAction_OpenSubMenu, sDebugMenu_Actions_Scripts, },
+    { COMPOUND_STRING("Trainers…"),     DebugAction_OpenSubMenuTrainers, sDebugMenu_Actions_Trainers, },
     { COMPOUND_STRING("Flags & Vars…"), DebugAction_OpenSubMenuFlagsVars, sDebugMenu_Actions_Flags, },
     { COMPOUND_STRING("Sound…"),        DebugAction_OpenSubMenu, sDebugMenu_Actions_Sound, },
     { COMPOUND_STRING("ROM Info…"),     DebugAction_OpenSubMenu, sDebugMenu_Actions_ROMInfo2, },
@@ -789,7 +854,8 @@ static bool32 IsSubMenuAction(const void *action)
     return action == DebugAction_OpenSubMenu
         || action == DebugAction_OpenSubMenuFlagsVars
         || action == DebugAction_OpenSubMenuFakeRTC
-        || action == DebugAction_OpenSubMenuCreateFollowerNPC;
+        || action == DebugAction_OpenSubMenuCreateFollowerNPC
+        || action == DebugAction_OpenSubMenuTrainers;
 }
 
 static void Debug_ShowMenu(DebugFunc HandleInput, const struct DebugMenuOption *items)
@@ -812,7 +878,11 @@ static void Debug_ShowMenu(DebugFunc HandleInput, const struct DebugMenuOption *
 
     u32 totalItems = 0;
 
-    if (sDebugMenuListData->listId == 1)
+    if (sDebugMenuListData->listId == 2)
+    {
+        totalItems = Debug_GenerateListTrainerMenu();
+    }
+    else if (sDebugMenuListData->listId == 1)
     {
         totalItems = Debug_GenerateListMenuNames();
     }
@@ -962,6 +1032,99 @@ static void DebugNativeStep_CloseDebugWindow(u8 taskId)
     UnlockPlayerFieldControls();
 }
 
+static u8 Debug_GenerateListTrainerMenu(void)
+{
+    u32 trainer1Id = sDebugMenuListData->data[0];
+    u32 trainer2Id = sDebugMenuListData->data[2];
+    u32 partnerId = sDebugMenuListData->data[4];
+
+    s32 rematchTableId = sDebugMenuListData->data[1];
+    bool32 isRealFight = sDebugMenuListData->data[3];
+    bool32 noDraw;
+    u32 offset = 0;
+    u8 totalItems = 0;
+    for (u32 i = 0; i < (ARRAY_COUNT(sDebugMenu_Actions_Trainers) - 1); i++)
+    {
+        noDraw = FALSE;
+        switch (i)
+        {
+        case 1:
+            ConvertIntToDecimalStringN(gStringVar1, trainer1Id, STR_CONV_MODE_LEADING_ZEROS, 3);
+            break;
+        case 2:
+            if (trainer2Id == TRAINER_NONE)
+                StringCopy(gStringVar1, COMPOUND_STRING("None"));
+            else
+                ConvertIntToDecimalStringN(gStringVar1, trainer2Id, STR_CONV_MODE_LEADING_ZEROS, 3);
+            break;
+        case 3:
+            if (partnerId == PARTNER_NONE)
+                StringCopy(gStringVar1, COMPOUND_STRING("None"));
+            else
+                ConvertIntToDecimalStringN(gStringVar1, partnerId, STR_CONV_MODE_LEADING_ZEROS, 3);
+            break;
+        case 4:
+            if (sDebugMenuListData->data[5] || trainer2Id != TRAINER_NONE || partnerId != PARTNER_NONE)
+                StringCopy(gStringVar1, COMPOUND_STRING("{COLOR GREEN} TRUE"));
+            else
+                StringCopy(gStringVar1, COMPOUND_STRING("{COLOR RED} FALSE"));
+            break;
+        case 5:
+            if (!isRealFight)
+            {
+                noDraw = TRUE;
+                break;
+            }
+            if (rematchTableId == -1)
+            {
+                if (HasTrainerBeenFought(trainer1Id))
+                    StringCopy(gStringVar1, COMPOUND_STRING("1"));
+                else
+                    StringCopy(gStringVar1, COMPOUND_STRING("0"));
+                StringCopy(gStringVar2, COMPOUND_STRING("1"));
+            }
+            else
+            {
+                ConvertIntToDecimalStringN(gStringVar1, CountBattledRematchTeams(rematchTableId), STR_CONV_MODE_LEADING_ZEROS, 1);
+                ConvertIntToDecimalStringN(gStringVar2, CountMaxPossibleRematch(rematchTableId), STR_CONV_MODE_LEADING_ZEROS, 1);
+            }
+            break;
+        case 6:
+        #if FREE_MATCH_CALL == FALSE
+            if (I_VS_SEEKER_CHARGING || !isRealFight || rematchTableId == -1)
+            {
+                noDraw = TRUE;
+                break;
+            }
+            if (gSaveBlock1Ptr->trainerRematches[rematchTableId])
+                StringCopy(gStringVar1, COMPOUND_STRING("{COLOR GREEN} TRUE"));
+            else
+                StringCopy(gStringVar1, COMPOUND_STRING("{COLOR RED} FALSE"));
+            break;
+            #endif
+        case 8:
+            if (I_VS_SEEKER_CHARGING == 0)
+                noDraw = TRUE;
+            break;
+        }
+
+        StringExpandPlaceholders(gStringVar4, sDebugMenu_Actions_Trainers[i].text);
+        StringCopy(&sDebugMenuListData->itemNames[i][0], gStringVar4);
+
+        if (noDraw)
+        {
+            offset++;
+        }
+        else
+        {
+            sDebugMenuListData->listItems[i - offset].name = &sDebugMenuListData->itemNames[i][0];
+            sDebugMenuListData->listItems[i - offset].id = i;
+            totalItems++;
+        }
+    }
+    return totalItems;
+}
+
 static const u16 sLocationFlags[] =
 {
     FLAG_VISITED_LITTLEROOT_TOWN,
@@ -971,7 +1134,7 @@ static const u16 sLocationFlags[] =
     FLAG_VISITED_FALLARBOR_TOWN,
     FLAG_VISITED_VERDANTURF_TOWN,
     FLAG_VISITED_PACIFIDLOG_TOWN,
-    FLAG_VISITED_PETALBURG_CITY,
+    FLAG_VISITED_ASTRALIS_ACADEMY,
     FLAG_VISITED_SLATEPORT_CITY,
     FLAG_VISITED_MAUVILLE_CITY,
     FLAG_VISITED_RUSTBORO_CITY,
@@ -1158,6 +1321,10 @@ static void DebugTask_HandleMenuInput_General(u8 taskId)
                 ((DebugFunc)option.actionParams)(taskId);
                 DebugAction_ToggleFlag(taskId);
             }
+            else if (option.action == DebugAction_Trainers_ChooseTrainer)
+            {
+                DebugAction_Trainers_ChooseTrainer(taskId, (u32)option.actionParams);
+            }
             else
             {
                 ((DebugFunc)option.action)(taskId);
@@ -1180,6 +1347,14 @@ static void DebugTask_HandleMenuInput_General(u8 taskId)
             ScriptContext_Enable();
         }
     }
+}
+
+static void DebugAction_OpenSubMenuTrainers(u8 taskId, const struct DebugMenuOption *items)
+{
+    Debug_DestroyMenu(taskId);
+    sDebugMenuListData->listId = 2;
+    sDebugMenuListData->data[0] = TRAINER_NONE;
+    Debug_ShowMenu(DebugTask_HandleMenuInput_General, items);
 }
 
 static void DebugAction_OpenSubMenuFlagsVars(u8 taskId, const struct DebugMenuOption *items)
@@ -1216,7 +1391,11 @@ static void DebugAction_ExecuteScript(u8 taskId, const u8 *script)
 
 static void DebugAction_ToggleFlag(u8 taskId)
 {
-    Debug_GenerateListMenuNames();
+    if (sDebugMenuListData->listId == 2)
+        Debug_GenerateListTrainerMenu();
+    else
+        Debug_GenerateListMenuNames();
+
     RedrawListMenu(gTasks[taskId].tMenuTaskId);
 }
 
@@ -1630,6 +1809,374 @@ void DebugMenu_CalculateTimeOfDay(struct ScriptContext *ctx)
     }
 }
 
+
+// *******************************
+// Actions Trainers
+
+static void Debug_Trainers_ResetTrainersData(void)
+{
+    sDebugMenuListData->data[0] = TRAINER_NONE;
+    sDebugMenuListData->data[1] = -1;
+    sDebugMenuListData->data[2] = TRAINER_NONE;
+    sDebugMenuListData->data[3] = -1;
+    sDebugMenuListData->data[4] = PARTNER_NONE;
+    sDebugMenuListData->data[5] = FALSE;
+}
+
+void SetMultiTrainerBattle(struct ScriptContext *ctx);
+
+static void ParseObjectEventScript(const u8 *script)
+{
+    struct ScriptContext *ctx = AllocZeroed(sizeof(struct ScriptContext));
+    if (script[0] == SCR_OP_TRAINERBATTLE)
+    {
+        TrainerBattleLoadArgs(script + 1);
+    }
+    else if (Script_MatchesCallNative(script, NativeVsSeekerRematchId, TRUE))
+    {
+        ctx->scriptPtr = script + 5;
+        sDebugMenuListData->data[0] = ScriptPeekHalfword(ctx);
+    }
+    else if (Script_MatchesSpecial(script, SavePlayerParty) && Script_MatchesCallNative(script + 3, SetMultiTrainerBattle, FALSE))
+    {
+        ctx->scriptPtr = script + 8;
+        SetMultiTrainerBattle(ctx);
+    }
+    Free(ctx);
+    if (!TRAINER_BATTLE_PARAM.opponentA && !TRAINER_BATTLE_PARAM.opponentB)
+        return;
+    sDebugMenuListData->data[0] = TRAINER_BATTLE_PARAM.opponentA;
+    sDebugMenuListData->data[2] = TRAINER_BATTLE_PARAM.opponentB;
+    if (gPartnerTrainerId)
+        sDebugMenuListData->data[4] = gPartnerTrainerId - MAX_TRAINERS_COUNT;
+    InitTrainerBattleParameter();
+    gPartnerTrainerId = 0;
+}
+
+static void Debug_Display_LocalTrainer(u32 localId, u32 digit, u8 windowId)
+{
+    u32 trainerID = sDebugMenuListData->data[0];
+    StringCopy(gStringVar2, gText_DigitIndicator[digit]);
+    u8 *end;
+    if (trainerID == TRAINER_NONE)
+        end = StringCopy(gStringVar1, COMPOUND_STRING("Not a Trainer"));
+    else
+        end = StringCopy(gStringVar1, GetTrainerNameFromId(trainerID));
+    WrapFontIdToFit(gStringVar1, end, DEBUG_MENU_FONT, WindowWidthPx(windowId));
+    StringCopyPadded(gStringVar1, gStringVar1, CHAR_SPACE, 15);
+    ConvertIntToDecimalStringN(gStringVar3, localId, STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_LOCALID);
+    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Trainer ID: {STR_VAR_3}\n{STR_VAR_1}{CLEAR_TO 90}\n\n{STR_VAR_2}{CLEAR_TO 90}"));
+    AddTextPrinterParameterized(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL);
+}
+
+static void GetTrainerIdFromLocalId(u32 localId)
+{
+    Debug_Trainers_ResetTrainersData();
+    ParseObjectEventScript(gMapHeader.events->objectEvents[localId].script);
+    if (GetTrainerBattleType(sDebugMenuListData->data[0]) == TRAINER_BATTLE_TYPE_DOUBLES)
+        sDebugMenuListData->data[5] = TRUE;
+}
+
+#define TRAINER_TAG 0xFDF3
+#define tSpriteId   data[5]
+
+static void DebugAction_ChooseFromMap_Select(u8 taskId)
+{
+    if (JOY_NEW(DPAD_ANY))
+    {
+        PlaySE(SE_SELECT);
+        u32 previousInput = gTasks[taskId].tInput;
+        do {
+            Debug_HandleInput_Numeric(taskId, 1, gMapHeader.events->objectEventCount, DEBUG_NUMBER_DIGITS_LOCALID);
+            GetTrainerIdFromLocalId(gTasks[taskId].tInput);
+        } while (sDebugMenuListData->data[0] == TRAINER_NONE && gTasks[taskId].tInput != 1 && gTasks[taskId].tInput != gMapHeader.events->objectEventCount);
+
+        if (sDebugMenuListData->data[0] == TRAINER_NONE)
+        {
+            PlaySE(SE_FAILURE);
+            gTasks[taskId].tInput = previousInput;
+            GetTrainerIdFromLocalId(gTasks[taskId].tInput);
+            return;
+        }
+
+        FreeSpritePaletteByTag(TRAINER_TAG);
+        DestroySprite(&gSprites[gTasks[taskId].tSpriteId]);
+        Debug_Display_LocalTrainer(gTasks[taskId].tInput, gTasks[taskId].tDigit, gTasks[taskId].tSubWindowId);
+        u32 graphicsId = gMapHeader.events->objectEvents[gTasks[taskId].tInput].graphicsId;
+        gTasks[taskId].tSpriteId = CreateObjectGraphicsSprite(graphicsId, SpriteCallbackDummy, DEBUG_NUMBER_ICON_X, DEBUG_NUMBER_ICON_Y, 4);
+        StartSpriteAnim(&gSprites[gTasks[taskId].tSpriteId], ANIM_STD_GO_SOUTH);
+        gSprites[gTasks[taskId].tSpriteId].oam.priority = 0;
+        gSprites[gTasks[taskId].tSpriteId].oam.paletteNum =  LoadObjectEventPaletteCopy(gSprites[gTasks[taskId].tSpriteId].template->paletteTag, TRAINER_TAG);
+    }
+
+    if (JOY_NEW(A_BUTTON) || JOY_NEW(B_BUTTON))
+    {
+        sDebugMenuListData->data[1] = FirstBattleTrainerIdToRematchTableId(gRematchTable, sDebugMenuListData->data[0]);
+        sDebugMenuListData->data[3] = TRUE;
+        FreeSpritePaletteByTag(TRAINER_TAG);
+        DestroySprite(&gSprites[gTasks[taskId].tSpriteId]);
+        ClearStdWindowAndFrame(gTasks[taskId].tWindowId, TRUE);
+        RemoveWindow(gTasks[taskId].tWindowId);
+        ClearStdWindowAndFrame(gTasks[taskId].tSubWindowId, TRUE);
+        RemoveWindow(gTasks[taskId].tSubWindowId);
+        DestroyListMenuTask(gTasks[taskId].tMenuTaskId, NULL, NULL);
+        DestroyTask(taskId);
+
+        PlaySE(SE_SELECT);
+        sDebugMenuListData->listId = 2;
+        Debug_RemoveCallbackMenu();
+        Debug_ShowMenu(DebugTask_HandleMenuInput_General, sDebugMenu_Actions_Trainers);
+    }
+}
+
+static void DebugAction_Trainers_ChooseFromMap(u8 taskId)
+{
+    ClearStdWindowAndFrame(gTasks[taskId].tWindowId, TRUE);
+    RemoveWindow(gTasks[taskId].tWindowId);
+
+    HideMapNamePopUpWindow();
+    LoadMessageBoxAndBorderGfx();
+    u32 windowId = AddWindow(&sDebugMenuWindowTemplateExtra);
+    DrawStdWindowFrame(windowId, FALSE);
+
+    CopyWindowToVram(windowId, COPYWIN_FULL);
+
+    // Display initial object event
+    u32 localId = 1;
+    GetTrainerIdFromLocalId(localId);
+    Debug_Display_LocalTrainer(localId, 0, windowId);
+
+    //Set task data
+    gTasks[taskId].func = DebugAction_ChooseFromMap_Select;
+    gTasks[taskId].tSubWindowId = windowId;
+    gTasks[taskId].tInput = localId;
+    gTasks[taskId].tDigit = 0;
+
+    u32 graphicsId = gMapHeader.events->objectEvents[localId].graphicsId;
+    u32 spriteId = CreateObjectGraphicsSprite(graphicsId, SpriteCallbackDummy, DEBUG_NUMBER_ICON_X, DEBUG_NUMBER_ICON_Y, 4);
+    StartSpriteAnim(&gSprites[spriteId], ANIM_STD_GO_SOUTH);
+    gSprites[spriteId].oam.priority = 0;
+    gSprites[spriteId].oam.paletteNum =  LoadObjectEventPaletteCopy(gSprites[spriteId].template->paletteTag, TRAINER_TAG);
+    gTasks[taskId].tSpriteId = spriteId;
+}
+
+#undef TRAINER_TAG
+#undef tSpriteId
+
+#define tSelection  data[5]
+#define tInitial    data[6]
+
+static void Debug_Display_TrainerID(u32 trainerID, u32 selection, u32 digit, u8 windowId)
+{
+    if (selection == TRAINERS_DEBUG_SELECTION_PARTNER)
+        trainerID = TRAINER_PARTNER(trainerID);
+    StringCopy(gStringVar2, gText_DigitIndicator[digit]);
+    u8 *end;
+    if (trainerID == TRAINER_NONE || trainerID == TRAINER_PARTNER(PARTNER_NONE))
+        end = StringCopy(gStringVar1, COMPOUND_STRING("None"));
+    else
+        end = StringCopy(gStringVar1, GetTrainerNameFromId(trainerID));
+    WrapFontIdToFit(gStringVar1, end, DEBUG_MENU_FONT, WindowWidthPx(windowId));
+    StringCopyPadded(gStringVar1, gStringVar1, CHAR_SPACE, 15);
+    ConvertIntToDecimalStringN(gStringVar3, trainerID, STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_TRAINERS);
+    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("ID: {STR_VAR_3}\n{STR_VAR_1}{CLEAR_TO 90}\n\n{STR_VAR_2}{CLEAR_TO 90}"));
+    AddTextPrinterParameterized(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL);
+}
+
+static void DebugAction_ChooseTrainerID_Select(u8 taskId)
+{
+    if (JOY_NEW(DPAD_ANY))
+    {
+        PlaySE(SE_SELECT);
+        u32 min = 1;
+        u32 max = TRAINERS_COUNT - 1;
+        if (gTasks[taskId].tSelection == TRAINERS_DEBUG_SELECTION_TRAINER2)
+        {
+            min = 0;
+            max = TRAINERS_COUNT - 1;
+        }
+        else if (gTasks[taskId].tSelection == TRAINERS_DEBUG_SELECTION_PARTNER)
+        {
+            min = 0;
+            max = PARTNER_COUNT - 1;
+        }
+        Debug_HandleInput_Numeric(taskId, min, max, DEBUG_NUMBER_DIGITS_TRAINERS);
+        switch(gTasks[taskId].tSelection)
+        {
+        case TRAINERS_DEBUG_SELECTION_TRAINER1:
+            sDebugMenuListData->data[0] = gTasks[taskId].tInput;
+            break;
+        case TRAINERS_DEBUG_SELECTION_TRAINER2:
+            sDebugMenuListData->data[2] = gTasks[taskId].tInput;
+            break;
+        case TRAINERS_DEBUG_SELECTION_PARTNER:
+            sDebugMenuListData->data[4] = gTasks[taskId].tInput;
+            break;
+        }
+        Debug_Display_TrainerID(gTasks[taskId].tInput, gTasks[taskId].tSelection, gTasks[taskId].tDigit, gTasks[taskId].tSubWindowId);
+    }
+
+    if (JOY_NEW(A_BUTTON) || JOY_NEW(B_BUTTON))
+    {
+        PlaySE(SE_SELECT);
+        if (gTasks[taskId].tInput != gTasks[taskId].tInitial)
+        {
+            sDebugMenuListData->data[3] = FALSE;
+            sDebugMenuListData->data[1] = -1;
+        }
+        ClearStdWindowAndFrame(gTasks[taskId].tWindowId, TRUE);
+        RemoveWindow(gTasks[taskId].tWindowId);
+        ClearStdWindowAndFrame(gTasks[taskId].tSubWindowId, TRUE);
+        RemoveWindow(gTasks[taskId].tSubWindowId);
+        DestroyListMenuTask(gTasks[taskId].tMenuTaskId, NULL, NULL);
+        DestroyTask(taskId);
+        sDebugMenuListData->listId = 2;
+        Debug_RemoveCallbackMenu();
+        Debug_ShowMenu(DebugTask_HandleMenuInput_General, sDebugMenu_Actions_Trainers);
+    }
+}
+
+static void DebugAction_Trainers_ChooseTrainer(u8 taskId, u32 selection)
+{
+    ClearStdWindowAndFrame(gTasks[taskId].tWindowId, TRUE);
+    RemoveWindow(gTasks[taskId].tWindowId);
+
+    HideMapNamePopUpWindow();
+    LoadMessageBoxAndBorderGfx();
+    u32 windowId = AddWindow(&sDebugMenuWindowTemplateExtra);
+    DrawStdWindowFrame(windowId, FALSE);
+
+    CopyWindowToVram(windowId, COPYWIN_FULL);
+
+    //Set task data
+    gTasks[taskId].func = DebugAction_ChooseTrainerID_Select;
+    gTasks[taskId].tSubWindowId = windowId;
+    gTasks[taskId].tDigit = 0;
+    gTasks[taskId].tSelection = (s32)selection;
+
+    switch(gTasks[taskId].tSelection)
+    {
+    case TRAINERS_DEBUG_SELECTION_TRAINER1:
+        gTasks[taskId].tInput = sDebugMenuListData->data[0];
+        break;
+    case TRAINERS_DEBUG_SELECTION_TRAINER2:
+        gTasks[taskId].tInput = sDebugMenuListData->data[2];
+        break;
+    case TRAINERS_DEBUG_SELECTION_PARTNER:
+        gTasks[taskId].tInput = sDebugMenuListData->data[4];
+        break;
+    }
+    gTasks[taskId].tInitial = gTasks[taskId].tInput;
+    // Display initial trainer
+    Debug_Display_TrainerID(gTasks[taskId].tInput, gTasks[taskId].tSelection, 0, windowId);
+}
+
+#undef tSelection
+#undef tInitial
+
+static void DebugAction_Trainers_SwitchDoublesFlag(u8 taskId)
+{
+    if (sDebugMenuListData->data[2] != TRAINER_NONE || sDebugMenuListData->data[4] != PARTNER_NONE)
+        return;
+    if (sDebugMenuListData->data[5])
+        sDebugMenuListData->data[5] = FALSE;
+    else
+        sDebugMenuListData->data[5] = TRUE;
+}
+
+static void DebugAction_Trainers_SetRematch(u8 taskId)
+{
+    s32 rematchId = sDebugMenuListData->data[1];
+
+    if (rematchId == -1)
+    {
+        FlagToggle(TRAINER_FLAGS_START + sDebugMenuListData->data[0]);
+        return;
+    }
+
+    for (u32 i = 0; i < REMATCHES_COUNT; i++)
+    {
+        if (gRematchTable[rematchId].trainerIds[i] == 0)
+            break;
+
+        if (!HasTrainerBeenFought(gRematchTable[rematchId].trainerIds[i]))
+        {
+            FlagToggle(TRAINER_FLAGS_START + gRematchTable[rematchId].trainerIds[i]);
+            return;
+        }
+    }
+
+    for (u32 i = 0; i < REMATCHES_COUNT; i++)
+    {
+        if (gRematchTable[rematchId].trainerIds[i] == 0)
+            break;
+
+        FlagToggle(TRAINER_FLAGS_START + gRematchTable[rematchId].trainerIds[i]);
+    }
+}
+
+#if FREE_MATCH_CALL == FALSE
+static void DebugAction_Trainers_SetRematchReadiness(u8 taskId)
+{
+    if (gSaveBlock1Ptr->trainerRematches[sDebugMenuListData->data[1]] == -1)
+        return;
+    if (gSaveBlock1Ptr->trainerRematches[sDebugMenuListData->data[1]])
+        gSaveBlock1Ptr->trainerRematches[sDebugMenuListData->data[1]] = FALSE;
+    else
+        gSaveBlock1Ptr->trainerRematches[sDebugMenuListData->data[1]] = TRUE;
+}
+#endif
+
+static void DebugAction_Trainers_TryBattle(u8 taskId)
+{
+    s32 trainer1Id = sDebugMenuListData->data[0];
+    s32 trainer2Id = sDebugMenuListData->data[2];
+    s32 partnerId = sDebugMenuListData->data[4];
+    s32 rematchId = sDebugMenuListData->data[1];
+    if (sDebugMenuListData->data[1] != -1)
+    {
+        s32 lastMatch = CountBattledRematchTeams(rematchId);
+        if (lastMatch == REMATCHES_COUNT || gRematchTable[rematchId].trainerIds[lastMatch] == 0)
+            lastMatch -= 1;
+        trainer1Id = gRematchTable[rematchId].trainerIds[lastMatch];
+    }
+    gBattleTypeFlags = BATTLE_TYPE_TRAINER;
+    TRAINER_BATTLE_PARAM.opponentA = trainer1Id;
+    TRAINER_BATTLE_PARAM.opponentB = 0xFFFF;
+    if (sDebugMenuListData->data[5] || partnerId != PARTNER_NONE || trainer2Id != TRAINER_NONE)
+        gBattleTypeFlags |= BATTLE_TYPE_DOUBLE;
+    if (trainer2Id != TRAINER_NONE)
+    {
+        TRAINER_BATTLE_PARAM.opponentB = trainer2Id;
+        gBattleTypeFlags |= BATTLE_TYPE_TWO_OPPONENTS;
+    }
+    if (partnerId != PARTNER_NONE)
+    {
+        SavePlayerParty();
+        gPartnerTrainerId = TRAINER_PARTNER(partnerId);
+        gBattleTypeFlags |= BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER;
+        for (u32 i = 0; i < MAX_FRONTIER_PARTY_SIZE; i++)
+        {
+            gSelectedOrderFromParty[i] = i + 1;
+            gSaveBlock2Ptr->frontier.selectedPartyMons[i] = gSelectedOrderFromParty[i];
+        }
+        FillPartnerParty(gPartnerTrainerId);
+    }
+
+    gBattleEnvironment = BattleSetup_GetEnvironmentId();
+    CalculateEnemyPartyCount();
+    BattleSetup_StartTrainerBattle_Debug();
+    Debug_DestroyMenu_Full(taskId);
+}
+#if FREE_MATCH_CALL == FALSE
+static void DebugAction_Trainers_RechargeVsSeeker(u8 taskId)
+{
+    gSaveBlock1Ptr->trainerRematchStepCounter = VSSEEKER_RECHARGE_STEPS;
+    MapResetTrainerRematches(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
+    ScriptContext_SetupScript(EventScript_VsSeekerChargingDone);
+    Debug_DestroyMenu_Full(taskId);
+}
+#endif
 // *******************************
 // Actions Flags and Vars
 static void Debug_Display_FlagInfo(u32 flag, u32 digit, u8 windowId)
@@ -2176,7 +2723,7 @@ static void DebugAction_Give_Item_SelectQuantity(u8 taskId)
     {
         DestroyItemIcon(taskId);
 
-        PlaySE(MUS_LEVEL_UP);
+        PlaySE(MUS_DP_LEVEL_UP);
         AddBagItem(itemId, gTasks[taskId].tInput);
         DebugAction_DestroyExtraWindow(taskId);
     }
@@ -2213,14 +2760,24 @@ static void ResetMonDataStruct(struct DebugMonData *sDebugMonData)
 #define tIsComplex  data[5]
 #define tSpriteId   data[6]
 #define tIterator   data[7]
+#define tIsEgg      data[8]
 
-static void Debug_Display_SpeciesInfo(u32 species, u32 digit, u8 windowId)
+static void Debug_Display_SpeciesInfo(u32 species, u32 number, u32 digit, u8 windowId)
 {
+    u8 *end;
     StringCopy(gStringVar2, gText_DigitIndicator[digit]);
-    u8 *end = StringCopy(gStringVar1, GetSpeciesName(species));
+    if (!IsSpeciesEnabled(species))
+    {
+        species = SPECIES_NONE;
+        end = StringCopy(gStringVar1, COMPOUND_STRING("Species Disabled"));
+    }
+    else
+    {
+        end = StringCopy(gStringVar1, GetSpeciesName(species));
+    }
     WrapFontIdToFit(gStringVar1, end, DEBUG_MENU_FONT, WindowWidthPx(windowId));
     StringCopyPadded(gStringVar1, gStringVar1, CHAR_SPACE, 15);
-    ConvertIntToDecimalStringN(gStringVar3, species, STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_ITEMS);
+    ConvertIntToDecimalStringN(gStringVar3, number, STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_ITEMS);
     StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Species: {STR_VAR_3}\n{STR_VAR_1}{CLEAR_TO 90}\n\n{STR_VAR_2}{CLEAR_TO 90}"));
     AddTextPrinterParameterized(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL);
 }
@@ -2245,7 +2802,13 @@ static void DebugAction_Give_PokemonSimple(u8 taskId)
     CopyWindowToVram(windowId, COPYWIN_FULL);
 
     // Display initial Pokémon
-    Debug_Display_SpeciesInfo(sDebugMonData->species, 0, windowId);
+    u32 species;
+    if (!IsSpeciesEnabled(sDebugMonData->species))
+        species = SPECIES_NONE;
+    else
+        species = sDebugMonData->species;
+
+    Debug_Display_SpeciesInfo(species, sDebugMonData->species, 0, windowId);
 
     //Set task data
     gTasks[taskId].func = DebugAction_Give_Pokemon_SelectId;
@@ -2253,10 +2816,11 @@ static void DebugAction_Give_PokemonSimple(u8 taskId)
     gTasks[taskId].tInput = sDebugMonData->species;
     gTasks[taskId].tDigit = 0;
     gTasks[taskId].tIsComplex = FALSE;
+    gTasks[taskId].tIsEgg = FALSE;
 
     FreeMonIconPalettes();
-    LoadMonIconPalette(gTasks[taskId].tInput);
-    gTasks[taskId].tSpriteId = CreateMonIcon(gTasks[taskId].tInput, SpriteCB_MonIcon, DEBUG_NUMBER_ICON_X, DEBUG_NUMBER_ICON_Y, 4, 0);
+    LoadMonIconPalette(species);
+    gTasks[taskId].tSpriteId = CreateMonIcon(species, SpriteCB_MonIcon, DEBUG_NUMBER_ICON_X, DEBUG_NUMBER_ICON_Y, 4, 0);
     gSprites[gTasks[taskId].tSpriteId].oam.priority = 0;
 }
 
@@ -2280,19 +2844,68 @@ static void DebugAction_Give_PokemonComplex(u8 taskId)
     CopyWindowToVram(windowId, COPYWIN_FULL);
 
     // Display initial Pokémon
-    Debug_Display_SpeciesInfo(sDebugMonData->species, 0, windowId);
+    u32 species;
+    if (!IsSpeciesEnabled(sDebugMonData->species))
+        species = SPECIES_NONE;
+    else
+        species = sDebugMonData->species;
+
+    Debug_Display_SpeciesInfo(species, sDebugMonData->species, 0, windowId);
 
     gTasks[taskId].func = DebugAction_Give_Pokemon_SelectId;
     gTasks[taskId].tSubWindowId = windowId;
     gTasks[taskId].tInput = 1;
     gTasks[taskId].tDigit = 0;
     gTasks[taskId].tIsComplex = TRUE;
+    gTasks[taskId].tIsEgg = FALSE;
 
     FreeMonIconPalettes();
-    LoadMonIconPalette(gTasks[taskId].tInput);
-    gTasks[taskId].tSpriteId = CreateMonIcon(gTasks[taskId].tInput, SpriteCB_MonIcon, DEBUG_NUMBER_ICON_X, DEBUG_NUMBER_ICON_Y, 4, 0);
+    LoadMonIconPalette(species);
+    gTasks[taskId].tSpriteId = CreateMonIcon(species, SpriteCB_MonIcon, DEBUG_NUMBER_ICON_X, DEBUG_NUMBER_ICON_Y, 4, 0);
     gSprites[gTasks[taskId].tSpriteId].oam.priority = 0;
     gTasks[taskId].tIterator = 0;
+}
+
+static void DebugAction_Give_NewEgg(u8 taskId)
+{
+    u8 windowId;
+
+    //Mon data struct
+    sDebugMonData = AllocZeroed(sizeof(struct DebugMonData));
+    ResetMonDataStruct(sDebugMonData);
+
+    //Window initialization
+    ClearStdWindowAndFrame(gTasks[taskId].tWindowId, TRUE);
+    RemoveWindow(gTasks[taskId].tWindowId);
+
+    HideMapNamePopUpWindow();
+    LoadMessageBoxAndBorderGfx();
+    windowId = AddWindow(&sDebugMenuWindowTemplateExtra);
+    DrawStdWindowFrame(windowId, FALSE);
+
+    CopyWindowToVram(windowId, COPYWIN_FULL);
+
+    // Display initial Pokémon
+    u32 species;
+    if (!IsSpeciesEnabled(gTasks[taskId].tInput))
+        species = SPECIES_NONE;
+    else
+        species = sDebugMonData->species;
+
+    Debug_Display_SpeciesInfo(species, gTasks[taskId].tInput, 0, windowId);
+
+    //Set task data
+    gTasks[taskId].func = DebugAction_Give_Pokemon_SelectId;
+    gTasks[taskId].tSubWindowId = windowId;
+    gTasks[taskId].tInput = sDebugMonData->species;
+    gTasks[taskId].tDigit = 0;
+    gTasks[taskId].tIsComplex = FALSE;
+    gTasks[taskId].tIsEgg = TRUE;
+
+    FreeMonIconPalettes();
+    LoadMonIconPalette(species);
+    gTasks[taskId].tSpriteId = CreateMonIcon(species, SpriteCB_MonIcon, DEBUG_NUMBER_ICON_X, DEBUG_NUMBER_ICON_Y, 4, 0);
+    gSprites[gTasks[taskId].tSpriteId].oam.priority = 0;
 }
 
 static void Debug_Display_Level(u32 level, u32 digit, u8 windowId)
@@ -2310,23 +2923,42 @@ static void DebugAction_Give_Pokemon_SelectId(u8 taskId)
     {
         PlaySE(SE_SELECT);
         Debug_HandleInput_Numeric(taskId, 1, NUM_SPECIES - 1, DEBUG_NUMBER_DIGITS_ITEMS);
-        Debug_Display_SpeciesInfo(gTasks[taskId].tInput, gTasks[taskId].tDigit, gTasks[taskId].tSubWindowId);
+        u32 species = gTasks[taskId].tInput;
+        if (!IsSpeciesEnabled(species))
+            species = SPECIES_NONE;
+        Debug_Display_SpeciesInfo(species, gTasks[taskId].tInput, gTasks[taskId].tDigit, gTasks[taskId].tSubWindowId);
         FreeAndDestroyMonIconSprite(&gSprites[gTasks[taskId].tSpriteId]);
         FreeMonIconPalettes();
-        LoadMonIconPalette(gTasks[taskId].tInput);
-        gTasks[taskId].tSpriteId = CreateMonIcon(gTasks[taskId].tInput, SpriteCB_MonIcon, DEBUG_NUMBER_ICON_X, DEBUG_NUMBER_ICON_Y, 4, 0);
+        LoadMonIconPalette(species);
+        gTasks[taskId].tSpriteId = CreateMonIcon(species, SpriteCB_MonIcon, DEBUG_NUMBER_ICON_X, DEBUG_NUMBER_ICON_Y, 4, 0);
         gSprites[gTasks[taskId].tSpriteId].oam.priority = 0;
     }
 
     if (JOY_NEW(A_BUTTON))
     {
+        if (!IsSpeciesEnabled(gTasks[taskId].tInput))
+        {
+            PlaySE(SE_PC_OFF);
+            return;
+        }
+
         sDebugMonData->species = gTasks[taskId].tInput;
         gTasks[taskId].tInput = 1;
         gTasks[taskId].tDigit = 0;
 
-        Debug_Display_Level(gTasks[taskId].tInput, gTasks[taskId].tDigit, gTasks[taskId].tSubWindowId);
+        if (!gTasks[taskId].tIsEgg)
+        {
+            Debug_Display_Level(gTasks[taskId].tInput, gTasks[taskId].tDigit, gTasks[taskId].tSubWindowId);
+            gTasks[taskId].func = DebugAction_Give_Pokemon_SelectLevel;
+            return;
+        }
 
-        gTasks[taskId].func = DebugAction_Give_Pokemon_SelectLevel;
+        ScriptGiveEgg(sDebugMonData->species);
+        PlaySE(SE_SELECT);
+        Free(sDebugMonData);
+        FreeMonIconPalettes();
+        FreeAndDestroyMonIconSprite(&gSprites[gTasks[taskId].tSpriteId]);
+        DebugAction_DestroyExtraWindow(taskId);
     }
     else if (JOY_NEW(B_BUTTON))
     {
@@ -2364,7 +2996,7 @@ static void DebugAction_Give_Pokemon_SelectLevel(u8 taskId)
         FreeAndDestroyMonIconSprite(&gSprites[gTasks[taskId].tSpriteId]);
         if (gTasks[taskId].tIsComplex == FALSE)
         {
-            PlaySE(MUS_LEVEL_UP);
+            PlaySE(MUS_DP_LEVEL_UP);
             ScriptGiveMon(sDebugMonData->species, gTasks[taskId].tInput, ITEM_NONE);
             // Set flag for user convenience
             FlagSet(FLAG_SYS_POKEMON_GET);
@@ -2814,7 +3446,7 @@ static void DebugAction_Give_Pokemon_Move(u8 taskId)
             gTasks[taskId].tInput = 0;
             gTasks[taskId].tDigit = 0;
 
-            PlaySE(MUS_LEVEL_UP);
+            PlaySE(MUS_DP_LEVEL_UP);
             gTasks[taskId].func = DebugAction_Give_Pokemon_ComplexCreateMon;
         }
     }
@@ -2959,6 +3591,7 @@ static void DebugAction_Give_Pokemon_ComplexCreateMon(u8 taskId) //https://githu
 #undef tIsComplex
 #undef tSpriteId
 #undef tIterator
+#undef tIsEgg
 
 //Decoration
 #define tSpriteId  data[6]
@@ -3021,7 +3654,7 @@ static void DebugAction_Give_Decoration_SelectId(u8 taskId)
     {
         DestroyItemIcon(taskId);
 
-        PlaySE(MUS_LEVEL_UP);
+        PlaySE(MUS_DP_LEVEL_UP);
         DecorationAdd(gTasks[taskId].tInput);
         DebugAction_DestroyExtraWindow(taskId);
     }
@@ -3073,7 +3706,6 @@ static void DebugAction_Give_DayCareEgg(u8 taskId)
 static void DebugAction_TimeMenu_ChangeTimeOfDay(u8 taskId)
 {
     u32 input = ListMenu_ProcessInput(gTasks[taskId].tMenuTaskId);
-
     DebugAction_DestroyExtraWindow(taskId);
     switch (input)
     {
@@ -3241,7 +3873,7 @@ static void DebugAction_PCBag_Fill_PocketKeyItems(u8 taskId)
 
 static void DebugAction_PCBag_ClearBag(u8 taskId)
 {
-    PlaySE(MUS_LEVEL_UP);
+    PlaySE(MUS_DP_LEVEL_UP);
     ClearBag();
 }
 
@@ -3431,83 +4063,35 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
 
 
 #define SOUND_LIST_BGM              \
-    X(MUS_LITTLEROOT_TEST)          \
-    X(MUS_GSC_ROUTE38)              \
-    X(MUS_CAUGHT)                   \
-    X(MUS_VICTORY_WILD)             \
-    X(MUS_VICTORY_GYM_LEADER)       \
-    X(MUS_VICTORY_LEAGUE)           \
-    X(MUS_C_COMM_CENTER)            \
-    X(MUS_GSC_PEWTER)               \
-    X(MUS_C_VS_LEGEND_BEAST)        \
-    X(MUS_ROUTE101)                 \
-    X(MUS_ROUTE110)                 \
-    X(MUS_ROUTE120)                 \
     X(MUS_PETALBURG)                \
     X(MUS_OLDALE)                   \
-    X(MUS_GYM)                      \
-    X(MUS_SURF)                     \
     X(MUS_PETALBURG_WOODS)          \
-    X(MUS_LEVEL_UP)                 \
-    X(MUS_HEAL)                     \
-    X(MUS_OBTAIN_BADGE)             \
-    X(MUS_OBTAIN_ITEM)              \
-    X(MUS_EVOLVED)                  \
-    X(MUS_OBTAIN_TMHM)              \
     X(MUS_LILYCOVE_MUSEUM)          \
     X(MUS_ROUTE122)                 \
     X(MUS_OCEANIC_MUSEUM)           \
-    X(MUS_EVOLUTION_INTRO)          \
-    X(MUS_EVOLUTION)                \
-    X(MUS_MOVE_DELETED)             \
-    X(MUS_ENCOUNTER_GIRL)           \
-    X(MUS_ENCOUNTER_MALE)           \
     X(MUS_ABANDONED_SHIP)           \
     X(MUS_FORTREE)                  \
     X(MUS_BIRCH_LAB)                \
-    X(MUS_B_TOWER_RS)               \
-    X(MUS_ENCOUNTER_SWIMMER)        \
     X(MUS_CAVE_OF_ORIGIN)           \
     X(MUS_OBTAIN_BERRY)             \
     X(MUS_AWAKEN_LEGEND)            \
-    X(MUS_SLOTS_JACKPOT)            \
-    X(MUS_SLOTS_WIN)                \
     X(MUS_TOO_BAD)                  \
     X(MUS_ROULETTE)                 \
-    X(MUS_LINK_CONTEST_P1)          \
-    X(MUS_LINK_CONTEST_P2)          \
-    X(MUS_LINK_CONTEST_P3)          \
-    X(MUS_LINK_CONTEST_P4)          \
-    X(MUS_ENCOUNTER_RICH)           \
     X(MUS_VERDANTURF)               \
     X(MUS_RUSTBORO)                 \
-    X(MUS_POKE_CENTER)              \
-    X(MUS_ROUTE104)                 \
-    X(MUS_ROUTE119)                 \
-    X(MUS_CYCLING)                  \
-    X(MUS_POKE_MART)                \
     X(MUS_LITTLEROOT)               \
     X(MUS_MT_CHIMNEY)               \
-    X(MUS_ENCOUNTER_FEMALE)         \
-    X(MUS_LILYCOVE)                 \
     X(MUS_DESERT)                   \
     X(MUS_HELP)                     \
     X(MUS_UNDERWATER)               \
-    X(MUS_VICTORY_TRAINER)          \
     X(MUS_TITLE)                    \
     X(MUS_INTRO)                    \
-    X(MUS_ENCOUNTER_MAY)            \
-    X(MUS_ENCOUNTER_INTENSE)        \
-    X(MUS_ENCOUNTER_COOL)           \
-    X(MUS_ROUTE113)                 \
     X(MUS_ENCOUNTER_AQUA)           \
-    X(MUS_FOLLOW_ME)                \
     X(MUS_ENCOUNTER_BRENDAN)        \
     X(MUS_EVER_GRANDE)              \
     X(MUS_ENCOUNTER_SUSPICIOUS)     \
     X(MUS_VICTORY_AQUA_MAGMA)       \
     X(MUS_CABLE_CAR)                \
-    X(MUS_GAME_CORNER)              \
     X(MUS_DEWFORD)                  \
     X(MUS_SAFARI_ZONE)              \
     X(MUS_VICTORY_ROAD)             \
@@ -3527,20 +4111,12 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_ABNORMAL_WEATHER)         \
     X(MUS_WEATHER_GROUDON)          \
     X(MUS_SOOTOPOLIS)               \
-    X(MUS_CONTEST_RESULTS)          \
     X(MUS_HALL_OF_FAME_ROOM)        \
     X(MUS_TRICK_HOUSE)              \
-    X(MUS_ENCOUNTER_TWINS)          \
-    X(MUS_ENCOUNTER_ELITE_FOUR)     \
-    X(MUS_ENCOUNTER_HIKER)          \
-    X(MUS_CONTEST_LOBBY)            \
-    X(MUS_ENCOUNTER_INTERVIEWER)    \
-    X(MUS_ENCOUNTER_CHAMPION)       \
     X(MUS_CREDITS)                  \
     X(MUS_END)                      \
     X(MUS_B_FRONTIER)               \
     X(MUS_B_ARENA)                  \
-    X(MUS_OBTAIN_B_POINTS)          \
     X(MUS_REGISTER_MATCH_CALL)      \
     X(MUS_B_PYRAMID)                \
     X(MUS_B_PYRAMID_TOP)            \
@@ -3639,7 +4215,453 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_RG_ENCOUNTER_DEOXYS)      \
     X(MUS_RG_TRAINER_TOWER)         \
     X(MUS_RG_SLOW_PALLET)           \
-    X(MUS_RG_TEACHY_TV_MENU)
+    X(MUS_RG_TEACHY_TV_MENU)        \
+    X(MUS_DP_TWINLEAF_DAY) \
+    X(MUS_DP_SANDGEM_DAY) \
+    X(MUS_DP_FLOAROMA_DAY) \
+    X(MUS_DP_SOLACEON_DAY) \
+    X(MUS_DP_ROUTE225_DAY) \
+    X(MUS_DP_VALOR_LAKEFRONT_DAY) \
+    X(MUS_DP_JUBILIFE_DAY) \
+    X(MUS_DP_CANALAVE_DAY) \
+    X(MUS_DP_OREBURGH_DAY) \
+    X(MUS_DP_ETERNA_DAY) \
+    X(MUS_DP_HEARTHOME_DAY) \
+    X(MUS_DP_VEILSTONE_DAY) \
+    X(MUS_DP_SUNYSHORE_DAY) \
+    X(MUS_DP_SNOWPOINT_DAY) \
+    X(MUS_DP_POKEMON_LEAGUE_DAY) \
+    X(MUS_DP_FIGHT_AREA_DAY) \
+    X(MUS_DP_ROUTE201_DAY) \
+    X(MUS_DP_ROUTE203_DAY) \
+    X(MUS_DP_ROUTE205_DAY) \
+    X(MUS_DP_ROUTE206_DAY) \
+    X(MUS_DP_ROUTE209_DAY) \
+    X(MUS_DP_ROUTE210_DAY) \
+    X(MUS_DP_ROUTE216_DAY) \
+    X(MUS_DP_ROUTE228_DAY) \
+    X(MUS_DP_ROWAN) \
+    X(MUS_DP_TV_BROADCAST) \
+    X(MUS_DP_TWINLEAF_NIGHT) \
+    X(MUS_DP_SANDGEM_NIGHT) \
+    X(MUS_DP_FLOAROMA_NIGHT) \
+    X(MUS_DP_SOLACEON_NIGHT) \
+    X(MUS_DP_ROUTE225_NIGHT) \
+    X(MUS_DP_VALOR_LAKEFRONT_NIGHT) \
+    X(MUS_DP_JUBILIFE_NIGHT) \
+    X(MUS_DP_CANALAVE_NIGHT) \
+    X(MUS_DP_OREBURGH_NIGHT) \
+    X(MUS_DP_ETERNA_NIGHT) \
+    X(MUS_DP_HEARTHOME_NIGHT) \
+    X(MUS_DP_VEILSTONE_NIGHT) \
+    X(MUS_DP_SUNYSHORE_NIGHT) \
+    X(MUS_DP_SNOWPOINT_NIGHT) \
+    X(MUS_DP_POKEMON_LEAGUE_NIGHT) \
+    X(MUS_DP_FIGHT_AREA_NIGHT) \
+    X(MUS_DP_ROUTE201_NIGHT) \
+    X(MUS_DP_ROUTE203_NIGHT) \
+    X(MUS_DP_ROUTE205_NIGHT) \
+    X(MUS_DP_ROUTE206_NIGHT) \
+    X(MUS_DP_ROUTE209_NIGHT) \
+    X(MUS_DP_ROUTE210_NIGHT) \
+    X(MUS_DP_ROUTE216_NIGHT) \
+    X(MUS_DP_ROUTE228_NIGHT) \
+    X(MUS_DP_UNDERGROUND) \
+    X(MUS_DP_FLAG_CAPTURED) \
+    X(MUS_DP_VICTORY_ROAD) \
+    X(MUS_DP_ETERNA_FOREST) \
+    X(MUS_DP_OLD_CHATEAU) \
+    X(MUS_DP_LAKE_CAVERNS) \
+    X(MUS_DP_AMITY_SQUARE) \
+    X(MUS_DP_GALACTIC_HQ) \
+    X(MUS_DP_GALACTIC_ETERNA_BUILDING) \
+    X(MUS_DP_GREAT_MARSH) \
+    X(MUS_DP_LAKE) \
+    X(MUS_DP_MT_CORONET) \
+    X(MUS_DP_SPEAR_PILLAR) \
+    X(MUS_DP_STARK_MOUNTAIN) \
+    X(MUS_DP_OREBURGH_GATE) \
+    X(MUS_DP_OREBURGH_MINE) \
+    X(MUS_DP_INSIDE_POKEMON_LEAGUE) \
+    X(MUS_DP_HALL_OF_FAME_ROOM) \
+    X(MUS_DP_POKE_CENTER) \
+    X(MUS_DP_POKE_CENTER_NIGHT) \
+    X(MUS_DP_GYM) \
+    X(MUS_DP_ROWAN_LAB) \
+    X(MUS_DP_CONTEST_LOBBY) \
+    X(MUS_DP_POKE_MART) \
+    X(MUS_DP_GAME_CORNER) \
+    X(MUS_DP_B_TOWER) \
+    X(MUS_DP_TV_STATION) \
+    X(MUS_DP_GALACTIC_HQ_BASEMENT) \
+    X(MUS_DP_AZURE_FLUTE) \
+    X(MUS_DP_HALL_OF_ORIGIN) \
+    X(MUS_DP_GTS) \
+    X(MUS_DP_ENCOUNTER_BOY) \
+    X(MUS_DP_ENCOUNTER_TWINS) \
+    X(MUS_DP_ENCOUNTER_INTENSE) \
+    X(MUS_DP_ENCOUNTER_GALACTIC) \
+    X(MUS_DP_ENCOUNTER_LADY) \
+    X(MUS_DP_ENCOUNTER_HIKER) \
+    X(MUS_DP_ENCOUNTER_RICH) \
+    X(MUS_DP_ENCOUNTER_SAILOR) \
+    X(MUS_DP_ENCOUNTER_SUSPICIOUS) \
+    X(MUS_DP_ENCOUNTER_ACE_TRAINER) \
+    X(MUS_DP_ENCOUNTER_GIRL) \
+    X(MUS_DP_ENCOUNTER_CYCLIST) \
+    X(MUS_DP_ENCOUNTER_ARTIST) \
+    X(MUS_DP_ENCOUNTER_ELITE_FOUR) \
+    X(MUS_DP_ENCOUNTER_CHAMPION) \
+    X(MUS_DP_VS_WILD) \
+    X(MUS_DP_VS_GYM_LEADER) \
+    X(MUS_DP_VS_UXIE_MESPRIT_AZELF) \
+    X(MUS_DP_VS_TRAINER) \
+    X(MUS_DP_VS_GALACTIC_BOSS) \
+    X(MUS_DP_VS_DIALGA_PALKIA) \
+    X(MUS_DP_VS_CHAMPION) \
+    X(MUS_DP_VS_GALACTIC) \
+    X(MUS_DP_VS_RIVAL) \
+    X(MUS_DP_VS_ARCEUS) \
+    X(MUS_DP_VS_LEGEND) \
+    X(MUS_DP_VICTORY_WILD) \
+    X(MUS_DP_VICTORY_TRAINER) \
+    X(MUS_DP_VICTORY_GYM_LEADER) \
+    X(MUS_DP_VICTORY_CHAMPION) \
+    X(MUS_DP_VICTORY_GALACTIC) \
+    X(MUS_DP_VICTORY_ELITE_FOUR) \
+    X(MUS_DP_VS_GALACTIC_COMMANDER) \
+    X(MUS_DP_CONTEST) \
+    X(MUS_DP_VS_ELITE_FOUR) \
+    X(MUS_DP_FOLLOW_ME) \
+    X(MUS_DP_RIVAL) \
+    X(MUS_DP_LAKE_EVENT) \
+    X(MUS_DP_EVOLUTION) \
+    X(MUS_DP_LUCAS) \
+    X(MUS_DP_DAWN) \
+    X(MUS_DP_LEGEND_APPEARS) \
+    X(MUS_DP_CATASTROPHE) \
+    X(MUS_DP_POKE_RADAR) \
+    X(MUS_DP_SURF) \
+    X(MUS_DP_CYCLING) \
+    X(MUS_DP_LETS_GO_TOGETHER) \
+    X(MUS_DP_TV_END) \
+    X(MUS_DP_LEVEL_UP) \
+    X(MUS_DP_EVOLVED) \
+    X(MUS_DP_OBTAIN_KEY_ITEM) \
+    X(MUS_DP_OBTAIN_ITEM) \
+    X(MUS_DP_CAUGHT_INTRO) \
+    X(MUS_DP_DEX_RATING) \
+    X(MUS_DP_OBTAIN_BADGE) \
+    X(MUS_DP_POKETCH) \
+    X(MUS_DP_OBTAIN_TMHM) \
+    X(MUS_DP_OBTAIN_ACCESSORY) \
+    X(MUS_DP_MOVE_DELETED) \
+    X(MUS_DP_HEAL) \
+    X(MUS_DP_OBTAIN_BERRY) \
+    X(MUS_DP_CONTEST_DRESS_UP) \
+    X(MUS_DP_HALL_OF_FAME) \
+    X(MUS_DP_INTRO) \
+    X(MUS_DP_TITLE) \
+    X(MUS_DP_MYSTERY_GIFT) \
+    X(MUS_DP_WFC) \
+    X(MUS_DP_DANCE_EASY) \
+    X(MUS_DP_DANCE_DIFFICULT) \
+    X(MUS_DP_CONTEST_RESULTS) \
+    X(MUS_DP_CONTEST_WINNER) \
+    X(MUS_DP_POFFINS) \
+    X(MUS_DP_SLOTS_WIN) \
+    X(MUS_DP_SLOTS_JACKPOT) \
+    X(MUS_DP_CREDITS) \
+    X(MUS_DP_SLOTS_UNUSED) \
+    X(MUS_PL_FIGHT_AREA_DAY) \
+    X(MUS_PL_TV_BROADCAST) \
+    X(MUS_PL_TV_END) \
+    X(MUS_PL_INTRO) \
+    X(MUS_PL_TITLE) \
+    X(MUS_PL_DISTORTION_WORLD) \
+    X(MUS_PL_B_ARCADE) \
+    X(MUS_PL_B_HALL) \
+    X(MUS_PL_B_CASTLE) \
+    X(MUS_PL_B_FACTORY) \
+    X(MUS_PL_GLOBAL_TERMINAL) \
+    X(MUS_PL_LILYCOVE_BOSSA_NOVA) \
+    X(MUS_PL_LOOKER) \
+    X(MUS_PL_VS_GIRATINA) \
+    X(MUS_PL_VS_FRONTIER_BRAIN) \
+    X(MUS_PL_VICTORY_FRONTIER_BRAIN) \
+    X(MUS_PL_VS_REGI) \
+    X(MUS_PL_CONTEST_COOL) \
+    X(MUS_PL_CONTEST_SMART) \
+    X(MUS_PL_CONTEST_CUTE) \
+    X(MUS_PL_CONTEST_TOUGH) \
+    X(MUS_PL_CONTEST_BEAUTY) \
+    X(MUS_PL_SPIN_TRADE) \
+    X(MUS_PL_WIFI_MINIGAMES) \
+    X(MUS_PL_WIFI_PLAZA) \
+    X(MUS_PL_WIFI_PARADE) \
+    X(MUS_PL_GIRATINA_APPEARS_1) \
+    X(MUS_PL_GIRATINA_APPEARS_2) \
+    X(MUS_PL_MYSTERY_GIFT) \
+    X(MUS_PL_TWINLEAF_MUSIC_BOX) \
+    X(MUS_PL_OBTAIN_ARCADE_POINTS) \
+    X(MUS_PL_OBTAIN_CASTLE_POINTS) \
+    X(MUS_PL_OBTAIN_B_POINTS) \
+    X(MUS_PL_WIN_MINIGAME) \
+    X(MUS_HG_E_DENDOURIRI) \
+    X(MUS_HG_NEW_BARK) \
+    X(MUS_HG_CHERRYGROVE) \
+    X(MUS_HG_VIOLET) \
+    X(MUS_HG_AZALEA) \
+    X(MUS_HG_GOLDENROD) \
+    X(MUS_HG_ECRUTEAK) \
+    X(MUS_HG_CIANWOOD) \
+    X(MUS_HG_DANCE_THEATER) \
+    X(MUS_HG_SPROUT_TOWER) \
+    X(MUS_HG_UNION_CAVE) \
+    X(MUS_HG_RUINS_OF_ALPH) \
+    X(MUS_HG_NATIONAL_PARK) \
+    X(MUS_HG_BURNED_TOWER) \
+    X(MUS_HG_BELL_TOWER) \
+    X(MUS_HG_LIGHTHOUSE) \
+    X(MUS_HG_TEAM_ROCKET_HQ) \
+    X(MUS_HG_ICE_PATH) \
+    X(MUS_HG_DRAGONS_DEN) \
+    X(MUS_HG_POKEMON_LEAGUE) \
+    X(MUS_HG_FOLLOW_ME_1) \
+    X(MUS_HG_FOLLOW_ME_2) \
+    X(MUS_HG_ENCOUNTER_RIVAL) \
+    X(MUS_HG_RIVAL_EXIT) \
+    X(MUS_HG_BUG_CONTEST_PREP) \
+    X(MUS_HG_BUG_CATCHING_CONTEST) \
+    X(MUS_HG_ROCKET_TAKEOVER) \
+    X(MUS_HG_MAGNET_TRAIN) \
+    X(MUS_HG_EUSINE) \
+    X(MUS_HG_CLAIR) \
+    X(MUS_HG_ENCOUNTER_GIRL_1) \
+    X(MUS_HG_ENCOUNTER_BOY_1) \
+    X(MUS_HG_ENCOUNTER_SUSPICIOUS_1) \
+    X(MUS_HG_ENCOUNTER_SAGE) \
+    X(MUS_HG_ENCOUNTER_KIMONO_GIRL) \
+    X(MUS_HG_ENCOUNTER_ROCKET) \
+    X(MUS_HG_ENCOUNTER_SUSPICIOUS_2) \
+    X(MUS_HG_VS_GYM_LEADER) \
+    X(MUS_HG_VS_RIVAL) \
+    X(MUS_HG_VS_ROCKET) \
+    X(MUS_HG_VS_RAIKOU) \
+    X(MUS_HG_VS_CHAMPION) \
+    X(MUS_HG_VS_HO_OH) \
+    X(MUS_HG_VS_LUGIA) \
+    X(MUS_HG_ETHAN) \
+    X(MUS_HG_LYRA) \
+    X(MUS_HG_KIMONO_GIRL_DANCE) \
+    X(MUS_HG_KIMONO_GIRL) \
+    X(MUS_HG_HO_OH_APPEARS) \
+    X(MUS_HG_LUGIA_APPEARS) \
+    X(MUS_BW12_001) \
+	X(MUS_BW12_002) \
+	X(MUS_BW12_003) \
+	X(MUS_BW12_004) \
+	X(MUS_BW12_005) \
+	X(MUS_BW12_006) \
+	X(MUS_BW12_007) \
+	X(MUS_BW12_008) \
+	X(MUS_BW12_009) \
+	X(MUS_BW12_VS_ELITE_FOUR) \
+	X(MUS_BW12_VS_CHEREN_BIANCA) \
+	X(MUS_BW12_VS_WILD_STRONG) \
+	X(MUS_BW12_013) \
+	X(MUS_BW12_014) \
+	X(MUS_BW12_015) \
+	X(MUS_BW12_016) \
+	X(MUS_BW12_GYM) \
+	X(MUS_BW12_UNWAVERING_EMOTIONS) \
+	X(MUS_BW12_THE_POKEMON_1) \
+	X(MUS_BW12_TITLE_SCREEN) \
+	X(MUS_BW12_021) \
+	X(MUS_BW12_022) \
+	X(MUS_BW12_023) \
+	X(MUS_BW12_024) \
+	X(MUS_BW12_025) \
+	X(MUS_BW12_026) \
+	X(MUS_BW12_027) \
+	X(MUS_BW12_028) \
+	X(MUS_BW12_029) \
+	X(MUS_BW12_030) \
+	X(MUS_BW12_031) \
+	X(MUS_BW12_032) \
+	X(MUS_BW12_033) \
+	X(MUS_BW12_ROUTE_2) \
+	X(MUS_BW12_035) \
+	X(MUS_BW12_036) \
+	X(MUS_BW12_VS_GYM_LEADER_1) \
+	X(MUS_BW12_VS_TRAINER_1) \
+	X(MUS_BW12_VS_WILD_1) \
+	X(MUS_BW12_VS_ALDER) \
+	X(MUS_BW12_041) \
+	X(MUS_BW12_042) \
+	X(MUS_BW12_043) \
+	X(MUS_BW12_POKEMON_CENTER) \
+	X(MUS_BW12_045) \
+	X(MUS_BW12_046) \
+	X(MUS_BW12_047) \
+	X(MUS_BW12_048) \
+	X(MUS_BW12_049) \
+	X(MUS_BW12_050) \
+	X(MUS_BW12_051) \
+	X(MUS_BW12_052) \
+	X(MUS_BW12_053) \
+	X(MUS_BW12_054) \
+	X(MUS_BW12_055) \
+	X(MUS_BW12_056) \
+	X(MUS_BW12_057) \
+	X(MUS_BW12_058) \
+	X(MUS_BW12_059) \
+	X(MUS_BW12_GAMEFREAK) \
+	X(MUS_BW12_061) \
+	X(MUS_BW12_062) \
+	X(MUS_BW12_063) \
+	X(MUS_BW12_064) \
+	X(MUS_BW12_065) \
+	X(MUS_BW12_066) \
+	X(MUS_BW12_067) \
+	X(MUS_BW12_068) \
+	X(MUS_BW12_069) \
+	X(MUS_BW12_070) \
+	X(MUS_BW12_071) \
+	X(MUS_BW12_072) \
+	X(MUS_BW12_073) \
+	X(MUS_BW12_VS_ZEKROM) \
+	X(MUS_BW12_VS_RESHIRAM) \
+	X(MUS_BW12_VS_LEGENDARY) \
+	X(MUS_BW12_077) \
+	X(MUS_BW12_078) \
+	X(MUS_BW12_VS_PWC_FINAL) \
+	X(MUS_BW12_080) \
+	X(MUS_BW12_081) \
+	X(MUS_BW12_VS_TRAINER_SUBWAY) \
+	X(MUS_BW12_VS_N) \
+	X(MUS_BW12_VS_GHETSIS_1) \
+	X(MUS_BW12_085) \
+	X(MUS_BW12_086) \
+	X(MUS_BW12_087) \
+	X(MUS_BW12_088) \
+	X(MUS_BW12_BLACK_CITY) \
+	X(MUS_BW12_WHITE_FOREST) \
+	X(MUS_BW12_091) \
+	X(MUS_BW12_092) \
+	X(MUS_BW12_VS_GYM_LEADER_WINNING_1) \
+	X(MUS_BW12_094) \
+	X(MUS_BW12_095) \
+	X(MUS_BW12_096) \
+	X(MUS_BW12_097) \
+	X(MUS_BW12_098) \
+	X(MUS_BW12_099) \
+	X(MUS_BW12_100) \
+	X(MUS_BW12_101) \
+	X(MUS_BW12_102) \
+	X(MUS_BW12_103) \
+	X(MUS_BW12_104) \
+	X(MUS_BW12_105) \
+	X(MUS_BW12_106) \
+	X(MUS_BW12_107) \
+	X(MUS_BW12_VS_IN_DANGER) \
+	X(MUS_BW12_109) \
+	X(MUS_BW12_110) \
+	X(MUS_BW12_111) \
+	X(MUS_BW12_112) \
+	X(MUS_BW12_113) \
+	X(MUS_BW12_114) \
+	X(MUS_BW12_VS_N_DECISIVE_BATTLE) \
+	X(MUS_BW12_116) \
+	X(MUS_BW12_117) \
+	X(MUS_BW12_118) \
+	X(MUS_BW12_119) \
+	X(MUS_BW12_120) \
+	X(MUS_BW12_121) \
+	X(MUS_BW12_CYNTIA_INTRO) \
+	X(MUS_BW12_VS_CYNTIA) \
+	X(MUS_BW12_124) \
+	X(MUS_BW12_VS_WILD_2) \
+	X(MUS_BW12_VS_TRAINER_2) \
+	X(MUS_BW12_127) \
+	X(MUS_BW12_VS_GYM_LEADER_2) \
+	X(MUS_BW12_VS_PLASMA_GRUNT_2) \
+	X(MUS_BW12_130) \
+	X(MUS_BW12_131) \
+	X(MUS_BW12_VS_COLRESS) \
+	X(MUS_BW12_VS_HUGH) \
+	X(MUS_BW12_134) \
+	X(MUS_BW12_135) \
+	X(MUS_BW12_ENTRALINK) \
+	X(MUS_BW12_137) \
+	X(MUS_BW12_OPENING_2) \
+	X(MUS_BW12_THE_POKEMON_2) \
+	X(MUS_BW12_140) \
+	X(MUS_BW12_141) \
+	X(MUS_BW12_VS_GHETSIS_2) \
+	X(MUS_BW12_VS_BW_KYUREM) \
+	X(MUS_BW12_144) \
+	X(MUS_BW12_145) \
+	X(MUS_BW12_146) \
+	X(MUS_BW12_147) \
+	X(MUS_BW12_148) \
+	X(MUS_BW12_VS_PWT_FINAL) \
+	X(MUS_BW12_150) \
+	X(MUS_BW12_151) \
+	X(MUS_BW12_152) \
+	X(MUS_BW12_153) \
+	X(MUS_BW12_VS_REGI) \
+	X(MUS_BW12_REGI_CHAMBER) \
+	X(MUS_BW12_VS_PLASMA_GRUNT_1) \
+	X(MUS_BW12_PWT) \
+	X(MUS_BW12_VS_PWT_KANTO_LEADER) \
+	X(MUS_BW12_VS_PWT_KANTO_CHAMPION) \
+	X(MUS_BW12_VS_PWT_JOHTO_LEADER) \
+	X(MUS_BW12_VS_PWT_JOHTO_CHAMPION) \
+	X(MUS_BW12_VS_PWT_HOENN_LEADER) \
+	X(MUS_BW12_VS_PWT_HOENN_CHAMPION) \
+	X(MUS_BW12_VS_PWT_SINNOH_LEADER) \
+	X(MUS_BW12_VS_PWT_SINNOH_CHAMPION) \
+	X(MUS_BW12_VS_IRIS) \
+	X(MUS_BW12_167) \
+	X(MUS_BW12_168) \
+	X(MUS_BW12_169) \
+	X(MUS_BW12_VS_GYM_LEADER_WINNING_2) \
+	X(MUS_BW12_171) \
+	X(MUS_BW12_172) \
+	X(MUS_BW12_173) \
+	X(MUS_BW12_174) \
+	X(MUS_BW12_POKEWOOD) \
+	X(MUS_BW12_176) \
+	X(MUS_BW12_177) \
+	X(MUS_BW12_178) \
+	X(MUS_BW12_179) \
+	X(MUS_BW12_180) \
+	X(MUS_BW12_181) \
+	X(MUS_BW12_GYM_MISTRALTON) \
+	X(MUS_BW12_GYM_OPELUCID) \
+	X(MUS_BW12_ASSAULT_OPELUCID_CITY) \
+	X(MUS_BW12_FROZEN_TOWN) \
+	X(MUS_BW12_186) \
+	X(MUS_BW12_187) \
+	X(MUS_BW12_188) \
+	X(MUS_BW12_189) \
+	X(MUS_BW12_190) \
+	X(MUS_BW12_191) \
+	X(MUS_BW12_192) \
+	X(MUS_BW12_193) \
+	X(MUS_BW12_GYM_VIRBANK) \
+	X(MUS_BW12_195) \
+	X(MUS_BW12_196) \
+	X(MUS_BW12_197) \
+	X(MUS_BW12_GYM_HUMILAU) \
+	X(MUS_BW12_199) \
+	X(MUS_BW12_GYM_NIMBASA_RUNAWAY) \
+	X(MUS_BW12_GYM_NIMBASA_STAGE) \
+	X(MUS_BW12_SPOTTED_BEAUTY) \
+	X(MUS_BW12_CREDITS) \
+	X(MUS_BW12_CREDITS_END) \
+	X(MUS_BW12_PWT_VENUE)
 
 #define SOUND_LIST_SE               \
     X(SE_USE_ITEM)                  \

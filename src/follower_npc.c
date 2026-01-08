@@ -2,6 +2,7 @@
 #include "follower_npc.h"
 #include "follower_npc_alternate_sprites.h"
 #include "battle.h"
+#include "battle_partner.h"
 #include "battle_setup.h"
 #include "battle_tower.h"
 #include "bike.h"
@@ -226,7 +227,7 @@ static void TurnNPCIntoFollower(u32 localId, u32 followerFlags, u32 setScript, c
     SetFollowerNPCData(FNPC_DATA_COME_OUT_DOOR, FNPC_DOOR_NONE);
     if (FollowerNPCHasRunningFrames())
         followerFlags |= FOLLOWER_NPC_FLAG_HAS_RUNNING_FRAMES;
-
+        
     SetFollowerNPCData(FNPC_DATA_FOLLOWER_FLAGS, followerFlags);
 
     // If the player is biking and the follower flags prohibit biking, force the player to dismount the bike.
@@ -245,15 +246,10 @@ static u32 GetFollowerNPCSprite(void)
 
     switch (GetFollowerNPCData(FNPC_DATA_CURRENT_SPRITE))
     {
-    case FOLLOWER_NPC_SPRITE_INDEX_MACH_BIKE:
+    case FOLLOWER_NPC_SPRITE_INDEX_BIKE:
         for (i = 0; i < NELEMS(gFollowerNPCAlternateSprites); i++)
             if (gFollowerNPCAlternateSprites[i].normalId == GetFollowerNPCData(FNPC_DATA_GFX_ID))
-                return gFollowerNPCAlternateSprites[i].machBikeId;
-        break;
-    case FOLLOWER_NPC_SPRITE_INDEX_ACRO_BIKE:
-        for (i = 0; i < NELEMS(gFollowerNPCAlternateSprites); i++)
-            if (gFollowerNPCAlternateSprites[i].normalId == GetFollowerNPCData(FNPC_DATA_GFX_ID))
-                return gFollowerNPCAlternateSprites[i].acroBikeId;
+                return gFollowerNPCAlternateSprites[i].bikeId;
         break;
     case FOLLOWER_NPC_SPRITE_INDEX_SURF:
         for (i = 0; i < NELEMS(gFollowerNPCAlternateSprites); i++)
@@ -810,7 +806,7 @@ void CreateFollowerNPC(u32 gfx, u32 followerFlags, const u8 *scriptPtr)
 {
     if (PlayerHasFollowerNPC())
         return;
-
+        
     struct ObjectEvent *player = &gObjectEvents[gPlayerAvatar.objectEventId];
     struct ObjectEvent *follower;
     struct ObjectEventTemplate npc = 
@@ -827,7 +823,7 @@ void CreateFollowerNPC(u32 gfx, u32 followerFlags, const u8 *scriptPtr)
     follower = &gObjectEvents[GetFollowerNPCData(FNPC_DATA_OBJ_ID)];
     follower->movementType = MOVEMENT_TYPE_NONE;
     gSprites[follower->spriteId].callback = MovementType_None;
-
+    
     SetFollowerNPCData(FNPC_DATA_IN_PROGRESS, TRUE);
     SetFollowerNPCData(FNPC_DATA_GFX_ID, follower->graphicsId);
     SetFollowerNPCData(FNPC_DATA_SURF_BLOB, FNPC_SURF_BLOB_NONE);
@@ -835,7 +831,7 @@ void CreateFollowerNPC(u32 gfx, u32 followerFlags, const u8 *scriptPtr)
     SetFollowerNPCScriptPointer(scriptPtr);
     if (FollowerNPCHasRunningFrames())
         followerFlags |= FOLLOWER_NPC_FLAG_HAS_RUNNING_FRAMES;
-
+        
     SetFollowerNPCData(FNPC_DATA_FOLLOWER_FLAGS, followerFlags);
 
     // If the player is biking and the follower flags prohibit biking, force the player to dismount the bike.
@@ -887,12 +883,12 @@ u32 DetermineFollowerNPCState(struct ObjectEvent *follower, u32 state, u32 direc
     // Follower won't move if player is forced back onto the same tile.
     if (GetFollowerNPCData(FNPC_DATA_FORCED_MOVEMENT) == FNPC_FORCED_STAY)
         return MOVEMENT_ACTION_NONE;
-
+        
     GetXYCoordsPlayerMovementDest(playerMoveDirection, &playerDestX, &playerDestY);
     newPlayerMB = MapGridGetMetatileBehaviorAt(playerDestX, playerDestY);
 
     if (IsPlayerForcedOntoSameTile(newPlayerMB, playerMoveDirection)
-     && !(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_MACH_BIKE && playerMoveDirection == DIR_NORTH && newPlayerMB == MB_MUDDY_SLOPE && GetPlayerSpeed() >= PLAYER_SPEED_FAST))
+     && !(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_BIKE && playerMoveDirection == DIR_NORTH && newPlayerMB == MB_MUDDY_SLOPE && GetPlayerSpeed() >= PLAYER_SPEED_FAST))
     {
         SetFollowerNPCData(FNPC_DATA_FORCED_MOVEMENT, FNPC_FORCED_STAY);
         SetFollowerNPCData(FNPC_DATA_DELAYED_STATE, 0);
@@ -905,7 +901,8 @@ u32 DetermineFollowerNPCState(struct ObjectEvent *follower, u32 state, u32 direc
     if (IsStateMovement(state) && delayedState)
     {
         // Lock face direction for Acro side jump.
-        if (delayedState == MOVEMENT_ACTION_JUMP_DOWN && TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_ACRO_BIKE))
+        if (delayedState == MOVEMENT_ACTION_JUMP_DOWN
+         && (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_BIKE) && gSaveBlock2Ptr->playerBike == ACRO_BIKE))
             follower->facingDirectionLocked = TRUE;
 
         newState = delayedState + (direction -1);
@@ -1069,7 +1066,7 @@ u32 DetermineFollowerNPCState(struct ObjectEvent *follower, u32 state, u32 direc
         // Acro side hop.
         if (delayedState == MOVEMENT_ACTION_JUMP_DOWN)
         {
-            if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_ACRO_BIKE))
+            if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_BIKE) && gSaveBlock2Ptr->playerBike == ACRO_BIKE)
                 follower->facingDirectionLocked = TRUE;
 
             return newState;
@@ -1347,10 +1344,7 @@ void FollowerNPC_HandleSprite(void)
 {
     if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_BIKE) && CheckFollowerNPCFlag(FOLLOWER_NPC_FLAG_CAN_BIKE))
     {
-        if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_MACH_BIKE)
-            SetFollowerNPCSprite(FOLLOWER_NPC_SPRITE_INDEX_MACH_BIKE);
-        else if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ACRO_BIKE)
-            SetFollowerNPCSprite(FOLLOWER_NPC_SPRITE_INDEX_ACRO_BIKE);
+        SetFollowerNPCSprite(FOLLOWER_NPC_SPRITE_INDEX_BIKE);
     }
     else if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ON_FOOT)
     {
@@ -1483,13 +1477,9 @@ void FollowerNPC_HandleBike(void)
     if (GetFollowerNPCData(FNPC_DATA_CURRENT_SPRITE) == FOLLOWER_NPC_SPRITE_INDEX_SURF)
         return;
 
-    if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_MACH_BIKE && FollowerNPCCanBike() && GetFollowerNPCData(FNPC_DATA_COME_OUT_DOOR) != FNPC_DOOR_NEEDS_TO_EXIT) //Coming out door
+    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_BIKE) && FollowerNPCCanBike() && GetFollowerNPCData(FNPC_DATA_COME_OUT_DOOR) != FNPC_DOOR_NEEDS_TO_EXIT) //Coming out door
     {
-        SetFollowerNPCSprite(FOLLOWER_NPC_SPRITE_INDEX_MACH_BIKE);
-    }
-    else if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ACRO_BIKE && FollowerNPCCanBike() && GetFollowerNPCData(FNPC_DATA_COME_OUT_DOOR) != FNPC_DOOR_NEEDS_TO_EXIT) //Coming out door
-    {
-        SetFollowerNPCSprite(FOLLOWER_NPC_SPRITE_INDEX_ACRO_BIKE);
+        SetFollowerNPCSprite(FOLLOWER_NPC_SPRITE_INDEX_BIKE);
     }
     else
     {
@@ -1863,7 +1853,7 @@ void ScriptHideNPCFollower(struct ScriptContext *ctx)
 {
     if (!FNPC_ENABLE_NPC_FOLLOWERS || !PlayerHasFollowerNPC())
         return;
-
+        
     u32 walkSpeed = ScriptReadByte(ctx);
     struct ObjectEvent *npc = &gObjectEvents[GetFollowerNPCObjectId()];
 
@@ -1893,7 +1883,7 @@ void ScriptChangeFollowerNPCBattlePartner(struct ScriptContext *ctx)
 {
     if (!FNPC_ENABLE_NPC_FOLLOWERS || !PlayerHasFollowerNPC())
         return;
-
+        
     u32 newBattlePartner = ScriptReadHalfword(ctx);
 
     SetFollowerNPCData(FNPC_DATA_BATTLE_PARTNER, newBattlePartner);

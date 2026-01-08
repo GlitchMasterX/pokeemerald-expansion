@@ -1,4 +1,5 @@
 #include "global.h"
+#include "constants/expansion.h"
 #include "constants/songs.h"
 #include "constants/weather.h"
 #include "constants/rgb.h"
@@ -8,11 +9,13 @@
 #include "field_weather.h"
 #include "fieldmap.h"
 #include "main.h"
+#include "map_preview_screen.h"
 #include "menu.h"
 #include "palette.h"
 #include "random.h"
 #include "script.h"
 #include "start_menu.h"
+#include "constants/expansion.h"
 #include "sound.h"
 #include "sprite.h"
 #include "task.h"
@@ -20,6 +23,7 @@
 #include "gpu_regs.h"
 #include "field_camera.h"
 #include "overworld.h"
+#include "map_preview_screen.h"
 
 #define DROUGHT_COLOR_INDEX(color) ((((color) >> 1) & 0xF) | (((color) >> 2) & 0xF0) | (((color) >> 3) & 0xF00))
 
@@ -141,6 +145,9 @@ static const struct WeatherCallbacks sWeatherFuncs[] =
     [WEATHER_DROUGHT]            = {Drought_InitVars,       Drought_Main,       Drought_InitAll,       Drought_Finish},
     [WEATHER_DOWNPOUR]           = {Downpour_InitVars,      Thunderstorm_Main,  Downpour_InitAll,      Thunderstorm_Finish},
     [WEATHER_UNDERWATER_BUBBLES] = {Bubbles_InitVars,       Bubbles_Main,       Bubbles_InitAll,       Bubbles_Finish},
+    [WEATHER_SPRING]               = {PinkLeaves_InitVars,    PinkLeaves_Main,    PinkLeaves_InitAll,    PinkLeaves_Finish},
+    [WEATHER_AUTUMN]               = {PinkLeaves_InitVars,    PinkLeaves_Main,    PinkLeaves_InitAll,    PinkLeaves_Finish},
+
 };
 
 void (*const gWeatherPalStateFuncs[])(void) =
@@ -169,7 +176,7 @@ static const u8 ALIGNED(2) sBasePaletteColorMapTypes[32] =
     COLOR_MAP_DARK_CONTRAST,
     COLOR_MAP_DARK_CONTRAST,
     COLOR_MAP_DARK_CONTRAST,
-    COLOR_MAP_DARK_CONTRAST,
+    COLOR_MAP_NONE, // This was changed from COLOR_MAP_DARK_CONTRAST to make sure certain weather effects don't affect map preview colors.
     COLOR_MAP_NONE,
     COLOR_MAP_NONE,
     // sprite palettes
@@ -215,6 +222,8 @@ void StartWeather(void)
         gWeatherPtr->sandstormSwirlSpritesCreated = 0;
         gWeatherPtr->bubblesSpritesCreated = 0;
         gWeatherPtr->lightenedFogSpritePalsCount = 0;
+        gWeatherPtr->pinkLeafVisibleCounter = 0;
+        gWeatherPtr->pinkLeafSpriteCount = 0;
         Weather_SetBlendCoeffs(16, 0);
         gWeatherPtr->currWeather = 0;
         gWeatherPtr->palProcessingState = WEATHER_PAL_STATE_IDLE;
@@ -313,8 +322,10 @@ static void Task_WeatherMain(u8 taskId)
 
 static void None_Init(void)
 {
-    Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY); // Indoor shadows
-    gWeatherPtr->noShadows = FALSE;
+    if (EXPANSION_VERSION_MINOR >= 9 && MapHasPreviewScreen_HandleQLState2(gMapHeader.regionMapSectionId, MPS_TYPE_FADE_IN) == FALSE)
+    {
+        Weather_SetBlendCoeffs(8, 12); // Indoor shadows
+    }
     gWeatherPtr->targetColorMapIndex = 0;
     gWeatherPtr->colorMapStepDelay = 0;
 }
@@ -323,6 +334,11 @@ static void None_Main(void)
 {
 }
 
+// None_Finish is a dummy implementation of the finish() callback function.
+// It is used for the "None" weather effect, which doesn't have a finish()
+// state.
+//
+// Returns 0.
 static u8 None_Finish(void)
 {
     return 0;
@@ -385,6 +401,8 @@ static void FadeInScreenWithWeather(void)
             gWeatherPtr->palProcessingState = WEATHER_PAL_STATE_IDLE;
         }
         break;
+    case WEATHER_AUTUMN:    
+    case WEATHER_SPRING:
     case WEATHER_SNOW:
     case WEATHER_VOLCANIC_ASH:
     case WEATHER_SANDSTORM:
@@ -1207,6 +1225,8 @@ static const u8 sWeatherNames[WEATHER_COUNT][24] = {
     [WEATHER_ROUTE119_CYCLE]     = _("ROUTE119 CYCLE"),
     [WEATHER_ROUTE123_CYCLE]     = _("ROUTE123 CYCLE"),
     [WEATHER_FOG]                = _("FOG"),
+    [WEATHER_SPRING]                = _("SPRING"),
+    [WEATHER_AUTUMN]                = _("AUTUMN"),
 };
 
 static const u8 sDebugText_WeatherNotDefined[] = _("NOT DEFINED!!!");

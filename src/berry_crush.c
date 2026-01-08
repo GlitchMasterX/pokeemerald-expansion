@@ -285,8 +285,8 @@ struct BerryCrushGame
     u32 (*cmdCallback)(struct BerryCrushGame *, u8 *);
     u8 localId;
     u8 playerCount;
-    u8 taskId;
     u8 textSpeed;
+    u8 taskId;
     u8 cmdState;
     u8 unused; // Never read
     u8 nextCmd;
@@ -814,9 +814,6 @@ static const struct SpriteTemplate sSpriteTemplate_CrusherBase =
     .paletteTag = TAG_CRUSHER_BASE,
     .oam = &gOamData_AffineOff_ObjNormal_64x64,
     .anims = sAnims_CrusherBase,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy
 };
 
 static const struct SpriteTemplate sSpriteTemplate_Impact =
@@ -825,8 +822,6 @@ static const struct SpriteTemplate sSpriteTemplate_Impact =
     .paletteTag = PALTAG_EFFECT,
     .oam = &gOamData_AffineOff_ObjNormal_32x32,
     .anims = sAnims_Impact,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_Impact
 };
 
@@ -836,9 +831,6 @@ static const struct SpriteTemplate sSpriteTemplate_Sparkle =
     .paletteTag = PALTAG_EFFECT,
     .oam = &gOamData_AffineOff_ObjNormal_16x16,
     .anims = sAnims_Sparkle,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy
 };
 
 static const struct SpriteTemplate sSpriteTemplate_Timer =
@@ -847,9 +839,6 @@ static const struct SpriteTemplate sSpriteTemplate_Timer =
     .paletteTag = TAG_TIMER_DIGITS,
     .oam = &gOamData_AffineOff_ObjNormal_8x16,
     .anims = sAnims_Timer,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy
 };
 
 static const struct SpriteTemplate sSpriteTemplate_PlayerBerry =
@@ -858,9 +847,7 @@ static const struct SpriteTemplate sSpriteTemplate_PlayerBerry =
     .paletteTag = TAG_PLAYER1_BERRY,
     .oam = &gOamData_AffineDouble_ObjNormal_32x32,
     .anims = sAnims_PlayerBerry,
-    .images = NULL,
     .affineAnims = sAffineAnims_PlayerBerry,
-    .callback = SpriteCallbackDummy
 };
 
 static const struct DigitObjUtilTemplate sDigitObjTemplates[] =
@@ -977,7 +964,7 @@ static u32 QuitBerryCrush(MainCallback exitCallback)
     if (exitCallback == CB2_ReturnToField)
     {
         gTextFlags.autoScroll = TRUE;
-        PlayNewMapMusic(MUS_POKE_CENTER);
+        PlayNewMapMusic(MUS_DP_POKE_CENTER);
         SetMainCallback1(CB1_Overworld);
     }
 
@@ -2242,11 +2229,11 @@ static u32 Cmd_PrintMessage(struct BerryCrushGame *game, u8 *args)
         if (args[1] & F_MSG_EXPAND)
         {
             StringExpandPlaceholders(gStringVar4, sMessages[args[0]]);
-            AddTextPrinterParameterized2(0, FONT_NORMAL, gStringVar4, game->textSpeed, 0, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+            AddTextPrinterParameterized2(0, FONT_NORMAL, gStringVar4, 1, 0, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
         }
         else
         {
-            AddTextPrinterParameterized2(0, FONT_NORMAL, sMessages[args[0]], game->textSpeed, 0, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+            AddTextPrinterParameterized2(0, FONT_NORMAL, sMessages[args[0]], 1, 0, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
         }
         CopyWindowToVram(0, COPYWIN_FULL);
         break;
@@ -3375,9 +3362,9 @@ static u32 Cmd_StopGame(struct BerryCrushGame *game, u8 *args)
     case 0:
         DrawDialogueFrame(0, FALSE);
         if (game->playAgainState == PLAY_AGAIN_NO_BERRIES)
-            AddTextPrinterParameterized2(0, FONT_NORMAL, sMessages[MSG_NO_BERRIES], game->textSpeed, 0, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+            AddTextPrinterParameterized2(0, FONT_NORMAL, sMessages[MSG_NO_BERRIES], 1, 0, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
         else
-            AddTextPrinterParameterized2(0, FONT_NORMAL, sMessages[MSG_DROPPED], game->textSpeed, 0, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+            AddTextPrinterParameterized2(0, FONT_NORMAL, sMessages[MSG_DROPPED], 1, 0, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
         CopyWindowToVram(0, COPYWIN_FULL);
         break;
     case 1:

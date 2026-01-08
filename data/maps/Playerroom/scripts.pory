@@ -1,0 +1,149 @@
+raw `
+Playerroom_MapScripts::
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Playerroom_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
+	.byte 0
+	Playerroom_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+     map_script_2 LUXURA_TRAGEDY, 0, mira
+	 map_script_2 LUXURA_TRAGEDY, 5, metdad
+	.2byte 0
+`
+script mira{
+	lockall
+	fwdmonth(1)
+	playse(SE_NOT_EFFECTIVE)
+	waitse
+	playse(SE_NOT_EFFECTIVE)
+	waitse
+	playse(SE_NOT_EFFECTIVE)
+	waitse
+	// Small pause before Mira enters
+    delay(120)
+	// Camera & entrance
+	special(SpawnCameraObject)
+	applymovement(OBJ_EVENT_ID_CAMERA,camera1)
+	applymovement(0xFF,moves(delay_16))
+	waitmovement(0)
+	playse(SE_DOOR)
+	waitse
+	applymovement(1,miramove)
+	waitmovement(0)
+	// Mira greets
+	speakername(name4)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, good morning!\pBreakfast is waiting. Father and Mother are already at the table."))
+	removefieldmugshot
+	closemessage
+	// Camera back + Mira approaches
+	applymovement(OBJ_EVENT_ID_CAMERA,camera)
+	applymovement(1,miramove1)
+	waitmovement(0)
+	special(RemoveCameraObject)
+	// Mira teases
+	speakername(name4)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Still in bed? You can't hide under those blankets forever.\pCome on now, Young master."))
+	closemessage
+	// Xylar interrupts sooner
+	applymovement(OBJ_EVENT_ID_PLAYER,xylar1)
+	speakername(Xylar1)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SPECIAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Mmm... five more minutes..."))
+	delay(60)
+	waitbuttonpress
+	// Mira’s playful threat + pancakes
+	speakername(name4)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SMILE}{COLOR RED}{SHADOW LIGHT_GRAY}Up with you, or I'll yank those covers off myself.\pOh-and I may have made your favorite pancakes this morning…"))
+	waitmessage
+	playse(SE_PIN)
+	// Xylar reacts
+	applymovement(OBJ_EVENT_ID_PLAYER,xylar)
+	speakername(Xylar1)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Wait! Pancakes? But Dad said I wasn't allowed! He always says no."))
+	removefieldmugshot
+	// Mira’s cover story (subtle, not rebellious)
+	speakername(name4)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Technically, yes… but Mother may have convinced him this once.\pShe thought it might cheer you up.\pBut if you stay in bed too long, I'll just give your pancakes to Hoopa."))
+	closemessage
+	// Xylar gives in
+	speakername(Xylar1)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Alright, alright! I'm up!"))
+	removefieldmugshot
+	closemessage
+	// Mira leaves
+	applymovement(1,miramove2)
+	waitmovement(0)
+	playse(SE_EXIT)
+	removeobject(1)
+	applymovement(0xFF,moves(face_down))
+	waitmovement(0)
+	releaseall
+	setflag(FLAG_UNUSED_0x0E9)
+	setvar(LUXURA_TRAGEDY,2)
+}
+
+movement miramove{
+	face_up
+	set_visible
+
+}
+movement miramove2{
+	emote_happy
+	walk_right*2
+	walk_down*4
+}
+
+movement miramove1{
+	walk_up*4
+	walk_left*2
+	emote_upset
+}
+movement xylar{
+	emote_exclamation_mark
+	face_right
+}
+movement xylar1{
+	delay_1
+	face_left
+}
+text Xylar1{
+	format("Xylar")
+}
+
+movement camera1{
+	delay_2
+	walk_down*4
+}
+movement camera{
+	walk_up*4
+}
+
+script clock {
+	lockall
+	applymovement(OBJ_EVENT_ID_PLAYER,notp)
+	msgbox(format("The clock isn't working, i should fix it before going."))
+	setflag(FLAG_UNUSED_0x496)
+	releaseall
+}
+movement notp{
+	walk_up*2
+}
+
+script guest {
+	lockall
+	applymovement(OBJ_EVENT_ID_PLAYER,not)
+	msgbox(format("I can't sleep here, this bed is for guests not for me."))
+	releaseall
+}
+movement not {
+	walk_right
+	
+}
+script parent {
+	lockall
+	applymovement(OBJ_EVENT_ID_PLAYER,not)
+	msgbox(format("I can't sleep here, this bed is for Mom and Dad,not me"))
+	releaseall
+}
+script metdad {
+	lockall
+	msgbox(format("I should check on Dad.\pHe's probably busy with his work.\p(He usually works downstairs, in the first room on the left.)"))
+	releaseall
+	setvar(LUXURA_TRAGEDY,6)
+}

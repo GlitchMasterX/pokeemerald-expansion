@@ -214,10 +214,6 @@ static const struct SpriteTemplate sSpriteTemplate_ResultsTextWindow =
     .tileTag = TAG_TEXT_WINDOW_BASE,
     .paletteTag = TAG_TEXT_WINDOW_BASE,
     .oam = &sOamData_ResultsTextWindow,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy
 };
 
 static const struct SpriteSheet sSpriteSheets_ResultsTextWindow[] =
@@ -260,9 +256,6 @@ static const struct SpriteTemplate sSpriteTemplate_Confetti =
     .tileTag = TAG_CONFETTI,
     .paletteTag = TAG_CONFETTI,
     .oam = &sOamData_Confetti,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_Confetti
 };
 
@@ -385,10 +378,6 @@ static const struct SpriteTemplate sSpriteTemplate_WirelessIndicatorWindow =
     .tileTag = TAG_WIRELESS_INDICATOR_WINDOW,
     .paletteTag = 0,
     .oam = &sOamData_WirelessIndicatorWindow,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy
 };
 
 static const struct SpriteSheet sSpriteSheet_WirelessIndicatorWindow =
@@ -551,7 +540,7 @@ static void CB2_StartShowContestResults(void)
     if (gLinkContestFlags & LINK_CONTEST_FLAG_IS_WIRELESS)
         gPaletteFade.bufferTransferDisabled = TRUE;
     else
-        PlayBGM(MUS_CONTEST_RESULTS);
+        PlayBGM(MUS_DP_CONTEST_RESULTS);
 
     SetVBlankCallback(VBlankCB_ShowContestResults);
 }
@@ -637,7 +626,7 @@ static void Task_ShowContestResults(u8 taskId)
         case 3:
             if (IsLinkTaskFinished() == TRUE)
             {
-                PlayBGM(MUS_CONTEST_RESULTS);
+                PlayBGM(MUS_DP_CONTEST_RESULTS);
                 gPaletteFade.bufferTransferDisabled = FALSE;
                 gTasks[taskId].tState++;
                 break;
@@ -1930,10 +1919,10 @@ static void AddContestTextPrinterFitWidth(int windowId, u8 *str, int x, int widt
     textPrinter.currentY = 2;
     textPrinter.letterSpacing = 0;
     textPrinter.lineSpacing = 0;
-    textPrinter.unk = 0;
-    textPrinter.fgColor = 1;
-    textPrinter.bgColor = 0;
-    textPrinter.shadowColor = 8;
+    textPrinter.color.accent = TEXT_COLOR_TRANSPARENT;
+    textPrinter.color.foreground = 1;
+    textPrinter.color.background = TEXT_COLOR_TRANSPARENT;
+    textPrinter.color.shadow = 8;
     AddTextPrinter(&textPrinter, 0, NULL);
     PutWindowTilemap(windowId);
 }
@@ -2294,19 +2283,18 @@ void GetNpcContestantLocalId(void)
     switch (contestant)
     {
     case 0:
-        localId = LOCALID_CONTESTANT_1;
+        localId = 3;
         break;
     case 1:
-        localId = LOCALID_CONTESTANT_2;
+        localId = 4;
         break;
     case 2:
-        localId = LOCALID_CONTESTANT_3;
+        localId = 5;
         break;
     default: // Invalid
         localId = 100;
         break;
     }
-
     gSpecialVar_0x8004 = localId;
 }
 
@@ -2500,12 +2488,7 @@ void LoadLinkContestPlayerPalettes(void)
     u8 objectEventId;
     int version;
     struct Sprite *sprite;
-    static const u8 sContestantLocalIds[CONTESTANT_COUNT] = {
-        LOCALID_CONTESTANT_1,
-        LOCALID_CONTESTANT_2,
-        LOCALID_CONTESTANT_3,
-        LOCALID_CONTESTANT_4,
-    };
+    static const u8 sContestantLocalIds[CONTESTANT_COUNT] = { 3, 4, 5, 14 };
 
     // gReservedSpritePaletteCount = 12;
     // TODO: Does dynamically allocating link player palettes break link contests?

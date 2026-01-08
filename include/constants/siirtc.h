@@ -13,13 +13,13 @@
 
 enum Weekday
 {
-    WEEKDAY_SUN,
-    WEEKDAY_MON,
-    WEEKDAY_TUE,
-    WEEKDAY_WED,
-    WEEKDAY_THU,
-    WEEKDAY_FRI,
-    WEEKDAY_SAT,
+    WEEKDAY_SUN = 0,
+    WEEKDAY_MON = 1,
+    WEEKDAY_TUE = 2,
+    WEEKDAY_WED =3,
+    WEEKDAY_THU =4,
+    WEEKDAY_FRI = 5,
+    WEEKDAY_SAT =6,
     WEEKDAY_COUNT,
 };
 

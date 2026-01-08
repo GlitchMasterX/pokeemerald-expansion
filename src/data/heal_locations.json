@@ -1,16 +1,6 @@
 {
   "heal_locations": [
     {
-      "id": "HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
-      "map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
-      "x": 4,
-      "y": 2,
-      "respawn_map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
-      "respawn_npc": "LOCALID_PLAYERS_HOUSE_1F_MOM",
-      "respawn_x": 2,
-      "respawn_y": 7
-    },
-    {
       "id": "HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE_2F",
       "map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_2F",
       "x": 4,
@@ -22,11 +12,10 @@
     },
     {
       "id": "HEAL_LOCATION_PETALBURG_CITY",
-      "map": "MAP_PETALBURG_CITY",
-      "x": 20,
-      "y": 17,
-      "respawn_map": "MAP_PETALBURG_CITY_POKEMON_CENTER_1F",
-      "respawn_npc": "LOCALID_PETALBURG_NURSE"
+      "map": "MAP_ASTRALIS_ACADEMY",
+      "x": 24,
+      "y": 36,
+      "respawn_map": "MAP_ASTRALIS_ACADEMY_POKEMON_CENTER"
     },
     {
       "id": "HEAL_LOCATION_SLATEPORT_CITY",
@@ -54,9 +43,9 @@
     },
     {
       "id": "HEAL_LOCATION_FORTREE_CITY",
-      "map": "MAP_FORTREE_CITY",
-      "x": 5,
-      "y": 7,
+      "map": "MAP_ASTRAVEIL_CITY",
+      "x": 14,
+      "y": 42,
       "respawn_map": "MAP_FORTREE_CITY_POKEMON_CENTER_1F",
       "respawn_npc": "LOCALID_FORTREE_NURSE"
     },
@@ -97,8 +86,7 @@
       "map": "MAP_LITTLEROOT_TOWN",
       "x": 5,
       "y": 9,
-      "respawn_map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
-      "respawn_npc": "LOCALID_PLAYERS_HOUSE_1F_MOM",
+      "respawn_map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
       "respawn_x": 2,
       "respawn_y": 7
     },
@@ -145,20 +133,18 @@
       "respawn_npc": "LOCALID_FALLARBOR_NURSE"
     },
     {
-      "id": "HEAL_LOCATION_VERDANTURF_TOWN",
-      "map": "MAP_VERDANTURF_TOWN",
-      "x": 16,
-      "y": 4,
-      "respawn_map": "MAP_VERDANTURF_TOWN_POKEMON_CENTER_1F",
-      "respawn_npc": "LOCALID_VERDANTURF_NURSE"
+      "id": "HEAL_LOCATION_LUXURA_VEILWOOD",
+      "map": "MAP_GRANITE_CAVE_1F",
+      "x": 12,
+      "y": 10,
+      "respawn_map": "MAP_GRANITE_CAVE_1F"
     },
     {
-      "id": "HEAL_LOCATION_PACIFIDLOG_TOWN",
-      "map": "MAP_PACIFIDLOG_TOWN",
-      "x": 8,
-      "y": 16,
-      "respawn_map": "MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_1F",
-      "respawn_npc": "LOCALID_PACIFIDLOG_NURSE"
+      "id": "HEAL_LOCATION_LUXURA_ISLAND",
+      "map": "MAP_LUXURA_ISLAND",
+      "x": 33,
+      "y": 18,
+      "respawn_map": "MAP_LUXURA_ISLAND"
     },
     {
       "id": "HEAL_LOCATION_EVER_GRANDE_CITY_POKEMON_LEAGUE",
@@ -186,6 +172,15 @@
       "y": 52,
       "respawn_map": "MAP_BATTLE_FRONTIER_POKEMON_CENTER_1F",
       "respawn_npc": "LOCALID_FRONTIER_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_DORM",
+      "map": "MAP_DORMINDOOR1",
+      "x": 1,
+      "y": 5,
+      "respawn_map": "MAP_DORMINDOOR1",
+      "respawn_x": 1,
+      "respawn_y": 5
     }
   ]
 }

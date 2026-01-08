@@ -39,6 +39,7 @@
 #include "constants/metatile_behaviors.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
+#include "field_move.h"
 
 #define subsprite_table(ptr) {.subsprites = ptr, .subspriteCount = (sizeof ptr) / (sizeof(struct Subsprite))}
 
@@ -378,8 +379,6 @@ static const struct SpriteTemplate sSpriteTemplate_NewGameBirch =
     .oam = &sOam_64x64,
     .anims = sAnimTable_NewGameBirch,
     .images = sPicTable_NewGameBirch,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy
 };
 
 const struct SpritePalette gSpritePalette_PokeballGlow =
@@ -553,7 +552,6 @@ static const struct SpriteTemplate sSpriteTemplate_PokeballGlow =
     .oam = &sOam_8x8,
     .anims = sAnims_Flicker,
     .images = sPicTable_PokeballGlow,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_PokeballGlow
 };
 
@@ -564,7 +562,6 @@ static const struct SpriteTemplate sSpriteTemplate_PokecenterMonitor =
     .oam = &sOam_16x16,
     .anims = sAnims_Flicker,
     .images = sPicTable_PokecenterMonitor,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_PokecenterMonitor
 };
 
@@ -575,7 +572,6 @@ static const struct SpriteTemplate sSpriteTemplate_HofMonitorBig =
     .oam = &sOam_16x16,
     .anims = sAnims_HofMonitor,
     .images = sPicTable_HofMonitorBig,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_HallOfFameMonitor
 };
 
@@ -586,7 +582,6 @@ static const struct SpriteTemplate sSpriteTemplate_HofMonitorSmall =
     .oam = &sOam_32x16,
     .anims = sAnims_HofMonitor,
     .images = sPicTable_HofMonitorSmall,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_HallOfFameMonitor
 };
 
@@ -1213,7 +1208,7 @@ static void PokeballGlowEffect_TryPlaySe(struct Sprite *sprite)
         sprite->data[3] = 0;
         if (sprite->sPlayHealSe)
         {
-            PlayFanfare(MUS_HEAL);
+            PlayFanfare(MUS_DP_HEAL);
         }
     }
 }
@@ -2827,8 +2822,25 @@ bool8 FldEff_FieldMoveShowMon(void)
 
 bool8 FldEff_FieldMoveShowMonInit(void)
 {
+    if (GetFieldMoveSource() == FIELD_MOVE_SOURCE_ITEM)
+    {
+        // The last field move was triggered by an item, so skip the animation.
+        FieldEffectActiveListRemove(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
+        return FALSE;
+    }
     struct Pokemon *pokemon;
-    bool32 noDucking = gFieldEffectArguments[0] & SHOW_MON_CRY_NO_DUCKING;
+    bool32 noDucking;
+
+    // If argument 1 is TRUE, it means we are using an item.
+    if (gFieldEffectArguments[1] == TRUE)
+    {
+        // Skip showing a Pokémon and end this effect.
+        FieldEffectActiveListRemove(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
+        return FALSE;
+    }
+
+    // This is the original code. It will now only run if we are using a Pokémon.
+    noDucking = gFieldEffectArguments[0] & SHOW_MON_CRY_NO_DUCKING;
     pokemon = &gPlayerParty[(u8)gFieldEffectArguments[0]];
     gFieldEffectArguments[0] = GetMonData(pokemon, MON_DATA_SPECIES);
     gFieldEffectArguments[1] = GetMonData(pokemon, MON_DATA_IS_SHINY);
@@ -3230,8 +3242,11 @@ u8 FldEff_UseSurf(void)
 {
     u8 taskId = CreateTask(Task_SurfFieldEffect, 0xff);
     gTasks[taskId].tMonId = gFieldEffectArguments[0];
-    Overworld_ClearSavedMusic();
-    Overworld_ChangeMusicTo(MUS_SURF);
+    if (gSaveBlock2Ptr->optionsBikeMusicOff == FALSE)
+    {
+        Overworld_ClearSavedMusic();
+        Overworld_ChangeMusicTo(MUS_DP_SURF);
+    }
     return FALSE;
 }
 
@@ -4039,7 +4054,6 @@ static const struct SpriteTemplate sSpriteTemplate_DeoxysRockFragment =
     .oam = &sOam_8x8,
     .anims = sAnims_DeoxysRockFragment,
     .images = sImages_DeoxysRockFragment,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_DeoxysRockFragment
 };
 
@@ -4476,7 +4490,7 @@ static void UseVsSeeker_DoPlayerAnimation(struct Task *task)
 
     if (gMapHeader.mapType != MAP_TYPE_UNDERWATER)
     {
-        SetPlayerAvatarFieldMove();
+        SetPlayerAvatarVsSeeker();
         ObjectEventSetHeldMovement(playerObj, MOVEMENT_ACTION_START_ANIM_IN_DIRECTION);
     }
     task->data[0]++;

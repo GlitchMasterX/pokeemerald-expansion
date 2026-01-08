@@ -38,9 +38,10 @@
 #define UNPACK_LAYER_TYPE(data) UNPACK(data, METATILE_ATTR_LAYER_SHIFT, METATILE_ATTR_LAYER_MASK)
 
 enum {
-    METATILE_LAYER_TYPE_NORMAL,  // Metatile uses middle and top bg layers
-    METATILE_LAYER_TYPE_COVERED, // Metatile uses bottom and middle bg layers
-    METATILE_LAYER_TYPE_SPLIT,   // Metatile uses bottom and top bg layers
+    METATILE_LAYER_TYPE_NORMAL,  // Metatile uses bottom, middle and top layers | On overlay: No difference. Top tile gets alpha blended
+    METATILE_LAYER_TYPE_COVERED, // Metatile uses bottom and middle bg layers   | On overlay: No difference.
+    METATILE_LAYER_TYPE_SPLIT,   // Metatile uses bottom and top bg layers      | On overlay: Top tile moved to middle layer
+    METATILE_LAYER_TYPE_TOP,     // Metatile uses middle and top bg layers      | On overlay: Middle moved to bottom, Top Moved to middle
 };
 
 #define METATILE_ID(tileset, name) (METATILE_##tileset##_##name)
@@ -64,6 +65,9 @@ struct Tileset
     /*0x0C*/ const u16 *metatiles;
     /*0x10*/ const u16 *metatileAttributes;
     /*0x14*/ TilesetCB callback;
+    /*0x08*/ const u16 (*palettes_spring)[16];
+    /*0x08*/ const u16 (*palettes_autumn)[16];
+    /*0x08*/ const u16 (*palettes_winter)[16];
 };
 
 struct MapLayout
@@ -92,9 +96,9 @@ struct __attribute__((packed, aligned(4))) ObjectEventTemplate
     /*0x06*/ s16 y;
     /*0x08*/ u8 elevation;
     /*0x09*/ u8 movementType;
-    /*0x0A*/ u16 movementRangeX:4;
-             u16 movementRangeY:4;
-             u16 unused:8;
+    /*0x0A*/ u8 movementRangeX:4;
+             u8 movementRangeY:4;
+    /*0x0B*/ u8 timeVisibility;
     /*0x0C*/ u16 trainerType;
     /*0x0E*/ u16 trainerRange_berryTreeId;
     /*0x10*/ const u8 *script;
@@ -161,6 +165,19 @@ struct MapConnections
     const struct MapConnection *connections;
 };
 
+struct MapOverlayTiles {
+    s16 x;
+    s16 y;
+    u16 topTileId; // The top layer from this meta tile will replace the metatiles at x,y's top layer
+} __attribute__((packed));
+
+struct MapOverlay {
+    const struct MapOverlayTiles *overlayTiles;
+    u16 overlayTileCount;
+    u8 initialEVA;
+    u8 initialEVB;
+}  __attribute__((packed));
+
 struct MapHeader
 {
     /* 0x00 */ const struct MapLayout *mapLayout;
@@ -181,6 +198,7 @@ struct MapHeader
                bool8 showMapName:5; // the last 4 bits are unused
                                     // but the 5 bit sized bitfield is required to match
     /* 0x1B */ u8 battleType;
+               const struct MapOverlay *overlay;
 };
 
 
@@ -232,8 +250,8 @@ struct ObjectEvent
              u16 movementDirection:4;
              struct __attribute__((packed))
              {
-                u8 rangeX:4;
-                u8 rangeY:4;
+                u16 rangeX:4;
+                u16 rangeY:4;
              } range;
     /*0x1A*/ u8 fieldEffectSpriteId;
     /*0x1B*/ u8 warpArrowSpriteId;
@@ -271,26 +289,32 @@ struct ObjectEventGraphicsInfo
 
 enum {
     PLAYER_AVATAR_STATE_NORMAL,
-    PLAYER_AVATAR_STATE_MACH_BIKE,
-    PLAYER_AVATAR_STATE_ACRO_BIKE,
+    PLAYER_AVATAR_STATE_BIKE,
     PLAYER_AVATAR_STATE_SURFING,
     PLAYER_AVATAR_STATE_UNDERWATER,
-    PLAYER_AVATAR_STATE_FIELD_MOVE,
-    PLAYER_AVATAR_STATE_FISHING,
-    PLAYER_AVATAR_STATE_WATERING,
-    PLAYER_AVATAR_STATE_VSSEEKER,
+    PLAYER_AVATAR_STATE_COUNT = 4,
+    PLAYER_AVATAR_STATE_CONTROLLABLE,
+    PLAYER_AVATAR_STATE_FORCED,
+    PLAYER_AVATAR_STATE_DASH,
 };
 
-#define PLAYER_AVATAR_FLAG_ON_FOOT      (1 << 0)
-#define PLAYER_AVATAR_FLAG_MACH_BIKE    (1 << 1)
-#define PLAYER_AVATAR_FLAG_ACRO_BIKE    (1 << 2)
-#define PLAYER_AVATAR_FLAG_SURFING      (1 << 3)
-#define PLAYER_AVATAR_FLAG_UNDERWATER   (1 << 4)
-#define PLAYER_AVATAR_FLAG_CONTROLLABLE (1 << 5)
-#define PLAYER_AVATAR_FLAG_FORCED_MOVE  (1 << 6)
-#define PLAYER_AVATAR_FLAG_DASH         (1 << 7)
+#define PLAYER_AVATAR_FLAG_ON_FOOT      (1 << PLAYER_AVATAR_STATE_NORMAL)
+#define PLAYER_AVATAR_FLAG_BIKE         (1 << PLAYER_AVATAR_STATE_BIKE)
+#define PLAYER_AVATAR_FLAG_SURFING      (1 << PLAYER_AVATAR_STATE_SURFING)
+#define PLAYER_AVATAR_FLAG_UNDERWATER   (1 << PLAYER_AVATAR_STATE_UNDERWATER)
+#define PLAYER_AVATAR_FLAG_CONTROLLABLE (1 << PLAYER_AVATAR_STATE_CONTROLLABLE)
+#define PLAYER_AVATAR_FLAG_FORCED_MOVE  (1 << PLAYER_AVATAR_STATE_FORCED)
+#define PLAYER_AVATAR_FLAG_DASH         (1 << PLAYER_AVATAR_STATE_DASH)
 
-#define PLAYER_AVATAR_FLAG_BIKE        (PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE)
+enum {
+    PLAYER_AVATAR_GFX_FIELD_MOVE,
+    PLAYER_AVATAR_GFX_FISHING,
+    PLAYER_AVATAR_GFX_WATERING,
+    PLAYER_AVATAR_GFX_DECORATING,
+    PLAYER_AVATAR_GFX_VSSEEKER,
+    PLAYER_AVATAR_GFX_COUNT,
+};
+
 // Player avatar flags for which follower Pokémon are hidden
 #define FOLLOWER_INVISIBLE_FLAGS       (PLAYER_AVATAR_FLAG_SURFING | PLAYER_AVATAR_FLAG_UNDERWATER | \
                                         PLAYER_AVATAR_FLAG_BIKE | PLAYER_AVATAR_FLAG_FORCED_MOVE)

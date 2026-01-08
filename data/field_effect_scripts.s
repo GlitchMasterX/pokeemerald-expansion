@@ -81,6 +81,8 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_TracksSpot                @ FLDEFF_TRACKS_SPOT
 	.4byte gFieldEffectScript_CaveDust                  @ FLDEFF_CAVE_DUST
 	.4byte gFieldEffectScript_Defog                     @ FLDEFF_DEFOG
+	.4byte gFieldEffectScript_HappyIcon               @ FLDEFF_HAPPY_ICON
+	.4byte gFieldEffectScript_UpsetIcon              @ FLDEFF_UPSET_ICON
 	.4byte gFieldEffectScript_UseRockClimb              @ FLDEFF_USE_ROCK_CLIMB
 	.4byte gFieldEffectScript_RockClimbDust             @ FLDEFF_ROCK_CLIMB_DUST
 	.4byte gFieldEffectScript_ORASDowse                 @ FLDEFF_ORAS_DOWSE
@@ -388,6 +390,14 @@ gFieldEffectScript_Defog::
     field_eff_callnative FldEff_Defog
     field_eff_end
 
+gFieldEffectScript_HappyIcon::
+	field_eff_callnative FldEff_HappyIcon
+	field_eff_end
+
+gFieldEffectScript_UpsetIcon::
+	field_eff_callnative FldEff_UpsetIcon
+	field_eff_end
+	
 gFieldEffectScript_UseRockClimb:: @ 82DBC3F
 	field_eff_callnative FldEff_UseRockClimb
 	field_eff_end
@@ -399,4 +409,4 @@ gFieldEffectScript_RockClimbDust:: @ 82DBB28
 gFieldEffectScript_ORASDowse::
 	field_eff_callnative FldEff_ORASDowsing
 	field_eff_end
-
+    

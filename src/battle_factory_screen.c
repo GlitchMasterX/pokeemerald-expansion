@@ -2,6 +2,7 @@
 #include "battle.h"
 #include "battle_factory_screen.h"
 #include "battle_factory.h"
+#include "bw_summary_screen.h"
 #include "sprite.h"
 #include "event_data.h"
 #include "overworld.h"
@@ -582,8 +583,6 @@ static const struct SpriteTemplate sSpriteTemplate_Select_Pokeball =
     .paletteTag = PALTAG_BALL_GRAY,
     .oam = &sOam_Select_Pokeball,
     .anims = sAnims_Select_Pokeball,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_Pokeball
 };
 
@@ -593,9 +592,6 @@ static const struct SpriteTemplate sSpriteTemplate_Select_Arrow =
     .paletteTag = PALTAG_INTERFACE,
     .oam = &sOam_Select_Arrow,
     .anims = sAnims_Select_Interface,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy
 };
 
 static const struct SpriteTemplate sSpriteTemplate_Select_MenuHighlightLeft =
@@ -604,9 +600,6 @@ static const struct SpriteTemplate sSpriteTemplate_Select_MenuHighlightLeft =
     .paletteTag = PALTAG_INTERFACE,
     .oam = &sOam_Select_MenuHighlight,
     .anims = sAnims_Select_Interface,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy
 };
 
 static const struct SpriteTemplate sSpriteTemplate_Select_MenuHighlightRight =
@@ -615,9 +608,6 @@ static const struct SpriteTemplate sSpriteTemplate_Select_MenuHighlightRight =
     .paletteTag = PALTAG_INTERFACE,
     .oam = &sOam_Select_MenuHighlight,
     .anims = sAnims_Select_Interface,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy
 };
 
 static const struct SpriteTemplate sSpriteTemplate_Select_MonPicBgAnim =
@@ -626,9 +616,7 @@ static const struct SpriteTemplate sSpriteTemplate_Select_MonPicBgAnim =
     .paletteTag = PALTAG_MON_PIC_BG,
     .oam = &sOam_Select_MonPicBgAnim,
     .anims = sAnims_Select_MonPicBgAnim,
-    .images = NULL,
     .affineAnims = sAffineAnims_Select_MonPicBgAnim,
-    .callback = SpriteCallbackDummy
 };
 
 static const struct SpriteSheet sSwap_SpriteSheets[] =
@@ -837,8 +825,6 @@ static const struct SpriteTemplate sSpriteTemplate_Swap_Pokeball =
     .paletteTag = PALTAG_BALL_GRAY,
     .oam = &sOam_Swap_Pokeball,
     .anims = sAnims_Swap_Pokeball,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_Pokeball
 };
 
@@ -848,9 +834,6 @@ static const struct SpriteTemplate sSpriteTemplate_Swap_Arrow =
     .paletteTag = PALTAG_INTERFACE,
     .oam = &sOam_Swap_Arrow,
     .anims = sAnims_Swap_Interface,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy
 };
 
 static const struct SpriteTemplate sSpriteTemplate_Swap_MenuHighlightLeft =
@@ -859,9 +842,6 @@ static const struct SpriteTemplate sSpriteTemplate_Swap_MenuHighlightLeft =
     .paletteTag = PALTAG_INTERFACE,
     .oam = &sOam_Swap_MenuHighlight,
     .anims = sAnims_Swap_Interface,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy
 };
 
 static const struct SpriteTemplate sSpriteTemplate_Swap_MenuHighlightRight =
@@ -870,9 +850,6 @@ static const struct SpriteTemplate sSpriteTemplate_Swap_MenuHighlightRight =
     .paletteTag = PALTAG_INTERFACE,
     .oam = &sOam_Swap_MenuHighlight,
     .anims = sAnims_Swap_Interface,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy
 };
 
 static const struct SpriteTemplate sSpriteTemplate_Swap_MonPicBgAnim =
@@ -881,9 +858,7 @@ static const struct SpriteTemplate sSpriteTemplate_Swap_MonPicBgAnim =
     .paletteTag = PALTAG_MON_PIC_BG,
     .oam = &sOam_Swap_MonPicBgAnim,
     .anims = sAnims_Swap_MonPicBgAnim,
-    .images = NULL,
     .affineAnims = sAffineAnims_Swap_MonPicBgAnim,
-    .callback = SpriteCallbackDummy
 };
 
 static const TaskFunc sSwap_MenuOptionFuncs[] =
@@ -1487,8 +1462,10 @@ static void Select_Task_OpenSummaryScreen(u8 taskId)
         sFactorySelectMons = AllocZeroed(sizeof(struct Pokemon) * SELECTABLE_MONS_COUNT);
         for (i = 0; i < SELECTABLE_MONS_COUNT; i++)
             sFactorySelectMons[i] = sFactorySelectScreen->mons[i].monData;
-        ShowPokemonSummaryScreen(SUMMARY_MODE_LOCK_MOVES, sFactorySelectMons, currMonId, SELECTABLE_MONS_COUNT - 1, CB2_InitSelectScreen);
-        break;
+        if (BW_SUMMARY_SCREEN)
+            ShowPokemonSummaryScreen_BW(SUMMARY_MODE_LOCK_MOVES, sFactorySelectMons, currMonId, SELECTABLE_MONS_COUNT - 1, CB2_InitSelectScreen);
+        else
+            ShowPokemonSummaryScreen(SUMMARY_MODE_LOCK_MOVES, sFactorySelectMons, currMonId, SELECTABLE_MONS_COUNT - 1, CB2_InitSelectScreen);        break;
     }
 }
 
@@ -2381,7 +2358,10 @@ static void Swap_Task_OpenSummaryScreen(u8 taskId)
         DestroyTask(taskId);
         sFactorySwapScreen->fromSummaryScreen = TRUE;
         sFactorySwapScreen->speciesNameColorBackup = gPlttBufferUnfaded[BG_PLTT_ID(PALNUM_TEXT) + 4];
-        ShowPokemonSummaryScreen(SUMMARY_MODE_NORMAL, gPlayerParty, sFactorySwapScreen->cursorPos, FRONTIER_PARTY_SIZE - 1, CB2_InitSwapScreen);
+       if (BW_SUMMARY_SCREEN)
+            ShowPokemonSummaryScreen_BW(SUMMARY_MODE_NORMAL, gPlayerParty, sFactorySwapScreen->cursorPos, FRONTIER_PARTY_SIZE - 1, CB2_InitSwapScreen);
+        else
+            ShowPokemonSummaryScreen(SUMMARY_MODE_NORMAL, gPlayerParty, sFactorySwapScreen->cursorPos, FRONTIER_PARTY_SIZE - 1, CB2_InitSwapScreen);
         break;
     }
 }

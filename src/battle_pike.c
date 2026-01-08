@@ -333,7 +333,7 @@ static const struct PikeRoomNPC sNPCTable[] =
         .speechId3 = 36
     },
     {
-        .graphicsId = OBJ_EVENT_GFX_MAN_5,
+        .graphicsId = OBJ_EVENT_GFX_NORMAL_M,
         .speechId1 = 28,
         .speechId2 = 34,
         .speechId3 = 25

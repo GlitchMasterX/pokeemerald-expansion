@@ -169,10 +169,7 @@
 	.endm
 
 	@ Copies the value of source into destination.
-	.macro copyvar destination:req, source:req, warn=TRUE
-	.if \warn && !((\source >= VARS_START && \source <= VARS_END) || (\source >= SPECIAL_VARS_START && \source <= SPECIAL_VARS_END))
-	.warning "copyvar with a value that is not a VAR_ constant; did you mean setvar instead?"
-	.endif
+	.macro copyvar destination:req, source:req
 	.byte SCR_OP_COPYVAR
 	.2byte \destination
 	.2byte \source
@@ -348,6 +345,16 @@
 	@ 0 = MORNING, 1 = DAY, 2 = EVENING, 3 = NIGHT
 	.macro gettimeofday
 	callnative ScrCmd_gettimeofday, requests_effects=1
+	.endm
+    
+    @ Sets the values of variable VAR_0x8000 to the day of week.
+	.macro getday
+	callnative ScrCmd_getday, requests_effects=1
+	.endm
+
+    @ Sets the values of variable VAR_0x8000 to the month.
+	.macro getmonth
+	callnative ScrCmd_getmonth, requests_effects=1
 	.endm
 
 	@ Plays the specified sound. Only one sound may play at a time, with newer ones interrupting older ones.
@@ -642,6 +649,10 @@
 			.2byte \localId
 			map \map
 		.endif
+	.endm
+
+	.macro waitmovementall
+	callnative Script_waitmovementall, requests_effects=1
 	.endm
 
 	@ Attempts to despawn the specified (localId) object on the specified map.
@@ -1235,9 +1246,20 @@
 
 	@ Opens the Pokemart system, offering the specified products for sale.
 	@ Products should be a list of .2byte item values preceded by an .align 2
-	.macro pokemart products:req
+	.macro pokemart products:req, shopType=NEW_SHOP_PRICE_TYPE_NORMAL
 	.byte SCR_OP_POKEMART
 	.4byte \products
+	.2byte \shopType
+	.endm
+
+	@ Pokemart using coins for currency
+	.macro coinmart products:req
+	pokemart \products, NEW_SHOP_PRICE_TYPE_COINS
+	.endm
+
+	@ Pokemart using battle points for currency
+	.macro battlepointmart products:req
+	pokemart \products, NEW_SHOP_PRICE_TYPE_POINTS
 	.endm
 
 	@ Used as the endpoint for a Pokemart item list
@@ -1254,7 +1276,7 @@
 	.4byte \products
 	.endm
 
-	@ Identical to pokemartdecoration, but with slight changes to the clerk dialogue. See uses of MART_TYPE_DECOR2.
+	@ Identical to pokemartdecoration, but with slight changes to the clerk dialogue. See uses of NEW_SHOP_TYPE_DECOR2..
 	.macro pokemartdecoration2 products:req
 	.byte SCR_OP_POKEMARTDECORATION2
 	.4byte \products
@@ -1905,11 +1927,54 @@
 	.4byte \name
 	.2byte \id
 	.endm
+	
+		@ Warps to a map, and plays the script passed to it
+	.macro warp_continue_script map:req, X:req, Y:req, script:req, startBlack=TRUE
+	.byte SCR_OP_WARPCONTINUESCRIPT
+	.2byte \map
+	.2byte \X
+	.2byte \Y
+	.4byte \script
+	.endm
 
 	.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
 	_dynmultichoice \left, \top, \ignoreBPress, \maxBeforeScroll, \shouldSort, \initialSelected, \callbacks, NULL
 	.endm
 
+	@! Unlocks a locked outfit
+	.macro toggleoutfit outfitId:req, type:req
+	.byte SCR_OP_TOGGLEOUTFIT
+	.2byte \outfitId
+	.byte \type
+	.endm
+
+	@! Gets the current status of the specified outfit where:
+	@! OUTFIT_CHECK_FLAG is for checking if it's either unlocked/locked
+	@! OUTFIT_CHECK_USED is for checking if it's currently used
+	.macro getoutfitstatus outfitId:req, data:req
+	.byte SCR_OP_GETOUTFITSTATUS
+	.2byte \outfitId
+	.byte \data
+	.endm
+
+	@! Buffers either the name or the description strings of an outfit
+	@! to a str var
+	.macro bufferoutfitstr stringVarId:req, outfitId:req, type:req
+	.byte SCR_OP_BUFFEROUTFITSTR
+	stringvar \stringVarId
+	.2byte \outfitId
+	.byte \type
+	.endm
+
+	@ Opens the Pokemart system, offering the specified outfit products for sale.
+	@ Products should be a list of .2byte item values preceded by an .align 2
+	.macro pokemartoutfit products:req
+	.byte SCR_OP_POKEMARTOUTFIT
+	.4byte \products
+	.endm
+
+
+     
 @ Supplementary
 
 	.macro goto_if_unset flag:req, dest:req
@@ -2125,6 +2190,11 @@
 	.4byte \func
 	.endm
 
+	.macro setdynamicswitchaifunc func:req
+	callnative ScriptSetDynamicAiSwitchFunc, requests_effects=1
+	.4byte \func
+	.endm
+
 	@ Set up a totem boost for the next battle.
 	@ 'battler' is the position of the mon you want to gain a boost. see B_POSITION_xx in include/constants/battle.h.
 	@ The rest of the arguments are the stat change values to each stat.
@@ -2189,7 +2259,7 @@
 	@ Attempts to trigger a special evolution method in the overworld.
 	@ There may be other conditions required which are coded for in GetEvolutionTargetSpecies.
 	@ EX: tryspecialevo EVO_WATER_SCROLL, FALSE, FALSE triggers Kubfu's EVO_WATER_SCROLL evolution
-	@ 	  method, cannot be cancelled in the evolution scene, and will only evolve one Kubfu if there
+	@	  method, cannot be cancelled in the evolution scene, and will only evolve one Kubfu if there
 	@	  are multiple in the player's party.
 	.macro tryspecialevo evoMethod:req, canStopEvo=TRUE, tryMultiple=TRUE
 	setvar VAR_0x8000, \evoMethod
@@ -2203,6 +2273,58 @@
 	setvar VAR_0x8004, \trainer1
 	callnative CreateTrainerPartyForPlayer, requests_effects=1
 	trainerbattle_no_intro \trainer2, NULL
+	.endm
+
+	@! neat shortcuts for outfits
+
+	.macro checkoutfitflag outfitId:req
+	getoutfitstatus \outfitId, OUTFIT_CHECK_FLAG
+	.endm
+
+	.macro iswearingoutfit outfitId:req
+	getoutfitstatus \outfitId, OUTFIT_CHECK_USED
+	.endm
+
+	.macro bufferoutfitname stringVarId:req, outfitId:req
+	bufferoutfitstr \stringVarId, \outfitId, OUTFIT_BUFFER_NAME
+	.endm
+
+	.macro bufferoutfitdesc stringVarId:req, outfitId:req
+	bufferoutfitstr \stringVarId, \outfitId, OUTFIT_BUFFER_DESC
+	.endm
+
+	.macro unlockoutfit outfitId:req
+	toggleoutfit \outfitId, OUTFIT_TOGGLE_UNLOCK
+	.endm
+     
+    
+
+	.macro lockoutfit outfitId:req
+	toggleoutfit \outfitId, OUTFIT_TOGGLE_LOCK
+	.endm
+
+	@! Jumps to \dest if the specified outfit is unlocked
+	.macro call_if_outfitunlocked outfit:req, dest:req
+	checkoutfitflag \outfit
+	call_if FALSE, \dest
+	.endm
+
+	@! Jumps to \dest if the specified outfit is locked
+	.macro call_if_outfitlocked outfit:req, dest:req
+	checkoutfitflag \outfit
+	call_if TRUE, \dest
+	.endm
+
+	@! Jumps to \dest if the specified outfit is currently wear
+	.macro call_if_wearoutfit outfit:req, dest:req
+	iswearingoutfit \outfit
+	call_if TRUE, \dest
+	.endm
+
+	@! Jumps to \dest if the specified outfit is not currently wear
+	.macro call_if_notwearoutfit outfit:req, dest:req
+	iswearingoutfit \outfit
+	call_if FALSE, \dest
 	.endm
 
 	@ Sets VAR_RESULT to TRUE if stat can be hyper trained, or to
@@ -2274,6 +2396,12 @@
 	.2byte \slot
 	.endm
 
+	@ Sets the hp to 0 for the Pokémon in \slot.
+	.macro setko slot:req
+	callnative Script_SetKO, requests_effects=1
+	.2byte \slot
+	.endm
+
 	@ Sets VAR_RESULT to the Pokémon in \slot's Tera Type
 	.macro checkteratype slot:req
 	callnative CheckTeraType, requests_effects=1
@@ -2340,7 +2468,7 @@
 	@ ============================ @
 	@ FAKE RTC MACROS
 	@ Will only function if OW_USE_FAKE_RTC is true. If it has any additional requirements, it will be listed accordingly.
-	
+
 	@ When OW_USE_FAKE_RTC is true and OW_FLAG_PAUSE_TIME is assigned, this macro will stop the flow of time.
 	.macro pausefakertc
 	callnative Script_PauseFakeRtc, requests_effects=1
@@ -2394,6 +2522,12 @@
 	.macro fwdweekday weekday:req
 	callnative ScrCmd_fwdweekday, requests_effects=1
 	.4byte \weekday
+	.endm
+
+	@ Forwards the time to a specified day of the month. Uses a 0-index starting from Jan.
+	.macro fwdmonth month:req
+	callnative ScrCmd_fwdmonth, requests_effects=1
+	.4byte \month
 	.endm
 
 	@ ============================ @
@@ -2497,6 +2631,18 @@
 	checkspecies \speciesId, OPEN_PARTY_SCREEN
 	.endm
 
+   @ Transform into pokemon
+	.macro species_transform 
+		special ChoosePartyMon
+		waitstate
+		callnative ScrCmd_TransformPlayerToChosenPokemon
+	.endm
+
+    @revert
+	.macro revertplayer
+	callnative ScrCmd_RevertPlayerToHuman
+	.endm
+
 	@ Gets the facing direction of a given event object and stores it in the variable dest.
 	.macro getobjectfacingdirection localId:req, dest:req
 	callnative Scrcmd_getobjectfacingdirection, requests_effects=1
@@ -2593,6 +2739,27 @@
 	cant_see_if 5
 	.endm
 
+	.macro setmultitrainerbattle trainer_a:req, lose_text_a:req, trainer_b:req, lose_text_b:req, partnerId:req
+	callnative SetMultiTrainerBattle
+	.2byte \trainer_a
+	.4byte \lose_text_a
+	.2byte \trainer_b
+	.4byte \lose_text_b
+	.2byte \partnerId
+	.endm
+
+	@ facility version of `trainerbattle` macro. Used in Battle Pyramid and Trainer Hill
+	.macro facilitytrainerbattle facility:req
+	callnative FacilityTrainerBattle
+	.byte \facility
+	.endm
+
+	@ immediately starts a battle of the given facility
+	.macro dofacilitytrainerbattle facility:req
+	callnative DoFacilityTrainerBattle
+	.byte \facility
+	.endm
+
 @ Follower NPCs
 
 	@ Sets an existing NPC up to follow the player.
@@ -2679,10 +2846,63 @@
 	.2byte \battlePartner
 	.endm
 
+@ example_usage:
+	@ 	createfieldmugshot MUGSHOT_TEST, EMOTE_NORMAL
+	@ 	msgbox test
+	@ 	removefieldmugshot
+	@ 	createfieldmugshot MUGSHOT_TEST, EMOTE_ALT
+	@ 	msgbox test2
+	@ 	removefieldmugshot
+
+	@ spawn a mugshot in the overworld at a specific coordinate
+	@ NOTE: this macro uses VAR_TEMP_E and VAR_TEMP_F as its parameter
+	@ so be careful if you use them in your script too!
+	.macro createfieldmugshot id:req, emote=0
+	callnative CreateFieldMugshot
+	setorcopyvar VAR_TEMP_E, \id
+	setorcopyvar VAR_TEMP_F, \emote
+	.endm
+
+	@ destroys a mugshot in the overworld, if there is one
+	.macro removefieldmugshot
+	callnative RemoveFieldMugshot
+	.endm
+
+	@ Show a map preview for the current map with the WEATHER type.
+	.macro mappreview
+	fadescreen FADE_TO_BLACK
+	callnative Script_MapPreview
+	waitstate
+	.endm
+
+	@ Show the current map's name popup.
+	.macro mappopup
+	callnative Script_MapPopUp
+	.endm
+
+    @ Shows the message box containing the help window and its header and description.
+	.macro showhelpwindow id:req
+	callnative ShowHelpInfoWindow, requests_effects=1
+	.2byte \id
+	.endm
+	
+	@ Destroys the help window.
+	.macro hidehelpwindow
+	callnative HideHelpInfoWindow
+	.endm
+
+	@ Creates a help window.
+	.macro helpwindow id:req
+	showhelpwindow \id
+	waitbuttonpress
+	hidehelpwindow
+	closemessage
+	.endm
+
 	@ Manually buffer a string as the speaker's name for namebox.
 	@ The next shown message/msgbox will include a namebox, if the provided string is not NULL.
 	@ An SP_NAME_* constant can also be used, it'll take the name from gSpeakerNamesTable instead.
-	.macro setspeaker name:req
+	.macro speakername name:req
 	callnative SetSpeaker
 	.4byte \name
 	.endm
@@ -2709,4 +2929,10 @@
 	.macro istmrelearneractive destination:req
 	callnative ScrCmd_istmrelearneractive, requests_effects=1
 	.4byte \destination
+	.endm
+
+	@ Sets a starting status for the next battle. Can be stacked.
+	.macro setstartingstatus status:req
+	callnative ScrCmd_setstartingstatus
+	.byte \status
 	.endm

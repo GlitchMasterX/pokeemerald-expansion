@@ -759,8 +759,13 @@ const u16 gBattleAnimSpritePal_ClosingEye2[] = INCBIN_U16("graphics/battle_anims
 const u32 gBattleAnimSpriteGfx_MetalBall[] = INCBIN_U32("graphics/battle_anims/sprites/metal_ball.4bpp.smol");
 const u16 gBattleAnimSpritePal_MetalBall[] = INCBIN_U16("graphics/battle_anims/sprites/metal_ball.gbapal");
 
-const u32 gBattleAnimSpriteGfx_MonsterDoll[] = INCBIN_U32("graphics/battle_anims/sprites/monster_doll.4bpp.smol");
-const u16 gBattleAnimSpritePal_MonsterDoll[] = INCBIN_U16("graphics/battle_anims/sprites/monster_doll.gbapal");
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gBattleAnimSpriteGfx_MonsterDoll[] = INCBIN_U32("graphics/battle_anims/sprites/monster_doll.4bpp.smol");
+    const u16 gBattleAnimSpritePal_MonsterDoll[] = INCBIN_U16("graphics/battle_anims/sprites/monster_doll.gbapal");
+#else
+    const u32 gBattleAnimSpriteGfx_MonsterDoll[] = INCBIN_U32("graphics/battle_anims/sprites/monster_doll_gba.4bpp.smol");
+    const u16 gBattleAnimSpritePal_MonsterDoll[] = INCBIN_U16("graphics/battle_anims/sprites/monster_doll_gba.gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
 
 const u32 gBattleAnimSpriteGfx_Whirlwind[] = INCBIN_U32("graphics/battle_anims/sprites/whirlwind.4bpp.smol");
 const u16 gBattleAnimSpritePal_Whirlwind[] = INCBIN_U16("graphics/battle_anims/sprites/whirlwind.gbapal");
@@ -1218,9 +1223,15 @@ const u16 gBattleAnimSpritePal_HandsAndFeet[] = INCBIN_U16("graphics/battle_anim
 const u32 gBattleAnimSpriteGfx_Confetti[] = INCBIN_U32("graphics/battle_anims/sprites/confetti.4bpp.smol");
 const u16 gBattleAnimSpritePal_Confetti[] = INCBIN_U16("graphics/battle_anims/sprites/confetti.gbapal");
 
-const u32 gBattleAnimSpriteGfx_Substitute[] = INCBIN_U32("graphics/battle_anims/sprites/substitute.4bpp.smol");
-const u32 gBattleAnimSpriteGfx_SubstituteBack[] = INCBIN_U32("graphics/battle_anims/sprites/substitute_back.4bpp.smol");
-const u16 gBattleAnimSpritePal_Substitute[] = INCBIN_U16("graphics/battle_anims/sprites/substitute.gbapal");
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gBattleAnimSpriteGfx_Substitute[] = INCBIN_U32("graphics/battle_anims/sprites/substitute.4bpp.smol");
+    const u32 gBattleAnimSpriteGfx_SubstituteBack[] = INCBIN_U32("graphics/battle_anims/sprites/substitute_back.4bpp.smol");
+    const u16 gBattleAnimSpritePal_Substitute[] = INCBIN_U16("graphics/battle_anims/sprites/substitute.gbapal");
+#else
+    const u32 gBattleAnimSpriteGfx_Substitute[] = INCBIN_U32("graphics/battle_anims/sprites/substitute_gba.4bpp.smol");
+    const u32 gBattleAnimSpriteGfx_SubstituteBack[] = INCBIN_U32("graphics/battle_anims/sprites/substitute_back_gba.4bpp.smol");
+    const u16 gBattleAnimSpritePal_Substitute[] = INCBIN_U16("graphics/battle_anims/sprites/substitute_gba.gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
 
 const u32 gBattleAnimSpriteGfx_GreenStar[] = INCBIN_U32("graphics/battle_anims/sprites/green_star.4bpp.smol");
 const u16 gBattleAnimSpritePal_GreenStar[] = INCBIN_U16("graphics/battle_anims/sprites/green_star.gbapal");
@@ -2053,8 +2064,8 @@ const u16 gTradeMenu_Tilemap[] = INCBIN_U16("graphics/trade/menu.bin");
 const u16 gTradeMenuMonBox_Tilemap[] = INCBIN_U16("graphics/trade/menu_mon_box.bin");
 
 const u16 gMessageBox_Pal[] = INCBIN_U16("graphics/text_window/message_box.gbapal");
-const u8 gMessageBox_Gfx[] = INCBIN_U8("graphics/text_window/message_box.4bpp");
-const u8 gSignpostWindow_Gfx[] = INCBIN_U8("graphics/text_window/signpost.4bpp");
+const u32 gMessageBox_Gfx[] = INCBIN_U32("graphics/text_window/message_box.4bpp");
+const u32 gSignpostWindow_Gfx[] = INCBIN_U32("graphics/text_window/signpost.4bpp");
 
 const u32 gWallpaperIcon_Cross[] = INCBIN_U32("graphics/pokemon_storage/wallpapers/icons/cross.4bpp.smol");
 const u32 gWallpaperIcon_Bolt[] = INCBIN_U32("graphics/pokemon_storage/wallpapers/icons/bolt.4bpp.smol");

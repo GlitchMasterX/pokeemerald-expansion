@@ -56,6 +56,10 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_
 {
     [DIFFICULTY_NORMAL] =
     {
+        [DAMIEN_VOSS] = // use the Trainer's Id from include/constants/opponents.h
+        {
+            [TRAINER_SLIDE_LAST_LOW_HP] = COMPOUND_STRING("Heh... I was just going easy on you.\pBut now? I'm not holding back anymore!{PAUSE_UNTIL_PRESS}"),
+    },
     },
 };
 

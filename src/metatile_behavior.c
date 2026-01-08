@@ -268,6 +268,14 @@ bool8 MetatileBehavior_IsLadder(u8 metatileBehavior)
         return FALSE;
 }
 
+bool8 MetatileBehavior_IsUnpassableNorthandSouth(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_IMPASSABLE_SOUTH_AND_NORTH)
+        return TRUE;
+    else
+        return FALSE;
+}
+
 bool8 MetatileBehavior_IsNonAnimDoor(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_NON_ANIMATED_DOOR
@@ -447,6 +455,22 @@ bool8 MetatileBehavior_IsEastwardCurrent(u8 metatileBehavior)
         return FALSE;
 }
 
+bool8 MetatileBehavior_IsBlood(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_BLOOD)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsM_Grave(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_M_GRAVE)
+        return TRUE;
+    else
+        return FALSE;
+}
+
 bool8 MetatileBehavior_IsSlideNorth(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_SLIDE_NORTH)
@@ -523,6 +547,15 @@ bool8 MetatileBehavior_IsOpenSecretBaseDoor(u8 metatileBehavior)
      || metatileBehavior == MB_SECRET_BASE_SPOT_BLUE_CAVE_OPEN
      || metatileBehavior == MB_SECRET_BASE_SPOT_TREE_RIGHT_OPEN)
         return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 IsCoveredTile(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_LONG_GRASS
+     || metatileBehavior == MB_IMPASSABLE_SOUTH)
+    return TRUE;
     else
         return FALSE;
 }

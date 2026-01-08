@@ -22,7 +22,8 @@ static void CoordEventWeather_Shade(void);
 static void CoordEventWeather_Drought(void);
 static void CoordEventWeather_Route119Cycle(void);
 static void CoordEventWeather_Route123Cycle(void);
-
+static void CoordEventWeather_Spring(void);
+static void CoordEventWeather_Autumn(void);
 static const struct CoordEventWeather sCoordEventWeatherFuncs[] =
 {
     { COORD_EVENT_WEATHER_SUNNY_CLOUDS,      CoordEventWeather_Clouds },
@@ -38,6 +39,9 @@ static const struct CoordEventWeather sCoordEventWeatherFuncs[] =
     { COORD_EVENT_WEATHER_DROUGHT,           CoordEventWeather_Drought },
     { COORD_EVENT_WEATHER_ROUTE119_CYCLE,    CoordEventWeather_Route119Cycle },
     { COORD_EVENT_WEATHER_ROUTE123_CYCLE,    CoordEventWeather_Route123Cycle },
+    { COORD_EVENT_WEATHER_SPRING,              CoordEventWeather_Spring },
+    { COORD_EVENT_WEATHER_AUTUMN,              CoordEventWeather_Autumn },
+    
 };
 
 static void CoordEventWeather_Clouds(void)
@@ -103,6 +107,16 @@ static void CoordEventWeather_Route119Cycle(void)
 static void CoordEventWeather_Route123Cycle(void)
 {
     SetWeather(WEATHER_ROUTE123_CYCLE);
+}
+
+static void CoordEventWeather_Spring(void)
+{
+    SetWeather(WEATHER_SPRING);
+}
+
+static void CoordEventWeather_Autumn(void)
+{
+    SetWeather(WEATHER_AUTUMN);
 }
 
 void DoCoordEventWeather(u8 coordEventWeather)

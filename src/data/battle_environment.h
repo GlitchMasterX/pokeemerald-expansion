@@ -1,14 +1,20 @@
 const u32 gBattleEnvironmentTiles_TallGrass[] = INCBIN_U32("graphics/battle_environment/tall_grass/tiles.4bpp.smol");
 const u16 gBattleEnvironmentPalette_TallGrass[] = INCBIN_U16("graphics/battle_environment/tall_grass/palette.gbapal");
 const u32 gBattleEnvironmentTilemap_TallGrass[] = INCBIN_U32("graphics/battle_environment/tall_grass/map.bin.smolTM");
+const u16 gBattleEnvironmentPaletteMorning_TallGrass[] = INCBIN_U16("graphics/battle_environment/tall_grass/palette_morning.gbapal"); 
+const u16 gBattleEnvironmentPaletteNight_TallGrass[] = INCBIN_U16("graphics/battle_environment/tall_grass/palette_night.gbapal");
 
 const u32 gBattleEnvironmentTiles_LongGrass[] = INCBIN_U32("graphics/battle_environment/long_grass/tiles.4bpp.smol");
 const u16 gBattleEnvironmentPalette_LongGrass[] = INCBIN_U16("graphics/battle_environment/long_grass/palette.gbapal");
 const u32 gBattleEnvironmentTilemap_LongGrass[] = INCBIN_U32("graphics/battle_environment/long_grass/map.bin.smolTM");
+const u16 gBattleEnvironmentPaletteMorning_LongGrass[] = INCBIN_U16("graphics/battle_environment/long_grass/palette_morning.gbapal");
+const u16 gBattleEnvironmentPaletteNight_LongGrass[] = INCBIN_U16("graphics/battle_environment/long_grass/palette_night.gbapal");
 
 const u32 gBattleEnvironmentTiles_Sand[] = INCBIN_U32("graphics/battle_environment/sand/tiles.4bpp.smol");
 const u16 gBattleEnvironmentPalette_Sand[] = INCBIN_U16("graphics/battle_environment/sand/palette.gbapal");
 const u32 gBattleEnvironmentTilemap_Sand[] = INCBIN_U32("graphics/battle_environment/sand/map.bin.smolTM");
+const u16 gBattleEnvironmentPaletteMorning_Sand[] = INCBIN_U16("graphics/battle_environment/sand/palette_morning.gbapal"); 
+const u16 gBattleEnvironmentPaletteNight_Sand[] = INCBIN_U16("graphics/battle_environment/sand/palette_night.gbapal");
 
 const u32 gBattleEnvironmentTiles_Underwater[] = INCBIN_U32("graphics/battle_environment/underwater/tiles.4bpp.smol");
 const u16 gBattleEnvironmentPalette_Underwater[] = INCBIN_U16("graphics/battle_environment/underwater/palette.gbapal");
@@ -17,14 +23,20 @@ const u32 gBattleEnvironmentTilemap_Underwater[] = INCBIN_U32("graphics/battle_e
 const u32 gBattleEnvironmentTiles_Water[] = INCBIN_U32("graphics/battle_environment/water/tiles.4bpp.smol");
 const u16 gBattleEnvironmentPalette_Water[] = INCBIN_U16("graphics/battle_environment/water/palette.gbapal");
 const u32 gBattleEnvironmentTilemap_Water[] = INCBIN_U32("graphics/battle_environment/water/map.bin.smolTM");
+const u16 gBattleEnvironmentPaletteMorning_Water[] = INCBIN_U16("graphics/battle_environment/water/palette_morning.gbapal");
+const u16 gBattleEnvironmentPaletteNight_Water[] = INCBIN_U16("graphics/battle_environment/water/palette_night.gbapal");
 
 const u32 gBattleEnvironmentTiles_PondWater[] = INCBIN_U32("graphics/battle_environment/pond_water/tiles.4bpp.smol");
 const u16 gBattleEnvironmentPalette_PondWater[] = INCBIN_U16("graphics/battle_environment/pond_water/palette.gbapal");
 const u32 gBattleEnvironmentTilemap_PondWater[] = INCBIN_U32("graphics/battle_environment/pond_water/map.bin.smolTM");
+const u16 gBattleEnvironmentPaletteMorning_PondWater[] = INCBIN_U16("graphics/battle_environment/pond_water/palette_morning.gbapal"); 
+const u16 gBattleEnvironmentPaletteNight_PondWater[] = INCBIN_U16("graphics/battle_environment/pond_water/palette_night.gbapal");
 
 const u32 gBattleEnvironmentTiles_Rock[] = INCBIN_U32("graphics/battle_environment/rock/tiles.4bpp.smol");
 const u16 gBattleEnvironmentPalette_Rock[] = INCBIN_U16("graphics/battle_environment/rock/palette.gbapal");
 const u32 gBattleEnvironmentTilemap_Rock[] = INCBIN_U32("graphics/battle_environment/rock/map.bin.smolTM");
+const u16 gBattleEnvironmentPaletteMorning_Rock[] = INCBIN_U16("graphics/battle_environment/rock/palette_morning.gbapal"); 
+const u16 gBattleEnvironmentPaletteNight_Rock[] = INCBIN_U16("graphics/battle_environment/rock/palette_night.gbapal");
 
 const u32 gBattleEnvironmentTiles_Cave[] = INCBIN_U32("graphics/battle_environment/cave/tiles.4bpp.smol");
 const u16 gBattleEnvironmentPalette_Cave[] = INCBIN_U16("graphics/battle_environment/cave/palette.gbapal");
@@ -58,7 +70,13 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
     #endif
         .secretPowerEffect = B_SECRET_POWER_EFFECT >= GEN_4 ? MOVE_EFFECT_SLEEP : MOVE_EFFECT_POISON,
         .camouflageType = TYPE_GRASS,
-        .background = ENVIRONMENT_BACKGROUND(TallGrass),
+        .background = {
+            .tileset = gBattleEnvironmentTiles_TallGrass,
+            .tilemap = gBattleEnvironmentTilemap_TallGrass,
+            .entryTileset = gBattleEnvironmentAnimTiles_TallGrass,
+            .entryTilemap = gBattleEnvironmentAnimTilemap_TallGrass,
+            .palette = {gBattleEnvironmentPaletteMorning_TallGrass, gBattleEnvironmentPalette_TallGrass, gBattleEnvironmentPalette_TallGrass, gBattleEnvironmentPaletteNight_TallGrass},
+        },
     },
 
     [BATTLE_ENVIRONMENT_LONG_GRASS] =
@@ -72,7 +90,13 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
     #endif
         .secretPowerEffect = MOVE_EFFECT_SLEEP,
         .camouflageType = TYPE_GRASS,
-        .background = ENVIRONMENT_BACKGROUND(LongGrass),
+        .background = {
+            .tileset = gBattleEnvironmentTiles_LongGrass,
+            .tilemap = gBattleEnvironmentTilemap_LongGrass,
+            .entryTileset = gBattleEnvironmentAnimTiles_LongGrass,
+            .entryTilemap = gBattleEnvironmentAnimTilemap_LongGrass,
+            .palette = {gBattleEnvironmentPaletteMorning_LongGrass, gBattleEnvironmentPalette_LongGrass, gBattleEnvironmentPalette_LongGrass, gBattleEnvironmentPaletteNight_LongGrass},
+        },
     },
 
     [BATTLE_ENVIRONMENT_SAND] =
@@ -80,7 +104,13 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .naturePower = B_NATURE_POWER_MOVES >= GEN_6 ? MOVE_EARTH_POWER : MOVE_EARTHQUAKE,
         .secretPowerEffect = MOVE_EFFECT_ACC_MINUS_1,
         .camouflageType = TYPE_GROUND,
-        .background = ENVIRONMENT_BACKGROUND(Sand),
+        .background = {
+            .tileset = gBattleEnvironmentTiles_Sand,
+            .tilemap = gBattleEnvironmentTilemap_Sand,
+            .entryTileset = gBattleEnvironmentAnimTiles_Sand,
+            .entryTilemap = gBattleEnvironmentAnimTilemap_Sand,
+            .palette = {gBattleEnvironmentPaletteMorning_Sand, gBattleEnvironmentPalette_Sand, gBattleEnvironmentPalette_Sand, gBattleEnvironmentPaletteNight_Sand},
+        },
     },
 
     [BATTLE_ENVIRONMENT_UNDERWATER] =
@@ -88,7 +118,13 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .naturePower = MOVE_HYDRO_PUMP,
         .secretPowerEffect = B_SECRET_POWER_EFFECT >= GEN_6 ? MOVE_EFFECT_ATK_MINUS_1 : MOVE_EFFECT_DEF_MINUS_1,
         .camouflageType = TYPE_WATER,
-        .background = ENVIRONMENT_BACKGROUND(Underwater),
+        .background ={
+        .tileset = gBattleEnvironmentTiles_Underwater,
+        .tilemap = gBattleEnvironmentTilemap_Underwater,
+        .entryTileset = gBattleEnvironmentAnimTiles_Underwater,
+        .entryTilemap = gBattleEnvironmentAnimTilemap_Underwater,
+        .palette = {gBattleEnvironmentPalette_Underwater, gBattleEnvironmentPalette_Underwater, gBattleEnvironmentPalette_Underwater, gBattleEnvironmentPalette_Underwater},
+        },
     },
 
     [BATTLE_ENVIRONMENT_WATER] =
@@ -96,7 +132,13 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .naturePower = B_NATURE_POWER_MOVES >= GEN_4 ? MOVE_HYDRO_PUMP : MOVE_SURF,
         .secretPowerEffect = MOVE_EFFECT_ATK_MINUS_1,
         .camouflageType = TYPE_WATER,
-        .background = ENVIRONMENT_BACKGROUND(Water),
+        .background = {
+            .tileset = gBattleEnvironmentTiles_Water,
+            .tilemap = gBattleEnvironmentTilemap_Water,
+            .entryTileset = gBattleEnvironmentAnimTiles_Water,
+            .entryTilemap = gBattleEnvironmentAnimTilemap_Water,
+            .palette = {gBattleEnvironmentPaletteMorning_Water, gBattleEnvironmentPalette_Water, gBattleEnvironmentPalette_Water, gBattleEnvironmentPaletteNight_Water},
+        },
     },
 
     [BATTLE_ENVIRONMENT_POND] =
@@ -104,7 +146,13 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .naturePower = B_NATURE_POWER_MOVES >= GEN_4 ? MOVE_HYDRO_PUMP : MOVE_BUBBLE_BEAM,
         .secretPowerEffect = B_SECRET_POWER_EFFECT >= GEN_4 ? MOVE_EFFECT_ATK_MINUS_1 : MOVE_EFFECT_SPD_MINUS_1,
         .camouflageType = TYPE_WATER,
-        .background = ENVIRONMENT_BACKGROUND(PondWater),
+        .background = {
+            .tileset = gBattleEnvironmentTiles_PondWater,
+            .tilemap = gBattleEnvironmentTilemap_PondWater,
+            .entryTileset = gBattleEnvironmentAnimTiles_PondWater,
+            .entryTilemap = gBattleEnvironmentAnimTilemap_PondWater,
+            .palette = {gBattleEnvironmentPaletteMorning_PondWater, gBattleEnvironmentPalette_PondWater, gBattleEnvironmentPalette_PondWater, gBattleEnvironmentPaletteNight_TallGrass},
+        },
     },
 
     [BATTLE_ENVIRONMENT_MOUNTAIN] =
@@ -124,7 +172,13 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .secretPowerEffect = MOVE_EFFECT_CONFUSION,
     #endif
         .camouflageType = B_CAMOUFLAGE_TYPES >= GEN_5 ? TYPE_GROUND : TYPE_ROCK,
-        .background = ENVIRONMENT_BACKGROUND(Rock),
+        .background = {
+            .tileset = gBattleEnvironmentTiles_Rock,
+            .tilemap = gBattleEnvironmentTilemap_Rock,
+            .entryTileset = gBattleEnvironmentAnimTiles_Rock,
+            .entryTilemap = gBattleEnvironmentAnimTilemap_Rock,
+            .palette =  {gBattleEnvironmentPaletteMorning_Rock, gBattleEnvironmentPalette_Rock, gBattleEnvironmentPalette_Rock, gBattleEnvironmentPaletteNight_Rock},
+        },
     },
 
     [BATTLE_ENVIRONMENT_CAVE] =
@@ -138,7 +192,13 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
     #endif
         .secretPowerEffect = MOVE_EFFECT_FLINCH,
         .camouflageType = TYPE_ROCK,
-        .background = ENVIRONMENT_BACKGROUND(Cave),
+        .background = {
+            .tileset = gBattleEnvironmentTiles_Cave,
+            .tilemap = gBattleEnvironmentTilemap_Cave,
+            .entryTileset = gBattleEnvironmentAnimTiles_Cave,
+            .entryTilemap = gBattleEnvironmentAnimTilemap_Cave,
+            .palette = {gBattleEnvironmentPalette_Cave, gBattleEnvironmentPalette_Cave, gBattleEnvironmentPalette_Cave, gBattleEnvironmentPalette_Cave},
+        },
     },
 
     [BATTLE_ENVIRONMENT_BUILDING] =
@@ -146,7 +206,13 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .naturePower = B_NATURE_POWER_MOVES >= GEN_4 ? MOVE_TRI_ATTACK : MOVE_SWIFT,
         .secretPowerEffect = MOVE_EFFECT_PARALYSIS,
         .camouflageType = TYPE_NORMAL,
-        .background = ENVIRONMENT_BACKGROUND(Building),
+        .background = {
+            .tileset = gBattleEnvironmentTiles_Building,
+            .tilemap = gBattleEnvironmentTilemap_Building,
+            .entryTileset = gBattleEnvironmentAnimTiles_Building,
+            .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
+            .palette = {gBattleEnvironmentPalette_Building, gBattleEnvironmentPalette_Building, gBattleEnvironmentPalette_Building, gBattleEnvironmentPalette_Building},
+        },
     },
 
     [BATTLE_ENVIRONMENT_PLAIN] =
@@ -166,7 +232,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
             .tilemap = gBattleEnvironmentTilemap_Building,
             .entryTileset = gBattleEnvironmentAnimTiles_Building,
             .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
-            .palette = gBattleEnvironmentPalette_Plain,
+            .palette = {gBattleEnvironmentPalette_Plain, gBattleEnvironmentPalette_Plain, gBattleEnvironmentPalette_Plain, gBattleEnvironmentPalette_Plain},
         },
     },
 
@@ -178,7 +244,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
             .tilemap = gBattleEnvironmentTilemap_Building,
             .entryTileset = gBattleEnvironmentAnimTiles_Building,
             .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
-            .palette = gBattleEnvironmentPalette_Frontier,
+            .palette = {gBattleEnvironmentPalette_Frontier, gBattleEnvironmentPalette_Frontier, gBattleEnvironmentPalette_Frontier, gBattleEnvironmentPalette_Frontier},
         },
     },
 
@@ -190,7 +256,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
             .tilemap = gBattleEnvironmentTilemap_Building,
             .entryTileset = gBattleEnvironmentAnimTiles_Building,
             .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
-            .palette = gBattleEnvironmentPalette_BuildingGym,
+            .palette = {gBattleEnvironmentPalette_BuildingGym, gBattleEnvironmentPalette_BuildingGym, gBattleEnvironmentPalette_BuildingGym, gBattleEnvironmentPalette_BuildingGym},
         },
     },
 
@@ -202,7 +268,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
             .tilemap = gBattleEnvironmentTilemap_Building,
             .entryTileset = gBattleEnvironmentAnimTiles_Building,
             .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
-            .palette = gBattleEnvironmentPalette_BuildingLeader,
+            .palette = {gBattleEnvironmentPalette_BuildingLeader, gBattleEnvironmentPalette_BuildingLeader, gBattleEnvironmentPalette_BuildingLeader, gBattleEnvironmentPalette_BuildingLeader},
         },
     },
 
@@ -214,7 +280,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
             .tilemap = gBattleEnvironmentTilemap_Stadium,
             .entryTileset = gBattleEnvironmentAnimTiles_Building,
             .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
-            .palette = gBattleEnvironmentPalette_StadiumMagma,
+            .palette = {gBattleEnvironmentPalette_StadiumMagma, gBattleEnvironmentPalette_StadiumMagma, gBattleEnvironmentPalette_StadiumMagma, gBattleEnvironmentPalette_StadiumMagma},
         },
     },
 
@@ -226,7 +292,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
             .tilemap = gBattleEnvironmentTilemap_Stadium,
             .entryTileset = gBattleEnvironmentAnimTiles_Building,
             .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
-            .palette = gBattleEnvironmentPalette_StadiumAqua,
+            .palette = {gBattleEnvironmentPalette_StadiumAqua, gBattleEnvironmentPalette_StadiumAqua, gBattleEnvironmentPalette_StadiumAqua, gBattleEnvironmentPalette_StadiumAqua},
         },
     },
 
@@ -238,7 +304,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
             .tilemap = gBattleEnvironmentTilemap_Stadium,
             .entryTileset = gBattleEnvironmentAnimTiles_Building,
             .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
-            .palette = gBattleEnvironmentPalette_StadiumSidney,
+            .palette = {gBattleEnvironmentPalette_StadiumSidney, gBattleEnvironmentPalette_StadiumSidney, gBattleEnvironmentPalette_StadiumSidney, gBattleEnvironmentPalette_StadiumSidney},
         },
     },
 
@@ -250,7 +316,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
             .tilemap = gBattleEnvironmentTilemap_Stadium,
             .entryTileset = gBattleEnvironmentAnimTiles_Building,
             .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
-            .palette = gBattleEnvironmentPalette_StadiumPhoebe,
+            .palette = {gBattleEnvironmentPalette_StadiumPhoebe, gBattleEnvironmentPalette_StadiumPhoebe, gBattleEnvironmentPalette_StadiumPhoebe, gBattleEnvironmentPalette_StadiumPhoebe},
         },
     },
 
@@ -262,7 +328,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
             .tilemap = gBattleEnvironmentTilemap_Stadium,
             .entryTileset = gBattleEnvironmentAnimTiles_Building,
             .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
-            .palette = gBattleEnvironmentPalette_StadiumGlacia,
+            .palette = {gBattleEnvironmentPalette_StadiumGlacia, gBattleEnvironmentPalette_StadiumGlacia, gBattleEnvironmentPalette_StadiumGlacia, gBattleEnvironmentPalette_StadiumGlacia},
         },
     },
 
@@ -274,7 +340,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
             .tilemap = gBattleEnvironmentTilemap_Stadium,
             .entryTileset = gBattleEnvironmentAnimTiles_Building,
             .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
-            .palette = gBattleEnvironmentPalette_StadiumDrake,
+            .palette = {gBattleEnvironmentPalette_StadiumDrake, gBattleEnvironmentPalette_StadiumDrake, gBattleEnvironmentPalette_StadiumDrake, gBattleEnvironmentPalette_StadiumDrake},
         },
     },
 
@@ -286,7 +352,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
             .tilemap = gBattleEnvironmentTilemap_Stadium,
             .entryTileset = gBattleEnvironmentAnimTiles_Building,
             .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
-            .palette = gBattleEnvironmentPalette_StadiumWallace,
+            .palette = {gBattleEnvironmentPalette_StadiumWallace, gBattleEnvironmentPalette_StadiumWallace, gBattleEnvironmentPalette_StadiumWallace, gBattleEnvironmentPalette_StadiumWallace},
         },
     },
 
@@ -298,7 +364,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
             .tilemap = gBattleEnvironmentTilemap_Cave,
             .entryTileset = gBattleEnvironmentAnimTiles_Cave,
             .entryTilemap = gBattleEnvironmentAnimTilemap_Cave,
-            .palette = gBattleEnvironmentPalette_Groudon,
+            .palette = {gBattleEnvironmentPalette_Groudon, gBattleEnvironmentPalette_Groudon, gBattleEnvironmentPalette_Groudon, gBattleEnvironmentPalette_Groudon},
         },
     },
 
@@ -310,7 +376,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
             .tilemap = gBattleEnvironmentTilemap_Water,
             .entryTileset = gBattleEnvironmentAnimTiles_Underwater,
             .entryTilemap = gBattleEnvironmentAnimTilemap_Underwater,
-            .palette = gBattleEnvironmentPalette_Kyogre,
+            .palette = {gBattleEnvironmentPalette_Kyogre, gBattleEnvironmentPalette_Kyogre, gBattleEnvironmentPalette_Kyogre, gBattleEnvironmentPalette_Kyogre},
         },
     },
 
@@ -322,7 +388,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
             .tilemap = gBattleEnvironmentTilemap_Rayquaza,
             .entryTileset = gBattleEnvironmentAnimTiles_Rayquaza,
             .entryTilemap = gBattleEnvironmentAnimTilemap_Rayquaza,
-            .palette = gBattleEnvironmentPalette_Rayquaza,
+            .palette = {gBattleEnvironmentPalette_Rayquaza, gBattleEnvironmentPalette_Rayquaza, gBattleEnvironmentPalette_Rayquaza, gBattleEnvironmentPalette_Rayquaza},
         },
     },
 

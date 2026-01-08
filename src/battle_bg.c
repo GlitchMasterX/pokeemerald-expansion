@@ -93,8 +93,6 @@ static const struct SpriteTemplate sVsLetter_V_SpriteTemplate =
     .tileTag = TAG_VS_LETTERS,
     .paletteTag = TAG_VS_LETTERS,
     .oam = &sVsLetter_V_OamData,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
     .affineAnims = sVsLetterAffineAnimTable,
     .callback = SpriteCB_VsLetterDummy
 };
@@ -104,8 +102,6 @@ static const struct SpriteTemplate sVsLetter_S_SpriteTemplate =
     .tileTag = TAG_VS_LETTERS,
     .paletteTag = TAG_VS_LETTERS,
     .oam = &sVsLetter_S_OamData,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
     .affineAnims = sVsLetterAffineAnimTable,
     .callback = SpriteCB_VsLetterDummy
 };
@@ -633,7 +629,7 @@ static void LoadBattleEnvironmentGfx(u16 terrain)
     // Copy to bg3
     DecompressDataWithHeaderVram(gBattleEnvironmentInfo[terrain].background.tileset, (void *)(BG_CHAR_ADDR(2)));
     DecompressDataWithHeaderVram(gBattleEnvironmentInfo[terrain].background.tilemap, (void *)(BG_SCREEN_ADDR(26)));
-    LoadPalette(gBattleEnvironmentInfo[terrain].background.palette, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
+    LoadPalette(gBattleEnvironmentInfo[terrain].background.palette[GetTimeOfDay()], BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
 }
 
 // Loads the entry associated with the battle terrain.

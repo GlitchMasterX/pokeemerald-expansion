@@ -1,6 +1,7 @@
 #include "global.h"
 #include "frontier_util.h"
 #include "battle_setup.h"
+#include "battle_util.h"
 #include "berry.h"
 #include "clock.h"
 #include "coins.h"
@@ -10,6 +11,7 @@
 #include "data.h"
 #include "decompress.h"
 #include "decoration.h"
+#include "new_shop.h"
 #include "decoration_inventory.h"
 #include "event_data.h"
 #include "field_door.h"
@@ -36,6 +38,7 @@
 #include "move.h"
 #include "move_relearner.h"
 #include "mystery_event_script.h"
+#include "outfit_menu.h"
 #include "palette.h"
 #include "party_menu.h"
 #include "pokedex.h"
@@ -59,8 +62,10 @@
 #include "window.h"
 #include "list_menu.h"
 #include "malloc.h"
+#include "battle.h"
 #include "constants/event_objects.h"
 #include "constants/map_types.h"
+#include "constants/new_shop.h"
 
 typedef u16 (*SpecialFunc)(void);
 typedef void (*NativeFunc)(struct ScriptContext *ctx);
@@ -72,6 +77,7 @@ static EWRAM_DATA u16 sMovingNpcId = 0;
 static EWRAM_DATA u16 sMovingNpcMapGroup = 0;
 static EWRAM_DATA u16 sMovingNpcMapNum = 0;
 static EWRAM_DATA u16 sFieldEffectScriptId = 0;
+static EWRAM_DATA const u8 *afterWarpScript = {0};
 
 static u8 sBrailleWindowId;
 static bool8 sIsScriptedWildDouble;
@@ -171,8 +177,9 @@ bool8 ScrCmd_callnative(struct ScriptContext *ctx)
     Script_RequestEffects(SCREFF_V1);
     Script_CheckEffectInstrumentedCallNative(func);
 
+    ctx->waitAfterCallNative = FALSE;
     func(ctx);
-    return FALSE;
+    return ctx->waitAfterCallNative;
 }
 
 bool8 ScrCmd_waitstate(struct ScriptContext *ctx)
@@ -916,6 +923,22 @@ bool8 ScrCmd_gettimeofday(struct ScriptContext *ctx)
     return FALSE;
 }
 
+bool8 ScrCmd_getday(struct ScriptContext *ctx)
+{
+    Script_RequestEffects(SCREFF_V1);
+    
+    gSpecialVar_0x8000 = GetDayOfWeek();
+    return FALSE;
+}
+
+bool8 ScrCmd_getmonth(struct ScriptContext *ctx)
+{
+    Script_RequestEffects(SCREFF_V1);
+    
+    gSpecialVar_0x8000 = GetMonth();
+    return FALSE;
+}
+
 bool8 ScrCmd_setweather(struct ScriptContext *ctx)
 {
     u16 weather = VarGet(ScriptReadHalfword(ctx));
@@ -1293,7 +1316,7 @@ bool8 ScrCmd_applymovement(struct ScriptContext *ctx)
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
 
     // When applying script movements to follower, it may have frozen animation that must be cleared
-    if ((localId == OBJ_EVENT_ID_FOLLOWER && (objEvent = GetFollowerObject()) && objEvent->frozen) 
+    if ((localId == OBJ_EVENT_ID_FOLLOWER && (objEvent = GetFollowerObject()) && objEvent->frozen)
             || ((objEvent = &gObjectEvents[GetObjectEventIdByLocalId(localId)]) && IS_OW_MON_OBJ(objEvent)))
     {
         ClearObjectEventMovement(objEvent, &gSprites[objEvent->spriteId]);
@@ -1304,7 +1327,7 @@ bool8 ScrCmd_applymovement(struct ScriptContext *ctx)
     ScriptMovement_StartObjectMovementScript(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, movementScript);
     sMovingNpcId = localId;
     if (localId != OBJ_EVENT_ID_FOLLOWER
-     && !FlagGet(FLAG_SAFE_FOLLOWER_MOVEMENT)
+     && !( OW_FOLLOWERS_SCRIPT_MOVEMENT ==TRUE)
      && (movementScript < Common_Movement_FollowerSafeStart || movementScript > Common_Movement_FollowerSafeEnd))
     {
         ScriptHideFollower();
@@ -1371,6 +1394,18 @@ bool8 ScrCmd_waitmovementat(struct ScriptContext *ctx)
     sMovingNpcMapNum = mapNum;
     SetupNativeScript(ctx, WaitForMovementFinish);
     return TRUE;
+}
+
+static bool8 WaitForAllMovementFinish(void)
+{
+    return ScriptMovement_IsAllObjectMovementFinished();
+}
+
+void Script_waitmovementall(struct ScriptContext *ctx)
+{
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+    SetupNativeScript(ctx, WaitForAllMovementFinish);
+    ctx->waitAfterCallNative = TRUE;
 }
 
 bool8 ScrCmd_removeobject(struct ScriptContext *ctx)
@@ -1507,8 +1542,8 @@ bool8 ScrCmd_resetobjectsubpriority(struct ScriptContext *ctx)
 bool8 ScrCmd_faceplayer(struct ScriptContext *ctx)
 {
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
-    if (PlayerHasFollowerNPC() 
-     && gObjectEvents[GetFollowerNPCObjectId()].invisible == FALSE 
+    if (PlayerHasFollowerNPC()
+     && gObjectEvents[GetFollowerNPCObjectId()].invisible == FALSE
      && gSelectedObjectEvent == GetFollowerNPCObjectId())
     {
         struct ObjectEvent *npcFollower = &gObjectEvents[GetFollowerNPCObjectId()];
@@ -1598,7 +1633,7 @@ bool8 ScrCmd_lockall(struct ScriptContext *ctx)
         struct ObjectEvent *followerObj = GetFollowerObject();
         FreezeObjects_WaitForPlayer();
         SetupNativeScript(ctx, IsFreezePlayerFinished);
-        if (FlagGet(FLAG_SAFE_FOLLOWER_MOVEMENT) && followerObj) // Unfreeze follower object (conditionally)
+        if (( OW_FOLLOWERS_SCRIPT_MOVEMENT ==TRUE) && followerObj) // Unfreeze follower object (conditionally)
             UnfreezeObjectEvent(followerObj);
         return TRUE;
     }
@@ -1709,7 +1744,6 @@ bool8 ScrCmd_messageautoscroll(struct ScriptContext *ctx)
     if (msg == NULL)
         msg = (const u8 *)ctx->data[0];
     gTextFlags.autoScroll = TRUE;
-    gTextFlags.forceMidTextSpeed = TRUE;
     ShowFieldAutoScrollMessage(msg);
     return FALSE;
 }
@@ -2287,31 +2321,81 @@ bool8 ScrCmd_setmonmove(struct ScriptContext *ctx)
     return FALSE;
 }
 
+static u16 GetKeyItemForFieldMove(u16 move)
+{
+    switch (move)
+    {
+        case MOVE_CUT:
+            return ITEM_CUT_TOOL;
+        case MOVE_FLY:
+            return ITEM_FLY_TOOL;
+        case MOVE_SURF:
+            return ITEM_SURF_TOOL;
+        case MOVE_STRENGTH:
+            return ITEM_STRENGTH_TOOL;
+        case MOVE_FLASH:
+            return ITEM_FLASH_TOOL;
+        case MOVE_ROCK_SMASH:
+            return ITEM_ROCK_SMASH_TOOL;
+        case MOVE_WATERFALL:
+            return ITEM_WATERFALL_TOOL;
+        case MOVE_DIVE:
+            return ITEM_DIVE_TOOL;
+        // Add more cases here for future tools
+        default:
+            return ITEM_NONE;
+    }
+}
+
+// Checks if a field move can be used via either a Pokémon or a key item
+// Return values in gSpecialVar_Result:
+//   0-5: Party slot index of a Pokémon that can learn the move
+//   PARTY_SIZE (6): Cannot use the field move (no Pokémon/item, or badge not obtained)
+//   PARTY_SIZE + 1 (7): Can use the field move via a key item
+
 bool8 ScrCmd_checkfieldmove(struct ScriptContext *ctx)
 {
     enum FieldMove fieldMove = ScriptReadByte(ctx);
-    bool32 doUnlockedCheck = ScriptReadByte(ctx);
-    u16 move;
+    u16 move = FieldMove_GetMoveId(fieldMove);
+    u16 keyItem = GetKeyItemForFieldMove(move);
+    u32 i;
 
-    Script_RequestEffects(SCREFF_V1);
-
-    gSpecialVar_Result = PARTY_SIZE;
-    if (doUnlockedCheck && !IsFieldMoveUnlocked(fieldMove))
-        return FALSE;
-
-    move = FieldMove_GetMoveId(fieldMove);
-    for (u32 i = 0; i < PARTY_SIZE; i++)
+    // 1. Check for a party Pokémon that can learn the move.
+    for (i = 0; i < gPlayerPartyCount; i++)
     {
-        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
-        if (!species)
-            break;
-        if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && MonKnowsMove(&gPlayerParty[i], move) == TRUE)
+        if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
         {
-            gSpecialVar_Result = i;
-            gSpecialVar_0x8004 = species;
-            break;
+            u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES);
+            if (CanLearnTeachableMove(species, move))
+            {
+                // Pokémon found. Check for the badge flag.
+                if (IsFieldMoveUnlocked(fieldMove))
+                {
+                    gSpecialVar_Result = i; // Return party slot
+                    SetFieldMoveSource(FIELD_MOVE_SOURCE_POKEMON);
+                    return FALSE; // Continue script execution
+                }
+                // Found a Pokémon but don't have the badge, so fail completely.
+                gSpecialVar_Result = PARTY_SIZE;
+                return FALSE;
+            }
         }
     }
+
+    // 2. If no Pokémon is found, check for the key item.
+    if (keyItem != ITEM_NONE && CheckBagHasItem(keyItem, 1))
+    {
+        // Key item found. Check for the badge flag.
+        if (IsFieldMoveUnlocked(fieldMove))
+        {
+            gSpecialVar_Result = PARTY_SIZE + 1; // Special value indicating item use
+            SetFieldMoveSource(FIELD_MOVE_SOURCE_ITEM);
+            return FALSE;
+        }
+    }
+
+    // 3. If neither is found, or badge check fails, fail.
+    gSpecialVar_Result = PARTY_SIZE;
 
     return FALSE;
 }
@@ -2537,10 +2621,24 @@ bool8 ScrCmd_dowildbattle(struct ScriptContext *ctx)
 bool8 ScrCmd_pokemart(struct ScriptContext *ctx)
 {
     const void *ptr = (void *)ScriptReadWord(ctx);
-
+    u16 shopType = ScriptReadHalfword(ctx);
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
 
-    CreatePokemartMenu(ptr);
+    switch (shopType)
+    {
+    case NEW_SHOP_PRICE_TYPE_VARIABLE:
+        NewShop_CreateVariablePokemartMenu(ptr);
+        break;
+    case NEW_SHOP_PRICE_TYPE_COINS:
+        NewShop_CreateCoinPokemartMenu(ptr);
+        break;
+    case NEW_SHOP_PRICE_TYPE_POINTS:
+        NewShop_CreatePointsPokemartMenu(ptr);
+        break;
+    default:
+        NewShop_CreatePokemartMenu(ptr);
+        break;
+    }
     ScriptContext_Stop();
     return TRUE;
 }
@@ -2551,7 +2649,7 @@ bool8 ScrCmd_pokemartdecoration(struct ScriptContext *ctx)
 
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
 
-    CreateDecorationShop1Menu(ptr);
+    NewShop_CreateDecorationShop1Menu(ptr);
     ScriptContext_Stop();
     return TRUE;
 }
@@ -2563,7 +2661,7 @@ bool8 ScrCmd_pokemartdecoration2(struct ScriptContext *ctx)
 
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
 
-    CreateDecorationShop2Menu(ptr);
+    NewShop_CreateDecorationShop2Menu(ptr);
     ScriptContext_Stop();
     return TRUE;
 }
@@ -2720,6 +2818,38 @@ bool8 ScrCmd_waitmoncry(struct ScriptContext *ctx)
 
     SetupNativeScript(ctx, IsCryFinished);
     return TRUE;
+}
+
+bool8 ScrCmd_copymetatileex(struct ScriptContext *ctx)
+{
+    u16 mapGroup   = VarGet(ScriptReadHalfword(ctx));
+    u16 mapNum     = VarGet(ScriptReadHalfword(ctx));
+    u16 srcX       = VarGet(ScriptReadHalfword(ctx));
+    u16 srcY       = VarGet(ScriptReadHalfword(ctx));
+    u16 dstX       = VarGet(ScriptReadHalfword(ctx));
+    u16 dstY       = VarGet(ScriptReadHalfword(ctx));
+    u16 metatileId = VarGet(ScriptReadHalfword(ctx));
+    bool16 impass  = VarGet(ScriptReadHalfword(ctx));
+
+    const struct MapLayout *layout = Overworld_GetMapHeaderByGroupAndId(mapGroup, mapNum)->mapLayout;
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+    srcX += MAP_OFFSET;
+    srcY += MAP_OFFSET;
+    dstX += MAP_OFFSET;
+    dstY += MAP_OFFSET;
+
+    // If metatileId == 0xFFFF, fetch from source map
+    if (metatileId == 0xFFFF)
+        metatileId = layout->map[(srcX - MAP_OFFSET) + layout->width * (srcY - MAP_OFFSET)];
+
+    if (!impass)
+        MapGridSetMetatileIdAt(dstX, dstY, metatileId);
+    else
+        MapGridSetMetatileIdAt(dstX, dstY, metatileId | MAPGRID_IMPASSABLE);
+
+    return FALSE;
 }
 
 bool8 ScrCmd_setmetatile(struct ScriptContext *ctx)
@@ -3046,6 +3176,66 @@ bool8 ScrCmd_warpwhitefade(struct ScriptContext *ctx)
     return TRUE;
 }
 
+bool8 ScrCmd_toggleoutfit(struct ScriptContext *ctx)
+{
+    u16 outfitId = VarGet(ScriptReadHalfword(ctx));
+    u8 type = ScriptReadByte(ctx);
+
+    switch(type)
+    {
+    default:
+    case OUTFIT_TOGGLE_UNLOCK:
+        UnlockOutfit(outfitId);
+        break;
+    case OUTFIT_TOGGLE_LOCK:
+        LockOutfit(outfitId);
+        break;
+    }
+    return TRUE;
+}
+
+bool8 ScrCmd_getoutfitstatus(struct ScriptContext *ctx)
+{
+    u16 outfitId = VarGet(ScriptReadHalfword(ctx));
+    u8 data = ScriptReadByte(ctx);
+
+    switch(data)
+    {
+        default:
+        case OUTFIT_CHECK_FLAG:
+            gSpecialVar_Result = GetOutfitStatus(outfitId);
+            break;
+        case OUTFIT_CHECK_USED:
+            gSpecialVar_Result = IsPlayerWearingOutfit(outfitId);
+            break;
+    }
+    return TRUE;
+}
+
+bool8 ScrCmd_bufferoutfitstr(struct ScriptContext *ctx)
+{
+    u8 strVarIdx = ScriptReadByte(ctx);
+    u16 outfit = VarGet(ScriptReadHalfword(ctx));
+    u8 type = ScriptReadByte(ctx);
+
+    BufferOutfitStrings(sScriptStringVars[strVarIdx], outfit, type);
+    return TRUE;
+}
+
+bool8 ScrCmd_pokemartoutfit(struct ScriptContext *ctx)
+{
+    const void *ptr = (void *)ScriptReadWord(ctx);
+
+    #ifdef MUDSKIP_SHOP_UI
+    NewShop_CreateOutfitShopMenu(ptr);
+    #else
+    CreateOutfitShopMenu(ptr);
+    #endif // MUDSKIP_SHOP_UI
+
+    ScriptContext_Stop();
+    return TRUE;
+}
+
 void ScriptSetDoubleBattleFlag(struct ScriptContext *ctx)
 {
     Script_RequestEffects(SCREFF_V1);
@@ -3137,6 +3327,68 @@ bool8 Scrcmd_checkspecies_choose(struct ScriptContext *ctx)
 
     gSpecialVar_Result = (GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES) == givenSpecies);
 
+    return FALSE;
+}
+
+bool8 ScrCmd_TransformPlayerToChosenPokemon(struct ScriptContext *ctx)
+{
+    u8 slot = VarGet(VAR_0x8004);
+    if (slot >= PARTY_SIZE)
+        return FALSE;
+
+    struct Pokemon *mon = &gPlayerParty[slot];
+    u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+    bool8 isShiny = GetMonData(mon, MON_DATA_IS_SHINY, NULL);
+
+    struct ObjectEvent *playerObj = &gObjectEvents[gPlayerAvatar.objectEventId];
+    struct Sprite *sprite = &gSprites[playerObj->spriteId];
+
+    gSaveBlock1Ptr->isPlayerTransformed = TRUE;
+    gSaveBlock1Ptr->transformedSpecies = species;
+    gSaveBlock1Ptr->transformedIsShiny = isShiny;
+    FlagSet(FLAG_DISABLE_FOLLOWERS);
+
+    u16 gfxId = species + OBJ_EVENT_MON;
+    ObjectEventSetGraphicsId(playerObj, gfxId);
+
+    struct SpritePalette spritePalette;
+    spritePalette.data = isShiny ? gSpeciesInfo[species].overworldShinyPalette
+                                 : gSpeciesInfo[species].overworldPalette;
+    spritePalette.tag = gfxId;
+    sprite->oam.paletteNum = LoadSpritePalette(&spritePalette);
+
+    // --- Smoothness fix ---
+    // Reapply movement type logic to make animation smooth and natural
+    playerObj->movementType = MOVEMENT_TYPE_FOLLOW_PLAYER; // or MOVEMENT_TYPE_FOLLOW_PLAYER if you want bobbing
+    playerObj->singleMovementActive = FALSE;
+    playerObj->facingDirectionLocked = FALSE;
+    sprite->data[3] = 0;
+    sprite->data[5] = 0;
+    sprite->y2 = 0;
+
+    // Sync facing & idle animation
+    PlayerFaceDirection(GetPlayerFacingDirection());
+    StartSpriteAnim(sprite, GetFaceDirectionAnimNum(GetPlayerFacingDirection()));
+
+    ResetInitialPlayerAvatarState();
+    RemoveFollowingPokemon();
+
+    return FALSE;
+}
+
+
+bool8 ScrCmd_RevertPlayerToHuman(struct ScriptContext *ctx)
+{
+    struct ObjectEvent *playerObj = &gObjectEvents[gPlayerAvatar.objectEventId];
+
+    gSaveBlock1Ptr->isPlayerTransformed = FALSE;
+    FlagClear(FLAG_DISABLE_FOLLOWERS);
+
+    // Restore default player graphics
+    ObjectEventSetGraphicsId(playerObj, OBJ_EVENT_GFX_BRENDAN_NORMAL);
+    ResetInitialPlayerAvatarState();
+    PlayerFaceDirection(GetPlayerFacingDirection());
+    
     return FALSE;
 }
 
@@ -3245,10 +3497,60 @@ bool8 ScrCmd_fwdweekday(struct ScriptContext *ctx)
     u32 daysToAdd = ((weekdayTarget - rtc->dayOfWeek) + WEEKDAY_COUNT) % WEEKDAY_COUNT;
 
     Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
-
     FakeRtc_AdvanceTimeBy(daysToAdd, 0, 0, 0);
+    VarSet(VAR_CURRENT_DAY_OF_WEEK, weekdayTarget);
     return FALSE;
 }
+
+bool8 ScrCmd_fwdmonth(struct ScriptContext *ctx)
+{
+    struct SiiRtcInfo *rtc = FakeRtc_GetCurrentTime();
+
+    u32 targetMonth = ScriptReadWord(ctx); // Target month (1–12)
+    u32 currentMonth = rtc->month;
+    u32 currentYear = 2000 + rtc->year; // Assume base year is 2000
+
+    // Handle wrap-around from December to next year
+    u32 monthsToAdd = (targetMonth - currentMonth + 12) % 12;
+
+    u32 totalDaysToAdd = 0;
+    u32 month = currentMonth;
+    u32 year = currentYear;
+
+    for (u32 i = 0; i < monthsToAdd; i++)
+    {
+        switch (month)
+        {
+        case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+            totalDaysToAdd += 31;
+            break;
+        case 4: case 6: case 9: case 11:
+            totalDaysToAdd += 30;
+            break;
+        case 2:
+            totalDaysToAdd += ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) ? 29 : 28;
+            break;
+        }
+
+        // Move to next month/year
+        month++;
+        if (month > 12)
+        {
+            month = 1;
+            year++;
+        }
+    }
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+    FakeRtc_AdvanceTimeBy(totalDaysToAdd, 0, 0, 0);
+
+    // 🔁 Update season after advancing time
+    UpdateSeasonOncePerMinute(); // ensures gCurrentSeason is in sync with new month
+
+    return FALSE;
+}
+
+
 
 void Script_EndTrainerCanSeeIf(struct ScriptContext *ctx)
 {
@@ -3257,6 +3559,40 @@ void Script_EndTrainerCanSeeIf(struct ScriptContext *ctx)
         StopScript(ctx);
 }
 
+bool8 ScrCmd_setspeaker(struct ScriptContext *ctx)
+{
+    const u8 *name = (const u8 *)ScriptReadWord(ctx);
+    SetSpeakerName(name);
+    return FALSE;
+}
+
+static void FieldCallback_SetupWarpScript(void)
+{
+    if(afterWarpScript == NULL)
+    {
+        gFieldCallback = NULL;
+        return;
+    }
+
+    Overworld_PlaySpecialMapMusic();
+    LockPlayerFieldControls();
+    CpuFastFill(0, gPlttBufferFaded, PLTT_SIZE);
+    ScriptContext_SetupScript(afterWarpScript);
+}
+
+bool8 ScrCmd_warp_continue_script(struct ScriptContext *ctx)
+{
+    u8 mapNum = ScriptReadByte(ctx);
+    u8 mapGroup = ScriptReadByte(ctx);
+    u16 x = VarGet(ScriptReadHalfword(ctx));
+    u16 y = VarGet(ScriptReadHalfword(ctx));
+    afterWarpScript = (const u8 *) ScriptReadWord(ctx);
+    gFieldCallback = FieldCallback_SetupWarpScript;
+    SetWarpDestination(mapGroup, mapNum, WARP_ID_NONE, x, y);
+    WarpIntoMap();
+    SetMainCallback2(CB2_LoadMap);
+    return TRUE;
+}
 bool8 ScrCmd_setmoverelearnerstate(struct ScriptContext *ctx)
 {
     enum MoveRelearnerStates state = VarGet(ScriptReadHalfword(ctx));
@@ -3288,6 +3624,15 @@ bool8 ScrCmd_istmrelearneractive(struct ScriptContext *ctx)
     if ((P_TM_MOVES_RELEARNER || P_ENABLE_MOVE_RELEARNERS)
      && (P_ENABLE_ALL_TM_MOVES || IsBagPocketNonEmpty(POCKET_TM_HM)))
         ScriptCall(ctx, ptr);
+
+    return FALSE;
+}
+
+bool8 ScrCmd_setstartingstatus(struct ScriptContext *ctx)
+{
+    enum StartingStatus status = ScriptReadByte(ctx);
+
+    SetStartingStatus(status);
 
     return FALSE;
 }

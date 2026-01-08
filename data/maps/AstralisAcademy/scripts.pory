@@ -1,0 +1,267 @@
+mapscripts AstralisAcademy_MapScripts {
+MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
+	VAR_ACADEMY_START,9:trial
+]
+}
+script fwdmonth {
+	fwdmonth(1)
+}
+script fwdmonth1 {
+	fwdmonth(6)
+}
+script fwdmonth3 {
+	fwdmonth(11)
+}
+
+script AcademyNpc39 {
+	playmoncry(SPECIES_CATERPIE,CRY_MODE_ENCOUNTER)
+    waitmoncry
+}
+
+script AcademyNpc40 {
+	playmoncry(SPECIES_STARAVIA,CRY_MODE_ENCOUNTER)
+    waitmoncry
+}
+
+script AcademyNpc41 {
+    lock
+    faceplayer
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}One day he'll see... my Bug Pokémon aren't weak. I'll battle him every day until I prove it!"))
+    closemessage
+    applymovement(19,moves(face_right walk_in_place_right))
+    waitmovement(0)
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Minty, let's show him what we've got!"))
+    closemessage
+	playmoncry(SPECIES_CATERPIE,CRY_MODE_ENCOUNTER)
+    waitmoncry
+    release
+}
+
+script AcademyNpc42 {
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}This kid really believes Bug Pokémon can hold their own in a tournament.\pI'll knock her down now so she can stand taller later.\pThat's what a mentor does."))
+    closemessage
+    applymovement(20,moves(face_left walk_in_place_left))
+    waitmovement(0)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Staravia, let's wrap this up!"))
+    closemessage
+	playmoncry(SPECIES_STARAVIA,CRY_MODE_ENCOUNTER)
+    waitmoncry
+    release
+}
+
+script trial {
+	setweather(WEATHER_SUNNY)
+	doweather
+	turnobject(0xFF,DIR_NORTH)
+	addobject(3)
+	addobject(6)
+	addobject(5)
+	removeobject(2)
+	setobjectmovementtype(3,MOVEMENT_TYPE_FACE_UP)
+	setobjectmovementtype(5,MOVEMENT_TYPE_FACE_UP)
+	setobjectmovementtype(6,MOVEMENT_TYPE_FACE_UP)
+	setobjectxyperm(2,25,38)
+	setobjectxyperm(3,24,39)
+	createvobject(OBJ_EVENT_GFX_ALISTAIR,30,24,32,4,DIR_SOUTH)
+	createvobject(OBJ_EVENT_GFX_ACE_F,21,26,40,3,DIR_NORTH)
+	createvobject(OBJ_EVENT_GFX_ACTOR_M,22,25,41,3,DIR_NORTH)
+	setobjectxyperm(5,23,38)
+	createvobject(OBJ_EVENT_GFX_ACTOR_F,23,20,40,3,DIR_NORTH)
+	setobjectxyperm(6,22,40)
+	createvobject(OBJ_EVENT_GFX_SELENE,25,27,41,3,DIR_NORTH)
+	createvobject(OBJ_EVENT_GFX_BOY_1,26,21,42,3,DIR_NORTH)
+	createvobject(OBJ_EVENT_GFX_MAN_2,27,24,42,3,DIR_NORTH)
+	createvobject(OBJ_EVENT_GFX_LASS,28,26,43,3,DIR_NORTH)
+	createvobject(OBJ_EVENT_GFX_NERD,29,21,43,3,DIR_NORTH)
+}
+
+script TrialAnnouncement {  
+	lock
+    playbgm(MUS_HG_LYRA,FALSE)
+	playse(SE_PIN)
+	applymovement(7,moves(emote_exclamation_mark face_right walk_right*5))
+	waitmovement(0)
+	
+	speakername("Leaf")  
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Hi Xylar!\pThe Headmaster is making an announcement right now.\pLet's go together."), MSGBOX_AUTOCLOSE)        
+	speakername(Xylar1)  
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Leave me alone."), MSGBOX_AUTOCLOSE) // Silent internal monologue  
+	speakername("Leaf")  
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Come on, don't be shy."), MSGBOX_AUTOCLOSE)        
+	waitmessage
+	playse(SE_PIN)
+	applymovement(0xFF,moves(emote_upset))
+	waitmovement(0)
+	delay(30)
+	warp_continue_script(MAP_ASTRALIS_ACADEMY,24,43,TrialAnnouncement1,TRUE)
+    }  
+text damien {
+	format("Damien")	
+}
+
+script TrialAnnouncement1 {
+	lock
+	fadescreen(FADE_FROM_BLACK)
+	applymovement(0xFD,moves(walk_left face_up))
+	waitmovement(0)
+	special(SpawnCameraObject)
+	applymovement(0x7F,moves(walk_up*11))
+	waitmovement(0)
+	fadenewbgm(MUS_HG_BUG_CONTEST_PREP)
+	setobjectxyperm(20,21,24)
+    speakername("Alistair") 
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}This academy values strength through experience...\pBefore the semester begins, we must assess your current skills.\pToday, each first-year student will engage in a one-on-one Pokémon battle...\pConsider this your first trial.\pNow, make your way to the Dojo and prepare to face your opponent."), MSGBOX_AUTOCLOSE)  
+	waitmessage
+	playse(SE_APPLAUSE)
+	applymovement(0x7F,moves(walk_down*7))
+	waitmovement(0)
+	applymovement(2,moves(emote_happy))
+	applymovement(3,moves(emote_happy))
+	applymovement(5,moves(emote_happy))
+	applymovement(6,moves(emote_happy))
+	waitmovement(0)
+    applymovement(0x7F,moves(walk_down*5))
+	waitmovement(0)
+	speakername(Xylar1)  
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}..."), MSGBOX_AUTOCLOSE) // Silent internal monologue  
+    waitmessage
+	closemessage
+	setfollowernpc(21,FNPC_LEAVE_ROUTE,serenafollow)
+	warp(MAP_ASTRALIS_ACADEMY_FLOOR1,13,26)
+}
+
+script FracturedMask {
+	    getplayerxy(VAR_0x8000,VAR_0x8001)
+		if((var(VAR_0x8000)== 31) && (var(VAR_0x8001)>8 && var(VAR_0x8001)<11)){
+		lockall
+		fadenewbgm(MUS_DUMMY)
+		special(SpawnCameraObject)
+		applymovement(0x7F,moves(walk_up))
+		waitmovement(0)
+		applymovement(9,moves(face_left emote_exclamation_mark))
+		waitmovement(0)
+		playse(SE_PIN)
+		waitse
+		speakername("Alistair")
+        msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar, You're late."), MSGBOX_AUTOCLOSE)
+        applymovement(0xFF,moves(face_up emote_upset))
+		waitmovement(0)
+        speakername("Alistair")
+        msgbox(format("(Sigh)\p{COLOR BLUE}{SHADOW LIGHT_GRAY}Listen Xylar, punctuality is key to success.\pYou should know that."), MSGBOX_AUTOCLOSE)		
+		speakername("Xylar")
+        msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}...."), MSGBOX_AUTOCLOSE)
+		speakername("Alistair")
+        msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Find your seat."), MSGBOX_AUTOCLOSE)
+		waitmessage
+		applymovement(9,moves(face_down))
+		if(var(VAR_0x8001)==9){
+		applymovement(0xFF,moves(walk_up*3 walk_right*6 walk_down*5 walk_right face_up))
+		applymovement(0x7F,moves(walk_up*3 walk_right*6 walk_down*5 walk_right face_up))}
+		else{
+			applymovement(0xFF,moves(walk_up*4 walk_right*6 walk_down*5 walk_right face_up))
+		    applymovement(0x7F,moves(walk_up*3 walk_right*6 walk_down*5 walk_right face_up))
+		}
+		waitmovement(0)
+		speakername("Alistair")
+        msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}So as I was saying......."), MSGBOX_AUTOCLOSE)
+		waitmessage
+		applymovement(0x7F,moves(walk_down*4))
+		applymovement(10,moves(face_down))
+        speakername("Liam")
+        msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Look at this guy. Acts like he's too good to talk to us..."), MSGBOX_AUTOCLOSE)
+        speakername("Nerd")
+		msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Yeah, Bet his family's even more messed up."), MSGBOX_AUTOCLOSE)
+        playse(SE_PIN)
+		applymovement (10, moves(emote_happy))
+		applymovement (8, moves(emote_happy))
+		applymovement (0xFF, moves(emote_upset))
+        waitmovement (0)
+		applymovement(10,moves(face_right))
+        speakername("Liam")
+        msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}What's wrong, emo boy?\pDid Daddy never teach you anything about good manners?"), MSGBOX_AUTOCLOSE)
+        applymovement (0xFF, moves(face_left emote_upset))
+        waitmovement (0)
+        speakername("Xylar")
+        msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}...What the fuck did you say?"), MSGBOX_AUTOCLOSE)
+        speakername("Liam")
+        msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You deaf or something?\pI asked whether your dad ever taught you any manners."), MSGBOX_AUTOCLOSE)
+		waitmessage
+		setobjectxyperm(6,33,8)
+		setobjectxyperm(9,32,8)
+		playse(SE_PIN)
+		applymovement (0xFF, moves(emote_upset))
+		speakername("Xylar")
+        msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Don't you dare say anything about my dad with that filthy mouth of yours!"), MSGBOX_AUTOCLOSE)
+        applymovement (0xFF, moves(walk_fast_left*2))
+        waitmovement (0)
+		applymovement (0xFF, moves(slide_left slide_right face_left))
+        playse (SE_M_VICEGRIP)
+		applymovement(8,moves(emote_exclamation_mark))
+		applymovement (10, moves(emote_exclamation_mark slide_left*4))
+        waitmovement (0)
+        speakername("Xylar")
+        msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You know NOTHING!\pNOTHING AT ALL.\pFUCK YOU."), MSGBOX_AUTOCLOSE)
+        applymovement (0xFF, moves(walk_fast_left*4))
+		waitmovement(0)
+		applymovement (0xFF, moves(slide_left slide_right face_left))
+		playse (SE_M_VICEGRIP)
+		applymovement(0xFF,moves(emote_upset))
+        waitmovement (0)
+        speakername("Prof.Elias")
+        msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar, STOP!"), MSGBOX_AUTOCLOSE)
+        waitmessage
+		applymovement(0x7F,moves(walk_up *3))
+		waitmovement(0)
+		applymovement (6, moves(walk_down*2))
+        waitmovement(0)
+        speakername("Prof.Elias")
+        msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Enough."), MSGBOX_AUTOCLOSE)
+		applymovement(9,moves(walk_down*2 delay_16 face_right))
+		waitmovement(0)
+		speakername("Alistair")
+        msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}We should call the nurse. \p This boy is badly injured."), MSGBOX_AUTOCLOSE)
+        playse(SE_PIN)
+		applymovement(9,moves(face_down emote_upset))
+		waitmovement(0)
+		applymovement (0xFF, moves(emote_exclamation_mark delay_16 face_up delay_16 delay_16 face_left delay_16 delay_16 face_up))
+        waitmovement(0)
+        speakername("Xylar")
+        msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I.......\p I didn't......."), MSGBOX_AUTOCLOSE)
+        fadescreen(FADE_TO_BLACK)
+		playse(SE_M_STRENGTH)
+		waitse
+		speakername("Alistair")
+        msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar!!\pHurry call the nurse."), MSGBOX_AUTOCLOSE)
+		msgbox(format("Xylar collapsed, throwing the room into chaos.\pGasping for air, he hyperventilated, repeating the same words over and over:\pI'll kill you all.\pA few hours later..."), MSGBOX_AUTOCLOSE)
+        initclock(14,43)
+		resumefakertc
+		warpsilent(MAP_HEADOFFICE,7,8)
+		setvar(VAR_ACADEMY_START,12)
+		}
+		 elif((var(VAR_0x8000)==18) && (var(VAR_0x8001)> 8) && (var(VAR_0x8001)<11)){
+			lock
+			speakername("Xylar")
+            msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}My class is not here."), MSGBOX_AUTOCLOSE)
+		    applymovement(0xFF,moves(face_right))
+			warp(MAP_ASTRALIS_ACADEMY_HALLWAY,0,17)
+			release
+		}
+		elif((var(VAR_0x8000)==18) && (var(VAR_0x8001)> 32) && (var(VAR_0x8001)<35)){
+			lock
+			speakername("Xylar")
+            msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}My class is not here."), MSGBOX_AUTOCLOSE)
+		    applymovement(0xFF,moves(face_right))
+			warp(MAP_ASTRALIS_ACADEMY_HALLWAY,0,32)
+			release
+		}
+		else{
+			lock
+			speakername("Xylar")
+            msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}My class is not here."), MSGBOX_AUTOCLOSE)
+		    applymovement(0xFF,moves(face_left))
+			warp(MAP_ASTRALIS_ACADEMY_HALLWAY,14,45)
+			release
+		}
+}

@@ -960,7 +960,6 @@
 #define ITEM_LINKING_CORD 796
 #define ITEM_PEAT_BLOCK 797
 #define ITEM_BERSERK_GENE 798
-
 #define ITEM_FAIRY_FEATHER 799
 #define ITEM_SYRUPY_APPLE 800
 #define ITEM_UNREMARKABLE_TEACUP 801
@@ -1020,8 +1019,18 @@
 #define ITEM_ZYGARDITE 852
 #define ITEM_DRAMPANITE 853
 #define ITEM_FALINKSITE 854
+#define ITEM_CUT_TOOL 855 // field items start
+#define ITEM_FLY_TOOL 856
+#define ITEM_SURF_TOOL 857
+#define ITEM_STRENGTH_TOOL 858
+#define ITEM_FLASH_TOOL 859
+#define ITEM_ROCK_SMASH_TOOL 860
+#define ITEM_WATERFALL_TOOL 861
+#define ITEM_DIVE_TOOL 862
 
-#define ITEMS_COUNT 855
+#define ITEM_OUTFIT_BOX 863
+
+#define ITEMS_COUNT 864
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations
@@ -1081,6 +1090,7 @@
 #define ITEM_USE_PBLOCK_CASE      3
 #define ITEM_USE_BAG_MENU         4 // No exit callback, stays in bag menu
 #define ITEM_USE_PARTY_MENU_MOVES 5
+#define ITEM_USE_BATTLER          6 // Auto-select in Singles but lets you choose from party menu in Doubles
 
 // Item battle script IDs (need to be non-zero)
 #define EFFECT_ITEM_RESTORE_HP              1

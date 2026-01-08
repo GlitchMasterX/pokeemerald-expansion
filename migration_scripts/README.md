@@ -91,7 +91,7 @@ Refactors all battle animation move scripts, removing the list from `data/battle
         .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 35,
-        .target = MOVE_TARGET_SELECTED,
+        .target = TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
@@ -155,7 +155,7 @@ Converts trainer data (for `convert_trainer_parties.py`) and partner data (for `
 
 #### [src/data/trainers.party](..src/data/trainers.party)
 ```diff
-+=== TRAINER_SAWYER_1 ===
++=== EQUINO_GRUNT_1 ===
 +Name: SAWYER
 +Class: Hiker
 +Pic: Hiker

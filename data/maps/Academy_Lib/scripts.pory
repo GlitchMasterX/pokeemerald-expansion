@@ -1,0 +1,166 @@
+mapscripts Academy_Lib_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE[
+        VAR_KAEL_CHARCTER,1: KaelFriendsTableScene 
+    ]
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
+	VAR_KAEL_CHARCTER,1: KaelFriendsTableScene1
+]
+}
+script KaelFriendsTableScene1 {
+    clearflag(FLAG_IRIS_ACADEMY)
+    setobjectxyperm(1,16,10)
+	setobjectxyperm(6,16,12)
+    setobjectxyperm(7,13,18)	
+    turnobject(0xFF,DIR_EAST)
+	setobjectmovementtype(6,MOVEMENT_TYPE_FACE_LEFT)
+    addobject(1)
+    addobject(6)
+    addobject(7)
+}
+script KaelFriendsTableScene  {
+    lock
+    fwdweekday(1)
+    playse(SE_PIN)
+    applymovement(1, moves(emote_exclamation_mark face_down delay_16 delay_16 face_left delay_16 face_down))
+    speakername("Friend 1")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Dude, I heard they're doing battle assessments today.\pI'm so nervous."))
+    closemessage
+    playse(SE_PIN)
+    applymovement(6, moves(emote_exclamation_mark face_up delay_16 delay_16 face_left))
+    speakername("Friend 2")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Same. My Pokémon barely listens to me yet."))
+    closemessage
+    playse(SE_BIKE_HOP)
+    applymovement(0xFF, moves(jump_in_place_right))
+    speakername("Kael")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}You'll be fine! Just believe in your partner.\pThat's what matters, right?"))
+    closemessage
+    speakername("Friend 1")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Easy for you to say.\pYou passed the entrance exam with decent scores."))
+    closemessage
+    playse(SE_PIN)
+    applymovement(0xFF, moves(emote_happy))
+    speakername("Kael")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Barely! I got lucky."))
+    closemessage
+    applymovement(7,moves(walk_up*5))
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovement(0xFF, moves(emote_exclamation_mark face_down))
+    applymovement(1, moves(emote_exclamation_mark face_down))
+    applymovement(6, moves(emote_exclamation_mark face_down))
+    speakername("???")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_IRIS}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Mind if I sit here?\pEverywhere else is packed."))
+    closemessage 
+    speakername("Kael")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Oh! Uh, yeah! I mean, no!\pI mean...yes, please sit!"))
+    closemessage
+    playse(SE_PIN)
+    applymovement(1, moves(emote_happy face_down delay_16 delay_16 face_left))
+    applymovement(6, moves(emote_happy face_up delay_16 delay_16 face_left))
+    applymovement(7,moves(walk_up))
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovement(7, moves(emote_happy))
+    speakername("Iris")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_IRIS}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Thanks.\pI'm Iris.\pI think we're in the same Battle Theory class?"))
+    closemessage
+    speakername("Kael")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_BLUSH}{COLOR BLUE}{SHADOW LIGHT_GRAY}Y-yeah! I'm Kael.\pThese are...{PAUSE} uh.{PAUSE_UNTIL_PRESS}.. my friends!"))
+    closemessage
+    applymovement(1, moves(emote_upset))
+    speakername("Friend 1")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Smooth."))
+    closemessage
+    playse(SE_PIN)
+    applymovement(7, moves(emote_happy face_right))
+    speakername("Iris")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_IRIS}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Nice to meet you all.\pExcited for the battle assessments?"))
+    closemessage
+    applymovement(0xFF, moves(jump_in_place_down))
+    speakername("Kael")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Totally! I mean, a little nervous, but that's normal, right?"))
+    closemessage
+    applymovement(7, moves(face_up))
+    speakername("Iris")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_IRIS}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Definitely.\pI'm more worried about my partner. She's an Oddish.\pNot exactly built for intense battles."))
+    closemessage
+    playse(SE_PIN)
+    applymovement(0xFF, moves(emote_happy))
+    speakername("Kael")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}That's okay! It's about the bond, not just strength."))
+    closemessage
+    playse(SE_PIN) 
+    applymovement(7, moves(emote_heart))
+    speakername("Iris")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_IRIS}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}I like that perspective."))
+    closemessage
+    applymovement(0xFF, moves(shake_horizontal*2))
+    waitmovement(0)
+    applymovement(1, moves(face_down face_left))
+    applymovement(6, moves(face_up face_left))
+    waitmovement(0)
+    speakername("Friend 1")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Speaking of battles...{PAUSE_UNTIL_PRESS}did you guys hear about the mysterious student?\pApparently didn't take the entrance exam but got in anyway."))
+    closemessage
+    playse(SE_PIN)
+    applymovement(0xFF, moves(emote_exclamation_mark face_right))
+    applymovement(7, moves(emote_exclamation_mark face_right))
+    speakername("Kael")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Oh! That's my roommate!"))
+    closemessage
+    playse(SE_PIN)
+    applymovement(7, moves(emote_question_mark face_up))
+    speakername("Iris")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_IRIS}{EMOTE_QUESTION}{COLOR RED}{SHADOW LIGHT_GRAY}Really? What's he like?"))
+    closemessage
+    playse(SE_PIN)
+    applymovement(0xFF, moves(emote_question_mark face_down))
+    speakername("Kael")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_QUESTION}{COLOR BLUE}{SHADOW LIGHT_GRAY}Uh... quiet. Very quiet.\pAnd kinda... intense?"))
+    closemessage
+    playse(SE_PIN)
+    applymovement(6, moves(emote_question_mark))
+    speakername("Friend 2")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Intense how?"))
+    closemessage
+    applymovement(0xFF, moves(face_right))
+    speakername("Kael")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't know.\pHe just... doesn't talk much. Keeps to himself."))
+    closemessage
+    speakername("Iris")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_IRIS}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Maybe he's shy?"))
+    closemessage
+    playse(SE_PIN)
+    applymovement(1, moves(emote_upset))
+    speakername("Friend 1")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Or maybe he's just a jerk who thinks he's too good for everyone."))
+    closemessage
+    playse(SE_PIN)
+    applymovement(0xFF, moves(emote_exclamation_mark))
+    speakername("Kael")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}He's not a jerk! He's just... adjusting. I think."))
+    closemessage
+    playse(SE_PIN)
+    applymovement(7, moves(emote_happy))
+    speakername("Iris")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_IRIS}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Give him time.\pFirst days are hard for everyone."))
+    closemessage
+    playse(SE_DING_DONG)
+    waitse
+    playse(SE_PIN)
+    applymovement(0xFF, moves(emote_exclamation_mark))
+    applymovement(1, moves(emote_exclamation_mark))
+    applymovement(6, moves(emote_exclamation_mark))
+    applymovement(7, moves(emote_exclamation_mark))
+    speakername("Announcement")
+    msgbox(format("All first years report to the Dojo for battle assessments.\pRepeat.\pAll first years to the Dojo."))
+    closemessage
+    playse(SE_PIN)
+    applymovement(0xFF, moves(emote_happy))
+    speakername("Kael")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}That's us! Let's go!"))
+    closemessage
+    setvar(VAR_KAEL_CHARCTER,2)
+    release
+}

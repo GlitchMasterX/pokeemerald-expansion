@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE129",
   "name": "Route129",
   "layout": "LAYOUT_ROUTE129",
-  "music": "MUS_ROUTE119",
+  "music": "MUS_PETALBURG",
   "region_map_section": "MAPSEC_ROUTE_129",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -31,6 +31,7 @@
   ],
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M",
       "x": 28,
       "y": 16,
@@ -44,6 +45,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F",
       "x": 10,
       "y": 14,
@@ -57,6 +59,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F",
       "x": 13,
       "y": 22,
@@ -70,6 +73,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M",
       "x": 35,
       "y": 9,
@@ -83,6 +87,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M",
       "x": 13,
       "y": 27,

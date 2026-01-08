@@ -1,0 +1,173 @@
+{
+  "id": "MAP_ASTRALIS_ACADEMY_FLOOR1",
+  "name": "AstralisAcademy_Floor1",
+  "layout": "LAYOUT_HOUSE1",
+  "music": "MUS_DP_FIGHT_AREA_DAY",
+  "region_map_section": "MAPSEC_ASTRALIS_ACADEMY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_LINK_RECEPTIONIST",
+      "x": 13,
+      "y": 18,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AcademyNpc14",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
+      "x": 6,
+      "y": 24,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AcademyNpc",
+      "flag": "0",
+      "day": "1",
+      "evening": "0",
+      "morning": "1",
+      "night": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ACE_F",
+      "x": 17,
+      "y": 10,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AcademyNpc17",
+      "flag": "0",
+      "day": "1",
+      "evening": "0",
+      "morning": "1",
+      "night": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_BREEDER",
+      "x": 19,
+      "y": 20,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AcademyNpc32",
+      "flag": "0",
+      "day": "0",
+      "evening": "1",
+      "morning": "0",
+      "night": "1"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 13,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_ASTRALIS_ACADEMY",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 0,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_ACADEMY_LIB",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 26,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_ASTRALIS_ACADEMY_POKEMON_CENTER",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 5,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_ASTRALIS_ACADEMY_FLOOR2",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 6,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_ASTRALIS_ACADEMY_FLOOR2",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 13,
+      "y": -10,
+      "elevation": 0,
+      "dest_map": "MAP_BATTLE_ROOM_LOBBY",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 13,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_ASTRALIS_ACADEMY_HALLWAY",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 20,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_ASTRALIS_ACADEMY_FLOOR2",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 21,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_ASTRALIS_ACADEMY_FLOOR2",
+      "dest_warp_id": "3"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_ACADEMY_START",
+      "var_value": "9",
+      "script": "leafletsgotodojo"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_ACADEMY_START",
+      "var_value": "11",
+      "script": "Ishouldgoseethehead"
+    }
+  ],
+  "bg_events": [],
+  "floor_number": 0
+}

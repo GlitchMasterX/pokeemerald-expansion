@@ -1,0 +1,469 @@
+mapscripts headoffice_MapScripts {
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
+	VAR_ACADEMY_START,4:HEADMET
+]
+
+MAP_SCRIPT_ON_RESUME:HEADMET1
+MAP_SCRIPT_ON_FRAME_TABLE[
+	VAR_ACADEMY_START,4:Head
+    VAR_ACADEMY_START,11:HeadOfficeAfterTrial1
+]
+ 
+}
+script HEADMET1 {
+if(var(VAR_ACADEMY_START)== 4){
+    applymovement(0xFF,traces2)
+    createvobject(OBJ_EVENT_GFX_PROF_ELIAS,2,8,12,3,DIR_NORTH)
+}
+
+}
+script HEADMET {
+    addobject(1)
+    setobjectxy(1,7,8)
+    applymovement(0xFF,traces2)
+    createvobject(OBJ_EVENT_GFX_PROF_ELIAS,2,8,12,3,DIR_NORTH)
+}
+script HEADMET2 {
+    applymovement(0xFF,traces2)
+    
+}
+
+script Head {
+    lock
+    playse(SE_PIN)
+    applymovement(1,exclam)
+    speakername(alistair)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar, I trust your journey here was uneventful.\pI understand this is all new for you, but it's time to start fresh."))
+    closemessage 
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}..."))
+    closemessage
+    speakername(alistair)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}We have a tradition of giving every first year a starter pokemon of their choice on the first day.\pBut since you arrived late there's only one left.\pHere you go."))
+    closemessage 
+    playmoncry(SPECIES_TORCHIC,CRY_MODE_ENCOUNTER)
+    showmonpic(SPECIES_TORCHIC,10,3)
+    waitmoncry
+    givemon(SPECIES_TORCHIC,5,ITEM_EXP_SHARE,ITEM_POKE_BALL,NATURE_ADAMANT,2,0,0,0,0,0,0,0,31,31,31,31,31,31)
+    bufferspeciesname(STR_VAR_1,SPECIES_TORCHIC)
+    playfanfare(MUS_DP_OBTAIN_ITEM)
+    msgbox(format("Xylar recieved {STR_VAR_1}."))
+    hidemonpic
+    msgbox(gText_NicknameThisPokemon,MSGBOX_YESNO)
+    if(var(VAR_RESULT)==FALSE){
+        goto(Head1)
+    }
+    else{
+        call(Common_EventScript_GetGiftMonPartySlot)
+        call(Common_EventScript_NameReceivedPartyMon)
+        goto(Head1)
+    }
+}
+
+script girlsdorm {
+    lock
+    applymovement(1,exclam)
+    applymovement(0xFF,traces2)
+    waitmovement(0)
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}This way leads to the girl's dorm.\pBoys are not allowed there."))
+    applymovement(0xFF,strrp)
+    waitmovement(0)
+    release
+}
+
+script Head1 {
+    lock
+    speakername(alistair)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}And here is your POKéDEX."))
+    closemessage
+    playfanfare(MUS_DP_OBTAIN_ITEM)
+    msgbox(format("{PLAYER} received the POKéDEX!"))
+    waitfanfare
+	setflag(FLAG_SYS_POKEDEX_GET)
+	special(SetUnlockedPokedexFlags)
+    setflag (FLAG_SYS_NATIONAL_DEX)
+	special (EnableNationalPokedex)
+    closemessage
+    speakername(alistair)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}The POKéDEX is a high-tech tool that automatically makes a record of any POKéMON you meet or catch.\pI assume you knew that already."))
+    closemessage
+    playse(SE_PIN)
+    applymovement(0xFF,exclam)
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}This is it? I thought I was supposed to grow stronger, not babysit a chicken.")) 
+    speakername(alistair)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Strength isn't always obvious at first glance.\pGive it time.\nTorchic may surprise you.")) 
+    initclock(10,30)
+    clearflag(FLAG_PAUSE_TIME)
+    setflag(FLAG_IRIS_ACADEMY)
+    setflag(FLAG_KAEL_ACADEMY)
+    setvar(VAR_ACADEMY_START,5)
+    warp(MAP_ASTRALIS_ACADEMY_FLOOR2,26,12) 
+}
+
+script Leafmet1 {
+    lockall
+    playbgm(MUS_HG_LYRA,FALSE)
+    applymovement(1,serenametmov1)
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovement(1,moves(emote_happy))
+    speakername("Leaf")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}There you are!\pI'm Leaf, your assigned mentor.\pLucky you, right?")) 
+    closemessage
+    waitmessage
+    playse(SE_PIN)
+    applymovement(1,serenametmov2)
+    applymovement(0xFF,serenametmov3)
+    waitmovement(0)
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't need a mentor.")) 
+    speakername("Leaf")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Well, that's too bad.\pRules are rules.\pYou're stuck with me, like it or not.")) 
+    waitmessage
+    closemessage
+    applymovement(0xFF,moves(face_up))
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}If you're expecting me to follow your lead then do yourself a favor.\pFind someone else.")) 
+    waitmessage
+    closemessage
+    applymovement(1,serenametmov4)
+    waitmovement(0)
+    applymovement(0xFF,moves(face_right))
+    playse(SE_PIN)
+    applymovement(1,moves(emote_exclamation_mark))
+    speakername("Leaf")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_SHOCK}{COLOR RED}{SHADOW LIGHT_GRAY}You've got quite the attitude.")) 
+    playse(SE_PIN)
+    applymovement(1,moves(emote_upset))
+    speakername("Leaf")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_ANGRY}{COLOR RED}{SHADOW LIGHT_GRAY}Look, I don't care if you think you don't need help.")) 
+    speakername("Leaf")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}I'm here to make sure you don't blow something up.")) 
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Do what you like.\pJust don't get in my way.")) 
+    speakername("Leaf")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Deal.\pYou might be all broody, but I bet you'll come around eventually.\pI'm pretty good at breaking through tough shells."))
+    closemessage
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Don't count on it.")) 
+    closemessage
+    speakername("Leaf")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Now that you have accepted my help, let me show you around."))
+    playse(SE_PIN) 
+    applymovement(0xFF,exclam)
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Huh?\pI never di.."),MSGBOX_AUTOCLOSE) 
+    speakername("Leaf")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Let's gooo!"))
+    closemessage
+    playse(SE_PIN) 
+    applymovement(0xFF,upset)
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Ugh!"),MSGBOX_AUTOCLOSE) 
+    playse(MUS_DP_LETS_GO_TOGETHER)
+    msgbox(format("Leaf decided to join you!"))
+    closemessage
+    waitse
+    setflag(FLAG_PAUSE_TIME)
+    setfollowernpc(1,FNPC_LEAVE_ROUTE,serenafollow)
+    setflag(FLAG_LEAF_FOLLOW)
+    fadedefaultbgm
+    msgbox(format("You are now free to explore the Academy.\pVisit different rooms to learn how things work here.\pSome rooms may reveal useful information."))
+    closemessage
+    setvar(VAR_ACADEMY_START,6)
+    releaseall
+}
+
+script serenafollow {
+    lock
+    facefollowernpc
+    playse(SE_PIN)
+    applymovement(0xFD,happy)
+    speakername("Leaf")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Let's gooo!"))
+   release
+}
+
+script LeaftourBattleTheory {
+        lock
+        special(SpawnCameraObject)
+        applymovement(0x7F, moves(walk_up*8))
+        waitmovement(0)
+        speakername("Leaf")
+        msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Battle Theory Class.\pTypes, matchups, timing.\pEven strong trainers lose if they skip the basics."))
+        closemessage
+        applymovement(0x7F, moves(walk_down*9))
+        waitmovement(0)
+        applymovement(0xFF,moves(walk_down))
+        applymovement(0xFD,moves(walk_down))
+        waitmovement(0)   
+        special(RemoveCameraObject)
+        release
+}
+
+script LeaftourItemTheory {
+        lock
+        special(SpawnCameraObject)
+        applymovement(0x7F, moves(walk_up*8))
+        waitmovement(0)
+        speakername("Leaf")
+        msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Item Theory Class.\pHeld items, effects, synergy.\pHeld items are more important than some people think.\pIf used correctly, they can decide the outcome of the battle."))
+        closemessage
+        applymovement(0x7F, moves(walk_down*9))
+        waitmovement(0)
+        applymovement(0xFF,moves(walk_down))
+        applymovement(0xFD,moves(walk_down))
+        waitmovement(0)   
+        special(RemoveCameraObject)
+        release
+}
+
+script LeaftourArt {
+        lock
+        special(SpawnCameraObject)
+        applymovement(0x7F, moves(walk_up*8))
+        waitmovement(0)
+        speakername("Leaf")
+        msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}This is the art room.\pSome trainers sketch Pokémon, others design battle maps.\pNot everything here is about fighting."))
+        closemessage
+        applymovement(0x7F, moves(walk_down*9))
+        waitmovement(0)
+        applymovement(0xFF,moves(walk_down))
+        applymovement(0xFD,moves(walk_down))
+        waitmovement(0)   
+        special(RemoveCameraObject)
+        release
+}
+
+script LeaftourLab {
+        lock
+        special(SpawnCameraObject)
+        applymovement(0x7F, moves(walk_up*8))
+        waitmovement(0)
+        speakername("Leaf")
+        msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}The lab.\pPokémon biology, move mechanics, evolution research.\pKnowledge keeps you alive when strength isn't enough."))
+        closemessage
+        applymovement(0x7F, moves(walk_down*9))
+        waitmovement(0)
+        applymovement(0xFF,moves(walk_down))
+        applymovement(0xFD,moves(walk_down))
+        waitmovement(0)   
+        special(RemoveCameraObject)
+        release
+}
+
+script LeaftourItemstrategy {
+        lock
+        special(SpawnCameraObject)
+        applymovement(0x7F, moves(walk_up*6))
+        waitmovement(0)
+        speakername("Leaf")
+        msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Item Strategy Classroom.\pHere you will learn how items are used efficiently in battle."))
+        closemessage
+        applymovement(0x7F, moves(walk_down*7))
+        waitmovement(0)
+        applymovement(0xFF,moves(walk_down))
+        applymovement(0xFD,moves(walk_down))
+        waitmovement(0)   
+        special(RemoveCameraObject)
+        release
+}
+
+script Leaftourbattlestrategy {
+        lock
+        special(SpawnCameraObject)
+        applymovement(0x7F, moves(walk_up*6))
+        waitmovement(0)
+        speakername("Leaf")
+        msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Battle Strategy Classroom.\pReading opponents. Setting traps. Predicting habits.\pThis is where raw power stops being enough."))
+        closemessage
+        applymovement(0x7F, moves(walk_down*7))
+        waitmovement(0)
+        applymovement(0xFF,moves(walk_down))
+        applymovement(0xFD,moves(walk_down))
+        waitmovement(0)   
+        special(RemoveCameraObject)
+        release    
+}
+script Leaftourdojo {
+    lock
+    special(SpawnCameraObject)
+    applymovement(0x7F, moves(walk_up*8))
+    waitmovement(0)
+    speakername("Leaf")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}The dojo.\pEverything you learn in class will be tested here against other students."))
+    closemessage
+    applymovement(0x7F, moves(walk_down*9))
+    waitmovement(0)
+    applymovement(0xFF,moves(walk_down))
+    applymovement(0xFD,moves(walk_down))
+    waitmovement(0)   
+    special(RemoveCameraObject)
+    release
+    
+}
+
+script Leaftourlib {
+    lock
+    special(SpawnCameraObject)
+    applymovement(0x7F, moves(walk_left*19 walk_up*10))
+    waitmovement(0)
+    speakername("Leaf")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}The library.\pRecords, old battles, history.\pSome sections are off-limits.\pAnd yes, they will notice if you sneak in."))
+    closemessage
+    applymovement(0x7F, moves(walk_down*10 walk_right*19))
+    waitmovement(0)
+    applymovement(0xFF,moves(walk_right))
+    applymovement(0xFD,moves(walk_left))
+    waitmovement(0)   
+    special(RemoveCameraObject)
+    release    
+}
+
+movement serenametmov1 {
+    walk_fast_up*7
+}
+movement serenametmov2 {
+    walk_right
+    emote_exclamation_mark
+    face_down
+}
+movement serenametmov3 {
+    walk_down*4
+}
+movement serenametmov4 {
+    walk_down*3
+    face_left
+}
+
+script Leaftourend {
+    lock
+    applymovement(0xFD,moves(walk_down*8 walk_left walk_down))
+    applymovement(0xFF,moves(walk_down*8))
+    waitmovement(0)
+    applymovement(0xFD,moves(face_right))
+    applymovement(0xFF,moves(face_right))
+    speakername("Leaf")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}The Dorms are on the right."),MSGBOX_AUTOCLOSE)
+    closemessage
+    waitmessage
+    applymovement(0xFD,moves(face_left))
+    applymovement(0xFF,moves(face_left))
+    speakername("Leaf")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}While on the left, The Lighthouse.\pBut students are not allowed to go in."),MSGBOX_AUTOCLOSE)
+    closemessage
+    waitmessage
+    applymovement(0xFD,moves(walk_down*10))
+    applymovement(0xFF,moves(walk_down*10))
+    waitmovementall
+    special(SpawnCameraObject)
+    applymovement(0x7F,moves(walk_down*8))
+    speakername("Leaf")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}The Training Grounds.\pThis is where real fun happens.\pYou'll get plenty of chances to show your skills here.\pOR.....\pDo you think you're too good for practice?"),MSGBOX_AUTOCLOSE)
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Results are all that matter and I don't care how I get them."),MSGBOX_AUTOCLOSE)
+    speakername("Leaf")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Results come from experience, you know.\pLet me guess, you think you can handle everything on your own."),MSGBOX_AUTOCLOSE) 
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_REALIZE}{COLOR BLUE}{SHADOW LIGHT_GRAY}...")) 
+    speakername("Leaf")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Look, I get it.\pYou've got your walls up but you'll see doing it alone doesn't always work.\pMaybe Torchic will teach you that."),MSGBOX_AUTOCLOSE) 
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_REALIZE}{COLOR BLUE}{SHADOW LIGHT_GRAY}..."),MSGBOX_AUTOCLOSE) 
+    applymovement(0x7F,serenametmov7)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    speakername("Leaf")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Anyways.\pYou should head to the reception to pick up your dorm room keys.\pI'll be going now."),MSGBOX_AUTOCLOSE)
+    applymovement(0xFD,serenametmov7)
+    waitmovement(0)
+    destroyfollowernpc
+    setflag(FLAG_LEAFMET)
+    setvar(VAR_ACADEMY_START,7)
+    release
+
+}
+
+movement serenametmov7 {
+    walk_up*7
+    
+}
+movement serenametmov5 {
+    walk_left
+    walk_down*5
+}
+movement serenametmov6 {
+    delay_16
+    walk_down*4
+}
+
+script HeadOfficeAfterTrial1 {
+    lock
+    applymovement(0xFF,moves(walk_up*6 walk_right walk_up*2))
+    waitmovement(0)
+    speakername("Alistair")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar, take a seat."))
+    closemessage
+    applymovement(0xFF,moves(walk_left face_up)) 
+    speakername("Alistair")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}I watched your battle. You made the right decisions every time.\pPrecise. Calculated. Most first years panic under pressure.\pYou didn't."))
+    closemessage
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Should I have panicked instead?")) 
+    closemessage
+    speakername("Alistair")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}No, but it concerns me."))
+    closemessage
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Why?")) 
+    closemessage
+    speakername("Alistair")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Because you fought like someone with nothing to lose."))
+    closemessage
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_REALIZE}{COLOR BLUE}{SHADOW LIGHT_GRAY}Isn't that true?\pThere's no one waiting for me.")) 
+    closemessage
+    playse(SE_PIN)
+    applymovement(1,moves(emote_exclamation_mark))
+    speakername("Alistair")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}..."))
+    closemessage
+    delay(20)
+    waitbuttonpress
+    speakername("Alistair")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}This Academy isn't a cage, Xylar."))
+    closemessage
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Is that all?")) 
+    closemessage
+    speakername("Alistair")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}No. Practical matters.\pYour class schedule is posted in the locker room hallway.\pTwo lectures daily, one morning, one afternoon.\pAttendance is mandatory for first years."))
+    closemessage
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Understood.")) 
+    closemessage
+    speakername("Alistair")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}You can battle students in the training grounds after 6pm."))
+    closemessage
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Anything else?")) 
+    closemessage
+    speakername("Alistair")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Your father believed strength without purpose was just destruction.\pDon't prove him wrong."))
+    closemessage
+    applymovement(0xFF,moves(walk_in_place_up))
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Am I dismissed?")) 
+    closemessage
+    applymovement(1,moves(walk_in_place_down))
+    speakername("Alistair")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Yes, Your first class should be starting now."))
+    closemessage
+    addhours(2)
+    fwdweekday(1)
+    pausefakertc
+    setvar(VAR_ACADEMY_START,12)
+    setvar(VAR_ACADEMY_CLASS,1)
+    setvar(VAR_BATTLE_THEORY,1)
+}

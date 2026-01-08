@@ -8,6 +8,7 @@
 #include "text.h"
 #include "fake_rtc.h"
 #include "overworld.h"
+#include "event_data.h"
 
 // iwram bss
 static u16 sErrorStatus;
@@ -19,6 +20,9 @@ static u16 sSavedIme;
 COMMON_DATA struct Time gLocalTime = {0};
 
 // const rom
+EWRAM_DATA static u8 sLastCheckedMinute = 0;
+EWRAM_DATA static bool8 sUseManualMonth = FALSE;
+EWRAM_DATA static u8 sManualMonth = 0; // Default to January
 
 static const struct SiiRtcInfo sRtcDummy = {0, MONTH_JAN, 1}; // 2000 Jan 1
 
@@ -37,6 +41,14 @@ const s32 sNumDaysInMonths[MONTH_COUNT] =
     [MONTH_NOV - 1] = 30,
     [MONTH_DEC - 1] = 31,
 };
+
+const s32 GetNumDaysInMonth(u8 month)
+{
+    if (month >= 1 && month <= 12)
+        return sNumDaysInMonths[month - 1];
+    return -1; // invalid input
+}
+
 
 void RtcDisableInterrupts(void)
 {
@@ -103,6 +115,47 @@ u16 RtcGetDayCount(struct SiiRtcInfo *rtc)
     month = ConvertBcdToBinary(rtc->month);
     day = ConvertBcdToBinary(rtc->day);
     return ConvertDateToDayCount(year, month, day);
+}
+
+
+void UpdateWeekdayOncePerMinute(void)
+{
+    struct SiiRtcInfo *rtc = FakeRtc_GetCurrentTime();
+
+    if (rtc->minute == sLastCheckedMinute)
+        return;
+
+    sLastCheckedMinute = rtc->minute;
+
+     switch(GetDayOfWeek())
+     
+    {
+    case WEEKDAY_MON:
+        VarSet(VAR_CURRENT_DAY_OF_WEEK, 1);
+        break;
+    case WEEKDAY_TUE:
+        VarSet(VAR_CURRENT_DAY_OF_WEEK, 2);
+        break;
+    case WEEKDAY_WED:
+        VarSet(VAR_CURRENT_DAY_OF_WEEK, 3);
+        break;
+    case WEEKDAY_THU:
+        VarSet(VAR_CURRENT_DAY_OF_WEEK, 4);
+        break;
+    case WEEKDAY_FRI:
+        VarSet(VAR_CURRENT_DAY_OF_WEEK, 5);
+        break;
+    case WEEKDAY_SAT:
+        VarSet(VAR_CURRENT_DAY_OF_WEEK, 6);
+        break;
+    case WEEKDAY_SUN:
+        VarSet(VAR_CURRENT_DAY_OF_WEEK, 0);
+        break;
+    default:
+    
+        VarSet(VAR_CURRENT_DAY_OF_WEEK, GetDayOfWeek());
+        break;
+    }
 }
 
 void RtcInit(void)
@@ -240,7 +293,7 @@ void RtcReset(void)
     RtcRestoreInterrupts();
 }
 
-static void UNUSED FormatDecimalTime(u8 *dest, s32 hour, s32 minute, s32 second)
+void FormatDecimalTime(u8 *dest, s32 hour, s32 minute, s32 second)
 {
     dest = ConvertIntToDecimalStringN(dest, hour, STR_CONV_MODE_LEADING_ZEROS, 2);
     *dest++ = CHAR_COLON;
@@ -250,7 +303,7 @@ static void UNUSED FormatDecimalTime(u8 *dest, s32 hour, s32 minute, s32 second)
     *dest = EOS;
 }
 
-static void UNUSED FormatHexTime(u8 *dest, s32 hour, s32 minute, s32 second)
+void FormatHexTime(u8 *dest, s32 hour, s32 minute, s32 second)
 {
     dest = ConvertIntToHexStringN(dest, hour, STR_CONV_MODE_LEADING_ZEROS, 2);
     *dest++ = CHAR_COLON;
@@ -260,12 +313,12 @@ static void UNUSED FormatHexTime(u8 *dest, s32 hour, s32 minute, s32 second)
     *dest = EOS;
 }
 
-static void UNUSED FormatHexRtcTime(u8 *dest)
+void FormatHexRtcTime(u8 *dest)
 {
     FormatHexTime(dest, sRtc.hour, sRtc.minute, sRtc.second);
 }
 
-static void UNUSED FormatDecimalDate(u8 *dest, s32 year, s32 month, s32 day)
+void FormatDecimalDate(u8 *dest, s32 year, s32 month, s32 day)
 {
     dest = ConvertIntToDecimalStringN(dest, year, STR_CONV_MODE_LEADING_ZEROS, 4);
     *dest++ = CHAR_HYPHEN;
@@ -275,7 +328,7 @@ static void UNUSED FormatDecimalDate(u8 *dest, s32 year, s32 month, s32 day)
     *dest = EOS;
 }
 
-static void UNUSED FormatHexDate(u8 *dest, s32 year, s32 month, s32 day)
+void FormatHexDate(u8 *dest, s32 year, s32 month, s32 day)
 {
     dest = ConvertIntToHexStringN(dest, year, STR_CONV_MODE_LEADING_ZEROS, 4);
     *dest++ = CHAR_HYPHEN;
@@ -345,11 +398,10 @@ void RtcInitLocalTimeOffset(s32 hour, s32 minute)
 
 void RtcCalcLocalTimeOffset(s32 days, s32 hours, s32 minutes, s32 seconds)
 {
-    gLocalTime.days = days;
     gLocalTime.hours = hours;
     gLocalTime.minutes = minutes;
     gLocalTime.seconds = seconds;
-    FakeRtc_ManuallySetTime(gLocalTime.days, gLocalTime.hours, gLocalTime.minutes, seconds);
+    FakeRtc_ForwardTimeTo(gLocalTime.hours, gLocalTime.minutes, seconds);
     RtcGetInfo(&sRtc);
     RtcCalcTimeDifference(&sRtc, &gSaveBlock2Ptr->localTimeOffset, &gLocalTime);
 }
@@ -432,11 +484,41 @@ u16 GetFullYear(void)
 
 enum Month GetMonth(void)
 {
-    struct DateTime dateTime;
-    RtcCalcLocalTime();
-    ConvertTimeToDateTime(&dateTime, &gLocalTime);
+    if (sUseManualMonth)
+        return sManualMonth;
 
-    return dateTime.month;
+    struct SiiRtcInfo *rtc = FakeRtc_GetCurrentTime();
+    return rtc->month;
+}
+
+
+void UpdateSeasonOncePerMinute(void)
+{
+    struct SiiRtcInfo *rtc = FakeRtc_GetCurrentTime();
+
+    if (rtc->minute == sLastCheckedMinute)
+        return;
+
+    sLastCheckedMinute = rtc->minute;
+
+    switch (GetMonth()) // IMPORTANT: this will still respect manual override
+    {
+    case 3: case 4: case 5:
+        VarSet(VAR_CURRENT_SEASON, 0);
+        break;
+    case 6: case 7: case 8:
+        VarSet(VAR_CURRENT_SEASON, 1);
+        break;
+    case 9: case 10: case 11:
+        VarSet(VAR_CURRENT_SEASON, 2);
+        break;
+    case 12: case 1: case 2:
+        VarSet(VAR_CURRENT_SEASON, 3);
+        break;
+    default:
+        VarSet(VAR_CURRENT_SEASON, 0);
+        break;
+    }
 }
 
 u8 GetDay(void)

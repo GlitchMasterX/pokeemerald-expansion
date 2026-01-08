@@ -4,6 +4,7 @@
 #include "battle_message.h"
 #include "bg.h"
 #include "data.h"
+#include "bw_summary_screen.h"
 #include "decompress.h"
 #include "evolution_scene.h"
 #include "evolution_graphics.h"
@@ -13,6 +14,7 @@
 #include "link_rfu.h"
 #include "m4a.h"
 #include "main.h"
+#include "battle_anim.h"
 #include "menu.h"
 #include "overworld.h"
 #include "palette.h"
@@ -248,7 +250,8 @@ void EvolutionScene(struct Pokemon *mon, u16 postEvoSpecies, bool8 canStopEvo, u
     gReservedSpritePaletteCount = 4;
 
     sEvoStructPtr = AllocZeroed(sizeof(struct EvoInfo));
-    AllocateMonSpritesGfx();
+    if (!gMain.inBattle || gMonSpritesGfxPtr == NULL) AllocateMonSpritesGfx();     
+    // If gMonSpritesGfxPtr has been freed (which can also happen at the end of the battle) then it needs to be reallocated
 
     GetMonData(mon, MON_DATA_NICKNAME, name);
     StringCopy_Nickname(gStringVar1, name);
@@ -642,6 +645,8 @@ enum {
 
 // Task data from CycleEvolutionMonSprite
 #define tEvoStopped data[8]
+#define LEFT_PKMN gBattlerPartyIndexes[GetBattlerAtPosition(B_POSITION_PLAYER_LEFT)]
+#define RIGHT_PKMN gBattlerPartyIndexes[GetBattlerAtPosition(B_POSITION_PLAYER_RIGHT)]
 
 static void Task_EvolutionScene(u8 taskId)
 {
@@ -656,6 +661,13 @@ static void Task_EvolutionScene(u8 taskId)
     {
         gTasks[taskId].tState = EVOSTATE_CANCEL;
         gTasks[sEvoGraphicsTaskId].tEvoStopped = TRUE;
+        if (gMain.inBattle && gBattleOutcome == 0)
+        {
+            if (gTasks[taskId].tPartyId == LEFT_PKMN) 
+            gPlayerDoesNotWantToEvolveLeft = TRUE; // Stop trying to make the left Pokémon evolve again in battle
+            else if (gTasks[taskId].tPartyId == RIGHT_PKMN) 
+            gPlayerDoesNotWantToEvolveRight = TRUE; // Stop trying to make the right Pokémon evolve again in battle
+        }
         StopBgAnimation();
         return;
     }
@@ -689,7 +701,7 @@ static void Task_EvolutionScene(u8 taskId)
     case EVOSTATE_INTRO_SOUND:
         if (EvoScene_IsMonAnimFinished(sEvoStructPtr->preEvoSpriteId))
         {
-            PlaySE(MUS_EVOLUTION_INTRO);
+            PlaySE(MUS_BW12_008);
             gTasks[taskId].tState++;
         }
         break;
@@ -697,7 +709,7 @@ static void Task_EvolutionScene(u8 taskId)
         if (!IsSEPlaying())
         {
             // Start music, fade background to black
-            PlayNewMapMusic(MUS_EVOLUTION);
+            PlayNewMapMusic(MUS_BW12_009);
             gTasks[taskId].tState++;
             BeginNormalPaletteFade(0x1C, 4, 0, 0x10, RGB_BLACK);
         }
@@ -774,7 +786,7 @@ static void Task_EvolutionScene(u8 taskId)
             u32 zero = 0;
             StringExpandPlaceholders(gStringVar4, gText_CongratsPkmnEvolved);
             BattlePutTextOnWindow(gStringVar4, B_WIN_MSG);
-            PlayBGM(MUS_EVOLVED);
+            PlayBGM(MUS_DP_EVOLVED);
             gTasks[taskId].tState++;
             SetMonData(mon, MON_DATA_SPECIES, (void *)(&gTasks[taskId].tPostEvoSpecies));
             SetMonData(mon, MON_DATA_EVOLUTION_TRACKER, &zero);
@@ -783,6 +795,17 @@ static void Task_EvolutionScene(u8 taskId)
             GetSetPokedexFlag(SpeciesToNationalPokedexNum(gTasks[taskId].tPostEvoSpecies), FLAG_SET_SEEN);
             GetSetPokedexFlag(SpeciesToNationalPokedexNum(gTasks[taskId].tPostEvoSpecies), FLAG_SET_CAUGHT);
             IncrementGameStat(GAME_STAT_EVOLVED_POKEMON);
+            if (gMain.inBattle && gBattleOutcome == 0)
+            { 
+                // Update BattlePokemon stats if in battle
+                u8 monId = gTasks[taskId].tPartyId;
+                if (monId == LEFT_PKMN) 
+                    CopyPartyMonToBattleData(0, monId, FALSE);
+                else if (monId == RIGHT_PKMN) 
+                {
+                    CopyPartyMonToBattleData(2, monId, FALSE);
+                }
+            }
         }
         break;
     case EVOSTATE_TRY_LEARN_MOVE:
@@ -795,7 +818,8 @@ static void Task_EvolutionScene(u8 taskId)
                 if (!(gTasks[taskId].tBits & TASK_BIT_LEARN_MOVE))
                 {
                     StopMapMusic();
-                    Overworld_PlaySpecialMapMusic();
+                    if (gMain.inBattle && gBattleOutcome == 0) PlayBattleBGM(); // If battle is still ongoing, replay battle music
+                    else Overworld_PlaySpecialMapMusic();
                 }
 
                 gTasks[taskId].tBits |= TASK_BIT_LEARN_MOVE;
@@ -809,7 +833,20 @@ static void Task_EvolutionScene(u8 taskId)
                 else if (var == MON_ALREADY_KNOWS_MOVE)
                     break;
                 else
+                {
+                    if (gMain.inBattle && gBattleOutcome == 0)
+                    {
+                        if (gTasks[taskId].tPartyId == LEFT_PKMN) 
+                        {
+                            GiveMoveToBattleMon(&gBattleMons[0], var); // Ensure the Pokémon can use the move in battle
+                        }
+                        else if (gTasks[taskId].tPartyId == RIGHT_PKMN) 
+                        {
+                            GiveMoveToBattleMon(&gBattleMons[2], var);  // Ensure the Pokémon can use the move in battle
+                        }
+                    }
                     gTasks[taskId].tState = EVOSTATE_LEARNED_MOVE;
+                    }
             }
             else // no move to learn, or evolution was canceled
             {
@@ -824,15 +861,16 @@ static void Task_EvolutionScene(u8 taskId)
             if (!(gTasks[taskId].tBits & TASK_BIT_LEARN_MOVE))
             {
                 StopMapMusic();
-                Overworld_PlaySpecialMapMusic();
-
+               if (gMain.inBattle && gBattleOutcome == 0) PlayBattleBGM(); // If battle is still ongoing, replay battle music
+                else Overworld_PlaySpecialMapMusic();
+                
             }
 
             if (!gTasks[taskId].tEvoWasStopped)
                 CreateShedinja(gTasks[taskId].tPreEvoSpecies, gTasks[taskId].tPostEvoSpecies, mon);
 
             DestroyTask(taskId);
-            FreeMonSpritesGfx();
+            if (!gMain.inBattle || gBattleOutcome != 0) FreeMonSpritesGfx(); // Free resources if battle is not ongoing
             FREE_AND_SET_NULL(sEvoStructPtr);
             FreeAllWindowBuffers();
             SetMainCallback2(gCB2_AfterEvolution);
@@ -870,7 +908,7 @@ static void Task_EvolutionScene(u8 taskId)
         if (!IsTextPrinterActive(0) && !IsSEPlaying())
         {
             BufferMoveToLearnIntoBattleTextBuff2();
-            PlayFanfare(MUS_LEVEL_UP);
+            PlayFanfare(MUS_DP_LEVEL_UP);
             BattleStringExpandPlaceholdersToDisplayedString(gBattleStringsTable[STRINGID_PKMNLEARNEDMOVE]);
             BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MSG);
             gTasks[taskId].tLearnsFirstMove = 0x40; // re-used as a counter
@@ -973,9 +1011,18 @@ static void Task_EvolutionScene(u8 taskId)
             if (!gPaletteFade.active)
             {
                 FreeAllWindowBuffers();
-                ShowSelectMovePokemonSummaryScreen(gPlayerParty, gTasks[taskId].tPartyId,
-                            gPlayerPartyCount - 1, CB2_EvolutionSceneLoadGraphics,
-                            gMoveToLearn);
+                if (BW_SUMMARY_SCREEN)
+                {
+                    ShowSelectMovePokemonSummaryScreen_BW(gPlayerParty, gTasks[taskId].tPartyId,
+                                gPlayerPartyCount - 1, CB2_EvolutionSceneLoadGraphics,
+                                gMoveToLearn);
+                }
+                else
+                {
+                    ShowSelectMovePokemonSummaryScreen(gPlayerParty, gTasks[taskId].tPartyId,
+                                gPlayerPartyCount - 1, CB2_EvolutionSceneLoadGraphics,
+                                gMoveToLearn);
+                }
                 gTasks[taskId].tLearnMoveState++;
             }
             break;
@@ -1003,6 +1050,20 @@ static void Task_EvolutionScene(u8 taskId)
                     {
                         // Forget move
                         PREPARE_MOVE_BUFFER(gBattleTextBuff2, move)
+
+                        if (gMain.inBattle && gBattleOutcome == 0)
+                        {
+                            if (gTasks[taskId].tPartyId == LEFT_PKMN) 
+                            {
+                                RemoveBattleMonPPBonus(&gBattleMons[0], var);
+                                SetBattleMonMoveSlot(&gBattleMons[0], gMoveToLearn, var); // Replace in-battle Pokémon's move with the new move
+                            }
+                            else if (gTasks[taskId].tPartyId == RIGHT_PKMN) 
+                            {
+                                RemoveBattleMonPPBonus(&gBattleMons[2], var);
+                                SetBattleMonMoveSlot(&gBattleMons[2], gMoveToLearn, var); // Replace in-battle Pokémon's move with the new move
+                            }
+                        }
 
                         RemoveMonPPBonus(mon, var);
                         SetMonMoveSlot(mon, gMoveToLearn, var);
@@ -1117,15 +1178,15 @@ static void Task_TradeEvolutionScene(u8 taskId)
     case T_EVOSTATE_INTRO_SOUND:
         if (IsCryFinished())
         {
-            m4aSongNumStop(MUS_EVOLUTION);
-            PlaySE(MUS_EVOLUTION_INTRO);
+            m4aSongNumStop(MUS_BW12_009);
+            PlaySE(MUS_BW12_008);
             gTasks[taskId].tState++;
         }
         break;
     case T_EVOSTATE_START_MUSIC:
         if (!IsSEPlaying())
         {
-            PlayBGM(MUS_EVOLUTION);
+            PlayBGM(MUS_BW12_009);
             gTasks[taskId].tState++;
             BeginNormalPaletteFade(0x1C, 4, 0, 0x10, RGB_BLACK);
         }
@@ -1197,7 +1258,7 @@ static void Task_TradeEvolutionScene(u8 taskId)
             u32 zero = 0;
             StringExpandPlaceholders(gStringVar4, gText_CongratsPkmnEvolved);
             DrawTextOnTradeWindow(0, gStringVar4, 1);
-            PlayFanfare(MUS_EVOLVED);
+            PlayFanfare(MUS_DP_EVOLVED);
             gTasks[taskId].tState++;
             SetMonData(mon, MON_DATA_SPECIES, (&gTasks[taskId].tPostEvoSpecies));
             SetMonData(mon, MON_DATA_EVOLUTION_TRACKER, &zero);
@@ -1230,7 +1291,7 @@ static void Task_TradeEvolutionScene(u8 taskId)
             }
             else
             {
-                PlayBGM(MUS_EVOLUTION);
+                PlayBGM(MUS_BW12_009);
                 DrawTextOnTradeWindow(0, gText_CommunicationStandby5, 1);
                 gTasks[taskId].tState++;
             }
@@ -1273,7 +1334,7 @@ static void Task_TradeEvolutionScene(u8 taskId)
         if (!IsTextPrinterActive(0) && !IsSEPlaying())
         {
             BufferMoveToLearnIntoBattleTextBuff2();
-            PlayFanfare(MUS_LEVEL_UP);
+            PlayFanfare(MUS_DP_LEVEL_UP);
             BattleStringExpandPlaceholdersToDisplayedString(gBattleStringsTable[STRINGID_PKMNLEARNEDMOVE]);
             DrawTextOnTradeWindow(0, gDisplayedStringBattle, 1);
             gTasks[taskId].tLearnsFirstMove = 0x40; // re-used as a counter
@@ -1357,9 +1418,18 @@ static void Task_TradeEvolutionScene(u8 taskId)
                 Free(GetBgTilemapBuffer(0));
                 FreeAllWindowBuffers();
 
-                ShowSelectMovePokemonSummaryScreen(gPlayerParty, gTasks[taskId].tPartyId,
-                            gPlayerPartyCount - 1, CB2_TradeEvolutionSceneLoadGraphics,
-                            gMoveToLearn);
+                if (BW_SUMMARY_SCREEN)
+                {
+                    ShowSelectMovePokemonSummaryScreen_BW(gPlayerParty, gTasks[taskId].tPartyId,
+                                gPlayerPartyCount - 1, CB2_TradeEvolutionSceneLoadGraphics,
+                                gMoveToLearn);
+                }
+                else
+                {
+                    ShowSelectMovePokemonSummaryScreen(gPlayerParty, gTasks[taskId].tPartyId,
+                                gPlayerPartyCount - 1, CB2_TradeEvolutionSceneLoadGraphics,
+                                gMoveToLearn);
+                }
                 gTasks[taskId].tLearnMoveState++;
             }
             break;

@@ -2,6 +2,7 @@
 #include "overworld.h"
 #include "battle_pyramid.h"
 #include "battle_setup.h"
+#include "battle_util.h"
 #include "berry.h"
 #include "bg.h"
 #include "cable_club.h"
@@ -15,6 +16,7 @@
 #include "field_control_avatar.h"
 #include "field_effect.h"
 #include "field_effect_helpers.h"
+#include "map_preview_screen.h"
 #include "field_message_box.h"
 #include "field_player_avatar.h"
 #include "field_screen_effect.h"
@@ -37,6 +39,7 @@
 #include "malloc.h"
 #include "m4a.h"
 #include "map_name_popup.h"
+#include "map_preview_screen.h"
 #include "match_call.h"
 #include "menu.h"
 #include "metatile_behavior.h"
@@ -46,6 +49,9 @@
 #include "oras_dowse.h"
 #include "palette.h"
 #include "play_time.h"
+#include "party_menu.h"
+#include "sprite.h"
+#include "pokemon.h"
 #include "random.h"
 #include "roamer.h"
 #include "rotating_gate.h"
@@ -77,6 +83,12 @@
 #include "constants/songs.h"
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
+#include "constants/party_menu.h"
+#include "battle_pike.h"
+#include "battle_pyramid_bag.h"
+#include "ui_startmenu_full.h"
+
+STATIC_ASSERT((B_FLAG_FOLLOWERS_DISABLED == 0 || OW_FOLLOWERS_ENABLED), FollowersFlagAssignedWithoutEnablingThem);
 
 STATIC_ASSERT((B_FLAG_FOLLOWERS_DISABLED == 0 || OW_FOLLOWERS_ENABLED), FollowersFlagAssignedWithoutEnablingThem);
 
@@ -88,6 +100,16 @@ struct CableClubPlayer
     u8 facing;
     struct MapPosition pos;
     u16 metatileBehavior;
+};
+
+struct OverlayState
+{
+    bool8 active;   
+    u8 eva;      
+    u8 evb;
+    u8 targetEVA;
+    u8 targetEVB;
+    u8 fadeDelay;
 };
 
 #define PLAYER_LINK_STATE_IDLE 0x80
@@ -183,6 +205,11 @@ static void TransitionMapMusic(void);
 static u8 GetAdjustedInitialTransitionFlags(struct InitialPlayerAvatarState *playerStruct, u16 metatileBehavior, enum MapType mapType);
 static u8 GetAdjustedInitialDirection(struct InitialPlayerAvatarState *playerStruct, u8 transitionFlags, u16 metatileBehavior, enum MapType mapType);
 static u16 GetCenterScreenMetatileBehavior(void);
+static void InitBlend(void);
+static void UpdateBlend(void);
+static void SetOverlayAlpha(u8 eva, u8 evb);
+static void SetOverlayEnabled(bool8 active);
+static void UNUSED FadeOverlay(u8 eva, u8 evb);
 
 static void *sUnusedOverworldCallback;
 static u8 sPlayerLinkStates[MAX_LINK_PLAYERS];
@@ -219,6 +246,7 @@ EWRAM_DATA static bool8 sIsAmbientCryWaterMon = FALSE;
 EWRAM_DATA static u8 sHoursOverride = 0; // used to override apparent time of day hours
 EWRAM_DATA struct LinkPlayerObjectEvent gLinkPlayerObjectEvents[4] = {0};
 EWRAM_DATA bool8 gExitStairsMovementDisabled = FALSE;
+EWRAM_DATA struct OverlayState sOverlayState = {0};
 
 static const struct WarpData sDummyWarpData =
 {
@@ -415,16 +443,10 @@ void Overworld_ResetStateAfterDigEscRope(void)
     FlagClear(FLAG_SYS_USE_FLASH);
 }
 
-#if B_RESET_FLAGS_VARS_AFTER_WHITEOUT  == TRUE
+#if B_RESET_FLAGS_VARS_AFTER_WHITEOUT == TRUE
 void Overworld_ResetBattleFlagsAndVars(void)
 {
-    #if B_VAR_STARTING_STATUS != 0
-        VarSet(B_VAR_STARTING_STATUS, 0);
-    #endif
-
-    #if B_VAR_STARTING_STATUS_TIMER != 0
-        VarSet(B_VAR_STARTING_STATUS_TIMER, 0);
-    #endif
+    ResetStartingStatuses();
 
     #if B_VAR_WILD_AI_FLAGS != 0
         VarSet(B_VAR_WILD_AI_FLAGS,0);
@@ -539,37 +561,33 @@ void LoadSaveblockObjEventScripts(void)
         savObjTemplates[i].script = mapHeaderObjTemplates[i].script;
 }
 
+static struct ObjectEventTemplate *GetObjectEventTemplate(u8 localId)
+{
+    for (u32 i = 0; i < OBJECT_EVENT_TEMPLATES_COUNT; i++)
+    {
+        if (gSaveBlock1Ptr->objectEventTemplates[i].localId == localId)
+            return &gSaveBlock1Ptr->objectEventTemplates[i];
+    }
+
+    errorf("no object event template for localId %d", localId);
+    return NULL;
+}
+
 void SetObjEventTemplateCoords(u8 localId, s16 x, s16 y)
 {
-    s32 i;
-    struct ObjectEventTemplate *savObjTemplates = gSaveBlock1Ptr->objectEventTemplates;
-
-    for (i = 0; i < OBJECT_EVENT_TEMPLATES_COUNT; i++)
+    struct ObjectEventTemplate *objectEventTemplate = GetObjectEventTemplate(localId);
+    if (objectEventTemplate)
     {
-        struct ObjectEventTemplate *objectEventTemplate = &savObjTemplates[i];
-        if (objectEventTemplate->localId == localId)
-        {
-            objectEventTemplate->x = x;
-            objectEventTemplate->y = y;
-            return;
-        }
+        objectEventTemplate->x = x;
+        objectEventTemplate->y = y;
     }
 }
 
 void SetObjEventTemplateMovementType(u8 localId, u8 movementType)
 {
-    s32 i;
-
-    struct ObjectEventTemplate *savObjTemplates = gSaveBlock1Ptr->objectEventTemplates;
-    for (i = 0; i < OBJECT_EVENT_TEMPLATES_COUNT; i++)
-    {
-        struct ObjectEventTemplate *objectEventTemplate = &savObjTemplates[i];
-        if (objectEventTemplate->localId == localId)
-        {
-            objectEventTemplate->movementType = movementType;
-            return;
-        }
-    }
+    struct ObjectEventTemplate *objectEventTemplate = GetObjectEventTemplate(localId);
+    if (objectEventTemplate)
+        objectEventTemplate->movementType = movementType;
 }
 
 static void InitMapView(void)
@@ -840,8 +858,54 @@ bool8 SetDiveWarpDive(u16 x, u16 y)
     return SetDiveWarp(CONNECTION_DIVE, x, y);
 }
 
+void TryApplySeasonalWeather(void)
+{
+    u8 season = getCurrentSeason();
+    u8 maptype = gMapHeader.mapType;
+
+    if (gMapHeader.weather == WEATHER_NONE
+     && (maptype == MAP_TYPE_CITY
+      || maptype == MAP_TYPE_TOWN
+      || maptype == MAP_TYPE_ROUTE
+      || maptype == MAP_TYPE_OCEAN_ROUTE))
+    {
+        switch (season)
+        {
+        case SEASON_SPRING:
+            SetWeather(WEATHER_SPRING);
+            break;
+        case SEASON_AUTUMN:
+            SetWeather(WEATHER_AUTUMN);
+            break;
+        case SEASON_WINTER:
+            SetWeather(WEATHER_SNOW);
+            break;
+        case SEASON_SUMMER:
+        default:
+            SetWeather(WEATHER_SUNNY);
+            break;
+        }
+    }
+}
+
+void WearOutfit(void)
+{
+    u32 outfitId = gSpecialVar_0x8004, gfxId;
+    struct ObjectEvent *player = &gObjectEvents[gPlayerAvatar.objectEventId];
+
+    gSaveBlock2Ptr->currOutfitId = outfitId;
+    gfxId = GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(gSaveBlock2Ptr->currOutfitId,
+                                                              PLAYER_AVATAR_STATE_NORMAL,
+                                                              gSaveBlock2Ptr->playerGender);
+    ObjectEventSetGraphicsId(player, gfxId);
+    ObjectEventTurn(player, player->movementDirection);
+}
+
 void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 {
+    s32 paletteIndex;
+    bool8 previousMapUsedOverlay = gMapHeader.overlay != NULL;
+
     SetWarpDestination(mapGroup, mapNum, WARP_ID_NONE, -1, -1);
 
     // Dont transition map music between BF Outside West/East
@@ -865,6 +929,7 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 
     DoTimeBasedEvents();
     SetSavedWeatherFromCurrMapHeader();
+    TryApplySeasonalWeather();
     ChooseAmbientCrySpecies();
     SetDefaultFlashLevel();
     Overworld_ClearSavedMusic();
@@ -893,6 +958,14 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
          || gMapHeader.regionMapSectionId != sLastMapSectionId)
             ShowMapNamePopup();
     }
+    // When switching between overlay/non-overlay maps redraw the tiles to ensure they end up on the right background
+    // When entering an overlay map, from any map, draw any overriden tiles on the border
+    if (previousMapUsedOverlay != (gMapHeader.overlay != NULL) || gMapHeader.overlay)
+    {
+        DrawWholeMapView();
+    }
+
+    InitBlend();
 }
 
 static void LoadMapFromWarp(bool32 a1)
@@ -932,6 +1005,7 @@ static void LoadMapFromWarp(bool32 a1)
     if (a1 != TRUE)
         DoTimeBasedEvents();
     SetSavedWeatherFromCurrMapHeader();
+    TryApplySeasonalWeather();
     ChooseAmbientCrySpecies();
     if (isOutdoors)
         FlagClear(FLAG_SYS_USE_FLASH);
@@ -953,6 +1027,8 @@ static void LoadMapFromWarp(bool32 a1)
         UpdateTVScreensOnMap(gBackupMapLayout.width, gBackupMapLayout.height);
         InitSecretBaseAppearance(TRUE);
     }
+
+    InitBlend();
 }
 
 void ResetInitialPlayerAvatarState(void)
@@ -965,10 +1041,8 @@ void StoreInitialPlayerAvatarState(void)
 {
     sInitialPlayerAvatarState.direction = GetPlayerFacingDirection();
 
-    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_MACH_BIKE))
-        sInitialPlayerAvatarState.transitionFlags = PLAYER_AVATAR_FLAG_MACH_BIKE;
-    else if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_ACRO_BIKE))
-        sInitialPlayerAvatarState.transitionFlags = PLAYER_AVATAR_FLAG_ACRO_BIKE;
+    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_BIKE))
+        sInitialPlayerAvatarState.transitionFlags = PLAYER_AVATAR_FLAG_BIKE;
     else if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
         sInitialPlayerAvatarState.transitionFlags = PLAYER_AVATAR_FLAG_SURFING;
     else if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_UNDERWATER))
@@ -999,12 +1073,10 @@ static u8 GetAdjustedInitialTransitionFlags(struct InitialPlayerAvatarState *pla
         return PLAYER_AVATAR_FLAG_SURFING;
     else if (Overworld_IsBikingAllowed() != TRUE)
         return PLAYER_AVATAR_FLAG_ON_FOOT;
-    else if (playerStruct->transitionFlags == PLAYER_AVATAR_FLAG_MACH_BIKE)
-        return PLAYER_AVATAR_FLAG_MACH_BIKE;
-    else if (playerStruct->transitionFlags != PLAYER_AVATAR_FLAG_ACRO_BIKE)
-        return PLAYER_AVATAR_FLAG_ON_FOOT;
+    else if (playerStruct->transitionFlags == PLAYER_AVATAR_FLAG_BIKE)
+        return PLAYER_AVATAR_FLAG_BIKE;
     else
-        return PLAYER_AVATAR_FLAG_ACRO_BIKE;
+        return PLAYER_AVATAR_FLAG_ON_FOOT;
 }
 
 static u8 GetAdjustedInitialDirection(struct InitialPlayerAvatarState *playerStruct, u8 transitionFlags, u16 metatileBehavior, enum MapType mapType)
@@ -1125,7 +1197,7 @@ static bool16 ShouldLegendaryMusicPlayAtLocation(struct WarpData *warp)
     return FALSE;
 }
 
-static bool16 NoMusicInSootopolisWithLegendaries(struct WarpData *warp)
+static bool16 NoMusicInSotopolisWithLegendaries(struct WarpData *warp)
 {
     if (VarGet(VAR_SKY_PILLAR_STATE) != 1)
         return FALSE;
@@ -1150,7 +1222,7 @@ static bool16 IsInfiltratedWeatherInstitute(struct WarpData *warp)
         return FALSE;
 }
 
-static bool16 IsInfiltratedSpaceCenter(struct WarpData *warp)
+static bool16 IsInflitratedSpaceCenter(struct WarpData *warp)
 {
     if (VarGet(VAR_MOSSDEEP_CITY_STATE) == 0)
         return FALSE;
@@ -1166,11 +1238,11 @@ static bool16 IsInfiltratedSpaceCenter(struct WarpData *warp)
 
 u16 GetLocationMusic(struct WarpData *warp)
 {
-    if (NoMusicInSootopolisWithLegendaries(warp) == TRUE)
+    if (NoMusicInSotopolisWithLegendaries(warp) == TRUE)
         return MUS_NONE;
     else if (ShouldLegendaryMusicPlayAtLocation(warp) == TRUE)
         return MUS_ABNORMAL_WEATHER;
-    else if (IsInfiltratedSpaceCenter(warp) == TRUE)
+    else if (IsInflitratedSpaceCenter(warp) == TRUE)
         return MUS_ENCOUNTER_MAGMA;
     else if (IsInfiltratedWeatherInstitute(warp) == TRUE)
         return MUS_MT_CHIMNEY;
@@ -1196,9 +1268,9 @@ u16 GetCurrLocationDefaultMusic(void)
     else
     {
         if (gSaveBlock1Ptr->pos.x < 24)
-            return MUS_ROUTE110;
+            return MUS_PETALBURG;
         else
-            return MUS_ROUTE119;
+            return MUS_OLDALE;
     }
 }
 
@@ -1213,9 +1285,9 @@ u16 GetWarpDestinationMusic(void)
     {
         if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_MAUVILLE_CITY)
          && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_MAUVILLE_CITY))
-            return MUS_ROUTE110;
+            return MUS_PETALBURG;
         else
-            return MUS_ROUTE119;
+            return MUS_PETALBURG;
     }
 }
 
@@ -1235,8 +1307,16 @@ void Overworld_PlaySpecialMapMusic(void)
         else if (GetCurrentMapType() == MAP_TYPE_UNDERWATER)
             music = MUS_UNDERWATER;
         else if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
-            music = MUS_SURF;
+            music = MUS_DP_SURF;
     }
+    if (FlagGet(FLAG_AFTERTRAGEDY_MUSIC)){
+      if (GetCurrentMapType() == MAP_TYPE_INDOOR)
+          music = MUS_ABNORMAL_WEATHER;
+      else if (GetCurrentMapType() == MAP_TYPE_TOWN)
+          music = MUS_DUMMY;
+      else if (GetCurrentMapType() == MAP_TYPE_CITY)
+          music = MUS_DUMMY;
+  }
 
     if (music != GetCurrentMapMusic())
         PlayNewMapMusic(music);
@@ -1260,14 +1340,14 @@ static void TransitionMapMusic(void)
         u16 currentMusic = GetCurrentMapMusic();
         if (newMusic != MUS_ABNORMAL_WEATHER && newMusic != MUS_NONE)
         {
-            if (currentMusic == MUS_UNDERWATER || currentMusic == MUS_SURF)
+            if (currentMusic == MUS_UNDERWATER || currentMusic == MUS_DP_SURF)
                 return;
             if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
-                newMusic = MUS_SURF;
+                newMusic = MUS_DP_SURF;
         }
         if (newMusic != currentMusic)
         {
-            if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE))
+            if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_BIKE))
                 FadeOutAndFadeInNewMapMusic(newMusic, 4, 4);
             else
                 FadeOutAndPlayNewMapMusic(newMusic, 8);
@@ -1304,7 +1384,7 @@ void TryFadeOutOldMapMusic(void)
     u16 warpMusic = GetWarpDestinationMusic();
     if (FlagGet(FLAG_DONT_TRANSITION_MUSIC) != TRUE && warpMusic != GetCurrentMapMusic())
     {
-        if (currentMusic == MUS_SURF
+        if (currentMusic == MUS_DP_SURF
             && VarGet(VAR_SKY_PILLAR_STATE) == 2
             && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SOOTOPOLIS_CITY)
             && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SOOTOPOLIS_CITY)
@@ -1434,6 +1514,16 @@ enum MapType GetCurrentMapType(void)
 enum MapType GetLastUsedWarpMapType(void)
 {
     return GetMapTypeByWarpData(&gLastUsedWarp);
+}
+
+u8 GetLastUsedWarpMapSectionId(void)
+{
+    return Overworld_GetMapHeaderByGroupAndId(gLastUsedWarp.mapGroup, gLastUsedWarp.mapNum)->regionMapSectionId;
+}
+
+u8 GetDestinationWarpMapSectionId(void)
+{
+    return Overworld_GetMapHeaderByGroupAndId(sWarpDestination.mapGroup, sWarpDestination.mapNum)->regionMapSectionId;
 }
 
 bool8 IsMapTypeOutdoors(enum MapType mapType)
@@ -1632,6 +1722,7 @@ bool32 MapHasNaturalLight(enum MapType mapType)
           || mapType == MAP_TYPE_CITY
           || mapType == MAP_TYPE_ROUTE
           || mapType == MAP_TYPE_OCEAN_ROUTE));
+
 }
 
 bool32 CurrentMapHasShadows(void)
@@ -1696,6 +1787,40 @@ u8 UpdateSpritePaletteWithTime(u8 paletteNum)
     return paletteNum;
 }
 
+void ApplyPlayerTransformationIfNeeded(void)
+{
+    if (!gSaveBlock1Ptr->isPlayerTransformed)
+        return;
+
+    struct ObjectEvent *playerObj = &gObjectEvents[gPlayerAvatar.objectEventId];
+    struct Sprite *sprite = &gSprites[playerObj->spriteId];
+
+    u8 slot = VarGet(VAR_0x8004); // optional: keep track of last chosen slot
+    struct Pokemon *mon = &gPlayerParty[slot];
+
+    u16 species = gSaveBlock1Ptr->transformedSpecies;
+    bool8 shiny = gSaveBlock1Ptr->transformedIsShiny;
+
+    // Set the graphics for the transformed Pokémon
+    u16 gfxId = species + OBJ_EVENT_MON;
+    ObjectEventSetGraphicsId(playerObj, gfxId);
+
+    // Load correct palette
+    struct SpritePalette spritePalette;
+    spritePalette.data = shiny ? gSpeciesInfo[species].overworldShinyPalette
+                               : gSpeciesInfo[species].overworldPalette;
+    spritePalette.tag = gfxId;
+    sprite->oam.paletteNum = LoadSpritePalette(&spritePalette);
+
+    // Ensure sprite size/shape matches player avatar
+    sprite->oam.shape = gSprites[gPlayerAvatar.spriteId].oam.shape;
+    sprite->oam.size = gSprites[gPlayerAvatar.spriteId].oam.size;
+
+    // Sync facing direction
+    PlayerFaceDirection(GetPlayerFacingDirection());
+}
+
+
 static void OverworldBasic(void)
 {
     ScriptContext_RunScript();
@@ -1706,6 +1831,7 @@ static void OverworldBasic(void)
     BuildOamBuffer();
     UpdatePaletteFade();
     UpdateTilesetAnimations();
+    UpdateBlend();
     DoScheduledBgTilemapCopiesToVram();
     // Every minute if no palette fade is active, update TOD blending as needed
     if (!gPaletteFade.active && --gTimeUpdateCounter <= 0)
@@ -1716,12 +1842,11 @@ static void OverworldBasic(void)
         gTimeUpdateCounter = (SECONDS_PER_MINUTE * 60 / FakeRtc_GetSecondsRatio());
         UpdateTimeOfDay();
         FormChangeTimeUpdate();
-        if (MapHasNaturalLight(gMapHeader.mapType) &&
-           (bld0[0] != bld1[0]
+        if (bld0[0] != bld1[0]
          || bld0[1] != bld1[1]
-         || bld0[2] != bld1[2]))
+         || bld0[2] != bld1[2])
         {
-            ApplyWeatherColorMapIfIdle(gWeatherPtr->colorMapIndex);
+           ApplyWeatherColorMapIfIdle(gWeatherPtr->colorMapIndex);
         }
     }
 }
@@ -1735,14 +1860,19 @@ void CB2_OverworldBasic(void)
 void CB2_Overworld(void)
 {
     bool32 fading = (gPaletteFade.active != 0);
+    UpdateWeekdayOncePerMinute();
+    ApplyPlayerTransformationIfNeeded();
     if (fading)
         SetVBlankCallback(NULL);
     OverworldBasic();
+    if (gMapHeader.mapType == MAP_TYPE_UNDERGROUND)
+        UpdatePalettesWithTime(PALETTES_ALL);
     if (fading)
     {
         SetFieldVBlankCallback();
         return;
     }
+    
 }
 
 void SetMainCallback1(MainCallback cb)
@@ -1793,7 +1923,7 @@ void CB2_NewGame(void)
     PlayTimeCounter_Start();
     ScriptContext_Init();
     UnlockPlayerFieldControls();
-    gFieldCallback = ExecuteTruckSequence;
+   // gFieldCallback = ExecuteTruckSequence;
     gFieldCallback2 = NULL;
     DoMapLoadLoop(&gMain.state);
     SetFieldVBlankCallback();
@@ -2207,8 +2337,14 @@ static bool32 LoadMapInStepsLocal(u8 *state, bool32 a2)
         (*state)++;
         break;
     case 11:
-        if (gMapHeader.showMapName == TRUE && SecretBaseMapPopupEnabled() == TRUE)
+        if (GetLastUsedWarpMapSectionId() != gMapHeader.regionMapSectionId && MapHasPreviewScreen_HandleQLState2(gMapHeader.regionMapSectionId, MPS_TYPE_FADE_IN) == TRUE)
+        {
+            MapPreview_LoadGfx(gMapHeader.regionMapSectionId);
+            MapPreview_StartForestTransition(gMapHeader.regionMapSectionId);
+        }
+        else if (gMapHeader.showMapName == TRUE && SecretBaseMapPopupEnabled() == TRUE) {
             ShowMapNamePopup();
+        }
         (*state)++;
         break;
     case 12:
@@ -2224,6 +2360,7 @@ static bool32 LoadMapInStepsLocal(u8 *state, bool32 a2)
 
 static bool32 ReturnToFieldLocal(u8 *state)
 {
+    struct ObjectEvent *player = &gObjectEvents[gPlayerAvatar.objectEventId];
     switch (*state)
     {
     case 0:
@@ -2231,6 +2368,8 @@ static bool32 ReturnToFieldLocal(u8 *state)
         ResetScreenForMapLoad();
         ResumeMap(FALSE);
         InitObjectEventsReturnToField();
+        ObjectEventSetGraphicsId(player, GetPlayerAvatarGraphicsIdByCurrentState());
+        ObjectEventTurn(player, player->movementDirection);
         if (gFieldCallback == FieldCallback_UseFly)
             RemoveFollowingPokemon();
         else
@@ -2258,6 +2397,7 @@ static bool32 ReturnToFieldLocal(u8 *state)
 
 static bool32 ReturnToFieldLink(u8 *state)
 {
+    struct ObjectEvent *player = &gObjectEvents[gPlayerAvatar.objectEventId];
     switch (*state)
     {
     case 0:
@@ -2273,6 +2413,8 @@ static bool32 ReturnToFieldLink(u8 *state)
     case 2:
         CreateLinkPlayerSprites();
         InitObjectEventsReturnToField();
+        ObjectEventSetGraphicsId(player, GetPlayerAvatarGraphicsIdByCurrentState());
+        ObjectEventTurn(player, player->movementDirection);
         SetCameraToTrackGuestPlayer_2();
         (*state)++;
         break;
@@ -2368,15 +2510,13 @@ static void InitOverworldGraphicsRegisters(void)
     ClearScheduledBgCopiesToVram();
     ResetTempTileDataBuffers();
     SetGpuReg(REG_OFFSET_MOSAIC, 0);
-    SetGpuReg(REG_OFFSET_WININ, WININ_WIN0_BG_ALL | WININ_WIN0_OBJ | WININ_WIN1_BG_ALL | WININ_WIN1_OBJ);
     SetGpuReg(REG_OFFSET_WINOUT, WINOUT_WIN01_BG0 | WINOUT_WINOBJ_BG0);
     SetGpuReg(REG_OFFSET_WIN0H, 0xFF);
     SetGpuReg(REG_OFFSET_WIN0V, 0xFF);
     SetGpuReg(REG_OFFSET_WIN1H, 0xFFFF);
     SetGpuReg(REG_OFFSET_WIN1V, 0xFFFF);
-    SetGpuReg(REG_OFFSET_BLDCNT, gOverworldBackgroundLayerFlags[1] | gOverworldBackgroundLayerFlags[2] | gOverworldBackgroundLayerFlags[3]
-                               | BLDCNT_TGT2_OBJ | BLDCNT_EFFECT_BLEND);
-    SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(13, 7));
+
+    InitBlend();
     InitOverworldBgs();
     ScheduleBgCopyTilemapToVram(1);
     ScheduleBgCopyTilemapToVram(2);
@@ -2416,6 +2556,7 @@ static void ResumeMap(bool32 a1)
         SetUpFieldTasks();
     RunOnResumeMapScript();
     TryStartMirageTowerPulseBlendEffect();
+    InitBlend();
 }
 
 static void InitObjectEventsLink(void)
@@ -2423,9 +2564,12 @@ static void InitObjectEventsLink(void)
     gTotalCameraPixelOffsetX = 0;
     gTotalCameraPixelOffsetY = 0;
     ResetObjectEvents();
-    TrySpawnObjectEvents(0, 0);
+    TrySpawnObjectEvents(0, 0, TRUE);
     TryRunOnWarpIntoMapScript();
 }
+
+
+
 
 static void InitObjectEventsLocal(void)
 {
@@ -2437,10 +2581,11 @@ static void InitObjectEventsLocal(void)
     ResetObjectEvents();
     GetCameraFocusCoords(&x, &y);
     player = GetInitialPlayerAvatarState();
-    InitPlayerAvatar(x, y, player->direction, gSaveBlock2Ptr->playerGender);
+    InitPlayerAvatar(x, y, player->direction);
     SetPlayerAvatarTransitionFlags(player->transitionFlags);
     ResetInitialPlayerAvatarState();
-    TrySpawnObjectEvents(0, 0);
+    ApplyPlayerTransformationIfNeeded();
+    TrySpawnObjectEvents(0, 0, TRUE);
     FollowerNPC_HandleSprite();
     UpdateFollowingPokemon();
     TryRunOnWarpIntoMapScript();
@@ -3461,7 +3606,10 @@ static void CreateLinkPlayerSprite(u8 linkPlayerId, u8 gameVersion)
             objEvent->spriteId = CreateObjectGraphicsSprite(GetRSAvatarGraphicsIdByGender(linkGender(objEvent)), SpriteCB_LinkPlayer, 0, 0, 0);
             break;
         case VERSION_EMERALD:
-            objEvent->spriteId = CreateObjectGraphicsSprite(GetRivalAvatarGraphicsIdByStateIdAndGender(PLAYER_AVATAR_STATE_NORMAL, linkGender(objEvent)), SpriteCB_LinkPlayer, 0, 0, 0);
+        {
+            u16 gfxId = GetLinkPlayerAvatarGraphicsIdByStateIdLinkIdAndGender(PLAYER_AVATAR_STATE_NORMAL, linkPlayerId, linkGender(objEvent));
+            objEvent->spriteId = CreateObjectGraphicsSprite(gfxId, SpriteCB_LinkPlayer, 0, 0, 0);
+        }
             break;
         }
 
@@ -3713,4 +3861,102 @@ bool8 ScrFunc_settimeofday(struct ScriptContext *ctx)
 {
     SetTimeOfDay(ScriptReadByte(ctx));
     return FALSE;
+}
+
+void CB2_ReturnToFullScreenStartMenu(void)
+{
+    FieldClearVBlankHBlankCallbacks();
+
+    if (GetSafariZoneFlag() || InBattlePyramid_() || InBattlePike() || InUnionRoom() || InMultiPartnerRoom())
+    {
+        SetMainCallback2(CB2_ReturnToFullScreenStartMenu);
+        return;
+    }
+    ApplyPlayerTransformationIfNeeded();
+	StartMenuFull_Init(CB2_ReturnToField);
+}
+
+#define OVERLAY_FADE_IN_DELAY 6
+
+void SetOverlayAlpha(u8 eva, u8 evb)
+{
+    sOverlayState.eva = eva;
+    sOverlayState.evb = evb;
+    sOverlayState.targetEVA = eva;
+    sOverlayState.targetEVB = evb;
+}
+
+static void UNUSED FadeOverlay(u8 eva, u8 evb)
+{
+    sOverlayState.targetEVA = eva;
+    sOverlayState.targetEVB = evb;
+    sOverlayState.fadeDelay = OVERLAY_FADE_IN_DELAY;
+}
+
+void SetOverlayEnabled(bool8 active)
+{
+    sOverlayState.active = active;
+
+    if (active) 
+    {
+        UpdateBlend();
+        // FlagSet(FLAG_TRANSPARENT_OVERLAY_ENABLED);
+    } 
+    else
+    {
+        SetGpuReg(REG_OFFSET_WININ, WININ_WIN0_BG_ALL | WININ_WIN0_OBJ | WININ_WIN1_BG_ALL | WININ_WIN1_OBJ);
+        SetGpuReg(REG_OFFSET_BLDCNT, gOverworldBackgroundLayerFlags[1] | gOverworldBackgroundLayerFlags[2] | gOverworldBackgroundLayerFlags[3]
+                                | BLDCNT_TGT2_OBJ | BLDCNT_EFFECT_BLEND);
+        SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(13, 7));
+        // FlagClear(FLAG_TRANSPARENT_OVERLAY_ENABLED);
+    } 
+}
+
+static void InitBlend()
+{
+    if (gMapHeader.overlay == NULL) // ||  !FlagGet(FLAG_TRANSPARENT_OVERLAY_ENABLED) 
+    {
+        SetOverlayAlpha(13, 7);
+        SetOverlayEnabled(FALSE);
+    }
+    else 
+    {
+        SetOverlayAlpha(gMapHeader.overlay->initialEVA, gMapHeader.overlay->initialEVB);
+        SetOverlayEnabled(TRUE);
+    }
+}
+
+static void UpdateBlend(void)
+{
+    if (!sOverlayState.active)
+        return;
+
+    if (sOverlayState.eva != sOverlayState.targetEVA || sOverlayState.evb != sOverlayState.targetEVB)
+    {
+        if (sOverlayState.fadeDelay > 0)
+        {
+            sOverlayState.fadeDelay--;
+        }
+        else
+        {
+            sOverlayState.fadeDelay = 0;
+
+            if (sOverlayState.eva < sOverlayState.targetEVA)
+                sOverlayState.eva++;
+            else if (sOverlayState.eva > sOverlayState.targetEVA)
+                sOverlayState.eva--;
+
+            if (sOverlayState.evb < sOverlayState.targetEVB)
+                sOverlayState.evb++;
+            else if (sOverlayState.evb > sOverlayState.targetEVB)
+                sOverlayState.evb--;
+
+            sOverlayState.fadeDelay = OVERLAY_FADE_IN_DELAY;
+        }
+    }
+
+    SetGpuReg(REG_OFFSET_WININ, WININ_WIN0_BG_ALL | WININ_WIN0_OBJ | WININ_WIN1_BG_ALL | WININ_WIN1_OBJ | WININ_WIN0_CLR);
+    SetGpuReg(REG_OFFSET_BLDCNT, gOverworldBackgroundLayerFlags[1] | gOverworldBackgroundLayerFlags[2] | gOverworldBackgroundLayerFlags[3]
+                            | BLDCNT_TGT2_OBJ | BLDCNT_EFFECT_BLEND | BLDCNT_TGT1_BG1);
+    SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(sOverlayState.eva , sOverlayState.evb));
 }

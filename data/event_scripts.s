@@ -13,6 +13,7 @@
 #include "constants/battle_pike.h"
 #include "constants/battle_pyramid.h"
 #include "constants/battle_setup.h"
+#include "constants/battle_special.h"
 #include "constants/battle_tent.h"
 #include "constants/battle_tower.h"
 #include "constants/berry.h"
@@ -64,7 +65,12 @@
 #include "constants/union_room.h"
 #include "constants/vars.h"
 #include "constants/weather.h"
+#include "constants/new_shop.h"
+#include "constants/field_mugshots.h"
+#include "constants/mugshots.h"
+#include "constants/outfits.h"
 #include "constants/speaker_names.h"
+#include "constants/help_window.h"
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"
 	.include "constants/constants.inc"
@@ -115,11 +121,11 @@ gStdScripts::
 	.4byte Std_MsgboxPokenav           @ MSGBOX_POKENAV
 gStdScripts_End::
 
-	.include "data/maps/PetalburgCity/scripts.inc"
+	.include "data/maps/AstralisAcademy/scripts.inc"
 	.include "data/maps/SlateportCity/scripts.inc"
 	.include "data/maps/MauvilleCity/scripts.inc"
 	.include "data/maps/RustboroCity/scripts.inc"
-	.include "data/maps/FortreeCity/scripts.inc"
+	.include "data/maps/AstraveilCity/scripts.inc"
 	.include "data/maps/LilycoveCity/scripts.inc"
 	.include "data/maps/MossdeepCity/scripts.inc"
 	.include "data/maps/SootopolisCity/scripts.inc"
@@ -129,8 +135,6 @@ gStdScripts_End::
 	.include "data/maps/DewfordTown/scripts.inc"
 	.include "data/maps/LavaridgeTown/scripts.inc"
 	.include "data/maps/FallarborTown/scripts.inc"
-	.include "data/maps/VerdanturfTown/scripts.inc"
-	.include "data/maps/PacifidlogTown/scripts.inc"
 	.include "data/maps/Route101/scripts.inc"
 	.include "data/maps/Route102/scripts.inc"
 	.include "data/maps/Route103/scripts.inc"
@@ -172,8 +176,8 @@ gStdScripts_End::
 	.include "data/maps/Underwater_Route129/scripts.inc"
 	.include "data/maps/Underwater_Route105/scripts.inc"
 	.include "data/maps/Underwater_Route125/scripts.inc"
-	.include "data/maps/LittlerootTown_BrendansHouse_1F/scripts.inc"
-	.include "data/maps/LittlerootTown_BrendansHouse_2F/scripts.inc"
+	.include "data/maps/AcademyView/scripts.inc"
+	.include "data/maps/Academy_Lighthouse/scripts.inc"
 	.include "data/maps/LittlerootTown_MaysHouse_1F/scripts.inc"
 	.include "data/maps/LittlerootTown_MaysHouse_2F/scripts.inc"
 	.include "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.inc"
@@ -203,29 +207,13 @@ gStdScripts_End::
 	.include "data/maps/FallarborTown_PokemonCenter_2F/scripts.inc"
 	.include "data/maps/FallarborTown_CozmosHouse/scripts.inc"
 	.include "data/maps/FallarborTown_MoveRelearnersHouse/scripts.inc"
-	.include "data/maps/VerdanturfTown_BattleTentLobby/scripts.inc"
-	.include "data/maps/VerdanturfTown_BattleTentCorridor/scripts.inc"
-	.include "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.inc"
-	.include "data/maps/VerdanturfTown_Mart/scripts.inc"
-	.include "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.inc"
-	.include "data/maps/VerdanturfTown_PokemonCenter_2F/scripts.inc"
-	.include "data/maps/VerdanturfTown_WandasHouse/scripts.inc"
-	.include "data/maps/VerdanturfTown_FriendshipRatersHouse/scripts.inc"
-	.include "data/maps/VerdanturfTown_House/scripts.inc"
-	.include "data/maps/PacifidlogTown_PokemonCenter_1F/scripts.inc"
-	.include "data/maps/PacifidlogTown_PokemonCenter_2F/scripts.inc"
-	.include "data/maps/PacifidlogTown_House1/scripts.inc"
-	.include "data/maps/PacifidlogTown_House2/scripts.inc"
-	.include "data/maps/PacifidlogTown_House3/scripts.inc"
-	.include "data/maps/PacifidlogTown_House4/scripts.inc"
-	.include "data/maps/PacifidlogTown_House5/scripts.inc"
-	.include "data/maps/PetalburgCity_WallysHouse/scripts.inc"
-	.include "data/maps/PetalburgCity_Gym/scripts.inc"
-	.include "data/maps/PetalburgCity_House1/scripts.inc"
-	.include "data/maps/PetalburgCity_House2/scripts.inc"
-	.include "data/maps/PetalburgCity_PokemonCenter_1F/scripts.inc"
-	.include "data/maps/PetalburgCity_PokemonCenter_2F/scripts.inc"
-	.include "data/maps/PetalburgCity_Mart/scripts.inc"
+	.include "data/maps/AstralisAcademy_Classroom/scripts.inc"
+	.include "data/maps/AstralisAcademy_Gym/scripts.inc"
+	.include "data/maps/AstralisAcademy_Floor1/scripts.inc"
+	.include "data/maps/AstralisAcademy_Floor2/scripts.inc"
+	.include "data/maps/AstralisAcademy_Hallway/scripts.inc"
+	.include "data/maps/AstralisAcademy_PokemonCenter/scripts.inc"
+	.include "data/maps/AstralisAcademy_BattleRoom/scripts.inc"
 	.include "data/maps/SlateportCity_SternsShipyard_1F/scripts.inc"
 	.include "data/maps/SlateportCity_SternsShipyard_2F/scripts.inc"
 	.include "data/maps/SlateportCity_BattleTentLobby/scripts.inc"
@@ -584,6 +572,7 @@ gStdScripts_End::
 	.include "data/maps/Route119_WeatherInstitute_2F/scripts.inc"
 	.include "data/maps/Route119_House/scripts.inc"
 	.include "data/maps/Route124_DivingTreasureHuntersHouse/scripts.inc"
+	.include "data/maps/AcademyDorm/scripts.inc"
 
 	.include "data/scripts/std_msgbox.inc"
 	.include "data/scripts/trainer_battle.inc"
@@ -764,13 +753,13 @@ Common_EventScript_SetAbnormalWeather::
 	return
 
 Common_EventScript_PlayGymBadgeFanfare::
-	playfanfare MUS_OBTAIN_BADGE
+	playfanfare MUS_DP_OBTAIN_BADGE
 	waitfanfare
 	return
 
 Common_EventScript_OutOfCenterPartyHeal::
 	fadescreenswapbuffers FADE_TO_BLACK
-	playfanfare MUS_HEAL
+	playfanfare MUS_DP_HEAL
 	waitfanfare
 	special HealPlayerParty
 	callnative UpdateFollowingPokemon
@@ -870,7 +859,7 @@ Common_EventScript_NameReceivedPartyMon::
 
 Common_EventScript_PlayerHandedOverTheItem::
 	bufferitemname STR_VAR_1, VAR_0x8004
-	playfanfare MUS_OBTAIN_TMHM
+	playfanfare MUS_DP_OBTAIN_TMHM
 	message gText_PlayerHandedOverTheItem
 	waitmessage
 	waitfanfare
@@ -1102,6 +1091,18 @@ Common_EventScript_LegendaryFlewAway::
 	release
 	end
 
+
+Text_PlayerUsedFieldTool:
+	.string "{PLAYER} used {STR_VAR_2}!$"
+
+FieldMove_EventScript_Cut::
+	lockall
+	bufferitemname STR_VAR_2, ITEM_CUT_TOOL
+	msgbox Text_PlayerUsedFieldTool, MSGBOX_DEFAULT
+	closemessage
+	goto EventScript_CutTree
+
+
 EventScript_VsSeekerChargingDone::
 	special VsSeekerFreezeObjectsAfterChargeComplete
 	waitstate
@@ -1161,5 +1162,40 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
 	.include "data/scripts/dexnav.inc"
+	.include "data/maps/LuxuraIsland/scripts.inc"
+	.include "data/maps/LuxuraIndoor/scripts.inc"
+	.include "data/maps/Luxuraliving/scripts.inc"
+	.include "data/maps/Luxuradining/scripts.inc"
+	.include "data/maps/luxurakitchen/scripts.inc"
+	.include "data/maps/Luxuralib/scripts.inc"
+	.include "data/maps/Luxurawork/scripts.inc"
+	.include "data/maps/Luxuraupstair/scripts.inc"
+	.include "data/maps/NewMap1/scripts.inc"
+	.include "data/maps/Parentroom/scripts.inc"
+	.include "data/maps/Playerroom/scripts.inc"
+	.include "data/maps/guest/scripts.inc"
+	.include "data/maps/LuxuraIsland1/scripts.inc"
+	.include "data/maps/Luxurawoods/scripts.inc"
+	.include "data/maps/Hospital/scripts.inc"
+	.include "data/maps/Servantquarter/scripts.inc"
+	.include "data/maps/Sparkbase/scripts.inc"
+	.include "data/maps/Newmap11/scripts.inc"
+	.include "data/maps/newhouse/scripts.inc"
+
+	.include "data/maps/Academy_Lib/scripts.inc"
+
+	.include "data/maps/Battleroomlobby/scripts.inc"
+
+	.include "data/maps/DormIndoor/scripts.inc"
+
+	.include "data/maps/Dormindoor1/scripts.inc"
+
+	.include "data/maps/headoffice/scripts.inc"
+
+	.include "data/maps/Harborac/scripts.inc"
+
+	.include "data/maps/LunarGrove/scripts.inc"
 	.include "data/scripts/battle_frontier.inc"
 	.include "data/scripts/apricorn_tree.inc"
+
+	.include "data/maps/Dreamland/scripts.inc"

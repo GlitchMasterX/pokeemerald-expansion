@@ -1,0 +1,59 @@
+{
+  "id": "MAP_HARBORAC",
+  "name": "Harborac",
+  "layout": "LAYOUT_HARBORAC",
+  "music": "MUS_DEWFORD",
+  "region_map_section": "MAPSEC_ASTRALIS_ACADEMY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ROUTE109",
+      "offset": 0,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_ASTRALIS_ACADEMY",
+      "offset": -1,
+      "direction": "up"
+    }
+  ],
+  "object_events": [
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
+      "x": 21,
+      "y": 10,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "nerd",
+      "flag": "0",
+      "day": "1",
+      "evening": "0",
+      "morning": "1",
+      "night": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 22,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE109",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [],
+  "floor_number": 0
+}

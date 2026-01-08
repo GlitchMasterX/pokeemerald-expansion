@@ -106,6 +106,7 @@ const struct MapConnection *GetMapConnection(u8 dir);
 bool8 SetDiveWarpEmerge(u16 x, u16 y);
 bool8 SetDiveWarpDive(u16 x, u16 y);
 void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum);
+void TryApplySeasonalWeather(void);
 void ResetInitialPlayerAvatarState(void);
 void StoreInitialPlayerAvatarState(void);
 bool32 Overworld_IsBikingAllowed(void);
@@ -163,6 +164,8 @@ void CB2_ReturnToFieldContinueScriptPlayMapMusic(void);
 void CB2_ReturnToFieldFadeFromBlack(void);
 void CB2_ContinueSavedGame(void);
 void ResetAllMultiplayerState(void);
+u8 GetLastUsedWarpMapSectionId(void);
+u8 GetDestinationWarpMapSectionId(void);
 u32 GetCableClubPartnersReady(void);
 u16 SetInCableClubSeat(void);
 u16 SetLinkWaitingForScript(void);
@@ -174,7 +177,7 @@ bool32 Overworld_SendKeysToLinkIsRunning(void);
 bool32 IsSendingKeysOverCable(void);
 void ClearLinkPlayerObjectEvents(void);
 bool16 SetTimeOfDay(u16 hours);
-
+void CB2_ReturnToFullScreenStartMenu(void);
 // Item Description Headers
 enum ItemObtainFlags
 {

@@ -1,0 +1,342 @@
+mapscripts AstralisAcademy_Floor2_MapScripts {
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
+	VAR_ACADEMY_START,5:Leafmet
+	VAR_ACADEMY_CLASS,1:BattletheoryClass
+	]
+	
+	
+}
+script Leafmet {
+	addobject(1,MAP_ASTRALIS_ACADEMY_FLOOR2)
+	setobjectxy(1,26,21)
+}
+
+script BattletheoryClass {
+	clearflag(FLAG_IRIS_ACADEMY)
+	clearflag(FLAG_KAEL_ACADEMY)
+	setobjectxyperm(15,7,58)
+	setobjectxyperm(14,10,58)
+	setobjectxyperm(2,7,61)
+	setobjectxyperm(8,17,58)
+	setobjectmovementtype(2,MOVEMENT_TYPE_FACE_UP)	
+	setobjectmovementtype(15,MOVEMENT_TYPE_FACE_UP)
+	setobjectmovementtype(8,MOVEMENT_TYPE_FACE_UP)	
+	setobjectmovementtype(14,MOVEMENT_TYPE_FACE_UP)
+	createvobject(OBJ_EVENT_GFX_ACE_F,21,14,58,3,DIR_NORTH)
+	createvobject(OBJ_EVENT_GFX_ACE_M,22,10,61,3,DIR_NORTH)
+	addobject(2)
+	addobject(15)
+	addobject(14)
+	addobject(8)
+
+}
+
+script BattletheoryClass1 {
+	lock
+	playse(SE_PIN)
+	applymovement(14,moves(emote_exclamation_mark face_down jump_in_place_down*2)) //kael waving xylar
+	applymovement(0xFF,moves(walk_up*2 walk_right*2 face_up)) //xylar ignores
+	waitmovementall
+	special(SpawnCameraObject)
+	applymovement(0x7F,moves(walk_left*2 walk_up*2))
+	waitmovement(0)
+	applymovement(9,moves(walk_right*2 walk_down*3))
+	fadenewbgm(MUS_SCHOOL)
+	speakername("Prof. Evelyn")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Sit properly.\pIf you can't manage that, you won't survive field battles."))
+    closemessage
+	playse(SE_PIN)
+	applymovement(14,moves(emote_exclamation_mark face_up))
+	applymovement(9,moves(walk_left*4 face_down))
+	speakername("Prof. Evelyn")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}My name is Evelyn and I'll be teaching you Battle and Item Theory.\pThis course determines whether you become competent trainers or future cautionary tales."))
+    closemessage
+	waitmovementall
+	applymovement(9,moves(walk_up*3))
+	applymovement(0x7F,moves(walk_up*5))
+	waitmovement(0)
+	speakername("Prof. Evelyn")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Your grade has three parts."))
+	closemessage
+    waitmovementall
+	applymovement(9,moves(walk_in_place_up*3)) //writing on board.
+	playse(SE_SUDOWOODO_SHAKE)
+	waitse
+	helpwindow(GRADING_SYSTEM)
+    turnobject(9,DIR_SOUTH)
+    speakername("Prof. Evelyn")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Fail any single component below fifty percent, you fail the course.\pFail two courses this year, and the Academy removes you.\pI don't negotiate with parents."))
+	closemessage
+	playse(SE_PIN)
+	applymovement(14,moves(emote_exclamation_mark))
+    applymovement(15,moves(emote_exclamation_mark))
+	applymovement(8,moves(emote_exclamation_mark))
+	applymovement(2,moves(emote_exclamation_mark))
+	waitmovement(0)
+	applymovement(0x7F,moves(walk_down*5))
+	applymovement(9,moves(walk_down*3))
+    speakername("Prof. Evelyn")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Viva questions begin next class.\pToday's lecture is informational. Pay attention anyway."))
+	closemessage
+	applymovement(9,moves(walk_slow_right*2 face_down))
+	speakername("Prof. Evelyn")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Scenario.\pYour Pokémon is faster. You attack first.\pYour opponent survives with a sliver of HP, then defeats you on the next turn with a priority move. You lose.\p Why?"))
+	closemessage
+	delay(30)
+	waitbuttonpress
+	applymovement(9,moves(face_left delay_16 delay_16 delay_16 face_right delay_16 delay_16 face_left face_down))
+	waitmovement(0)
+	speakername("Prof. Evelyn")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}No volunteers? Fine.\pYou!"))
+	closemessage
+	playse(SE_PIN)
+	applymovement(2,moves(emote_exclamation_mark))
+	speakername("Prof. Evelyn")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Yes, You.\pAnswer."))
+	closemessage
+	speakername("Student")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}...{PAUSE_UNTIL_PRESS}Bad luck?"))
+	closemessage
+	applymovement(9,moves(walk_slow_down*3))
+	speakername("Prof. Evelyn")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}No. The answer is Assumption.\pYou assumed your attack would knock them out. You ignored held items.\pA Focus Sash guarantees survival from full health. A Focus Band gives a chance to endure any hit. You didn't lose because of luck.\pYou lost because you stopped thinking."))
+	closemessage
+	applymovement(9,moves(walk_slow_up*3))
+    speakername("Prof. Evelyn")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Next.\pYour opponent switches Pokémon mid-battle. What does that tell you?"))
+	closemessage
+	waitmovementall
+	playse(SE_PIN)
+    applymovement(14,moves(emote_exclamation_mark))
+	speakername("Kael")
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_QUESTION}{COLOR BLUE}{SHADOW LIGHT_GRAY}They're scared of the type disadvantage?"))
+	closemessage
+	applymovement(9,moves(face_down))
+	speakername("Prof. Evelyn")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Partially.\pBut more importantly, they predicted your next move. That means you're being read.\pIf you don't change your behavior immediately, you're already behind."))
+	closemessage
+	applymovement(9,moves(face_down delay_16 walk_slow_down*2))
+	speakername("Prof. Evelyn")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}This is what separates competitive battles from playground ones.\pInformation. Every move reveals something. Every hesitation is a signal.\pBattles are not won by type charts. They're won by control and momentum."))
+	closemessage
+	speakername("Prof. Evelyn")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Now.\pYou're winning. Your Pokémon is at sixty percent HP. The opponent's last Pokémon is at thirty.\pDo you attack, or do you heal?"))
+	closemessage
+    applymovement(9,moves(face_left delay_16 delay_16 delay_16 face_right delay_16 delay_16 face_left face_down))
+	waitmovement(0)
+	speakername("Prof. Evelyn")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Anyone?"))
+	closemessage
+    delay(20)
+	speakername("Xylar")
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Attack."))
+	closemessage
+    playse(SE_PIN)
+	applymovement(14,moves(emote_exclamation_mark face_down))
+    applymovement(15,moves(emote_exclamation_mark face_down))
+	applymovement(8,moves(emote_exclamation_mark face_down))
+	applymovement(2,moves(emote_exclamation_mark face_right))
+	turnvobject(21,DIR_SOUTH)
+	turnvobject(22,DIR_EAST)
+	waitmovement(0)
+	speakername("Prof. Evelyn")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Why?"))
+	closemessage
+	speakername("Xylar")
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Healing gives them a free turn.\pIf they set up, you lose momentum."))
+	closemessage
+	playse(SE_PIN)
+	applymovement(9,moves(emote_happy))
+	speakername("Prof. Evelyn")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Correct.\pMost trainers heal because they're afraid of risk.\pFear hands control to the opponent."))
+	closemessage
+	applymovement(14,moves(face_up))
+    applymovement(15,moves(face_up))
+	applymovement(8,moves(face_up))
+	applymovement(2,moves(face_up))
+	turnvobject(21,DIR_NORTH)
+	turnvobject(22,DIR_NORTH)
+	applymovement(9,moves(walk_slow_up*2 face_down))
+	speakername("Prof. Evelyn")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Your opponent's last Pokémon is never weak.\pIt's either their ace or their comeback plan.\pGive them time, and they'll take the battle from you."))
+	closemessage
+	speakername("Prof. Evelyn")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Homework.\pPick three held items. Explain how each one changes battle momentum.\pNot what it does but how it forces reactions.\pDismissed."))
+	closemessage
+	applymovement(9,moves(face_up))
+	applymovement(14,moves(walk_right))
+    applymovement(15,moves(walk_right))
+	applymovement(8,moves(walk_right))
+	applymovement(2,moves(walk_right))
+	waitmovementall
+	speakername("Prof. Evelyn")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Actually…"))
+	closemessage
+	playse(SE_PIN)
+	applymovement(14,moves(emote_exclamation_mark face_up))
+    applymovement(15,moves(emote_exclamation_mark face_up))
+	applymovement(8,moves(emote_exclamation_mark face_up))
+	applymovement(2,moves(emote_exclamation_mark face_up))
+	waitmovementall
+	speakername("Prof. Evelyn")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I said there would be no viva today.\pI changed my mind."))
+	closemessage
+	applymovement(9,moves(face_down))
+	applymovement(14,moves(walk_left face_up))
+    applymovement(15,moves(walk_left face_up))
+	applymovement(8,moves(walk_left face_up))
+	applymovement(2,moves(walk_left face_up))
+	waitmovementall
+    speakername("Prof. Evelyn")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Single question.\pAnswer it, or don't. You'll be graded either way."))
+	closemessage
+	applymovement(9,moves(walk_left*2 walk_up*3))
+	applymovement(0x7F,moves(walk_up*5))
+	waitmovement(0)
+	applymovement(9,moves(walk_in_place_up*3))
+	playse(SE_SUDOWOODO_SHAKE)
+	waitse
+	helpwindow(BATTLE_THEORY_CLASS_1)
+ 	speakername("Xylar")
+	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I think there is no correct answer. Do you feel the same?"),MSGBOX_YESNO)
+	closemessage
+	if(var(VAR_RESULT)==YES){
+		goto(BattletheoryClass1end)
+	}
+	else{
+		goto(BattletheoryClass1No)
+	}
+	release
+    
+}
+
+script BattletheoryClass1No {
+	speakername("Xylar")
+	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Just believe me, okay?"),MSGBOX_YESNO)
+	closemessage
+	if(var(VAR_RESULT)==YES){
+		goto(BattletheoryClass1end)
+	}
+	else{
+		goto(BattletheoryClass1No)
+	}	
+}
+
+script BattletheoryClass1end {
+	fadescreen(FADE_TO_BLACK)
+	applymovement(9,moves(walk_down*3 walk_right*2))
+	applymovement(0x7F,moves(walk_down*5))
+	waitmovement(0)
+	msgbox(format("Prof. Evelyn collects the answers."))
+	closemessage
+    fadescreen(FADE_FROM_BLACK)
+	createvobject(OBJ_EVENT_GFX_ACE_F,21,14,58,3,DIR_NORTH)
+	createvobject(OBJ_EVENT_GFX_ACE_M,22,10,61,3,DIR_NORTH)
+	applymovement(9,moves(face_right))
+	speakername("Prof. Evelyn")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}You!"))
+	closemessage
+	playse(SE_PIN)
+	applymovement(8,moves(emote_exclamation_mark face_left))
+	speakername("Student")
+	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Yes, Ma'am."))
+	closemessage
+	speakername("Prof. Evelyn")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}You answered {COLOR BLUE}{SHADOW LIGHT_GRAY}B-Using Full Heal.\p{COLOR RED}{SHADOW LIGHT_GRAY}Wrong answer.\pYou wasted a turn fixing yourself instead of threatening them."))
+	closemessage
+    delay(20)
+	applymovement(9,moves(face_left))
+	speakername("Prof. Evelyn")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}You!"))
+	closemessage
+	playse(SE_PIN)
+	applymovement(15,moves(emote_exclamation_mark face_right))
+	speakername("Student")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Yes, Ma'am."))
+	closemessage
+	speakername("Prof. Evelyn")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}You answered {COLOR BLUE}{SHADOW LIGHT_GRAY}A-Switching out.\p{COLOR RED}{SHADOW LIGHT_GRAY}Safer. Not smarter."))
+	closemessage
+	applymovement(9,moves(face_down))
+	delay(20)
+	playse(SE_PIN)
+	applymovement(9,moves(emote_exclamation_mark))
+	speakername("Prof. Evelyn")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}...\pInteresting.\pXylar... why did you write there is no correct answer?"))
+	closemessage
+	speakername("Xylar")
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Because There isn't one."))
+	closemessage
+	playse(SE_PIN)
+	applymovement(14,moves(emote_exclamation_mark face_down))
+    applymovement(15,moves(emote_exclamation_mark face_down))
+	applymovement(8,moves(emote_exclamation_mark face_down))
+	applymovement(2,moves(emote_exclamation_mark face_right))
+	turnvobject(21,DIR_SOUTH)
+	turnvobject(22,DIR_EAST)
+    speakername("Prof. Evelyn")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Explain."))
+	closemessage
+	speakername("Xylar")
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}If their Pokémon threatens my team, I switch.\pIf it doesn't, I attack through paralysis and keep pressure.\pThe status isn't the problem. Losing momentum is."))
+	closemessage
+	delay(10)
+	speakername("Prof. Evelyn")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Correct.\pThat raises your grade."))
+	closemessage
+	setvar(VAR_BATTLE_THEORY_GRADE,1)
+	playfanfare(MUS_DP_OBTAIN_ACCESSORY)
+	msgbox(format("Battle Theory grade increased."))
+	waitfanfare
+	closemessage
+	speakername("Prof. Evelyn")
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Now you're dismissed."))
+	closemessage
+    fadescreen(FADE_TO_BLACK)
+	setflag(FLAG_IRIS_ACADEMY)
+    setflag(FLAG_KAEL_ACADEMY)
+    initclock(16,30)
+	resumefakertc
+	setvar(VAR_BATTLE_THEORY,0)
+	setvar(VAR_ACADEMY_CLASS,0)
+	setvar(VAR_CHARACTER_CHANGE,1)
+    msgbox(format("From now on, you can answer the questions yourself."))	
+	warpsilent(MAP_ASTRALIS_ACADEMY_FLOOR2,14,61)
+}
+
+script CharacterChange {
+	lock
+	if(var(VAR_CHARACTER_CHANGE)==1){
+	fadescreen(FADE_TO_BLACK)
+	msgbox(format("This event will occur only once.\pDo you want to see yourself from Kael's prespective?"),MSGBOX_YESNO)
+	closemessage
+	if(var(VAR_RESULT)==YES){
+		fadescreen(FADE_FROM_BLACK)
+		addhours(17)
+		pausefakertc
+		msgbox(format("You won't be able to save the game as Kael."))
+		closemessage
+		special(SaveGame)
+		waitstate
+		setflag(FLAG_TEMPORARY_PARTY_CHANGE)
+		special(SavePlayerParty)
+		callnative(ZeroPlayerPartyMons)
+		givemon(SPECIES_TURTWIG,5,ITEM_EXP_SHARE,ITEM_POKE_BALL,NATURE_ADAMANT,2,0,0,0,0,0,0,0,31,31,31,31,31,31)
+		setvar(VAR_KAEL_CHARCTER,1)
+ 		fadescreen(FADE_TO_BLACK)
+		setvar(VAR_0x8004,4)
+		special(WearOutfit)
+		msgbox(format("Early in the Morning."))
+		warpsilent(MAP_ACADEMY_LIB,13,10)
+	}
+	else{
+		setvar(VAR_CHARACTER_CHANGE,0)	
+		fadescreen(FADE_FROM_BLACK)
+		release
+	}
+}
+    else{
+		release
+	}
+
+}
