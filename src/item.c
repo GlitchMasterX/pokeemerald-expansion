@@ -779,10 +779,12 @@ bool32 RemovePyramidBagItem(u16 itemId, u16 count)
 
 static u16 SanitizeItemId(u16 itemId)
 {
-    if (itemId >= ITEMS_COUNT)
+    assertf(itemId < ITEMS_COUNT, "invalid item: %d", itemId)
+    {
         return ITEM_NONE;
-    else
-        return itemId;
+    }
+
+    return itemId;
 }
 
 const u8 *GetItemName(u16 itemId)
@@ -937,6 +939,15 @@ bool32 ItemHasVolatileFlag(u16 itemId, enum Volatile _volatile)
     }
 }
 
+u32 ItemId_GetCoinPrice(u16 itemId)
+{
+    return gItemsInfo[SanitizeItemId(itemId)].coinPrice;
+}
+
+u32 ItemId_GetBpPrice(u16 itemId)
+{
+    return gItemsInfo[SanitizeItemId(itemId)].bpPrice;
+}
 u32 GetItemSellPrice(u32 itemId)
 {
     return GetItemPrice(itemId) / ITEM_SELL_FACTOR;

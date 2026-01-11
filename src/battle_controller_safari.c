@@ -22,6 +22,7 @@
 #include "util.h"
 #include "window.h"
 #include "line_break.h"
+#include "outfit_menu.h"
 #include "constants/battle_anim.h"
 #include "constants/party_menu.h"
 #include "constants/songs.h"
@@ -29,8 +30,6 @@
 #include "constants/rgb.h"
 
 static void SafariHandleDrawTrainerPic(u32 battler);
-static void SafariHandleSuccessBallThrowAnim(u32 battler);
-static void SafariHandleBallThrowAnim(u32 battler);
 static void SafariHandleChooseAction(u32 battler);
 static void SafariHandleChooseItem(u32 battler);
 static void SafariHandleChoosePokemon(u32 battler);
@@ -57,8 +56,7 @@ static void (*const sSafariBufferCommands[CONTROLLER_CMDS_COUNT])(u32 battler) =
     [CONTROLLER_TRAINERSLIDEBACK]         = BtlController_Empty,
     [CONTROLLER_FAINTANIMATION]           = BtlController_Empty,
     [CONTROLLER_PALETTEFADE]              = BtlController_Empty,
-    [CONTROLLER_SUCCESSBALLTHROWANIM]     = SafariHandleSuccessBallThrowAnim,
-    [CONTROLLER_BALLTHROWANIM]            = SafariHandleBallThrowAnim,
+    [CONTROLLER_BALLTHROWANIM]            = BtlController_HandleBallThrowAnim,
     [CONTROLLER_PAUSE]                    = BtlController_Empty,
     [CONTROLLER_MOVEANIMATION]            = BtlController_Empty,
     [CONTROLLER_PRINTSTRING]              = BtlController_HandlePrintString,
@@ -103,6 +101,7 @@ static void (*const sSafariBufferCommands[CONTROLLER_CMDS_COUNT])(u32 battler) =
 
 void SetControllerToSafari(u32 battler)
 {
+    gBattlerBattleController[battler] = BATTLE_CONTROLLER_SAFARI;
     gBattlerControllerEndFuncs[battler] = SafariBufferExecCompleted;
     gBattlerControllerFuncs[battler] = SafariBufferRunCommand;
 }
@@ -181,12 +180,18 @@ static void HandleInputChooseAction(u32 battler)
             ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
         }
     }
-    else if (B_QUICK_MOVE_CURSOR_TO_RUN && JOY_NEW(B_BUTTON))
+    else if ((B_QUICK_MOVE_CURSOR_TO_RUN || gSaveBlock2Ptr->optionsQuickRunButton == OPTIONS_QUICK_RUN_B_BUTTON) && (JOY_NEW(B_BUTTON)))
     {
         PlaySE(SE_SELECT);
         ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
         gActionSelectionCursor[battler] = 3;
         ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
+    }
+    else if (JOY_NEW(R_BUTTON) && gSaveBlock2Ptr->optionsQuickRunButton == OPTIONS_QUICK_RUN_R_BUTTON)
+    {
+        PlaySE(SE_SELECT);
+        BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_SAFARI_RUN, 0);
+        SafariBufferExecCompleted(battler);
     }
 }
 
@@ -278,21 +283,11 @@ void SafariBufferExecCompleted(u32 battler)
 
 static void SafariHandleDrawTrainerPic(u32 battler)
 {
-    u32 trainerPicId = gSaveBlock2Ptr->playerGender + TRAINER_BACK_PIC_BRENDAN;
+    u32 trainerPicId = GetPlayerTrainerPicIdByOutfitGenderType(gSaveBlock2Ptr->currOutfitId, gSaveBlock2Ptr->playerGender, 1);
 
     BtlController_HandleDrawTrainerPic(battler, trainerPicId, FALSE,
                                        80, 80 + 4 * (8 - gTrainerBacksprites[trainerPicId].coordinates.size),
                                        30);
-}
-
-static void SafariHandleSuccessBallThrowAnim(u32 battler)
-{
-    BtlController_HandleSuccessBallThrowAnim(battler, GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT), B_ANIM_BALL_THROW_WITH_TRAINER, FALSE);
-}
-
-static void SafariHandleBallThrowAnim(u32 battler)
-{
-    BtlController_HandleBallThrowAnim(battler, GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT), B_ANIM_BALL_THROW_WITH_TRAINER, FALSE);
 }
 
 static void HandleChooseActionAfterDma3(u32 battler)

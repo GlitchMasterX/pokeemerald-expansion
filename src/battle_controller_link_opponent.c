@@ -10,6 +10,7 @@
 #include "battle_tv.h"
 #include "bg.h"
 #include "data.h"
+#include "frontier_util.h"
 #include "link.h"
 #include "main.h"
 #include "m4a.h"
@@ -24,6 +25,7 @@
 #include "text.h"
 #include "util.h"
 #include "window.h"
+#include "outfit_menu.h"
 #include "constants/battle_anim.h"
 #include "constants/songs.h"
 #include "constants/trainers.h"
@@ -54,7 +56,6 @@ static void (*const sLinkOpponentBufferCommands[CONTROLLER_CMDS_COUNT])(u32 batt
     [CONTROLLER_TRAINERSLIDEBACK]         = LinkOpponentHandleTrainerSlideBack,
     [CONTROLLER_FAINTANIMATION]           = BtlController_HandleFaintAnimation,
     [CONTROLLER_PALETTEFADE]              = BtlController_Empty,
-    [CONTROLLER_SUCCESSBALLTHROWANIM]     = BtlController_Empty,
     [CONTROLLER_BALLTHROWANIM]            = BtlController_Empty,
     [CONTROLLER_PAUSE]                    = BtlController_Empty,
     [CONTROLLER_MOVEANIMATION]            = BtlController_HandleMoveAnimation,
@@ -100,6 +101,7 @@ static void (*const sLinkOpponentBufferCommands[CONTROLLER_CMDS_COUNT])(u32 batt
 
 void SetControllerToLinkOpponent(u32 battler)
 {
+    gBattlerBattleController[battler] = BATTLE_CONTROLLER_LINK_OPPONENT;
     gBattlerControllerEndFuncs[battler] = LinkOpponentBufferExecCompleted;
     gBattlerControllerFuncs[battler] = LinkOpponentBufferRunCommand;
 }
@@ -314,7 +316,17 @@ static void LinkOpponentHandleDrawTrainerPic(u32 battler)
             }
             else
             {
-                trainerPicId = PlayerGenderToFrontTrainerPicId(gLinkPlayers[GetBattlerMultiplayerId(battler)].gender);
+                //! neverRead was set to 0 by vanilla, we use it to our
+                //! advantage so that our game won't freak out as much
+                //! we also defaults to 0 if the player has an outfit
+                //! our game don't
+                u8 outfit = gLinkPlayers[GetBattlerMultiplayerId(battler)].currOutfitId;
+                u8 gender = gLinkPlayers[GetBattlerMultiplayerId(battler)].gender;
+
+                if (outfit < OUTFIT_COUNT)
+                    trainerPicId = GetPlayerTrainerPicIdByOutfitGenderType(outfit, gender, 0);
+                else
+                    trainerPicId = PlayerGenderToFrontTrainerPicId(gLinkPlayers[GetBattlerMultiplayerId(battler)].gender);
             }
         }
     }
@@ -343,7 +355,17 @@ static void LinkOpponentHandleDrawTrainerPic(u32 battler)
         }
         else
         {
-            trainerPicId = PlayerGenderToFrontTrainerPicId(gLinkPlayers[GetMultiplayerId() ^ BIT_SIDE].gender);
+            //! neverRead was set to 0 by vanilla, we use it to our
+            //! advantage so that our game won't freak out as much
+            //! we also defaults to 0 if the player has an outfit
+            //! our game don't
+            u8 outfit = gLinkPlayers[GetMultiplayerId() ^ BIT_SIDE].currOutfitId;
+            u8 gender = gLinkPlayers[GetMultiplayerId() ^ BIT_SIDE].gender;
+
+            if (outfit < OUTFIT_COUNT)
+                trainerPicId = GetPlayerTrainerPicIdByOutfitGenderType(outfit, gender, 0);
+            else
+                trainerPicId = PlayerGenderToFrontTrainerPicId(gender);
         }
     }
 

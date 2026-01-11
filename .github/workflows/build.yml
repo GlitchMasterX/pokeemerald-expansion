@@ -17,6 +17,7 @@ jobs:
       GAME_LANGUAGE: ENGLISH
       COMPARE: 0
       UNUSED_ERROR: 1
+      DEPRECATED_ERROR: 1
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -31,11 +32,11 @@ jobs:
         env:
           COMPARE: 0
         run: make -j${nproc} -O all
-
-      - name: Release
+        
+      - name: LTO
         run: |
           make tidy
-          make -j${nproc} release
+          make -j${nproc} LTO=1
         # make tidy to purge previous build
 
       - name: Test

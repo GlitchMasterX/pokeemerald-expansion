@@ -707,7 +707,7 @@ We're almost there just a bit left!
         ...
         .abilities = { ABILITY_INSOMNIA, ABILITY_NONE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_PURPLE,
-+       .isLegendary = TRUE,
++       .isRestrictedLegendary = TRUE,
 +       .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
     },
  };
@@ -715,9 +715,10 @@ We're almost there just a bit left!
 Each species flag provides properties to the species:
 - `perfectIVCount` ***(1.10 onwards)***:
     - Guarantees that the number of IVs specified here will be perfect.
-- `isLegendary`:
-    - ***1.10 onwards:*** Does nothing.
-    - ***1.9 and earlier:*** Guaranteed 3 perfect IVs for the species.
+- `isRestrictedLegendary`:
+    - ***1.14.3 onwards:*** Does nothing.
+- `isSubLegendary`:
+    - ***1.14.3 onwards:*** Does nothing.
 - `isMythical`:
     - Is skipped during Pokédex evaluations.
         - Unless it also has the `dexForceRequired` flag.
@@ -952,7 +953,7 @@ Edit `gSpeciesInfo`:
      {
         ...
         FOOTPRINT(Mewtwo)
-        .isLegendary = TRUE,
+        .isRestrictedLegendary = TRUE,
         .levelUpLearnset = sMewtwoLevelUpLearnset,
         .teachableLearnset = sMewtwoTeachableLearnset,
         .formSpeciesIdTable = sMewtwoFormSpeciesIdTable,
@@ -1145,8 +1146,8 @@ Secondly, in [src/data/graphics/pokemon.h](https://github.com/rh-hideout/pokeeme
     const u8 gMonIcon_Mewthree[] = INCBIN_U8("graphics/pokemon/mewthree/icon.4bpp");
     const u8 gMonFootprint_Mewthree[] = INCBIN_U8("graphics/pokemon/mewthree/footprint.1bpp");
 +   const u32 gObjectEventPic_Mewthree[] = INCBIN_COMP("graphics/pokemon/mewthree/overworld.4bpp");
-+   const u32 gOverworldPalette_Mewthree[] = INCBIN_U32("graphics/pokemon/mewthree/overworld_normal.gbapal.lz");
-+   const u32 gShinyOverworldPalette_Mewthree[] = INCBIN_U32("graphics/pokemon/mewthree/overworld_shiny.gbapal.lz");
++   const u32 gOverworldPalette_Mewthree[] = INCBIN_U32("graphics/pokemon/mewthree/overworld_normal.gbapal");
++   const u32 gShinyOverworldPalette_Mewthree[] = INCBIN_U32("graphics/pokemon/mewthree/overworld_shiny.gbapal");
 ```
 
 Thirdly, in [spritesheet_rules.mk](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/spritesheet_rules.mk)
@@ -1298,7 +1299,7 @@ Examples:
 // Hoenn Starter:
 #define OW_FOLLOWERS_ALLOWED_SPECIES (0)
 #define OW_FOLLOWERS_ALLOWED_MET_LVL (5)
-#define OW_FOLLOWERS_ALLOWED_MET_LOC (MAPSEC_ROUTE_101)
+#define OW_FOLLOWERS_ALLOWED_MET_LOC (MAPSEC_LUNAR_GROVE)
 // Species set in VAR_XXXX:
 #define OW_FOLLOWERS_ALLOWED_SPECIES (VAR_XXXX)
 #define OW_FOLLOWERS_ALLOWED_MET_LVL (0)

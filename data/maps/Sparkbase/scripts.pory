@@ -1,0 +1,297 @@
+mapscripts Sparkbase_MapScripts {
+    MAP_SCRIPT_ON_LOAD:Ruins
+}
+script Ruins {
+    if(var(LUXURA_TRAGEDY)>21){
+    removeobject(1)
+    removeobject(3)
+    removeobject(5)
+    removeobject(6)
+    removeobject(7)
+    removeobject(8)
+    removeobject(9)
+    removeobject(10)
+    removeobject(11)
+    removeobject(12)
+    removeobject(13)
+    setflag(FLAG_UNUSED_0x4B8)
+}
+}
+script spark2 {
+    trainerbattle_single(EQUINO_GRUNT_2, Grunt2_Intro, Grunt2_Outro)
+	msgbox(PostBattle_Grunt2, MSGBOX_AUTOCLOSE) 
+	waitmessage
+    end
+}
+
+text Grunt2_Intro {
+    format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You think you can outrun a lightning bolt? Think again!")
+}
+text Grunt2_Outro {
+    format("Wha..?! You're tougher than I thought... but this isn't over!")    
+}
+script spark3 {
+    trainerbattle_single(EQUINO_GRUNT_3, Grunt3_Intro, Grunt3_Outro)
+	msgbox(PostBattle_Grunt3, MSGBOX_AUTOCLOSE) 
+	waitmessage
+    end
+}
+
+text Grunt3_Intro {
+    format("{COLOR BLUE}{SHADOW LIGHT_GRAY}One zap, and you're done! Let's see if you can survive it!")
+}
+text Grunt3_Outro {
+    format("Ugh, I can't believe this! You're just lucky. Next time, you won't be so fortunate!\pXylar: There won't e any next time.")    
+}
+script spark4 {
+    trainerbattle_single(EQUINO_GRUNT_4, Grunt4_Intro, Grunt4_Outro)
+	msgbox(PostBattle_Grunt4, MSGBOX_AUTOCLOSE) 
+	waitmessage
+    end
+}
+
+text Grunt4_Intro {
+    format("{COLOR RED}{SHADOW LIGHT_GRAY}I love the smell of static in the air… Time to shock you into submission!")
+}
+text Grunt4_Outro {
+    format("Enjoy your victory... it won't last long.\pXylar:This isn't about victory anymore... It's about making sure you never take another breath.")    
+}
+text PostBattle_Grunt4 {
+    format("{COLOR RED}{SHADOW LIGHT_GRAY}Our general will defeat you.")
+}
+text PostBattle_Grunt3 {
+    format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Our general will defeat you.")
+}
+text PostBattle_Grunt2 {
+    format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Our general will defeat you.")
+}
+script spark5 {
+    trainerbattle_single(EQUINO_GRUNT_5, Grunt5_Intro, Grunt5_Outro)
+	msgbox(PostBattle_Grunt5, MSGBOX_AUTOCLOSE) 
+	waitmessage
+    end
+}
+
+text Grunt5_Intro {
+    format("{COLOR RED}{SHADOW LIGHT_GRAY}You think you can stop us? Let's see how you handle the thunder!")
+}
+text Grunt5_Outro {
+    format("Tch, enjoy your victory while you can. Spark always strikes again.")    
+}
+text PostBattle_Grunt5 {
+    format("{COLOR RED}{SHADOW LIGHT_GRAY}Our general will defeat you.")
+}
+script spark6 {
+    trainerbattle_single(EQUINO_GRUNT_6, Grunt6_Intro, Grunt6_Outro,surgeb)
+	msgbox(PostBattle_Grunt6, MSGBOX_AUTOCLOSE) 
+	waitmessage
+    setvar(LUXURA_TRAGEDY,21)
+    end
+}
+
+text Grunt6_Intro {
+    format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You're in over your head, kid. Spark's about to send you packing!")
+}
+text Grunt6_Outro {
+    format("Impossible! How did you overpower us?!")    
+}
+text PostBattle_Grunt6 {
+    format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Our general will defeat you.")
+}
+script Surgebattle {
+    lock
+    applymovement(11,invisible)
+    applymovement(12,invisible)
+    applymovement(13,invisible)
+    applymovement(14,invisible)
+    waitmovement(0)
+    special(HealPlayerParty)
+    hidefollower
+    special(SpawnCameraObject)
+    playbgm(MUS_DP_GALACTIC_HQ_BASEMENT,TRUE)
+    applymovement(OBJ_EVENT_ID_CAMERA,camera4)
+    waitmovement(0)
+    applymovement(6,surd)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER,camera4)
+    applymovement(10,camera4)
+    waitmovement(0)
+    speakername(surge)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}So it's true...\pThe brat survived.\pAurther's son, standing here before me."),MSGBOX_AUTOCLOSE)
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Where is my Mother?!"),MSGBOX_AUTOCLOSE) 
+    speakername(surge)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_SMILE}{COLOR BLUE}{SHADOW LIGHT_GRAY}Heh... Mother?\pYou mean that thing.\pShe lasted longer than most."),MSGBOX_AUTOCLOSE) 
+    waitmessage
+    removefieldmugshot
+    applymovement(6,surde)
+    applymovement(OBJ_EVENT_ID_CAMERA,camera4)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA,camera5)
+    special(RemoveCameraObject)
+    speakername(surge)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_SMILE}{COLOR BLUE}{SHADOW LIGHT_GRAY}No one's ever survived a fusion with a Poison-type before.\pBut she did.\pEven broken and screaming, she clung to life.\pShe even tried to fight back against us.\p...So we put her down.\pThat stubborn bitch never knew when to give up."),MSGBOX_AUTOCLOSE) 
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}WHAT did you just call her?!"),MSGBOX_AUTOCLOSE)
+    applymovement(6,moves(walk_down delay_16 delay_16))
+    speakername(surge)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_SMILE}{COLOR BLUE}{SHADOW LIGHT_GRAY}Struck a nerve, did I?\pGood."),MSGBOX_AUTOCLOSE)
+    applymovement(6,moves(walk_right delay_16 delay_16 delay_16 face_up))
+    speakername(surge)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_SMILE}{COLOR BLUE}{SHADOW LIGHT_GRAY}She was strong, but in the end she was just another failure.\pAll of you are, just like your father."),MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovement(0xFF,moves(emote_exclamation_mark))
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}My father?!\pWhy would you kill the man who saved this region?!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(6,moves(face_down walk_left face_down))
+    speakername(surge)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Why?\pBecause I was ordered to.\pThat's all that matters."),MSGBOX_AUTOCLOSE)
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Ordered?! By who?!\pWho gave you the right to murder my family?!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(6,moves(walk_left face_up))
+    speakername(surge)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_SMILE}{COLOR BLUE}{SHADOW LIGHT_GRAY}That's not your concern, boy.\pI serve Lady Nova.\pHer word is absolute.\pShe commands, I execute.\pThat's all you need to know."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(6,moves(face_down))
+    speakername(surge)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Your father was an obstacle.\pYour mother was... convenient.\pYour sister was collateral.\pAll necessary sacrifices for something far greater than you could comprehend."),MSGBOX_AUTOCLOSE)
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Something greater?!\pYou murdered them for orders?\pFor someone's vision?!"),MSGBOX_AUTOCLOSE)
+    applymovement(6,moves(walk_right face_down))
+    speakername(surge)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_SMILE}{COLOR BLUE}{SHADOW LIGHT_GRAY}I'd do it again without hesitation.\pLady Nova's purpose is my purpose.\pHer mission is everything.\pAnd I'd give my life to see it realized."),MSGBOX_AUTOCLOSE)
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Then let me help you with your sacrifice."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(6,moves(walk_up face_down))
+    speakername(surge)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_SMILE}{COLOR BLUE}{SHADOW LIGHT_GRAY}Big words, brat.\pCome on then.\pShow me what Aurther's blood can do."),MSGBOX_AUTOCLOSE)
+    removefieldmugshot
+    trainerbattle_no_intro(SPARK_ADMIN_SURGE,surgelose)
+    speakername(surge)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Hah... lucky brat.\pYour father weakened my team.\pNext time, you won't be so fortunate."),MSGBOX_AUTOCLOSE) 
+    speakername("Mewtwo")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}......")) 
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}There won't be a next time..."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    removefieldmugshot
+    playse(SE_PIN)
+    applymovement(6,exclam)
+    speakername(surge)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}What the-?!"),MSGBOX_AUTOCLOSE)
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Mewtwo!"),MSGBOX_AUTOCLOSE)
+    removefieldmugshot 
+    applymovement(10,fireball)
+    waitmovement(0)
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Use Fire Blast!"),MSGBOX_AUTOCLOSE)
+    speakername("Mewtwo")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_SPECIAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}......")) 
+    playfirstmoncry
+    waitmoncry
+    applymovement(11,visible)
+    applymovement(12,visible)
+    applymovement(13,visible)
+    waitmovement(0)
+    applymovement(11,f0)
+    applymovement(12,f0)
+    applymovement(13,f0)
+    playse(SE_M_FLAME_WHEEL)
+    waitse
+    removeobject(6)
+    setfollowernpc(10,0x4, 0)    
+    applymovement(14,visible)
+    waitmovement(0)
+    applymovement(11,f1)
+    applymovement(12,f2)
+    applymovement(13,f3)
+    waitmovement(0)
+    removeobject(11)
+    removeobject(12)
+    removeobject(13)   
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Surge... you were just the first.\pThis {COLOR RED}{SHADOW LIGHT_GRAY}Crimson Requiem{COLOR BLUE}{SHADOW LIGHT_GRAY} begins with your blood.\pAnd it won't end until every last one of you is erased."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(OBJ_EVENT_ID_PLAYER,startcrim)
+    waitmovement(0)
+    speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_TEAR}{COLOR BLUE}{SHADOW LIGHT_GRAY}I'm sorry, Mom... I couldn't save you.\pI couldn't save Dad.\pI couldn't save Mira...\pBut I swear-I'll destroy them all.\pThey think their mission justifies everything.\pThen let them see what true destruction is.\pThe {COLOR RED}{SHADOW LIGHT_GRAY}Crimson Requiem{COLOR BLUE}{SHADOW LIGHT_GRAY} will echo until their purpose burns to ash.\pThis is my promise."),MSGBOX_AUTOCLOSE)
+    fadescreen(FADE_TO_BLACK)
+    msgbox(format("A few days later........"),MSGBOX_AUTOCLOSE)
+    destroyfollowernpc
+    initclock(10,20)
+    pausefakertc
+    warpsilent(MAP_LUXURA_ISLAND,11,10)
+    fadescreen(FADE_FROM_BLACK)
+    setflag(FLAG_ACADEMY_START)
+    clearflag(FLAG_NIHIL_FIRST)   
+    setvar(LUXURA_TRAGEDY,21)
+    release  
+}
+text surgelose {
+    format("I was stronger than you, How could I lose?")
+    
+}
+movement startcrim {
+    walk_left
+    walk_up*6
+    face_right
+}
+
+movement surd {
+    emote_exclamation_mark
+    face_down   
+}
+movement surde {
+    face_up
+    delay_16
+    face_down
+}
+script surgeb {
+    applymovement(11,invisible)
+    applymovement(12,invisible)
+    applymovement(13,invisible)
+    applymovement(14,invisible)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER,sbat)
+    speakername(Xylar1)
+    msgbox(format("..."),MSGBOX_AUTOCLOSE)
+    goto(Surgebattle)
+}
+movement sbat {
+    walk_up
+}
+script surgebw {
+    applymovement(OBJ_EVENT_ID_PLAYER,sbatw)
+    msgbox(format("..."),MSGBOX_AUTOCLOSE)
+    goto(Surgebattle)
+}
+movement sbatw {
+    walk_left
+    face_up
+    
+}
+movement f0 {
+    walk_up    
+}
+movement fireball {
+    walk_right
+    walk_up*3
+    walk_left
+    face_up
+}
+movement f1 {
+    walk_left
+    
+}
+movement f2 {
+    walk_right    
+}
+
+movement f3 {
+    walk_up
+}

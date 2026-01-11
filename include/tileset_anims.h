@@ -14,7 +14,7 @@ void InitTilesetAnim_Slateport(void);
 void InitTilesetAnim_Mauville(void);
 void InitTilesetAnim_Lavaridge(void);
 void InitTilesetAnim_Fallarbor(void);
-void InitTilesetAnim_Fortree(void);
+void InitTilesetAnim_Astraveil(void);
 void InitTilesetAnim_Lilycove(void);
 void InitTilesetAnim_Mossdeep(void);
 void InitTilesetAnim_EverGrande(void);

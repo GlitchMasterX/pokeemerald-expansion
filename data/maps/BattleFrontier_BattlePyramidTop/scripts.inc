@@ -78,7 +78,7 @@ BattleFrontier_BattlePyramidTop_EventScript_Attendant::
 	waitmovement 0
 	message BattleFrontier_BattlePyramidTop_Text_PlayerConqueredPyramid
 	waitmessage
-	playfanfare MUS_OBTAIN_B_POINTS
+	playfanfare MUS_PL_OBTAIN_B_POINTS
 	waitfanfare
 	closemessage
 BattleFrontier_BattlePyramidTop_EventScript_WarpToLobbyWon::
@@ -180,9 +180,7 @@ BattleFrontier_BattlePyramidTop_EventScript_DefeatedBrandonGold::
 
 BattleFrontier_BattlePyramidTop_EventScript_DoBrandonBattle::
 	closemessage
-	setvar VAR_0x8004, SPECIAL_BATTLE_PYRAMID
-	setvar VAR_0x8005, 0
-	special DoSpecialTrainerBattle
+	dofacilitytrainerbattle FACILITY_BATTLE_PYRAMID
 	waitstate
 	return
 

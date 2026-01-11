@@ -1,0 +1,14 @@
+mapscripts AstralisAcademy_Hallway_MapScripts {
+	
+}
+
+script Timetable {
+	lock
+	getday
+	if(var(VAR_CURRENT_DAY_OF_WEEK)== 1){
+		helpwindow(ACADEMY_TIMETABLE_MONDAY)
+	}
+	else{
+	msgbox(format("Sorry."))
+}
+}

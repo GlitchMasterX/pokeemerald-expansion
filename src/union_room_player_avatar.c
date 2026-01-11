@@ -33,7 +33,7 @@ static const u16 sUnionRoomObjGfxIds[GENDER_COUNT][NUM_UNION_ROOM_CLASSES] = {
         OBJ_EVENT_GFX_PSYCHIC_M,
         OBJ_EVENT_GFX_BUG_CATCHER,
         OBJ_EVENT_GFX_MAN_4,
-        OBJ_EVENT_GFX_MAN_5
+        OBJ_EVENT_GFX_NORMAL_M
     },
     [FEMALE] = {
         OBJ_EVENT_GFX_WOMAN_5,

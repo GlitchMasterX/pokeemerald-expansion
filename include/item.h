@@ -106,6 +106,8 @@ struct Item
     u8 flingPower;
     const u32 *iconPic;
     const u16 *iconPalette;
+    u16 coinPrice;
+    u16 bpPrice;
 };
 
 struct ALIGNED(2) BagPocket
@@ -265,6 +267,9 @@ u8 GetItemBattleUsage(u16 itemId);
 u32 GetItemSecondaryId(u32 itemId);
 u32 GetItemFlingPower(u32 itemId);
 u32 GetItemStatus1Mask(u16 itemId);
+u32 GetItemStatus2Mask(u16 itemId);
+u32 ItemId_GetCoinPrice(u16 itemId);
+u32 ItemId_GetBpPrice(u16 itemId);
 bool32 ItemHasVolatileFlag(u16 itemId, enum Volatile volatile);
 u32 GetItemSellPrice(u32 itemId);
 bool32 IsHoldEffectChoice(enum HoldEffect holdEffect);

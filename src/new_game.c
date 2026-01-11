@@ -33,6 +33,8 @@
 #include "save.h"
 #include "link_rfu.h"
 #include "main.h"
+#include "sound.h"
+#include "constants/songs.h"
 #include "contest.h"
 #include "item_menu.h"
 #include "pokemon_storage_system.h"
@@ -43,6 +45,7 @@
 #include "field_specials.h"
 #include "berry_powder.h"
 #include "mystery_gift.h"
+#include "outfit_menu.h"
 #include "union_room_chat.h"
 #include "constants/map_groups.h"
 #include "constants/items.h"
@@ -55,6 +58,7 @@ static void ClearFrontierRecord(void);
 static void WarpToTruck(void);
 static void ResetMiniGamesRecords(void);
 static void ResetItemFlags(void);
+static void ResetOutfitData(void);
 static void ResetDexNav(void);
 
 EWRAM_DATA bool8 gDifferentSaveFile = FALSE;
@@ -95,11 +99,19 @@ static void InitPlayerTrainerId(void)
 // L=A isnt set here for some reason.
 static void SetDefaultOptions(void)
 {
-    gSaveBlock2Ptr->optionsTextSpeed = OPTIONS_TEXT_SPEED_MID;
+    gSaveBlock2Ptr->optionsInstantTextOff = TRUE;
     gSaveBlock2Ptr->optionsWindowFrameType = 0;
-    gSaveBlock2Ptr->optionsSound = OPTIONS_SOUND_MONO;
-    gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SHIFT;
+    gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SET;
     gSaveBlock2Ptr->optionsBattleSceneOff = FALSE;
+    gSaveBlock2Ptr->optionsBattleSpeed = OPTIONS_BATTLE_SPEED_1X;
+    gSaveBlock2Ptr->optionsDisableMatchCall = FALSE;
+    gSaveBlock2Ptr->optionsDisableBagUse = FALSE;
+    gSaveBlock2Ptr->optionsQuickRunButton = OPTIONS_QUICK_RUN_R_BUTTON;
+    gSaveBlock2Ptr->optionsDoubleBattlesOff = TRUE;
+    gSaveBlock2Ptr->optionsShowBattleMoveInfoOff = FALSE;
+    gSaveBlock2Ptr->optionsSound = OPTIONS_SOUND_MONO;
+    gSaveBlock2Ptr->optionsBikeMusicOff = FALSE;
+    gSaveBlock2Ptr->optionsSurfMusicOff = FALSE;
     gSaveBlock2Ptr->regionMapZoom = FALSE;
 }
 
@@ -131,7 +143,7 @@ static void ClearFrontierRecord(void)
 
 static void WarpToTruck(void)
 {
-    SetWarpDestination(MAP_GROUP(MAP_INSIDE_OF_TRUCK), MAP_NUM(MAP_INSIDE_OF_TRUCK), WARP_ID_NONE, -1, -1);
+    SetWarpDestination(MAP_GROUP(MAP_PLAYERROOM), MAP_NUM(MAP_PLAYERROOM), WARP_ID_NONE, 2, 5);
     WarpIntoMap();
 }
 
@@ -139,6 +151,7 @@ void Sav2_ClearSetDefault(void)
 {
     ClearSav2();
     SetDefaultOptions();
+    ResetOutfitData();
 }
 
 void ResetMenuAndMonGlobals(void)
@@ -149,6 +162,13 @@ void ResetMenuAndMonGlobals(void)
     ZeroEnemyPartyMons();
     ResetBagScrollPositions();
     ResetPokeblockScrollPositions();
+}
+
+static void ResetOutfitData(void)
+{
+    memset(gSaveBlock2Ptr->outfits, 0, sizeof(gSaveBlock2Ptr->outfits));
+    UnlockOutfit(DEFAULT_OUTFIT);
+    gSaveBlock2Ptr->currOutfitId = DEFAULT_OUTFIT;
 }
 
 void NewGameInitData(void)
@@ -211,6 +231,8 @@ void NewGameInitData(void)
     ResetContestLinkResults();
     SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
     ResetItemFlags();
+    ResetOutfitData();
+    gSpecialVar_MonBoxId = 0xFF;
     ResetDexNav();
     ClearFollowerNPCData();
 }

@@ -58,6 +58,37 @@ static struct PokemonSpriteVisualizer *GetStructPtr(u8 taskId)
     return (struct PokemonSpriteVisualizer*)(T1_READ_PTR(taskDataPtr));
 }
 
+static const union AnimCmd sAnim_Follower_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(2, 30),
+    ANIMCMD_FRAME(3, 30),
+    ANIMCMD_FRAME(2, 30),
+    ANIMCMD_FRAME(3, 30),
+    ANIMCMD_FRAME(2, 10),
+    ANIMCMD_FRAME(4, 30),
+    ANIMCMD_FRAME(5, 30),
+    ANIMCMD_FRAME(4, 30),
+    ANIMCMD_FRAME(5, 30),
+    ANIMCMD_FRAME(4, 10),
+    ANIMCMD_FRAME(4, 30, .hFlip = TRUE),
+    ANIMCMD_FRAME(5, 30, .hFlip = TRUE),
+    ANIMCMD_FRAME(4, 30, .hFlip = TRUE),
+    ANIMCMD_FRAME(5, 30, .hFlip = TRUE),
+    ANIMCMD_FRAME(4, 10, .hFlip = TRUE),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd *const sAnims_Follower[] =
+{
+    sAnim_GeneralFrame0,
+    sAnim_Follower_1,
+};
+
 //BgTemplates
 static const struct BgTemplate sBgTemplates[] =
 {
@@ -811,32 +842,32 @@ static void SpriteCB_EnemyShadowCustom(struct Sprite *shadowSprite)
 
 static void SpriteCB_Follower(struct Sprite *sprite)
 {
-    if (sprite->data[3] == 0)
+    if (sprite->animDelayCounter == 0)
     {
-        sprite->data[3] = 120;
+        sprite->animDelayCounter = 60;
         switch (sprite->animNum)
         {
-            case 4:
-                StartSpriteAnim(sprite, GetMoveDirectionAnimNum(DIR_NORTH));
-                break;
-            case 5:
-                StartSpriteAnim(sprite, GetMoveDirectionAnimNum(DIR_WEST));
-                break;
-            case 6:
-                StartSpriteAnim(sprite, GetMoveDirectionAnimNum(DIR_EAST));
-                break;
             default:
-            case 7:
-                StartSpriteAnim(sprite, GetMoveDirectionAnimNum(DIR_SOUTH));
+            case 0:
+            case 1:
+                StartSpriteAnim(sprite, GetFaceDirectionAnimNum(DIR_NORTH));
+                break;
+            case 2:
+                StartSpriteAnim(sprite, GetFaceDirectionAnimNum(DIR_WEST));
+                break;
+            case 3:
+                StartSpriteAnim(sprite, GetFaceDirectionAnimNum(DIR_EAST));
+                break;
+            case 4:
+                StartSpriteAnim(sprite, GetFaceDirectionAnimNum(DIR_SOUTH));
                 break;
         }
     }
     else
     {
-        sprite->data[3]--;
+        sprite->animDelayCounter--;
     }
 }
-
 static void LoadAndCreateEnemyShadowSpriteCustom(struct PokemonSpriteVisualizer *data, u16 species)
 {
     bool8 invisible = FALSE;
@@ -1284,26 +1315,9 @@ void CB2_Pokemon_Sprite_Visualizer(void)
             gSprites[data->iconspriteId].oam.priority = 0;
 
             //Follower Sprite
-            u16 graphicsId = species + OBJ_EVENT_MON;
-            if (data->isShiny)
-                graphicsId += OBJ_EVENT_MON_SHINY;
-            if (data->isFemale)
-                graphicsId += OBJ_EVENT_MON_FEMALE;
-            data->followerspriteId = CreateObjectGraphicsSprite(graphicsId,
-                                                        SpriteCB_Follower,
-                                                        VISUALIZER_FOLLOWER_X,
-                                                        VISUALIZER_FOLLOWER_Y,
-                                                        0);
+            data->followerspriteId = CreateObjectGraphicsSprite(OBJ_EVENT_MON + species, SpriteCB_Follower, VISUALIZER_FOLLOWER_X, VISUALIZER_FOLLOWER_Y, 0);
             gSprites[data->followerspriteId].oam.priority = 0;
-            const struct ObjectEventGraphicsInfo *graphicsInfo = SpeciesToGraphicsInfo(species, data->isShiny, data->isFemale);
-            if (graphicsInfo != NULL)
-            {
-                gSprites[data->followerspriteId].oam.shape = graphicsInfo->oam->shape;
-                gSprites[data->followerspriteId].oam.size = graphicsInfo->oam->size;
-                gSprites[data->followerspriteId].images = graphicsInfo->images;
-                gSprites[data->followerspriteId].anims = graphicsInfo->anims;
-                gSprites[data->followerspriteId].subspriteTables = graphicsInfo->subspriteTables;
-            }
+            gSprites[data->followerspriteId].anims = sAnims_Follower;
 
             //Modify Arrows
             SetUpModifyArrows(data);
@@ -2003,15 +2017,7 @@ static void ReloadPokemonSprites(struct PokemonSpriteVisualizer *data)
                                                         VISUALIZER_FOLLOWER_Y,
                                                         0);
     gSprites[data->followerspriteId].oam.priority = 0;
-    const struct ObjectEventGraphicsInfo *graphicsInfo = SpeciesToGraphicsInfo(species, data->isShiny, data->isFemale);
-    if (graphicsInfo != NULL)
-    {
-        gSprites[data->followerspriteId].oam.shape = graphicsInfo->oam->shape;
-        gSprites[data->followerspriteId].oam.size = graphicsInfo->oam->size;
-        gSprites[data->followerspriteId].images = graphicsInfo->images;
-        gSprites[data->followerspriteId].anims = graphicsInfo->anims;
-        gSprites[data->followerspriteId].subspriteTables = graphicsInfo->subspriteTables;
-    }
+    gSprites[data->followerspriteId].anims = sAnims_Follower;
 
     //Modify Arrows
     LoadSpritePalette(&gSpritePalette_Arrow);
@@ -2045,7 +2051,7 @@ static void Exit_PokemonSpriteVisualizer(u8 taskId)
         Free(data);
         FreeMonSpritesGfx();
         DestroyTask(taskId);
-        SetMainCallback2(CB2_ReturnToFieldWithOpenMenu);
+        SetMainCallback2(CB2_ReturnToFullScreenStartMenu);
         m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 0x100);
     }
 }

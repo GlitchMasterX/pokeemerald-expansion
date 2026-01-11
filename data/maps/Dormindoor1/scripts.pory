@@ -1,0 +1,234 @@
+mapscripts Dormindoor1_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE[
+	VAR_ACADEMY_START,8:Kaelmet
+    VAR_ACADEMY_START,10:Nightstroll
+]
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
+    VAR_ACADEMY_START,8:KaelPos
+    VAR_ACADEMY_START,9:trialloss
+        
+    ]
+}
+
+script KaelPos {
+    setobjectxyperm(1,5,8)
+    setobjectmovementtype(1,MOVEMENT_TYPE_FACE_UP)
+    setobjectmovementtype(4,MOVEMENT_TYPE_INVISIBLE)
+    setobjectmovementtype(5,MOVEMENT_TYPE_INVISIBLE)
+    addobject(1,MAP_DORMINDOOR1)
+    addobject(5,MAP_DORMINDOOR1)
+    addobject(4,MAP_DORMINDOOR1)
+}
+
+script trialloss {
+    destroyfollowernpc
+}
+
+script Kaelmet {
+lock
+applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_up*2)) 
+waitmovement(0)
+playse(SE_PIN)
+applymovement(1, moves(emote_exclamation_mark face_down))
+waitmovement(0)
+playbgm(MUS_DP_RIVAL, FALSE)
+applymovement(1, moves(jump_in_place_down walk_fast_down*2 walk_fast_right*3 jump_in_place_down*2 ))
+waitmovement(0)
+playse(SE_PIN)
+applymovement(1,moves(emote_happy))
+waitmovement(0)
+speakername("???")
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Oh! You must be my roommate!"))
+closemessage
+applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_left*6 walk_up*7 face_right delay_16 delay_16 face_left delay_16 delay_16 face_up))
+playse(SE_PIN)
+applymovement(1, moves(emote_exclamation_mark face_left))
+waitmovement(0)
+addobject(4)
+addobject(5)
+applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_up*7 face_up))
+waitmovement(0)
+applymovement(1, moves(walk_left*4 walk_up*5))
+waitmovement(0)
+applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_in_place_slow_up))
+waitmovement(0)
+playse(SE_WIN_OPEN)
+applymovement(4,moves(set_visible))
+waitmovement(0)
+applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_left face_up walk_in_place_slow_up face_right delay_16 delay_16 face_left delay_16 delay_16 face_down delay_16 delay_16 face_up))
+waitmovement(0)
+applymovement(5,moves(set_visible))
+playse(SE_WIN_OPEN)
+waitmovement(0)
+speakername("Kael")
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}I'm Kael! Kael Ashford. From Cinderbrook Town.\pYou?"))
+speakername(Xylar1)
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_REALIZE}{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar."))
+closemessage
+speakername("Kael")
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar... cool name! So, where are you from?"))
+closemessage
+applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_left walk_up walk_in_place_slow_up))
+waitmovement(0)
+speakername(Xylar1)
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Doesn't matter."))
+closemessage
+playse(SE_PIN)
+applymovement(1,moves(emote_exclamation_mark))
+speakername("Kael")
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Right, yeah... privacy, I get it."))
+speakername("Kael")
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}So! How'd you do on the Entry Test? I barely passed the battle portion.\pMy Pokémon and I were so nervous, but we pulled through!"))
+closemessage
+applymovement(0xFF,moves(walk_in_place_up))
+speakername(Xylar1)
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}I didn't take it."))
+closemessage
+playse(SE_PIN)
+applymovement(1,moves(emote_question_mark))
+speakername("Kael")
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_QUESTION}{COLOR BLUE}{SHADOW LIGHT_GRAY}Didn't... wait, you didn't take the test?"))
+closemessage
+speakername(Xylar1)
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}No."))
+speakername("Kael")
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_QUESTION}{COLOR BLUE}{SHADOW LIGHT_GRAY}...{PAUSE_UNTIL_PRESS}..."))
+closemessage
+playse(SE_PIN)
+applymovement(1,moves(emote_exclamation_mark))
+speakername("Kael")
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Oh! So you got special admission? That's awesome! You must be really talented or..."))
+speakername(Xylar1)
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}I'm here. That's all that matters."))
+speakername("Kael")
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Well, hey! We're roommates now, so we should stick together, right?\pMaybe we could train sometime?\pI've got my starter, and I bet yours is cool too..."))
+speakername(Xylar1)
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}I train alone."))
+closemessage
+playse(SE_PIN)
+applymovement(1,moves(emote_exclamation_mark))
+speakername("Kael")
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Oh. Okay, sure... I mean, everyone has their own style, right?"))
+speakername("Kael")
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Look, I know we just met, but if you ever need anything, help with classes, finding your way around, or just... talking, I'm here.\pThat's what roommates are for, right?"))
+speakername(Xylar1)
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}I won't need anything."))
+closemessage
+playse(SE_PIN)
+applymovement(1,moves(emote_exclamation_mark))
+speakername("Kael")
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Uh..{PAUSE}...Right. Well... I'll, uh, let you settle in.\pSee you around, Xylar."))
+closemessage
+applymovement(1, moves(walk_down*8))
+waitmovement(0)
+playse(SE_EXIT)
+fadenewbgm(MUS_DUMMY)
+fadescreen(FADE_TO_BLACK)
+msgbox(format("Night Time....."))
+closemessage
+waitbuttonpress
+applymovement(0xFF,moves(walk_down*2 walk_right face_left))
+waitmovement(0)
+initclock(9, 00)
+setflag(FLAG_PAUSE_TIME)
+fadescreen(FADE_FROM_BLACK)
+playse(SE_DOOR)
+applymovement(1, moves(walk_up*8 face_left))
+waitmovement(0)
+speakername("Kael")
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar!\p{PAUSE_UNTIL_PRESS}Oh! he's asleep."))
+closemessage
+applymovement(1,moves(face_right))
+speakername("Kael")
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}I should also go to sleep...\pTomorrow is the start of my Academy life."))
+closemessage
+applymovement(1, moves(walk_right))
+waitmovement(0)
+speakername("Kael")
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}I wonder what kind of days are waiting for us."))
+closemessage
+playse(SE_PIN)
+applymovement(1,moves(emote_happy))
+fadescreen(FADE_TO_BLACK)
+delay(120)
+// Internal monologue addressing the player
+speakername(Xylar1)
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Two years. That was the deal.\pAstralis Academy.\p{COLOR RED}{SHADOW LIGHT_GRAY}The most prestigious training institution in Velanthis.\p{COLOR BLUE}{SHADOW LIGHT_GRAY}Waste of time.\pSurge was just one. There are others. Higher-ups.\pLady Nova.\pStrength. That's all I need.\pThen I hunt them down.\pAnd this time...\p{FONT_SMALL}I'll make them regret leaving me alive."))
+closemessage
+speakername(Xylar1)
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SPECIAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}....."))
+closemessage
+delay(120)
+setvar(VAR_ACADEMY_START,9)
+warp_continue_script(MAP_DORMINDOOR1,1,5,Kaelmorning,TRUE)
+}
+text kael {
+    format("Kael")
+}
+
+movement dorm {
+    walk_up*7
+    walk_left*5
+    
+}
+
+script Kaelmorning {
+lock
+applymovement(0xFF,moves(face_left))
+waitmovement(0)
+applymovement(1,moves(walk_left*2))
+waitmovement(0)
+speakername("Kael")
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Uh… Xylar? Morning.\pClass starts soon.\pI thought I'd make sure you didn't miss it."))
+closemessage
+fadescreen(FADE_FROM_BLACK)
+speakername(Xylar1)
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_REALIZE}{COLOR BLUE}{SHADOW LIGHT_GRAY}I wasn't sleeping."))
+closemessage
+playse(SE_PIN)
+applymovement(1,exclam)
+speakername("Kael")
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Oh...Right..."))
+closemessage
+applymovement(1,moves(jump_in_place_left_right*2))
+speakername("Kael")
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Well… good morning.\p I'll be leaving."))
+closemessage
+applymovement(1,moves(walk_fast_down*8))
+waitmovement(0)
+playse(SE_EXIT)
+removeobject(1)
+fwdweekday(1)
+setflag(FLAG_KAEL_DORM)
+clearflag(FLAG_TRIAL_SERENA)
+setrespawn(HEAL_LOCATION_DORM)
+release
+
+}
+
+script Nightstroll {
+    lock
+    speakername("Xylar")
+    msgbox(format("I can't fall sleep, maybe I should go for a walk."))
+    release
+    setvar(VAR_ACADEMY_START,11)
+}
+script lunarofficer {
+    lock
+    playse(SE_PIN)
+    applymovement(3,moves(emote_exclamation_mark))
+    speakername("Officer")   
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Stop right there!\pFirst years are not allowed in the forest yet."))
+    waitmessage
+    applymovement(0xFF,moves(walk_left))
+    waitmovement(0)
+    release
+}
+
+script lunarofficer1 {
+    lock
+    faceplayer
+    speakername("Officer")   
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}First years are not allowed in the forest yet."))
+    release
+}

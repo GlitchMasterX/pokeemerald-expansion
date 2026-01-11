@@ -1,0 +1,52 @@
+mapscripts AstralisAcademy_Floor1_MapScripts {
+	MAP_SCRIPT_ON_FRAME_TABLE[
+    VAR_ACADEMY_START,10:Receptionaftertrial1
+]
+}
+
+script Receptionaftertrial1 {
+	lock
+	special(SpawnCameraObject)
+	applymovement(0x7F,moves(walk_down*3))
+	waitmovement(0)
+	playse(SE_PIN)
+	applymovement(1,moves(emote_exclamation_mark face_up))
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Xylar!"))
+	closemessage
+	applymovement(1,moves(delay_16 delay_16 delay_16 face_left delay_16 delay_16 delay_16 face_down))
+	applymovement(0xFF, moves(walk_left*5 walk_down*7 walk_right*5 face_up))
+    waitmovementall
+	applymovement(0x7F,moves(walk_down*4))
+	waitmovement(0)
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}The Headmaster wants to see you in his office."))
+	closemessage
+	speakername(Xylar1)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Summoned already?\p…Great. Guess I'll hear what the old man wants."))
+    closemessage
+	special(RemoveCameraObject)
+	release
+	pausefakertc
+	setvar(VAR_ACADEMY_START,11)
+}
+
+script Ishouldgoseethehead {
+	lock
+	applymovement(0xFF,moves(walk_up))
+	waitmovement(0)
+	msgbox(format("The headmaster wants me.\pWhatever this is, avoiding it won't change the outcome."))        
+	closemessage
+	release
+}
+
+script leafletsgotodojo {
+	lock
+	playse(SE_PIN)
+	applymovement(0xFF,moves(emote_exclamation_mark))
+	facefollowernpc
+	speakername("Leaf")  
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}The Dojo is downstairs.\pLet's go before the trial starts."))        
+	closemessage
+	applymovement(0xFF,moves(walk_up))
+	waitmovement(0)
+	release
+}

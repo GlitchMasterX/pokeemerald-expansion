@@ -166,9 +166,9 @@ SINGLE_BATTLE_TEST("Protect: Baneful Bunker poisons Pokémon for moves making co
 {
     u16 usedMove = MOVE_NONE;
 
-    PARAMETRIZE { usedMove = MOVE_SCRATCH; }
-    PARAMETRIZE { usedMove = MOVE_LEER; }
-    PARAMETRIZE { usedMove = MOVE_WATER_GUN; }
+    PARAMETRIZE {usedMove = MOVE_SCRATCH; }
+    PARAMETRIZE {usedMove = MOVE_LEER; }
+    PARAMETRIZE {usedMove = MOVE_WATER_GUN; }
 
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -218,9 +218,9 @@ SINGLE_BATTLE_TEST("Protect: Burning Bulwark burns Pokémon for moves making con
 {
     u16 usedMove = MOVE_NONE;
 
-    PARAMETRIZE { usedMove = MOVE_SCRATCH; }
-    PARAMETRIZE { usedMove = MOVE_LEER; }
-    PARAMETRIZE { usedMove = MOVE_WATER_GUN; }
+    PARAMETRIZE {usedMove = MOVE_SCRATCH; }
+    PARAMETRIZE {usedMove = MOVE_LEER; }
+    PARAMETRIZE {usedMove = MOVE_WATER_GUN; }
 
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -269,8 +269,8 @@ SINGLE_BATTLE_TEST("Protect: Burning Bulwark can't burn Pokémon if they are alr
 SINGLE_BATTLE_TEST("Protect: Recoil damage is not applied if target was protected")
 {
     u32 j, k;
-    static const u16 protectMoves[] = {MOVE_PROTECT, MOVE_DETECT, MOVE_KINGS_SHIELD, MOVE_BANEFUL_BUNKER, MOVE_SILK_TRAP, MOVE_OBSTRUCT, MOVE_SPIKY_SHIELD};
-    static const u16 recoilMoves[] = {MOVE_VOLT_TACKLE, MOVE_HEAD_SMASH, MOVE_TAKE_DOWN, MOVE_DOUBLE_EDGE};
+    static const u16 protectMoves[] = { MOVE_PROTECT, MOVE_DETECT, MOVE_KINGS_SHIELD, MOVE_BANEFUL_BUNKER, MOVE_SILK_TRAP, MOVE_OBSTRUCT, MOVE_SPIKY_SHIELD };
+    static const u16 recoilMoves[] = { MOVE_VOLT_TACKLE, MOVE_HEAD_SMASH, MOVE_TAKE_DOWN, MOVE_DOUBLE_EDGE };
     u16 protectMove = MOVE_NONE;
     u16 recoilMove = MOVE_NONE;
 
@@ -322,7 +322,7 @@ SINGLE_BATTLE_TEST("Protect: Multi-hit moves don't hit a protected target and fa
     PARAMETRIZE { move = MOVE_SPIKY_SHIELD; }
 
     GIVEN {
-        ASSUME(GetMoveEffect(MOVE_ARM_THRUST) == EFFECT_MULTI_HIT);
+        ASSUME(IsMultiHitMove(MOVE_ARM_THRUST));
         PLAYER(SPECIES_RAPIDASH);
         OPPONENT(SPECIES_BEAUTIFLY);
     } WHEN {
@@ -401,9 +401,9 @@ DOUBLE_BATTLE_TEST("Protect: Wide Guard protects self and ally from multi-target
     PARAMETRIZE { move = MOVE_HYPER_VOICE; } // 2 foes
 
     GIVEN {
-        ASSUME(GetMoveTarget(MOVE_SCRATCH) == MOVE_TARGET_SELECTED);
-        ASSUME(GetMoveTarget(MOVE_SURF) == MOVE_TARGET_FOES_AND_ALLY);
-        ASSUME(GetMoveTarget(MOVE_HYPER_VOICE) == MOVE_TARGET_BOTH);
+        ASSUME(GetMoveTarget(MOVE_SCRATCH) == TARGET_SELECTED);
+        ASSUME(GetMoveTarget(MOVE_SURF) == TARGET_FOES_AND_ALLY);
+        ASSUME(GetMoveTarget(MOVE_HYPER_VOICE) == TARGET_BOTH);
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
@@ -443,7 +443,7 @@ DOUBLE_BATTLE_TEST("Protect: Wide Guard can not fail on consecutive turns (Gen6+
     PASSES_RANDOMLY(passes, 2);
     GIVEN {
         WITH_CONFIG(CONFIG_WIDE_GUARD, config);
-        ASSUME(GetMoveTarget(MOVE_HYPER_VOICE) == MOVE_TARGET_BOTH);
+        ASSUME(GetMoveTarget(MOVE_HYPER_VOICE) == TARGET_BOTH);
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
@@ -539,8 +539,8 @@ DOUBLE_BATTLE_TEST("Protect: Crafty Shield protects self and ally from status mo
     PARAMETRIZE { move = MOVE_SCRATCH; targetOpponent = opponentRight; }
 
     GIVEN {
-        ASSUME(GetMoveTarget(MOVE_LEER) == MOVE_TARGET_BOTH);
-        ASSUME(GetMoveTarget(MOVE_HYPER_VOICE) == MOVE_TARGET_BOTH);
+        ASSUME(GetMoveTarget(MOVE_LEER) == TARGET_BOTH);
+        ASSUME(GetMoveTarget(MOVE_HYPER_VOICE) == TARGET_BOTH);
         ASSUME(GetMoveCategory(MOVE_HYPER_VOICE) == DAMAGE_CATEGORY_SPECIAL);
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WOBBUFFET);
@@ -721,7 +721,7 @@ SINGLE_BATTLE_TEST("Protect: Protective Pads protects from secondary effects")
 DOUBLE_BATTLE_TEST("Protect is not transferred to a mon that is switched in due to Eject Button")
 {
     GIVEN {
-        PLAYER(SPECIES_URSHIFU) { Ability(ABILITY_UNSEEN_FIST); }
+        PLAYER(SPECIES_URSHIFU) { Ability(ABILITY_UNSEEN_FIST); };
         PLAYER(SPECIES_WYNAUT);
         OPPONENT(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WYNAUT) { Item(ITEM_EJECT_BUTTON); }

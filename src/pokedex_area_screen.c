@@ -37,7 +37,7 @@
 //   determined by the data for the corresponding MAPSEC in gRegionMapEntries.
 
 // Only maps in the following map groups have their encounters considered for the area screen
-#define MAP_GROUP_TOWNS_AND_ROUTES MAP_GROUP(MAP_PETALBURG_CITY)
+#define MAP_GROUP_TOWNS_AND_ROUTES MAP_GROUP(MAP_ASTRALIS_ACADEMY)
 #define MAP_GROUP_DUNGEONS MAP_GROUP(MAP_METEOR_FALLS_1F_1R)
 #define MAP_GROUP_SPECIAL_AREA MAP_GROUP(MAP_SAFARI_ZONE_NORTHWEST)
 
@@ -202,10 +202,6 @@ static const struct SpriteTemplate sAreaMarkerSpriteTemplate =
     .tileTag = TAG_AREA_MARKER,
     .paletteTag = TAG_AREA_MARKER,
     .oam = &sAreaMarkerOamData,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy
 };
 
 static const u16 sAreaMarkerPalette[] = INCBIN_U16("graphics/pokedex/area_marker.gbapal");
@@ -228,10 +224,6 @@ static const struct SpriteTemplate sAreaUnknownSpriteTemplate =
     .tileTag = TAG_AREA_UNKNOWN,
     .paletteTag = TAG_AREA_UNKNOWN,
     .oam = &sAreaUnknownOamData,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy
 };
 
 static const u8 sFontColor_AreaInfo[3] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE, 5};

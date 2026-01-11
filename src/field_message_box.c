@@ -1,12 +1,15 @@
 #include "global.h"
 #include "menu.h"
 #include "string_util.h"
+#include "event_data.h"
 #include "task.h"
 #include "text.h"
 #include "match_call.h"
 #include "field_message_box.h"
 #include "text_window.h"
 #include "script.h"
+#include "field_mugshot.h"
+#include "sprite.h"
 #include "field_name_box.h"
 
 static EWRAM_DATA u8 sFieldMessageBoxMode = 0;
@@ -21,7 +24,6 @@ void InitFieldMessageBox(void)
     gTextFlags.canABSpeedUpPrint = FALSE;
     gTextFlags.useAlternateDownArrow = FALSE;
     gTextFlags.autoScroll = FALSE;
-    gTextFlags.forceMidTextSpeed = FALSE;
 }
 
 #define tState data[0]
@@ -127,12 +129,19 @@ bool8 ShowFieldMessageFromBuffer(void)
     return TRUE;
 }
 
+extern void FillDialogFramePlate();
+extern int GetDialogFramePlateWidth();
+
 static void ExpandStringAndStartDrawFieldMessage(const u8 *str, bool32 allowSkippingDelayWithButtonPress)
 {
     TrySpawnNamebox(NAME_BOX_BASE_TILE_NUM);
     StringExpandPlaceholders(gStringVar4, str);
     AddTextPrinterForMessage(allowSkippingDelayWithButtonPress);
     CreateTask_DrawFieldMessage();
+    if (IsFieldMugshotActive())
+    {
+        gSprites[GetFieldMugshotSpriteId()].data[0] = TRUE;
+    }
 }
 
 static void StartDrawFieldMessage(void)
@@ -147,6 +156,12 @@ void HideFieldMessageBox(void)
     ClearDialogWindowAndFrame(0, TRUE);
     DestroyNamebox();
     sFieldMessageBoxMode = FIELD_MESSAGE_BOX_HIDDEN;
+    gSpeakerName = NULL;
+    if (IsFieldMugshotActive())
+    {
+        gSprites[GetFieldMugshotSpriteId()].data[0] = FALSE;
+        RemoveFieldMugshot();
+    }
 }
 
 u8 GetFieldMessageBoxMode(void)
@@ -172,4 +187,9 @@ void StopFieldMessage(void)
 {
     DestroyTask_DrawFieldMessage();
     sFieldMessageBoxMode = FIELD_MESSAGE_BOX_HIDDEN;
+}
+
+void SetSpeakerName(const u8* name)
+{
+    gSpeakerName = name;
 }

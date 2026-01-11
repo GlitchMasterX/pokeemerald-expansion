@@ -60,8 +60,8 @@ static void SpriteCB_PokemonLogoShine(struct Sprite *sprite);
 // const rom data
 static const u16 sUnusedUnknownPal[] = INCBIN_U16("graphics/title_screen/unused.gbapal");
 
-static const u32 sTitleScreenRayquazaGfx[] = INCBIN_U32("graphics/title_screen/rayquaza.4bpp.smol");
-static const u32 sTitleScreenRayquazaTilemap[] = INCBIN_U32("graphics/title_screen/rayquaza.bin.smolTM");
+static const u32 sTitleScreenRayquazaGfx[] = INCBIN_U32("graphics/title_screen/mewtwo.4bpp.smol");
+static const u32 sTitleScreenRayquazaTilemap[] = INCBIN_U32("graphics/title_screen/mewtwo.bin.smolTM");
 static const u32 sTitleScreenLogoShineGfx[] = INCBIN_U32("graphics/title_screen/logo_shine.4bpp.smol");
 static const u32 sTitleScreenCloudsGfx[] = INCBIN_U32("graphics/title_screen/clouds.4bpp.smol");
 
@@ -168,8 +168,6 @@ static const struct SpriteTemplate sVersionBannerLeftSpriteTemplate =
     .paletteTag = TAG_VERSION,
     .oam = &sVersionBannerLeftOamData,
     .anims = sVersionBannerLeftAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_VersionBannerLeft,
 };
 
@@ -179,8 +177,6 @@ static const struct SpriteTemplate sVersionBannerRightSpriteTemplate =
     .paletteTag = TAG_VERSION,
     .oam = &sVersionBannerRightOamData,
     .anims = sVersionBannerRightAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_VersionBannerRight,
 };
 
@@ -287,8 +283,6 @@ static const struct SpriteTemplate sStartCopyrightBannerSpriteTemplate =
     .paletteTag = TAG_PRESS_START_COPYRIGHT,
     .oam = &sOamData_CopyrightBanner,
     .anims = sStartCopyrightBannerAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_PressStartCopyrightBanner,
 };
 
@@ -345,8 +339,6 @@ static const struct SpriteTemplate sPokemonLogoShineSpriteTemplate =
     .paletteTag = TAG_PRESS_START_COPYRIGHT,
     .oam = &sPokemonLogoShineOamData,
     .anims = sPokemonLogoShineAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_PokemonLogoShine,
 };
 
@@ -603,8 +595,8 @@ void CB2_InitTitleScreen(void)
         DecompressDataWithHeaderVram(sTitleScreenRayquazaGfx, (void *)(BG_CHAR_ADDR(2)));
         DecompressDataWithHeaderVram(sTitleScreenRayquazaTilemap, (void *)(BG_SCREEN_ADDR(26)));
         // bg1
-        DecompressDataWithHeaderVram(sTitleScreenCloudsGfx, (void *)(BG_CHAR_ADDR(3)));
-        DecompressDataWithHeaderVram(gTitleScreenCloudsTilemap, (void *)(BG_SCREEN_ADDR(27)));
+       // DecompressDataWithHeaderVram(sTitleScreenCloudsGfx, (void *)(BG_CHAR_ADDR(3)));
+       // DecompressDataWithHeaderVram(gTitleScreenCloudsTilemap, (void *)(BG_SCREEN_ADDR(27)));
         ScanlineEffect_Stop();
         ResetTasks();
         ResetSpriteData();
@@ -782,7 +774,7 @@ static void Task_TitleScreenPhase3(u8 taskId)
     if (JOY_NEW(A_BUTTON) || JOY_NEW(START_BUTTON))
     {
         FadeOutBGM(4);
-        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_WHITEALPHA);
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
         SetMainCallback2(CB2_GoToMainMenu);
     }
     else if (JOY_HELD(CLEAR_SAVE_BUTTON_COMBO) == CLEAR_SAVE_BUTTON_COMBO)
@@ -854,16 +846,140 @@ static void CB2_GoToBerryFixScreen(void)
     }
 }
 
+struct FadeColors
+{
+    u16 color1;
+    u16 color2;
+    u8 colorIndex;
+};
+
+#ifndef RHH_EXPANSION
+#define RGB2GBA(r, g, b) (((r >> 3) & 31) | (((g >> 3) & 31) << 5) | (((b >> 3) & 31) << 10))
+#endif
+
+static const struct FadeColors sFadeColors[] = {
+/*
+    {
+        .color1 = RGB2GBA(, , ),
+        .color2 = RGB2GBA(, , ),
+        .colorIndex = 
+    }
+*/ {
+        .color1 = RGB2GBA(140, 142, 144),
+        .color2 = RGB2GBA(0, 0, 0),
+        .colorIndex = 1
+    }
+    ,{
+        .color1 = RGB2GBA(72, 78, 76),
+        .color2 = RGB2GBA(0, 0, 0),
+        .colorIndex = 2
+    }
+    ,{
+        .color1 = RGB2GBA(208, 206, 204),
+        .color2 = RGB2GBA(0, 0, 0),
+        .colorIndex = 3
+    }
+    ,{
+        .color1 = RGB2GBA(52, 46, 44),
+        .color2 = RGB2GBA(0, 0, 0),
+        .colorIndex = 4
+    }
+    ,{
+        .color1 = RGB2GBA(179, 174, 160),
+        .color2 = RGB2GBA(0, 0, 0),
+        .colorIndex = 5
+    }
+    ,{
+        .color1 = RGB2GBA(104, 110, 108),
+        .color2 = RGB2GBA(0, 0, 0),
+        .colorIndex = 6
+    }
+    ,{
+        .color1 = RGB2GBA(20, 14, 16),
+        .color2 = RGB2GBA(0, 0, 0),
+        .colorIndex = 7
+    }
+    ,{
+        .color1 = RGB2GBA(108, 74, 124),
+        .color2 = RGB2GBA(0, 0, 0),
+        .colorIndex = 8
+    }
+    ,{
+        .color1 = RGB2GBA(72, 48, 88),
+        .color2 = RGB2GBA(0, 0, 0),
+        .colorIndex = 11
+    }
+    ,{
+        .color1 = RGB2GBA(140, 110, 156),
+        .color2 = RGB2GBA(232, 44, 240),
+        .colorIndex = 9
+    }
+    ,{
+        .color1 = RGB2GBA(35, 35, 35),
+        .color2 = RGB2GBA(108, 10, 128),
+        .colorIndex = 10
+    }
+    ,{
+        .color1 = RGB2GBA(90, 69, 101),
+        .color2 = RGB2GBA(240, 60, 240),
+        .colorIndex = 12
+    }
+    ,{
+        .color1 = RGB2GBA(38, 18, 52),
+        .color2 = RGB2GBA(0, 0, 0),
+        .colorIndex = 13
+    }
+    ,{
+        .color1 = RGB2GBA(108, 78, 84),
+        .color2 = RGB2GBA(0, 0, 0),
+        .colorIndex = 14
+    }
+    ,{
+        .color1 = RGB2GBA(140, 110, 112),
+        .color2 = RGB2GBA(0, 0, 0),
+        .colorIndex = 15
+    }
+
+};
+
 static void UpdateLegendaryMarkingColor(u8 frameNum)
 {
     if ((frameNum % 4) == 0) // Change color every 4th frame
     {
-        s32 intensity = Cos(frameNum, Q_8_8(0.5)) + Q_8_8(0.5);
-        u32 r = 31 - Q_8_8_TO_INT(intensity * 31);
-        u32 g = 31 - Q_8_8_TO_INT(intensity * 22);
-        u32 b = 12;
+        s32 intensity = (((Cos(frameNum, 128) + 128) * 10) / 250);
+        s32 r;
+        s32 g;
+        s32 b;
+        u16 color;
+        u32 i;
 
-        u16 color = RGB(r, g, b);
-        LoadPalette(&color, BG_PLTT_ID(14) + 15, sizeof(color));
-   }
+        for (i = 0; i < ARRAY_COUNT(sFadeColors); i++)
+        {
+            if (intensity == 0)
+            {
+                color = sFadeColors[i].color2;
+            }
+            else
+            {
+                if (GET_R(sFadeColors[i].color1) <= GET_R(sFadeColors[i].color2))
+                    r = (GET_R(sFadeColors[i].color2) - (((GET_R(sFadeColors[i].color2) - GET_R(sFadeColors[i].color1)) * intensity) / 10));
+                else
+                    r = (GET_R(sFadeColors[i].color2) + (((GET_R(sFadeColors[i].color1) - GET_R(sFadeColors[i].color2)) * intensity) / 10));
+
+                if (GET_G(sFadeColors[i].color1) <= GET_G(sFadeColors[i].color2))
+                    g = (GET_G(sFadeColors[i].color2) - (((GET_G(sFadeColors[i].color2) - GET_G(sFadeColors[i].color1)) * intensity) / 10));
+                else
+                    g = (GET_G(sFadeColors[i].color2) + (((GET_G(sFadeColors[i].color1) - GET_G(sFadeColors[i].color2)) * intensity) / 10));
+
+                if (GET_B(sFadeColors[i].color1) <= GET_B(sFadeColors[i].color2))
+                    b = (GET_B(sFadeColors[i].color2) - (((GET_B(sFadeColors[i].color2) - GET_B(sFadeColors[i].color1)) * intensity) / 10));
+                else
+                    b = (GET_B(sFadeColors[i].color2) + (((GET_B(sFadeColors[i].color1) - GET_B(sFadeColors[i].color2)) * intensity) / 10));
+
+                color = RGB(r, g, b);
+            }
+            
+            LoadPalette(&color, BG_PLTT_ID(14) + sFadeColors[i].colorIndex, sizeof(color));
+        }
+    }
 }

@@ -2,9 +2,10 @@
 #include "debug.h"
 #include "malloc.h"
 #include "battle.h"
-#include "battle_tower.h"
+#include "battle_special.h"
 #include "cable_club.h"
 #include "data.h"
+#include "daycare.h"
 #include "decoration.h"
 #include "diploma.h"
 #include "event_data.h"
@@ -21,11 +22,16 @@
 #include "international_string_util.h"
 #include "item.h"
 #include "item_icon.h"
+#include "item_menu.h"
 #include "link.h"
 #include "list_menu.h"
 #include "load_save.h"
 #include "main.h"
+#include "mystery_gift.h"
+#include "constants/trainer_types.h"
 #include "match_call.h"
+#include "battle_pyramid.h"
+#include "trainer_hill.h"
 #include "menu.h"
 #include "metatile_behavior.h"
 #include "mystery_gift.h"
@@ -35,6 +41,7 @@
 #include "pokedex.h"
 #include "pokemon.h"
 #include "pokemon_storage_system.h"
+#include "pokemon_summary_screen.h"
 #include "random.h"
 #include "rayquaza_scene.h"
 #include "region_map.h"
@@ -82,6 +89,14 @@
 #define ELEVATOR_WINDOW_WIDTH  3
 #define ELEVATOR_WINDOW_HEIGHT 3
 #define ELEVATOR_LIGHT_STAGES  3
+
+enum 
+{
+    CAN_LEARN_MOVE,
+    CANNOT_LEARN_MOVE,
+    ALREADY_KNOWS_MOVE,
+    CANNOT_LEARN_MOVE_IS_EGG
+};
 
 EWRAM_DATA bool8 gBikeCyclingChallenge = FALSE;
 EWRAM_DATA u8 gBikeCollisions = 0;
@@ -145,6 +160,18 @@ static void Task_CloseBattlePikeCurtain(u8);
 static u8 DidPlayerGetFirstFans(void);
 static void SetInitialFansOfPlayer(void);
 static u16 PlayerGainRandomTrainerFan(void);
+static void Task_LearnedMoveBoxMon(u8);
+static void Task_ReplaceBoxMonMoveYesNo(u8);
+static void Task_DoLearnedBoxMonMoveFanfareAfterText(u8);
+static void Task_HandleReplaceBoxMonMoveYesNoInput(u8);
+static void Task_ShowSummaryScreenToForgetBoxMonMove(u8);
+static void StopLearningBoxMonMovePrompt(u8);
+static void CB2_ReturnToFieldWhileLearningMove(void);
+static void Task_ReturnToFieldWhileLearningMove(void);
+static void Task_BoxMonReplaceMove(u8);
+static void Task_StopLearningBoxMonMoveYesNo(u8);
+static void Task_HandleStopLearningBoxMonMoveYesNoInput(u8);
+static void Task_DidntLearnMove(u8);
 #if FREE_LINK_BATTLE_RECORDS == FALSE
 static void BufferFanClubTrainerName_(struct LinkBattleRecords *, u8, u8);
 #else
@@ -189,10 +216,13 @@ void Special_BeginCyclingRoadChallenge(void)
 
 u16 GetPlayerAvatarBike(void)
 {
-    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_ACRO_BIKE))
-        return 1;
-    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_MACH_BIKE))
-        return 2;
+    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_BIKE))
+    {
+        if (gSaveBlock2Ptr->playerBike != MACH_BIKE)
+            return 1;
+        else
+            return 2;
+    }
     return 0;
 }
 
@@ -574,16 +604,14 @@ void SpawnLinkPartnerObjectEvent(void)
                     linkSpriteId = OBJ_EVENT_GFX_LINK_RS_MAY;
                 break;
             case VERSION_EMERALD:
-                if (gLinkPlayers[i].gender == 0)
-                    linkSpriteId = OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL;
-                else
-                    linkSpriteId = OBJ_EVENT_GFX_RIVAL_MAY_NORMAL;
-                break;
             default:
-                if (gLinkPlayers[i].gender == 0)
-                    linkSpriteId = OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL;
+            {
+                u8 outfit = gLinkPlayers[i].currOutfitId, gender = gLinkPlayers[i].gender;
+                if (outfit < OUTFIT_COUNT)
+                    linkSpriteId = GetLinkPlayerAvatarGraphicsIdByStateIdLinkIdAndGender(PLAYER_AVATAR_STATE_NORMAL, i, gender);
                 else
-                    linkSpriteId = OBJ_EVENT_GFX_RIVAL_MAY_NORMAL;
+                    linkSpriteId = (gender == 0) ? OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL : OBJ_EVENT_GFX_RIVAL_MAY_NORMAL;
+            }
                 break;
             }
             SpawnSpecialObjectEventParameterized(linkSpriteId, movementTypes[j], LOCALID_BERRY_BLENDER_PLAYER_END - i, coordOffsets[j][0] + x + MAP_OFFSET, coordOffsets[j][1] + y + MAP_OFFSET, 0);
@@ -597,37 +625,26 @@ void SpawnLinkPartnerObjectEvent(void)
 
 static void LoadLinkPartnerObjectEventSpritePalette(u16 graphicsId, u8 localEventId, u8 paletteNum)
 {
-    u8 adjustedPaletteNum;
-    // Note: This temp var is necessary; paletteNum += 6 doesn't match.
-    adjustedPaletteNum = paletteNum + 6;
-    if (graphicsId == OBJ_EVENT_GFX_LINK_RS_BRENDAN ||
-        graphicsId == OBJ_EVENT_GFX_LINK_RS_MAY ||
-        graphicsId == OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL ||
-        graphicsId == OBJ_EVENT_GFX_RIVAL_MAY_NORMAL)
-    {
-        u8 obj = GetObjectEventIdByLocalIdAndMap(localEventId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
-        if (obj != OBJECT_EVENTS_COUNT)
-        {
-            u8 spriteId = gObjectEvents[obj].spriteId;
-            struct Sprite *sprite = &gSprites[spriteId];
-            sprite->oam.paletteNum = adjustedPaletteNum;
+    u32 i = 0;
+    u8 outfit = 0;
+    u8 gender = 0;
+    u8 adjustedPaletteNum = paletteNum + 6;
+    u8 obj = GetObjectEventIdByLocalIdAndMap(localEventId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
+    u16 gfx = 0;
+    u8 spriteId = gObjectEvents[obj].spriteId;
+    struct Sprite *sprite = &gSprites[spriteId];
 
-            switch (graphicsId)
-            {
-            case OBJ_EVENT_GFX_LINK_RS_BRENDAN:
-                LoadPalette(gObjectEventPal_RubySapphireBrendan, OBJ_PLTT_ID(adjustedPaletteNum), PLTT_SIZE_4BPP);
-                break;
-            case OBJ_EVENT_GFX_LINK_RS_MAY:
-                LoadPalette(gObjectEventPal_RubySapphireMay, OBJ_PLTT_ID(adjustedPaletteNum), PLTT_SIZE_4BPP);
-                break;
-            case OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL:
-                LoadPalette(gObjectEventPal_Brendan, OBJ_PLTT_ID(adjustedPaletteNum), PLTT_SIZE_4BPP);
-                break;
-            case OBJ_EVENT_GFX_RIVAL_MAY_NORMAL:
-                LoadPalette(gObjectEventPal_May, OBJ_PLTT_ID(adjustedPaletteNum), PLTT_SIZE_4BPP);
-                break;
-            }
+    while (i < MAX_LINK_PLAYERS)
+    {
+        gender = gLinkPlayers[i].gender;
+        outfit = gLinkPlayers[i].currOutfitId;
+        gfx = GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(outfit, PLAYER_AVATAR_STATE_NORMAL, gender);
+        if (graphicsId == gfx && obj != OBJECT_EVENTS_COUNT)
+        {
+            sprite->oam.paletteNum = adjustedPaletteNum;
+            PatchObjectPalette(GetObjectEventGraphicsInfo(graphicsId)->paletteTag, adjustedPaletteNum);
         }
+        i++;
     }
 }
 
@@ -1580,7 +1597,10 @@ u8 GetLeadMonIndex(void)
 
 u16 ScriptGetPartyMonSpecies(void)
 {
-    return GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES_OR_EGG, NULL);
+    if(gSpecialVar_MonBoxId == 0xFF)
+        return GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES_OR_EGG);
+    else
+        return GetBoxMonDataAt(gSpecialVar_MonBoxId,gSpecialVar_MonBoxPos, MON_DATA_SPECIES_OR_EGG);
 }
 
 // Removed for Emerald
@@ -2008,12 +2028,24 @@ void BufferVarsForIVRater(void)
     u8 i;
     u32 ivStorage[NUM_STATS];
 
-    ivStorage[STAT_HP] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV);
-    ivStorage[STAT_ATK] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_IV);
-    ivStorage[STAT_DEF] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_IV);
-    ivStorage[STAT_SPEED] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_IV);
-    ivStorage[STAT_SPATK] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_IV);
-    ivStorage[STAT_SPDEF] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_IV);
+    if(gSpecialVar_MonBoxId == 0xFF)
+    {
+        ivStorage[STAT_HP] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV);
+        ivStorage[STAT_ATK] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_IV);
+        ivStorage[STAT_DEF] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_IV);
+        ivStorage[STAT_SPEED] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_IV);
+        ivStorage[STAT_SPATK] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_IV);
+        ivStorage[STAT_SPDEF] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_IV);
+    }
+    else
+    {
+        ivStorage[STAT_HP] = GetBoxMonDataAt(gSpecialVar_MonBoxId,gSpecialVar_MonBoxPos, MON_DATA_HP_IV);
+        ivStorage[STAT_ATK] = GetBoxMonDataAt(gSpecialVar_MonBoxId,gSpecialVar_MonBoxPos, MON_DATA_ATK_IV);
+        ivStorage[STAT_DEF] = GetBoxMonDataAt(gSpecialVar_MonBoxId,gSpecialVar_MonBoxPos, MON_DATA_DEF_IV);
+        ivStorage[STAT_SPEED] = GetBoxMonDataAt(gSpecialVar_MonBoxId,gSpecialVar_MonBoxPos, MON_DATA_SPEED_IV);
+        ivStorage[STAT_SPATK] = GetBoxMonDataAt(gSpecialVar_MonBoxId,gSpecialVar_MonBoxPos, MON_DATA_SPATK_IV);
+        ivStorage[STAT_SPDEF] = GetBoxMonDataAt(gSpecialVar_MonBoxId,gSpecialVar_MonBoxPos, MON_DATA_SPDEF_IV);
+    }
 
     gSpecialVar_0x8005 = 0;
 
@@ -2050,9 +2082,7 @@ bool8 UsedPokemonCenterWarp(void)
         MAP_DEWFORD_TOWN_POKEMON_CENTER_1F,
         MAP_LAVARIDGE_TOWN_POKEMON_CENTER_1F,
         MAP_FALLARBOR_TOWN_POKEMON_CENTER_1F,
-        MAP_VERDANTURF_TOWN_POKEMON_CENTER_1F,
-        MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_1F,
-        MAP_PETALBURG_CITY_POKEMON_CENTER_1F,
+        MAP_ASTRALIS_ACADEMY_POKEMON_CENTER,
         MAP_SLATEPORT_CITY_POKEMON_CENTER_1F,
         MAP_MAUVILLE_CITY_POKEMON_CENTER_1F,
         MAP_RUSTBORO_CITY_POKEMON_CENTER_1F,
@@ -2594,7 +2624,7 @@ static void Task_ShowScrollableMultichoice(u8 taskId)
     sScrollableMultichoice_ItemSpriteId = MAX_SPRITES;
     FillFrontierExchangeCornerWindowAndItemIcon(task->tScrollMultiId, 0);
     ShowBattleFrontierTutorWindow(task->tScrollMultiId, 0);
-    sScrollableMultichoice_ListMenuItem = AllocZeroed(task->tNumItems * sizeof(struct ListMenuItem));
+    sScrollableMultichoice_ListMenuItem = AllocZeroed(task->tNumItems * 8);
     sFrontierExchangeCorner_NeverRead = 0;
     InitScrollableMultichoice();
 
@@ -2823,7 +2853,11 @@ void ShowNatureGirlMessage(void)
     if (gSpecialVar_0x8004 >= PARTY_SIZE)
         gSpecialVar_0x8004 = 0;
 
-    nature = GetNature(&gPlayerParty[gSpecialVar_0x8004]);
+    if(gSpecialVar_MonBoxId == 0xFF)
+        nature = GetNature(&gPlayerParty[gSpecialVar_0x8004]);
+    else
+        nature = GetBoxMonDataAt(gSpecialVar_MonBoxId, gSpecialVar_MonBoxPos, MON_DATA_PERSONALITY) % NUM_NATURES;
+    
     ShowFieldMessage(gNaturesInfo[nature].natureGirlMessage);
 }
 
@@ -3076,7 +3110,7 @@ static void HideFrontierExchangeCornerItemIcon(enum ScrollMulti menu, u16 unused
 
 void BufferBattleFrontierTutorMoveName(void)
 {
-    StringCopy(gStringVar1, GetMoveName(gSpecialVar_0x8005));
+    StringCopy(gStringVar1, GetMoveName(gSpecialVar_ItemId));
 }
 
 static void ShowBattleFrontierTutorWindow(enum ScrollMulti menu, u16 selection)
@@ -3543,15 +3577,14 @@ u32 GetMartEmployeeObjectEventId(void)
         { MAP_GROUP(MAP_OLDALE_TOWN_MART),     MAP_NUM(MAP_OLDALE_TOWN_MART),     LOCALID_OLDALE_MART_CLERK },
         { MAP_GROUP(MAP_LAVARIDGE_TOWN_MART),  MAP_NUM(MAP_LAVARIDGE_TOWN_MART),  LOCALID_LAVARIDGE_MART_CLERK },
         { MAP_GROUP(MAP_FALLARBOR_TOWN_MART),  MAP_NUM(MAP_FALLARBOR_TOWN_MART),  LOCALID_FALLARBOR_MART_CLERK },
-        { MAP_GROUP(MAP_VERDANTURF_TOWN_MART), MAP_NUM(MAP_VERDANTURF_TOWN_MART), LOCALID_VERDANTURF_MART_CLERK },
-        { MAP_GROUP(MAP_PETALBURG_CITY_MART),  MAP_NUM(MAP_PETALBURG_CITY_MART),  LOCALID_PETALBURG_MART_CLERK },
+        { MAP_GROUP(MAP_ASTRALIS_ACADEMY_POKEMON_CENTER), MAP_NUM(MAP_ASTRALIS_ACADEMY_POKEMON_CENTER), LOCALID_VERDANTURF_MART_CLERK },
         { MAP_GROUP(MAP_SLATEPORT_CITY_MART),  MAP_NUM(MAP_SLATEPORT_CITY_MART),  LOCALID_SLATEPORT_MART_CLERK },
         { MAP_GROUP(MAP_MAUVILLE_CITY_MART),   MAP_NUM(MAP_MAUVILLE_CITY_MART),   LOCALID_MAUVILLE_MART_CLERK },
         { MAP_GROUP(MAP_RUSTBORO_CITY_MART),   MAP_NUM(MAP_RUSTBORO_CITY_MART),   LOCALID_RUSTBORO_MART_CLERK },
         { MAP_GROUP(MAP_FORTREE_CITY_MART),    MAP_NUM(MAP_FORTREE_CITY_MART),    LOCALID_FORTREE_MART_CLERK },
         { MAP_GROUP(MAP_MOSSDEEP_CITY_MART),   MAP_NUM(MAP_MOSSDEEP_CITY_MART),   LOCALID_MOSSDEEP_MART_CLERK },
         { MAP_GROUP(MAP_SOOTOPOLIS_CITY_MART), MAP_NUM(MAP_SOOTOPOLIS_CITY_MART), LOCALID_SOOTOPOLIS_MART_CLERK },
-        { MAP_GROUP(MAP_BATTLE_FRONTIER_MART), MAP_NUM(MAP_BATTLE_FRONTIER_MART), LOCALID_FRONTIER_MART_CLERK },
+        { MAP_GROUP(MAP_BATTLE_FRONTIER_MART), MAP_NUM(MAP_BATTLE_FRONTIER_MART), LOCALID_BATTLE_FRONTIER_MART_CLERK },
     };
 
     u8 i;
@@ -3843,9 +3876,9 @@ bool8 InPokemonCenter(void)
         MAP_DEWFORD_TOWN_POKEMON_CENTER_1F,
         MAP_LAVARIDGE_TOWN_POKEMON_CENTER_1F,
         MAP_FALLARBOR_TOWN_POKEMON_CENTER_1F,
-        MAP_VERDANTURF_TOWN_POKEMON_CENTER_1F,
-        MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_1F,
-        MAP_PETALBURG_CITY_POKEMON_CENTER_1F,
+        MAP_ASTRALIS_ACADEMY_POKEMON_CENTER,
+        MAP_ASTRALIS_ACADEMY_POKEMON_CENTER,
+        MAP_ASTRALIS_ACADEMY_POKEMON_CENTER,
         MAP_SLATEPORT_CITY_POKEMON_CENTER_1F,
         MAP_MAUVILLE_CITY_POKEMON_CENTER_1F,
         MAP_RUSTBORO_CITY_POKEMON_CENTER_1F,
@@ -4354,6 +4387,245 @@ void UseBlankMessageToCancelPokemonPic(void)
     ScriptMenu_HidePokemonPic();
 }
 
+void CanTeachMoveBoxMon(void)
+{
+    ScriptContext_Stop();
+    if(gSpecialVar_MonBoxId == 0xFF)
+    {
+        if (GetMonData(&gPlayerParty[gSpecialVar_MonBoxPos], MON_DATA_IS_EGG))
+        {
+            gSpecialVar_Result = CANNOT_LEARN_MOVE_IS_EGG;
+            ScriptContext_Enable();
+        }
+        else if (MonKnowsMove(&gPlayerParty[gSpecialVar_MonBoxPos], gSpecialVar_ItemId) == TRUE)
+        {
+            gSpecialVar_Result = ALREADY_KNOWS_MOVE;
+            ScriptContext_Enable();
+        }
+        else if (CanLearnTeachableMove(GetMonData(&gPlayerParty[gSpecialVar_MonBoxPos], MON_DATA_SPECIES_OR_EGG), gSpecialVar_ItemId) == FALSE)
+        {
+            gSpecialVar_Result = CANNOT_LEARN_MOVE;
+            ScriptContext_Enable();
+        }
+        else
+        {
+            if (GiveMoveToMon(&gPlayerParty[gSpecialVar_MonBoxPos], gSpecialVar_ItemId) != MON_HAS_MAX_MOVES)
+            {
+                CreateTask(Task_LearnedMoveBoxMon, 1);
+            }
+            else
+            {
+                GetMonNickname(&gPlayerParty[gSpecialVar_MonBoxPos], gStringVar1);
+                StringCopy(gStringVar2, GetMoveName(gSpecialVar_ItemId));
+                ShowFieldMessage(gText_PkmnNeedsToReplaceMove);
+                CreateTask(Task_ReplaceBoxMonMoveYesNo, 1);
+            }
+        }
+    }
+    else
+    {
+        if (GetBoxMonDataAt(gSpecialVar_MonBoxId, gSpecialVar_MonBoxPos, MON_DATA_IS_EGG))
+        {
+            gSpecialVar_Result = CANNOT_LEARN_MOVE_IS_EGG;
+            ScriptContext_Enable();
+        }
+        else if (BoxMonKnowsMove(GetBoxedMonPtr(gSpecialVar_MonBoxId, gSpecialVar_MonBoxPos), gSpecialVar_ItemId) == TRUE)
+        {
+            gSpecialVar_Result = ALREADY_KNOWS_MOVE;
+            ScriptContext_Enable();
+        }
+        else if (CanLearnTeachableMove(GetBoxMonDataAt(gSpecialVar_MonBoxId, gSpecialVar_MonBoxPos, MON_DATA_SPECIES_OR_EGG), gSpecialVar_ItemId) == FALSE)
+        {
+            gSpecialVar_Result = CANNOT_LEARN_MOVE;
+            ScriptContext_Enable();
+        }
+        else
+        {
+            if (GiveMoveToBoxMon(GetBoxedMonPtr(gSpecialVar_MonBoxId, gSpecialVar_MonBoxPos), gSpecialVar_ItemId) != MON_HAS_MAX_MOVES)
+                CreateTask(Task_LearnedMoveBoxMon, 1);
+            else
+            {
+                GetBoxMonNickname(GetBoxedMonPtr(gSpecialVar_MonBoxId, gSpecialVar_MonBoxPos), gStringVar1);
+                StringCopy(gStringVar2, GetMoveName(gSpecialVar_ItemId));
+                ShowFieldMessage(gText_PkmnNeedsToReplaceMove);
+                CreateTask(Task_ReplaceBoxMonMoveYesNo, 1);
+            }
+        }
+        
+    }
+}
+
+static void Task_LearnedMoveBoxMon(u8 taskId)
+{
+    s16 move = gSpecialVar_ItemId;
+
+    if(gSpecialVar_MonBoxId == 0xFF)
+        GetMonNickname(&gPlayerParty[gSpecialVar_MonBoxPos], gStringVar1);
+    else
+        GetBoxMonNickname(GetBoxedMonPtr(gSpecialVar_MonBoxId, gSpecialVar_MonBoxPos), gStringVar1);
+    StringCopy(gStringVar2, GetMoveName(move));
+    ShowFieldMessage(gText_PkmnLearnedMove4);
+    gTasks[taskId].func = Task_DoLearnedBoxMonMoveFanfareAfterText;
+}
+
+static void Task_DoLearnedBoxMonMoveFanfareAfterText(u8 taskId)
+{
+    if (IsTextPrinterActive(0) != TRUE)
+    {
+        PlayFanfare(MUS_DP_LEVEL_UP);
+        gSpecialVar_Result = CAN_LEARN_MOVE;
+        DestroyTask(taskId);
+        ScriptContext_Enable();
+    }
+}
+
+static void Task_ReplaceBoxMonMoveYesNo(u8 taskId)
+{
+    if (IsTextPrinterActive(0) != TRUE)
+    {
+        DisplayYesNoMenuDefaultYes();
+        gTasks[taskId].func = Task_HandleReplaceBoxMonMoveYesNoInput;
+    }
+}
+
+static void Task_HandleReplaceBoxMonMoveYesNoInput(u8 taskId)
+{
+    switch (Menu_ProcessInputNoWrapClearOnChoose())
+    {
+    case 0:
+        ShowFieldMessage(gText_WhichMoveToForget);
+        gTasks[taskId].func = Task_ShowSummaryScreenToForgetBoxMonMove;
+        break;
+    case MENU_B_PRESSED:
+        PlaySE(SE_SELECT);
+        // fallthrough
+    case 1:
+        StopLearningBoxMonMovePrompt(taskId);
+        break;
+    }
+}
+
+static void Task_ShowSummaryScreenToForgetBoxMonMove(u8 taskId)
+{
+    if (IsTextPrinterActive(0) != TRUE)
+    {
+        DestroyTask(taskId);
+        if(gSpecialVar_MonBoxId == 0xFF)
+            ShowSelectMovePokemonSummaryScreen(gPlayerParty, gSpecialVar_MonBoxPos, gPlayerPartyCount - 1, CB2_ReturnToFieldWhileLearningMove, gSpecialVar_ItemId);
+        else
+            ShowSelectMoveBoxPokemonSummaryScreen(GetBoxedMonPtr(StorageGetCurrentBox(), 0), gSpecialVar_MonBoxPos, IN_BOX_COUNT - 1, CB2_ReturnToFieldWhileLearningMove, gSpecialVar_ItemId);
+    }
+}
+
+static void CB2_ReturnToFieldWhileLearningMove(void)
+{
+    if (!gPaletteFade.active)
+    {
+        gFieldCallback = Task_ReturnToFieldWhileLearningMove;
+        SetMainCallback2(CB2_ReturnToField);
+    }
+}
+
+static void Task_ReturnToFieldWhileLearningMove(void)
+{
+    if (GetMoveSlotToReplace() < MAX_MON_MOVES)
+    {
+        if(gSpecialVar_MonBoxId == 0xFF)
+        {
+            GetMonNickname(&gPlayerParty[gSpecialVar_MonBoxPos], gStringVar1);
+            StringCopy(gStringVar2, GetMoveName(GetMonData(&gPlayerParty[gSpecialVar_MonBoxPos], MON_DATA_MOVE1 + GetMoveSlotToReplace())));
+        }
+        else
+        {
+            GetBoxMonNickAt(gSpecialVar_MonBoxId, gSpecialVar_MonBoxPos, gStringVar1);
+            StringCopy(gStringVar2, GetMoveName(GetBoxMonDataAt(gSpecialVar_MonBoxId, gSpecialVar_MonBoxPos, MON_DATA_MOVE1 + GetMoveSlotToReplace())));
+        }
+        ShowFieldMessage(gText_12PoofForgotMove);
+        CreateTask(Task_BoxMonReplaceMove,1);
+    }
+    else
+        CreateTask(StopLearningBoxMonMovePrompt,1);
+}
+
+static void Task_BoxMonReplaceMove(u8 taskId)
+{
+
+    if (IsTextPrinterActive(0) != TRUE)
+    {
+        u16 move = gSpecialVar_ItemId;
+        if(gSpecialVar_MonBoxId == 0xFF)
+        {
+            RemoveMonPPBonus(&gPlayerParty[gSpecialVar_MonBoxPos], GetMoveSlotToReplace());
+            SetMonMoveSlot(&gPlayerParty[gSpecialVar_MonBoxPos], move, GetMoveSlotToReplace()); 
+        }
+        else
+        {
+            struct BoxPokemon *mon = GetBoxedMonPtr(gSpecialVar_MonBoxId, gSpecialVar_MonBoxPos);
+
+            u8 ppBonuses = GetBoxMonData(mon, MON_DATA_PP_BONUSES);
+            ppBonuses &= gPPUpClearMask[GetMoveSlotToReplace()];
+            SetBoxMonData(mon, MON_DATA_PP_BONUSES, &ppBonuses);
+
+            SetBoxMonData(mon, MON_DATA_MOVE1 + GetMoveSlotToReplace(), &move);
+            SetBoxMonData(mon, MON_DATA_PP1 + GetMoveSlotToReplace(), &gMovesInfo[move].pp);
+        }
+     
+        Task_LearnedMoveBoxMon(taskId);
+    }
+}
+
+static void StopLearningBoxMonMovePrompt(u8 taskId)
+{
+    StringCopy(gStringVar2, GetMoveName(gSpecialVar_ItemId));
+    ShowFieldMessage(gText_StopLearningMove2);
+    gTasks[taskId].func = Task_StopLearningBoxMonMoveYesNo;
+}
+
+static void Task_StopLearningBoxMonMoveYesNo(u8 taskId)
+{
+    if (IsTextPrinterActive(0) != TRUE)
+    {
+        DisplayYesNoMenuDefaultYes();
+        gTasks[taskId].func = Task_HandleStopLearningBoxMonMoveYesNoInput;
+    }
+}
+
+static void Task_HandleStopLearningBoxMonMoveYesNoInput(u8 taskId)
+{
+    switch (Menu_ProcessInputNoWrapClearOnChoose())
+    {
+    case 0:
+        if(gSpecialVar_MonBoxId == 0xFF)
+            GetMonNickname(&gPlayerParty[gSpecialVar_MonBoxPos], gStringVar1);
+        else
+            GetBoxMonNickAt(gSpecialVar_MonBoxId, gSpecialVar_MonBoxPos, gStringVar1);
+        ShowFieldMessage(gText_MoveNotLearned);
+        gSpecialVar_Result = 4;
+        gTasks[taskId].func = Task_DidntLearnMove;
+        break;
+    case MENU_B_PRESSED:
+        PlaySE(SE_SELECT);
+        // fallthrough
+    case 1:
+        if(gSpecialVar_MonBoxId == 0xFF)
+            GetMonNickname(&gPlayerParty[gSpecialVar_MonBoxPos], gStringVar1);
+        else
+            GetBoxMonNickAt(gSpecialVar_MonBoxId, gSpecialVar_MonBoxPos, gStringVar1);
+        ShowFieldMessage(gText_PkmnNeedsToReplaceMove);
+        gTasks[taskId].func = Task_ReplaceBoxMonMoveYesNo;
+        break;
+    }
+}
+
+static void Task_DidntLearnMove(u8 taskId)
+{
+    if (IsTextPrinterActive(0) != TRUE)
+    {
+        DestroyTask(taskId);
+        ScriptContext_Enable();
+    }
+}
+
 void EnterCode(void)
 {
     StringCopy(gStringVar2, COMPOUND_STRING(""));
@@ -4369,6 +4641,75 @@ void GetCodeFeedback(void)
         gSpecialVar_Result = 0;
 }
 
+#define MAX_BIRD_SPOTS 10
+
+static const u8 randomBirdArray[MAX_BIRD_SPOTS + 1][4] =
+{
+    [0]  = { 0, 0, 0, 0 },
+    [1]  = { 1, 0, 1, 0 },
+    [2]  = { 1, 0, 1, 0 },
+    [3]  = { 2, 1, 1, 0 },
+    [4]  = { 2, 1, 1, 0 },
+    [5]  = { 2, 1, 2, 0 },
+    [6]  = { 3, 2, 2, 1 },
+    [7]  = { 3, 2, 3, 2 },
+    [8]  = { 4, 2, 3, 2 },
+    [9]  = { 4, 3, 3, 2 },
+    [10] = { 4, 3, 4, 3 },
+};
+
+void SetRoofBirds(void)
+{
+    u8 i;
+    u8 objectEventCount;
+    struct ObjectEventTemplate *template;
+    u8 birdIndexes[MAX_BIRD_SPOTS + 1] = {0};
+    u32 birdCount = 0;
+    if (gMapHeader.events != NULL)
+    {
+        if (InBattlePyramid_())
+           objectEventCount = GetNumBattlePyramidObjectEvents();
+        else if (InTrainerHill())
+           objectEventCount = HILL_TRAINERS_PER_FLOOR;
+        else
+           objectEventCount = gMapHeader.events->objectEventCount;
+
+        for (i = 0; i < objectEventCount; i++)
+        {
+            template = &gSaveBlock1Ptr->objectEventTemplates[i];
+            if (template->trainerType == TRAINER_TYPE_BIRD && birdCount <= MAX_BIRD_SPOTS)
+            {
+                birdIndexes[birdCount] = i; // Store index of bird
+                birdCount++;
+            }
+        }
+    
+        if (birdCount > 0)
+        {
+            u8 visibleCount = randomBirdArray[birdCount][Random() % 4];
+            Shuffle8(birdIndexes, birdCount);
+
+            // Mark the birds that will be visible as Seen in the Pokedex
+             if (template->trainerType == TRAINER_TYPE_BIRD && birdCount <= MAX_BIRD_SPOTS)
+            {
+                u8 birdIndex = birdIndexes[i];
+                template = &gSaveBlock1Ptr->objectEventTemplates[birdIndex];
+
+                // Find the SPECIES constant from the graphicsId
+                u32 speciesId = template->graphicsId - OBJ_EVENT_MON;
+                GetSetPokedexFlag(speciesId, FLAG_SET_SEEN);
+            }
+
+            // Hide random birds until only `visibleCount` remain
+            for (i = visibleCount; i < birdCount; i++)
+            {
+                u8 birdIndex = birdIndexes[i];
+                template = &gSaveBlock1Ptr->objectEventTemplates[birdIndex];
+                FlagSet(template->flagId);
+            }
+        }
+    }
+}
 void SetHiddenNature(void)
 {
     u32 hiddenNature = gSpecialVar_Result;

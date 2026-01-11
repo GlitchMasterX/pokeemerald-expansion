@@ -5,6 +5,7 @@
 #include <limits.h>
 #include "config/general.h" // we need to define config before gba headers as print stuff needs the functions nulled before defines.
 #include "gba/gba.h"
+#include "assertf.h"
 #include "gametypes.h"
 #include "siirtc.h"
 #include "fpmath.h"
@@ -20,6 +21,7 @@
 #include "constants/pokemon.h"
 #include "constants/easy_chat.h"
 #include "constants/trainer_hill.h"
+#include "constants/outfits.h"
 #include "constants/items.h"
 #include "config/save.h"
 
@@ -134,6 +136,7 @@
 #define NUM_DEX_FLAG_BYTES ROUND_BITS_TO_BYTES(POKEMON_SLOTS_NUMBER)
 #define NUM_FLAG_BYTES ROUND_BITS_TO_BYTES(FLAGS_COUNT)
 #define NUM_TRENDY_SAYING_BYTES ROUND_BITS_TO_BYTES(NUM_TRENDY_SAYINGS)
+#define NUM_OUTFIT_OWNED_BYTES ROUND_BITS_TO_BYTES(OUTFIT_COUNT)
 
 #define NUM_APRICORN_TREE_BYTES ROUND_BITS_TO_BYTES(APRICORN_TREE_COUNT)
 
@@ -581,17 +584,28 @@ struct SaveBlock2
     /*0x10*/ u8 playTimeMinutes;
     /*0x11*/ u8 playTimeSeconds;
     /*0x12*/ u8 playTimeVBlanks;
-    /*0x13*/ u8 optionsButtonMode;  // OPTIONS_BUTTON_MODE_[NORMAL/LR/L_EQUALS_A]
-    /*0x14*/ u16 optionsTextSpeed:3; // OPTIONS_TEXT_SPEED_[SLOW/MID/FAST]
+             u16 optionsInstantTextOff:1; // whether instant text is disabled
+             u16 optionsTextSpeed:3;
+             u8 optionsButtonMode;  // OPTIONS_BUTTON_MODE_[NORMAL/LR/L_EQUALS_A]
              u16 optionsWindowFrameType:5; // Specifies one of the 20 decorative borders for text boxes
-             u16 optionsSound:1; // OPTIONS_SOUND_[MONO/STEREO]
-             u16 optionsBattleStyle:1; // OPTIONS_BATTLE_STYLE_[SHIFT/SET]
+             u16 optionsFollowersOff:1; // whether ow followers are disabled
+             u16 optionsDisableMatchCall:1; // whether match calls are disabled
              u16 optionsBattleSceneOff:1; // whether battle animations are disabled
+             u16 optionsBattleStyle:1; // OPTIONS_BATTLE_STYLE_[SHIFT/SET]
+             u16 optionsBattleSpeed:4; // OPTIONS_BATTLE_SPEED_[1X/2X/3X/4X]
+             u16 optionsDisableBagUse:1; // whether bag use is disabled in battle
+             u16 optionsQuickRunButton:2; // OPTIONS_QUICK_RUN[R_BUTTON/B_BUTTON/OFF]
+             u16 optionsDoubleBattlesOff:1; // whether all trainer battles should be doubles
+             u16 optionsShowBattleMoveInfoOff:1; // whether to show battle move info
+             u16 optionsSound:1; // OPTIONS_SOUND_[MONO/STEREO]
+             u16 optionsBikeMusicOff:1; // whether cycling music is disabled
+             u16 optionsSurfMusicOff:1; // whether surfing music is disabled
              u16 regionMapZoom:1; // whether the map is zoomed in
-             //u16 padding1:4;
-             //u16 padding2;
+             u16 playerBike:1;
+             u16 currOutfitId:4;
+             u16 outfits[NUM_OUTFIT_OWNED_BYTES];
     /*0x18*/ struct Pokedex pokedex;
-    /*0x90*/ u8 filler_90[0x8];
+    /*0x90*/ u8 filler_90[0x6];
     /*0x98*/ struct Time localTimeOffset;
     /*0xA0*/ struct Time lastBerryTreeUpdate;
     /*0xA8*/ u32 gcnLinkFlags; // Read by Pokémon Colosseum/XD
@@ -1076,6 +1090,9 @@ struct SaveBlock1
     /*0x2E*/ u8 weather;
     /*0x2F*/ u8 weatherCycleStage;
     /*0x30*/ u8 flashLevel;
+             bool8 isPlayerTransformed;
+             u16 transformedSpecies;
+             bool8 transformedIsShiny;
     /*0x31*/ //u8 padding1;
     /*0x32*/ u16 mapLayoutId;
     /*0x34*/ u16 mapView[0x100];

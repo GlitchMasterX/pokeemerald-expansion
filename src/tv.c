@@ -1031,36 +1031,36 @@ void GetGabbyAndTyLocalIds(void)
     switch (GabbyAndTyGetBattleNum())
     {
     case 1:
-        gSpecialVar_0x8004 = LOCALID_ROUTE111_GABBY_1;
-        gSpecialVar_0x8005 = LOCALID_ROUTE111_TY_1;
+        gSpecialVar_0x8004 = 14;
+        gSpecialVar_0x8005 = 13;
         break;
     case 2:
-        gSpecialVar_0x8004 = LOCALID_ROUTE118_GABBY_1;
-        gSpecialVar_0x8005 = LOCALID_ROUTE118_TY_1;
+        gSpecialVar_0x8004 = 5;
+        gSpecialVar_0x8005 = 6;
         break;
     case 3:
-        gSpecialVar_0x8004 = LOCALID_ROUTE120_GABBY_1;
-        gSpecialVar_0x8005 = LOCALID_ROUTE120_TY_1;
+        gSpecialVar_0x8004 = 18;
+        gSpecialVar_0x8005 = 17;
         break;
     case 4:
-        gSpecialVar_0x8004 = LOCALID_ROUTE111_GABBY_2;
-        gSpecialVar_0x8005 = LOCALID_ROUTE111_TY_2;
+        gSpecialVar_0x8004 = 21;
+        gSpecialVar_0x8005 = 22;
         break;
     case 5:
-        gSpecialVar_0x8004 = LOCALID_ROUTE118_GABBY_2;
-        gSpecialVar_0x8005 = LOCALID_ROUTE118_TY_2;
+        gSpecialVar_0x8004 = 8;
+        gSpecialVar_0x8005 = 9;
         break;
     case 6:
-        gSpecialVar_0x8004 = LOCALID_ROUTE120_GABBY_2;
-        gSpecialVar_0x8005 = LOCALID_ROUTE120_TY_2;
+        gSpecialVar_0x8004 = 19;
+        gSpecialVar_0x8005 = 20;
         break;
     case 7:
-        gSpecialVar_0x8004 = LOCALID_ROUTE111_GABBY_3;
-        gSpecialVar_0x8005 = LOCALID_ROUTE111_TY_3;
+        gSpecialVar_0x8004 = 23;
+        gSpecialVar_0x8005 = 24;
         break;
     case 8:
-        gSpecialVar_0x8004 = LOCALID_ROUTE118_GABBY_3;
-        gSpecialVar_0x8005 = LOCALID_ROUTE118_TY_3;
+        gSpecialVar_0x8004 = 10;
+        gSpecialVar_0x8005 = 11;
         break;
     }
 }
@@ -3292,16 +3292,28 @@ static void ChangeBoxPokemonNickname_CB(void)
 
 void BufferMonNickname(void)
 {
-    GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NICKNAME, gStringVar1);
+    if(gSpecialVar_MonBoxId == 0xFF)
+        GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NICKNAME, gStringVar1);
+    else
+        GetBoxMonNickAt(gSpecialVar_MonBoxId, gSpecialVar_MonBoxPos, gStringVar1);
     StringGet_Nickname(gStringVar1);
 }
 
 void IsMonOTIDNotPlayers(void)
 {
-    if (GetPlayerIDAsU32() == GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_OT_ID, NULL))
-        gSpecialVar_Result = FALSE;
-    else
-        gSpecialVar_Result = TRUE;
+    if(gSpecialVar_MonBoxId == 0xFF){
+        if (GetPlayerIDAsU32() == GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_OT_ID, NULL))
+            gSpecialVar_Result = FALSE;
+        else
+            gSpecialVar_Result = TRUE;
+    }
+    else{
+        if (GetPlayerIDAsU32() == GetBoxMonDataAt(gSpecialVar_MonBoxId, gSpecialVar_MonBoxPos, MON_DATA_OT_ID))
+            gSpecialVar_Result = FALSE;
+        else
+            gSpecialVar_Result = TRUE;
+    }
+
 }
 
 static u8 GetTVGroupByShowId(u8 kind)
@@ -3329,13 +3341,13 @@ u32 GetPlayerIDAsU32(void)
 u8 CheckForPlayersHouseNews(void)
 {
     // Check if not in Littleroot house map group
-    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F))
+    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_ACADEMY_VIEW))
         return PLAYERS_HOUSE_TV_NONE;
 
     // Check if not in player's house (dependent on gender)
     if (gSaveBlock2Ptr->playerGender == MALE)
     {
-        if (gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F))
+        if (gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_ACADEMY_VIEW))
             return PLAYERS_HOUSE_TV_NONE;
     }
     else
@@ -3356,11 +3368,11 @@ u8 CheckForPlayersHouseNews(void)
 void GetMomOrDadStringForTVMessage(void)
 {
     // If the player is checking the TV in their house it will only refer to their Mom.
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F))
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ACADEMY_VIEW))
     {
         if (gSaveBlock2Ptr->playerGender == MALE)
         {
-            if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F))
+            if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ACADEMY_VIEW))
             {
                 StringCopy(gStringVar1, gText_Mom);
                 VarSet(VAR_TEMP_3, 1);
@@ -3412,7 +3424,7 @@ void GetMomOrDadStringForTVMessage(void)
 void HideBattleTowerReporter(void)
 {
     VarSet(VAR_BRAVO_TRAINER_BATTLE_TOWER_ON, 0);
-    RemoveObjectEventByLocalIdAndMap(LOCALID_TOWER_LOBBY_REPORTER, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
+    RemoveObjectEventByLocalIdAndMap(LOCALID_BATTLE_TOWER_LOBBY_REPORTER, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
     FlagSet(FLAG_HIDE_BATTLE_TOWER_REPORTER);
 }
 

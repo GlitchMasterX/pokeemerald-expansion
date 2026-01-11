@@ -38,7 +38,7 @@ EverGrandeCity_ChampionsRoom_Movement_PlayerApproachWallace:
 	step_end
 
 EverGrandeCity_ChampionsRoom_EventScript_Wallace::
-	playbgm MUS_ENCOUNTER_CHAMPION, FALSE
+	playbgm MUS_DP_ENCOUNTER_CHAMPION, FALSE
 	msgbox EverGrandeCity_ChampionsRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_WALLACE, EverGrandeCity_ChampionsRoom_Text_Defeat
 	goto EverGrandeCity_ChampionsRoom_EventScript_Defeated
@@ -63,7 +63,7 @@ EverGrandeCity_ChampionsRoom_EventScript_Defeated::
 	end
 
 EverGrandeCity_ChampionsRoom_EventScript_PlayMayMusic::
-	playbgm MUS_ENCOUNTER_MAY, FALSE
+	playbgm MUS_DP_RIVAL, FALSE
 	return
 
 EverGrandeCity_ChampionsRoom_EventScript_PlayBrendanMusic::

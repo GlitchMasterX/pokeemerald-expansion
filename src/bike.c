@@ -1,5 +1,6 @@
 #include "global.h"
 #include "bike.h"
+#include "data.h"
 #include "event_object_movement.h"
 #include "field_player_avatar.h"
 #include "fieldmap.h"
@@ -9,6 +10,7 @@
 #include "overworld.h"
 #include "sound.h"
 #include "constants/songs.h"
+#include "constants/items.h"
 
 // this file's functions
 static void MovePlayerOnMachBike(u8, u16, u16);
@@ -126,7 +128,7 @@ static const struct BikeHistoryInputInfo sAcroBikeTricksList[] =
 // code
 void MovePlayerOnBike(u8 direction, u16 newKeys, u16 heldKeys)
 {
-    if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_MACH_BIKE)
+    if (gSaveBlock2Ptr->playerBike == MACH_BIKE)
         MovePlayerOnMachBike(direction, newKeys, heldKeys);
     else
         MovePlayerOnAcroBike(direction, newKeys, heldKeys);
@@ -783,7 +785,7 @@ static void AcroBikeTransition_WheelieLoweringMoving(u8 direction)
 
 void Bike_TryAcroBikeHistoryUpdate(u16 newKeys, u16 heldKeys)
 {
-    if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ACRO_BIKE)
+    if (gSaveBlock2Ptr->playerBike != MACH_BIKE)
         AcroBike_TryHistoryUpdate(newKeys, heldKeys);
 }
 
@@ -977,6 +979,12 @@ bool8 IsBikingDisallowedByPlayer(void)
 
     if (!(gPlayerAvatar.flags & (PLAYER_AVATAR_FLAG_SURFING | PLAYER_AVATAR_FLAG_UNDERWATER)))
     {
+        if (gOutfits[gSaveBlock2Ptr->currOutfitId].canBike == FALSE){
+        return TRUE;
+    }
+    else{
+        return FALSE;
+    }
         PlayerGetDestCoords(&x, &y);
         tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
         if (!IsRunningDisallowedByMetatile(tileBehavior))
@@ -987,7 +995,7 @@ bool8 IsBikingDisallowedByPlayer(void)
 
 bool8 IsPlayerNotUsingAcroBikeOnBumpySlope(void)
 {
-    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_ACRO_BIKE)
+    if (gSaveBlock2Ptr->playerBike != MACH_BIKE
         && MetatileBehavior_IsBumpySlope(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior))
         return FALSE;
     else
@@ -996,7 +1004,7 @@ bool8 IsPlayerNotUsingAcroBikeOnBumpySlope(void)
 
 void GetOnOffBike(u8 transitionFlags)
 {
-    if (gPlayerAvatar.flags & (PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE))
+    if (gPlayerAvatar.flags & (PLAYER_AVATAR_FLAG_BIKE))
     {
         SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_ON_FOOT);
         Overworld_ClearSavedMusic();
@@ -1006,8 +1014,8 @@ void GetOnOffBike(u8 transitionFlags)
     {
         EndORASDowsing();
         SetPlayerAvatarTransitionFlags(transitionFlags);
-        Overworld_SetSavedMusic(MUS_CYCLING);
-        Overworld_ChangeMusicTo(MUS_CYCLING);
+        Overworld_SetSavedMusic(MUS_DP_CYCLING);
+        Overworld_ChangeMusicTo(MUS_DP_CYCLING);
     }
 }
 
@@ -1043,15 +1051,20 @@ static void Bike_SetBikeStill(void)
 
 s16 GetPlayerSpeed(void)
 {
-    // because the player pressed a direction, it won't ever return a speed of 0 since this function returns the player's current speed.
-    s16 machSpeeds[3];
-
-    memcpy(machSpeeds, sMachBikeSpeeds, sizeof(machSpeeds));
-
-    if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_MACH_BIKE)
-        return machSpeeds[gPlayerAvatar.bikeFrameCounter];
-    else if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ACRO_BIKE)
-        return PLAYER_SPEED_FASTER;
+    if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_BIKE)
+    {
+        if (gSaveBlock2Ptr->playerBike == MACH_BIKE)
+        {
+            // because the player pressed a direction, it won't ever return a speed of 0 since this function returns the player's current speed.
+            s16 machSpeeds[3];
+            memcpy(machSpeeds, sMachBikeSpeeds, sizeof(machSpeeds));
+            return machSpeeds[gPlayerAvatar.bikeFrameCounter];
+        }
+        else
+        {
+            return PLAYER_SPEED_FASTER;
+        }
+    }
     else if (gPlayerAvatar.flags & (PLAYER_AVATAR_FLAG_SURFING | PLAYER_AVATAR_FLAG_DASH))
         return PLAYER_SPEED_FAST;
     else
@@ -1063,7 +1076,7 @@ void Bike_HandleBumpySlopeJump(void)
     s16 x, y;
     u8 tileBehavior;
 
-    if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ACRO_BIKE)
+    if (gSaveBlock2Ptr->playerBike != MACH_BIKE)
     {
         PlayerGetDestCoords(&x, &y);
         tileBehavior = MapGridGetMetatileBehaviorAt(x, y);

@@ -102,13 +102,25 @@
 #define TRAINER_PIC_PALACE_MAVEN_SPENSER  84
 #define TRAINER_PIC_ARENA_TYCOON_GRETA    85
 #define TRAINER_PIC_FACTORY_HEAD_NOLAND   86
-#define TRAINER_PIC_PIKE_QUEEN_LUCY       87
-#define TRAINER_PIC_PYRAMID_KING_BRANDON  88
+#define TRAINER_PIC_SELENE                87
+#define TRAINER_PIC_SILAS                 88
 #define TRAINER_PIC_RED                   89
 #define TRAINER_PIC_LEAF                  90
 #define TRAINER_PIC_RS_BRENDAN            91
 #define TRAINER_PIC_RS_MAY                92
-#define TRAINER_PIC_COUNT                 93
+#define TRAINER_PIC_S_EQUINO_GRUNT_F         93
+#define TRAINER_PIC_S_EQUINO_GRUNT_M         94
+#define TRAINER_PIC_EQUINO_LEADER          95
+#define TRAINER_PIC_EQUINO_ADMIN           96
+#define TRAINER_PIC_SPY                   97
+#define TRAINER_PIC_SURGE                 98
+#define TRAINER_PIC_ALISTAIR              99
+#define TRAINER_PIC_FIONA                 100
+#define TRAINER_PIC_VOSS                  101
+#define TRAINER_PIC_XYLAR                 102
+#define TRAINER_PIC_KAEL                  103
+#define TRAINER_PIC_ORSON                 104
+#define TRAINER_PIC_COUNT                 105
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -353,6 +365,11 @@ enum TrainerClassID
     TRAINER_CLASS_PIKE_QUEEN,
     TRAINER_CLASS_PYRAMID_KING,
     TRAINER_CLASS_RS_PROTAG,
+    TRAINER_CLASS_EQUINO,  
+    TRAINER_CLASS_EQUINO_ADMIN,    
+    TRAINER_CLASS_EQUINO_LEADER,   
+    TRAINER_CLASS_SHADOW_SLAYER,  
+    TRAINER_CLASS_ACADEMY_HEAD, 
     TRAINER_CLASS_COUNT,
 };
 
@@ -370,6 +387,7 @@ enum TrainerClassID
 #define TRAINER_ENCOUNTER_MUSIC_HIKER       11 // used for other trainer classes too
 #define TRAINER_ENCOUNTER_MUSIC_INTERVIEWER 12
 #define TRAINER_ENCOUNTER_MUSIC_RICH        13 // Rich Boys and Gentlemen
+#define TRAINER_ENCOUNTER_MUSIC_SPARK        14 
 
 #define F_TRAINER_FEMALE (1 << 7)
 
