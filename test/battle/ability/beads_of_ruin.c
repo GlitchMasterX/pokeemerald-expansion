@@ -35,7 +35,11 @@ SINGLE_BATTLE_TEST("Beads of Ruin's message displays correctly after all battler
 {
     GIVEN {
         ASSUME(IsExplosionMove(MOVE_EXPLOSION));
+<<<<<<< HEAD
         PLAYER(SPECIES_WOBBUFFET) { HP(1);}
+=======
+        PLAYER(SPECIES_WOBBUFFET) { HP(1); }
+>>>>>>> upcoming
         PLAYER(SPECIES_CHI_YU);
         OPPONENT(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
@@ -78,7 +82,7 @@ SINGLE_BATTLE_TEST("Beads of Ruin's message displays correctly after all battler
 DOUBLE_BATTLE_TEST("Beads of Ruin increases damage taken by physical moves in Wonder Room", s16 damage)
 {
     bool32 useWonderRoom;
-    u32 move;
+    enum Move move;
 
     PARAMETRIZE { useWonderRoom = FALSE; move = MOVE_SCRATCH; }
     PARAMETRIZE { useWonderRoom = FALSE; move = MOVE_ROUND;   }
@@ -166,7 +170,7 @@ DOUBLE_BATTLE_TEST("Beads of Ruin's Sp. Def reduction is not ignored by Mold Bre
 
 DOUBLE_BATTLE_TEST("Beads of Ruin's Sp. Def reduction is ignored by Gastro Acid", s16 damage)
 {
-    u32 move;
+    enum Move move;
 
     PARAMETRIZE { move = MOVE_GASTRO_ACID; }
     PARAMETRIZE { move = MOVE_CELEBRATE; }

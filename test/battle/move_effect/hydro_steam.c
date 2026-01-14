@@ -35,8 +35,14 @@ SINGLE_BATTLE_TEST("Hydro Steam is affected by Utility Umbrella", s16 damage)
     PARAMETRIZE { itemPlayer = ITEM_NONE;             itemOpponent = ITEM_UTILITY_UMBRELLA; }
     PARAMETRIZE { itemPlayer = ITEM_UTILITY_UMBRELLA; itemOpponent = ITEM_UTILITY_UMBRELLA; }
     GIVEN {
+<<<<<<< HEAD
         PLAYER(SPECIES_WOBBUFFET) { Item(itemPlayer); };
         OPPONENT(SPECIES_WOBBUFFET) {Item(itemOpponent); };
+=======
+        ASSUME(gItemsInfo[ITEM_UTILITY_UMBRELLA].holdEffect == HOLD_EFFECT_UTILITY_UMBRELLA);
+        PLAYER(SPECIES_WOBBUFFET) { Item(itemPlayer); }
+        OPPONENT(SPECIES_WOBBUFFET) { Item(itemOpponent); }
+>>>>>>> upcoming
     } WHEN {
         TURN { MOVE(player, MOVE_SUNNY_DAY); }
         TURN { MOVE(player, MOVE_HYDRO_STEAM); }

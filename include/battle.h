@@ -89,7 +89,6 @@ struct ProtectStruct
     u32 palaceUnableToUseMove:1;
     u32 statRaised:1;
     u32 usedCustapBerry:1;    // also quick claw
-    u32 touchedProtectLike:1;
     u32 disableEjectPack:1;
     u32 pranksterElevated:1;
     u32 quickDraw:1;
@@ -103,6 +102,7 @@ struct ProtectStruct
     u32 forcedSwitch:1;
     u32 myceliumMight:1;
     u32 survivedOHKO:1; // Used to keep track of effects that allow focus punch when surviving moves like Fissure
+    u32 padding1:1;
     // End of 32-bit bitfield
     u16 helpingHand:3;
     u16 revengeDoubled:4;
@@ -127,12 +127,12 @@ struct SpecialStatus
     u8 afterYou:1;
     u8 damagedByAttack:1;
     u8 dancerUsedMove:1;
-    u8 rototillerAffected:1;  // to be affected by rototiller
-    // End of byte
     u8 criticalHit:1;
+    // End of byte
     u8 instructedChosenTarget:3;
+    u8 neutralizingGasRemoved:1;
     u8 berryReduced:1;
-    u8 neutralizingGasRemoved:1;    // See VARIOUS_TRY_END_NEUTRALIZING_GAS
+    u8 mindBlownRecoil:1;
     u8 padding2:2;
     // End of byte
     u8 gemParam:7;
@@ -186,7 +186,7 @@ struct FieldTimer
 struct AI_SavedBattleMon
 {
     enum Ability ability;
-    u16 moves[MAX_MON_MOVES];
+    enum Move moves[MAX_MON_MOVES];
     u16 heldItem;
     u16 species:15;
     u16 saved:1;
@@ -200,7 +200,7 @@ struct AiPartyMon
     u16 heldEffect;
     enum Ability ability;
     u16 level;
-    u16 moves[MAX_MON_MOVES];
+    enum Move moves[MAX_MON_MOVES];
     u32 status;
     u8 switchInCount; // Counts how many times this Pokemon has been sent out or switched into in a battle.
     u8 gender:2;
@@ -522,8 +522,9 @@ struct BattlerState
     // End of Word
     u16 hpOnSwitchout;
     u16 switchIn:1;
+    u16 fainted:1;
     u16 isFirstTurn:2;
-    u16 padding:13;
+    u16 padding:12;
 };
 
 struct PartyState
@@ -550,14 +551,15 @@ struct EventStates
     u32 arenaTurn:8;
     enum BattleSide battlerSide:4;
     enum BattlerId moveEndBattler:4;
-    enum FirstTurnEventsStates beforeFristTurn:8;
+    enum FirstTurnEventsStates beforeFirstTurn:8;
     enum FaintedActions faintedAction:8;
     enum BattlerId faintedActionBattler:4;
     enum MoveSuccessOrder atkCanceler:8;
+    enum BattlerId atkCancelerBattler:4;
     enum BattleIntroStates battleIntro:8;
     enum SwitchInEvents switchIn:8;
     u32 battlerSwitchIn:8; // SwitchInFirstEventBlock, SwitchInSecondEventBlock
-    u32 padding:8;
+    u32 moveEndBlock:8;
 };
 
 // Cleared at the beginning of the battle. Fields need to be cleared when needed manually otherwise.
@@ -619,7 +621,6 @@ struct BattleStruct
     u8 isSkyBattle:1;
     u8 unableToUseMove:1; // for the current action only, to check if the battler failed to act at end turn use the DisableStruct member
     u8 unused:4;
-    u8 sortedBattlers[MAX_BATTLERS_COUNT];
     void (*savedCallback)(void);
     u16 chosenItem[MAX_BATTLERS_COUNT];
     u16 choicedMove[MAX_BATTLERS_COUNT];
@@ -680,7 +681,7 @@ struct BattleStruct
     u8 beatUpSlot:3;
     u8 pledgeMove:1;
     u8 effectsBeforeUsingMoveDone:1; // Mega Evo and Focus Punch/Shell Trap effects.
-    u8 spriteIgnore0Hp:1;
+    u8 padding3:1;
     u8 itemPartyIndex[MAX_BATTLERS_COUNT];
     u8 itemMoveIndex[MAX_BATTLERS_COUNT];
     s32 aiDelayTimer; // Counts number of frames AI takes to choose an action.
@@ -701,14 +702,12 @@ struct BattleStruct
     s16 passiveHpUpdate[MAX_BATTLERS_COUNT]; // non-move damage and healing
     s16 moveDamage[MAX_BATTLERS_COUNT];
     u16 moveResultFlags[MAX_BATTLERS_COUNT];
-    u8 missStringId[MAX_BATTLERS_COUNT];
     enum CalcDamageState noResultString[MAX_BATTLERS_COUNT];
     u8 doneDoublesSpreadHit:1;
     u8 calculatedDamageDone:1;
     u8 calculatedSpreadMoveAccuracy:1;
     u8 printedStrongWindsWeakenedAttack:1;
-    u8 numSpreadTargets:2;
-    u8 noTargetPresent:1;
+    u8 numSpreadTargets:3;
     u8 moldBreakerActive:1;
     struct MessageStatus slideMessageStatus;
     u8 trainerSlideSpriteIds[MAX_BATTLERS_COUNT];
@@ -721,7 +720,11 @@ struct BattleStruct
     u16 flingItem;
     u8 incrementEchoedVoice:1;
     u8 echoedVoiceCounter:3;
-    u8 padding4:4;
+    u8 preAttackAnimPlayed:1;
+    u8 padding4:1;
+    u8 magicCoatActive:1;
+    u8 magicBounceActive:1;
+    u8 moveBouncer;
 };
 
 struct AiBattleData
@@ -745,17 +748,17 @@ STATIC_ASSERT(sizeof(((struct BattleStruct *)0)->palaceFlags) * 8 >= MAX_BATTLER
 #define F_DYNAMIC_TYPE_IGNORE_PHYSICALITY  (1 << 6) // If set, the dynamic type's physicality won't be used for certain move effects.
 #define F_DYNAMIC_TYPE_SET                 (1 << 7) // Set for all dynamic types to distinguish a dynamic type of Normal (0) from no dynamic type.
 
-static inline bool32 IsBattleMovePhysical(u32 move)
+static inline bool32 IsBattleMovePhysical(enum Move move)
 {
     return GetBattleMoveCategory(move) == DAMAGE_CATEGORY_PHYSICAL;
 }
 
-static inline bool32 IsBattleMoveSpecial(u32 move)
+static inline bool32 IsBattleMoveSpecial(enum Move move)
 {
     return GetBattleMoveCategory(move) == DAMAGE_CATEGORY_SPECIAL;
 }
 
-static inline bool32 IsBattleMoveStatus(u32 move)
+static inline bool32 IsBattleMoveStatus(enum Move move)
 {
     return GetMoveCategory(move) == DAMAGE_CATEGORY_STATUS;
 }
@@ -1078,9 +1081,9 @@ extern u8 gBattleEnvironmentBackup;
 
 static inline bool32 IsBattlerAlive(u32 battler)
 {
-    if (gBattleMons[battler].hp == 0)
+    if (battler >= gBattlersCount)
         return FALSE;
-    else if (battler >= gBattlersCount)
+    else if (gBattleMons[battler].hp == 0)
         return FALSE;
     else if (gAbsentBattlerFlags & (1u << battler))
         return FALSE;
@@ -1098,12 +1101,12 @@ static inline bool32 IsBattlerAtMaxHp(u32 battler)
     return gBattleMons[battler].hp == gBattleMons[battler].maxHP;
 }
 
-static inline u32 GetBattlerPosition(u32 battler)
+static inline enum BattlerPosition GetBattlerPosition(u32 battler)
 {
     return gBattlerPositions[battler];
 }
 
-static inline u32 GetBattlerAtPosition(u32 position)
+static inline u32 GetBattlerAtPosition(enum BattlerPosition position)
 {
     u32 battler;
     for (battler = 0; battler < gBattlersCount; battler++)
@@ -1175,20 +1178,6 @@ static inline bool32 IsSpreadMove(enum MoveTarget moveTarget)
     if (!IsDoubleBattle())
         return FALSE;
     return moveTarget == TARGET_BOTH || moveTarget == TARGET_FOES_AND_ALLY;
-}
-
-static inline bool32 IsDoubleSpreadMove(void)
-{
-    return gBattleStruct->numSpreadTargets > 1
-        && !gBattleStruct->unableToUseMove
-        && IsSpreadMove(GetBattlerMoveTargetType(gBattlerAttacker, gCurrentMove));
-}
-
-static inline bool32 IsBattlerInvalidForSpreadMove(u32 battlerAtk, u32 battlerDef, enum MoveTarget moveTarget)
-{
-    return battlerDef == battlerAtk
-        || !IsBattlerAlive(battlerDef)
-        || (battlerDef == BATTLE_PARTNER(battlerAtk) && moveTarget == TARGET_BOTH);
 }
 
 static inline u32 GetChosenMoveFromPosition(u32 battler)

@@ -65,6 +65,7 @@ static bool16 DecompressPic(u16 species, u32 personality, bool8 isFrontPic, u8 *
     }
     else
     {
+        enum TrainerPicID trainerPicId = picId;
         if (isFrontPic)
             DecompressPicFromTable(&gTrainerSprites[species].frontPic, dest);
         else
@@ -358,7 +359,7 @@ u16 PlayerGenderToFrontTrainerPicId_Debug(u8 gender, bool8 getClass)
     return gender;
 }
 
-void CopyTrainerBackspriteFramesToDest(u8 trainerPicId, u8 *dest)
+void CopyTrainerBackspriteFramesToDest(enum TrainerPicID trainerPicId, u8 *dest)
 {
     const struct SpriteFrameImage *frame = &gTrainerBacksprites[trainerPicId].backPic;
     // y_offset is repurposed to indicates how many frames does the trainer pic have.

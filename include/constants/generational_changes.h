@@ -46,6 +46,7 @@
     F(SHEER_COLD_IMMUNITY,       sheerColdImmunity,       (u32, GEN_COUNT - 1)) \
     F(ROOST_PURE_FLYING,         roostPureFlying,         (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
     F(STATUS_TYPE_IMMUNITY,      statusTypeImmunity,      (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
+    F(HIDDEN_POWER_COUNTER,      hiddenPowerCounter,      (u32, GEN_COUNT - 1)) \
     /* Turn settings */ \
     F(BINDING_TURNS,             bindingTurns,            (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
     F(UPROAR_TURNS,              uproarTurns,             (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
@@ -69,6 +70,7 @@
     F(UPDATED_CONVERSION_2,      updatedConversion2,      (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
     F(PP_REDUCED_BY_SPITE,       ppReducedBySpite,        (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
     F(EXTRAPOLATED_MOVE_FLAGS,   extrapolatedMoveFlags,   (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
+    F(MODERN_TRICK_CHOICE_LOCK,  modernTrickChoiceLock,   (u32, GEN_COUNT - 1)) \
     /* Ability data settings */ \
     F(UPDATED_ABILITY_DATA,      updatedAbilityData,      (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
     /* Move accuracy settings */ \
@@ -124,6 +126,8 @@
     F(TIME_OF_DAY_HEALING_MOVES, timeOfDayHealingMoves,   (u32, GEN_COUNT - 1)) \
     F(DREAM_EATER_LIQUID_OOZE,   dreamEaterLiquidOoze,    (u32, GEN_COUNT - 1)) \
     F(FOCUS_PUNCH_FAILURE,       focusPunchFailure,       (u32, GEN_COUNT - 1)) \
+    F(RAGE_BUILDS,               rageBuilds,              (u32, GEN_COUNT - 1)) \
+    F(CHECK_USER_FAILURE,        checkUserFailure,        (u32, GEN_COUNT - 1)) \
     /* Ability settings */ \
     F(GALE_WINGS,                galeWings,               (u32, GEN_COUNT - 1)) \
     F(STANCE_CHANGE_FAIL,        stanceChangeFail,        (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
@@ -137,7 +141,6 @@
     F(PLUS_MINUS_INTERACTION,    plusMinusInteraction,    (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
     F(WEATHER_FORMS,             weatherForms,            (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
     F(SYMBIOSIS_GEMS,            symbiosisGems,           (u32, GEN_COUNT - 1)) \
-    F(ABSORBING_ABILITY_STRING,  absorbingAbilityString,  (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
     F(REDIRECT_ABILITY_IMMUNITY, redirectAbilityImmunity, (u32, GEN_COUNT - 1)) \
     F(REDIRECT_ABILITY_ALLIES,   redirectAbilityAllies,   (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
     F(LEAF_GUARD_PREVENTS_REST,  leafGuardPreventsRest,   (u32, GEN_COUNT - 1)) \
@@ -191,6 +194,12 @@
     F(SECRET_POWER_ANIMATION,    secretPowerAnimation,    (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
     F(NATURE_POWER_MOVES,        naturePowerMoves,        (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
     F(CAMOUFLAGE_TYPES,          camouflageTypes,         (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
+    /* Catching settings */ \
+    F(SEMI_INVULNERABLE_CATCH,   semiInvulnerableCatch,   (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
+    F(INCAPACITATED_CATCH_BONUS, incapacitatedCatchBonus, (u32, GEN_COUNT - 1)) \
+    F(LOW_LEVEL_CATCH_BONUS,     lowLevlCatchBonus,       (u32, GEN_COUNT - 1)) \
+    F(MISSING_BADGE_CATCH_MALUS, missingBadgeCatchMalue,  (u32, GEN_COUNT - 1)) \
+    F(CRITICAL_CAPTURE_IF_OWNED, criticalCaptureIfOwned,  (u32, GEN_COUNT - 1)) \
     /* Other settings */ \
     F(WILD_NATURAL_ENEMIES,      wildNaturalEnemies,      (u32, TRUE))          /* TODO: use in tests */ \
     F(AFFECTION_MECHANICS,       affectionMechanics,      (u32, TRUE))          /* TODO: use in tests */ \

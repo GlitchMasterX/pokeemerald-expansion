@@ -75,12 +75,20 @@ SINGLE_BATTLE_TEST("Anticipation doesn't consider Scrappy into their effectivene
         ASSUME(GetMoveType(MOVE_CLOSE_COMBAT) == TYPE_FIGHTING);
         ASSUME(GetSpeciesType(SPECIES_DOUBLADE, 0) == TYPE_STEEL);
         ASSUME(GetSpeciesType(SPECIES_DOUBLADE, 1) == TYPE_GHOST);
-        PLAYER(SPECIES_DOUBLADE) { Ability(ABILITY_ANTICIPATION); }
-        OPPONENT(SPECIES_KANGASKHAN) { Ability(ABILITY_SCRAPPY); Moves(MOVE_CLOSE_COMBAT, MOVE_CELEBRATE); }
+        PLAYER(SPECIES_WORMADAM_TRASH) { Ability(ABILITY_ANTICIPATION); Moves(MOVE_SKILL_SWAP, MOVE_CELEBRATE); }
+        PLAYER(SPECIES_KANGASKHAN) { Ability(ABILITY_SCRAPPY); Moves(MOVE_CLOSE_COMBAT, MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_DOUBLADE) { Ability(ABILITY_NO_GUARD); Moves(MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
+<<<<<<< HEAD
         TURN { }
+=======
+        TURN { MOVE(player, MOVE_SKILL_SWAP, target: opponent); MOVE(opponent, MOVE_CELEBRATE); }
+        TURN { SWITCH(player, 1); SWITCH(opponent, 1); }
+        TURN { SWITCH(opponent, 0); }
+>>>>>>> upcoming
     } SCENE {
-        NOT ABILITY_POPUP(player, ABILITY_ANTICIPATION);
+        NOT ABILITY_POPUP(opponent, ABILITY_ANTICIPATION);
     }
 }
 
@@ -100,7 +108,8 @@ SINGLE_BATTLE_TEST("Anticipation doesn't consider Gravity into their effectivene
 
 SINGLE_BATTLE_TEST("Anticipation counts Counter, Metal Burst or Mirror Coat as attacking moves of their types (Gen5+)")
 {
-    u32 move, species;
+    enum Move move;
+    u32 species;
     enum Type typeAtk, typeDef;
     PARAMETRIZE { move = MOVE_COUNTER; species = SPECIES_RATICATE; typeAtk = TYPE_FIGHTING; typeDef = TYPE_NORMAL; }
     PARAMETRIZE { move = MOVE_METAL_BURST; species = SPECIES_ROGGENROLA; typeAtk = TYPE_STEEL; typeDef = TYPE_ROCK; }

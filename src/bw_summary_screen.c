@@ -268,7 +268,7 @@ static void Task_HandleReplaceMoveInput(u8);
 static bool8 CanReplaceMove(void);
 static void ShowCantForgetHMsWindow(u8);
 static void Task_HandleInputCantForgetHMsMoves(u8);
-static void HandleAppealJamTilemap(u16);
+static void PositionAppealJamSlidingWindow(u16);
 static void DrawExperienceProgressBar(struct Pokemon *);
 static void DrawHPBar(struct Pokemon *);
 static void OverrideHPBarPalette(void);
@@ -2791,7 +2791,7 @@ static void PssScrollEnd(u8 taskId)
         {
             SetBgTilemapBuffer(1, sMonSummaryScreen->bg1TilemapBuffers[PSS_EFFECT_CONTEST]);
             ScheduleBgCopyTilemapToVram(1);
-            HandleAppealJamTilemap(sMonSummaryScreen->summary.moves[sMonSummaryScreen->firstMoveIndex]);
+            PositionAppealJamSlidingWindow(sMonSummaryScreen->summary.moves[sMonSummaryScreen->firstMoveIndex]);
         }
         else
         {
@@ -3346,7 +3346,7 @@ static void Task_HideEffectTilemap(u8 taskId)
 #define TILE_JAM_HEART_MIDDLE       0x40BB
 #define TILE_JAM_HEART_BOTTOM       0x40BC
 
-static void HandleAppealJamTilemap(u16 move)
+static void PositionAppealJamSlidingWindow(u16 move)
 {
     u16 *dst1, *dst2;
     u8 i;
@@ -4682,7 +4682,7 @@ static void PrintMoveDetails(u16 move)
         }
         else
         {
-            HandleAppealJamTilemap(move);
+            PositionAppealJamSlidingWindow(move);
             if (BW_SUMMARY_AUTO_FORMAT_MOVE_DESCRIPTIONS)
             {
                 FormatTextByWidth(desc, 119, FONT_BW_SUMMARY_SCREEN, gContestEffects[GetMoveContestEffect(move)].description, GetFontAttribute(FONT_BW_SUMMARY_SCREEN, FONTATTR_LETTER_SPACING));
@@ -4704,7 +4704,7 @@ static void PrintMoveDetails(u16 move)
         if (sMonSummaryScreen->currPageIndex == PSS_PAGE_BATTLE_MOVES)
             PrintMovePowerAndAccuracy(MOVE_NONE);
         else
-            HandleAppealJamTilemap(MOVE_NONE);
+            PositionAppealJamSlidingWindow(MOVE_NONE);
     }
 
     ScheduleBgCopyTilemapToVram(0);

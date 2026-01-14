@@ -75,7 +75,11 @@ AI_MULTI_BATTLE_TEST("AI partner makes sensible move selections in battle (multi
         MULTI_OPPONENT_B(SPECIES_KANGASKHAN) { Moves(MOVE_CELEBRATE); }
 
     } WHEN {
+<<<<<<< HEAD
         TURN { MOVE(playerLeft, MOVE_AURA_SPHERE, target:opponentRight); EXPECT_MOVE(playerRight, MOVE_AURA_SPHERE, target:opponentLeft); };
+=======
+        TURN { MOVE(playerLeft, MOVE_AURA_SPHERE, target:opponentRight); EXPECT_MOVE(playerRight, MOVE_AURA_SPHERE, target:opponentLeft); }
+>>>>>>> upcoming
     }
 }
 
@@ -92,7 +96,11 @@ AI_TWO_VS_ONE_BATTLE_TEST("AI partner makes sensible move selections in battle (
         MULTI_OPPONENT_A(SPECIES_KANGASKHAN) { Moves(MOVE_CELEBRATE); }
 
     } WHEN {
+<<<<<<< HEAD
         TURN { MOVE(playerLeft, MOVE_AURA_SPHERE, target:opponentRight); EXPECT_MOVE(playerRight, MOVE_AURA_SPHERE, target:opponentLeft); };
+=======
+        TURN { MOVE(playerLeft, MOVE_AURA_SPHERE, target:opponentRight); EXPECT_MOVE(playerRight, MOVE_AURA_SPHERE, target:opponentLeft); }
+>>>>>>> upcoming
     }
 }
 
