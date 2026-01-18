@@ -354,7 +354,7 @@ static void BattleTest_Run(void *data)
     memset(&DATA, 0, sizeof(DATA));
 
     DATA.recordedBattle.rngSeed = defaultSeed;
-    DATA.recordedBattle.textSpeed = TRUE; // Disables instant text
+    DATA.recordedBattle.textSpeed = OPTIONS_TEXT_SPEED_FAST;
     // Set battle flags and opponent ids.
     switch (test->type)
     {
@@ -3457,9 +3457,9 @@ void ValidateFinally(u32 sourceLine)
     INVALID_IF(STATE->parametersCount == 0, "FINALLY without PARAMETRIZE");
 }
 
-u32 TestRunner_Battle_GetForcedAbility(u32 side, u32 partyIndex)
+u32 TestRunner_Battle_GetForcedAbility(u32 array, u32 partyIndex)
 {
-    return DATA.forcedAbilities[side][partyIndex];
+    return DATA.forcedAbilities[array][partyIndex];
 }
 
 u32 TestRunner_Battle_GetForcedEnvironment(void)

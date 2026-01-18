@@ -10,7 +10,7 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Primordial Sea blocks damaging Fire-type moves")
 {
     GIVEN {
-        PLAYER(SPECIES_KYOGRE) {Item(ITEM_BLUE_ORB);}
+        PLAYER(SPECIES_KYOGRE) { Item(ITEM_BLUE_ORB); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(opponent, MOVE_EMBER); }
@@ -35,17 +35,10 @@ DOUBLE_BATTLE_TEST("Primordial Sea blocks damaging Fire-type moves and prints th
         ASSUME(!IsBattleMoveStatus(MOVE_ERUPTION));
         ASSUME(GetMoveType(MOVE_ERUPTION) == TYPE_FIRE);
         ASSUME(GetMoveTarget(MOVE_ERUPTION) == TARGET_BOTH);
-<<<<<<< HEAD
-        PLAYER(SPECIES_KYOGRE) {Item(ITEM_BLUE_ORB); {Speed(5);}}
-        PLAYER(SPECIES_WOBBUFFET) {Speed(5);}
-        OPPONENT(SPECIES_WOBBUFFET) {Speed(10);}
-        OPPONENT(SPECIES_WOBBUFFET) {Speed(8);}
-=======
         PLAYER(SPECIES_KYOGRE) { Item(ITEM_BLUE_ORB); Speed(5); }
         PLAYER(SPECIES_WOBBUFFET) { Speed(5); }
         OPPONENT(SPECIES_WOBBUFFET) { Speed(10); }
         OPPONENT(SPECIES_WOBBUFFET) { Speed(8); }
->>>>>>> upcoming
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_ERUPTION); }
     } SCENE {
@@ -62,8 +55,8 @@ DOUBLE_BATTLE_TEST("Primordial Sea blocks damaging Fire-type moves and prints th
 SINGLE_BATTLE_TEST("Primordial Sea does not block a move if Pokémon is asleep and uses a Fire-type move") // Sleep/confusion/paralysis all happen before the check for primal weather
 {
     GIVEN {
-        PLAYER(SPECIES_KYOGRE) {Item(ITEM_BLUE_ORB);}
-        OPPONENT(SPECIES_WOBBUFFET) {Status1(STATUS1_SLEEP);}
+        PLAYER(SPECIES_KYOGRE) { Item(ITEM_BLUE_ORB); }
+        OPPONENT(SPECIES_WOBBUFFET) { Status1(STATUS1_SLEEP); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_EMBER); }
     } SCENE {
@@ -72,19 +65,6 @@ SINGLE_BATTLE_TEST("Primordial Sea does not block a move if Pokémon is asleep a
     }
 }
 
-<<<<<<< HEAD
-TO_DO_BATTLE_TEST("Primordial Sea makes Sunny Day fail")
-TO_DO_BATTLE_TEST("Primordial Sea makes Rain Dance fail")
-TO_DO_BATTLE_TEST("Primordial Sea makes Sandstorm fail")
-TO_DO_BATTLE_TEST("Primordial Sea makes Hail fail")
-TO_DO_BATTLE_TEST("Primordial Sea makes Snowscape fail") // Extrapolation
-TO_DO_BATTLE_TEST("Primordial Sea makes Drought fail to activate")
-TO_DO_BATTLE_TEST("Primordial Sea makes Drizzle fail to activate")
-TO_DO_BATTLE_TEST("Primordial Sea makes Sand Stream fail to activate")
-TO_DO_BATTLE_TEST("Primordial Sea makes Snow Warning fail to activate")
-TO_DO_BATTLE_TEST("Primordial Sea can be replaced by Delta Stream")
-TO_DO_BATTLE_TEST("Primordial Sea can be replaced by Desolate Land")
-=======
 SINGLE_BATTLE_TEST("Primordial Sea blocks weather-setting moves")
 {
     enum Move move;
@@ -164,4 +144,3 @@ SINGLE_BATTLE_TEST("Primordial Sea can be replaced by Desolate Land")
         EXPECT(gBattleWeather & B_WEATHER_SUN_PRIMAL);
     }
 }
->>>>>>> upcoming

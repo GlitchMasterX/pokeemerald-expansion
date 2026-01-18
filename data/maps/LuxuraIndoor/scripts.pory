@@ -29,7 +29,7 @@ script alistairarrive3 {
 	fadescreenspeed(FADE_TO_WHITE,4)
 	fadescreenspeed(FADE_FROM_WHITE,4)
 	fadescreen(FADE_TO_BLACK)
-	warpsilent(MAP_LUXURAWORK,10,27)
+	warp_continue_script(MAP_LUXURAWORK,10,27,trageflash)
 }
 movement traces1 {
 	face_down

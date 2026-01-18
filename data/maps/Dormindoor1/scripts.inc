@@ -7,16 +7,16 @@ Dormindoor1_MapScripts::
 
 Dormindoor1_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 # 3 "data/maps/Dormindoor1/scripts.pory"
-	map_script_2 ACADEMY_START, 8, Kaelmet
+	map_script_2 VAR_ACADEMY_START, 8, Kaelmet
 # 4 "data/maps/Dormindoor1/scripts.pory"
-	map_script_2 ACADEMY_START, 10, Nightstroll
+	map_script_2 VAR_ACADEMY_START, 10, Nightstroll
 	.2byte 0
 
 Dormindoor1_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 # 7 "data/maps/Dormindoor1/scripts.pory"
-	map_script_2 ACADEMY_START, 8, KaelPos
+	map_script_2 VAR_ACADEMY_START, 8, KaelPos
 # 8 "data/maps/Dormindoor1/scripts.pory"
-	map_script_2 ACADEMY_START, 9, trialloss
+	map_script_2 VAR_ACADEMY_START, 9, trialloss
 	.2byte 0
 
 
@@ -142,105 +142,105 @@ Kaelmet::
 # 75 "data/maps/Dormindoor1/scripts.pory"
 	closemessage
 # 76 "data/maps/Dormindoor1/scripts.pory"
-	fadenewbgm MUS_DUMMY
+	playse SE_PIN
 # 77 "data/maps/Dormindoor1/scripts.pory"
-	playse SE_PIN
+	applymovement 1, Kaelmet_Movement_12
 # 78 "data/maps/Dormindoor1/scripts.pory"
-	applymovement 1, Kaelmet_Movement_12
+	speakername Kaelmet_Text_2
 # 79 "data/maps/Dormindoor1/scripts.pory"
-	speakername Kaelmet_Text_2
-# 80 "data/maps/Dormindoor1/scripts.pory"
 	msgbox Kaelmet_Text_7
+# 80 "data/maps/Dormindoor1/scripts.pory"
+	speakername Kaelmet_Text_2
 # 81 "data/maps/Dormindoor1/scripts.pory"
-	speakername Kaelmet_Text_2
-# 82 "data/maps/Dormindoor1/scripts.pory"
 	msgbox Kaelmet_Text_8
+# 82 "data/maps/Dormindoor1/scripts.pory"
+	closemessage
 # 83 "data/maps/Dormindoor1/scripts.pory"
-	closemessage
-# 84 "data/maps/Dormindoor1/scripts.pory"
 	applymovement 0xFF, Kaelmet_Movement_13
+# 84 "data/maps/Dormindoor1/scripts.pory"
+	speakername Xylar1
 # 85 "data/maps/Dormindoor1/scripts.pory"
-	speakername Xylar1
-# 86 "data/maps/Dormindoor1/scripts.pory"
 	msgbox Kaelmet_Text_9
+# 86 "data/maps/Dormindoor1/scripts.pory"
+	closemessage
 # 87 "data/maps/Dormindoor1/scripts.pory"
-	closemessage
+	playse SE_PIN
 # 88 "data/maps/Dormindoor1/scripts.pory"
-	playse SE_PIN
-# 89 "data/maps/Dormindoor1/scripts.pory"
 	applymovement 1, Kaelmet_Movement_14
+# 89 "data/maps/Dormindoor1/scripts.pory"
+	speakername Kaelmet_Text_2
 # 90 "data/maps/Dormindoor1/scripts.pory"
-	speakername Kaelmet_Text_2
-# 91 "data/maps/Dormindoor1/scripts.pory"
 	msgbox Kaelmet_Text_10
+# 91 "data/maps/Dormindoor1/scripts.pory"
+	closemessage
 # 92 "data/maps/Dormindoor1/scripts.pory"
-	closemessage
+	speakername Xylar1
 # 93 "data/maps/Dormindoor1/scripts.pory"
-	speakername Xylar1
-# 94 "data/maps/Dormindoor1/scripts.pory"
 	msgbox Kaelmet_Text_11
+# 94 "data/maps/Dormindoor1/scripts.pory"
+	speakername Kaelmet_Text_2
 # 95 "data/maps/Dormindoor1/scripts.pory"
-	speakername Kaelmet_Text_2
-# 96 "data/maps/Dormindoor1/scripts.pory"
 	msgbox Kaelmet_Text_12
+# 96 "data/maps/Dormindoor1/scripts.pory"
+	closemessage
 # 97 "data/maps/Dormindoor1/scripts.pory"
-	closemessage
+	playse SE_PIN
 # 98 "data/maps/Dormindoor1/scripts.pory"
-	playse SE_PIN
+	applymovement 1, Kaelmet_Movement_12
 # 99 "data/maps/Dormindoor1/scripts.pory"
-	applymovement 1, Kaelmet_Movement_12
+	speakername Kaelmet_Text_2
 # 100 "data/maps/Dormindoor1/scripts.pory"
-	speakername Kaelmet_Text_2
-# 101 "data/maps/Dormindoor1/scripts.pory"
 	msgbox Kaelmet_Text_13
+# 101 "data/maps/Dormindoor1/scripts.pory"
+	speakername Xylar1
 # 102 "data/maps/Dormindoor1/scripts.pory"
-	speakername Xylar1
-# 103 "data/maps/Dormindoor1/scripts.pory"
 	msgbox Kaelmet_Text_14
+# 103 "data/maps/Dormindoor1/scripts.pory"
+	speakername Kaelmet_Text_2
 # 104 "data/maps/Dormindoor1/scripts.pory"
-	speakername Kaelmet_Text_2
-# 105 "data/maps/Dormindoor1/scripts.pory"
 	msgbox Kaelmet_Text_15
+# 105 "data/maps/Dormindoor1/scripts.pory"
+	speakername Xylar1
 # 106 "data/maps/Dormindoor1/scripts.pory"
-	speakername Xylar1
-# 107 "data/maps/Dormindoor1/scripts.pory"
 	msgbox Kaelmet_Text_16
+# 107 "data/maps/Dormindoor1/scripts.pory"
+	closemessage
 # 108 "data/maps/Dormindoor1/scripts.pory"
-	closemessage
+	playse SE_PIN
 # 109 "data/maps/Dormindoor1/scripts.pory"
-	playse SE_PIN
+	applymovement 1, Kaelmet_Movement_12
 # 110 "data/maps/Dormindoor1/scripts.pory"
-	applymovement 1, Kaelmet_Movement_12
+	speakername Kaelmet_Text_2
 # 111 "data/maps/Dormindoor1/scripts.pory"
-	speakername Kaelmet_Text_2
-# 112 "data/maps/Dormindoor1/scripts.pory"
 	msgbox Kaelmet_Text_17
+# 112 "data/maps/Dormindoor1/scripts.pory"
+	speakername Kaelmet_Text_2
 # 113 "data/maps/Dormindoor1/scripts.pory"
-	speakername Kaelmet_Text_2
-# 114 "data/maps/Dormindoor1/scripts.pory"
 	msgbox Kaelmet_Text_18
-# 115 "data/maps/Dormindoor1/scripts.pory"
+# 114 "data/maps/Dormindoor1/scripts.pory"
 	speakername Xylar1
-# 116 "data/maps/Dormindoor1/scripts.pory"
+# 115 "data/maps/Dormindoor1/scripts.pory"
 	msgbox Kaelmet_Text_19
+# 116 "data/maps/Dormindoor1/scripts.pory"
+	closemessage
 # 117 "data/maps/Dormindoor1/scripts.pory"
-	closemessage
-# 118 "data/maps/Dormindoor1/scripts.pory"
 	playse SE_PIN
-# 119 "data/maps/Dormindoor1/scripts.pory"
+# 118 "data/maps/Dormindoor1/scripts.pory"
 	applymovement 1, Kaelmet_Movement_12
-# 120 "data/maps/Dormindoor1/scripts.pory"
+# 119 "data/maps/Dormindoor1/scripts.pory"
 	speakername Kaelmet_Text_2
-# 121 "data/maps/Dormindoor1/scripts.pory"
+# 120 "data/maps/Dormindoor1/scripts.pory"
 	msgbox Kaelmet_Text_20
-# 122 "data/maps/Dormindoor1/scripts.pory"
+# 121 "data/maps/Dormindoor1/scripts.pory"
 	closemessage
-# 123 "data/maps/Dormindoor1/scripts.pory"
+# 122 "data/maps/Dormindoor1/scripts.pory"
 	applymovement 1, Kaelmet_Movement_15
-# 124 "data/maps/Dormindoor1/scripts.pory"
+# 123 "data/maps/Dormindoor1/scripts.pory"
 	waitmovement 0
-# 125 "data/maps/Dormindoor1/scripts.pory"
+# 124 "data/maps/Dormindoor1/scripts.pory"
 	playse SE_EXIT
+# 125 "data/maps/Dormindoor1/scripts.pory"
+	fadenewbgm MUS_DUMMY
 # 126 "data/maps/Dormindoor1/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 127 "data/maps/Dormindoor1/scripts.pory"
@@ -254,49 +254,49 @@ Kaelmet::
 # 131 "data/maps/Dormindoor1/scripts.pory"
 	waitmovement 0
 # 132 "data/maps/Dormindoor1/scripts.pory"
-	initclock 21, 00
+	initclock 9, 00
 # 133 "data/maps/Dormindoor1/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	setflag FLAG_PAUSE_TIME
 # 134 "data/maps/Dormindoor1/scripts.pory"
-	playse SE_DOOR
+	fadescreen FADE_FROM_BLACK
 # 135 "data/maps/Dormindoor1/scripts.pory"
-	applymovement 1, Kaelmet_Movement_17
+	playse SE_DOOR
 # 136 "data/maps/Dormindoor1/scripts.pory"
-	waitmovement 0
+	applymovement 1, Kaelmet_Movement_17
 # 137 "data/maps/Dormindoor1/scripts.pory"
-	speakername Kaelmet_Text_2
-# 138 "data/maps/Dormindoor1/scripts.pory"
-	msgbox Kaelmet_Text_22
-# 139 "data/maps/Dormindoor1/scripts.pory"
-	closemessage
-# 140 "data/maps/Dormindoor1/scripts.pory"
-	applymovement 1, Kaelmet_Movement_18
-# 141 "data/maps/Dormindoor1/scripts.pory"
-	speakername Kaelmet_Text_2
-# 142 "data/maps/Dormindoor1/scripts.pory"
-	msgbox Kaelmet_Text_23
-# 143 "data/maps/Dormindoor1/scripts.pory"
-	closemessage
-# 144 "data/maps/Dormindoor1/scripts.pory"
-	applymovement 1, Kaelmet_Movement_19
-# 145 "data/maps/Dormindoor1/scripts.pory"
 	waitmovement 0
-# 146 "data/maps/Dormindoor1/scripts.pory"
+# 138 "data/maps/Dormindoor1/scripts.pory"
 	speakername Kaelmet_Text_2
-# 147 "data/maps/Dormindoor1/scripts.pory"
-	msgbox Kaelmet_Text_24
-# 148 "data/maps/Dormindoor1/scripts.pory"
+# 139 "data/maps/Dormindoor1/scripts.pory"
+	msgbox Kaelmet_Text_22
+# 140 "data/maps/Dormindoor1/scripts.pory"
 	closemessage
+# 141 "data/maps/Dormindoor1/scripts.pory"
+	applymovement 1, Kaelmet_Movement_18
+# 142 "data/maps/Dormindoor1/scripts.pory"
+	speakername Kaelmet_Text_2
+# 143 "data/maps/Dormindoor1/scripts.pory"
+	msgbox Kaelmet_Text_23
+# 144 "data/maps/Dormindoor1/scripts.pory"
+	closemessage
+# 145 "data/maps/Dormindoor1/scripts.pory"
+	applymovement 1, Kaelmet_Movement_19
+# 146 "data/maps/Dormindoor1/scripts.pory"
+	waitmovement 0
+# 147 "data/maps/Dormindoor1/scripts.pory"
+	speakername Kaelmet_Text_2
+# 148 "data/maps/Dormindoor1/scripts.pory"
+	msgbox Kaelmet_Text_24
 # 149 "data/maps/Dormindoor1/scripts.pory"
-	playse SE_PIN
+	closemessage
 # 150 "data/maps/Dormindoor1/scripts.pory"
-	applymovement 1, Kaelmet_Movement_3
+	playse SE_PIN
 # 151 "data/maps/Dormindoor1/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	applymovement 1, Kaelmet_Movement_3
 # 152 "data/maps/Dormindoor1/scripts.pory"
-	delay 120
+	fadescreen FADE_TO_BLACK
 # 153 "data/maps/Dormindoor1/scripts.pory"
-	fadenewbgm MUS_DUMMY
+	delay 120
 # 155 "data/maps/Dormindoor1/scripts.pory"
 	speakername Xylar1
 # 156 "data/maps/Dormindoor1/scripts.pory"
@@ -312,7 +312,7 @@ Kaelmet::
 # 161 "data/maps/Dormindoor1/scripts.pory"
 	delay 120
 # 162 "data/maps/Dormindoor1/scripts.pory"
-	setvar ACADEMY_START, 9
+	setvar VAR_ACADEMY_START, 9
 # 163 "data/maps/Dormindoor1/scripts.pory"
 	warp_continue_script MAP_DORMINDOOR1, 1, 5, Kaelmorning, TRUE
 	return
@@ -400,66 +400,62 @@ Kaelmorning::
 # 201 "data/maps/Dormindoor1/scripts.pory"
 	fwdweekday 1
 # 202 "data/maps/Dormindoor1/scripts.pory"
-	initclock 9, 25
-# 203 "data/maps/Dormindoor1/scripts.pory"
-	pausefakertc
-# 204 "data/maps/Dormindoor1/scripts.pory"
 	setflag FLAG_KAEL_DORM
-# 205 "data/maps/Dormindoor1/scripts.pory"
+# 203 "data/maps/Dormindoor1/scripts.pory"
 	clearflag FLAG_TRIAL_SERENA
-# 206 "data/maps/Dormindoor1/scripts.pory"
+# 204 "data/maps/Dormindoor1/scripts.pory"
 	setrespawn HEAL_LOCATION_DORM
-# 207 "data/maps/Dormindoor1/scripts.pory"
+# 205 "data/maps/Dormindoor1/scripts.pory"
 	release
 	return
 
 
 Nightstroll::
-# 212 "data/maps/Dormindoor1/scripts.pory"
+# 210 "data/maps/Dormindoor1/scripts.pory"
 	lock
-# 213 "data/maps/Dormindoor1/scripts.pory"
+# 211 "data/maps/Dormindoor1/scripts.pory"
 	speakername Nightstroll_Text_0
-# 214 "data/maps/Dormindoor1/scripts.pory"
+# 212 "data/maps/Dormindoor1/scripts.pory"
 	msgbox Nightstroll_Text_1
-# 215 "data/maps/Dormindoor1/scripts.pory"
+# 213 "data/maps/Dormindoor1/scripts.pory"
 	release
-# 216 "data/maps/Dormindoor1/scripts.pory"
-	setvar ACADEMY_START, 11
+# 214 "data/maps/Dormindoor1/scripts.pory"
+	setvar VAR_ACADEMY_START, 11
 	return
 
 
 lunarofficer::
-# 219 "data/maps/Dormindoor1/scripts.pory"
+# 217 "data/maps/Dormindoor1/scripts.pory"
 	lock
-# 220 "data/maps/Dormindoor1/scripts.pory"
+# 218 "data/maps/Dormindoor1/scripts.pory"
 	playse SE_PIN
-# 221 "data/maps/Dormindoor1/scripts.pory"
+# 219 "data/maps/Dormindoor1/scripts.pory"
 	applymovement 3, Kaelmet_Movement_12
-# 222 "data/maps/Dormindoor1/scripts.pory"
+# 220 "data/maps/Dormindoor1/scripts.pory"
 	speakername lunarofficer_Text_0
-# 223 "data/maps/Dormindoor1/scripts.pory"
+# 221 "data/maps/Dormindoor1/scripts.pory"
 	msgbox lunarofficer_Text_1
-# 224 "data/maps/Dormindoor1/scripts.pory"
+# 222 "data/maps/Dormindoor1/scripts.pory"
 	waitmessage
-# 225 "data/maps/Dormindoor1/scripts.pory"
+# 223 "data/maps/Dormindoor1/scripts.pory"
 	applymovement 0xFF, lunarofficer_Movement_0
-# 226 "data/maps/Dormindoor1/scripts.pory"
+# 224 "data/maps/Dormindoor1/scripts.pory"
 	waitmovement 0
-# 227 "data/maps/Dormindoor1/scripts.pory"
+# 225 "data/maps/Dormindoor1/scripts.pory"
 	release
 	return
 
 
 lunarofficer1::
-# 231 "data/maps/Dormindoor1/scripts.pory"
+# 229 "data/maps/Dormindoor1/scripts.pory"
 	lock
-# 232 "data/maps/Dormindoor1/scripts.pory"
+# 230 "data/maps/Dormindoor1/scripts.pory"
 	faceplayer
-# 233 "data/maps/Dormindoor1/scripts.pory"
+# 231 "data/maps/Dormindoor1/scripts.pory"
 	speakername lunarofficer_Text_0
-# 234 "data/maps/Dormindoor1/scripts.pory"
+# 232 "data/maps/Dormindoor1/scripts.pory"
 	msgbox lunarofficer1_Text_0
-# 235 "data/maps/Dormindoor1/scripts.pory"
+# 233 "data/maps/Dormindoor1/scripts.pory"
 	release
 	return
 
@@ -652,41 +648,41 @@ Kaelmet_Movement_11:
 	walk_in_place_slow_up
 	step_end
 
-# 78 "data/maps/Dormindoor1/scripts.pory"
+# 77 "data/maps/Dormindoor1/scripts.pory"
 Kaelmet_Movement_12:
-# 78 "data/maps/Dormindoor1/scripts.pory"
+# 77 "data/maps/Dormindoor1/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 84 "data/maps/Dormindoor1/scripts.pory"
+# 83 "data/maps/Dormindoor1/scripts.pory"
 Kaelmet_Movement_13:
-# 84 "data/maps/Dormindoor1/scripts.pory"
+# 83 "data/maps/Dormindoor1/scripts.pory"
 	walk_in_place_up
 	step_end
 
-# 89 "data/maps/Dormindoor1/scripts.pory"
+# 88 "data/maps/Dormindoor1/scripts.pory"
 Kaelmet_Movement_14:
-# 89 "data/maps/Dormindoor1/scripts.pory"
+# 88 "data/maps/Dormindoor1/scripts.pory"
 	emote_question_mark
 	step_end
 
-# 123 "data/maps/Dormindoor1/scripts.pory"
+# 122 "data/maps/Dormindoor1/scripts.pory"
 Kaelmet_Movement_15:
-# 123 "data/maps/Dormindoor1/scripts.pory"
+# 122 "data/maps/Dormindoor1/scripts.pory"
 	walk_down
-# 123 "data/maps/Dormindoor1/scripts.pory"
+# 122 "data/maps/Dormindoor1/scripts.pory"
 	walk_down
-# 123 "data/maps/Dormindoor1/scripts.pory"
+# 122 "data/maps/Dormindoor1/scripts.pory"
 	walk_down
-# 123 "data/maps/Dormindoor1/scripts.pory"
+# 122 "data/maps/Dormindoor1/scripts.pory"
 	walk_down
-# 123 "data/maps/Dormindoor1/scripts.pory"
+# 122 "data/maps/Dormindoor1/scripts.pory"
 	walk_down
-# 123 "data/maps/Dormindoor1/scripts.pory"
+# 122 "data/maps/Dormindoor1/scripts.pory"
 	walk_down
-# 123 "data/maps/Dormindoor1/scripts.pory"
+# 122 "data/maps/Dormindoor1/scripts.pory"
 	walk_down
-# 123 "data/maps/Dormindoor1/scripts.pory"
+# 122 "data/maps/Dormindoor1/scripts.pory"
 	walk_down
 	step_end
 
@@ -702,37 +698,37 @@ Kaelmet_Movement_16:
 	face_left
 	step_end
 
-# 135 "data/maps/Dormindoor1/scripts.pory"
+# 136 "data/maps/Dormindoor1/scripts.pory"
 Kaelmet_Movement_17:
-# 135 "data/maps/Dormindoor1/scripts.pory"
+# 136 "data/maps/Dormindoor1/scripts.pory"
 	walk_up
-# 135 "data/maps/Dormindoor1/scripts.pory"
+# 136 "data/maps/Dormindoor1/scripts.pory"
 	walk_up
-# 135 "data/maps/Dormindoor1/scripts.pory"
+# 136 "data/maps/Dormindoor1/scripts.pory"
 	walk_up
-# 135 "data/maps/Dormindoor1/scripts.pory"
+# 136 "data/maps/Dormindoor1/scripts.pory"
 	walk_up
-# 135 "data/maps/Dormindoor1/scripts.pory"
+# 136 "data/maps/Dormindoor1/scripts.pory"
 	walk_up
-# 135 "data/maps/Dormindoor1/scripts.pory"
+# 136 "data/maps/Dormindoor1/scripts.pory"
 	walk_up
-# 135 "data/maps/Dormindoor1/scripts.pory"
+# 136 "data/maps/Dormindoor1/scripts.pory"
 	walk_up
-# 135 "data/maps/Dormindoor1/scripts.pory"
+# 136 "data/maps/Dormindoor1/scripts.pory"
 	walk_up
-# 135 "data/maps/Dormindoor1/scripts.pory"
+# 136 "data/maps/Dormindoor1/scripts.pory"
 	face_left
 	step_end
 
-# 140 "data/maps/Dormindoor1/scripts.pory"
+# 141 "data/maps/Dormindoor1/scripts.pory"
 Kaelmet_Movement_18:
-# 140 "data/maps/Dormindoor1/scripts.pory"
+# 141 "data/maps/Dormindoor1/scripts.pory"
 	face_right
 	step_end
 
-# 144 "data/maps/Dormindoor1/scripts.pory"
+# 145 "data/maps/Dormindoor1/scripts.pory"
 Kaelmet_Movement_19:
-# 144 "data/maps/Dormindoor1/scripts.pory"
+# 145 "data/maps/Dormindoor1/scripts.pory"
 	walk_right
 	step_end
 
@@ -778,9 +774,9 @@ Kaelmorning_Movement_3:
 	walk_fast_down
 	step_end
 
-# 225 "data/maps/Dormindoor1/scripts.pory"
+# 223 "data/maps/Dormindoor1/scripts.pory"
 lunarofficer_Movement_0:
-# 225 "data/maps/Dormindoor1/scripts.pory"
+# 223 "data/maps/Dormindoor1/scripts.pory"
 	walk_left
 	step_end
 
@@ -816,44 +812,44 @@ Kaelmet_Text_6:
 	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Doesn't matter.$"
 
 Kaelmet_Text_7:
-# 80 "data/maps/Dormindoor1/scripts.pory"
+# 79 "data/maps/Dormindoor1/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Right, yeah... privacy, I get it.$"
 
 Kaelmet_Text_8:
-# 82 "data/maps/Dormindoor1/scripts.pory"
+# 81 "data/maps/Dormindoor1/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}So! How'd you do on the Entry Test? I\n"
 	.string "barely passed the battle portion.\p"
 	.string "My Pokémon and I were so nervous, but\n"
 	.string "we pulled through!$"
 
 Kaelmet_Text_9:
-# 86 "data/maps/Dormindoor1/scripts.pory"
+# 85 "data/maps/Dormindoor1/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}I didn't take it.$"
 
 Kaelmet_Text_10:
-# 91 "data/maps/Dormindoor1/scripts.pory"
+# 90 "data/maps/Dormindoor1/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_QUESTION}{COLOR BLUE}{SHADOW LIGHT_GRAY}Didn't... wait, you didn't take the test?$"
 
 Kaelmet_Text_11:
-# 94 "data/maps/Dormindoor1/scripts.pory"
+# 93 "data/maps/Dormindoor1/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}No.$"
 
 Kaelmet_Text_12:
-# 96 "data/maps/Dormindoor1/scripts.pory"
+# 95 "data/maps/Dormindoor1/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_QUESTION}{COLOR BLUE}{SHADOW LIGHT_GRAY}...{PAUSE_UNTIL_PRESS}...$"
 
 Kaelmet_Text_13:
-# 101 "data/maps/Dormindoor1/scripts.pory"
+# 100 "data/maps/Dormindoor1/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Oh! So you got special admission?\n"
 	.string "That's awesome! You must be really\l"
 	.string "talented or...$"
 
 Kaelmet_Text_14:
-# 103 "data/maps/Dormindoor1/scripts.pory"
+# 102 "data/maps/Dormindoor1/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}I'm here. That's all that matters.$"
 
 Kaelmet_Text_15:
-# 105 "data/maps/Dormindoor1/scripts.pory"
+# 104 "data/maps/Dormindoor1/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Well, hey! We're roommates now, so we\n"
 	.string "should stick together, right?\p"
 	.string "Maybe we could train sometime?\p"
@@ -861,16 +857,16 @@ Kaelmet_Text_15:
 	.string "cool too...$"
 
 Kaelmet_Text_16:
-# 107 "data/maps/Dormindoor1/scripts.pory"
+# 106 "data/maps/Dormindoor1/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}I train alone.$"
 
 Kaelmet_Text_17:
-# 112 "data/maps/Dormindoor1/scripts.pory"
+# 111 "data/maps/Dormindoor1/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Oh. Okay, sure... I mean, everyone has\n"
 	.string "their own style, right?$"
 
 Kaelmet_Text_18:
-# 114 "data/maps/Dormindoor1/scripts.pory"
+# 113 "data/maps/Dormindoor1/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Look, I know we just met, but if you\n"
 	.string "ever need anything, help with classes,\l"
 	.string "finding your way around, or just...\l"
@@ -878,11 +874,11 @@ Kaelmet_Text_18:
 	.string "That's what roommates are for, right?$"
 
 Kaelmet_Text_19:
-# 116 "data/maps/Dormindoor1/scripts.pory"
+# 115 "data/maps/Dormindoor1/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}I won't need anything.$"
 
 Kaelmet_Text_20:
-# 121 "data/maps/Dormindoor1/scripts.pory"
+# 120 "data/maps/Dormindoor1/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Uh..{PAUSE}...Right. Well... I'll, uh, let you settle\n"
 	.string "in.\p"
 	.string "See you around, Xylar.$"
@@ -892,18 +888,18 @@ Kaelmet_Text_21:
 	.string "Night Time.....$"
 
 Kaelmet_Text_22:
-# 138 "data/maps/Dormindoor1/scripts.pory"
+# 139 "data/maps/Dormindoor1/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar!\p"
 	.string "{PAUSE_UNTIL_PRESS}Oh! he's asleep.$"
 
 Kaelmet_Text_23:
-# 142 "data/maps/Dormindoor1/scripts.pory"
+# 143 "data/maps/Dormindoor1/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}I should also go to sleep...\p"
 	.string "Tomorrow is the start of my Academy\n"
 	.string "life.$"
 
 Kaelmet_Text_24:
-# 147 "data/maps/Dormindoor1/scripts.pory"
+# 148 "data/maps/Dormindoor1/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}I wonder what kind of days are waiting\n"
 	.string "for us.$"
 
@@ -947,26 +943,26 @@ Kaelmorning_Text_3:
 	.string "I'll be leaving.$"
 
 Nightstroll_Text_0:
-# 213 "data/maps/Dormindoor1/scripts.pory"
+# 211 "data/maps/Dormindoor1/scripts.pory"
 	.string "Xylar$"
 
 Nightstroll_Text_1:
-# 214 "data/maps/Dormindoor1/scripts.pory"
+# 212 "data/maps/Dormindoor1/scripts.pory"
 	.string "I can't fall sleep, maybe I should go for\n"
 	.string "a walk.$"
 
 lunarofficer_Text_0:
-# 222 "data/maps/Dormindoor1/scripts.pory"
+# 220 "data/maps/Dormindoor1/scripts.pory"
 	.string "Officer$"
 
 lunarofficer_Text_1:
-# 223 "data/maps/Dormindoor1/scripts.pory"
+# 221 "data/maps/Dormindoor1/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Stop right there!\p"
 	.string "First years are not allowed in the\n"
 	.string "forest yet.$"
 
 lunarofficer1_Text_0:
-# 234 "data/maps/Dormindoor1/scripts.pory"
+# 232 "data/maps/Dormindoor1/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}First years are not allowed in the\n"
 	.string "forest yet.$"
 

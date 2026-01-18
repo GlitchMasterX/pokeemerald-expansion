@@ -203,11 +203,7 @@ enum PokemonCry
 #if P_GEN_2_CROSS_EVOS
     CRY_SLOWKING,
 #endif //P_GEN_2_CROSS_EVOS
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_SLOWBRO_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #if P_GALARIAN_FORMS
@@ -247,11 +243,7 @@ enum PokemonCry
     CRY_GASTLY,
     CRY_HAUNTER,
     CRY_GENGAR,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_GENGAR_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_GASTLY
@@ -259,11 +251,7 @@ enum PokemonCry
     CRY_ONIX,
 #if P_GEN_2_CROSS_EVOS
     CRY_STEELIX,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_STEELIX_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_GEN_2_CROSS_EVOS
@@ -332,11 +320,7 @@ enum PokemonCry
 #endif //P_FAMILY_TANGELA
 #if P_FAMILY_KANGASKHAN
     CRY_KANGASKHAN,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_KANGASKHAN_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_KANGASKHAN
@@ -371,11 +355,7 @@ enum PokemonCry
     CRY_SCYTHER,
 #if P_GEN_2_CROSS_EVOS
     CRY_SCIZOR,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_SCIZOR_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_GEN_2_CROSS_EVOS
@@ -409,11 +389,7 @@ enum PokemonCry
 #endif //P_FAMILY_MAGMAR
 #if P_FAMILY_PINSIR
     CRY_PINSIR,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_PINSIR_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_PINSIR
@@ -423,11 +399,7 @@ enum PokemonCry
 #if P_FAMILY_MAGIKARP
     CRY_MAGIKARP,
     CRY_GYARADOS,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_GYARADOS_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_MAGIKARP
@@ -473,11 +445,7 @@ enum PokemonCry
 #endif //P_FAMILY_KABUTO
 #if P_FAMILY_AERODACTYL
     CRY_AERODACTYL,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_AERODACTYL_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_AERODACTYL
@@ -506,11 +474,7 @@ enum PokemonCry
 #endif //P_FAMILY_DRATINI
 #if P_FAMILY_MEWTWO
     CRY_MEWTWO,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_MEWTWO_MEGA_X,
     CRY_MEWTWO_MEGA_Y,
 #endif //P_MODIFIED_MEGA_CRIES
@@ -574,11 +538,7 @@ enum PokemonCry
     CRY_MAREEP,
     CRY_FLAAFFY,
     CRY_AMPHAROS,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_AMPHAROS_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_MAREEP
@@ -673,11 +633,7 @@ enum PokemonCry
 #endif //P_FAMILY_SHUCKLE
 #if P_FAMILY_HERACROSS
     CRY_HERACROSS,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_HERACROSS_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_HERACROSS
@@ -736,11 +692,7 @@ enum PokemonCry
 #if P_FAMILY_HOUNDOUR
     CRY_HOUNDOUR,
     CRY_HOUNDOOM,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_HOUNDOOM_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_HOUNDOUR
@@ -773,11 +725,7 @@ enum PokemonCry
     CRY_LARVITAR,
     CRY_PUPITAR,
     CRY_TYRANITAR,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_TYRANITAR_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_LARVITAR
@@ -794,11 +742,7 @@ enum PokemonCry
     CRY_TREECKO,
     CRY_GROVYLE,
     CRY_SCEPTILE,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_SCEPTILE_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_TREECKO
@@ -806,11 +750,7 @@ enum PokemonCry
     CRY_TORCHIC,
     CRY_COMBUSKEN,
     CRY_BLAZIKEN,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_BLAZIKEN_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_TORCHIC
@@ -818,11 +758,7 @@ enum PokemonCry
     CRY_MUDKIP,
     CRY_MARSHTOMP,
     CRY_SWAMPERT,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_SWAMPERT_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_MUDKIP
@@ -866,20 +802,12 @@ enum PokemonCry
     CRY_RALTS,
     CRY_KIRLIA,
     CRY_GARDEVOIR,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_GARDEVOIR_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #if P_GEN_4_CROSS_EVOS
     CRY_GALLADE,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_GALLADE_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_GEN_4_CROSS_EVOS
@@ -923,21 +851,13 @@ enum PokemonCry
 #endif //P_FAMILY_SKITTY
 #if P_FAMILY_SABLEYE
     CRY_SABLEYE,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_SABLEYE_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_SABLEYE
 #if P_FAMILY_MAWILE
     CRY_MAWILE,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_MAWILE_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_MAWILE
@@ -945,33 +865,21 @@ enum PokemonCry
     CRY_ARON,
     CRY_LAIRON,
     CRY_AGGRON,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_AGGRON_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_ARON
 #if P_FAMILY_MEDITITE
     CRY_MEDITITE,
     CRY_MEDICHAM,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_MEDICHAM_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_MEDITITE
 #if P_FAMILY_ELECTRIKE
     CRY_ELECTRIKE,
     CRY_MANECTRIC,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_MANECTRIC_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_ELECTRIKE
@@ -1001,11 +909,7 @@ enum PokemonCry
 #if P_FAMILY_CARVANHA
     CRY_CARVANHA,
     CRY_SHARPEDO,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_SHARPEDO_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_CARVANHA
@@ -1016,11 +920,7 @@ enum PokemonCry
 #if P_FAMILY_NUMEL
     CRY_NUMEL,
     CRY_CAMERUPT,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_CAMERUPT_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_NUMEL
@@ -1046,11 +946,7 @@ enum PokemonCry
 #if P_FAMILY_SWABLU
     CRY_SWABLU,
     CRY_ALTARIA,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_ALTARIA_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_SWABLU
@@ -1099,11 +995,7 @@ enum PokemonCry
 #if P_FAMILY_SHUPPET
     CRY_SHUPPET,
     CRY_BANETTE,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_BANETTE_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_SHUPPET
@@ -1128,11 +1020,7 @@ enum PokemonCry
 #endif //P_FAMILY_CHIMECHO
 #if P_FAMILY_ABSOL
     CRY_ABSOL,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_ABSOL_MEGA,
     CRY_ABSOL_MEGA_Z,
 #endif //P_MODIFIED_MEGA_CRIES
@@ -1140,11 +1028,7 @@ enum PokemonCry
 #if P_FAMILY_SNORUNT
     CRY_SNORUNT,
     CRY_GLALIE,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_GLALIE_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #if P_GEN_4_CROSS_EVOS
@@ -1174,11 +1058,7 @@ enum PokemonCry
     CRY_BAGON,
     CRY_SHELGON,
     CRY_SALAMENCE,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_SALAMENCE_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_BAGON
@@ -1186,11 +1066,7 @@ enum PokemonCry
     CRY_BELDUM,
     CRY_METANG,
     CRY_METAGROSS,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_METAGROSS_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_BELDUM
@@ -1205,21 +1081,13 @@ enum PokemonCry
 #endif //P_FAMILY_REGISTEEL
 #if P_FAMILY_LATIAS
     CRY_LATIAS,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_LATIAS_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_LATIAS
 #if P_FAMILY_LATIOS
     CRY_LATIOS,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_LATIOS_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_LATIOS
@@ -1237,11 +1105,7 @@ enum PokemonCry
 #endif //P_FAMILY_GROUDON
 #if P_FAMILY_RAYQUAZA
     CRY_RAYQUAZA,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_RAYQUAZA_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_RAYQUAZA
@@ -1326,11 +1190,7 @@ enum PokemonCry
 #if P_FAMILY_BUNEARY
     CRY_BUNEARY,
     CRY_LOPUNNY,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_LOPUNNY_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_BUNEARY
@@ -1356,22 +1216,14 @@ enum PokemonCry
     CRY_GIBLE,
     CRY_GABITE,
     CRY_GARCHOMP,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_GARCHOMP_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_GIBLE
 #if P_FAMILY_RIOLU
     CRY_RIOLU,
     CRY_LUCARIO,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_LUCARIO_MEGA,
     CRY_LUCARIO_MEGA_Z,
 #endif //P_MODIFIED_MEGA_CRIES
@@ -1398,11 +1250,7 @@ enum PokemonCry
 #if P_FAMILY_SNOVER
     CRY_SNOVER,
     CRY_ABOMASNOW,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_ABOMASNOW_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_SNOVER
@@ -1533,11 +1381,7 @@ enum PokemonCry
 #endif //P_FAMILY_DRILBUR
 #if P_FAMILY_AUDINO
     CRY_AUDINO,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_AUDINO_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_AUDINO
@@ -1996,11 +1840,7 @@ enum PokemonCry
 #endif //P_FAMILY_ZYGARDE
 #if P_FAMILY_DIANCIE
     CRY_DIANCIE,
-<<<<<<< HEAD
-#if P_MEGA_EVOLUTIONS && P_USE_EXTRA_MEGA_CRY
-=======
 #if P_MODIFIED_MEGA_CRIES
->>>>>>> upcoming
     CRY_DIANCIE_MEGA,
 #endif //P_MODIFIED_MEGA_CRIES
 #endif //P_FAMILY_DIANCIE

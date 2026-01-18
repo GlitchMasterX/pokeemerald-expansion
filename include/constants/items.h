@@ -1020,15 +1020,6 @@
 #define ITEM_ZYGARDITE 852
 #define ITEM_DRAMPANITE 853
 #define ITEM_FALINKSITE 854
-#define ITEM_CUT_TOOL 855 // field items start
-#define ITEM_FLY_TOOL 856
-#define ITEM_SURF_TOOL 857
-#define ITEM_STRENGTH_TOOL 858
-#define ITEM_FLASH_TOOL 859
-#define ITEM_ROCK_SMASH_TOOL 860
-#define ITEM_WATERFALL_TOOL 861
-#define ITEM_DIVE_TOOL 862
-
 // Legends Z-A: Mega Dimension DLC Mega Stones
 #define ITEM_HEATRANITE 855
 #define ITEM_DARKRANITE 856
@@ -1049,9 +1040,18 @@
 #define ITEM_BAXCALIBRITE 871
 #define ITEM_TATSUGIRINITE 872
 #define ITEM_GLIMMORANITE 873
-#define ITEM_OUTFIT_BOX 874
 
-#define ITEMS_COUNT 875
+#define ITEM_OUTFIT_BOX 874
+#define ITEM_CUT_TOOL 875 // field items start
+#define ITEM_FLY_TOOL 876
+#define ITEM_SURF_TOOL 877
+#define ITEM_STRENGTH_TOOL 878
+#define ITEM_FLASH_TOOL 879
+#define ITEM_ROCK_SMASH_TOOL 880
+#define ITEM_WATERFALL_TOOL 881
+#define ITEM_DIVE_TOOL 882
+
+#define ITEMS_COUNT 883
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

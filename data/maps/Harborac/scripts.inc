@@ -86,9 +86,9 @@ Fionamet::
 # 46 "data/maps/Harborac/scripts.pory"
 	setflag FLAG_FIONAMET
 # 47 "data/maps/Harborac/scripts.pory"
-	warpsilent MAP_HARBORAC, 22, 28
+	warpsilent MAP_HARBORAC, 22, 22
 # 48 "data/maps/Harborac/scripts.pory"
-	setvar ACADEMY_START, 4
+	setvar VAR_ACADEMY_START, 4
 	return
 
 
@@ -385,7 +385,7 @@ elias::
 # 179 "data/maps/Harborac/scripts.pory"
 	setflag FLAG_ELIASMET
 # 180 "data/maps/Harborac/scripts.pory"
-	warp MAP_HEADOFFICE, 7, 10
+	warp MAP_HEADOFFICE, 7, 11
 	return
 
 
@@ -1052,7 +1052,7 @@ AcademyNpc14_2:
 # 527 "data/maps/Harborac/scripts.pory"
 	clearflag FLAG_LEAFMET
 # 528 "data/maps/Harborac/scripts.pory"
-	setvar ACADEMY_START, 8
+	setvar VAR_ACADEMY_START, 8
 	return
 
 AcademyNpc14_3:

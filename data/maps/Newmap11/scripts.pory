@@ -1,11 +1,11 @@
 mapscripts Newmap11_MapScripts {
     MAP_SCRIPT_ON_FRAME_TABLE[
 
-        VAR_ACADEMY_START,51: Alistairarrive
+        VAR_ACADEMY_START,40: Alistairarrive
     ]
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
     VAR_ACADEMY_START,0:NihilFirstVisit    
-	VAR_ACADEMY_START,51:alis
+	VAR_ACADEMY_START,40:alis
     VAR_ACADEMY_START,1:mewtwogone
 ]
     
@@ -74,11 +74,15 @@ script NihilFirstVisit1 {
     waitmessage
     closemessage
     speakername("???")
-    msgbox(format("{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Human life is an illusion. Even at its longest, it is but a hundred fleeting years.\pBeauty withers, strength decays, every embrace turns to dust. Yet still, humans worship appearances, clinging to flesh as though it were eternal.\pThat… is not love…{PAUSE_UNTIL_PRESS} it is obsession."))  
+    msgbox(format("{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Human life is an illusion. Even at its longest, it is but a hundred fleeting years.\pBeauty withers, strength decays, every embrace turns to dust. Yet still, humans cling to ideals, chase ambitions, worship appearances as though it were eternal.\pThat… is not love…{PAUSE_UNTIL_PRESS} it is obsession."))  
     waitmessage
     applymovement(4,moves(walk_slow_down))
     applymovement(0xFE,moves(walk_fast_up walk_fast_left face_up))
     waitmovement(0)
+    speakername("???")
+    msgbox(format("{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Tell me, child.\pWhy chase after that which is doomed to fade?\pWhy seek meaning in a world that will one day forget you?"))  
+    waitmessage
+    closemessage
     playmoncry(SPECIES_MEWTWO,CRY_MODE_ROAR_2)
     speakername("Mewtwo")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_MAD}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}……"))
@@ -97,7 +101,7 @@ script NihilFirstVisit1 {
     speakername("???")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}She died, and the world moved on. That's just how the world is.\p It doesn't mourn for anyone."))  
     applymovement(4,moves(face_left))
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Graves are not for the dead.\pThey are for the living…{PAUSE_UNTIL_PRESS} to lie to themselves.\pThat is the harsh reality of the world yet…{PAUSE_UNTIL_PRESS} I find it beautiful."))  
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_NIHIL}{EMOTE_NORMAL}{FONT_SMALL}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Graves are not for the dead.\pThey are for the living…{PAUSE_UNTIL_PRESS} to lie to themselves.\pThat is the harsh reality of the world yet…{PAUSE_UNTIL_PRESS} I find it…{PAUSE_UNTIL_PRESS} beautiful."))  
     waitmessage
     closemessage
     playse(SE_PIN)
@@ -510,13 +514,12 @@ script grave {
     closemessage
     applymovement(0xFF,moves(delay_16 delay_16 face_down))
     speakername("Xylar")
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Hmmm……"))   
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Hmmm……")) 
+    waitmessage  
     closemessage
-    warpsilent(MAP_NEWHOUSE,2,24)
     clearflag(FLAG_ACADEMY_START)
-    resumefakertc
-    addhours(21)
-    setvar(VAR_ACADEMY_START,51)
+    setvar(VAR_ACADEMY_START,40)
+	warp_continue_script(MAP_NEWHOUSE,2,24,shouldsleep)
     }
 
     if(flag(FLAG_TALK_GRAVE)){
@@ -535,3 +538,15 @@ script grave {
     }
     
 }
+
+script shouldsleep {
+    lock
+    fadescreen(FADE_FROM_BLACK)
+    speakername("Xylar")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}I'm exhausted……\pMaybe I should rest before..."))
+    waitmessage
+    closemessage
+    speakername("Xylar")
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SPECIAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}……"))
+    waitmessage
+    release}

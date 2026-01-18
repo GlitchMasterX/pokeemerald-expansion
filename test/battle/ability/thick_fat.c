@@ -1,9 +1,6 @@
 #include "global.h"
 #include "test/battle.h"
 
-<<<<<<< HEAD
-TO_DO_BATTLE_TEST("TODO: Write Thick Fat (Ability) test titles")
-=======
 ASSUMPTIONS
 {
     ASSUME(GetMoveType(MOVE_EMBER) == TYPE_FIRE);
@@ -40,4 +37,3 @@ SINGLE_BATTLE_TEST("Thick Fat halves damage from fire and ice type moves", s16 d
     }
 }
 
->>>>>>> upcoming

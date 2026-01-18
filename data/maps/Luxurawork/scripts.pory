@@ -11,6 +11,7 @@ map_script_2 LUXURA_TRAGEDY, 22, trageflash
 
 script trageflash {
 	lockall
+	fadescreen(FADE_FROM_BLACK)
 	special(SpawnCameraObject)
     applymovement(0x7F,mo)
 	waitmovement(0)

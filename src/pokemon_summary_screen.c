@@ -2981,7 +2981,7 @@ static void Task_SlidePowerAccWindow(u8 taskId)
     ScheduleBgCopyTilemapToVram(2);
 }
 
-static void PositionAppealJamSlidingWindow(u16 visibleColumns, s16 speed, enum Move move)
+static void PositionAppealJamSlidingWindow(u16 a, s16 b, enum Move move)
 {
     if (b > sContestMoveTilemapCtrl.field_6)
         b = sContestMoveTilemapCtrl.field_6;

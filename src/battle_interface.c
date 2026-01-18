@@ -211,7 +211,7 @@ static void SpriteCB_LastUsedBallWin(struct Sprite *);
 static void SpriteCB_MoveInfoWin(struct Sprite *sprite);
 
 static u8 *AddTextPrinterAndCreateWindowOnHealthboxLightText(const u8 *str, u32 x, u32 y, u32 bgColor, u32 *windowId);
-static void PrintHpOnHealthboxLightText(u32 spriteId, s16 currHp, s16 maxHp, u32 bgColor, u32 rightTile, u32 leftTile);
+static void PrintHpOnHealthboxLightText(u32 spriteId, s16 currHp, s16 maxHp, u32 bgColor, u8 yOffset);
 
 static const struct OamData sOamData_64x32 =
 {
@@ -1074,33 +1074,60 @@ static u8 *AddTextPrinterAndCreateWindowOnHealthboxLightText(const u8 *str, u32 
     return AddTextPrinterAndCreateWindowOnHealthboxWithFontLightText(str, x, y, bgColor, windowId, FONT_SMALL);
 }
 
-static void PrintHpOnHealthboxLightText(u32 spriteId, s16 currHp, s16 maxHp, u32 bgColor, u32 rightTile, u32 leftTile)
+static void PrintHpOnHealthboxLightText(u32 spriteId, s16 currHp, s16 maxHp, u32 bgColor, u8 yOffset)
 {
-    u8 *windowTileData;
-    u32 windowId, tilesCount, x;
-    u8 text[28], *txtPtr;
-    void *objVram = (void *)(OBJ_VRAM0) + gSprites[spriteId].oam.tileNum * TILE_SIZE_4BPP;
+    u32 width;
+    u8 text[2 * HP_MAX_DIGITS + 2], *txtPtr;
 
-    // To fit 4 digit HP values we need to modify a bit the way hp is printed on Healthbox.
-    // 6 chars can fit on the right healthbox, the rest goes to the left one
-    txtPtr = ConvertIntToDecimalStringN(text, currHp, STR_CONV_MODE_RIGHT_ALIGN, 4);
+    const union TextColor color =
+    {
+        .background = 0,
+        .foreground = 2, // lighter text color than normal HP
+        .shadow = 3,
+        .accent = 0
+    };
+
+    // Build "currHp/maxHp"
+    txtPtr = ConvertIntToDecimalStringN(text, currHp, STR_CONV_MODE_RIGHT_ALIGN, HP_MAX_DIGITS);
     *txtPtr++ = CHAR_SLASH;
-    txtPtr = ConvertIntToDecimalStringN(txtPtr, maxHp, STR_CONV_MODE_LEFT_ALIGN, 4);
-    // Print last 6 chars on the right window
-    windowTileData = AddTextPrinterAndCreateWindowOnHealthboxLightText(txtPtr - 6, 0, 4, bgColor, &windowId);
-    HpTextIntoHealthboxObject(objVram + rightTile, windowTileData, 4);
-    RemoveWindowOnHealthbox(windowId);
-    // Print the rest of the chars on the left window
-    txtPtr[-6] = EOS;
-    // if max hp is 3 digits print on block closer to the right window, if 4 digits print further from the right window
-    if (maxHp >= 1000)
-        x = 9, tilesCount = 3;
-    else
-        x = 6, tilesCount = 2, leftTile += 0x20;
-    windowTileData = AddTextPrinterAndCreateWindowOnHealthboxLightText(text, x, 4, bgColor, &windowId);
-    HpTextIntoHealthboxObject(objVram + leftTile, windowTileData, tilesCount);
-    RemoveWindowOnHealthbox(windowId);
+    txtPtr = ConvertIntToDecimalStringN(txtPtr, maxHp, STR_CONV_MODE_LEFT_ALIGN, HP_MAX_DIGITS);
+
+    // Clear old text (right + left sprite areas)
+    FillSpriteRectColor(spriteId, 40, yOffset + 8, 24, 8, bgColor);
+    FillSpriteRectColor(gSprites[spriteId].oam.affineParam, 0, yOffset + 8, 32, 8, bgColor);
+
+    // Right side: last HP_RIGHT_SPRITE_CHARS characters
+    AddSpriteTextPrinterParameterized6(
+        gSprites[spriteId].oam.affineParam,
+        HP_FONT,
+        0,
+        yOffset + 5,
+        0,
+        0,
+        color,
+        0,
+        txtPtr - HP_RIGHT_SPRITE_CHARS
+    );
+
+    // Left side: remaining characters
+    txtPtr[-HP_RIGHT_SPRITE_CHARS] = EOS;
+
+    width = GetStringWidth(HP_FONT, text, -1)
+          + GetFontAttribute(HP_FONT, FONTATTR_LETTER_SPACING);
+
+    AddSpriteTextPrinterParameterized6(
+        spriteId,
+        HP_FONT,
+        64 - width,
+        yOffset + 5,
+        0,
+        0,
+        color,
+        0,
+        text
+    );
 }
+
 
 static void UpdateHpTextInHealthboxInDoubles(u32 healthboxSpriteId, u32 maxOrCurrent, s16 currHp, s16 maxHp)
 {

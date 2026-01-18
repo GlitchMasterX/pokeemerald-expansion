@@ -7,7 +7,7 @@ AstralisAcademy_PokemonCenter_MapScripts::
 
 AstralisAcademy_PokemonCenter_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 # 3 "data/maps/AstralisAcademy_PokemonCenter/scripts.pory"
-	map_script_2 ACADEMY_START, 6, LeaftourPokecentre
+	map_script_2 VAR_ACADEMY_START, 6, LeaftourPokecentre
 	.2byte 0
 
 

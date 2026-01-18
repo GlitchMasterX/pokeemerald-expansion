@@ -5,7 +5,7 @@ AstralisAcademy_Classroom_MapScripts::
 
 AstralisAcademy_Classroom_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 # 3 "data/maps/AstralisAcademy_Classroom/scripts.pory"
-	map_script_2 ACADEMY_START, 9, trial2
+	map_script_2 VAR_ACADEMY_START, 9, trial2
 	.2byte 0
 
 
@@ -305,7 +305,7 @@ Trialbattle::
 # 155 "data/maps/AstralisAcademy_Classroom/scripts.pory"
 	setflag FLAG_TRIAL_SERENA
 # 156 "data/maps/AstralisAcademy_Classroom/scripts.pory"
-	setvar ACADEMY_START, 10
+	setvar VAR_ACADEMY_START, 10
 	return
 
 

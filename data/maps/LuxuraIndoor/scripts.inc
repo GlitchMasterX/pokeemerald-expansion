@@ -64,7 +64,7 @@ alistairarrive3::
 # 31 "data/maps/LuxuraIndoor/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 32 "data/maps/LuxuraIndoor/scripts.pory"
-	warpsilent MAP_LUXURAWORK, 10, 27
+	warp_continue_script MAP_LUXURAWORK, 10, 27, trageflash
 	return
 
 

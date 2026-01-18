@@ -147,3 +147,10 @@ script metdad {
 	releaseall
 	setvar(LUXURA_TRAGEDY,6)
 }
+
+script Hoopa_screenshot{
+	lock
+	setvar(VAR_0x8000,0)
+	callnative(OpenScreenshotsFromScript)
+	release
+}

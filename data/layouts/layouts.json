@@ -4626,8 +4626,8 @@
       "name": "Dream",
       "width": 20,
       "height": 20,
-      "primary_tileset": "gTileset_building2",
-      "secondary_tileset": "gTileset_Petalburg",
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_UnionRoom",
       "border_filepath": "data/layouts/Dream/border.bin",
       "blockdata_filepath": "data/layouts/Dream/map.bin"
     }

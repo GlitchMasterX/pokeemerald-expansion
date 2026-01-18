@@ -35,11 +35,7 @@ SINGLE_BATTLE_TEST("Beads of Ruin's message displays correctly after all battler
 {
     GIVEN {
         ASSUME(IsExplosionMove(MOVE_EXPLOSION));
-<<<<<<< HEAD
-        PLAYER(SPECIES_WOBBUFFET) { HP(1);}
-=======
         PLAYER(SPECIES_WOBBUFFET) { HP(1); }
->>>>>>> upcoming
         PLAYER(SPECIES_CHI_YU);
         OPPONENT(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
@@ -63,7 +59,7 @@ SINGLE_BATTLE_TEST("Beads of Ruin's message displays correctly after all battler
         ASSUME(IsExplosionMove(MOVE_EXPLOSION));
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { HP(1);}
+        OPPONENT(SPECIES_WOBBUFFET) { HP(1); }
         OPPONENT(SPECIES_CHI_YU);
     } WHEN {
         TURN { MOVE(player, MOVE_EXPLOSION); SEND_OUT(player, 1); SEND_OUT(opponent, 1); }

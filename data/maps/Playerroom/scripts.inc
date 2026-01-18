@@ -283,6 +283,18 @@ metdad::
 	return
 
 
+Hoopa_screenshot::
+# 152 "data/maps/Playerroom/scripts.pory"
+	lock
+# 153 "data/maps/Playerroom/scripts.pory"
+	setvar VAR_0x8000, 0
+# 154 "data/maps/Playerroom/scripts.pory"
+	callnative OpenScreenshotsFromScript
+# 155 "data/maps/Playerroom/scripts.pory"
+	release
+	return
+
+
 # 24 "data/maps/Playerroom/scripts.pory"
 mira_Movement_0:
 # 24 "data/maps/Playerroom/scripts.pory"

@@ -85,8 +85,8 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         //! DESC: trainer front & back pic index
         //! (see include/constants/trainers.h)
         .trainerPics = {
-            [MALE] =   { TRAINER_PIC_BRENDAN, TRAINER_PIC_BACK_BRENDAN, },
-            [FEMALE] = { TRAINER_PIC_MAY, TRAINER_PIC_BACK_MAY, },
+            [MALE] =   { TRAINER_PIC_FRONT_BRENDAN, TRAINER_PIC_BACK_BRENDAN, },
+            [FEMALE] = { TRAINER_PIC_FRONT_MAY, TRAINER_PIC_BACK_MAY, },
         },
 
         //! DESC: overworld avatars, consisting of: walking, cycling,
@@ -146,8 +146,8 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         .desc = sText_OutfitDesc_UnusualRed,
         #endif
         .trainerPics = {
-            [MALE]   = {TRAINER_PIC_RS_BRENDAN, TRAINER_PIC_BACK_RUBY_SAPPHIRE_BRENDAN},
-            [FEMALE] = {TRAINER_PIC_RS_MAY, TRAINER_PIC_BACK_RUBY_SAPPHIRE_MAY}
+            [MALE]   = {TRAINER_PIC_FRONT_RS_BRENDAN, TRAINER_PIC_BACK_RUBY_SAPPHIRE_BRENDAN},
+            [FEMALE] = {TRAINER_PIC_FRONT_RS_MAY, TRAINER_PIC_BACK_RUBY_SAPPHIRE_MAY}
         },
         .avatarGfxIds = {
            [MALE] = {
@@ -196,8 +196,8 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         .desc = sText_OutfitDesc_Spark,
         #endif
         .trainerPics = {
-            [MALE]   = {TRAINER_PIC_S_EQUINO_GRUNT_M, TRAINER_PIC_BACK_RUBY_SAPPHIRE_BRENDAN},
-            [FEMALE] = {TRAINER_PIC_RS_MAY, TRAINER_PIC_BACK_RUBY_SAPPHIRE_MAY}
+            [MALE]   = {TRAINER_PIC_FRONT_S_EQUINO_GRUNT_M, TRAINER_PIC_BACK_RUBY_SAPPHIRE_BRENDAN},
+            [FEMALE] = {TRAINER_PIC_FRONT_RS_MAY, TRAINER_PIC_BACK_RUBY_SAPPHIRE_MAY}
         },
         .avatarGfxIds = {
            [MALE] = {
@@ -246,8 +246,8 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         .desc = sText_OutfitDesc_Spark,
         #endif
         .trainerPics = {
-            [MALE]   = {TRAINER_PIC_KAEL, TRAINER_PIC_BACK_RUBY_SAPPHIRE_BRENDAN},
-            [FEMALE] = {TRAINER_PIC_KAEL, TRAINER_PIC_BACK_RUBY_SAPPHIRE_MAY}
+            [MALE]   = {TRAINER_PIC_FRONT_KAEL, TRAINER_PIC_BACK_RUBY_SAPPHIRE_BRENDAN},
+            [FEMALE] = {TRAINER_PIC_FRONT_KAEL, TRAINER_PIC_BACK_RUBY_SAPPHIRE_MAY}
         },
         .avatarGfxIds = {
            [MALE] = {

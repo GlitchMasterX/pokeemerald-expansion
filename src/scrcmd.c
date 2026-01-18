@@ -2321,7 +2321,7 @@ bool8 ScrCmd_setmonmove(struct ScriptContext *ctx)
     return FALSE;
 }
 
-static u16 GetKeyItemForFieldMove(u16 move)
+static u16 GetKeyItemForFieldMove(enum Move move)
 {
     switch (move)
     {
@@ -2356,9 +2356,9 @@ static u16 GetKeyItemForFieldMove(u16 move)
 bool8 ScrCmd_checkfieldmove(struct ScriptContext *ctx)
 {
     enum FieldMove fieldMove = ScriptReadByte(ctx);
-    bool32 doUnlockedCheck = ScriptReadByte(ctx);
-    enum Move move;
+    enum Move move = FieldMove_GetMoveId(fieldMove);
     u16 keyItem = GetKeyItemForFieldMove(move);
+
     u32 i;
 
     // 1. Check for a party Pokémon that can learn the move.

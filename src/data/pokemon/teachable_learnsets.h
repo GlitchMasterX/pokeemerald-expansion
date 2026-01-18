@@ -332,7 +332,6 @@ static const u16 sCharmeleonTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_UNAVAILABLE,
 };
-
 static const u16 sCharizardTeachableLearnset[] = {
     MOVE_FOCUS_PUNCH,
     MOVE_DRAGON_CLAW,
@@ -489,7 +488,6 @@ static const u16 sWartortleTeachableLearnset[] = {
     MOVE_SWAGGER,
     MOVE_UNAVAILABLE,
 };
-
 static const u16 sBlastoiseTeachableLearnset[] = {
     MOVE_FOCUS_PUNCH,
     MOVE_WATER_PULSE,
@@ -6020,6 +6018,7 @@ static const u16 sExeggcuteTeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_UNAVAILABLE,
 };
+
 static const u16 sExeggutorTeachableLearnset[] = {
     MOVE_CALM_MIND,
     MOVE_TOXIC,
@@ -10006,6 +10005,7 @@ static const u16 sQuilavaTeachableLearnset[] = {
     MOVE_SWIFT,
     MOVE_UNAVAILABLE,
 };
+
 static const u16 sTyphlosionTeachableLearnset[] = {
     MOVE_FOCUS_PUNCH,
     MOVE_ROAR,

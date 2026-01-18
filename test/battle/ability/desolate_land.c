@@ -10,7 +10,7 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Desolate Land blocks damaging Water-type moves")
 {
     GIVEN {
-        PLAYER(SPECIES_GROUDON) {Item(ITEM_RED_ORB);}
+        PLAYER(SPECIES_GROUDON) { Item(ITEM_RED_ORB); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(opponent, MOVE_WATER_GUN); }
@@ -35,17 +35,10 @@ DOUBLE_BATTLE_TEST("Desolate Land blocks damaging Water-type moves and prints th
         ASSUME(!IsBattleMoveStatus(MOVE_SURF));
         ASSUME(GetMoveType(MOVE_SURF) == TYPE_WATER);
         ASSUME(GetMoveTarget(MOVE_SURF) == TARGET_FOES_AND_ALLY);
-<<<<<<< HEAD
-        PLAYER(SPECIES_GROUDON) {Item(ITEM_RED_ORB); {Speed(5);}}
-        PLAYER(SPECIES_WOBBUFFET) {Speed(5);}
-        OPPONENT(SPECIES_WOBBUFFET) {Speed(10);}
-        OPPONENT(SPECIES_WOBBUFFET) {Speed(8);}
-=======
         PLAYER(SPECIES_GROUDON) { Item(ITEM_RED_ORB); Speed(5); }
         PLAYER(SPECIES_WOBBUFFET) { Speed(5); }
         OPPONENT(SPECIES_WOBBUFFET) { Speed(10); }
         OPPONENT(SPECIES_WOBBUFFET) { Speed(8); }
->>>>>>> upcoming
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_SURF); }
     } SCENE {
@@ -63,8 +56,8 @@ DOUBLE_BATTLE_TEST("Desolate Land blocks damaging Water-type moves and prints th
 SINGLE_BATTLE_TEST("Desolate Land does not block a move if Pokémon is asleep and uses a Water-type move") // Sleep/confusion/paralysis all happen before the check for primal weather
 {
     GIVEN {
-        PLAYER(SPECIES_GROUDON) {Item(ITEM_RED_ORB);}
-        OPPONENT(SPECIES_WOBBUFFET) {Status1(STATUS1_SLEEP);}
+        PLAYER(SPECIES_GROUDON) { Item(ITEM_RED_ORB); }
+        OPPONENT(SPECIES_WOBBUFFET) { Status1(STATUS1_SLEEP); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_WATER_GUN); }
     } SCENE {
@@ -106,19 +99,6 @@ SINGLE_BATTLE_TEST("Desolate Land is removed immediately if user faints")
     }
 }
 
-<<<<<<< HEAD
-TO_DO_BATTLE_TEST("Desolate Land makes Sunny Day fail")
-TO_DO_BATTLE_TEST("Desolate Land makes Rain Dance fail")
-TO_DO_BATTLE_TEST("Desolate Land makes Sandstorm fail")
-TO_DO_BATTLE_TEST("Desolate Land makes Hail fail")
-TO_DO_BATTLE_TEST("Desolate Land makes Snowscape fail") // Extrapolation
-TO_DO_BATTLE_TEST("Desolate Land makes Drought fail to activate")
-TO_DO_BATTLE_TEST("Desolate Land makes Drizzle fail to activate")
-TO_DO_BATTLE_TEST("Desolate Land makes Sand Stream fail to activate")
-TO_DO_BATTLE_TEST("Desolate Land makes Snow Warning fail to activate")
-TO_DO_BATTLE_TEST("Desolate Land can be replaced by Delta Stream")
-TO_DO_BATTLE_TEST("Desolate Land can be replaced by Primordial Sea")
-=======
 SINGLE_BATTLE_TEST("Desolate Land blocks weather-setting moves")
 {
     enum Move move;
@@ -198,4 +178,3 @@ SINGLE_BATTLE_TEST("Desolate Land can be replaced by Primordial Sea")
         EXPECT(gBattleWeather & B_WEATHER_RAIN_PRIMAL);
     }
 }
->>>>>>> upcoming

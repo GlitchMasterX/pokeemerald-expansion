@@ -2149,7 +2149,6 @@ static enum MoveCanceler CancelerAsleepOrFrozen(struct BattleContext *ctx)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WOKE_UP;
                 effect = MOVE_STEP_BREAK;
                 BattleScriptCall(BattleScript_MoveUsedWokeUp);
-                return MOVE_STEP_REMOVES_STATUS;
             }
         }
         RequestNonVolatileChangee(ctx->battlerAtk);
@@ -11027,8 +11026,9 @@ bool32 IsBattlerAffectedByHazards(u32 battler, enum HoldEffect holdEffect, bool3
 
 bool32 IsSheerForceAffected(enum Move move, enum Ability ability)
 {
-    return GetBattlerAbility(battler) == ABILITY_SHEER_FORCE && MoveIsAffectedBySheerForce(move);
+    return ability == ABILITY_SHEER_FORCE && MoveIsAffectedBySheerForce(move);
 }
+
 
 // This function is the body of "jumpifstat", but can be used dynamically in a function
 bool32 CompareStat(u32 battler, enum Stat statId, u8 cmpTo, u8 cmpKind, enum Ability ability)

@@ -374,8 +374,11 @@ static bool32 ShouldShowRename(void);
 static void ShowCancelOrRenamePrompt(void);
 static void CB2_ReturnToSummaryScreenFromNamingScreen(void);
 static void CB2_PssChangePokemonNickname(void);
-
 // const rom data
+static const u8 gText_SkillPageIvs[] = _("IVs");
+static const u8 gText_SkillPageEvs[] = _("EVs");
+static const u8 gText_SkillPageStats[] =_("STATS");
+static const u8 gText_Rename[] = _("RENAME");
 
 static const u8 sMemoNatureTextColor[]                      = _("{COLOR DYNAMIC_COLOR2}{SHADOW DYNAMIC_COLOR3}");
 static const u8 sMemoMiscTextColor[]                        = _("{COLOR WHITE}{SHADOW DARK_GRAY}");
