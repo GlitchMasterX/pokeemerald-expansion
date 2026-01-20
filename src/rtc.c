@@ -488,8 +488,9 @@ enum Month GetMonth(void)
 {
     if (sUseManualMonth)
         return sManualMonth;
-
+    
     struct SiiRtcInfo *rtc = FakeRtc_GetCurrentTime();
+    UpdateSeasonOncePerMinute(); // Update season based on month
     return rtc->month;
 }
 
@@ -511,10 +512,10 @@ void UpdateSeasonOncePerMinute(void)
     case 6: case 7: case 8:
         VarSet(VAR_CURRENT_SEASON, 1);
         break;
-    case 9: case 10: case 11:
+    case 9: case 10: 
         VarSet(VAR_CURRENT_SEASON, 2);
         break;
-    case 12: case 1: case 2:
+    case 12: case 1: case 2: case 11:
         VarSet(VAR_CURRENT_SEASON, 3);
         break;
     default:

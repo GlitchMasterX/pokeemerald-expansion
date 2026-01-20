@@ -118,6 +118,14 @@ static const u32 sHoopaWarScreenshotsTiles[] = INCBIN_U32("graphics/ui_screensho
 static const u32 sHoopaWarScreenshotsTilemap[] = INCBIN_U32("graphics/ui_screenshots/hoopa_war_scene/tilemap.bin.smolTM");
 static const u16 sHoopaWarScreenshotsPalette[] = INCBIN_U16("graphics/ui_screenshots/hoopa_war_scene/pal.gbapal");
 
+static const u32 sVeylorBowingScreenshotsTiles[] = INCBIN_U32("graphics/ui_screenshots/veylor_bowing/tiles1.8bpp.smol");
+static const u32 VeylorBowingScreenshotsTilemap[] = INCBIN_U32("graphics/ui_screenshots/veylor_bowing/tilemap.bin.smolTM");
+static const u16 sVeylorBowingScreenshotsPalette[] = INCBIN_U16("graphics/ui_screenshots/veylor_bowing/pal.gbapal");
+
+static const u32 sHoopaTormentScreenshotsTiles[] = INCBIN_U32("graphics/ui_screenshots/hoopa_tormented/tiles1.8bpp.smol");
+static const u32 sHoopaTormentScreenshotsTilemap[] = INCBIN_U32("graphics/ui_screenshots/hoopa_tormented/tilemap.bin.smolTM");
+static const u16 sHoopaTormentScreenshotsPalette[] = INCBIN_U16("graphics/ui_screenshots/hoopa_tormented/pal.gbapal");
+
 struct Screenshot {
 	const u32 *screenshotTiles;
 	const u32 *screenshotTilemap;
@@ -130,6 +138,17 @@ static const struct Screenshot sScreenshotData[] = {
 		.screenshotTilemap = sHoopaWarScreenshotsTilemap,
 		.screenshotPalette = sHoopaWarScreenshotsPalette,
 	},
+
+    [SCREENSHOT_VEYLOR_BOWING] = {
+        .screenshotTiles = sVeylorBowingScreenshotsTiles,
+        .screenshotTilemap = VeylorBowingScreenshotsTilemap,
+        .screenshotPalette = sVeylorBowingScreenshotsPalette,
+    },
+    [SCREENSHOT_HOOPA_TORMENT] = {
+        .screenshotTiles = sHoopaTormentScreenshotsTiles,
+        .screenshotTilemap = sHoopaTormentScreenshotsTilemap,
+        .screenshotPalette = sHoopaTormentScreenshotsPalette,
+    },
 };
 
 
@@ -383,9 +402,9 @@ static void Task_ScreenshotsTurnOff(u8 taskId)
 /* This is the meat of the UI. This is where you wait for player inputs and can branch to other tasks accordingly */
 static void Task_ScreenshotsMain(u8 taskId)
 {
-    if (JOY_NEW(B_BUTTON))
+    if (JOY_NEW(B_BUTTON)||JOY_NEW(A_BUTTON))
     {
-        PlaySE(SE_PC_OFF);
+        PlaySE(SE_SELECT);
         BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
         gTasks[taskId].func = Task_ScreenshotsTurnOff;
     }

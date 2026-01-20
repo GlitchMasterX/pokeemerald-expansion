@@ -103,7 +103,7 @@
 #define OBJ_EVENT_GFX_VIGOROTH_FACING_AWAY        96
 #define OBJ_EVENT_GFX_BIRCHS_BAG                  97
 #define OBJ_EVENT_GFX_ZIGZAGOON_1                 98
-#define OBJ_EVENT_GFX_ARTIST                      99
+#define OBJ_EVENT_GFX_VEYLOR                      99
 #define OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL       100
 #define OBJ_EVENT_GFX_RIVAL_BRENDAN_MACH_BIKE    101
 #define OBJ_EVENT_GFX_RIVAL_BRENDAN_ACRO_BIKE    102
@@ -143,7 +143,7 @@
 #define OBJ_EVENT_GFX_IRIS               136
 #define OBJ_EVENT_GFX_BRENDAN_FISHING            137
 #define OBJ_EVENT_GFX_MAY_FISHING                138
-#define OBJ_EVENT_GFX_HOT_SPRINGS_OLD_WOMAN      139
+#define OBJ_EVENT_GFX_MYSTERY_MAN      139
 #define OBJ_EVENT_GFX_SS_TIDAL                   140
 #define OBJ_EVENT_GFX_SUBMARINE_SHADOW           141
 #define OBJ_EVENT_GFX_PICHU_DOLL                 142
@@ -414,7 +414,6 @@
 #define LOCALID_TRUCK_BOX_TOP 1
 #define LOCALID_TRUCK_BOX_BOTTOM_L 2
 #define LOCALID_TRUCK_BOX_BOTTOM_R 3
-#define LOCALID_OLDALE_MART_CLERK 1
 #define LOCALID_LAVARIDGE_MART_CLERK 1
 #define LOCALID_FALLARBOR_MART_CLERK 1
 #define LOCALID_VERDANTURF_MART_CLERK 1
@@ -551,6 +550,7 @@
 #define OBJ_EVENT_PAL_TAG_VOSS                    0x1196
 #define OBJ_EVENT_PAL_TAG_DISTORTION_PORTAL      0x1197
 #define OBJ_EVENT_PAL_TAG_NIHIL                   0x1198
+#define OBJ_EVENT_PAL_TAG_VEYLOR                 0x1199
 
 #endif //OW_FOLLOWERS_POKEBALLS
 // Used as a placeholder follower graphic

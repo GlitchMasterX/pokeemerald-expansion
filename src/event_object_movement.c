@@ -566,6 +566,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Voss,                OBJ_EVENT_PAL_TAG_VOSS},
     {gObjectEventPal_Distortion,                OBJ_EVENT_PAL_TAG_DISTORTION_PORTAL},
     {gObjectEventPal_Nihil,                OBJ_EVENT_PAL_TAG_NIHIL},
+    {gObjectEventPal_Veylor,                OBJ_EVENT_PAL_TAG_VEYLOR},
 #if OW_FOLLOWERS_POKEBALLS
     {gObjectEventPal_MasterBall,            OBJ_EVENT_PAL_TAG_BALL_MASTER},
     {gObjectEventPal_UltraBall,             OBJ_EVENT_PAL_TAG_BALL_ULTRA},
@@ -11342,6 +11343,12 @@ bool8 MovementAction_EmoteDoubleExclamationMark_Step0(struct ObjectEvent *object
 bool8 MovementAction_SpyVanish_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     StartSpriteAnimInDirection(objectEvent, sprite, DIR_SOUTH, ANIM_SPY_VANISH);
+    return FALSE;
+}
+
+bool8 MovementAction_Veylor_Special_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    StartSpriteAnimInDirection(objectEvent, sprite, DIR_SOUTH, ANIM_VEYLOR_SPECIAL);
     return FALSE;
 }
 

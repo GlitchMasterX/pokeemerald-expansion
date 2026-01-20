@@ -1,2 +1,473 @@
 mapscripts Dreamland_MapScripts{
+    MAP_SCRIPT_ON_FRAME_TABLE[
+        VAR_FLASHBACKS, 0: IntroText
+    ]
+}
+
+script IntroText{
+    lock
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}REMINDER!\p{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}This ROM hack is a work in progress.\pYou are playing Beta 2.0!\pExpect rough edges and unfinished paths.\pThank you for playing! It means a lot to me!"))
+    waitmessage
+    closemessage
+    delay(20)
+    msgbox(format("This world remembers those who've walked it before.\pHave you experienced this story already?"),MSGBOX_YESNO)
+    if(var(VAR_RESULT) == TRUE){
+        msgbox(format("Then you know what awaits in the ashes of the past.\pWould you like to relive the war of 17 years ago…?"),MSGBOX_YESNO)
+        if(var(VAR_RESULT) == TRUE){
+            msgbox(format("Very well.\pPrepare yourself to journey back in time."))
+            closemessage
+        }
+        else {
+            goto(cancelflashback)  
+        }    
+    } 
+    else {
+        msgbox(format("Welcome, Trainer.\pI hope you enjoy experiencing this story."))
+        waitmessage
+        closemessage
+    }
+    msgbox(format("Before the first memory unfolds, you should know this:\pThis world is not kind. You will witness war, loss, and violence.\pThese moments are not shown for shock, but because this is how this world was forged.\pIf such themes trouble you, turning back now is understandable.\pIf you wish to proceed, know that you have my heartfelt thanks for playing."))
+    closemessage
+    msgbox(format("The world will not remain still while you grow.\pTrainers, leaders, and enemies will learn, adapt, and respond to your actions.\pThe challenge will rise naturally as you progress.\pIf you walk this path unprepared……{PAUSE_UNTIL_PRESS} Well…… faith may help you in the late game."))
+    closemessage
+    msgbox(format("To preserve balance, power is not limitless.\pThere is a hard level cap, not to restrain you, but to ensure every victory is earned, not grinded into meaninglessness.\pUse strategy, type advantages, and team synergy to overcome stronger foes.\pI hope you find this journey rewarding."))
+    closemessage
+    msgbox(format("If you're still here…{PAUSE_UNTIL_PRESS} Then let the past be remembered."))
+    closemessage
+    playbgm(MUS_DP_TITLE,FALSE)
+    delay(10)
+    waitbuttonpress
+    msgbox(format("Before the peace...\pBefore the heroes...\pBefore the lies..."))
+    closemessage
+    delay(10)
+    waitbuttonpress
+    msgbox(format("\p...there was only {COLOR RED}{SHADOW LIGHT_GRAY}fire..."))
+    setvar(VAR_FLASHBACKS, 1)
+    warp_continue_script(MAP_OLDALE_TOWN_HOUSE1,7,16,Cityruin)
+} 
+
+script cancelflashback{
+    msgbox(format("Goodluck, Trainer.\pI hope you enjoy experiencing this story again."))
+    closemessage
+    setvar(VAR_FLASHBACKS, 1)
+    warp(MAP_PLAYERROOM,2,5)
+}
+
+script Cityruin {
+    lock
+    applymovement(0xFF,moves(set_invisible))
+    special(SpawnCameraObject)
+    fadescreen(FADE_FROM_BLACK)
+    speakername("Officer")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Okay...Let's do this."))
+    closemessage
+    createvobject(OBJ_EVENT_GFX_FIRE_F,13,15,11,3,DIR_NORTH)
+    playse(SE_EXIT)
+    applymovement(4,moves(walk_faster_up*2 set_invisible))
+    waitmovement(0)
+    applymovement(0x7F,moves(walk_slow_right*16))
+    waitmovement(0)
+    fadescreen(FADE_TO_BLACK)
+    applymovement(0x7F,moves(walk_fast_up*10))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}{FONT_NARROW}VELANTHIS{PLAY_SE}{SE_SELECT}{WAIT_SE} REGION."))
+    closemessage
+    msgbox(format("{FONT_NARROW}17{PLAY_SE}{SE_SELECT}{WAIT_SE} YEARS{PLAY_SE}{SE_SELECT}{WAIT_SE} AGO...{PLAY_SE}{SE_SELECT}{WAIT_SE}\nDAY{PLAY_SE}{SE_SELECT}{WAIT_SE} 237{PLAY_SE}{SE_SELECT}{WAIT_SE} OF{PLAY_SE}{SE_SELECT}{WAIT_SE} THE{PLAY_SE}{SE_SELECT}{WAIT_SE} WAR{PLAY_SE}{SE_SELECT}{WAIT_SE}"))
+    closemessage
+    waitmovementall
+    fadescreen(FADE_FROM_BLACK)
+    applymovement(0x7F,moves(walk_slow_left*12))
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovement(1,moves(jump_in_place_right*2))
+    speakername("Fire Fighter")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}BACKUP NEEDED! I REPEAT.\pWE NEED BACKUP HERE!"))
+    closemessage
+    playse(SE_PIN)
+    applymovement(1,moves(emote_exclamation_mark face_up))
+    waitmovement(0)
+    speakername("Fire Fighter")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Fuck!!{PLAY_SE}{SE_M_MEGA_KICK}"))
+    closemessage
+    waitmessage
+    delay(20)
+    applymovement(8,moves(levitate walk_fast_down*6))
+    playse(SE_PIN)
+    applymovement(2,moves(emote_exclamation_mark face_left))
+    playse(SE_M_MEGA_KICK2)
+    applymovement(8,moves(jump_in_place_down enable_jump_landing_ground_effect))
+    waitmovement(0)
+    fadescreen(FADE_TO_BLACK)
+    removeobject(1)
+    delay(30)
+    playse(SE_THUNDER)
+    setmetatile(6,5,0x1DC,0)
+    setmetatile(7,5,0x1DD,0)
+    special(DrawWholeMapView)
+    fadescreen(FADE_FROM_BLACK)
+    applymovement(8,moves(face_right))
+    playmoncry(SPECIES_DIALGA, CRY_MODE_HIGH_PITCH)
+    setvar(VAR_0x8004,4)
+	setvar(VAR_0x8005,4)
+	setvar(VAR_0x8006,4)
+	setvar(VAR_0x8007,4)	
+	special(ShakeCamera)
+    waitmoncry
+    playse(SE_PIN)
+    applymovement(2,moves(emote_exclamation_mark))
+    waitmovement(0)
+    playse(SE_M_BRICK_BREAK)
+    applymovement(2,moves(slide_left*2 slide_right*2 face_left))
+    waitmovement(0)
+    applymovement(8,moves(emote_upset))
+    playmoncry(SPECIES_DIALGA, CRY_MODE_HIGH_PITCH)
+    setvar(VAR_0x8004,4)
+	setvar(VAR_0x8005,4)
+	setvar(VAR_0x8006,4)
+	setvar(VAR_0x8007,4)	
+	special(ShakeCamera)
+    waitmoncry
+    delay(30)
+    playse(SE_M_TAKE_DOWN)
+    applymovement(8,moves(slide_right*2 slide_left*2 face_right))
+    waitmovement(0)
+    removeobject(2)
+    setmetatile(8,5,0x1DC,0)
+    setmetatile(9,5,0x1DD,0)
+    special(DrawWholeMapView)
+    delay(30)
+    playmoncry(SPECIES_DIALGA, CRY_MODE_HIGH_PITCH)
+    setvar(VAR_0x8004,4)
+	setvar(VAR_0x8005,4)
+	setvar(VAR_0x8006,4)
+	setvar(VAR_0x8007,4)	
+	special(ShakeCamera)
+    waitmoncry
+    fadescreen(FADE_TO_BLACK)
+    msgbox(format("{FONT_NARROW}{PLAY_SE}{SE_SELECT}{WAIT_SE}ESTIMATED {PLAY_SE}{SE_SELECT}{WAIT_SE}CASUALTIES:{PLAY_SE}{SE_SELECT}{WAIT_SE}{COLOR RED}{SHADOW LIGHT_GRAY}89% {PLAY_SE}{SE_SELECT}{WAIT_SE}OF {PLAY_SE}{SE_SELECT}{WAIT_SE}POPULATION...\p{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}ESTIMATED{PLAY_SE}{SE_SELECT}{WAIT_SE} SURVIVORS: {COLOR BLUE}{SHADOW LIGHT_GRAY}{PLAY_SE}{SE_SELECT}{WAIT_SE}412{PLAY_SE}{SE_SELECT}{WAIT_SE} SOULS."))
+    closemessage
+    msgbox(format("{FONT_NARROW}THE {PLAY_SE}{SE_SELECT}{WAIT_SE}WORLD {PLAY_SE}{SE_SELECT}{WAIT_SE} WAS{PLAY_SE}{SE_SELECT}{WAIT_SE} ENDING..."))
+    closemessage
+    setflag(FLAG_FLASHBACK)
+    warp_continue_script(MAP_OLDALE_TOWN_HOUSE2,17,25,Cityruin_1)
+}
+
+script  Cityruin_1 {
+    lock
+    fadescreen(FADE_FROM_BLACK)
+    fadenewbgm(MUS_PMD_DARK_PATH)
+    applymovement(0xFF,moves(set_invisible))
+    waitmovement(0)
+    special(SpawnCameraObject)
+    msgbox(format("Entire cities were wiped out as if nothing had lived there."))
+    closemessage
+    applymovement(0x7F,moves(walk_slow_right*12 walk_slow_up*12))
+    waitmovement(0)
+    fadescreen(FADE_TO_BLACK)
+    msgbox(format("The reason...you ask?..."))
+    closemessage
+    applymovement(0x7F,moves(walk_faster_left*16 walk_faster_down*25))
+    waitmovement(0)
+    removeobject(6)
+    fadescreen(FADE_FROM_BLACK)
+    playse(SE_PIN)
+    applymovement(3,moves(emote_upset jump_in_place_down*2))
+    playmoncry(SPECIES_ARTICUNO, CRY_MODE_HIGH_PITCH)
+    waitmoncry
+    delay(20)
+    playse(SE_PIN)
+    applymovement(4,moves(emote_upset jump_in_place_right*2))
+    playmoncry(SPECIES_ZAPDOS, CRY_MODE_HIGH_PITCH)
+    waitmoncry
+    delay(20)
+    playse(SE_PIN)
+    applymovement(5,moves(emote_upset jump_in_place_left*2))
+    playmoncry(SPECIES_MOLTRES, CRY_MODE_HIGH_PITCH)
+    waitmoncry
+    delay(20)    
+    applymovement(3,moves(slide_down*2))
+    applymovement(4,moves(slide_right*2))
+    applymovement(5,moves(slide_left*2))
+    playse(SE_INTRO_BLAST)
+    fadescreen(FADE_TO_WHITE)
+    waitse
+    delay(20)
+    addobject(6)
+    fadescreen(FADE_FROM_WHITE)
+    applymovement(3,moves(slide_up*2 face_down))
+    applymovement(5,moves(slide_right*2 face_left))
+    applymovement(4,moves(slide_left*2 face_right))
+    waitmovementall
+    delay(30)
+    turnobject(6,DIR_NORTH)
+    playmoncry(SPECIES_LUGIA, CRY_MODE_HIGH_PITCH)
+    setvar(VAR_0x8004,4)
+	setvar(VAR_0x8005,4)
+	setvar(VAR_0x8006,4)
+	setvar(VAR_0x8007,4)	
+	special(ShakeCamera)
+    waitmoncry
+    delay(30)
+    playse(SE_PIN)
+    applymovement(3,moves(emote_exclamation_mark))
+    applymovement(5,moves(emote_exclamation_mark))
+    applymovement(4,moves(emote_exclamation_mark))
+    waitmovementall
+    delay(10)
+    fadescreen(FADE_TO_BLACK)
+    playse(SE_THUNDER)
+    setflag(FLAG_FLASHBACK)
+    warp_continue_script(MAP_OLDALE_TOWN_HOUSE2,39,14,Cityruin_1_5)
+    
+}
+
+script  Cityruin_1_5 {
+    lock
+    applymovement(0xFF,moves(set_invisible))
+    waitmovement(0)
+    fadescreen(FADE_FROM_BLACK)
+    applymovement(2,moves(jump_in_place_up*2))
+    playmoncry(SPECIES_GROUDON, CRY_MODE_HIGH_PITCH)
+    setvar(VAR_0x8004,4)
+	setvar(VAR_0x8005,4)
+	setvar(VAR_0x8006,4)
+	setvar(VAR_0x8007,4)	
+	special(ShakeCamera)
+    waitmoncry
+    delay(30)
+    playse(SE_M_BRICK_BREAK)
+    applymovement(2,moves(slide_up*3 slide_down*3 face_up))
+    waitmovement(0)
+    delay(20)
+    applymovement(1,moves(emote_upset  jump_in_place_down*2))
+    playmoncry(SPECIES_KYOGRE, CRY_MODE_HIGH_PITCH)
+    setvar(VAR_0x8004,4)
+	setvar(VAR_0x8005,4)
+	setvar(VAR_0x8006,4)
+	setvar(VAR_0x8007,4)	
+	special(ShakeCamera)
+    waitmoncry
+    delay(30)
+    playse(SE_M_VICEGRIP)
+    applymovement(1,moves(slide_down*3 slide_up*3 face_down))
+    waitmovement(0)
+    delay(20)
+    fadedefaultbgm
+    fadescreen(FADE_TO_BLACK)
+    msgbox(format("Where was Rayquaza during all this...?"))
+    closemessage
+    setflag(FLAG_FLASHBACK_2)
+    clearflag(FLAG_FLASHBACK)
+    warp_continue_script(MAP_OLDALE_TOWN_HOUSE2,62,17,Cityruin_2)
+    }
+
+script Cityruin_2 {
+    lock
+    applymovement(0xFF,moves(set_invisible))
+    waitmovement(0)
+    createvobject(OBJ_EVENT_GFX_SPECIES(DEOXYS_DEFENSE),30,63,16,3,DIR_SOUTH)
+    fadescreen(FADE_FROM_BLACK)
+    delay(20)
+    playse(SE_PIN)
+    applymovement(7,moves(emote_upset jump_in_place_down*2))
+    playmoncry(SPECIES_DEOXYS_ATTACK, CRY_MODE_HIGH_PITCH)
+    waitmoncry
+    playmoncry(SPECIES_DEOXYS_DEFENSE, CRY_MODE_HIGH_PITCH)
+    waitmoncry
+    playse(SE_M_BITE)
+    applymovement(7,moves(slide_down*2 slide_up*2 face_down))
+    waitmovement(0)
+    applymovement(8,moves(emote_upset))
+    delay(40)
+    playmoncry(SPECIES_RAYQUAZA, CRY_MODE_HIGH_PITCH)
+    setvar(VAR_0x8004,4)
+	setvar(VAR_0x8005,4)
+	setvar(VAR_0x8006,4)
+	setvar(VAR_0x8007,4)	
+	special(ShakeCamera)
+    waitmoncry
+    delay(30)
+    fadescreen(FADE_TO_BLACK)
+    msgbox(format("Wondering why this happened...?\pAll by the will of an organization that sought to reshape the world...\p{FONT_NARROW}{COLOR BLUE}{SHADOW LIGHT_GRAY}{PLAY_SE}{SE_SELECT}{WAIT_SE}NEXUS{PLAY_SE}{SE_SELECT}{WAIT_SE} ORDER. "))
+    closemessage
+    msgbox(format("At the heart of the chaos...\pA prisoner...\pA weapon.\pA being of unimaginable power enslaved...\p{COLOR RED}{SHADOW LIGHT_GRAY}HOOPA..."))
+    closemessage
+    setflag(FLAG_FLASHBACK)
+    warp_continue_script(MAP_OLDALE_TOWN_POKEMON_CENTER_1F,42,17,Cityruin_3)
+}
+
+
+script  Cityruin_3 {
+    lock
+    applymovement(6,moves(set_invisible))
+    applymovement(0xFF,moves(set_invisible))
+    waitmovement(0)
+    fadescreen(FADE_FROM_BLACK)
+    special(SpawnCameraObject)
+    msgbox(format("And it had no choice but to obey..."))
+    closemessage
+    playse(SE_PIN)
+    applymovement(1,moves(emote_upset jump_in_place_down*2))
+    playmoncry(SPECIES_HOOPA_UNBOUND, CRY_MODE_HIGH_PITCH)
+    setvar(VAR_0x8004,4)
+    setvar(VAR_0x8005,4)
+    setvar(VAR_0x8006,4)
+    setvar(VAR_0x8007,4)
+    special(ShakeCamera)
+    waitmoncry
+    delay(20)
+    fadescreen(FADE_TO_BLACK)
+    msgbox(format("At the heart of Nexus Order stood a man consumed by obsession."))
+    closemessage
+    fadenewbgm(MUS_PMD_DARK_CRATER)
+    applymovement(6,moves(set_visible))
+    waitmovement(0)
+    fadescreen(FADE_FROM_BLACK)
+    applymovement(0x7F,moves(walk_slow_down*3))
+    waitmovement(0)
+    fadescreen(FADE_TO_BLACK)
+    msgbox(format("His name was...{PAUSE_UNTIL_PRESS}{COLOR BLUE}{SHADOW LIGHT_GRAY}Veylor."))
+    closemessage
+    msgbox(format("And in his hands, he held a relic of ancient power...\p{COLOR RED}{SHADOW LIGHT_GRAY}THE PRISON BOTTLE."))
+    closemessage
+    fadescreen(FADE_FROM_BLACK)
+    delay(20)
+    playse(SE_CLICK)
+    applymovement(6,moves(veylor_special))
+    waitmovement(0)
+    fadescreen(FADE_TO_BLACK)
+    msgbox(format("An artifact capable of binding even gods...\pThrough it, Hoopa was imprisoned...\pConfined to its weakest form...\pMentally tortured...until it obeyed through fear..."))
+    closemessage
+    setvar(VAR_0x8000,2)
+    callnative(OpenScreenshotsFromScript)
+    delay(30)
+    waitbuttonpress
+    fadescreen(FADE_TO_BLACK)
+    msgbox(format("Veylor believed he was creating perfection.\pA world where his Master would rule.\pA world where the strongest would reshape reality itself."))
+    closemessage
+    msgbox(format("For Veylor served something greater than himself.\pA being whose strength transcended comprehension.\pA man who saw the world... differently."))
+    closemessage
+    msgbox(format("Veylor called him master.\pCalled him God...\pBut to the world, his identity was unknown...\pHe was simply...{PAUSE_UNTIL_PRESS} {COLOR BLUE}{SHADOW LIGHT_GRAY}VEYLOR'S GOD.")) 
+    closemessage
+    setvar(VAR_0x8000,1)
+    callnative(OpenScreenshotsFromScript)
+    delay(20)
+    fadescreen(FADE_TO_BLACK)
+    warp_continue_script(MAP_OLDALE_TOWN_MART,8,4,Cityruin_4)
+}
+
+script Cityruin_4 {
+    lock
+    setflag(FLAG_FLASHBACK_MUSIC)
+    msgbox(format("But all was not lost.\pBecause of a single man.\pA man who believed in justice.\pIn hope.\pIn the strength of conviction."))
+    closemessage
+    waitmessage
+    fadenewbgm(MUS_HG_E_DENDOURIRI)
+    applymovement(0xFF,moves(set_invisible))
+    waitmovement(0)
+    fadescreen(FADE_FROM_BLACK)
+    special(SpawnCameraObject)
+    msgbox(format("A man who refused to let the world die.\pHis name was {COLOR BLUE}{SHADOW LIGHT_GRAY}Aurther."))
+    fadescreen(FADE_TO_BLACK)
+    closemessage
+    msgbox(format("He forged an alliance of Warriors bound by a single purpose:\pTo save what remained."))
+    closemessage
+    msgbox(format("The alliance was named {COLOR BLUE}{SHADOW LIGHT_GRAY}ORIGIN.\p{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}And together, they turned the tide of war."))
+    closemessage
+    clearflag(FLAG_FLASHBACK)
+    warp_continue_script(MAP_OLDALE_TOWN_HOUSE2,13,32,Cityruin_5)
+    }
+
+script Cityruin_5 {
+    lock
+    special(SpawnCameraObject)
+    applymovement(0x7F,moves(walk_fast_down*3))
+    waitmovement(0)
+    applymovement(0xFF,moves(set_invisible))
+    waitmovement(0)
+    turnobject(6,DIR_NORTH)
+    fadescreen(FADE_FROM_BLACK)
+    delay(10)
+    speakername("???")
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Is my cute Lugia overwhelmed?"))
+    closemessage
+    playse(SE_PIN)
+    applymovement(6,moves(emote_exclamation_mark face_down))
+    waitmovement(0)
+    applymovement(10,moves(walk_up))
+    applymovement(12,moves(walk_up))
+    applymovement(0x7F,moves(walk_slow_down*3))
+    waitmovement(0)
+    speakername("???")
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Don't worry. I'm here to help you.\pLapras use Hydro Pump!"))
+    closemessage
+    playse(SE_M_HYDRO_PUMP)
+    fadescreen(FADE_TO_BLACK)
+    setflag(FLAG_FLASHBACK)
+    clearflag(FLAG_FLASHBACK_2)
+    warp_continue_script(MAP_OLDALE_TOWN_HOUSE2,43,14,Cityruin_6)
+}
+
+script Cityruin_6 {
+    lock
+    applymovement(0xFF,moves(set_invisible))
+    waitmovement(0)
+    fadescreen(FADE_FROM_BLACK)
+    playse(SE_PIN)
+    applymovement(1,moves(emote_upset face_right))
+    applymovement(2,moves(emote_upset face_right))
+    applymovement(9,moves(jump_in_place_left*2))
+    speakername("???")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}A battle like this is what I've been waiting for!\pIt's making my heart race from excitement."))
+    closemessage
+    delay(10)
+    playse(SE_PIN)
+    applymovement(9,moves(emote_happy jump_in_place_left*2))
+    speakername("???")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}LET'S SEE WHAT YOU'VE GOT, GROUDON! KYOGRE!"))
+    closemessage
+    fadescreen(FADE_TO_BLACK)
+    setflag(FLAG_FLASHBACK_2)
+    clearflag(FLAG_FLASHBACK)
+    warp_continue_script(MAP_OLDALE_TOWN_HOUSE2,64,18,Cityruin_7)
+    
+}
+
+script Cityruin_7 {
+    lock
+    applymovement(0xFF,moves(set_invisible))
+    waitmovement(0)
+    applymovement(11,moves(walk_up*3))
+    waitmovement(0)
+    createvobject(OBJ_EVENT_GFX_SPECIES(DEOXYS_DEFENSE),30,63,16,3,DIR_SOUTH)
+    fadescreen(FADE_FROM_BLACK)
+    delay(10)
+    speakername("???")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}It's an honor to see you in real life, Raquaza."))
+    closemessage
+    waitmessage
+    playse(SE_PIN)
+    applymovement(8,moves(emote_exclamation_mark face_down))
+    waitmovement(0)
+    speakername("???")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Will you allow me to help you?"))
+    closemessage
+    playse(SE_PIN)
+    applymovement(8,moves(emote_happy delay_16 delay_16 face_up))
+    waitmovement(0)
+    speakername("???")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I'm honored to fight alongside you, Rayquaza!"))
+    closemessage
+    applymovement(11,moves(jump_in_place_up*2))
+    speakername("???")
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Let's do this, My friend!"))
+    closemessage
+    playmoncry(SPECIES_RAYQUAZA, CRY_MODE_HIGH_PITCH)
+    setvar(VAR_0x8004,4)
+	setvar(VAR_0x8005,4)
+	setvar(VAR_0x8006,4)
+	setvar(VAR_0x8007,4)	
+	special(ShakeCamera)
+    waitmoncry
+    delay(20)
+    warp(MAP_PLAYERROOM,2,5) 
 }

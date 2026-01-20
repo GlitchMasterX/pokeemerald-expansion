@@ -130,7 +130,7 @@ const u32 gObjectEventPic_MauvilleOldMan2[] = INCBIN_U32("graphics/object_events
 const u32 gObjectEventPic_MartEmployee[] = INCBIN_U32("graphics/object_events/pics/people/mart_employee.4bpp");
 const u32 gObjectEventPic_RooftopSaleWoman[] = INCBIN_U32("graphics/object_events/pics/people/rooftop_sale_woman.4bpp");
 const u32 gObjectEventPic_Teala[] = INCBIN_U32("graphics/object_events/pics/people/teala.4bpp");
-const u32 gObjectEventPic_Artist[] = INCBIN_U32("graphics/object_events/pics/people/artist.4bpp");
+const u32 gObjectEventPic_Artist[] = INCBIN_U32("graphics/object_events/pics/people/veylor.4bpp");
 const u32 gObjectEventPic_Cameraman[] = INCBIN_U32("graphics/object_events/pics/people/cameraman.4bpp");
 const u32 gObjectEventPic_Scientist2[] = INCBIN_U32("graphics/object_events/pics/people/scientist_2.4bpp");
 const u32 gObjectEventPic_DevonEmployee[] = INCBIN_U32("graphics/object_events/pics/people/devon_employee.4bpp");
@@ -499,6 +499,9 @@ const u32 gObjectEventPic_Nihil[] = INCBIN_U32("graphics/object_events/pics/peop
 const u16 gObjectEventPal_Nihil[] = INCBIN_U16("graphics/object_events/palettes/nihil.gbapal");
 const u32 gObjectEventPic_Distortion[] = INCBIN_U32("graphics/object_events/pics/people/distortion.4bpp");
 const u16 gObjectEventPal_Distortion[] = INCBIN_U16("graphics/object_events/palettes/distortion.gbapal");
+const u16 gObjectEventPal_Veylor[] = INCBIN_U16("graphics/object_events/palettes/veylor.gbapal");
+
+
 #if OW_FOLLOWERS_POKEBALLS
 const u32 gObjectEventPic_MasterBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_master.4bpp");
 const u32 gObjectEventPic_UltraBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_ultra.4bpp");

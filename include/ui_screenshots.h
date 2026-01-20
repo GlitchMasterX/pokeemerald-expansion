@@ -11,6 +11,8 @@ void Screenshots_StartMenuInitCB(void);
 enum Screenshots
 {
     SCREENSHOT_HOOPA_WAR,
+    SCREENSHOT_VEYLOR_BOWING,
+    SCREENSHOT_HOOPA_TORMENT,
 };
 
 

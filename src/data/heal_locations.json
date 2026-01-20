@@ -104,9 +104,7 @@
       "id": "HEAL_LOCATION_OLDALE_TOWN",
       "map": "MAP_OLDALE_TOWN",
       "x": 6,
-      "y": 17,
-      "respawn_map": "MAP_OLDALE_TOWN_POKEMON_CENTER_1F",
-      "respawn_npc": "LOCALID_OLDALE_NURSE"
+      "y": 17
     },
     {
       "id": "HEAL_LOCATION_DEWFORD_TOWN",

@@ -766,7 +766,7 @@ void InitTilesetAnim_Lavaridge(void)
     sSecondaryTilesetAnimCallback = TilesetAnim_Lavaridge;
 }
 
-void InitTilesetAnim_Fallarbor(void)
+void InitTilesetAnim_Ironhearth(void)
 {
     sSecondaryTilesetAnimCounter = 0;
     sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;

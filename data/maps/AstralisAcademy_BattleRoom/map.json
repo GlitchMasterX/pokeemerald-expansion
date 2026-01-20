@@ -1,7 +1,7 @@
 {
   "id": "MAP_ASTRALIS_ACADEMY_BATTLE_ROOM",
   "name": "AstralisAcademy_BattleRoom",
-  "layout": "LAYOUT_MART",
+  "layout": "LAYOUT_BATTLE_ROOM_ACADEMY",
   "music": "MUS_B_PYRAMID",
   "region_map_section": "MAPSEC_ASTRALIS_ACADEMY",
   "requires_flash": false,

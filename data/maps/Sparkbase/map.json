@@ -15,6 +15,7 @@
   "connections": null,
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_S_EQUINO_M",
       "x": 42,
       "y": 9,
@@ -28,6 +29,7 @@
       "flag": "FLAG_UNUSED_0x4B8"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
       "x": 39,
       "y": 4,
@@ -41,6 +43,7 @@
       "flag": "FLAG_ITEM_ROUTE_105_IRON"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_S_EQUINO_F",
       "x": 69,
       "y": 6,
@@ -54,6 +57,7 @@
       "flag": "FLAG_UNUSED_0x4B8"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
       "x": 64,
       "y": 4,
@@ -67,6 +71,7 @@
       "flag": "FLAG_ITEM_ROUTE_104_PP_UP"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_S_EQUINO_M",
       "x": 75,
       "y": 4,
@@ -80,6 +85,7 @@
       "flag": "FLAG_UNUSED_0x4B8"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SURGE",
       "x": 9,
       "y": 8,
@@ -93,6 +99,7 @@
       "flag": "FLAG_UNUSED_0x4B8"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
       "x": 9,
       "y": 6,
@@ -106,6 +113,7 @@
       "flag": "FLAG_UNUSED_0x4B8"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_S_EQUINO_F",
       "x": 11,
       "y": 15,
@@ -119,6 +127,7 @@
       "flag": "FLAG_UNUSED_0x4B8"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_S_EQUINO_M",
       "x": 7,
       "y": 15,
@@ -132,6 +141,7 @@
       "flag": "FLAG_UNUSED_0x4B8"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(MEWTWO)",
       "x": 9,
       "y": 15,
@@ -145,6 +155,7 @@
       "flag": "FLAG_UNUSED_0x4B8"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_FIRE",
       "x": 9,
       "y": 9,
@@ -158,6 +169,7 @@
       "flag": "FLAG_UNUSED_0x4B8"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_FIRE",
       "x": 9,
       "y": 9,
@@ -171,6 +183,7 @@
       "flag": "FLAG_UNUSED_0x4B8"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_FIRE",
       "x": 9,
       "y": 9,
@@ -184,6 +197,7 @@
       "flag": "FLAG_UNUSED_0x4B8"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ASHES",
       "x": 9,
       "y": 8,
@@ -197,6 +211,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(HOOPA)",
       "x": 108,
       "y": 9,
@@ -210,6 +225,7 @@
       "flag": "FLAG_TRIAL_SERENA"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_PORTAL",
       "x": 106,
       "y": 9,
@@ -223,6 +239,7 @@
       "flag": "FLAG_TRIAL_SERENA"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_S_EQUINO_M",
       "x": 98,
       "y": 4,

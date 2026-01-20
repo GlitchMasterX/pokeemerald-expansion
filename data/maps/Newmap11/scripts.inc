@@ -1041,12 +1041,14 @@ shouldsleep::
 # 548 "data/maps/Newmap11/scripts.pory"
 	closemessage
 # 549 "data/maps/Newmap11/scripts.pory"
-	speakername NihilFirstVisit1_Text_0
+	fadescreen FADE_TO_BLACK
 # 550 "data/maps/Newmap11/scripts.pory"
-	msgbox shouldsleep_Text_1
+	speakername NihilFirstVisit1_Text_0
 # 551 "data/maps/Newmap11/scripts.pory"
-	waitmessage
+	msgbox shouldsleep_Text_1
 # 552 "data/maps/Newmap11/scripts.pory"
+	waitmessage
+# 553 "data/maps/Newmap11/scripts.pory"
 	release
 	return
 
@@ -1749,7 +1751,7 @@ shouldsleep_Text_0:
 	.string "Maybe I should rest before...$"
 
 shouldsleep_Text_1:
-# 550 "data/maps/Newmap11/scripts.pory"
+# 551 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SPECIAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}……$"
 
 alistair::

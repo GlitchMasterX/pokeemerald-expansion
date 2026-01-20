@@ -546,7 +546,9 @@ script shouldsleep {
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}I'm exhausted……\pMaybe I should rest before..."))
     waitmessage
     closemessage
+    fadescreen(FADE_TO_BLACK)
     speakername("Xylar")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SPECIAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}……"))
     waitmessage
-    release}
+    release
+    }

@@ -1,7 +1,7 @@
 {
   "id": "MAP_ASTRALIS_ACADEMY_HALLWAY",
   "name": "AstralisAcademy_Hallway",
-  "layout": "LAYOUT_POKEMON_CENTER_1F",
+  "layout": "LAYOUT_HALLWAY_ACADEMY",
   "music": "MUS_DP_ROWAN_LAB",
   "region_map_section": "MAPSEC_ASTRALIS_ACADEMY",
   "requires_flash": false,

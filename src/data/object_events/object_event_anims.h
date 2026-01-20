@@ -941,9 +941,20 @@ static const union AnimCmd sAnim_NurseBow[] =
 
 static const union AnimCmd sAnim_SpyVanish[] =
 {
+    ANIMCMD_FRAME(9, 60),
+    ANIMCMD_FRAME(10, 60),
+    ANIMCMD_FRAME(11, 60),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_VeylorSpecial[] =
+{
     ANIMCMD_FRAME(9, 48),
-    ANIMCMD_FRAME(10, 48),
-    ANIMCMD_FRAME(11, 48),
+    ANIMCMD_FRAME(10, 60),
+    ANIMCMD_FRAME(11, 60),
+    ANIMCMD_FRAME(11, 60),
+    ANIMCMD_FRAME(10, 60),
+    ANIMCMD_FRAME(12, 48),
     ANIMCMD_END,
 };
 
@@ -1185,7 +1196,7 @@ static const union AnimCmd *const sAnimTable_Standard[] = {
     [ANIM_STD_GO_FASTEST_EAST] = sAnim_GoFastestEast,
 };
 
-static const union AnimCmd *const sAnimTable_Spy[] = {
+static const union AnimCmd *const sAnimTable_Special[] = {
     [ANIM_STD_FACE_SOUTH] = sAnim_FaceSouth,
     [ANIM_STD_FACE_NORTH] = sAnim_FaceNorth,
     [ANIM_STD_FACE_WEST] = sAnim_FaceWest,
@@ -1207,6 +1218,8 @@ static const union AnimCmd *const sAnimTable_Spy[] = {
     [ANIM_STD_GO_FASTEST_WEST] = sAnim_GoFastestWest,
     [ANIM_STD_GO_FASTEST_EAST] = sAnim_GoFastestEast,
     [ANIM_SPY_VANISH] = sAnim_SpyVanish,
+    [ANIM_VEYLOR_SPECIAL] = sAnim_VeylorSpecial,
+    
 };
 
 static const union AnimCmd *const sAnimTable_Portal[] = {
@@ -1623,7 +1636,7 @@ static const struct StepAnimTable sStepAnimTables[] = {
         .animPos = {1, 3, 0, 2},
     },
     {
-        .anims = sAnimTable_Spy,
+        .anims = sAnimTable_Special,
         .animPos = {1, 3, 0, 2},
     },
     {

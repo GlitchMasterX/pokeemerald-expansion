@@ -22,6 +22,7 @@ EWRAM_DATA static u8 sCurrentAbnormalWeather = 0;
 
 const u16 gCloudsWeatherPalette[] = INCBIN_U16("graphics/weather/cloud.gbapal");
 const u16 gSandstormWeatherPalette[] = INCBIN_U16("graphics/weather/sandstorm.gbapal");
+const u16 gBlizzardWeatherPalette[] = INCBIN_U16("graphics/weather/blizzard.gbapal");
 const u8 gWeatherPinkLeafTiles[] = INCBIN_U8("graphics/weather/pink_leaves.4bpp");
 const u16 gAutumnWeatherPalette[] = INCBIN_U16("graphics/weather/2.gbapal");
 const u16 gPinkLeavesWeatherPalette[] = INCBIN_U16("graphics/weather/1.gbapal");
@@ -2565,6 +2566,7 @@ void Sandstorm_Main(void)
         {
             gWeatherPtr->sandstormSoundCounter = 0;
             PlaySE(SE_M_SAND_TOMB);
+            
         }
     }
     UpdateSandstormMovement();
@@ -2733,7 +2735,11 @@ static void CreateSandstormSprites(void)
     if (!gWeatherPtr->sandstormSpritesCreated)
     {
         LoadSpriteSheet(&sSandstormSpriteSheet);
-        LoadCustomWeatherSpritePalette(gSandstormWeatherPalette);
+        GetCurrentWeather();
+    if (GetCurrentWeather() == WEATHER_SANDSTORM){
+    LoadCustomWeatherSpritePalette(gSandstormWeatherPalette);}
+    if (GetCurrentWeather() == WEATHER_BLIZZARD){
+    LoadCustomWeatherSpritePalette(gBlizzardWeatherPalette);}
         for (i = 0; i < NUM_SANDSTORM_SPRITES; i++)
         {
             spriteId = CreateSpriteAtEnd(&sSandstormSpriteTemplate, 0, (i / 5) * 64, 1);
@@ -3212,6 +3218,7 @@ static u8 TranslateWeatherNum(u8 weather)
     case WEATHER_ROUTE123_CYCLE:     return sWeatherCycleRoute123[gSaveBlock1Ptr->weatherCycleStage];
     case WEATHER_SPRING:               return WEATHER_SPRING;
     case WEATHER_AUTUMN:               return WEATHER_AUTUMN;
+    case WEATHER_BLIZZARD:             return WEATHER_BLIZZARD;
     default:                         return WEATHER_NONE;
     }
 }

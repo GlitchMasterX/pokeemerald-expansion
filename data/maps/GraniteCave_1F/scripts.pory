@@ -85,7 +85,7 @@ elif(var(LUXURA_TRAGEDY)>18){
 }
 }
 script mewrt {
-	lockall
+	lock
 	applymovement(OBJ_EVENT_ID_PLAYER,exclam)
 	waitmovement(0)
 	speakername(Xylar1)
@@ -107,15 +107,14 @@ script mewrt {
 	removefieldmugshot
 	removeobject(3)
 	setflag(FLAG_UNUSED_0x4B5)
-	givemon(SPECIES_MEWTWO,5,ITEM_NONE,ITEM_POKE_BALL,NATURE_HASTY,0,MON_GENDERLESS,0,0,0,0,0,31,31,31,31,31,31,MOVE_PSYBEAM,MOVE_FIRE_BLAST,MOVE_RECOVER,MOVE_HYPNOSIS)
+	givemon(SPECIES_MEWTWO,5,ITEM_NONE,ITEM_POKE_BALL,NATURE_HASTY,0,MON_GENDERLESS,0,0,0,0,0,0,31,31,31,31,31,31,MOVE_PSYBEAM,MOVE_FIRE_BLAST,MOVE_RECOVER,MOVE_HYPNOSIS)
 	playfanfare(MUS_DP_OBTAIN_ITEM)
 	msgbox(format("Mewtwo decided to join you."))
 	waitfanfare
 	setflag(FLAG_SYS_POKEMON_GET)
-	releaseall
 	setvar(LUXURA_TRAGEDY,19)
 	clearflag(FLAG_UNUSED_0x26B)
-
+	release
 }
 
 script newheal {

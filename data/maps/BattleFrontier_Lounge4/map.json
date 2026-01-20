@@ -1,7 +1,7 @@
 {
   "id": "MAP_BATTLE_FRONTIER_LOUNGE4",
   "name": "BattleFrontier_Lounge4",
-  "layout": "LAYOUT_BATTLE_FRONTIER_LOUNGE2",
+  "layout": "LAYOUT_FLASHBACK_3",
   "music": "MUS_PETALBURG",
   "region_map_section": "MAPSEC_BATTLE_FRONTIER",
   "requires_flash": false,

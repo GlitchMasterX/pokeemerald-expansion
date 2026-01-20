@@ -171,7 +171,7 @@ Mewtworecover_3:
 
 mewrt::
 # 88 "data/maps/GraniteCave_1F/scripts.pory"
-	lockall
+	lock
 # 89 "data/maps/GraniteCave_1F/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, exclam
 # 90 "data/maps/GraniteCave_1F/scripts.pory"
@@ -215,7 +215,7 @@ mewrt::
 # 109 "data/maps/GraniteCave_1F/scripts.pory"
 	setflag FLAG_UNUSED_0x4B5
 # 110 "data/maps/GraniteCave_1F/scripts.pory"
-	givemon SPECIES_MEWTWO, 5, ITEM_NONE, ITEM_POKE_BALL, NATURE_HASTY, 0, MON_GENDERLESS, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_PSYBEAM, MOVE_FIRE_BLAST, MOVE_RECOVER, MOVE_HYPNOSIS
+	givemon SPECIES_MEWTWO, 5, ITEM_NONE, ITEM_POKE_BALL, NATURE_HASTY, 0, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_PSYBEAM, MOVE_FIRE_BLAST, MOVE_RECOVER, MOVE_HYPNOSIS
 # 111 "data/maps/GraniteCave_1F/scripts.pory"
 	playfanfare MUS_DP_OBTAIN_ITEM
 # 112 "data/maps/GraniteCave_1F/scripts.pory"
@@ -225,26 +225,26 @@ mewrt::
 # 114 "data/maps/GraniteCave_1F/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
 # 115 "data/maps/GraniteCave_1F/scripts.pory"
-	releaseall
-# 116 "data/maps/GraniteCave_1F/scripts.pory"
 	setvar LUXURA_TRAGEDY, 19
-# 117 "data/maps/GraniteCave_1F/scripts.pory"
+# 116 "data/maps/GraniteCave_1F/scripts.pory"
 	clearflag FLAG_UNUSED_0x26B
+# 117 "data/maps/GraniteCave_1F/scripts.pory"
+	release
 	return
 
 
 newheal::
-# 122 "data/maps/GraniteCave_1F/scripts.pory"
+# 121 "data/maps/GraniteCave_1F/scripts.pory"
 	setrespawn HEAL_LOCATION_LUXURA_VEILWOOD
 	end
 
 
 spark1::
-# 127 "data/maps/GraniteCave_1F/scripts.pory"
+# 126 "data/maps/GraniteCave_1F/scripts.pory"
 	trainerbattle_single EQUINO_GRUNT_1, Grunt1_Intro, Grunt1_Outro
-# 128 "data/maps/GraniteCave_1F/scripts.pory"
+# 127 "data/maps/GraniteCave_1F/scripts.pory"
 	msgbox PostBattle_Grunt1, MSGBOX_AUTOCLOSE
-# 129 "data/maps/GraniteCave_1F/scripts.pory"
+# 128 "data/maps/GraniteCave_1F/scripts.pory"
 	waitmessage
 	end
 
@@ -326,14 +326,14 @@ mewrt_Text_8:
 	.string "Mewtwo decided to join you.$"
 
 Grunt1_Intro::
-# 134 "data/maps/GraniteCave_1F/scripts.pory"
+# 133 "data/maps/GraniteCave_1F/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Feel the strikes of Sparks power!!$"
 
 Grunt1_Outro::
-# 138 "data/maps/GraniteCave_1F/scripts.pory"
+# 137 "data/maps/GraniteCave_1F/scripts.pory"
 	.string "No way! How could you withstand our\n"
 	.string "lightning strikes?$"
 
 PostBattle_Grunt1::
-# 142 "data/maps/GraniteCave_1F/scripts.pory"
+# 141 "data/maps/GraniteCave_1F/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Our general will defeat you.$"

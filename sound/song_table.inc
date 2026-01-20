@@ -377,7 +377,7 @@ gSongTable::
 	song mus_encounter_aqua, 0, 0
 	song mus_encounter_brendan, 0, 0
 	song mus_ever_grande, 0, 0
-	song mus_encounter_suspicious, 0, 0
+	song mus_pmd_dark_crater, 0, 0
 	song mus_victory_aqua_magma, 0, 0
 	song mus_cable_car, 0, 0
 	song mus_dewford, 0, 0
@@ -423,10 +423,10 @@ gSongTable::
 	song mus_vs_aqua_magma, 0, 0
 	song mus_vs_trainer, 0, 0
 	song mus_vs_gym_leader, 0, 0
-	song mus_vs_champion, 0, 0
+	song mus_pmd_vs_dusknoir, 0, 0
 	song mus_vs_regi, 0, 0
 	song mus_vs_kyogre_groudon, 0, 0
-	song mus_vs_rival, 0, 0
+	song mus_pmd_dark_path, 0, 0
 	song mus_vs_elite_four, 0, 0
 	song mus_vs_aqua_magma_leader, 0, 0
 	song mus_rg_follow_me, 0, 0

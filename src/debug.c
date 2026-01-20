@@ -4064,7 +4064,7 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_ENCOUNTER_AQUA)           \
     X(MUS_ENCOUNTER_BRENDAN)        \
     X(MUS_EVER_GRANDE)              \
-    X(MUS_ENCOUNTER_SUSPICIOUS)     \
+    X(MUS_PMD_DARK_CRATER)     \
     X(MUS_VICTORY_AQUA_MAGMA)       \
     X(MUS_CABLE_CAR)                \
     X(MUS_DEWFORD)                  \
@@ -4110,10 +4110,10 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_VS_AQUA_MAGMA)            \
     X(MUS_VS_TRAINER)               \
     X(MUS_VS_GYM_LEADER)            \
-    X(MUS_VS_CHAMPION)              \
+    X(MUS_PMD_VS_DUSKNOIR)              \
     X(MUS_VS_REGI)                  \
     X(MUS_VS_KYOGRE_GROUDON)        \
-    X(MUS_VS_RIVAL)                 \
+    X(MUS_PMD_DARK_PATH)                 \
     X(MUS_VS_ELITE_FOUR)            \
     X(MUS_VS_AQUA_MAGMA_LEADER)     \
     X(MUS_RG_FOLLOW_ME)             \

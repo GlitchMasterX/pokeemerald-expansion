@@ -1,7 +1,7 @@
 {
   "id": "MAP_EVER_GRANDE_CITY_POKEMON_CENTER_1F",
   "name": "EverGrandeCity_PokemonCenter_1F",
-  "layout": "LAYOUT_POKEMON_CENTER_1F",
+  "layout": "LAYOUT_HALLWAY_ACADEMY",
   "music": "MUS_DP_POKE_CENTER",
   "region_map_section": "MAPSEC_FROSTPEAK_VILLAGE",
   "requires_flash": false,

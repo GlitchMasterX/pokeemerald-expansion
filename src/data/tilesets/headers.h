@@ -89,15 +89,15 @@ const struct Tileset gTileset_Lavaridge =
  
 };
 
-const struct Tileset gTileset_Fallarbor =
+const struct Tileset gTileset_Ironhearth =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_Fallarbor,
-    .palettes = gTilesetPalettes_Fallarbor,
-    .metatiles = gMetatiles_Fallarbor,
-    .metatileAttributes = gMetatileAttributes_Fallarbor,
-    .callback = InitTilesetAnim_Fallarbor,
+    .tiles = gTilesetTiles_Ironhearth,
+    .palettes = gTilesetPalettes_Ironhearth,
+    .metatiles = gMetatiles_Ironhearth,
+    .metatileAttributes = gMetatileAttributes_Ironhearth,
+    .callback = InitTilesetAnim_Ironhearth,
  
 };
 
@@ -521,7 +521,7 @@ const struct Tileset gTileset_BrendansMaysHouse =
  
 };
 
-const struct Tileset gTileset_Lab =
+const struct Tileset gTileset_Frozen_Heights_Village =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
@@ -716,14 +716,14 @@ const struct Tileset gTileset_EliteFour =
  
 };
 
-const struct Tileset gTileset_BattleFrontier =
+const struct Tileset gTileset_SkyandHouse =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_BattleFrontier,
-    .palettes = gTilesetPalettes_BattleFrontier,
-    .metatiles = gMetatiles_BattleFrontier,
-    .metatileAttributes = gMetatileAttributes_BattleFrontier,
+    .tiles = gTilesetTiles_SkyandHouse,
+    .palettes = gTilesetPalettes_SkyandHouse,
+    .metatiles = gMetatiles_SkyandHouse,
+    .metatileAttributes = gMetatileAttributes_SkyandHouse,
     .callback = NULL,
  
 };
@@ -993,5 +993,16 @@ const struct Tileset gTileset_Academy_lib =
     .palettes = gTilesetPalettes_Academy_lib,
     .metatiles = gMetatiles_Academy_lib,
     .metatileAttributes = gMetatileAttributes_Academy_lib,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_City_Ruins =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_City_Ruins,
+    .palettes = gTilesetPalettes_City_Ruins,
+    .metatiles = gMetatiles_City_Ruins,
+    .metatileAttributes = gMetatileAttributes_City_Ruins,
     .callback = NULL,
 };

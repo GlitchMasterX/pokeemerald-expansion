@@ -306,7 +306,7 @@
 #define MUS_ENCOUNTER_AQUA          373 // MUS_AQA_0
 #define MUS_ENCOUNTER_BRENDAN       374 // MUS_BOY_SUP
 #define MUS_EVER_GRANDE             375 // MUS_RAINBOW          // Also used in link rooms.
-#define MUS_ENCOUNTER_SUSPICIOUS    376 // MUS_AYASII
+#define MUS_PMD_DARK_CRATER         376 // MUS_AYASII
 #define MUS_VICTORY_AQUA_MAGMA      377 // MUS_KACHI4
 #define MUS_CABLE_CAR               378 // MUS_ROPEWAY
 #define MUS_DEWFORD                 379 // MUS_HIGHTOWN         // Also used in Route 109's Seashore house.
@@ -352,10 +352,10 @@
 #define MUS_VS_AQUA_MAGMA           419 // MUS_BATTLE31
 #define MUS_VS_TRAINER              420 // MUS_BATTLE20
 #define MUS_VS_GYM_LEADER           421 // MUS_BATTLE32
-#define MUS_VS_CHAMPION             422 // MUS_BATTLE33
+#define MUS_PMD_VS_DUSKNOIR             422 // MUS_BATTLE33
 #define MUS_VS_REGI                 423 // MUS_BATTLE36
 #define MUS_VS_KYOGRE_GROUDON       424 // MUS_BATTLE34
-#define MUS_VS_RIVAL                425 // MUS_BATTLE35
+#define MUS_PMD_DARK_PATH                425 // MUS_BATTLE35
 #define MUS_VS_ELITE_FOUR           426 // MUS_BATTLE38
 #define MUS_VS_AQUA_MAGMA_LEADER    427 // MUS_BATTLE30
 // FRLG Music

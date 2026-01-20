@@ -112,7 +112,7 @@
 #define VAR_CURRENT_TIME_OF_DAY                          0x405C // Unused Var
 #define VAR_MOSSDEEP_CITY_STATE                          0x405D
 #define VAR_SOOTOPOLIS_CITY_STATE                        0x405E
-#define VAR_EVER_GRANDE_CITY_STATE                       0x405F // Unused Var
+#define VAR_FLASHBACKS                                   0x405F // Unused Var
 #define VAR_ROUTE101_STATE                               0x4060
 #define LUXURA_TRAGEDY                                   0x4061 //used Var start
 #define VAR_ROUTE103_STATE                               0x4062 //used Var luxura work

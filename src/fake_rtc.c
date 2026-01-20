@@ -121,20 +121,19 @@ STATIC_ASSERT((OW_FLAG_PAUSE_TIME == 0 || OW_USE_FAKE_RTC == TRUE), FakeRtcMustB
 void Script_PauseFakeRtc(void)
 {
     Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
-
+    UpdateWeekdayOncePerMinute();
     FlagSet(OW_FLAG_PAUSE_TIME);
 }
 
 void Script_ResumeFakeRtc(void)
 {
     Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
-
+    UpdateWeekdayOncePerMinute();
     FlagClear(OW_FLAG_PAUSE_TIME);
-}
+} 
 
 void Script_ToggleFakeRtc(void)
 {
     Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
-
     FlagToggle(OW_FLAG_PAUSE_TIME);
 }

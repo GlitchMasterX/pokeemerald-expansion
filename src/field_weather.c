@@ -147,6 +147,7 @@ static const struct WeatherCallbacks sWeatherFuncs[] =
     [WEATHER_UNDERWATER_BUBBLES] = {Bubbles_InitVars,       Bubbles_Main,       Bubbles_InitAll,       Bubbles_Finish},
     [WEATHER_SPRING]               = {PinkLeaves_InitVars,    PinkLeaves_Main,    PinkLeaves_InitAll,    PinkLeaves_Finish},
     [WEATHER_AUTUMN]               = {PinkLeaves_InitVars,    PinkLeaves_Main,    PinkLeaves_InitAll,    PinkLeaves_Finish},
+    [WEATHER_BLIZZARD]             = {Sandstorm_InitVars,      Sandstorm_Main,      Sandstorm_InitAll,      Sandstorm_Finish},
 
 };
 
@@ -404,6 +405,7 @@ static void FadeInScreenWithWeather(void)
     case WEATHER_AUTUMN:    
     case WEATHER_SPRING:
     case WEATHER_SNOW:
+    case WEATHER_BLIZZARD:
     case WEATHER_VOLCANIC_ASH:
     case WEATHER_SANDSTORM:
     case WEATHER_FOG_DIAGONAL:
@@ -1098,9 +1100,13 @@ static void UNUSED SetFieldWeather(u8 weather)
     case COORD_EVENT_WEATHER_SANDSTORM:
         SetWeather(WEATHER_SANDSTORM);
         break;
-    case COORD_EVENT_WEATHER_SHADE:
+    case COORD_EVENT_WEATHER_BLIZZARD:
+        SetWeather(WEATHER_BLIZZARD);
+        break;
+        case COORD_EVENT_WEATHER_SHADE:
         SetWeather(WEATHER_SHADE);
         break;
+    
     }
 }
 
@@ -1227,6 +1233,7 @@ static const u8 sWeatherNames[WEATHER_COUNT][24] = {
     [WEATHER_FOG]                = _("FOG"),
     [WEATHER_SPRING]                = _("SPRING"),
     [WEATHER_AUTUMN]                = _("AUTUMN"),
+    [WEATHER_BLIZZARD]           = _("BLIZZARD"),
 };
 
 static const u8 sDebugText_WeatherNotDefined[] = _("NOT DEFINED!!!");

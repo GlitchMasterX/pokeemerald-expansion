@@ -19,8 +19,8 @@ const u16 gMetatileAttributes_Mauville[] = INCBIN_U16("data/tilesets/secondary/m
 const u16 gMetatiles_Lavaridge[] = INCBIN_U16("data/tilesets/secondary/lavaridge/metatiles.bin");
 const u16 gMetatileAttributes_Lavaridge[] = INCBIN_U16("data/tilesets/secondary/lavaridge/metatile_attributes.bin");
 
-const u16 gMetatiles_Fallarbor[] = INCBIN_U16("data/tilesets/secondary/fallarbor/metatiles.bin");
-const u16 gMetatileAttributes_Fallarbor[] = INCBIN_U16("data/tilesets/secondary/fallarbor/metatile_attributes.bin");
+const u16 gMetatiles_Ironhearth[] = INCBIN_U16("data/tilesets/secondary/ironhearth/metatiles.bin");
+const u16 gMetatileAttributes_Ironhearth[] = INCBIN_U16("data/tilesets/secondary/ironhearth/metatile_attributes.bin");
 
 const u16 gMetatiles_Astraveil[] = INCBIN_U16("data/tilesets/secondary/astraveil/metatiles.bin");
 const u16 gMetatileAttributes_Astraveil[] = INCBIN_U16("data/tilesets/secondary/astraveil/metatile_attributes.bin");
@@ -160,8 +160,8 @@ const u16 gMetatileAttributes_SecretBasePrimary[] = INCBIN_U16("data/tilesets/pr
 const u16 gMetatiles_EliteFour[] = INCBIN_U16("data/tilesets/secondary/elite_four/metatiles.bin");
 const u16 gMetatileAttributes_EliteFour[] = INCBIN_U16("data/tilesets/secondary/elite_four/metatile_attributes.bin");
 
-const u16 gMetatiles_BattleFrontier[] = INCBIN_U16("data/tilesets/secondary/battle_frontier/metatiles.bin");
-const u16 gMetatileAttributes_BattleFrontier[] = INCBIN_U16("data/tilesets/secondary/battle_frontier/metatile_attributes.bin");
+const u16 gMetatiles_SkyandHouse[] = INCBIN_U16("data/tilesets/secondary/sky_and_house/metatiles.bin");
+const u16 gMetatileAttributes_SkyandHouse[] = INCBIN_U16("data/tilesets/secondary/sky_and_house/metatile_attributes.bin");
 
 const u16 gMetatiles_BattlePalace[] = INCBIN_U16("data/tilesets/secondary/battle_palace/metatiles.bin");
 const u16 gMetatileAttributes_BattlePalace[] = INCBIN_U16("data/tilesets/secondary/battle_palace/metatile_attributes.bin");
@@ -231,3 +231,6 @@ const u16 gMetatileAttributes_Academy[] = INCBIN_U16("data/tilesets/primary/acad
 
 const u16 gMetatiles_Academy_lib[] = INCBIN_U16("data/tilesets/secondary/academy_lib/metatiles.bin");
 const u16 gMetatileAttributes_Academy_lib[] = INCBIN_U16("data/tilesets/secondary/academy_lib/metatile_attributes.bin");
+
+const u16 gMetatiles_City_Ruins[] = INCBIN_U16("data/tilesets/secondary/city_ruins/metatiles.bin");
+const u16 gMetatileAttributes_City_Ruins[] = INCBIN_U16("data/tilesets/secondary/city_ruins/metatile_attributes.bin");

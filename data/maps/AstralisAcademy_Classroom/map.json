@@ -1,7 +1,7 @@
 {
   "id": "MAP_ASTRALIS_ACADEMY_CLASSROOM",
   "name": "AstralisAcademy_Classroom",
-  "layout": "LAYOUT_HOUSE2",
+  "layout": "LAYOUT_DOJO_ACADEMY",
   "music": "MUS_PETALBURG",
   "region_map_section": "MAPSEC_ASTRALIS_ACADEMY",
   "requires_flash": false,

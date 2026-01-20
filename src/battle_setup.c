@@ -1530,7 +1530,7 @@ void PlayTrainerEncounterMusic(void)
         case TRAINER_ENCOUNTER_MUSIC_SPARK:
             music = MUS_DP_ENCOUNTER_GALACTIC;
         default:
-            music = MUS_ENCOUNTER_SUSPICIOUS;
+            music = MUS_DP_ENCOUNTER_SUSPICIOUS;
         }
         PlayNewMapMusic(music);
     }

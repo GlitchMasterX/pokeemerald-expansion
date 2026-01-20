@@ -859,7 +859,7 @@ bool8 SetDiveWarpDive(u16 x, u16 y)
 }
 
 void TryApplySeasonalWeather(void)
-{
+{   
     u8 season = getCurrentSeason();
     u8 maptype = gMapHeader.mapType;
 
@@ -1317,7 +1317,14 @@ void Overworld_PlaySpecialMapMusic(void)
       else if (GetCurrentMapType() == MAP_TYPE_CITY)
           music = MUS_DUMMY;
   }
-
+   if (FlagGet(FLAG_FLASHBACK_MUSIC)){
+      if (GetCurrentMapType() == MAP_TYPE_ROUTE)
+          music = MUS_HG_E_DENDOURIRI;
+      else if (GetCurrentMapType() == MAP_TYPE_TOWN)
+          music = MUS_HG_E_DENDOURIRI;
+      else if (GetCurrentMapType() == MAP_TYPE_CITY)
+          music = MUS_HG_E_DENDOURIRI;
+  }  
     if (music != GetCurrentMapMusic())
         PlayNewMapMusic(music);
 }
@@ -1832,6 +1839,7 @@ static void OverworldBasic(void)
     UpdatePaletteFade();
     UpdateTilesetAnimations();
     UpdateBlend();
+    UpdateSeasonOncePerMinute();
     DoScheduledBgTilemapCopiesToVram();
     // Every minute if no palette fade is active, update TOD blending as needed
     if (!gPaletteFade.active && --gTimeUpdateCounter <= 0)

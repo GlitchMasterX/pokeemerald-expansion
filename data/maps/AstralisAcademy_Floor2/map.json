@@ -1,7 +1,7 @@
 {
   "id": "MAP_ASTRALIS_ACADEMY_FLOOR2",
   "name": "AstralisAcademy_Floor2",
-  "layout": "LAYOUT_HOUSE_WITH_BED",
+  "layout": "LAYOUT_ACADEMY_FLOOR_2",
   "music": "MUS_DP_FIGHT_AREA_DAY",
   "region_map_section": "MAPSEC_ASTRALIS_ACADEMY",
   "requires_flash": false,

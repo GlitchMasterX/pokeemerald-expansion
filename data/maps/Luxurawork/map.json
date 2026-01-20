@@ -15,6 +15,7 @@
   "connections": null,
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
       "x": 16,
       "y": 16,
@@ -28,6 +29,7 @@
       "flag": "FLAG_UNUSED_0x4A7"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
       "x": 2,
       "y": 17,
@@ -41,6 +43,7 @@
       "flag": "FLAG_UNUSED_0x4A7"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(MINCCINO)",
       "x": 2,
       "y": 14,
@@ -54,6 +57,7 @@
       "flag": "FLAG_UNUSED_0x4A8"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_FATHER",
       "x": 10,
       "y": 8,
@@ -67,6 +71,7 @@
       "flag": "FLAG_UNUSED_0x49A"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SURGE",
       "x": 10,
       "y": 20,
@@ -80,6 +85,7 @@
       "flag": "FLAG_UNUSED_0x4A6"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MOM",
       "x": 5,
       "y": 20,
@@ -93,6 +99,7 @@
       "flag": "FLAG_UNUSED_0x4A6"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_S_EQUINO_M",
       "x": 9,
       "y": 27,
@@ -106,6 +113,7 @@
       "flag": "FLAG_UNUSED_0x4A6"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(HOOPA_UNBOUND)",
       "x": 10,
       "y": 15,
@@ -119,6 +127,7 @@
       "flag": "FLAG_UNUSED_0x4A6"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(RAICHU)",
       "x": 10,
       "y": 18,
@@ -132,6 +141,7 @@
       "flag": "FLAG_UNUSED_0x4A6"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(HOOPA)",
       "x": 7,
       "y": 18,
@@ -145,6 +155,7 @@
       "flag": "FLAG_UNUSED_0x4A6"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_PORTAL",
       "x": 10,
       "y": 15,
@@ -158,6 +169,7 @@
       "flag": "FLAG_UNUSED_0x4A6"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPY",
       "x": 10,
       "y": 12,
@@ -171,6 +183,7 @@
       "flag": "FLAG_UNUSED_0x4A6"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_DEVON_EMPLOYEE",
       "x": 10,
       "y": 13,
@@ -184,6 +197,7 @@
       "flag": "FLAG_UNUSED_0x4A6"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_FATHER",
       "x": 10,
       "y": 13,
