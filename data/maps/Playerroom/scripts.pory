@@ -75,7 +75,7 @@ script mira{
 	waitmovement(0)
 	releaseall
 	setflag(FLAG_UNUSED_0x0E9)
-	setvar(LUXURA_TRAGEDY,2)
+	setvar(LUXURA_TRAGEDY,3)
 }
 
 movement miramove{

@@ -41,6 +41,7 @@
 #include "string_util.h"
 #include "strings.h"
 #include "task.h"
+#include "pokerus.h"
 #include "text.h"
 #include "tv.h"
 #include "window.h"
@@ -5234,7 +5235,7 @@ static void SetPokerusCuredSprite(void)
         sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_POKERUS_CURED] = CreateSprite(&sSpriteTemplate_PokerusCuredIcon, 40, 102, 0);
 
     mon = &sMonSummaryScreen->currentMon;
-    gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_POKERUS_CURED]].invisible = (CheckPartyPokerus(mon, 0) || !CheckPartyHasHadPokerus(mon, 0));
+    gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_POKERUS_CURED]].invisible = (ShouldPokemonShowCuredPokerus(mon));
 }
 
 static void SetFriendshipSprite(void)

@@ -6,6 +6,7 @@ mapscripts Dreamland_MapScripts{
 
 script IntroText{
     lock
+    call(LittlerootTown_BrendansHouse_2F_EventScript_WallClock)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}REMINDER!\p{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}This ROM hack is a work in progress.\pYou are playing Beta 2.0!\pExpect rough edges and unfinished paths.\pThank you for playing! It means a lot to me!"))
     waitmessage
     closemessage

@@ -57,11 +57,9 @@ PlayersHouse_2F_EventScript_WallClock::
 	msgbox PlayersHouse_2F_Text_ClockIsStopped, MSGBOX_DEFAULT
 	call PlayersHouse_2F_EventScript_SetWallClock
 	delay 30
-	setvar LUXURA_TRAGEDY, 3
 	setflag FLAG_SET_WALL_CLOCK
-	playse SE_EXIT
 	releaseall
-	end
+	return
 
 PlayersHouse_2F_EventScript_MomComesUpstairsMale::
 	setvar VAR_0x8008, LOCALID_PLAYERS_HOUSE_1F_MOM

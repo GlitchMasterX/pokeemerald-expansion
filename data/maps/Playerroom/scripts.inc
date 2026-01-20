@@ -129,7 +129,7 @@ mira::
 # 77 "data/maps/Playerroom/scripts.pory"
 	setflag FLAG_UNUSED_0x0E9
 # 78 "data/maps/Playerroom/scripts.pory"
-	setvar LUXURA_TRAGEDY, 2
+	setvar LUXURA_TRAGEDY, 3
 	return
 
 
