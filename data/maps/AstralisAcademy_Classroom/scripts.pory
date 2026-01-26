@@ -42,7 +42,7 @@ script Trialbattle {
     waitmessage
 	applymovement(1, moves(face_left))  
     speakername(eliasn)  
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Our first challenger,\pXylar, step forward.\pShow us the strength that brought you to this academy."))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Our first challenger,\p{PLAYER}, step forward.\pShow us the strength that brought you to this academy."))
 	waitbuttonpress
 	closemessage  
     applymovement(0x7F,moves(walk_left*5))
@@ -138,7 +138,7 @@ script Trialbattle {
 	waitmovement(0)
     speakername("Leaf")
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_SHOCK}{COLOR RED}{SHADOW LIGHT_GRAY}That was kinda impressive.\pBut you barely spoke to your Torchic.\pNo encouragement, no strategy discussion. What's the deal?"), MSGBOX_AUTOCLOSE)
-	speakername("Xylar")
+	speakername("{PLAYER}")
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}It doesn't matter as long as I win."))
 	closemessage	
 	playse(SE_PIN)

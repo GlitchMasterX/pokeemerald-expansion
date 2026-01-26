@@ -113,7 +113,7 @@ script nocave {
 }
 script mewtwotendq {
 	lockall
-	applymovement(OBJ_EVENT_ID_PLAYER,thuddd)
+	applymovement(OBJ_EVENT_ID_PLAYER,moves(walk_left face_up))
 	waitmovement(0)
 	goto(mewtwotend)
 }
@@ -221,7 +221,7 @@ script revive {
             speakername(Xylar1)
             msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}There... that should do.\pYou've been through so much... Just a little longer.\pWe'll get through this together."),MSGBOX_AUTOCLOSE)
             fadescreen(FADE_TO_BLACK)
-            msgbox(format("Xylar continued to tend to the Pokémon for several days, hoping it would open its eyes..."),MSGBOX_AUTOCLOSE)
+            msgbox(format("{PLAYER} continued to tend to the Pokémon for several days, hoping it would open its eyes..."),MSGBOX_AUTOCLOSE)
             msgbox(format("A few days later..."),MSGBOX_AUTOCLOSE)
             fadescreen(FADE_FROM_BLACK)
             speakername(Xylar1)
@@ -247,7 +247,7 @@ script revive {
         fadescreen(FADE_TO_BLACK)
         playse(SE_M_PSYBEAM2)
         waitse
-        msgbox(format("Mewtwo’s psychic power probed Xylar's mind..."),MSGBOX_AUTOCLOSE)
+        msgbox(format("Mewtwo's psychic power probed {PLAYER}'s mind..."),MSGBOX_AUTOCLOSE)
         fadescreen(FADE_FROM_BLACK)
         speakername(mewtwo)
         msgbox(format("(His memories... pain... loss... yet his concern is... real...)"),MSGBOX_AUTOCLOSE)

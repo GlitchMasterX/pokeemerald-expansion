@@ -2165,8 +2165,8 @@ ran_Text_4:
 
 ran_Text_5:
 # 52 "data/maps/LuxuraIsland/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}I'm sorry, Master Xylar! But I couldn't\n"
-	.string "help myself.\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}I'm sorry, Master {PLAYER}! But I\n"
+	.string "couldn't help myself.\p"
 	.string "You should've seen your face-it was\n"
 	.string "priceless!$"
 
@@ -2180,14 +2180,14 @@ ran_Text_7:
 
 ran_Text_8:
 # 62 "data/maps/LuxuraIsland/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Catch me if you can, Master Xylar.$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Catch me if you can, Master {PLAYER}.$"
 
 ran_Text_9:
 # 69 "data/maps/LuxuraIsland/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Hahahaha!!\p"
 	.string "Wait… if Lady Elysia sees you chasing\n"
 	.string "me like this in the cold, she'll ground\l"
-	.string "you, Master Xylar!$"
+	.string "you, Master {PLAYER}!$"
 
 ran_Text_10:
 # 71 "data/maps/LuxuraIsland/scripts.pory"
@@ -2224,7 +2224,7 @@ ran_Text_17:
 	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Ehh?! Don't blame me!\p"
 	.string "I didn't do it!……\p"
 	.string "But you look like a drenched Torchic,\n"
-	.string "Master Xylar!$"
+	.string "Master {PLAYER}!$"
 
 ran_Text_18:
 # 135 "data/maps/LuxuraIsland/scripts.pory"
@@ -2261,7 +2261,7 @@ ran_Text_22:
 ran_Text_23:
 # 169 "data/maps/LuxuraIsland/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}You're going to be amazing, Master\n"
-	.string "Xylar.\p"
+	.string "{PLAYER}.\p"
 	.string "We're all proud of you.\p"
 	.string "And when you come back-I'll make real\n"
 	.string "pancakes this time.\n"
@@ -2286,7 +2286,7 @@ ran_Text_27:
 
 ran_Text_28:
 # 184 "data/maps/LuxuraIsland/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SMILE}{COLOR RED}{SHADOW LIGHT_GRAY}Oh? Is Master Xylar jealous?$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SMILE}{COLOR RED}{SHADOW LIGHT_GRAY}Oh? Is Master {PLAYER} jealous?$"
 
 ran_Text_29:
 # 186 "data/maps/LuxuraIsland/scripts.pory"
@@ -2312,9 +2312,9 @@ ran_Text_33:
 
 indoor_Text_0:
 # 334 "data/maps/LuxuraIsland/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, You should take a bath\n"
-	.string "and get changed before mother sees you\l"
-	.string "like this.$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Master {PLAYER}, You should take a\n"
+	.string "bath and get changed before mother\l"
+	.string "sees you like this.$"
 
 indoor_Text_1:
 # 336 "data/maps/LuxuraIsland/scripts.pory"
@@ -2322,7 +2322,7 @@ indoor_Text_1:
 
 stroll_Text_0:
 # 373 "data/maps/LuxuraIsland/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Let's go Master Xylar.$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Let's go Master {PLAYER}.$"
 
 stroll_Text_1:
 # 376 "data/maps/LuxuraIsland/scripts.pory"
@@ -2330,18 +2330,18 @@ stroll_Text_1:
 
 mirafollowerscript_Text_0:
 # 404 "data/maps/LuxuraIsland/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Don't worry Master Xylar, I'll always be\n"
-	.string "with you.$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Don't worry Master {PLAYER}, I'll\n"
+	.string "always be with you.$"
 
 strolll_Text_0:
 # 534 "data/maps/LuxuraIsland/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}That's not the way, Master Xylar.$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}That's not the way, Master {PLAYER}.$"
 
 Sailor_Text_0:
 # 541 "data/maps/LuxuraIsland/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Master Xylar, I have to tell you, your\n"
-	.string "father is one of the bravest men I've\l"
-	.string "ever known.\p"
+	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Master {PLAYER}, I have to tell you,\n"
+	.string "your father is one of the bravest men\l"
+	.string "I've ever known.\p"
 	.string "The way he stood up against the Dark\n"
 	.string "Force to protect us all, I've never seen\l"
 	.string "courage like that.\p"
@@ -2352,7 +2352,7 @@ Sailor_Text_0:
 
 sailorr_Text_0:
 # 548 "data/maps/LuxuraIsland/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Good day, young master Xylar!\p"
+	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Good day, young master {PLAYER}!\p"
 	.string "The captain's busy preparing the ship\n"
 	.string "for your journey, even though the\l"
 	.string "academy starts in a week.\p"
@@ -2363,8 +2363,8 @@ sailorr_Text_0:
 
 sail_Text_0:
 # 555 "data/maps/LuxuraIsland/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Master Xylar, I'll never forget the day\n"
-	.string "your Father faced the Dark Force.\p"
+	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Master {PLAYER}, I'll never forget the\n"
+	.string "day your Father faced the Dark Force.\p"
 	.string "The skies turned dark, and portals\n"
 	.string "opened everywhere, unleashing chaos.\p"
 	.string "It was the most terrifying thing I've\n"
@@ -2384,7 +2384,7 @@ blood_Text_0:
 
 bloodsee_Text_0:
 # 574 "data/maps/LuxuraIsland/scripts.pory"
-	.string "Xylar$"
+	.string "{PLAYER}$"
 
 bloodsee_Text_1:
 # 575 "data/maps/LuxuraIsland/scripts.pory"
@@ -2392,10 +2392,10 @@ bloodsee_Text_1:
 
 bloodsee_Text_2:
 # 600 "data/maps/LuxuraIsland/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SHOCK}{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, Don't look at it. You're\n"
-	.string "too young to see something like this...\l"
-	.string "Please, just trust me and let's go back\l"
-	.string "inside.$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SHOCK}{COLOR RED}{SHADOW LIGHT_GRAY}Master {PLAYER}, Don't look at it.\n"
+	.string "You're too young to see something like\l"
+	.string "this... Please, just trust me and let's go\l"
+	.string "back inside.$"
 
 strollll_Text_0:
 # 629 "data/maps/LuxuraIsland/scripts.pory"
@@ -2439,7 +2439,7 @@ signend_Text_0:
 
 stded_Text_0:
 # 685 "data/maps/LuxuraIsland/scripts.pory"
-	.string "{COLOR RED}{SHADOW LIGHT_GRAY}That's not the way,Master Xylar.$"
+	.string "{COLOR RED}{SHADOW LIGHT_GRAY}That's not the way, Master {PLAYER}.$"
 
 alistairarrive_Text_0:
 # 695 "data/maps/LuxuraIsland/scripts.pory"

@@ -5737,7 +5737,6 @@ bool32 IsSpeciesInHoennDex(u16 species)
 u16 GetBattleBGM(void)
 {
     if (FlagGet(FLAG_SYS_SET_BATTLE_BGM)){
-        FlagClear(FLAG_SYS_SET_BATTLE_BGM);
         return VarGet(VAR_TEMP_D);
     }
     else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)

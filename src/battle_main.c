@@ -310,7 +310,7 @@ static const s8 sCenterToCornerVecXs[8] ={-32, -16, -16, -32, -32};
 // [TRAINER_CLASS_XYZ] = { _("name"), <money=5>, <ball=BALL_POKE> }
 const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
 {
-    [TRAINER_CLASS_PKMN_TRAINER_1] = { _("{PKMN} TRAINER") },
+    [TRAINER_CLASS_NEXUS_ADMIN] = { _("Nexus Admin") },
     [TRAINER_CLASS_PKMN_TRAINER_2] = { _("{PKMN} TRAINER") },
     [TRAINER_CLASS_HIKER] = { _("HIKER"), 10, B_TRAINER_CLASS_POKE_BALLS >= GEN_8 ? BALL_ULTRA : BALL_POKE },
     [TRAINER_CLASS_TEAM_AQUA] = { _("TEAM AQUA") },
@@ -360,7 +360,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_SAILOR] = { _("SAILOR"), 8 },
     [TRAINER_CLASS_COOLTRAINER_2] = { _("COOLTRAINER"), 5, BALL_ULTRA },
     [TRAINER_CLASS_MAGMA_ADMIN] = { _("MAGMA ADMIN"), 10 },
-    [TRAINER_CLASS_RIVAL] = { _("{PKMN} TRAINER"), 15 },
+    [TRAINER_CLASS_RIVAL] = { _("{PKMN} Trainer"), 15 },
     [TRAINER_CLASS_BUG_CATCHER] = { _("BUG CATCHER"), 4 },
     [TRAINER_CLASS_PKMN_RANGER] = { _("{PKMN} RANGER"), 12 },
     [TRAINER_CLASS_MAGMA_LEADER] = { _("MAGMA LEADER"), 20, BALL_MASTER },
@@ -376,11 +376,11 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_PIKE_QUEEN] = { _("PIKE QUEEN") },
     [TRAINER_CLASS_PYRAMID_KING] = { _("PYRAMID KING") },
     [TRAINER_CLASS_RS_PROTAG] = { _("{PKMN} TRAINER") },
-    [TRAINER_CLASS_EQUINO] = { _("EQUINO") },
-    [TRAINER_CLASS_EQUINO_ADMIN] = { _("EQUINO ADMIN"),50 },
-    [TRAINER_CLASS_EQUINO_LEADER] = { _("EQUINO HEAD"),100 },
-    [TRAINER_CLASS_SHADOW_SLAYER] = { _("SHADOW"), 20 },
-    [TRAINER_CLASS_ACADEMY_HEAD] = { _("ACADEMY HEAD"),100 },
+    [TRAINER_CLASS_EQUINO] = { _("Equino") },
+    [TRAINER_CLASS_EQUINO_ADMIN] = { _("Equino Admin"),50 },
+    [TRAINER_CLASS_EQUINO_LEADER] = { _("Equino Head"),100 },
+    [TRAINER_CLASS_SHADOW_SLAYER] = { _("Shadow"), 20 },
+    [TRAINER_CLASS_ACADEMY_HEAD] = { _("Academy Head"),100 },
 };
 
 static void (*const sTurnActionsFuncsTable[])(void) =

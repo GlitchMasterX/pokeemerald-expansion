@@ -596,7 +596,7 @@ CharacterChange::
 # 309 "data/maps/AstralisAcademy_Floor2/scripts.pory"
 	compare VAR_CHARACTER_CHANGE, 1
 	goto_if_eq CharacterChange_1
-# 339 "data/maps/AstralisAcademy_Floor2/scripts.pory"
+# 343 "data/maps/AstralisAcademy_Floor2/scripts.pory"
 	release
 	return
 
@@ -610,11 +610,11 @@ CharacterChange_1:
 # 313 "data/maps/AstralisAcademy_Floor2/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq CharacterChange_4
-# 333 "data/maps/AstralisAcademy_Floor2/scripts.pory"
+# 337 "data/maps/AstralisAcademy_Floor2/scripts.pory"
 	setvar VAR_CHARACTER_CHANGE, 0
-# 334 "data/maps/AstralisAcademy_Floor2/scripts.pory"
+# 338 "data/maps/AstralisAcademy_Floor2/scripts.pory"
 	fadescreen FADE_FROM_BLACK
-# 335 "data/maps/AstralisAcademy_Floor2/scripts.pory"
+# 339 "data/maps/AstralisAcademy_Floor2/scripts.pory"
 	release
 	return
 
@@ -634,24 +634,32 @@ CharacterChange_4:
 # 320 "data/maps/AstralisAcademy_Floor2/scripts.pory"
 	waitstate
 # 321 "data/maps/AstralisAcademy_Floor2/scripts.pory"
-	setflag FLAG_TEMPORARY_PARTY_CHANGE
+	callnative Backup_Player_Name
 # 322 "data/maps/AstralisAcademy_Floor2/scripts.pory"
-	special SavePlayerParty
+	setvar VAR_CHANGE_NAME, 1
 # 323 "data/maps/AstralisAcademy_Floor2/scripts.pory"
-	callnative ZeroPlayerPartyMons
+	setflag FLAG_CHANGE_NAME
 # 324 "data/maps/AstralisAcademy_Floor2/scripts.pory"
-	givemon SPECIES_TURTWIG, 5, ITEM_EXP_SHARE, ITEM_POKE_BALL, NATURE_ADAMANT, 2, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31
+	callnative ForceSetPlayerName_FromAltName
 # 325 "data/maps/AstralisAcademy_Floor2/scripts.pory"
-	setvar VAR_KAEL_CHARCTER, 1
+	setflag FLAG_TEMPORARY_PARTY_CHANGE
 # 326 "data/maps/AstralisAcademy_Floor2/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	special SavePlayerParty
 # 327 "data/maps/AstralisAcademy_Floor2/scripts.pory"
-	setvar VAR_0x8004, 4
+	callnative ZeroPlayerPartyMons
 # 328 "data/maps/AstralisAcademy_Floor2/scripts.pory"
-	special WearOutfit
+	givemon SPECIES_TURTWIG, 5, ITEM_EXP_SHARE, ITEM_POKE_BALL, NATURE_ADAMANT, 2, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31
 # 329 "data/maps/AstralisAcademy_Floor2/scripts.pory"
-	msgbox CharacterChange_Text_2
+	setvar VAR_KAEL_CHARCTER, 1
 # 330 "data/maps/AstralisAcademy_Floor2/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 331 "data/maps/AstralisAcademy_Floor2/scripts.pory"
+	setvar VAR_0x8004, 4
+# 332 "data/maps/AstralisAcademy_Floor2/scripts.pory"
+	special WearOutfit
+# 333 "data/maps/AstralisAcademy_Floor2/scripts.pory"
+	msgbox CharacterChange_Text_2
+# 334 "data/maps/AstralisAcademy_Floor2/scripts.pory"
 	warpsilent MAP_ACADEMY_LIB, 13, 10
 	return
 
@@ -1086,7 +1094,7 @@ BattletheoryClass1_Text_18:
 
 BattletheoryClass1_Text_19:
 # 131 "data/maps/AstralisAcademy_Floor2/scripts.pory"
-	.string "Xylar$"
+	.string "{PLAYER}$"
 
 BattletheoryClass1_Text_20:
 # 132 "data/maps/AstralisAcademy_Floor2/scripts.pory"
@@ -1182,8 +1190,8 @@ BattletheoryClass1end_Text_6:
 # 265 "data/maps/AstralisAcademy_Floor2/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}...\p"
 	.string "Interesting.\p"
-	.string "Xylar... why did you write there is no\n"
-	.string "correct answer?$"
+	.string "{PLAYER}... why did you write there is\n"
+	.string "no correct answer?$"
 
 BattletheoryClass1end_Text_7:
 # 268 "data/maps/AstralisAcademy_Floor2/scripts.pory"
@@ -1232,5 +1240,5 @@ CharacterChange_Text_1:
 	.string "Kael.$"
 
 CharacterChange_Text_2:
-# 329 "data/maps/AstralisAcademy_Floor2/scripts.pory"
+# 333 "data/maps/AstralisAcademy_Floor2/scripts.pory"
 	.string "Early in the Morning.$"

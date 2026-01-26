@@ -800,12 +800,12 @@ Kaelmet_Text_3:
 
 Kaelmet_Text_4:
 # 66 "data/maps/Dormindoor1/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_REALIZE}{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar.$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_REALIZE}{COLOR BLUE}{SHADOW LIGHT_GRAY}{PLAYER}.$"
 
 Kaelmet_Text_5:
 # 69 "data/maps/Dormindoor1/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar... cool name! So, where are you\n"
-	.string "from?$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}{PLAYER}... cool name! So, where are\n"
+	.string "you from?$"
 
 Kaelmet_Text_6:
 # 74 "data/maps/Dormindoor1/scripts.pory"
@@ -881,7 +881,7 @@ Kaelmet_Text_20:
 # 120 "data/maps/Dormindoor1/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Uh..{PAUSE}...Right. Well... I'll, uh, let you settle\n"
 	.string "in.\p"
-	.string "See you around, Xylar.$"
+	.string "See you around, {PLAYER}.$"
 
 Kaelmet_Text_21:
 # 127 "data/maps/Dormindoor1/scripts.pory"
@@ -889,7 +889,7 @@ Kaelmet_Text_21:
 
 Kaelmet_Text_22:
 # 139 "data/maps/Dormindoor1/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar!\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}{PLAYER}!\p"
 	.string "{PAUSE_UNTIL_PRESS}Oh! he's asleep.$"
 
 Kaelmet_Text_23:
@@ -924,7 +924,7 @@ Kaelmet_Text_26:
 
 Kaelmorning_Text_0:
 # 182 "data/maps/Dormindoor1/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Uh… Xylar? Morning.\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Uh… {PLAYER}? Morning.\p"
 	.string "Class starts soon.\p"
 	.string "I thought I'd make sure you didn't miss\n"
 	.string "it.$"
@@ -944,7 +944,7 @@ Kaelmorning_Text_3:
 
 Nightstroll_Text_0:
 # 211 "data/maps/Dormindoor1/scripts.pory"
-	.string "Xylar$"
+	.string "{PLAYER}$"
 
 Nightstroll_Text_1:
 # 212 "data/maps/Dormindoor1/scripts.pory"

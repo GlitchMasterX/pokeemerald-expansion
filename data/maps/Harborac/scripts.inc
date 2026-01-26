@@ -1982,6 +1982,12 @@ Doorlock::
 	return
 
 
+# 996 "data/maps/Harborac/scripts.pory"
+heart:
+# 997 "data/maps/Harborac/scripts.pory"
+	emote_heart
+	step_end
+
 # 10 "data/maps/Harborac/scripts.pory"
 Fionamet_Movement_0:
 # 10 "data/maps/Harborac/scripts.pory"
@@ -2209,7 +2215,7 @@ scinerd_Text_2:
 
 elias_Text_0:
 # 165 "data/maps/Harborac/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}You're late Xylar.\p"
+	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}You're late {PLAYER}.\p"
 	.string "My name is Elias.\p"
 	.string "I'm a professor and the headmaster\n"
 	.string "made it clear that I was to ensure your\l"
@@ -2243,7 +2249,7 @@ AcademyNpc_Text_0:
 
 AcademyNpc_Text_1:
 # 206 "data/maps/Harborac/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}I thought Xylar was just a quiet,\n"
+	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}I thought {PLAYER} was just a quiet,\n"
 	.string "strong guy… but after that? Damn. He's\l"
 	.string "terrifying.$"
 
@@ -2274,7 +2280,7 @@ AcademyNpc2_Text_0:
 
 AcademyNpc2_Text_1:
 # 250 "data/maps/Harborac/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}You lost control, Xylar. That is\n"
+	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}You lost control, {PLAYER}. That is\n"
 	.string "unacceptable. You may have skill, but if\l"
 	.string "you cannot control yourself, you will\l"
 	.string "not last here.$"
@@ -2292,8 +2298,8 @@ AcademyNpc3_Text_0:
 
 AcademyNpc3_Text_1:
 # 274 "data/maps/Harborac/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Man, I respected Xylar… but now I don't\n"
-	.string "know. That wasn't just rage.$"
+	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Man, I respected {PLAYER} but now I\n"
+	.string "don't know. That wasn't just rage.$"
 
 AcademyNpc3_Text_2:
 # 280 "data/maps/Harborac/scripts.pory"
@@ -2323,8 +2329,8 @@ AcademyNpc5_Text_1:
 # 322 "data/maps/Harborac/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Such raw emotion! Such unfiltered\n"
 	.string "intensity!\p"
-	.string "…And yet, Xylar, this is not the place\n"
-	.string "for a destructive masterpiece.$"
+	.string "…And yet, {PLAYER}, this is not the\n"
+	.string "place for a destructive masterpiece.$"
 
 AcademyNpc5_Text_2:
 # 330 "data/maps/Harborac/scripts.pory"
@@ -2339,7 +2345,8 @@ AcademyNpc6_Text_0:
 
 AcademyNpc6_Text_1:
 # 349 "data/maps/Harborac/scripts.pory"
-	.string "{COLOR RED}{SHADOW LIGHT_GRAY}I wanted to draw Xylar's Torchic before.\p"
+	.string "{COLOR RED}{SHADOW LIGHT_GRAY}I wanted to draw {PLAYER}'s Torchic\n"
+	.string "before.\p"
 	.string "Now, I'm not so sure I even want to be\n"
 	.string "near him.$"
 
@@ -2374,9 +2381,9 @@ AcademyNpc8_Text_0:
 AcademyNpc8_Text_1:
 # 400 "data/maps/Harborac/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}I don't get it.\p"
-	.string "Xylar's strategy was so calculated in\n"
-	.string "battle, but outside of it… he was\l"
-	.string "reckless.$"
+	.string "{PLAYER}'s strategy was so\n"
+	.string "calculated in battle, but outside of it…\l"
+	.string "he was reckless.$"
 
 AcademyNpc8_Text_2:
 # 406 "data/maps/Harborac/scripts.pory"
@@ -2395,7 +2402,7 @@ AcademyNpc9_Text_1:
 
 AcademyNpc9_Text_2:
 # 425 "data/maps/Harborac/scripts.pory"
-	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Xylar....\p"
+	.string "{COLOR RED}{SHADOW LIGHT_GRAY}{PLAYER}....\p"
 	.string "I don't know what to say.\p"
 	.string "That wasn't just anger.\p"
 	.string "That was something else.$"
@@ -2469,12 +2476,12 @@ AcademyNpc12_Text_3:
 # 494 "data/maps/Harborac/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}There's a story about a warrior who lost\n"
 	.string "control and became a monster.....\p"
-	.string "Do you believe in fate, Xylar?$"
+	.string "Do you believe in fate, {PLAYER}?$"
 
 AcademyNpc12_Text_4:
 # 499 "data/maps/Harborac/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY}I wonder… what are you really fighting\n"
-	.string "against, Xylar?$"
+	.string "against, {PLAYER}?$"
 
 AcademyNpc13_Text_0:
 # 506 "data/maps/Harborac/scripts.pory"
@@ -2488,7 +2495,7 @@ AcademyNpc14_Text_0:
 
 AcademyNpc14_Text_1:
 # 522 "data/maps/Harborac/scripts.pory"
-	.string "{COLOR RED}{SHADOW LIGHT_GRAY}You must be Xylar.\p"
+	.string "{COLOR RED}{SHADOW LIGHT_GRAY}You must be {PLAYER}.\p"
 	.string "Here's your room key.$"
 
 AcademyNpc14_Text_2:
@@ -2502,7 +2509,7 @@ AcademyNpc14_Text_3:
 
 AcademyNpc14_Text_4:
 # 533 "data/maps/Harborac/scripts.pory"
-	.string "{COLOR RED}{SHADOW LIGHT_GRAY}.....Xylar, what happened there?\p"
+	.string "{COLOR RED}{SHADOW LIGHT_GRAY}.....{PLAYER}, what happened there?\p"
 	.string "You looked completely different....$"
 
 AcademyNpc14_Text_5:
@@ -2517,7 +2524,7 @@ AcademyNpc15_Text_0:
 
 AcademyNpc15_Text_1:
 # 557 "data/maps/Harborac/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar… I see potential in you, but\n"
+	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}{PLAYER} I see potential in you, but\n"
 	.string "potential without control is dangerous.\p"
 	.string "You need to understand that.$"
 
@@ -2642,7 +2649,7 @@ AcademyNpc26_Text_2:
 
 AcademyNpc27_Text_0:
 # 744 "data/maps/Harborac/scripts.pory"
-	.string "{COLOR RED}{SHADOW LIGHT_GRAY}You don't belong here, Xylar.\p"
+	.string "{COLOR RED}{SHADOW LIGHT_GRAY}You don't belong here, {PLAYER}.\p"
 	.string "But you already knew that, didn't you?$"
 
 AcademyNpc27_Text_1:

@@ -268,9 +268,9 @@
 #define PLACEHOLDER_ID_MAGMA         0x9
 #define PLACEHOLDER_ID_ARCHIE        0xA
 #define PLACEHOLDER_ID_MAXIE         0xB
-#define PLACEHOLDER_ID_KYOGRE        0xC
-#define PLACEHOLDER_ID_GROUDON       0xD
-
+#define PLACEHOLDER_ID_KYOGRE               0xC
+#define PLACEHOLDER_ID_GROUDON              0xD
+#define PLACEHOLDER_ID_STRING_ALT_NAME      0xE
 // battle placeholders are located in battle_message.h
 
 // Hiragana from 0x1-0x50, Katakana from 0x51-0xA0.

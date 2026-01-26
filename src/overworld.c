@@ -1324,6 +1324,16 @@ void Overworld_PlaySpecialMapMusic(void)
           music = MUS_HG_E_DENDOURIRI;
       else if (GetCurrentMapType() == MAP_TYPE_CITY)
           music = MUS_HG_E_DENDOURIRI;
+      else if (GetCurrentMapType() == MAP_TYPE_INDOOR)
+          music = MUS_HG_E_DENDOURIRI;
+  }  
+   if (FlagGet(FLAG_FLASHBACK_MUSIC_2)){
+      if (GetCurrentMapType() == MAP_TYPE_ROUTE)
+          music = MUS_PMD_DARK_CRATER;
+      else if (GetCurrentMapType() == MAP_TYPE_TOWN)
+          music = MUS_PMD_DARK_PATH;
+      else if (GetCurrentMapType() == MAP_TYPE_CITY)
+          music = MUS_PMD_DARK_PATH;
   }  
     if (music != GetCurrentMapMusic())
         PlayNewMapMusic(music);

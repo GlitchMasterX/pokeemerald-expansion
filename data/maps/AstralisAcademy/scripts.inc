@@ -935,7 +935,7 @@ TrialAnnouncement_Text_0:
 
 TrialAnnouncement_Text_1:
 # 88 "data/maps/AstralisAcademy/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Hi Xylar!\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_LEAF}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Hi {PLAYER}!\p"
 	.string "The Headmaster is making an\n"
 	.string "announcement right now.\p"
 	.string "Let's go together.$"
@@ -971,18 +971,18 @@ TrialAnnouncement1_Text_2:
 
 FracturedMask_Text_0:
 # 148 "data/maps/AstralisAcademy/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar, You're late.$"
+	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}{PLAYER}, You're late.$"
 
 FracturedMask_Text_1:
 # 152 "data/maps/AstralisAcademy/scripts.pory"
 	.string "(Sigh)\p"
-	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Listen Xylar, punctuality is key to\n"
-	.string "success.\p"
+	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Listen {PLAYER}, punctuality is key\n"
+	.string "to success.\p"
 	.string "You should know that.$"
 
 FracturedMask_Text_2:
 # 153 "data/maps/AstralisAcademy/scripts.pory"
-	.string "Xylar$"
+	.string "{PLAYER}$"
 
 FracturedMask_Text_3:
 # 154 "data/maps/AstralisAcademy/scripts.pory"
@@ -1047,7 +1047,7 @@ FracturedMask_Text_15:
 
 FracturedMask_Text_16:
 # 213 "data/maps/AstralisAcademy/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar, STOP!$"
+	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}{PLAYER}, STOP!$"
 
 FracturedMask_Text_17:
 # 220 "data/maps/AstralisAcademy/scripts.pory"
@@ -1065,13 +1065,13 @@ FracturedMask_Text_19:
 
 FracturedMask_Text_20:
 # 236 "data/maps/AstralisAcademy/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar!!\p"
+	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}{PLAYER}!!\p"
 	.string "Hurry call the nurse.$"
 
 FracturedMask_Text_21:
 # 237 "data/maps/AstralisAcademy/scripts.pory"
-	.string "Xylar collapsed, throwing the room into\n"
-	.string "chaos.\p"
+	.string "{PLAYER} collapsed, throwing the room\n"
+	.string "into chaos.\p"
 	.string "Gasping for air, he hyperventilated,\n"
 	.string "repeating the same words over and\l"
 	.string "over:\p"

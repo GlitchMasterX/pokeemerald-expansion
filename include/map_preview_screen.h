@@ -32,6 +32,7 @@ enum MapPreviewScreenId
     MPS_RIXY_CHAMBER,
     MPS_VIAPOIS_CHAMBER,
     MPS_LUXURA_VEILWOOD,
+    MPS_FROZEN_HEIGHTS,
     MPS_COUNT
 };
 
@@ -59,6 +60,7 @@ enum PreviewImageId
     IMG_LOST_CAVE,
     IMG_ALTERING_CAVE,
     IMG_LUXURA_VEILWOOD,
+    IMG_FROZEN_HEIGHTS,
     IMG_COUNT
 };
 

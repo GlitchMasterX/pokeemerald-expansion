@@ -121,7 +121,7 @@ enum __attribute__((packed)) TrainerPicID
     TRAINER_PIC_FRONT_VOSS,                  
     TRAINER_PIC_FRONT_XYLAR,                 
     TRAINER_PIC_FRONT_KAEL,                  
-    TRAINER_PIC_FRONT_ORSON,
+    TRAINER_PIC_FRONT_VEYLOR,
     TRAINER_PIC_FRONT_COUNT,
     TRAINER_PIC_BACK_BRENDAN = TRAINER_PIC_FRONT_COUNT, // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
     TRAINER_PIC_BACK_MAY,
@@ -302,7 +302,7 @@ enum __attribute__((packed)) TrainerPicID
 
 enum TrainerClassID
 {
-    TRAINER_CLASS_PKMN_TRAINER_1, // Unused
+    TRAINER_CLASS_NEXUS_ADMIN, // Unused
     TRAINER_CLASS_PKMN_TRAINER_2, // Unused
     TRAINER_CLASS_HIKER,
     TRAINER_CLASS_TEAM_AQUA,

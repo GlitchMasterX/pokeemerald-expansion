@@ -16,7 +16,8 @@
 #define MUGSHOT_KAEL  12
 #define MUGSHOT_DAMIEN  13
 #define MUGSHOT_IRIS 14
-#define MUGSHOT_COUNT 15
+#define MUGSHOT_VEYLOR 15
+#define MUGSHOT_COUNT 16
 
 #define EMOTE_NORMAL       0
 #define EMOTE_QUESTION     1

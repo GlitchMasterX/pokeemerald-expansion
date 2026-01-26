@@ -909,7 +909,7 @@ rest_Text_1:
 
 nurse_Text_0:
 # 198 "data/maps/Luxuradining/scripts.pory"
-	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Good day,Master Xylar.$"
+	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Good day,Master {PLAYER}.$"
 
 nurse_Text_1:
 # 205 "data/maps/Luxuradining/scripts.pory"
@@ -924,7 +924,7 @@ nurse_Text_1:
 	.string "everyone in that house.\p"
 	.string "But seeing you alive... it's a small relief\n"
 	.string "in all this darkness. I'm so glad you\l"
-	.string "made it, Master Xylar.\p"
+	.string "made it, Master {PLAYER}.\p"
 	.string "But it's dangerous here ,you should\n"
 	.string "hide.$"
 
@@ -946,7 +946,8 @@ nurse_Text_3:
 
 nurse_Text_4:
 # 217 "data/maps/Luxuradining/scripts.pory"
-	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, Let me heal your pokemon.$"
+	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Master {PLAYER}, Let me heal your\n"
+	.string "pokemon.$"
 
 checknurse_Text_0:
 # 228 "data/maps/Luxuradining/scripts.pory"

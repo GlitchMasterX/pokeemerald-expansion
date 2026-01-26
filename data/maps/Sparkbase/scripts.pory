@@ -41,7 +41,7 @@ text Grunt3_Intro {
     format("{COLOR BLUE}{SHADOW LIGHT_GRAY}One zap, and you're done! Let's see if you can survive it!")
 }
 text Grunt3_Outro {
-    format("Ugh, I can't believe this! You're just lucky. Next time, you won't be so fortunate!\pXylar: There won't e any next time.")    
+    format("Ugh, I can't believe this! You're just lucky. Next time, you won't be so fortunate!")    
 }
 script spark4 {
     trainerbattle_single(EQUINO_GRUNT_4, Grunt4_Intro, Grunt4_Outro)
@@ -54,7 +54,7 @@ text Grunt4_Intro {
     format("{COLOR RED}{SHADOW LIGHT_GRAY}I love the smell of static in the air… Time to shock you into submission!")
 }
 text Grunt4_Outro {
-    format("Enjoy your victory... it won't last long.\pXylar:This isn't about victory anymore... It's about making sure you never take another breath.")    
+    format("Enjoy your victory... it won't last long.")    
 }
 text PostBattle_Grunt4 {
     format("{COLOR RED}{SHADOW LIGHT_GRAY}Our general will defeat you.")

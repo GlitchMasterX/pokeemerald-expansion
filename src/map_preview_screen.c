@@ -88,6 +88,9 @@ static const u8 sAlteringCaveMapPreviewTilemap[] = INCBIN_U8("graphics/map_previ
 static const u8 sLuxuraVeilwoodMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/luxura_veilwood/tiles.gbapal");
 static const u8 sLuxuraVeilwoodMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/luxura_veilwood/tiles.4bpp.smol");
 static const u8 sLuxuraVeilwoodMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/luxura_veilwood/tilemap.bin.smolTM");
+static const u8 sFrozenHeightsMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/frozen_heights/tiles.4bpp.smol");
+static const u8 sFrozenHeightsMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/frozen_heights/tilemap.bin.smolTM");
+static const u8 sFrozenHeightsMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/frozen_heights/tiles.gbapal");
 
 // If you set flagId to MPS_FLAG_NULL, it will not set a flag when visiting the map for the first time
 // and the duration will default to MPS_DURATION_NO_FLAG.
@@ -266,6 +269,12 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         .flagId = MPS_FLAG_NULL,
         .image = IMG_LUXURA_VEILWOOD
     },
+    [MPS_FROZEN_HEIGHTS] = {
+        .mapsec = MAPSEC_FROZEN_HEIGHTS,
+        .type = MPS_TYPE_FADE_IN,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_FROZEN_HEIGHTS
+    },
 };
 
 static const struct ImageData sMapPreviewImageData[IMG_COUNT] = {
@@ -378,6 +387,11 @@ static const struct ImageData sMapPreviewImageData[IMG_COUNT] = {
         .tilesptr = sLuxuraVeilwoodMapPreviewTiles,
         .tilemapptr = sLuxuraVeilwoodMapPreviewTilemap,
         .palptr = sLuxuraVeilwoodMapPreviewPalette
+    },
+    [IMG_FROZEN_HEIGHTS] = {
+        .tilesptr = sFrozenHeightsMapPreviewTiles,
+        .tilemapptr = sFrozenHeightsMapPreviewTilemap,
+        .palptr = sFrozenHeightsMapPreviewPalette
     },
 };
 

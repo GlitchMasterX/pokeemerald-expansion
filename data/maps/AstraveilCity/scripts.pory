@@ -1,0 +1,32 @@
+mapscripts AstraveilCity_MapScripts {
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
+	LUXURA_TRAGEDY, 0: Flashback_1
+	]
+}
+
+script Flashback_1 {
+    setobjectxyperm(1,26,38)
+	setobjectxyperm(2,26,40)
+	setobjectxyperm(3,26,42)
+	setobjectxyperm(4,34,38)
+    setobjectxyperm(5,34,40)
+    setobjectxyperm(6,34,42)
+    setobjectxyperm(7,25,39)
+	setobjectmovementtype(1,MOVEMENT_TYPE_FACE_RIGHT)	
+	setobjectmovementtype(2,MOVEMENT_TYPE_FACE_RIGHT)
+	setobjectmovementtype(3,MOVEMENT_TYPE_FACE_RIGHT)	
+	setobjectmovementtype(7,MOVEMENT_TYPE_FACE_RIGHT)
+    setobjectmovementtype(4,MOVEMENT_TYPE_FACE_LEFT)
+	setobjectmovementtype(5,MOVEMENT_TYPE_FACE_LEFT)	
+	setobjectmovementtype(6,MOVEMENT_TYPE_FACE_LEFT)
+    createvobject(OBJ_EVENT_GFX_ACTOR_M,30,25,41,3,DIR_EAST)
+    createvobject(OBJ_EVENT_GFX_ACE_M,30,35,41,3,DIR_WEST)
+    createvobject(OBJ_EVENT_GFX_BOY_1,30,35,39,3,DIR_WEST)
+    addobject(1)
+    addobject(2)
+    addobject(3)
+    addobject(4)
+    addobject(5)
+    addobject(6)
+    addobject(7)
+}

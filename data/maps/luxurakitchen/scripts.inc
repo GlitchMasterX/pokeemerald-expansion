@@ -297,8 +297,8 @@ mirastrol::
 
 momm_Text_0:
 # 71 "data/maps/luxurakitchen/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Xylar, your Father wanted to have a\n"
-	.string "talk with you.\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}{PLAYER}, your Father wanted to have\n"
+	.string "a talk with you.\p"
 	.string "He's in his workroom busy as usual.\p"
 	.string "You should go see him.$"
 
@@ -314,7 +314,7 @@ momm_Text_2:
 
 momm_Text_3:
 # 83 "data/maps/luxurakitchen/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Xylar, Can you call Felicia for me?\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}{PLAYER}, Can you call Felicia for me?\p"
 	.string "She must be in the Library.$"
 
 mommafter_Text_0:
@@ -327,8 +327,8 @@ feliciaafter_Text_0:
 
 mirakitchen_Text_0:
 # 111 "data/maps/luxurakitchen/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, I'm a little busy right\n"
-	.string "now.\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Master {PLAYER}, I'm a little busy\n"
+	.string "right now.\p"
 	.string "Why don't you find something else to do\n"
 	.string "for a while.$"
 
@@ -340,8 +340,8 @@ mirakitchen_Text_1:
 mirakitchen_Text_2:
 # 121 "data/maps/luxurakitchen/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SHOCK}{COLOR RED}{SHADOW LIGHT_GRAY}Already?\p"
-	.string "Alright, Master Xylar. Just give me a\n"
-	.string "moment and we can head out.$"
+	.string "Alright, Master {PLAYER}. Just give me\n"
+	.string "a moment and we can head out.$"
 
 mirakitchen_Text_3:
 # 123 "data/maps/luxurakitchen/scripts.pory"
@@ -350,5 +350,5 @@ mirakitchen_Text_3:
 
 mirastrol_Text_0:
 # 133 "data/maps/luxurakitchen/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, I'll be waiting for you\n"
-	.string "outside.$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Master {PLAYER}, I'll be waiting for\n"
+	.string "you outside.$"

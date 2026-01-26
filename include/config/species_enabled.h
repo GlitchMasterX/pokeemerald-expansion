@@ -393,7 +393,7 @@
 #define P_FAMILY_FLETCHLING              P_GEN_6_POKEMON
 #define P_FAMILY_SCATTERBUG              FALSE
 #define P_FAMILY_LITLEO                  P_GEN_6_POKEMON
-#define P_FAMILY_FLABEBE                 P_GEN_6_POKEMON
+#define P_FAMILY_FLABEBE                 FALSE
 #define P_FAMILY_SKIDDO                  P_GEN_6_POKEMON
 #define P_FAMILY_PANCHAM                 P_GEN_6_POKEMON
 #define P_FAMILY_FURFROU                 FALSE
@@ -484,7 +484,7 @@
 #define P_FAMILY_SCORBUNNY               P_GEN_8_POKEMON
 #define P_FAMILY_SOBBLE                  P_GEN_8_POKEMON
 #define P_FAMILY_SKWOVET                 FALSE
-#define P_FAMILY_ROOKIDEE                FALSE
+#define P_FAMILY_ROOKIDEE                P_GEN_8_POKEMON
 #define P_FAMILY_BLIPBUG                 FALSE
 #define P_FAMILY_NICKIT                  FALSE
 #define P_FAMILY_GOSSIFLEUR              FALSE

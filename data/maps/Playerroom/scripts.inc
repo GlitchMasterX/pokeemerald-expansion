@@ -309,7 +309,7 @@ mira_Movement_1:
 
 mira_Text_0:
 # 32 "data/maps/Playerroom/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, good morning!\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Master {PLAYER}, good morning!\p"
 	.string "Breakfast is waiting. Father and Mother\n"
 	.string "are already at the table.$"
 
@@ -371,4 +371,4 @@ metdad_Text_0:
 
 Xylar1::
 # 105 "data/maps/Playerroom/scripts.pory"
-	.string "Xylar$"
+	.string "{PLAYER}$"

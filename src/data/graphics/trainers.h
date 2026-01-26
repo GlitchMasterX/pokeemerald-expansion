@@ -304,8 +304,8 @@ const u16 gTrainerPalette_Voss[] = INCBIN_U16("graphics/trainers/front_pics/voss
 const u32 gTrainerFrontPic_Kael[] = INCBIN_U32("graphics/trainers/front_pics/kael.4bpp.smol");
 const u16 gTrainerPalette_Kael[] = INCBIN_U16("graphics/trainers/front_pics/kael.gbapal");
 
-const u32 gTrainerFrontPic_Orson[] = INCBIN_U32("graphics/trainers/front_pics/orson.4bpp.smol");
-const u16 gTrainerPalette_Orson[] = INCBIN_U16("graphics/trainers/front_pics/orson.gbapal");
+const u32 gTrainerFrontPic_Veylor[] = INCBIN_U32("graphics/trainers/front_pics/veylor.4bpp.smol");
+const u16 gTrainerPalette_Veylor[] = INCBIN_U16("graphics/trainers/front_pics/veylor.gbapal");
 
 const u32 gTrainerFrontPic_Xylar[] = INCBIN_U32("graphics/trainers/front_pics/xylar.4bpp.smol");
 const u16 gTrainerPalette_Xylar[] = INCBIN_U16("graphics/trainers/front_pics/xylar.gbapal");
@@ -452,7 +452,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_FRONT_FIONA, gTrainerFrontPic_Fiona, gTrainerPalette_Fiona),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_VOSS, gTrainerFrontPic_Voss, gTrainerPalette_Voss),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_KAEL, gTrainerFrontPic_Kael, gTrainerPalette_Kael),
-    TRAINER_SPRITE(TRAINER_PIC_FRONT_ORSON, gTrainerFrontPic_Orson, gTrainerPalette_Orson),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_VEYLOR, gTrainerFrontPic_Veylor, gTrainerPalette_Veylor),
 };
 static const union AnimCmd sAnimCmd_Hoenn[] =
 {

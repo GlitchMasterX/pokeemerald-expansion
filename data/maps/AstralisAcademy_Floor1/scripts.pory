@@ -11,7 +11,7 @@ script Receptionaftertrial1 {
 	waitmovement(0)
 	playse(SE_PIN)
 	applymovement(1,moves(emote_exclamation_mark face_up))
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Xylar!"))
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}{PLAYER}!"))
 	closemessage
 	applymovement(1,moves(delay_16 delay_16 delay_16 face_left delay_16 delay_16 delay_16 face_down))
 	applymovement(0xFF, moves(walk_left*5 walk_down*7 walk_right*5 face_up))

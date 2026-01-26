@@ -30,6 +30,11 @@
 #include "decompress.h"
 #include "constants/event_objects.h"
 #include "constants/rgb.h"
+#include "constants/field_specials.h"
+#include "string_util.h"
+
+EWRAM_DATA static u8 gPlayerNameBackup[PLAYER_NAME_LENGTH + 1];
+
 
 enum {
     INPUT_NONE,
@@ -392,7 +397,6 @@ static void SetVBlank(void);
 static void VBlankCB_NamingScreen(void);
 static void NamingScreen_ShowBgs(void);
 static bool8 IsWideLetter(u8);
-
 static const u8 sText_MoveOkBack[] = _("{DPAD_NONE}MOVE  {A_BUTTON}OK  {B_BUTTON}BACK");
 
 void DoNamingScreen(u8 templateNum, u8 *destBuffer, u16 monSpecies, u16 monGender, u32 monPersonality, MainCallback returnCallback)
@@ -2625,4 +2629,30 @@ static const struct SpritePalette sSpritePalettes[] =
     {}
 };
 
+void Do_Player_Name(void)
+{
+    DoNamingScreen(NAMING_SCREEN_PLAYER, gSaveBlock2Ptr->playerName, gSaveBlock2Ptr->playerGender, 0, 0, CB2_ReturnToFieldContinueScript);
+}
 
+void Backup_Player_Name(void)
+{
+    StringCopy(gPlayerNameBackup, gSaveBlock2Ptr->playerName);
+}
+
+void ForceSetPlayerName(const u8 *newName)
+{
+    StringCopyN(gSaveBlock2Ptr->playerName, newName, PLAYER_NAME_LENGTH);
+    gSaveBlock2Ptr->playerName[PLAYER_NAME_LENGTH] = EOS;
+}
+
+void ForceSetPlayerName_FromAltName(void)
+{
+    UpdateAltPlayerName();
+    ForceSetPlayerName(gAlt_Name);
+}
+
+void RestorePlayerName(void)
+{
+    StringCopy(gSaveBlock2Ptr->playerName, gPlayerNameBackup);
+    gSaveBlock2Ptr->playerName[PLAYER_NAME_LENGTH] = EOS;
+}

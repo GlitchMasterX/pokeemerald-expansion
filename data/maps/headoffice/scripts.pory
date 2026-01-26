@@ -33,7 +33,7 @@ script Head {
     playse(SE_PIN)
     applymovement(1,exclam)
     speakername(alistair)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar, I trust your journey here was uneventful.\pI understand this is all new for you, but it's time to start fresh."))
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}{PLAYER}, I trust your journey here was uneventful.\pI understand this is all new for you, but it's time to start fresh."))
     closemessage 
     speakername(Xylar1)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}..."))
@@ -47,7 +47,7 @@ script Head {
     givemon(SPECIES_TORCHIC,5,ITEM_EXP_SHARE,ITEM_POKE_BALL,NATURE_ADAMANT,2,0,0,0,0,0,0,0,31,31,31,31,31,31)
     bufferspeciesname(STR_VAR_1,SPECIES_TORCHIC)
     playfanfare(MUS_DP_OBTAIN_ITEM)
-    msgbox(format("Xylar recieved {STR_VAR_1}."))
+    msgbox(format("{PLAYER} recieved {STR_VAR_1}."))
     hidemonpic
     msgbox(gText_NicknameThisPokemon,MSGBOX_YESNO)
     if(var(VAR_RESULT)==FALSE){
@@ -403,7 +403,7 @@ script HeadOfficeAfterTrial1 {
     applymovement(0xFF,moves(walk_up*6 walk_right walk_up*2))
     waitmovement(0)
     speakername("Alistair")
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar, take a seat."))
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}{PLAYER}, take a seat."))
     closemessage
     applymovement(0xFF,moves(walk_left face_up)) 
     speakername("Alistair")
@@ -432,7 +432,7 @@ script HeadOfficeAfterTrial1 {
     delay(20)
     waitbuttonpress
     speakername("Alistair")
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}This Academy isn't a cage, Xylar."))
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}This Academy isn't a cage, {PLAYER}."))
     closemessage
     speakername(Xylar1)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Is that all?")) 

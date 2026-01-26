@@ -128,7 +128,7 @@ script BattletheoryClass1 {
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Anyone?"))
 	closemessage
     delay(20)
-	speakername("Xylar")
+	speakername("{PLAYER}")
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Attack."))
 	closemessage
     playse(SE_PIN)
@@ -142,7 +142,7 @@ script BattletheoryClass1 {
 	speakername("Prof. Evelyn")
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Why?"))
 	closemessage
-	speakername("Xylar")
+	speakername("{PLAYER}")
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Healing gives them a free turn.\pIf they set up, you lose momentum."))
 	closemessage
 	playse(SE_PIN)
@@ -197,7 +197,7 @@ script BattletheoryClass1 {
 	playse(SE_SUDOWOODO_SHAKE)
 	waitse
 	helpwindow(BATTLE_THEORY_CLASS_1)
- 	speakername("Xylar")
+ 	speakername("{PLAYER}")
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I think there is no correct answer. Do you feel the same?"),MSGBOX_YESNO)
 	closemessage
 	if(var(VAR_RESULT)==YES){
@@ -211,7 +211,7 @@ script BattletheoryClass1 {
 }
 
 script BattletheoryClass1No {
-	speakername("Xylar")
+	speakername("{PLAYER}")
 	msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Just believe me, okay?"),MSGBOX_YESNO)
 	closemessage
 	if(var(VAR_RESULT)==YES){
@@ -262,9 +262,9 @@ script BattletheoryClass1end {
 	playse(SE_PIN)
 	applymovement(9,moves(emote_exclamation_mark))
 	speakername("Prof. Evelyn")
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}...\pInteresting.\pXylar... why did you write there is no correct answer?"))
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}...\pInteresting.\p{PLAYER}... why did you write there is no correct answer?"))
 	closemessage
-	speakername("Xylar")
+	speakername("{PLAYER}")
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}Because There isn't one."))
 	closemessage
 	playse(SE_PIN)
@@ -277,7 +277,7 @@ script BattletheoryClass1end {
     speakername("Prof. Evelyn")
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Explain."))
 	closemessage
-	speakername("Xylar")
+	speakername("{PLAYER}")
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORM}{COLOR BLUE}{SHADOW LIGHT_GRAY}If their Pokémon threatens my team, I switch.\pIf it doesn't, I attack through paralysis and keep pressure.\pThe status isn't the problem. Losing momentum is."))
 	closemessage
 	delay(10)
@@ -318,6 +318,10 @@ script CharacterChange {
 		closemessage
 		special(SaveGame)
 		waitstate
+		callnative(Backup_Player_Name)
+        setvar(VAR_CHANGE_NAME,1)
+        setflag(FLAG_CHANGE_NAME)
+        callnative(ForceSetPlayerName_FromAltName)
 		setflag(FLAG_TEMPORARY_PARTY_CHANGE)
 		special(SavePlayerParty)
 		callnative(ZeroPlayerPartyMons)

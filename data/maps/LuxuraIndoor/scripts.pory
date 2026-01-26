@@ -12,7 +12,7 @@ MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
 script alistairarrive3 {
 	lock
 	speakername("???")
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Aurther.....Elysia...Xylar...where are you?"),MSGBOX_AUTOCLOSE)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Aurther.....Elysia...{PLAYER}...where are you?"),MSGBOX_AUTOCLOSE)
 	applymovement(8,traces)
 	waitmovement(0)
 	applymovement(7,traces1)
@@ -679,7 +679,7 @@ script alistairarrive4 {
 	playse(SE_PIN)
 	applymovement(7,exclam)
 	speakername("???")
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar survived?\pThat's all that matters now.\nIf he is out there I'll find him no matter what happens!\pLet's go!"),MSGBOX_AUTOCLOSE)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}{PLAYER} survived?\pThat's all that matters now.\nIf he is out there I'll find him no matter what happens!\pLet's go!"),MSGBOX_AUTOCLOSE)
     applymovement(0xFF,alistairgone3)
 	applymovement(7,alistairgone)
     applymovement(8,alistairgone1)

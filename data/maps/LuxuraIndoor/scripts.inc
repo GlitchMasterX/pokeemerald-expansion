@@ -1582,7 +1582,8 @@ alistairarrive3_Text_0:
 
 alistairarrive3_Text_1:
 # 15 "data/maps/LuxuraIndoor/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Aurther.....Elysia...Xylar...where are you?$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Aurther.....Elysia...{PLAYER}...where\n"
+	.string "are you?$"
 
 alistairarrive3_Text_2:
 # 20 "data/maps/LuxuraIndoor/scripts.pory"
@@ -1717,7 +1718,7 @@ alistairarrive4_Text_1:
 
 alistairarrive4_Text_2:
 # 682 "data/maps/LuxuraIndoor/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar survived?\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}{PLAYER} survived?\p"
 	.string "That's all that matters now.\n"
 	.string "If he is out there I'll find him no\l"
 	.string "matter what happens!\p"

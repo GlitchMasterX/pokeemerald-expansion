@@ -201,7 +201,7 @@ leafletsgotodojo_Movement_0:
 
 Receptionaftertrial1_Text_0:
 # 14 "data/maps/AstralisAcademy_Floor1/scripts.pory"
-	.string "{COLOR RED}{SHADOW LIGHT_GRAY}Xylar!$"
+	.string "{COLOR RED}{SHADOW LIGHT_GRAY}{PLAYER}!$"
 
 Receptionaftertrial1_Text_1:
 # 21 "data/maps/AstralisAcademy_Floor1/scripts.pory"

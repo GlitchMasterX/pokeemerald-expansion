@@ -1253,7 +1253,7 @@ grave_Movement_1:
 
 NihilFirstVisit1_Text_0:
 # 45 "data/maps/Newmap11/scripts.pory"
-	.string "Xylar$"
+	.string "{PLAYER}$"
 
 NihilFirstVisit1_Text_1:
 # 46 "data/maps/Newmap11/scripts.pory"
@@ -1347,7 +1347,7 @@ NihilFirstVisit1_Text_15:
 NihilFirstVisit1_Text_16:
 # 115 "data/maps/Newmap11/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_MAD}(Telepathy)\p"
-	.string "{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Xylar! Stop.$"
+	.string "{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}{PLAYER}! Stop.$"
 
 NihilFirstVisit1_Text_17:
 # 121 "data/maps/Newmap11/scripts.pory"
@@ -1584,9 +1584,9 @@ Alistairarrive_Text_23:
 
 Alistairarrive_Text_24:
 # 370 "data/maps/Newmap11/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}You're strong, Xylar but you don't know\n"
-	.string "the meaning of true strength and to\l"
-	.string "learn that the academy is the best\l"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}You're strong, {PLAYER} but you don't\n"
+	.string "know the meaning of true strength and\l"
+	.string "to learn that the academy is the best\l"
 	.string "place to be.$"
 
 Alistairarrive_Text_25:
@@ -1721,7 +1721,7 @@ grave_Text_1:
 
 grave_Text_2:
 # 508 "data/maps/Newmap11/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORMAL}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Xylar……$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORMAL}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}{PLAYER}……$"
 
 grave_Text_3:
 # 512 "data/maps/Newmap11/scripts.pory"

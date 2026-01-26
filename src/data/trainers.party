@@ -75,7 +75,7 @@ Comments can be added as C comment blocks
 
 === TRAINER_NONE ===
 Name:
-Class: Pkmn Trainer 1
+Class: Pkmn Trainer 2
 Pic: Hiker
 Gender: Male
 Music: Male
@@ -326,18 +326,78 @@ IVs: 31 HP / 31 Atk / 0 Def / 31 SpA / 0 SpD / 31 Spe
 - Scratch
 - Double Team
 
-=== TRAINER_GRUNT_PETALBURG_WOODS ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+=== VEYLOR_1 ===
+Name: Veylor
+Class: Nexus Admin
+Pic: Veylor
 Gender: Male
-Music: Aqua
+Items: Mega Ring
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer / Assumptions / Prediction / Risky / Try to 2Hko / Hp Aware / Ace Pokemon
 
-Poochyena
-Level: 9
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Galvantula (M) @ Focus Sash  
+Level: 100
+Ability: Compound Eyes  
+EVs: 252 SpA / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Sticky Web  
+- Thunder  
+- Bug Buzz  
+- Energy Ball  
+
+Dialga @ Adamant Orb  
+Level: 100
+Ability: Pressure  
+EVs: 252 HP / 212 SpA / 44 Spe  
+Quiet Nature  
+IVs: 0 Atk  
+- Roar of Time  
+- Stealth Rock  
+- Flash Cannon  
+- Aura Sphere  
+ 
+Palkia @ Lustrous Orb  
+Level: 100
+Ability: Pressure  
+EVs: 64 Def / 140 SpA / 52 SpD / 252 Spe  
+Modest Nature  
+IVs: 0 Atk  
+- Fire Blast  
+- Spacial Rend  
+- Hydro Pump  
+- Thunder Wave  
+
+Gyarados @ Gyaradosite  
+Level: 100
+Ability: Intimidate  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Waterfall  
+- Crunch  
+- Dragon Dance  
+- Earthquake  
+
+Hydreigon @ Expert Belt  
+Level: 100
+Ability: Levitate  
+EVs: 252 SpA / 252 Spe  
+Rash Nature  
+IVs: 0 Atk  
+- Draco Meteor  
+- Dark Pulse  
+- Flash Cannon  
+- Fire Blast  
+
+Hoopa-Unbound @ Assault Vest  
+Level: 100
+Ability: Magician  
+EVs: 140 Atk / 116 SpA / 252 Spe  
+Lonely Nature  
+- Hyperspace Fury  
+- Psychic  
+- Gunk Shot  
+- Drain Punch 
 
 === TRAINER_MARCEL ===
 Name: MARCEL

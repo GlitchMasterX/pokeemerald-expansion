@@ -737,8 +737,7 @@ Grunt3_Outro::
 # 43 "data/maps/Sparkbase/scripts.pory"
 	.string "Ugh, I can't believe this! You're just\n"
 	.string "lucky. Next time, you won't be so\l"
-	.string "fortunate!\p"
-	.string "Xylar: There won't e any next time.$"
+	.string "fortunate!$"
 
 Grunt4_Intro::
 # 53 "data/maps/Sparkbase/scripts.pory"
@@ -747,10 +746,7 @@ Grunt4_Intro::
 
 Grunt4_Outro::
 # 56 "data/maps/Sparkbase/scripts.pory"
-	.string "Enjoy your victory... it won't last long.\p"
-	.string "Xylar:This isn't about victory\n"
-	.string "anymore... It's about making sure you\l"
-	.string "never take another breath.$"
+	.string "Enjoy your victory... it won't last long.$"
 
 PostBattle_Grunt4::
 # 59 "data/maps/Sparkbase/scripts.pory"

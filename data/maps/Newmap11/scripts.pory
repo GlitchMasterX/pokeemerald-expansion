@@ -42,14 +42,14 @@ script NihilFirstVisit1 {
     playse(SE_PIN)
 
     applymovement(0xFF,moves(emote_question_mark))
-    speakername("Xylar")
+    speakername("{PLAYER}")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Who are you.....?"))
     closemessage
     removefieldmugshot
     special(SpawnCameraObject)
     applymovement(0x7F,moves(walk_up*2))
     waitmovement(0)
-    speakername("Xylar")
+    speakername("{PLAYER}")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}You-!{PAUSE_UNTIL_PRESS} Get away from there!\p Mewtwo!"))
     closemessage
     applymovement(0xFE,moves(walk_right walk_up))
@@ -106,13 +106,13 @@ script NihilFirstVisit1 {
     closemessage
     playse(SE_PIN)
     applymovement(0xFF,upset)
-    speakername("Xylar")
+    speakername("{PLAYER}")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{RESET_FONT}{COLOR BLUE}{SHADOW LIGHT_GRAY}Beautiful…?\pYou dare stand over my mother's grave and call her death {COLOR RED}{SHADOW LIGHT_GRAY}beautiful!{COLOR BLUE}{SHADOW LIGHT_GRAY}\pI'll kill you where you stand!!"))
     closemessage
     playse(SE_PIN)
     applymovement(0xFE,moves(emote_exclamation_mark))
     speakername("Mewtwo")
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_MAD}(Telepathy)\p{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Xylar! Stop."))
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_MAD}(Telepathy)\p{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}{PLAYER}! Stop."))
     waitmessage
     closemessage
     applymovement(4,moves(face_down delay_8 walk_slow_down))
@@ -164,7 +164,7 @@ script NihilFirstVisit1 {
     playmoncry(SPECIES_MEWTWO,CRY_MODE_WEAK)
     playse(SE_PIN)
     applymovement(0xFF,exclam)
-    speakername("Xylar")
+    speakername("{PLAYER}")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Mewtwo……?!\pWhat happened…?"))
     closemessage
     playmoncry(SPECIES_MEWTWO,CRY_MODE_WEAK)
@@ -181,36 +181,36 @@ script NihilFirstVisit1 {
     waitmovement(0)
     special(RemoveCameraObject)
    applymovement(0xFF,moves(face_down))
-   speakername("Xylar")
+   speakername("{PLAYER}")
     msgbox(format("Do you think Mewtwo was right? Were there really… shadows?"),MSGBOX_YESNO)
 if(var(VAR_RESULT)==YES){
-    speakername("Xylar")
+    speakername("{PLAYER}")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}I see…… So, you believe Mewtwo's instincts."),MSGBOX_AUTOCLOSE)
 }
 else{
-    speakername("Xylar")
+    speakername("{PLAYER}")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}I see…… So, you don't believe Mewtwo's instincts.\pI think otherwise."),MSGBOX_AUTOCLOSE)
 }
 
-    speakername("Xylar")
+    speakername("{PLAYER}")
     msgbox(format("Then… what about his words?\pAbout life, beauty, and death… do you believe them?"),MSGBOX_YESNO)
 if(var(VAR_RESULT)==YES){
-    speakername("Xylar")
+    speakername("{PLAYER}")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}You do?……{PAUSE_UNTIL_PRESS} That's unexpected, but I understand."),MSGBOX_AUTOCLOSE)    
 }
 else{
-    speakername("Xylar")
+    speakername("{PLAYER}")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}Hmmm…… I also refuse to consider life as something meaningless."),MSGBOX_AUTOCLOSE)    
 }
 
-    speakername("Xylar")
+    speakername("{PLAYER}")
     msgbox(format("Do you think he…… was a human?"),MSGBOX_YESNO)
 if(var(VAR_RESULT)==YES){
-    speakername("Xylar")
+    speakername("{PLAYER}")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}Human…?\pMaybe you're right.{PAUSE_UNTIL_PRESS} But if that's true…\pThen what kind of human carries a presence like that?"),MSGBOX_AUTOCLOSE)    
 }
 else{
-    speakername("Xylar")
+    speakername("{PLAYER}")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}No… you're right.\pNo human could stand there and make even Mewtwo hesitate.{PAUSE_UNTIL_PRESS}\pWhatever he is… he's not like us."),MSGBOX_AUTOCLOSE)    
 }
 
@@ -367,7 +367,7 @@ script Alistairarrive {
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}I....I lost?"),MSGBOX_AUTOCLOSE)
 	 
     speakername("Alistair")
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}You're strong, Xylar but you don't know the meaning of true strength and to learn that the academy is the best place to be."),MSGBOX_AUTOCLOSE)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}You're strong, {PLAYER} but you don't know the meaning of true strength and to learn that the academy is the best place to be."),MSGBOX_AUTOCLOSE)
 	 
     speakername(Xylar1)
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}It doesn't change anything, one battle doesn't change who I am."),MSGBOX_AUTOCLOSE)
@@ -499,13 +499,13 @@ movement question {
 script grave {
     if(var(VAR_ACADEMY_START)== 50){
     lock
-    speakername("Xylar")
+    speakername("{PLAYER}")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_TEAR}{COLOR BLUE}{SHADOW LIGHT_GRAY}Mom…… I'm sorry.\pI couldn't save you. I couldn't save anyone.\pI wasn't strong enough.{PAUSE_UNTIL_PRESS} I wasn't anything.\pI ran-like a coward-while they took everything from us."))   
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_TEAR}{COLOR BLUE}{SHADOW LIGHT_GRAY}But I won't let the world forget you.\pI won't let it move on like nothing happened.\pI'll carve your name into this world.\pI'll have my revenge."), MSGBOX_AUTOCLOSE)  
     applymovement(0xFE,moves(walk_in_place_up))
     playmoncry(SPECIES_MEWTWO,CRY_MODE_WEAK)
     speakername("Mewtwo")
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORMAL}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Xylar……"))   
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MEWTWO}{EMOTE_NORMAL}{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}{PLAYER}……"))   
     waitmessage
     closemessage
     speakername("Mewtwo")
@@ -513,7 +513,7 @@ script grave {
     waitmessage
     closemessage
     applymovement(0xFF,moves(delay_16 delay_16 face_down))
-    speakername("Xylar")
+    speakername("{PLAYER}")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Hmmm……")) 
     waitmessage  
     closemessage
@@ -542,12 +542,12 @@ script grave {
 script shouldsleep {
     lock
     fadescreen(FADE_FROM_BLACK)
-    speakername("Xylar")
+    speakername("{PLAYER}")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}I'm exhausted……\pMaybe I should rest before..."))
     waitmessage
     closemessage
     fadescreen(FADE_TO_BLACK)
-    speakername("Xylar")
+    speakername("{PLAYER}")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SPECIAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}……"))
     waitmessage
     release

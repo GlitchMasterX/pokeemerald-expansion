@@ -63,10 +63,10 @@ waitmovement(0)
 speakername("Kael")
 msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}I'm Kael! Kael Ashford. From Cinderbrook Town.\pYou?"))
 speakername(Xylar1)
-msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_REALIZE}{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar."))
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_REALIZE}{COLOR BLUE}{SHADOW LIGHT_GRAY}{PLAYER}."))
 closemessage
 speakername("Kael")
-msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar... cool name! So, where are you from?"))
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}{PLAYER}... cool name! So, where are you from?"))
 closemessage
 applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_left walk_up walk_in_place_slow_up))
 waitmovement(0)
@@ -117,7 +117,7 @@ closemessage
 playse(SE_PIN)
 applymovement(1,moves(emote_exclamation_mark))
 speakername("Kael")
-msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Uh..{PAUSE}...Right. Well... I'll, uh, let you settle in.\pSee you around, Xylar."))
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Uh..{PAUSE}...Right. Well... I'll, uh, let you settle in.\pSee you around, {PLAYER}."))
 closemessage
 applymovement(1, moves(walk_down*8))
 waitmovement(0)
@@ -136,7 +136,7 @@ playse(SE_DOOR)
 applymovement(1, moves(walk_up*8 face_left))
 waitmovement(0)
 speakername("Kael")
-msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar!\p{PAUSE_UNTIL_PRESS}Oh! he's asleep."))
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}{PLAYER}!\p{PAUSE_UNTIL_PRESS}Oh! he's asleep."))
 closemessage
 applymovement(1,moves(face_right))
 speakername("Kael")
@@ -179,7 +179,7 @@ waitmovement(0)
 applymovement(1,moves(walk_left*2))
 waitmovement(0)
 speakername("Kael")
-msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Uh… Xylar? Morning.\pClass starts soon.\pI thought I'd make sure you didn't miss it."))
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_KAEL}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Uh… {PLAYER}? Morning.\pClass starts soon.\pI thought I'd make sure you didn't miss it."))
 closemessage
 fadescreen(FADE_FROM_BLACK)
 speakername(Xylar1)
@@ -208,7 +208,7 @@ release
 
 script Nightstroll {
     lock
-    speakername("Xylar")
+    speakername("{PLAYER}")
     msgbox(format("I can't fall sleep, maybe I should go for a walk."))
     release
     setvar(VAR_ACADEMY_START,11)

@@ -49,7 +49,7 @@ script ran{
     speakername(Xylar1)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}You lied about the pancakes! I ran down like a chicken-then everyone laughed at me!\pYou know Dad would never allow it.\pYou're not getting away with this!"),MSGBOX_AUTOCLOSE) 
     speakername(name4)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}I'm sorry, Master Xylar! But I couldn't help myself.\pYou should've seen your face-it was priceless! "),MSGBOX_AUTOCLOSE)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}I'm sorry, Master {PLAYER}! But I couldn't help myself.\pYou should've seen your face-it was priceless! "),MSGBOX_AUTOCLOSE)
     speakername(Xylar1)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIGHT_GRAY}Uhhhh!!!"),MSGBOX_AUTOCLOSE) 
     applymovement(1,rum)
@@ -59,14 +59,14 @@ script ran{
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}You're not getting off that easy!"),MSGBOX_AUTOCLOSE)
     waitmessage
     speakername(name4)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Catch me if you can, Master Xylar."),MSGBOX_AUTOCLOSE)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Catch me if you can, Master {PLAYER}."),MSGBOX_AUTOCLOSE)
     removefieldmugshot 
     playse(SE_PIN)
     applymovement(1,move)
     applymovement(OBJ_EVENT_ID_PLAYER,move2)
     waitmovement(0)
     speakername(name4)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Hahahaha!!\p Wait… if Lady Elysia sees you chasing me like this in the cold, she'll ground you, Master Xylar!"),MSGBOX_AUTOCLOSE)
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Hahahaha!!\p Wait… if Lady Elysia sees you chasing me like this in the cold, she'll ground you, Master {PLAYER}!"),MSGBOX_AUTOCLOSE)
     speakername(Xylar1)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't care."),MSGBOX_AUTOCLOSE)
     waitmessage
@@ -130,7 +130,7 @@ script ran{
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}Wh-what the-?! The pool?!\pMira!! this is all your fault!"))
     removefieldmugshot 
     speakername(name4)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Ehh?! Don't blame me!\pI didn't do it!……\pBut you look like a drenched Torchic, Master Xylar!"))
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Ehh?! Don't blame me!\pI didn't do it!……\pBut you look like a drenched Torchic, Master {PLAYER}!"))
     speakername(Xylar1)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}A-a Torchic?!\pWhy you-!!\pIf Mom sees us dripping wet, we're both in trouble!")) 
     playse(SE_PIN)
@@ -166,7 +166,7 @@ speakername(Xylar1)
 msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SMILE}{COLOR BLUE}{SHADOW LIGHT_GRAY}Yeah…\pIt feels strange knowing I'll be away from everyone.\pI guess I'm… kinda nervous."))
 
 speakername(name4)
-msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}You're going to be amazing, Master Xylar.\pWe're all proud of you.\pAnd when you come back-I'll make real pancakes this time.\nNo tricks, I swear."))
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}You're going to be amazing, Master {PLAYER}.\pWe're all proud of you.\pAnd when you come back-I'll make real pancakes this time.\nNo tricks, I swear."))
 speakername(Xylar1)
 msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Promise?"))
 speakername(name4)
@@ -181,7 +181,7 @@ msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_MAD}{COLOR BLUE}{SHADOW LIG
 playse(SE_PIN)
 applymovement(1,moves(emote_happy))
 speakername(name4)
-msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SMILE}{COLOR RED}{SHADOW LIGHT_GRAY}Oh? Is Master Xylar jealous?"))
+msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SMILE}{COLOR RED}{SHADOW LIGHT_GRAY}Oh? Is Master {PLAYER} jealous?"))
 speakername(Xylar1)
 msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_BLUSH}{COLOR BLUE}{SHADOW LIGHT_GRAY}Wh-?! N-No! I just-\pThat's not-!"))
 speakername(name4)
@@ -331,7 +331,7 @@ script indoor {
     applymovement(6,in)
     waitmovement(0)
     speakername(name4)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, You should take a bath and get changed before mother sees you like this."))     
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Master {PLAYER}, You should take a bath and get changed before mother sees you like this."))     
     speakername(Xylar1)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Yeah. I'll do that."))     
     removefieldmugshot
@@ -370,7 +370,7 @@ script stroll {
     applymovement(5,moves(walk_up*6))
     waitmovement(0)
     speakername(name4)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Let's go Master Xylar."))
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Let's go Master {PLAYER}."))
     removefieldmugshot 
     speakername(Xylar1)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Okay, Let's go."))
@@ -392,7 +392,7 @@ script mirafollowerscript {
     lock
     facefollowernpc
     speakername(name4)    
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Let's go Master Xylar."))
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Let's go Master {PLAYER}."))
     removefieldmugshot 
     release
 }
@@ -401,7 +401,7 @@ else{
     facefollowernpc
     applymovement(0xFD,moves(emote_happy))
     speakername(name4)    
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Don't worry Master Xylar, I'll always be with you."))
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Don't worry Master {PLAYER}, I'll always be with you."))
     removefieldmugshot 
     release
 }
@@ -531,28 +531,28 @@ script strolll{
     applymovement(OBJ_EVENT_ID_PLAYER,strp)
     applymovement(0xFD,strp)
     speakername(name4)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}That's not the way, Master Xylar."))
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}That's not the way, Master {PLAYER}."))
      
     releaseall
 }
 script Sailor {
     lock
     faceplayer
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Master Xylar, I have to tell you, your father is one of the bravest men I've ever known.\pThe way he stood up against the Dark Force to protect us all, I've never seen courage like that.\pWithout him, who knows what would have happened?\pHe's a true hero, and it's an honor to serve him."))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Master {PLAYER}, I have to tell you, your father is one of the bravest men I've ever known.\pThe way he stood up against the Dark Force to protect us all, I've never seen courage like that.\pWithout him, who knows what would have happened?\pHe's a true hero, and it's an honor to serve him."))
     releaseall
 }
 
 script sailorr {
     lock
     faceplayer
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Good day, young master Xylar!\pThe captain's busy preparing the ship for your journey, even though the academy starts in a week.\pHe wants to make sure everything is perfect for when the time comes.\pWe'll be ready to set sail whenever you're ready!"))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Good day, young master {PLAYER}!\pThe captain's busy preparing the ship for your journey, even though the academy starts in a week.\pHe wants to make sure everything is perfect for when the time comes.\pWe'll be ready to set sail whenever you're ready!"))
     releaseall   
 }
 
 script sail {
     lock
     faceplayer
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Master Xylar, I'll never forget the day your Father faced the Dark Force.\pThe skies turned dark, and portals opened everywhere, unleashing chaos.\pIt was the most terrifying thing I've ever seen.\pBut your father, he didn't even flinch.\pHe stood firm, right in the face of that monster, and fought with a bravery I've never witnessed before.\pWe all owe him our lives for what he did that day."))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Master {PLAYER}, I'll never forget the day your Father faced the Dark Force.\pThe skies turned dark, and portals opened everywhere, unleashing chaos.\pIt was the most terrifying thing I've ever seen.\pBut your father, he didn't even flinch.\pHe stood firm, right in the face of that monster, and fought with a bravery I've never witnessed before.\pWe all owe him our lives for what he did that day."))
     releaseall     
 }
 script blood{
@@ -571,7 +571,7 @@ script bloodsee {
     playse(SE_PIN)
     applymovement(OBJ_EVENT_ID_PLAYER,exclam)
     applymovement(0xFD,exclam)
-    speakername("Xylar")
+    speakername("{PLAYER}")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}What's that?"),MSGBOX_SIGN)
     removefieldmugshot
     getplayerxy(VAR_0x8000,VAR_0x8001)
@@ -597,7 +597,7 @@ script bloodsee {
     waitmovement(0)}
     facefollowernpc
     speakername(name4)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SHOCK}{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, Don't look at it. You're too young to see something like this... Please, just trust me and let's go back inside."))
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SHOCK}{COLOR RED}{SHADOW LIGHT_GRAY}Master {PLAYER}, Don't look at it. You're too young to see something like this... Please, just trust me and let's go back inside."))
     removefieldmugshot 
     releaseall
     setvar(VAR_ROUTE103_STATE,4)
@@ -607,7 +607,7 @@ script blo {
     lock
     facefollowernpc
     speakername(name4)
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SHOCK}{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, Don't look at it. You're too young to see something like this... Please, just trust me and let's go back inside."))
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SHOCK}{COLOR RED}{SHADOW LIGHT_GRAY}Master {PLAYER}, Don't look at it. You're too young to see something like this... Please, just trust me and let's go back inside."))
     releaseall
     
 }
@@ -682,7 +682,7 @@ script stded{
     applymovement(OBJ_EVENT_ID_PLAYER,strrp)
     applymovement(0xFD,strrp)
     speakername(name4)
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}That's not the way,Master Xylar."))
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}That's not the way, Master {PLAYER}."))
      
     release
 }

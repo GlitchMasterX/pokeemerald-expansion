@@ -2565,8 +2565,6 @@ void Sandstorm_Main(void)
         if (++gWeatherPtr->sandstormSoundCounter > 90) // ~1.5s at 60fps
         {
             gWeatherPtr->sandstormSoundCounter = 0;
-            PlaySE(SE_M_SAND_TOMB);
-            
         }
     }
     UpdateSandstormMovement();

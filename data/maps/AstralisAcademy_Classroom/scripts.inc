@@ -585,7 +585,7 @@ Trialbattle_Text_2:
 Trialbattle_Text_3:
 # 45 "data/maps/AstralisAcademy_Classroom/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_GRAY}Our first challenger,\p"
-	.string "Xylar, step forward.\p"
+	.string "{PLAYER}, step forward.\p"
 	.string "Show us the strength that brought you\n"
 	.string "to this academy.$"
 
@@ -688,7 +688,7 @@ Trialbattle_Text_23:
 
 Trialbattle_Text_24:
 # 141 "data/maps/AstralisAcademy_Classroom/scripts.pory"
-	.string "Xylar$"
+	.string "{PLAYER}$"
 
 Trialbattle_Text_25:
 # 142 "data/maps/AstralisAcademy_Classroom/scripts.pory"

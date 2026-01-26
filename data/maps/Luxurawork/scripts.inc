@@ -1491,7 +1491,7 @@ trageflash_Text_7:
 
 dad_Text_0:
 # 163 "data/maps/Luxurawork/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar, all set for the academy?$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}{PLAYER}, all set for the academy?$"
 
 dad_Text_1:
 # 165 "data/maps/Luxurawork/scripts.pory"
@@ -1517,7 +1517,7 @@ dad_Text_4:
 
 dad_Text_5:
 # 177 "data/maps/Luxurawork/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Oh, Xylar, before I forget-\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Oh, {PLAYER}, before I forget-\p"
 	.string "An old friend of mine from the academy\n"
 	.string "will be visiting near the end of this\l"
 	.string "month.\p"
@@ -1643,9 +1643,9 @@ trage_Text_17:
 
 trage_Text_18:
 # 355 "data/maps/Luxurawork/scripts.pory"
-	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}(Xylar stares at his father's lifeless\n"
-	.string "body, blood soaking the ground. His\l"
-	.string "heart pounds in his chest, unable to\l"
+	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}({PLAYER} stares at his father's\n"
+	.string "lifeless body, blood soaking the ground.\l"
+	.string "His heart pounds in his chest, unable to\l"
 	.string "fully grasp the horror in front of him.)$"
 
 trage_Text_19:
@@ -1664,7 +1664,7 @@ trage_Text_21:
 
 trage_Text_22:
 # 369 "data/maps/Luxurawork/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_TEAR}{COLOR RED}{SHADOW LIGHT_GRAY}Mira! Take Xylar and run!\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_TEAR}{COLOR RED}{SHADOW LIGHT_GRAY}Mira! Take {PLAYER} and run!\p"
 	.string "Now, hurry!!$"
 
 trage_Text_23:
@@ -1702,7 +1702,7 @@ Hooparescue_Text_0:
 
 Hooparescue_Text_1:
 # 474 "data/maps/Luxurawork/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}It's alright, Master Xylar.\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}It's alright, Master {PLAYER}.\p"
 	.string "I'm here. I'm not going anywhere.$"
 
 Hooparescue_Text_2:
@@ -1716,7 +1716,7 @@ Hooparescue_Text_3:
 
 Hooparescue_Text_4:
 # 479 "data/maps/Luxurawork/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}I know, Master Xylar... I know.\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}I know, Master {PLAYER}... I know.\p"
 	.string "But right now, you need to be strong.\p"
 	.string "For him. For your mother.\p"
 	.string "They wouldn't want you to be scared.$"
@@ -1730,7 +1730,7 @@ Hooparescue_Text_5:
 Hooparescue_Text_6:
 # 483 "data/maps/Luxurawork/scripts.pory"
 	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Because the world isn't fair, Master\n"
-	.string "Xylar.\p"
+	.string "{PLAYER}.\p"
 	.string "Sometimes, terrible people do terrible\n"
 	.string "things.\p"
 	.string "But listen to me you are not alone. You\n"

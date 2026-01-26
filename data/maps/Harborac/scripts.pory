@@ -162,7 +162,7 @@ script elias{
     faceplayer
     applymovement(1,exclam)
     speakername(unknown)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You're late Xylar.\pMy name is Elias.\pI'm a professor and the headmaster made it clear that I was to ensure your arrival.\pCome with me, the headmaster is waiting for you."))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You're late {PLAYER}.\pMy name is Elias.\pI'm a professor and the headmaster made it clear that I was to ensure your arrival.\pCome with me, the headmaster is waiting for you."))
     speakername(Xylar1)
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I don't need an escort.\pJust tell me where I have to go.")) 
     speakername(eliasn)
@@ -203,7 +203,7 @@ if (!flag(FLAG_AFTER_OUTBURST)){
 elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
     lock
     faceplayer
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I thought Xylar was just a quiet, strong guy… but after that? Damn. He's terrifying."))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}I thought {PLAYER} was just a quiet, strong guy… but after that? Damn. He's terrifying."))
     release
 }
 else{
@@ -247,7 +247,7 @@ elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
     lock
     faceplayer
     speakername(eliasn)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You lost control, Xylar. That is unacceptable. You may have skill, but if you cannot control yourself, you will not last here."))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}You lost control, {PLAYER}. That is unacceptable. You may have skill, but if you cannot control yourself, you will not last here."))
      
     release
 }
@@ -271,7 +271,7 @@ if(!flag(FLAG_AFTER_OUTBURST)){
 elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
     lock
     faceplayer
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Man, I respected Xylar… but now I don't know. That wasn't just rage."))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Man, I respected {PLAYER} but now I don't know. That wasn't just rage."))
     release
 }
 else{
@@ -319,7 +319,7 @@ elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
     lock
     faceplayer
     speakername(maribel)
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Such raw emotion! Such unfiltered intensity!\p…And yet, Xylar, this is not the place for a destructive masterpiece."))
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Such raw emotion! Such unfiltered intensity!\p…And yet, {PLAYER}, this is not the place for a destructive masterpiece."))
      
     release
 }
@@ -346,7 +346,7 @@ script AcademyNpc6 {
 elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
     lock
     faceplayer
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I wanted to draw Xylar's Torchic before.\pNow, I'm not so sure I even want to be near him."))
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I wanted to draw {PLAYER}'s Torchic before.\pNow, I'm not so sure I even want to be near him."))
     release
 }
 else{
@@ -397,7 +397,7 @@ if (!flag(FLAG_AFTER_OUTBURST)){
 elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
     lock
     faceplayer
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I don't get it.\pXylar's strategy was so calculated in battle, but outside of it… he was reckless."))
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I don't get it.\p{PLAYER}'s strategy was so calculated in battle, but outside of it… he was reckless."))
     release
 }
 else{
@@ -422,7 +422,7 @@ else{
     lock
     faceplayer
     speakername("Leaf")
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}Xylar....\pI don't know what to say.\pThat wasn't just anger.\pThat was something else."))
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}{PLAYER}....\pI don't know what to say.\pThat wasn't just anger.\pThat was something else."))
      
     release
 }
@@ -491,12 +491,12 @@ else {
 elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
     lock
     faceplayer
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}There's a story about a warrior who lost control and became a monster.....\pDo you believe in fate, Xylar?"))
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}There's a story about a warrior who lost control and became a monster.....\pDo you believe in fate, {PLAYER}?"))
     release}
 else{
     lock
     faceplayer
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I wonder… what are you really fighting against, Xylar?"))
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}I wonder… what are you really fighting against, {PLAYER}?"))
     release
 }
 }
@@ -519,7 +519,7 @@ elif(flag(FLAG_LEAFMET)&& !flag(FLAG_AFTER_OUTBURST))
     lock
     faceplayer
     applymovement(1,exclam)
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}You must be Xylar.\pHere's your room key."))
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}You must be {PLAYER}.\pHere's your room key."))
     playse(MUS_DP_OBTAIN_ITEM)
     msgbox(format("Recieved room key."))
     msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}It's the room  on the left side at the end."))
@@ -530,7 +530,7 @@ elif(flag(FLAG_LEAFMET)&& !flag(FLAG_AFTER_OUTBURST))
 elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))&&(!flag(FLAG_LEAFMET))){
      lock
     faceplayer
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}.....Xylar, what happened there?\pYou looked completely different...."))
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}.....{PLAYER}, what happened there?\pYou looked completely different...."))
     release
 }
 else{
@@ -554,7 +554,7 @@ elif (flag(FLAG_AFTER_OUTBURST)&&(!flag(FLAG_OUTBURST_SETTLED))){
     lock
     faceplayer
     speakername(alistair)
-    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar… I see potential in you, but potential without control is dangerous.\pYou need to understand that."))
+    msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}{PLAYER} I see potential in you, but potential without control is dangerous.\pYou need to understand that."))
      
     release
 }
@@ -741,7 +741,7 @@ if (!flag(FLAG_AFTER_OUTBURST)){
     lock
     faceplayer
     speakername(unknown)
-    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}You don't belong here, Xylar.\pBut you already knew that, didn't you?"))
+    msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}You don't belong here, {PLAYER}.\pBut you already knew that, didn't you?"))
      
     release
 }
@@ -991,4 +991,8 @@ script Doorlock{
     applymovement(0xFF,moves(face_down))
     waitmovement(0)
     release
+}
+
+movement heart {
+   emote_heart 
 }

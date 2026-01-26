@@ -1306,8 +1306,8 @@ HeadOfficeAfterTrial1_Movement_3:
 
 Head_Text_0:
 # 36 "data/maps/headoffice/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar, I trust your journey here was\n"
-	.string "uneventful.\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}{PLAYER}, I trust your journey here\n"
+	.string "was uneventful.\p"
 	.string "I understand this is all new for you,\n"
 	.string "but it's time to start fresh.$"
 
@@ -1326,7 +1326,7 @@ Head_Text_2:
 
 Head_Text_3:
 # 50 "data/maps/headoffice/scripts.pory"
-	.string "Xylar recieved {STR_VAR_1}.$"
+	.string "{PLAYER} recieved {STR_VAR_1}.$"
 
 girlsdorm_Text_0:
 # 68 "data/maps/headoffice/scripts.pory"
@@ -1561,7 +1561,7 @@ HeadOfficeAfterTrial1_Text_0:
 
 HeadOfficeAfterTrial1_Text_1:
 # 406 "data/maps/headoffice/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}Xylar, take a seat.$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}{PLAYER}, take a seat.$"
 
 HeadOfficeAfterTrial1_Text_2:
 # 410 "data/maps/headoffice/scripts.pory"
@@ -1599,7 +1599,7 @@ HeadOfficeAfterTrial1_Text_8:
 
 HeadOfficeAfterTrial1_Text_9:
 # 435 "data/maps/headoffice/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}This Academy isn't a cage, Xylar.$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_ALISTAIR}{EMOTE_ANGRY}{COLOR BLUE}{SHADOW LIGHT_GRAY}This Academy isn't a cage, {PLAYER}.$"
 
 HeadOfficeAfterTrial1_Text_10:
 # 438 "data/maps/headoffice/scripts.pory"

@@ -835,8 +835,8 @@ forest_Text_1:
 
 forest_Text_2:
 # 51 "data/maps/LuxuraIsland1/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SHOCK}{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar, did you hear that? It\n"
-	.string "sounded like a voice coming from the\l"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_SHOCK}{COLOR RED}{SHADOW LIGHT_GRAY}Master {PLAYER}, did you hear that?\n"
+	.string "It sounded like a voice coming from the\l"
 	.string "direction of the mansion.\p"
 	.string "We should go check it out!$"
 
@@ -855,8 +855,8 @@ miraded_Text_0:
 
 miraded_Text_1:
 # 143 "data/maps/LuxuraIsland1/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Yes, Master Xylar. I'll stay right beside\n"
-	.string "you.$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Yes, Master {PLAYER}. I'll stay right\n"
+	.string "beside you.$"
 
 miraded_Text_2:
 # 149 "data/maps/LuxuraIsland1/scripts.pory"
@@ -931,8 +931,8 @@ miraded_Text_17:
 # 198 "data/maps/LuxuraIsland1/scripts.pory"
 	.string "(If we resist together, we'll both be\n"
 	.string "taken.)\p"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_ANGRY}{COLOR RED}{SHADOW LIGHT_GRAY}Master Xylar… I'll hold them off. You\n"
-	.string "must run to the forest.$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_ANGRY}{COLOR RED}{SHADOW LIGHT_GRAY}Master {PLAYER} I'll hold them off.\n"
+	.string "You must run to the forest.$"
 
 miraded_Text_18:
 # 200 "data/maps/LuxuraIsland1/scripts.pory"
@@ -972,8 +972,8 @@ miraded_Text_24:
 
 miraded_Text_25:
 # 226 "data/maps/LuxuraIsland1/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Xylar! From here on, no matter what you\n"
-	.string "hear, don't look back.\p"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}{PLAYER}! From here on, no matter\n"
+	.string "what you hear, don't look back.\p"
 	.string "Run, and never think this was your\n"
 	.string "fault.$"
 
@@ -984,7 +984,7 @@ miraded_Text_26:
 
 miraded_Text_27:
 # 230 "data/maps/LuxuraIsland1/scripts.pory"
-	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_MAD}{COLOR RED}{SHADOW LIGHT_GRAY}XYLAR!$"
+	.string "{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_MAD}{COLOR RED}{SHADOW LIGHT_GRAY}{PLAYER}!$"
 
 miraded_Text_28:
 # 238 "data/maps/LuxuraIsland1/scripts.pory"

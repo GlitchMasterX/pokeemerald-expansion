@@ -1,0 +1,11 @@
+mapscripts OldaleTown_PokemonCenter_1F_MapScripts{
+    MAP_SCRIPT_ON_RESUME: Flashback_0
+}
+
+script Flashback_0 {
+    if(flag(FLAG_FLASHBACK_MUSIC)){
+    removeobject(0xFF)
+    removeobject(5)   
+    addobject(1)
+    }
+}

@@ -125,7 +125,7 @@
 #define VAR_ROUTE110_STATE                               0x4069
 #define VAR_KAEL_CHARCTER                               0x406A // Unused Var
 #define VAR_CHARACTER_CHANGE                               0x406B // Unused Var
-#define VAR_ROUTE113_STATE                               0x406C // Unused Var
+#define VAR_CHANGE_NAME                               0x406C // Unused Var
 #define VAR_ROUTE114_STATE                               0x406D // Unused Var
 #define VAR_ROUTE115_STATE                               0x406E // Unused Var
 #define VAR_ROUTE116_STATE                               0x406F

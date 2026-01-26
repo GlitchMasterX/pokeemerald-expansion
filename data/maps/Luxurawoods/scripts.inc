@@ -232,7 +232,7 @@ mewtwotendq::
 # 115 "data/maps/Luxurawoods/scripts.pory"
 	lockall
 # 116 "data/maps/Luxurawoods/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, thuddd
+	applymovement OBJ_EVENT_ID_PLAYER, mewtwotendq_Movement_0
 # 117 "data/maps/Luxurawoods/scripts.pory"
 	waitmovement 0
 # 118 "data/maps/Luxurawoods/scripts.pory"
@@ -1081,6 +1081,14 @@ portal_close:
 	set_invisible
 	step_end
 
+# 116 "data/maps/Luxurawoods/scripts.pory"
+mewtwotendq_Movement_0:
+# 116 "data/maps/Luxurawoods/scripts.pory"
+	walk_left
+# 116 "data/maps/Luxurawoods/scripts.pory"
+	face_up
+	step_end
+
 # 350 "data/maps/Luxurawoods/scripts.pory"
 gruntsded_Movement_0:
 # 350 "data/maps/Luxurawoods/scripts.pory"
@@ -1276,9 +1284,9 @@ revive_Text_5:
 
 revive_Text_6:
 # 224 "data/maps/Luxurawoods/scripts.pory"
-	.string "Xylar continued to tend to the Pokémon\n"
-	.string "for several days, hoping it would open\l"
-	.string "its eyes...$"
+	.string "{PLAYER} continued to tend to the\n"
+	.string "Pokémon for several days, hoping it\l"
+	.string "would open its eyes...$"
 
 revive_Text_7:
 # 225 "data/maps/Luxurawoods/scripts.pory"
@@ -1314,8 +1322,8 @@ revive_Text_12:
 
 revive_Text_13:
 # 250 "data/maps/Luxurawoods/scripts.pory"
-	.string "Mewtwo’s psychic power probed Xylar's\n"
-	.string "mind...$"
+	.string "Mewtwo's psychic power probed\n"
+	.string "{PLAYER}'s mind...$"
 
 revive_Text_14:
 # 253 "data/maps/Luxurawoods/scripts.pory"
