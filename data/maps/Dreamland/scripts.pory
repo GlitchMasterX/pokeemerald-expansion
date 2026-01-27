@@ -704,7 +704,7 @@ script Cityruin_9 {
     playse(SE_PIN)
     applymovement(2,moves(emote_exclamation_mark))
     speakername("Aurther")
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_QUESTION}{COLOR BLUE}{SHADOW LIGHT_GRAY}……"))
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_QUESTION}{COLOR BLUE}{SHADOW LIGHT_GRAY}You're…\pIt can't be…"))
     closemessage    
     fadescreen(FADE_TO_BLACK)
     speakername("???")

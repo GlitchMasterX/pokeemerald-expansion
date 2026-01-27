@@ -329,7 +329,7 @@
 #define MUS_WEATHER_GROUDON         396 // MUS_HIDERI           // Unused, from R/S.
 #define MUS_SOOTOPOLIS              397 // MUS_RUNECITY
 #define MUS_HALL_OF_FAME_ROOM       398 // MUS_EIKOU_R
-#define MUS_TRICK_HOUSE             399 // MUS_KARAKURI
+#define MUS_DBZ_CELL             399 // MUS_KARAKURI
 #define MUS_CREDITS                 400 // MUS_THANKFOR
 #define MUS_END                     401 // MUS_END
 #define MUS_B_FRONTIER              402 // MUS_B_FRONTIER

@@ -4091,7 +4091,7 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_WEATHER_GROUDON)          \
     X(MUS_SOOTOPOLIS)               \
     X(MUS_HALL_OF_FAME_ROOM)        \
-    X(MUS_TRICK_HOUSE)              \
+    X(MUS_DBZ_CELL)              \
     X(MUS_CREDITS)                  \
     X(MUS_END)                      \
     X(MUS_B_FRONTIER)               \

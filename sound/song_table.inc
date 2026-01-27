@@ -400,7 +400,7 @@ gSongTable::
 	song mus_weather_groudon, 0, 0
 	song mus_sootopolis, 0, 0
 	song mus_hall_of_fame_room, 0, 0
-	song mus_trick_house, 0, 0
+	song mus_dbz_cell, 0, 0
 	song mus_credits, 0, 0
 	song mus_end, 0, 0
 	song mus_b_frontier, 0, 0
