@@ -1328,7 +1328,7 @@ AcademyNpc22::
 # 670 "data/maps/Harborac/scripts.pory"
 	faceplayer
 # 671 "data/maps/Harborac/scripts.pory"
-	playmoncry SPECIES_MURKROW, CRY_MODE_NORMAL
+	playmoncry SPECIES_MURKROW, CRY_MODE_HIGH_PITCH
 # 672 "data/maps/Harborac/scripts.pory"
 	msgbox AcademyNpc22_Text_0
 # 673 "data/maps/Harborac/scripts.pory"
@@ -1346,7 +1346,7 @@ AcademyNpc23::
 # 680 "data/maps/Harborac/scripts.pory"
 	faceplayer
 # 681 "data/maps/Harborac/scripts.pory"
-	playmoncry SPECIES_MURKROW, CRY_MODE_NORMAL
+	playmoncry SPECIES_MURKROW, CRY_MODE_HIGH_PITCH
 # 682 "data/maps/Harborac/scripts.pory"
 	msgbox AcademyNpc22_Text_0
 # 683 "data/maps/Harborac/scripts.pory"
@@ -1364,7 +1364,7 @@ AcademyNpc24::
 # 689 "data/maps/Harborac/scripts.pory"
 	faceplayer
 # 690 "data/maps/Harborac/scripts.pory"
-	playmoncry SPECIES_MURKROW, CRY_MODE_NORMAL
+	playmoncry SPECIES_MURKROW, CRY_MODE_HIGH_PITCH
 # 691 "data/maps/Harborac/scripts.pory"
 	msgbox AcademyNpc22_Text_0
 # 692 "data/maps/Harborac/scripts.pory"

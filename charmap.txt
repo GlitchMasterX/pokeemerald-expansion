@@ -510,7 +510,7 @@ EMOTE_BLUSH = 0A
 EMOTE_INSANE = 0B
 EMOTE_REALIZE = 0C
 EMOTE_NORM = 0D
-
+EMOTE_BLOOD = 0E
 
 @ mugshot stuff ends
 @ fonts

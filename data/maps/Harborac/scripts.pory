@@ -668,7 +668,7 @@ else{
 script AcademyNpc22 {
     lock
     faceplayer
-    playmoncry(SPECIES_MURKROW,CRY_MODE_NORMAL)
+    playmoncry(SPECIES_MURKROW,CRY_MODE_HIGH_PITCH)
     msgbox(format("Murk...Murk...."))
     applymovement(16,heart)
     waitmoncry
@@ -678,7 +678,7 @@ script AcademyNpc22 {
 script AcademyNpc23 {
     lock
     faceplayer
-    playmoncry(SPECIES_MURKROW,CRY_MODE_NORMAL)
+    playmoncry(SPECIES_MURKROW,CRY_MODE_HIGH_PITCH)
     msgbox(format("Murk...Murk...."))
     applymovement(15,heart)
     waitmoncry
@@ -687,7 +687,7 @@ script AcademyNpc23 {
 script AcademyNpc24 {
     lock
     faceplayer
-    playmoncry(SPECIES_MURKROW,CRY_MODE_NORMAL)
+    playmoncry(SPECIES_MURKROW,CRY_MODE_HIGH_PITCH)
     msgbox(format("Murk...Murk...."))
     applymovement(14,heart)
     waitmoncry

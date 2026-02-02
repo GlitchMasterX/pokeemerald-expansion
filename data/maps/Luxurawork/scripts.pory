@@ -201,6 +201,7 @@ movement exclam {
 
 script trage {
 	lockall
+	destroyfollowernpc
 	special(SpawnCameraObject)
 	playse(SE_PIN)
 	applymovement(7,exclam)
@@ -247,6 +248,7 @@ script trage {
 	applymovement(9,faint)
 	waitmovement(0)
 	playmoncry(SPECIES_RAICHU,CRY_MODE_FAINT)
+	waitmoncry
 	waitbuttonpress
 	speakername(surge)
 	msgbox("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_NORMAL}{COLOR BLUE}{SHADOW LIGHT_GRAY}You're strong… stronger than I expected.")
@@ -259,10 +261,10 @@ script trage {
 	waitmessage
     closemessage
 	playse(SE_PIN)
-	applymovement(14,moves(emote_exclamation_mark))
+	applymovement(14,moves(emote_exclamation_mark face_up))
 	waitmovement(0)
 	speakername(name3)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_QUESTION}{COLOR BLUE}{SHADOW LIGHT_GRAY}What-?"))
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}What-?"))
 	closemessage
 	playse(SE_M_DOUBLE_TEAM)
 	applymovement(12,moves(spy_vanish set_visible spy_vanish face_down))
@@ -277,11 +279,15 @@ script trage {
 	applymovement(13,visible)
 	applymovement(14,invisible)
 	waitmovement(0)
-    fadescreen(FADE_FROM_BLACK)
+    speakername(name3)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_BLOOD}Cough... Cough...\p{COLOR BLUE}{SHADOW LIGHT_GRAY}{FONT_SHORT}{PLAYER}....Elysia....Mira..I'm sorry...."))
+	closemessage
+	fadescreen(FADE_FROM_BLACK)
 	speakername(name2)
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_SHOCK}{COLOR RED}{SHADOW LIGHT_GRAY}Aurthur-!! No… no, please!!"))
 	waitmessage
-	removefieldmugshot 
+	closemessage
+	playse(SE_PIN)
 	applymovement(6,exclam)
 	waitmovement(0)
 	waitmessage
@@ -313,6 +319,7 @@ script trage {
 	speakername(name2)
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_TEAR}{COLOR RED}{SHADOW LIGHT_GRAY}Hoopa!"))
 	closemessage
+	playse(SE_PIN)
 	applymovement(10,moves(emote_exclamation_mark face_down))
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_ELYSIA}{EMOTE_TEAR}{COLOR RED}{SHADOW LIGHT_GRAY}Listen to me-your power is gone!\pYou can't fight them now… please, run!\pIf they take you, everything he died for is lost!"))
 	waitmessage
@@ -352,7 +359,7 @@ script trage {
 	applymovement(6,players)
 	applymovement(5,players)
 	waitmovement(0)
-	msgbox(format("{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}({PLAYER} stares at his father's lifeless body, blood soaking the ground. His heart pounds in his chest, unable to fully grasp the horror in front of him.)"),MSGBOX_AUTOCLOSE)
+	msgbox(format("{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}({PLAYER} stares at his father's lifeless body, blood soaking the ground.)"),MSGBOX_AUTOCLOSE)
 	waitmessage
 	speakername(Xylar1)
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_TEAR}{COLOR BLUE}{SHADOW LIGHT_GRAY}Dad?… DAD!!!!"),MSGBOX_AUTOCLOSE)
@@ -363,6 +370,7 @@ script trage {
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_SURGE}{EMOTE_SMILE}{COLOR BLUE}{SHADOW LIGHT_GRAY}Well, well… what do we have here?\pGrunts! Seize them.\pThey'll make fine test subjects."),MSGBOX_AUTOCLOSE)
     removefieldmugshot 
     msgbox(format("{COLOR BLUE}{SHADOW LIGHT_GRAY}Yes, Sir!"),MSGBOX_AUTOCLOSE)
+	playse(SE_PIN)
     applymovement(7,moves(emote_exclamation_mark))
     waitmovement(0)
     speakername(name2)
@@ -383,6 +391,7 @@ script trage {
 	special(RemoveCameraObject)
 	releaseall
 	setflag(FLAG_TRIAL_SERENA)
+	createfollowernpc(OBJ_EVENT_GFX_MIRA,0x4,mirafollowerscript1)
     warp(MAP_SPARKBASE,96,10)	
 	setvar(LUXURA_TRAGEDY,12)
 
@@ -391,6 +400,17 @@ movement capture {
 	walk_down*2
 	
 }
+
+script mirafollowerscript1 {
+	lock
+    facefollowernpc
+    applymovement(0xFD,moves(emote_happy))
+    speakername(name4)    
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Don't worry Master {PLAYER}, I'll always be with you."))
+    removefieldmugshot 
+    release
+}
+
 text surge{
 	format("Surge")
 }
@@ -471,16 +491,16 @@ script Hooparescue {
 	speakername(Xylar1)
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_TEAR}{COLOR BLUE}{SHADOW LIGHT_GRAY}Mira!"))
 	speakername(name4)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}It's alright, Master {PLAYER}.\pI'm here. I'm not going anywhere."),MSGBOX_AUTOCLOSE)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_TEAR}{COLOR RED}{SHADOW LIGHT_GRAY}It's alright, Master {PLAYER}.\pI'm here. I'm not going anywhere."),MSGBOX_AUTOCLOSE)
 	msgbox(format("(She hugs him tightly.)"))
 	speakername(Xylar1)
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_TEAR}{COLOR BLUE}{SHADOW LIGHT_GRAY}They… They took Dad.\pI saw him… He wasn't moving..."),MSGBOX_AUTOCLOSE)
 	speakername(name4)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}I know, Master {PLAYER}... I know.\pBut right now, you need to be strong.\pFor him. For your mother.\pThey wouldn't want you to be scared."),MSGBOX_AUTOCLOSE)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_TEAR}{COLOR RED}{SHADOW LIGHT_GRAY}I know, Master {PLAYER}... I know.\pBut right now, you need to be strong.\pFor him. For your mother.\pThey wouldn't want you to be scared."),MSGBOX_AUTOCLOSE)
 	speakername(Xylar1)
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_TEAR}{COLOR BLUE}{SHADOW LIGHT_GRAY}But I am scared... I don't understand…\pWhy is this happening? Why did they hurt Dad?"),MSGBOX_AUTOCLOSE)
 	speakername(name4)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Because the world isn't fair, Master {PLAYER}.\pSometimes, terrible people do terrible things.\pBut listen to me you are not alone. You have me.\pAnd I'll be always with you."),MSGBOX_AUTOCLOSE)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_TEAR}{COLOR RED}{SHADOW LIGHT_GRAY}Because the world isn't fair, Master {PLAYER}.\pSometimes, terrible people do terrible things.\pBut listen to me you are not alone. You have me.\pAnd I'll be always with you."),MSGBOX_AUTOCLOSE)
 	speakername(Xylar1)
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_TEAR}{COLOR BLUE}{SHADOW LIGHT_GRAY}Promise?"),MSGBOX_AUTOCLOSE)
 	speakername(name4)
@@ -502,7 +522,7 @@ script escape {
 	speakername(Xylar1)
 	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_XYLAR}{EMOTE_TEAR}{COLOR BLUE}{SHADOW LIGHT_GRAY}Mira… what do we do now?"),MSGBOX_AUTOCLOSE)
 	speakername(name4)
-	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}We can't just sit here.\pThere has to be another way out."),MSGBOX_AUTOCLOSE)
+	msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_TEAR}{COLOR RED}{SHADOW LIGHT_GRAY}We can't just sit here.\pThere has to be another way out."),MSGBOX_AUTOCLOSE)
 	removefieldmugshot
 	applymovement(0xFF,moves(walk_right*2))
 	waitmovement(0)

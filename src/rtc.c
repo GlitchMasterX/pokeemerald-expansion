@@ -20,7 +20,7 @@ static u16 sSavedIme;
 COMMON_DATA struct Time gLocalTime = {0};
 
 // const rom
-EWRAM_DATA static u8 sLastCheckedMinute = 0;
+EWRAM_DATA static u8 sLastCheckedSecond = 0;
 EWRAM_DATA static bool8 sUseManualMonth = FALSE;
 EWRAM_DATA static u8 sManualMonth = 0; // Default to January
 static const u8 sText_AM[] = _("AM");
@@ -124,10 +124,10 @@ void UpdateWeekdayOncePerMinute(void)
 {
     struct SiiRtcInfo *rtc = FakeRtc_GetCurrentTime();
 
-    if (rtc->minute == sLastCheckedMinute)
+    if (rtc->second == sLastCheckedSecond)
         return;
 
-    sLastCheckedMinute = rtc->minute;
+    sLastCheckedSecond = rtc->second;
 
      switch(GetDayOfWeek())
      
@@ -499,17 +499,17 @@ void UpdateSeasonOncePerMinute(void)
 {
     struct SiiRtcInfo *rtc = FakeRtc_GetCurrentTime();
 
-    if (rtc->minute == sLastCheckedMinute)
+    if (rtc->second == sLastCheckedSecond)
         return;
 
-    sLastCheckedMinute = rtc->minute;
+    sLastCheckedSecond = rtc->second;
 
     switch (GetMonth()) // IMPORTANT: this will still respect manual override
     {
-    case 3: case 4: case 5:
+    case 3: case 4: 
         VarSet(VAR_CURRENT_SEASON, 0);
         break;
-    case 6: case 7: case 8:
+    case 5:  case 6: case 7: case 8:
         VarSet(VAR_CURRENT_SEASON, 1);
         break;
     case 9: case 10: 

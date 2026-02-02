@@ -33,7 +33,9 @@
 #define EMOTE_INSANE        11
 #define EMOTE_REALIZE        12
 #define EMOTE_NORM        13
+#define EMOTE_BLOOD        14
 
-#define EMOTE_COUNT        14
+
+#define EMOTE_COUNT        15
 
 #endif // GUARD_CONSTANTS_FIELD_MUGSHOTS_H

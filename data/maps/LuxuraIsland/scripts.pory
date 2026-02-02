@@ -377,23 +377,12 @@ movement str{
     walk_up*2
 }
 script mirafollowerscript {
-    if(!(flag(FLAG_TRIAL_SERENA))){
     lock
     facefollowernpc
     speakername(name4)    
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_NORMAL}{COLOR RED}{SHADOW LIGHT_GRAY}Let's go Master {PLAYER}."))
     removefieldmugshot 
     release
-}
-else{
-    lock
-    facefollowernpc
-    applymovement(0xFD,moves(emote_happy))
-    speakername(name4)    
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_MIRA}{EMOTE_JOY}{COLOR RED}{SHADOW LIGHT_GRAY}Don't worry Master {PLAYER}, I'll always be with you."))
-    removefieldmugshot 
-    release
-}
 }
 
 movement strp{

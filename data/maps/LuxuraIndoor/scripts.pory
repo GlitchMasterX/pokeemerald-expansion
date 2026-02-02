@@ -170,20 +170,20 @@ script Minccino{
 	lock
 	faceplayer
 	speakername ("Minccino")
-	playmoncry(SPECIES_MINCCINO,CRY_MODE_NORMAL)
+	playmoncry(SPECIES_MINCCINO,CRY_MODE_HIGH_PITCH)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} Chii, chii! Min-min!"))
 	 
 	waitmoncry
 	release
 }
 
-script Grumpig{
+script Abrakitchen{
 	if(!flag(FLAG_UNUSED_0x493)){
 	lock
 	faceplayer
-	speakername ("Grumpig")
-	playmoncry(SPECIES_GRUMPIG,CRY_MODE_NORMAL)
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} Pii, pii! Grrum, grrum!"),MSGBOX_AUTOCLOSE)
+	speakername ("Abra")
+	playmoncry(SPECIES_ABRA,CRY_MODE_HIGH_PITCH)
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}....!"),MSGBOX_AUTOCLOSE)
 	applymovement(5,heart)
 	giveitem(ITEM_TWISTED_SPOON,1)
 	setflag(FLAG_UNUSED_0x493)
@@ -192,9 +192,9 @@ script Grumpig{
 	else
 	{
 	faceplayer
-	speakername ("Grumpig")
-	playmoncry(SPECIES_GRUMPIG,CRY_MODE_NORMAL)
-	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} Pii, pii! Grrum, grrum!")) 
+	speakername ("Abra")
+	playmoncry(SPECIES_ABRA,CRY_MODE_HIGH_PITCH)
+	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY}....!")) 
 	applymovement(5,heart)
 	waitmoncry
 	release}
@@ -204,7 +204,7 @@ script Blissey{
 	lock
 	faceplayer
 	speakername ("Blissey")
-	playmoncry(SPECIES_BLISSEY,CRY_MODE_NORMAL)
+	playmoncry(SPECIES_BLISSEY,CRY_MODE_HIGH_PITCH)
 	msgbox(format("{COLOR RED}{SHADOW LIGHT_GRAY} Hoo, hoo! Blii, bliiss!"))
 	 
 	waitmoncry

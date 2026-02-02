@@ -48,10 +48,32 @@ script IntroText{
 } 
 
 script cancelflashback{
-    msgbox(format("Goodluck, Trainer.\pI hope you enjoy experiencing this story again."))
+    msgbox(format("Goodluck, Trainer.\pI hope you enjoy experiencing this story again.\pBefore starting tell me your name..."))
     closemessage
+    goto(naming_player)
+    special(Do_Player_Name)
+    waitstate
+    msgbox(format("Is your name {COLOR BLUE}{SHADOW LIGHT_GRAY}{PLAYER}?"),MSGBOX_YESNO)
+    if(var(VAR_RESULT)== YES){
     setvar(VAR_FLASHBACKS, 1)
     warp(MAP_PLAYERROOM,2,5)
+}
+else{
+    goto(Cityruin_D)
+}  
+}
+
+script naming_player {
+    special(Do_Player_Name)
+    waitstate
+    msgbox(format("Is your name {PLAYER}?"),MSGBOX_YESNO)
+    if(var(VAR_RESULT)== YES){
+    setvar(VAR_FLASHBACKS, 1)
+    warp(MAP_PLAYERROOM,2,5)
+}
+else{
+    goto(naming_player)
+}  
 }
 
 script Cityruin {
@@ -353,6 +375,7 @@ script  Cityruin_3 {
     callnative(OpenScreenshotsFromScript)
     delay(20)
     fadescreen(FADE_TO_BLACK)
+    fwdmonth(3)
     warp_continue_script(MAP_OLDALE_TOWN_MART,8,4,Cityruin_4)
 }
 
@@ -697,14 +720,14 @@ script Cityruin_9 {
     closemessage
     playse(SE_PIN)
     applymovement(2,moves(emote_exclamation_mark))
-    applymovement(1,moves(face_down))
+    applymovement(1,moves(walk_down))
     speakername("???")
     msgbox(format("Those who lack the strength to be cruel{PAUSE_UNTIL_PRESS} often call it goodness."))
     closemessage
     playse(SE_PIN)
     applymovement(2,moves(emote_exclamation_mark))
     speakername("Aurther")
-    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_QUESTION}{COLOR BLUE}{SHADOW LIGHT_GRAY}You're…\pIt can't be…"))
+    msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_SHOCK}{COLOR BLUE}{SHADOW LIGHT_GRAY}You're…\pIt can't be…"))
     closemessage    
     fadescreen(FADE_TO_BLACK)
     speakername("???")
@@ -792,6 +815,17 @@ script Cityruin_B {
     waitmessage
     special(Do_Player_Name)
     waitstate
+    msgbox(format("Is your name {PLAYER}?"),MSGBOX_YESNO)
+    if(var(VAR_RESULT)== YES){
+    goto(Cityruin_C)
+}
+else{
+    goto(Cityruin_D)
+}
+}
+
+script Cityruin_C {
+    lock
     speakername("Aurther")
     msgbox(format("{CREATE_MUGSHOT}{MUGSHOT_AURTHER}{EMOTE_JOY}{COLOR BLUE}{SHADOW LIGHT_GRAY}We'll name him {PLAYER}.\pHe's destined for great things.\pI can feel it."))
     closemessage
@@ -814,7 +848,20 @@ script Cityruin_B {
     closemessage
     msgbox(format("15 years later..."))
     closemessage
+    fwdmonth(1)
     clearflag(FLAG_FLASHBACK_MUSIC)
     clearflag(FLAG_HIDE_MAP_NAME_POPUP)
-    warp(MAP_PLAYERROOM,2,5)   
+    warp(MAP_PLAYERROOM,2,5)
+}
+
+script Cityruin_D {
+    special(Do_Player_Name)
+    waitstate
+    msgbox(format("Is your name {COLOR BLUE}{SHADOW LIGHT_GRAY}{PLAYER}?"),MSGBOX_YESNO)
+    if(var(VAR_RESULT)== YES){
+    goto(Cityruin_C)
+}
+else{
+    goto(Cityruin_D)
+}   
 }

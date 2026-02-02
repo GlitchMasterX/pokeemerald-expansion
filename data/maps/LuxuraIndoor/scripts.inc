@@ -310,7 +310,7 @@ Minccino::
 # 172 "data/maps/LuxuraIndoor/scripts.pory"
 	speakername Minccino_Text_0
 # 173 "data/maps/LuxuraIndoor/scripts.pory"
-	playmoncry SPECIES_MINCCINO, CRY_MODE_NORMAL
+	playmoncry SPECIES_MINCCINO, CRY_MODE_HIGH_PITCH
 # 174 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox Minccino_Text_1
 # 176 "data/maps/LuxuraIndoor/scripts.pory"
@@ -320,17 +320,17 @@ Minccino::
 	return
 
 
-Grumpig::
+Abrakitchen::
 # 181 "data/maps/LuxuraIndoor/scripts.pory"
-	goto_if_unset FLAG_UNUSED_0x493, Grumpig_1
+	goto_if_unset FLAG_UNUSED_0x493, Abrakitchen_1
 # 194 "data/maps/LuxuraIndoor/scripts.pory"
 	faceplayer
 # 195 "data/maps/LuxuraIndoor/scripts.pory"
-	speakername Grumpig_Text_0
+	speakername Abrakitchen_Text_0
 # 196 "data/maps/LuxuraIndoor/scripts.pory"
-	playmoncry SPECIES_GRUMPIG, CRY_MODE_NORMAL
+	playmoncry SPECIES_ABRA, CRY_MODE_HIGH_PITCH
 # 197 "data/maps/LuxuraIndoor/scripts.pory"
-	msgbox Grumpig_Text_1
+	msgbox Abrakitchen_Text_1
 # 198 "data/maps/LuxuraIndoor/scripts.pory"
 	applymovement 5, heart
 # 199 "data/maps/LuxuraIndoor/scripts.pory"
@@ -339,17 +339,17 @@ Grumpig::
 	release
 	return
 
-Grumpig_1:
+Abrakitchen_1:
 # 182 "data/maps/LuxuraIndoor/scripts.pory"
 	lock
 # 183 "data/maps/LuxuraIndoor/scripts.pory"
 	faceplayer
 # 184 "data/maps/LuxuraIndoor/scripts.pory"
-	speakername Grumpig_Text_0
+	speakername Abrakitchen_Text_0
 # 185 "data/maps/LuxuraIndoor/scripts.pory"
-	playmoncry SPECIES_GRUMPIG, CRY_MODE_NORMAL
+	playmoncry SPECIES_ABRA, CRY_MODE_HIGH_PITCH
 # 186 "data/maps/LuxuraIndoor/scripts.pory"
-	msgbox Grumpig_Text_1, MSGBOX_AUTOCLOSE
+	msgbox Abrakitchen_Text_1, MSGBOX_AUTOCLOSE
 # 187 "data/maps/LuxuraIndoor/scripts.pory"
 	applymovement 5, heart
 # 188 "data/maps/LuxuraIndoor/scripts.pory"
@@ -371,7 +371,7 @@ Blissey::
 # 206 "data/maps/LuxuraIndoor/scripts.pory"
 	speakername Blissey_Text_0
 # 207 "data/maps/LuxuraIndoor/scripts.pory"
-	playmoncry SPECIES_BLISSEY, CRY_MODE_NORMAL
+	playmoncry SPECIES_BLISSEY, CRY_MODE_HIGH_PITCH
 # 208 "data/maps/LuxuraIndoor/scripts.pory"
 	msgbox Blissey_Text_1
 # 210 "data/maps/LuxuraIndoor/scripts.pory"
@@ -1681,13 +1681,13 @@ Minccino_Text_1:
 # 174 "data/maps/LuxuraIndoor/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_GRAY} Chii, chii! Min-min!$"
 
-Grumpig_Text_0:
+Abrakitchen_Text_0:
 # 184 "data/maps/LuxuraIndoor/scripts.pory"
-	.string "Grumpig$"
+	.string "Abra$"
 
-Grumpig_Text_1:
+Abrakitchen_Text_1:
 # 186 "data/maps/LuxuraIndoor/scripts.pory"
-	.string "{COLOR RED}{SHADOW LIGHT_GRAY} Pii, pii! Grrum, grrum!$"
+	.string "{COLOR RED}{SHADOW LIGHT_GRAY}....!$"
 
 Blissey_Text_0:
 # 206 "data/maps/LuxuraIndoor/scripts.pory"
