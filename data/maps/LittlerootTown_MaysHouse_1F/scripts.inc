@@ -1,7 +1,5 @@
 # 1 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 
-# 2 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-.set LOCALID_MOM, 1
 # 3 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 .set LOCALID_RIVAL_MOM, 4
 # 4 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"

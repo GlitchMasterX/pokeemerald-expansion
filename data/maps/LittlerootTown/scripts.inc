@@ -1,7 +1,5 @@
 # 1 "data/maps/LittlerootTown/scripts.pory"
 .set LOCALID_TWIN, 1
-# 2 "data/maps/LittlerootTown/scripts.pory"
-.set LOCALID_MOM, 4
 # 3 "data/maps/LittlerootTown/scripts.pory"
 .set LOCALID_RIVAL, 7
 # 4 "data/maps/LittlerootTown/scripts.pory"

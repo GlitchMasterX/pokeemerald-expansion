@@ -1,7 +1,5 @@
 # 1 "data/maps/AcademyView/scripts.pory"
 
-# 2 "data/maps/AcademyView/scripts.pory"
-.set LOCALID_MOM, 1
 # 3 "data/maps/AcademyView/scripts.pory"
 .set LOCALID_RIVAL_MOM, 4
 # 4 "data/maps/AcademyView/scripts.pory"
